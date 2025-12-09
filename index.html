@@ -488,30 +488,32 @@
 
         // ==================== CHARGEMENT DES DONNÉES ====================
         async function loadDeputesData() {
-            try {
-                // Essayer de charger depuis l'API officielle
-                const response = await fetch('https://data.assemblee-nationale.fr/api/v1/acteurs?legislature=17');
-
-                if (!response.ok) throw new Error('API non accessible');
-
-                const data = await response.json();
-
-                // Parser les députés
-                deputesData = data.items?.slice(0, 100).map((acteur, idx) => ({
-                    id: acteur.uid || `DEP${idx}`,
-                    nom: acteur.prenom + ' ' + acteur.nom || 'Député ' + idx,
-                    groupe: groupesPolitiques[idx % groupesPolitiques.length].code,
-                    groupeNom: groupesPolitiques[idx % groupesPolitiques.length].nom,
-                    circonscription: acteur.mandats?.[0]?.place || 'France',
-                    photo: acteur.photo || `https://dummyimage.com/200x200/${Math.random().toString(16).substr(2,6)}/fff&text=${acteur.nom?.charAt(0) || 'D'}`,
-                    votes: []
-                })) || generateMockDeputes();
-
-            } catch (error) {
-                console.warn('Utilisation de données de démonstration:', error);
                 deputesData = generateMockDeputes();
-            }
         }
+//            try {
+//                // Essayer de charger depuis l'API officielle
+//                const response = await fetch('https://data.assemblee-nationale.fr/api/v1/acteurs?legislature=17');
+//
+//                if (!response.ok) throw new Error('API non accessible');
+//
+//                const data = await response.json();
+//
+//                // Parser les députés
+//                deputesData = data.items?.slice(0, 100).map((acteur, idx) => ({
+//                    id: acteur.uid || `DEP${idx}`,
+//                    nom: acteur.prenom + ' ' + acteur.nom || 'Député ' + idx,
+//                    groupe: groupesPolitiques[idx % groupesPolitiques.length].code,
+//                    groupeNom: groupesPolitiques[idx % groupesPolitiques.length].nom,
+//                    circonscription: acteur.mandats?.[0]?.place || 'France',
+//                    photo: acteur.photo || `https://dummyimage.com/200x200/${Math.random().toString(16).substr(2,6)}/fff&text=${acteur.nom?.charAt(0) || 'D'}`,
+//                    votes: []
+//                })) || generateMockDeputes();
+
+//            } catch (error) {
+//                console.warn('Utilisation de données de démonstration:', error);
+//                deputesData = generateMockDeputes();
+//            }
+//        }
 
         function generateMockDeputes() {
             const prenoms = ['Jean', 'Marie', 'Pierre', 'Sophie', 'Luc', 'Anne', 'François', 'Claire', 'Marc', 'Julie'];
