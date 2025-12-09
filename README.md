@@ -18,7 +18,7 @@ DéputéGPT est une application web qui utilise **WebGPU** et le modèle **Mistr
 
 ## 🎯 Démo en ligne
 
-👉 **[Essayer DéputéGPT](https://yourusername.github.io/deputegpt/)**
+👉 **[Essayer DéputéGPT](https://wald52.github.io/deputegpt/)**
 
 ## 📋 Prérequis
 
@@ -43,7 +43,7 @@ DéputéGPT est une application web qui utilise **WebGPU** et le modèle **Mistr
 
 ```bash
 # Cloner le repository
-git clone https://github.com/yourusername/deputegpt.git
+git clone https://github.com/wald52/deputegpt.git
 cd deputegpt
 
 # Lancer un serveur HTTP local (Python 3)
@@ -62,7 +62,7 @@ open http://localhost:8000
 2. Allez dans **Settings > Pages**
 3. Sélectionnez la branche `main` et dossier `/root`
 4. Sauvegardez et attendez le déploiement (~2 min)
-5. Accédez à `https://yourusername.github.io/deputegpt/`
+5. Accédez à `https://wald52.github.io/deputegpt/`
 
 ## 📖 Utilisation
 
@@ -177,10 +177,8 @@ Ce projet est sous licence **MIT** - voir le fichier [LICENSE](LICENSE) pour plu
 
 ## 📞 Contact
 
-- **Auteur** : Votre Nom
-- **Email** : votre.email@example.com
-- **GitHub** : [@yourusername](https://github.com/yourusername)
-- **Issues** : [Signaler un bug](https://github.com/yourusername/deputegpt/issues)
+- **GitHub** : [@wald52](https://github.com/wald52)
+- **Issues** : [Signaler un bug](https://github.com/wald52/deputegpt/issues)
 
 ---
 
