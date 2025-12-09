@@ -48,7 +48,7 @@ deputegpt/
 
 4. Attendre 2-3 minutes
 
-5. Accéder à: https://VOTRE_USERNAME.github.io/deputegpt/
+5. Accéder à: https://wald52.github.io/deputegpt/
 
 ═══════════════════════════════════════════════════════════════════
 
@@ -107,8 +107,8 @@ Dans index.html et README.md, remplacez:
 
 📧 SUPPORT:
 
-- Issues: https://github.com/VOTRE_USERNAME/deputegpt/issues
-- Discussions: https://github.com/VOTRE_USERNAME/deputegpt/discussions
+- Issues: https://github.com/wald52/deputegpt/issues
+- Discussions: https://github.com/wald52/deputegpt/discussions
 
 ═══════════════════════════════════════════════════════════════════
 
