@@ -1,1273 +1,639 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DéputéGPT - IA WebGPU pour l'Assemblée Nationale</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DéputeGPT - IA WebGPU pour l'Assemblée Nationale</title>
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        .container {
-            max-width: 1600px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
-        }
+    body{
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
 
-        header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
+    .container{
+      max-width: 1600px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.30);
+      overflow: hidden;
+    }
 
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
+    header{
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
 
-        header p {
-            opacity: 0.9;
-            font-size: 1.1em;
-        }
+    header h1{
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
 
-        .main-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            padding: 30px;
-        }
+    header p{
+      opacity: 0.9;
+      font-size: 1.1em;
+    }
 
-        @media (max-width: 1200px) {
-            .main-content {
-                grid-template-columns: 1fr;
-            }
-        }
+    .main-content{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      padding: 30px;
+    }
 
-        .panel {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
+    @media (max-width: 1200px){
+      .main-content{ grid-template-columns: 1fr; }
+    }
 
-        .panel h2 {
-            margin-bottom: 20px;
-            color: #1e3c72;
-            font-size: 1.5em;
-        }
+    .panel{
+      background: #f8f9fa;
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.10);
+    }
 
-        #search-input {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            font-size: 16px;
-            margin-bottom: 20px;
-            transition: border-color 0.3s;
-        }
+    .panel h2{
+      margin-bottom: 20px;
+      color: #1e3c72;
+      font-size: 1.5em;
+    }
 
-        #search-input:focus {
-            outline: none;
-            border-color: #667eea;
-        }
+    #search-input{
+      width: 100%;
+      padding: 15px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      transition: border-color 0.3s;
+    }
 
-        #hemicycle-container {
-            position: relative;
-            background: white;
-            border-radius: 15px;
-            padding: 20px;
-            min-height: 400px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    #search-input:focus{
+      outline: none;
+      border-color: #667eea;
+    }
 
-        #hemicycle-svg {
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-        }
+    #hemicycle-container{
+      position: relative;
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      min-height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
 
-        #hemicycle-svg circle{
-            cursor: pointer;
-            transition: transform .15s ease, stroke-width .15s ease;
-            transform-box: fill-box;
-            transform-origin: center;
-        }
-        #hemicycle-svg circle:hover{
-            stroke: #000;
-            stroke-width: 2;
-            transform: scale(1.2);
-        }
+    /* Le SVG est dans hemicycle.svg (via <object>), donc CSS hover à mettre DANS hemicycle.svg */
+    .hemicycle-svg-object{
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      display: block;
+    }
 
-        .seat {
-            cursor: pointer;
-            transition: transform .15s ease, stroke-width .15s ease;
-            transform-box: fill-box;
-            transform-origin: center;
-        }
+    .legend{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+    }
 
-        .seat:hover {
-            stroke: #000;
-            stroke-width: 2;
-            transform: scale(1.2);
-        }
+    .legend-item{
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9em;
+      cursor: pointer;
+      user-select: none;
+      padding: 8px 10px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.6);
+      border: 1px solid rgba(0,0,0,0.08);
+    }
 
-        .legend {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
-            margin-top: 20px;
-        }
+    .legend-item:hover{
+      background: rgba(255,255,255,0.95);
+    }
 
-        .legend-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.9em;
-        }
+    .legend-color{
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      flex: 0 0 auto;
+    }
 
-        .legend-color {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-        }
+    #loading-status{
+      padding: 15px;
+      background: #fff3cd;
+      border: 2px solid #ffc107;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
 
-        #loading-status {
-            padding: 15px;
-            background: #fff3cd;
-            border: 2px solid #ffc107;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            text-align: center;
-            font-weight: bold;
-        }
+    #loading-status.ready{
+      background: #d4edda;
+      border-color: #28a745;
+      color: #155724;
+    }
 
-        #loading-status.ready {
-            background: #d4edda;
-            border-color: #28a745;
-            color: #155724;
-        }
+    #loading-status.error{
+      background: #f8d7da;
+      border-color: #dc3545;
+      color: #721c24;
+    }
 
-        #loading-status.error {
-            background: #f8d7da;
-            border-color: #dc3545;
-            color: #721c24;
-        }
+    .depute-card{
+      display: none;
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+      align-items: center;
+      gap: 20px;
+    }
 
-        .depute-card {
-            display: none;
-            background: white;
-            border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            align-items: center;
-            gap: 20px;
-        }
+    .depute-card.active{ display: flex; }
 
-        .depute-card.active {
-            display: flex;
-        }
+    .depute-photo{
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #667eea;
+      background: #eee;
+    }
 
-        .depute-photo {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #667eea;
-        }
+    .depute-info h3{
+      margin-bottom: 6px;
+      color: #1e3c72;
+    }
 
-        .depute-info h3 {
-            margin-bottom: 5px;
-            color: #1e3c72;
-        }
+    .depute-info p{
+      color: #666;
+      margin-bottom: 3px;
+    }
 
-        .depute-info p {
-            color: #666;
-            margin-bottom: 3px;
-        }
+    #messages{
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      height: 400px;
+      overflow-y: auto;
+      margin-bottom: 20px;
+      border: 2px solid #e0e0e0;
+    }
 
-        #messages {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            height: 400px;
-            overflow-y: auto;
-            margin-bottom: 20px;
-            border: 2px solid #e0e0e0;
-        }
+    .message{
+      margin-bottom: 15px;
+      padding: 12px 15px;
+      border-radius: 10px;
+      line-height: 1.5;
+    }
 
-        .message {
-            margin-bottom: 15px;
-            padding: 12px 15px;
-            border-radius: 10px;
-            line-height: 1.5;
-        }
+    .message.user{ background: #e3f2fd; text-align: right; }
+    .message.ai{ background: #f1f8e9; }
+    .message.system{ background: #fff3e0; font-style: italic; text-align: center; }
 
-        .message.user {
-            background: #e3f2fd;
-            text-align: right;
-        }
+    .message strong{
+      display: block;
+      margin-bottom: 5px;
+      font-size: 0.9em;
+      opacity: 0.7;
+    }
 
-        .message.ai {
-            background: #f1f8e9;
-        }
+    #user-input{
+      width: 100%;
+      padding: 15px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      font-size: 16px;
+      font-family: inherit;
+      resize: vertical;
+      margin-bottom: 15px;
+    }
 
-        .message.system {
-            background: #fff3e0;
-            font-style: italic;
-            text-align: center;
-        }
+    #user-input:focus{
+      outline: none;
+      border-color: #667eea;
+    }
 
-        .message strong {
-            display: block;
-            margin-bottom: 5px;
-            font-size: 0.9em;
-            opacity: 0.7;
-        }
+    #send-btn{
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
 
-        #user-input {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #ddd;
-            border-radius: 10px;
-            font-size: 16px;
-            font-family: inherit;
-            resize: vertical;
-            margin-bottom: 15px;
-        }
+    #send-btn:hover:not(:disabled){
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(102,126,234,0.40);
+    }
 
-        #user-input:focus {
-            outline: none;
-            border-color: #667eea;
-        }
+    #send-btn:disabled{
+      background: #ccc;
+      cursor: not-allowed;
+    }
 
-        #send-btn {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
+    .loader{
+      display: none;
+      text-align: center;
+      padding: 15px;
+      color: #667eea;
+      font-weight: bold;
+    }
 
-        #send-btn:hover:not(:disabled) {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-        }
+    .loader.active{ display: block; }
 
-        #send-btn:disabled {
-            background: #ccc;
-            cursor: not-allowed;
-        }
+    footer{
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      font-size: 0.9em;
+    }
 
-        .loader {
-            display: none;
-            text-align: center;
-            padding: 15px;
-            color: #667eea;
-            font-weight: bold;
-        }
+    footer a{
+      color: #667eea;
+      text-decoration: none;
+    }
 
-        .loader.active {
-            display: block;
-        }
+    footer a:hover{ text-decoration: underline; }
 
-        .loader::after {
-            content: '...';
-            animation: dots 1.5s steps(4, end) infinite;
-        }
+    .stats{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 15px;
+    }
 
-        @keyframes dots {
-            0%, 20% { content: '.'; }
-            40% { content: '..'; }
-            60%, 100% { content: '...'; }
-        }
+    .stat-box{
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #666;
-            font-size: 0.9em;
-        }
+    .stat-number{
+      font-size: 2em;
+      font-weight: bold;
+      color: #667eea;
+    }
 
-        footer a {
-            color: #667eea;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .stat-box {
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2em;
-            font-weight: bold;
-            color: #667eea;
-        }
-
-        .stat-label {
-            font-size: 0.9em;
-            color: #666;
-            margin-top: 5px;
-        }
-    </style>
+    .stat-label{
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 5px;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <h1>🇫🇷 DéputéGPT</h1>
-            <p>Interrogez l'IA sur les votes des députés français - Propulsé par WebGPU et Mistral ONNX</p>
-        </header>
+  <div class="container">
+    <header>
+      <h1>DéputeGPT</h1>
+      <p>Interrogez l'IA sur les votes des députés français — Propulsé par WebGPU et Transformers.js</p>
+    </header>
 
-        <div class="main-content">
-            <!-- Panneau Gauche: Sélection Député -->
-            <div class="panel">
-                <h2>📍 Sélectionnez un Député</h2>
+    <div class="main-content">
+      <!-- Panneau Gauche -->
+      <div class="panel">
+        <h2>Sélectionnez un Député</h2>
 
-                <input type="text" id="search-input" placeholder="🔍 Rechercher par nom, groupe, ou circonscription...">
-
-                <div id="hemicycle-container">
-                    <svg id="hemicycle-svg" viewBox="0 0 800 400">
-                        <!-- Généré dynamiquement -->
-                    </svg>
-                </div>
-
-                <div class="legend" id="legend">
-                    <!-- Généré dynamiquement -->
-                </div>
-
-                <div class="stats" id="stats-container" style="display: none;">
-                    <div class="stat-box">
-                        <div class="stat-number" id="stat-votes">0</div>
-                        <div class="stat-label">Votes analysés</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-number" id="stat-pour">0</div>
-                        <div class="stat-label">Pour</div>
-                    </div>
-                    <div class="stat-box">
-                        <div class="stat-number" id="stat-contre">0</div>
-                        <div class="stat-label">Contre</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Panneau Droit: Chat IA -->
-            <div class="panel">
-                <h2>💬 Conversation avec l'IA</h2>
-
-                <div id="loading-status">⏳ Chargement du modèle WebGPU...</div>
-
-                <div class="depute-card" id="selected-depute">
-                    <img class="depute-photo" id="depute-img" src="" alt="Photo">
-                    <div class="depute-info">
-                        <h3 id="depute-name">Nom du Député</h3>
-                        <p id="depute-group">Groupe Politique</p>
-                        <p id="depute-circum">Circonscription</p>
-                    </div>
-                </div>
-
-                <div id="messages"></div>
-
-                <textarea id="user-input" placeholder="💭 Posez votre question sur les votes de ce député..." rows="3" disabled></textarea>
-                <button id="send-btn" disabled>Envoyer</button>
-                <div class="loader" id="ai-loader">L'IA réfléchit</div>
-            </div>
-        </div>
-
-        <footer>
-            <p>Données: <a href="https://data.assemblee-nationale.fr" target="_blank">Assemblée Nationale Open Data</a> | 
-            Modèle: <a href="https://huggingface.co/mistralai/Ministral-3-3B-Instruct-2512-ONNX" target="_blank">Mistral 3B ONNX</a> | 
-            <a href="https://github.com/wald52/deputegpt" target="_blank">GitHub</a></p>
-        </footer>
-    </div>
-    
-    <script type="module">
-        import * as transformers from './js/transformers.min.js';
-        const { pipeline, env } = transformers;
-
-        // Configuration WebGPU
-        env.allowLocalModels = false;
-        env.useBrowserCache = true;
-        //env.backends.onnx.wasm.numThreads = 4;
-
-        // Données globales
-        let generator;
-        let currentDepute = null;
-        let deputesData = [];
-        let votesData = [];
+        <input type="text" id="search-input" placeholder="Rechercher par nom, groupe, ou circonscription..." />
 
         <div id="hemicycle-container">
-            <svg id="hemicycle-svg"
-               class="hemicycle-svg"
-               viewBox="0 0 360 185"
-               preserveAspectRatio="xMidYMid meet"
-               xmlns="http://www.w3.org/2000/svg">
-
-            <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" width="360.0" height="185.0">
-                <!-- Created with parliamentarch (https://github.com/Gouvernathor/parliamentarch/) -->
-                <text x="180.0" y="175.0" style="font-size:36px;font-weight:bold;text-align:center;text-anchor:middle;font-family:sans-serif">577</text>
-                <g style="fill:#dd0000" id="0-Groupe-GDR">
-                    <title>Groupe GDR</title>
-                    <circle cx="8.85" cy="176.20" r="3.04"/>
-                    <circle cx="16.46" cy="176.20" r="3.04"/>
-                    <circle cx="24.07" cy="176.20" r="3.04"/>
-                    <circle cx="31.68" cy="176.20" r="3.04"/>
-                    <circle cx="39.29" cy="176.20" r="3.04"/>
-                    <circle cx="46.90" cy="176.20" r="3.04"/>
-                    <circle cx="54.51" cy="176.20" r="3.04"/>
-                    <circle cx="62.13" cy="176.20" r="3.04"/>
-                    <circle cx="69.74" cy="176.20" r="3.04"/>
-                    <circle cx="77.35" cy="176.20" r="3.04"/>
-                    <circle cx="84.97" cy="176.20" r="3.04"/>
-                    <circle cx="92.58" cy="176.20" r="3.04"/>
-                    <circle cx="9.24" cy="167.79" r="3.04"/>
-                    <circle cx="16.87" cy="167.77" r="3.04"/>
-                    <circle cx="24.50" cy="167.74" r="3.04"/>
-                    <circle cx="32.14" cy="167.72" r="3.04"/>
-                    <circle cx="39.76" cy="167.85" r="3.04"/>
-                </g>
-                <g style="fill:#cc2443" id="1-Groupe-La-France-Insoumise">
-                    <title>Groupe La France Insoumise</title>
-                    <circle cx="47.42" cy="167.66" r="3.04"/>
-                    <circle cx="55.07" cy="167.62" r="3.04"/>
-                    <circle cx="62.70" cy="167.78" r="3.04"/>
-                    <circle cx="70.36" cy="167.75" r="3.04"/>
-                    <circle cx="78.02" cy="167.71" r="3.04"/>
-                    <circle cx="10.05" cy="159.41" r="3.04"/>
-                    <circle cx="17.72" cy="159.37" r="3.04"/>
-                    <circle cx="85.69" cy="167.67" r="3.04"/>
-                    <circle cx="25.40" cy="159.33" r="3.04"/>
-                    <circle cx="93.34" cy="167.88" r="3.04"/>
-                    <circle cx="33.08" cy="159.28" r="3.04"/>
-                    <circle cx="40.73" cy="159.55" r="3.04"/>
-                    <circle cx="48.49" cy="159.17" r="3.04"/>
-                    <circle cx="56.21" cy="159.10" r="3.04"/>
-                    <circle cx="11.26" cy="151.09" r="3.04"/>
-                    <circle cx="63.87" cy="159.42" r="3.04"/>
-                    <circle cx="19.00" cy="151.03" r="3.04"/>
-                    <circle cx="26.75" cy="150.98" r="3.04"/>
-                    <circle cx="71.62" cy="159.37" r="3.04"/>
-                    <circle cx="34.51" cy="150.91" r="3.04"/>
-                    <circle cx="79.39" cy="159.31" r="3.04"/>
-                    <circle cx="42.19" cy="151.32" r="3.04"/>
-                    <circle cx="12.89" cy="142.83" r="3.04"/>
-                    <circle cx="87.19" cy="159.23" r="3.04"/>
-                    <circle cx="50.10" cy="150.77" r="3.04"/>
-                    <circle cx="20.71" cy="142.77" r="3.04"/>
-                    <circle cx="94.89" cy="159.68" r="3.04"/>
-                    <circle cx="57.93" cy="150.68" r="3.04"/>
-                    <circle cx="28.55" cy="142.71" r="3.04"/>
-                    <circle cx="65.64" cy="151.17" r="3.04"/>
-                    <circle cx="36.41" cy="142.64" r="3.04"/>
-                    <circle cx="44.14" cy="143.20" r="3.04"/>
-                    <circle cx="73.52" cy="151.11" r="3.04"/>
-                    <circle cx="14.92" cy="134.66" r="3.04"/>
-                    <circle cx="22.84" cy="134.61" r="3.04"/>
-                    <circle cx="52.24" cy="142.49" r="3.04"/>
-                    <circle cx="81.45" cy="151.05" r="3.04"/>
-                    <circle cx="30.79" cy="134.55" r="3.04"/>
-                    <circle cx="60.22" cy="142.40" r="3.04"/>
-                    <circle cx="89.43" cy="150.97" r="3.04"/>
-                    <circle cx="38.78" cy="134.49" r="3.04"/>
-                    <circle cx="17.34" cy="126.60" r="3.04"/>
-                    <circle cx="68.00" cy="143.07" r="3.04"/>
-                    <circle cx="46.56" cy="135.20" r="3.04"/>
-                    <circle cx="97.22" cy="151.66" r="3.04"/>
-                    <circle cx="25.39" cy="126.56" r="3.04"/>
-                    <circle cx="76.05" cy="143.03" r="3.04"/>
-                    <circle cx="54.91" cy="134.36" r="3.04"/>
-                    <circle cx="33.48" cy="126.52" r="3.04"/>
-                    <circle cx="20.16" cy="118.68" r="3.04"/>
-                    <circle cx="84.18" cy="142.98" r="3.04"/>
-                    <circle cx="41.62" cy="126.48" r="3.04"/>
-                    <circle cx="63.07" cy="134.29" r="3.04"/>
-                    <circle cx="49.45" cy="127.36" r="3.04"/>
-                    <circle cx="28.35" cy="118.66" r="3.04"/>
-                    <circle cx="70.92" cy="135.16" r="3.04"/>
-                    <circle cx="92.41" cy="142.95" r="3.04"/>
-                    <circle cx="36.59" cy="118.65" r="3.04"/>
-                    <circle cx="58.10" cy="126.42" r="3.04"/>
-                    <circle cx="23.37" cy="110.90" r="3.04"/>
-                    <circle cx="79.20" cy="135.16" r="3.04"/>
-                    <circle cx="100.30" cy="143.90" r="3.04"/>
-                    <circle cx="44.91" cy="118.66" r="3.04"/>
-                    <circle cx="31.71" cy="110.92" r="3.04"/>
-                    <circle cx="66.47" cy="126.40" r="3.04"/>
-                    <circle cx="52.81" cy="119.71" r="3.04"/>
-                    <circle cx="87.58" cy="135.18" r="3.04"/>
-                    <circle cx="40.13" cy="110.97" r="3.04"/>
-                    <circle cx="74.41" cy="127.47" r="3.04"/>
-                    <circle cx="26.96" cy="103.28" r="3.04"/>
-                    <circle cx="61.80" cy="118.70" r="3.04"/>
-                </g>
-                <g style="fill:#00c000" id="2-Groupe--cologiste-et-Social">
-                    <title>Groupe Écologiste et Social</title>
-                    <circle cx="48.64" cy="111.03" r="3.04"/>
-                    <circle cx="35.47" cy="103.37" r="3.04"/>
-                    <circle cx="96.09" cy="135.22" r="3.04"/>
-                    <circle cx="82.94" cy="127.55" r="3.04"/>
-                    <circle cx="56.61" cy="112.26" r="3.04"/>
-                    <circle cx="70.41" cy="118.76" r="3.04"/>
-                    <circle cx="44.08" cy="103.48" r="3.04"/>
-                    <circle cx="30.91" cy="95.85" r="3.04"/>
-                    <circle cx="104.10" cy="136.46" r="3.04"/>
-                    <circle cx="78.44" cy="120.06" r="3.04"/>
-                    <circle cx="91.61" cy="127.68" r="3.04"/>
-                    <circle cx="39.61" cy="96.02" r="3.04"/>
-                    <circle cx="52.80" cy="103.63" r="3.04"/>
-                    <circle cx="65.98" cy="111.24" r="3.04"/>
-                    <circle cx="60.85" cy="105.06" r="3.04"/>
-                    <circle cx="35.23" cy="88.63" r="3.04"/>
-                    <circle cx="48.43" cy="96.22" r="3.04"/>
-                    <circle cx="87.25" cy="120.26" r="3.04"/>
-                    <circle cx="74.85" cy="111.41" r="3.04"/>
-                    <circle cx="100.46" cy="127.86" r="3.04"/>
-                    <circle cx="44.13" cy="88.89" r="3.04"/>
-                    <circle cx="57.37" cy="96.48" r="3.04"/>
-                    <circle cx="82.98" cy="112.95" r="3.04"/>
-                    <circle cx="70.63" cy="104.06" r="3.04"/>
-                    <circle cx="39.89" cy="81.63" r="3.04"/>
-                    <circle cx="108.59" cy="129.43" r="3.04"/>
-                    <circle cx="96.24" cy="120.54" r="3.04"/>
-                    <circle cx="65.50" cy="98.12" r="3.04"/>
-                    <circle cx="53.17" cy="89.21" r="3.04"/>
-                    <circle cx="49.01" cy="82.01" r="3.04"/>
-                    <circle cx="79.79" cy="104.37" r="3.04"/>
-                    <circle cx="92.11" cy="113.32" r="3.04"/>
-                    <circle cx="62.35" cy="89.60" r="3.04"/>
-                    <circle cx="44.90" cy="74.86" r="3.04"/>
-                    <circle cx="105.47" cy="120.91" r="3.04"/>
-                    <circle cx="75.73" cy="97.19" r="3.04"/>
-                    <circle cx="58.28" cy="82.47" r="3.04"/>
-                    <circle cx="88.02" cy="106.18" r="3.04"/>
-                </g>
-                <g style="fill:#ff8080" id="3-Groupe-Socialiste">
-                    <title>Groupe Socialiste</title>
-                    <circle cx="70.56" cy="91.47" r="3.04"/>
-                    <circle cx="54.24" cy="75.38" r="3.04"/>
-                    <circle cx="101.46" cy="113.80" r="3.04"/>
-                    <circle cx="50.23" cy="68.35" r="3.04"/>
-                    <circle cx="113.74" cy="122.85" r="3.04"/>
-                    <circle cx="67.71" cy="83.02" r="3.04"/>
-                    <circle cx="85.20" cy="97.69" r="3.04"/>
-                    <circle cx="97.48" cy="106.77" r="3.04"/>
-                    <circle cx="63.75" cy="76.01" r="3.04"/>
-                    <circle cx="81.26" cy="90.67" r="3.04"/>
-                    <circle cx="76.01" cy="85.13" r="3.04"/>
-                    <circle cx="59.80" cy="69.04" r="3.04"/>
-                    <circle cx="93.54" cy="99.80" r="3.04"/>
-                    <circle cx="55.87" cy="62.10" r="3.04"/>
-                    <circle cx="111.09" cy="114.45" r="3.04"/>
-                    <circle cx="73.44" cy="76.76" r="3.04"/>
-                    <circle cx="107.21" cy="107.53" r="3.04"/>
-                    <circle cx="91.05" cy="91.40" r="3.04"/>
-                    <circle cx="69.56" cy="69.86" r="3.04"/>
-                    <circle cx="65.68" cy="62.99" r="3.04"/>
-                    <circle cx="81.82" cy="79.13" r="3.04"/>
-                    <circle cx="87.20" cy="84.51" r="3.04"/>
-                    <circle cx="103.34" cy="100.65" r="3.04"/>
-                    <circle cx="119.49" cy="116.80" r="3.04"/>
-                    <circle cx="61.81" cy="56.15" r="3.04"/>
-                    <circle cx="99.49" cy="93.82" r="3.04"/>
-                    <circle cx="79.52" cy="70.83" r="3.04"/>
-                    <circle cx="75.69" cy="64.03" r="3.04"/>
-                    <circle cx="71.86" cy="57.25" r="3.04"/>
-                    <circle cx="117.26" cy="108.52" r="3.04"/>
-                    <circle cx="97.32" cy="85.52" r="3.04"/>
-                    <circle cx="68.04" cy="50.49" r="3.04"/>
-                    <circle cx="87.98" cy="73.48" r="3.04"/>
-                    <circle cx="93.53" cy="78.75" r="3.04"/>
-                    <circle cx="113.46" cy="101.75" r="3.04"/>
-                    <circle cx="109.66" cy="95.01" r="3.04"/>
-                    <circle cx="85.93" cy="65.26" r="3.04"/>
-                    <circle cx="105.86" cy="88.28" r="3.04"/>
-                    <circle cx="82.13" cy="58.54" r="3.04"/>
-                    <circle cx="78.34" cy="51.84" r="3.04"/>
-                    <circle cx="125.79" cy="111.32" r="3.04"/>
-                    <circle cx="74.54" cy="45.14" r="3.04"/>
-                    <circle cx="94.46" cy="68.21" r="3.04"/>
-                    <circle cx="103.98" cy="80.09" r="3.04"/>
-                    <circle cx="100.21" cy="73.41" r="3.04"/>
-                    <circle cx="123.94" cy="103.17" r="3.04"/>
-                    <circle cx="92.65" cy="60.07" r="3.04"/>
-                    <circle cx="88.87" cy="53.42" r="3.04"/>
-                    <circle cx="120.17" cy="96.51" r="3.04"/>
-                    <circle cx="85.08" cy="46.77" r="3.04"/>
-                    <circle cx="116.39" cy="89.86" r="3.04"/>
-                    <circle cx="81.30" cy="40.12" r="3.04"/>
-                    <circle cx="112.61" cy="83.22" r="3.04"/>
-                    <circle cx="101.25" cy="63.33" r="3.04"/>
-                    <circle cx="110.99" cy="75.12" r="3.04"/>
-                    <circle cx="107.22" cy="68.50" r="3.04"/>
-                    <circle cx="132.58" cy="106.46" r="3.04"/>
-                    <circle cx="99.65" cy="55.27" r="3.04"/>
-                    <circle cx="95.86" cy="48.66" r="3.04"/>
-                    <circle cx="92.08" cy="42.05" r="3.04"/>
-                    <circle cx="88.29" cy="35.44" r="3.04"/>
-                    <circle cx="131.08" cy="98.44" r="3.04"/>
-                    <circle cx="127.29" cy="91.84" r="3.04"/>
-                    <circle cx="123.49" cy="85.24" r="3.04"/>
-                    <circle cx="119.70" cy="78.65" r="3.04"/>
-                    <circle cx="108.31" cy="58.86" r="3.04"/>
-                    <circle cx="95.50" cy="31.11" r="3.04"/>
-                    <circle cx="99.31" cy="37.70" r="3.04"/>
-                    <circle cx="103.11" cy="44.29" r="3.04"/>
-                </g>
-                <g style="fill:#e1a5e1" id="4-Groupe-LIOT">
-                    <title>Groupe LIOT</title>
-                    <circle cx="106.92" cy="50.88" r="3.04"/>
-                    <circle cx="114.53" cy="64.06" r="3.04"/>
-                    <circle cx="118.33" cy="70.65" r="3.04"/>
-                    <circle cx="139.81" cy="102.28" r="3.04"/>
-                    <circle cx="115.62" cy="54.82" r="3.04"/>
-                    <circle cx="102.92" cy="27.14" r="3.04"/>
-                    <circle cx="127.10" cy="74.59" r="3.04"/>
-                    <circle cx="106.75" cy="33.73" r="3.04"/>
-                    <circle cx="110.58" cy="40.32" r="3.04"/>
-                    <circle cx="130.93" cy="81.19" r="3.04"/>
-                    <circle cx="114.42" cy="46.91" r="3.04"/>
-                    <circle cx="134.77" cy="87.78" r="3.04"/>
-                    <circle cx="138.61" cy="94.37" r="3.04"/>
-                    <circle cx="122.11" cy="60.09" r="3.04"/>
-                    <circle cx="125.96" cy="66.68" r="3.04"/>
-                    <circle cx="110.53" cy="23.53" r="3.04"/>
-                    <circle cx="123.17" cy="51.22" r="3.04"/>
-                    <circle cx="114.39" cy="30.15" r="3.04"/>
-                    <circle cx="118.26" cy="36.76" r="3.04"/>
-                    <circle cx="122.14" cy="43.38" r="3.04"/>
-                    <circle cx="134.77" cy="71.08" r="3.04"/>
-                    <circle cx="129.92" cy="56.62" r="3.04"/>
-                </g>
-                <g style="fill:#ff9900" id="5-Groupe-Les-D-mocrates">
-                    <title>Groupe Les Démocrates</title>
-                    <circle cx="138.66" cy="77.71" r="3.04"/>
-                    <circle cx="147.40" cy="98.80" r="3.04"/>
-                    <circle cx="133.83" cy="63.25" r="3.04"/>
-                    <circle cx="142.56" cy="84.35" r="3.04"/>
-                    <circle cx="118.30" cy="20.31" r="3.04"/>
-                    <circle cx="122.21" cy="26.96" r="3.04"/>
-                    <circle cx="146.48" cy="90.99" r="3.04"/>
-                    <circle cx="130.91" cy="48.08" r="3.04"/>
-                    <circle cx="126.12" cy="33.62" r="3.04"/>
-                    <circle cx="130.05" cy="40.29" r="3.04"/>
-                    <circle cx="142.68" cy="68.13" r="3.04"/>
-                    <circle cx="137.95" cy="53.66" r="3.04"/>
-                    <circle cx="126.22" cy="17.47" r="3.04"/>
-                    <circle cx="130.17" cy="24.19" r="3.04"/>
-                    <circle cx="141.93" cy="60.37" r="3.04"/>
-                    <circle cx="146.63" cy="74.84" r="3.04"/>
-                    <circle cx="134.14" cy="30.92" r="3.04"/>
-                    <circle cx="138.82" cy="45.40" r="3.04"/>
-                    <circle cx="150.61" cy="81.58" r="3.04"/>
-                    <circle cx="155.28" cy="96.06" r="3.04"/>
-                    <circle cx="138.12" cy="37.66" r="3.04"/>
-                    <circle cx="134.27" cy="15.02" r="3.04"/>
-                    <circle cx="154.62" cy="88.34" r="3.04"/>
-                    <circle cx="138.27" cy="21.82" r="3.04"/>
-                    <circle cx="146.15" cy="51.22" r="3.04"/>
-                    <circle cx="150.77" cy="65.74" r="3.04"/>
-                    <circle cx="142.29" cy="28.65" r="3.04"/>
-                    <circle cx="150.20" cy="58.04" r="3.04"/>
-                    <circle cx="146.88" cy="43.19" r="3.04"/>
-                    <circle cx="154.80" cy="72.59" r="3.04"/>
-                    <circle cx="146.33" cy="35.50" r="3.04"/>
-                    <circle cx="142.44" cy="12.98" r="3.04"/>
-                    <circle cx="158.86" cy="79.48" r="3.04"/>
-                    <circle cx="146.48" cy="19.88" r="3.04"/>
-                    <circle cx="154.49" cy="49.31" r="3.04"/>
-                    <circle cx="163.40" cy="94.09" r="3.04"/>
-                </g>
-                <g style="fill:#ffeb00" id="6-Groupe-Ensemble-pour-la-R-publique">
-                    <title>Groupe Ensemble pour la République</title>
-                    <circle cx="150.56" cy="26.83" r="3.04"/>
-                    <circle cx="162.96" cy="86.43" r="3.04"/>
-                    <circle cx="159.01" cy="63.95" r="3.04"/>
-                    <circle cx="155.06" cy="41.47" r="3.04"/>
-                    <circle cx="150.69" cy="11.33" r="3.04"/>
-                    <circle cx="154.65" cy="33.81" r="3.04"/>
-                    <circle cx="158.62" cy="56.29" r="3.04"/>
-                    <circle cx="154.79" cy="18.37" r="3.04"/>
-                    <circle cx="163.12" cy="70.97" r="3.04"/>
-                    <circle cx="158.91" cy="25.45" r="3.04"/>
-                    <circle cx="162.93" cy="47.95" r="3.04"/>
-                    <circle cx="167.26" cy="78.08" r="3.04"/>
-                    <circle cx="159.01" cy="10.10" r="3.04"/>
-                    <circle cx="163.32" cy="40.23" r="3.04"/>
-                    <circle cx="163.06" cy="32.60" r="3.04"/>
-                    <circle cx="167.37" cy="62.74" r="3.04"/>
-                    <circle cx="163.15" cy="17.28" r="3.04"/>
-                    <circle cx="167.13" cy="55.12" r="3.04"/>
-                    <circle cx="171.66" cy="92.90" r="3.04"/>
-                    <circle cx="171.45" cy="85.28" r="3.04"/>
-                    <circle cx="167.32" cy="24.54" r="3.04"/>
-                    <circle cx="171.53" cy="70.00" r="3.04"/>
-                    <circle cx="167.39" cy="9.27" r="3.04"/>
-                    <circle cx="171.45" cy="47.12" r="3.04"/>
-                    <circle cx="171.65" cy="39.49" r="3.04"/>
-                    <circle cx="171.51" cy="31.87" r="3.04"/>
-                    <circle cx="171.57" cy="16.63" r="3.04"/>
-                    <circle cx="175.74" cy="77.37" r="3.04"/>
-                    <circle cx="175.78" cy="62.14" r="3.04"/>
-                    <circle cx="175.70" cy="54.53" r="3.04"/>
-                    <circle cx="175.77" cy="24.08" r="3.04"/>
-                    <circle cx="175.79" cy="8.86" r="3.04"/>
-                    <circle cx="180.00" cy="92.50" r="3.04"/>
-                    <circle cx="180.00" cy="84.89" r="3.04"/>
-                    <circle cx="180.00" cy="69.67" r="3.04"/>
-                    <circle cx="180.00" cy="46.85" r="3.04"/>
-                    <circle cx="180.00" cy="39.24" r="3.04"/>
-                    <circle cx="180.00" cy="31.63" r="3.04"/>
-                    <circle cx="180.00" cy="16.41" r="3.04"/>
-                    <circle cx="184.21" cy="8.86" r="3.04"/>
-                    <circle cx="184.23" cy="24.08" r="3.04"/>
-                    <circle cx="184.30" cy="54.53" r="3.04"/>
-                    <circle cx="184.22" cy="62.14" r="3.04"/>
-                    <circle cx="184.26" cy="77.37" r="3.04"/>
-                    <circle cx="188.43" cy="16.63" r="3.04"/>
-                    <circle cx="188.49" cy="31.87" r="3.04"/>
-                    <circle cx="188.35" cy="39.49" r="3.04"/>
-                    <circle cx="188.55" cy="47.12" r="3.04"/>
-                    <circle cx="192.61" cy="9.27" r="3.04"/>
-                    <circle cx="188.47" cy="70.00" r="3.04"/>
-                    <circle cx="192.68" cy="24.54" r="3.04"/>
-                    <circle cx="188.55" cy="85.28" r="3.04"/>
-                    <circle cx="188.34" cy="92.90" r="3.04"/>
-                    <circle cx="192.87" cy="55.12" r="3.04"/>
-                    <circle cx="196.85" cy="17.28" r="3.04"/>
-                    <circle cx="192.63" cy="62.74" r="3.04"/>
-                    <circle cx="196.94" cy="32.60" r="3.04"/>
-                    <circle cx="196.68" cy="40.23" r="3.04"/>
-                    <circle cx="200.99" cy="10.10" r="3.04"/>
-                    <circle cx="192.74" cy="78.08" r="3.04"/>
-                    <circle cx="197.07" cy="47.95" r="3.04"/>
-                    <circle cx="201.09" cy="25.45" r="3.04"/>
-                    <circle cx="196.88" cy="70.97" r="3.04"/>
-                    <circle cx="205.21" cy="18.37" r="3.04"/>
-                    <circle cx="201.38" cy="56.29" r="3.04"/>
-                    <circle cx="205.35" cy="33.81" r="3.04"/>
-                    <circle cx="209.31" cy="11.33" r="3.04"/>
-                    <circle cx="204.94" cy="41.47" r="3.04"/>
-                    <circle cx="200.99" cy="63.95" r="3.04"/>
-                    <circle cx="197.04" cy="86.43" r="3.04"/>
-                    <circle cx="209.44" cy="26.83" r="3.04"/>
-                    <circle cx="196.60" cy="94.09" r="3.04"/>
-                    <circle cx="205.51" cy="49.31" r="3.04"/>
-                    <circle cx="213.52" cy="19.88" r="3.04"/>
-                    <circle cx="201.14" cy="79.48" r="3.04"/>
-                    <circle cx="217.56" cy="12.98" r="3.04"/>
-                    <circle cx="213.67" cy="35.50" r="3.04"/>
-                    <circle cx="205.20" cy="72.59" r="3.04"/>
-                    <circle cx="213.12" cy="43.19" r="3.04"/>
-                    <circle cx="209.80" cy="58.04" r="3.04"/>
-                    <circle cx="217.71" cy="28.65" r="3.04"/>
-                    <circle cx="209.23" cy="65.74" r="3.04"/>
-                    <circle cx="213.85" cy="51.22" r="3.04"/>
-                    <circle cx="221.73" cy="21.82" r="3.04"/>
-                    <circle cx="205.38" cy="88.34" r="3.04"/>
-                    <circle cx="225.73" cy="15.02" r="3.04"/>
-                    <circle cx="221.88" cy="37.66" r="3.04"/>
-                    <circle cx="204.72" cy="96.06" r="3.04"/>
-                    <circle cx="209.39" cy="81.58" r="3.04"/>
-                    <circle cx="221.18" cy="45.40" r="3.04"/>
-                    <circle cx="225.86" cy="30.92" r="3.04"/>
-                    <circle cx="213.37" cy="74.84" r="3.04"/>
-                </g>
-                <g style="fill:#0001b8" id="7-Groupe-Horizons">
-                    <title>Groupe Horizons</title>
-                    <circle cx="218.07" cy="60.37" r="3.04"/>
-                    <circle cx="229.83" cy="24.19" r="3.04"/>
-                    <circle cx="233.78" cy="17.47" r="3.04"/>
-                    <circle cx="222.05" cy="53.66" r="3.04"/>
-                    <circle cx="217.32" cy="68.13" r="3.04"/>
-                    <circle cx="229.95" cy="40.29" r="3.04"/>
-                    <circle cx="233.88" cy="33.62" r="3.04"/>
-                    <circle cx="229.09" cy="48.08" r="3.04"/>
-                    <circle cx="213.52" cy="90.99" r="3.04"/>
-                    <circle cx="237.79" cy="26.96" r="3.04"/>
-                    <circle cx="241.70" cy="20.31" r="3.04"/>
-                    <circle cx="217.44" cy="84.35" r="3.04"/>
-                    <circle cx="226.17" cy="63.25" r="3.04"/>
-                    <circle cx="212.60" cy="98.80" r="3.04"/>
-                    <circle cx="221.34" cy="77.71" r="3.04"/>
-                    <circle cx="230.08" cy="56.62" r="3.04"/>
-                    <circle cx="225.23" cy="71.08" r="3.04"/>
-                    <circle cx="237.86" cy="43.38" r="3.04"/>
-                    <circle cx="241.74" cy="36.76" r="3.04"/>
-                    <circle cx="245.61" cy="30.15" r="3.04"/>
-                    <circle cx="236.83" cy="51.22" r="3.04"/>
-                    <circle cx="249.47" cy="23.53" r="3.04"/>
-                    <circle cx="234.04" cy="66.68" r="3.04"/>
-                    <circle cx="237.89" cy="60.09" r="3.04"/>
-                    <circle cx="221.39" cy="94.37" r="3.04"/>
-                    <circle cx="225.23" cy="87.78" r="3.04"/>
-                    <circle cx="245.58" cy="46.91" r="3.04"/>
-                    <circle cx="229.07" cy="81.19" r="3.04"/>
-                    <circle cx="249.42" cy="40.32" r="3.04"/>
-                    <circle cx="253.25" cy="33.73" r="3.04"/>
-                    <circle cx="232.90" cy="74.59" r="3.04"/>
-                    <circle cx="257.08" cy="27.14" r="3.04"/>
-                    <circle cx="244.38" cy="54.82" r="3.04"/>
-                    <circle cx="220.19" cy="102.28" r="3.04"/>
-                </g>
-                <g style="fill:#0066cc" id="8-Groupe-Droite-R-publicaine">
-                    <title>Groupe Droite Républicaine</title>
-                    <circle cx="241.67" cy="70.65" r="3.04"/>
-                    <circle cx="245.47" cy="64.06" r="3.04"/>
-                    <circle cx="253.08" cy="50.88" r="3.04"/>
-                    <circle cx="256.89" cy="44.29" r="3.04"/>
-                    <circle cx="260.69" cy="37.70" r="3.04"/>
-                    <circle cx="264.50" cy="31.11" r="3.04"/>
-                    <circle cx="251.69" cy="58.86" r="3.04"/>
-                    <circle cx="240.30" cy="78.65" r="3.04"/>
-                    <circle cx="236.51" cy="85.24" r="3.04"/>
-                    <circle cx="232.71" cy="91.84" r="3.04"/>
-                    <circle cx="228.92" cy="98.44" r="3.04"/>
-                    <circle cx="271.71" cy="35.44" r="3.04"/>
-                    <circle cx="267.92" cy="42.05" r="3.04"/>
-                    <circle cx="264.14" cy="48.66" r="3.04"/>
-                    <circle cx="260.35" cy="55.27" r="3.04"/>
-                    <circle cx="227.42" cy="106.46" r="3.04"/>
-                    <circle cx="252.78" cy="68.50" r="3.04"/>
-                    <circle cx="249.01" cy="75.12" r="3.04"/>
-                    <circle cx="258.75" cy="63.33" r="3.04"/>
-                    <circle cx="247.39" cy="83.22" r="3.04"/>
-                    <circle cx="278.70" cy="40.12" r="3.04"/>
-                    <circle cx="243.61" cy="89.86" r="3.04"/>
-                    <circle cx="274.92" cy="46.77" r="3.04"/>
-                    <circle cx="239.83" cy="96.51" r="3.04"/>
-                    <circle cx="271.13" cy="53.42" r="3.04"/>
-                    <circle cx="267.35" cy="60.07" r="3.04"/>
-                    <circle cx="236.06" cy="103.17" r="3.04"/>
-                    <circle cx="259.79" cy="73.41" r="3.04"/>
-                    <circle cx="256.02" cy="80.09" r="3.04"/>
-                    <circle cx="265.54" cy="68.21" r="3.04"/>
-                    <circle cx="285.46" cy="45.14" r="3.04"/>
-                    <circle cx="234.21" cy="111.32" r="3.04"/>
-                    <circle cx="281.66" cy="51.84" r="3.04"/>
-                    <circle cx="277.87" cy="58.54" r="3.04"/>
-                    <circle cx="254.14" cy="88.28" r="3.04"/>
-                    <circle cx="274.07" cy="65.26" r="3.04"/>
-                    <circle cx="250.34" cy="95.01" r="3.04"/>
-                    <circle cx="246.54" cy="101.75" r="3.04"/>
-                    <circle cx="266.47" cy="78.75" r="3.04"/>
-                    <circle cx="272.02" cy="73.48" r="3.04"/>
-                    <circle cx="291.96" cy="50.49" r="3.04"/>
-                    <circle cx="262.68" cy="85.52" r="3.04"/>
-                    <circle cx="242.74" cy="108.52" r="3.04"/>
-                    <circle cx="288.14" cy="57.25" r="3.04"/>
-                    <circle cx="284.31" cy="64.03" r="3.04"/>
-                    <circle cx="280.48" cy="70.83" r="3.04"/>
-                    <circle cx="260.51" cy="93.82" r="3.04"/>
-                    <circle cx="298.19" cy="56.15" r="3.04"/>
-                    <circle cx="240.51" cy="116.80" r="3.04"/>
-                    <circle cx="256.66" cy="100.65" r="3.04"/>
-                </g>
-                <g style="fill:#162561" id="9-Groupe-Union-de-l-extr-me-droite">
-                    <title>Groupe Union de l'extrême droite</title>
-                    <circle cx="272.80" cy="84.51" r="3.04"/>
-                    <circle cx="278.18" cy="79.13" r="3.04"/>
-                    <circle cx="294.32" cy="62.99" r="3.04"/>
-                    <circle cx="290.44" cy="69.86" r="3.04"/>
-                    <circle cx="268.95" cy="91.40" r="3.04"/>
-                    <circle cx="252.79" cy="107.53" r="3.04"/>
-                    <circle cx="286.56" cy="76.76" r="3.04"/>
-                    <circle cx="248.91" cy="114.45" r="3.04"/>
-                    <circle cx="304.13" cy="62.10" r="3.04"/>
-                    <circle cx="266.46" cy="99.80" r="3.04"/>
-                    <circle cx="300.20" cy="69.04" r="3.04"/>
-                    <circle cx="283.99" cy="85.13" r="3.04"/>
-                    <circle cx="278.74" cy="90.67" r="3.04"/>
-                    <circle cx="296.25" cy="76.01" r="3.04"/>
-                    <circle cx="262.52" cy="106.77" r="3.04"/>
-                    <circle cx="274.80" cy="97.69" r="3.04"/>
-                </g>
-                <g style="fill:#0d378a" id="10-Groupe-Rassemblement-national">
-                    <title>Groupe Rassemblement national</title>
-                    <circle cx="292.29" cy="83.02" r="3.04"/>
-                    <circle cx="246.26" cy="122.85" r="3.04"/>
-                    <circle cx="309.77" cy="68.35" r="3.04"/>
-                    <circle cx="258.54" cy="113.80" r="3.04"/>
-                    <circle cx="305.76" cy="75.38" r="3.04"/>
-                    <circle cx="289.44" cy="91.47" r="3.04"/>
-                    <circle cx="271.98" cy="106.18" r="3.04"/>
-                    <circle cx="301.72" cy="82.47" r="3.04"/>
-                    <circle cx="284.27" cy="97.19" r="3.04"/>
-                    <circle cx="254.53" cy="120.91" r="3.04"/>
-                    <circle cx="315.10" cy="74.86" r="3.04"/>
-                    <circle cx="297.65" cy="89.60" r="3.04"/>
-                    <circle cx="267.89" cy="113.32" r="3.04"/>
-                    <circle cx="280.21" cy="104.37" r="3.04"/>
-                    <circle cx="310.99" cy="82.01" r="3.04"/>
-                    <circle cx="306.83" cy="89.21" r="3.04"/>
-                    <circle cx="294.50" cy="98.12" r="3.04"/>
-                    <circle cx="263.76" cy="120.54" r="3.04"/>
-                    <circle cx="251.41" cy="129.43" r="3.04"/>
-                    <circle cx="320.11" cy="81.63" r="3.04"/>
-                    <circle cx="289.37" cy="104.06" r="3.04"/>
-                    <circle cx="277.02" cy="112.95" r="3.04"/>
-                    <circle cx="302.63" cy="96.48" r="3.04"/>
-                    <circle cx="315.87" cy="88.89" r="3.04"/>
-                    <circle cx="259.54" cy="127.86" r="3.04"/>
-                    <circle cx="285.15" cy="111.41" r="3.04"/>
-                    <circle cx="272.75" cy="120.26" r="3.04"/>
-                    <circle cx="311.57" cy="96.22" r="3.04"/>
-                    <circle cx="324.77" cy="88.63" r="3.04"/>
-                    <circle cx="299.15" cy="105.06" r="3.04"/>
-                    <circle cx="294.02" cy="111.24" r="3.04"/>
-                    <circle cx="307.20" cy="103.63" r="3.04"/>
-                    <circle cx="320.39" cy="96.02" r="3.04"/>
-                    <circle cx="268.39" cy="127.68" r="3.04"/>
-                    <circle cx="281.56" cy="120.06" r="3.04"/>
-                    <circle cx="255.90" cy="136.46" r="3.04"/>
-                    <circle cx="329.09" cy="95.85" r="3.04"/>
-                    <circle cx="315.92" cy="103.48" r="3.04"/>
-                    <circle cx="289.59" cy="118.76" r="3.04"/>
-                    <circle cx="303.39" cy="112.26" r="3.04"/>
-                    <circle cx="277.06" cy="127.55" r="3.04"/>
-                    <circle cx="263.91" cy="135.22" r="3.04"/>
-                    <circle cx="324.53" cy="103.37" r="3.04"/>
-                    <circle cx="311.36" cy="111.03" r="3.04"/>
-                    <circle cx="298.20" cy="118.70" r="3.04"/>
-                    <circle cx="333.04" cy="103.28" r="3.04"/>
-                    <circle cx="285.59" cy="127.47" r="3.04"/>
-                    <circle cx="319.87" cy="110.97" r="3.04"/>
-                    <circle cx="272.42" cy="135.18" r="3.04"/>
-                    <circle cx="307.19" cy="119.71" r="3.04"/>
-                    <circle cx="293.53" cy="126.40" r="3.04"/>
-                    <circle cx="328.29" cy="110.92" r="3.04"/>
-                    <circle cx="315.09" cy="118.66" r="3.04"/>
-                    <circle cx="259.70" cy="143.90" r="3.04"/>
-                    <circle cx="280.80" cy="135.16" r="3.04"/>
-                    <circle cx="336.63" cy="110.90" r="3.04"/>
-                    <circle cx="301.90" cy="126.42" r="3.04"/>
-                    <circle cx="323.41" cy="118.65" r="3.04"/>
-                    <circle cx="267.59" cy="142.95" r="3.04"/>
-                    <circle cx="289.08" cy="135.16" r="3.04"/>
-                    <circle cx="331.65" cy="118.66" r="3.04"/>
-                    <circle cx="310.55" cy="127.36" r="3.04"/>
-                    <circle cx="296.93" cy="134.29" r="3.04"/>
-                    <circle cx="318.38" cy="126.48" r="3.04"/>
-                    <circle cx="275.82" cy="142.98" r="3.04"/>
-                    <circle cx="339.84" cy="118.68" r="3.04"/>
-                    <circle cx="326.52" cy="126.52" r="3.04"/>
-                    <circle cx="305.09" cy="134.36" r="3.04"/>
-                    <circle cx="283.95" cy="143.03" r="3.04"/>
-                    <circle cx="334.61" cy="126.56" r="3.04"/>
-                    <circle cx="262.78" cy="151.66" r="3.04"/>
-                    <circle cx="313.44" cy="135.20" r="3.04"/>
-                    <circle cx="292.00" cy="143.07" r="3.04"/>
-                    <circle cx="342.66" cy="126.60" r="3.04"/>
-                    <circle cx="321.22" cy="134.49" r="3.04"/>
-                    <circle cx="270.57" cy="150.97" r="3.04"/>
-                    <circle cx="299.78" cy="142.40" r="3.04"/>
-                    <circle cx="329.21" cy="134.55" r="3.04"/>
-                    <circle cx="278.55" cy="151.05" r="3.04"/>
-                    <circle cx="307.76" cy="142.49" r="3.04"/>
-                    <circle cx="337.16" cy="134.61" r="3.04"/>
-                    <circle cx="345.08" cy="134.66" r="3.04"/>
-                    <circle cx="286.48" cy="151.11" r="3.04"/>
-                    <circle cx="315.86" cy="143.20" r="3.04"/>
-                    <circle cx="323.59" cy="142.64" r="3.04"/>
-                    <circle cx="294.36" cy="151.17" r="3.04"/>
-                    <circle cx="331.45" cy="142.71" r="3.04"/>
-                    <circle cx="302.07" cy="150.68" r="3.04"/>
-                    <circle cx="265.11" cy="159.68" r="3.04"/>
-                    <circle cx="339.29" cy="142.77" r="3.04"/>
-                    <circle cx="309.90" cy="150.77" r="3.04"/>
-                    <circle cx="272.81" cy="159.23" r="3.04"/>
-                    <circle cx="347.11" cy="142.83" r="3.04"/>
-                    <circle cx="317.81" cy="151.32" r="3.04"/>
-                    <circle cx="280.61" cy="159.31" r="3.04"/>
-                    <circle cx="325.49" cy="150.91" r="3.04"/>
-                    <circle cx="288.38" cy="159.37" r="3.04"/>
-                    <circle cx="333.25" cy="150.98" r="3.04"/>
-                    <circle cx="341.00" cy="151.03" r="3.04"/>
-                    <circle cx="296.13" cy="159.42" r="3.04"/>
-                    <circle cx="348.74" cy="151.09" r="3.04"/>
-                    <circle cx="303.79" cy="159.10" r="3.04"/>
-                    <circle cx="311.51" cy="159.17" r="3.04"/>
-                    <circle cx="319.27" cy="159.55" r="3.04"/>
-                    <circle cx="326.92" cy="159.28" r="3.04"/>
-                    <circle cx="266.66" cy="167.88" r="3.04"/>
-                    <circle cx="334.60" cy="159.33" r="3.04"/>
-                    <circle cx="274.31" cy="167.67" r="3.04"/>
-                    <circle cx="342.28" cy="159.37" r="3.04"/>
-                    <circle cx="349.95" cy="159.41" r="3.04"/>
-                    <circle cx="281.98" cy="167.71" r="3.04"/>
-                    <circle cx="289.64" cy="167.75" r="3.04"/>
-                    <circle cx="297.30" cy="167.78" r="3.04"/>
-                    <circle cx="304.93" cy="167.62" r="3.04"/>
-                    <circle cx="312.58" cy="167.66" r="3.04"/>
-                    <circle cx="320.24" cy="167.85" r="3.04"/>
-                    <circle cx="327.86" cy="167.72" r="3.04"/>
-                    <circle cx="335.50" cy="167.74" r="3.04"/>
-                    <circle cx="343.13" cy="167.77" r="3.04"/>
-                    <circle cx="350.76" cy="167.79" r="3.04"/>
-                    <circle cx="267.42" cy="176.20" r="3.04"/>
-                    <circle cx="275.03" cy="176.20" r="3.04"/>
-                    <circle cx="282.65" cy="176.20" r="3.04"/>
-                </g>
-                <g style="fill:#dddddd" id="11-Ind-pendants">
-                    <title>Indépendants</title>
-                    <circle cx="290.26" cy="176.20" r="3.04"/>
-                    <circle cx="297.87" cy="176.20" r="3.04"/>
-                    <circle cx="305.49" cy="176.20" r="3.04"/>
-                    <circle cx="313.10" cy="176.20" r="3.04"/>
-                    <circle cx="320.71" cy="176.20" r="3.04"/>
-                    <circle cx="328.32" cy="176.20" r="3.04"/>
-                    <circle cx="335.93" cy="176.20" r="3.04"/>
-                    <circle cx="343.54" cy="176.20" r="3.04"/>
-                    <circle cx="351.15" cy="176.20" r="3.04"/>
-                </g>
-            </svg>
+          <!-- IMPORTANT :
+               - Place un fichier hemicycle.svg à côté de index.html
+               - Mets le CSS hover DANS hemicycle.svg (voir plus bas)
+          -->
+          <object class="hemicycle-svg-object"
+                  data="./hemicycle.svg"
+                  type="image/svg+xml"
+                  aria-label="Hémicycle">
+            Le navigateur ne supporte pas l’affichage SVG via object.
+          </object>
         </div>
 
-        // ==================== CHARGEMENT DES DONNÉES ====================
-        async function loadDeputesData() {
-                deputesData = generateMockDeputes();
-        }
+        <div class="legend" id="legend"></div>
 
-        function generateMockDeputes() {
-            const prenoms = ['Jean', 'Marie', 'Pierre', 'Sophie', 'Luc', 'Anne', 'François', 'Claire', 'Marc', 'Julie'];
-            const noms = ['Martin', 'Bernard', 'Dubois', 'Thomas', 'Robert', 'Petit', 'Durand', 'Leroy', 'Moreau', 'Simon'];
+        <div class="stats" id="stats-container" style="display:none;">
+          <div class="stat-box">
+            <div class="stat-number" id="stat-votes">0</div>
+            <div class="stat-label">Votes analysés</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number" id="stat-pour">0</div>
+            <div class="stat-label">Pour</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-number" id="stat-contre">0</div>
+            <div class="stat-label">Contre</div>
+          </div>
+        </div>
+      </div>
 
-            return Array.from({ length: 100 }, (_, i) => {
-                const prenom = prenoms[Math.floor(Math.random() * prenoms.length)];
-                const nom = noms[Math.floor(Math.random() * noms.length)];
-                const groupe = groupesPolitiques[Math.floor(i / (100 / groupesPolitiques.length))];
+      <!-- Panneau Droit -->
+      <div class="panel">
+        <h2>Conversation avec l'IA</h2>
 
-                return {
-                    id: `DEP${i}`,
-                    nom: `${prenom} ${nom}`,
-                    groupe: groupe.code,
-                    groupeNom: groupe.nom,
-                    circonscription: `${Math.floor(Math.random() * 18) + 1}ère circonscription`,
-                    photo: `https://i.pravatar.cc/200?img=${i}`,
-                    votes: generateMockVotes()
-                };
-            });
-        }
+        <div id="loading-status">Chargement du modèle WebGPU...</div>
 
-        function generateMockVotes() {
-            const textes = [
-                "Loi sur la transition énergétique",
-                "Réforme des retraites 2025",
-                "Budget de l'éducation nationale",
-                "Loi sur le pouvoir d'achat",
-                "Réforme de l'assurance chômage",
-                "Loi sur la transition écologique",
-                "Budget de la défense",
-                "Loi sur l'immigration",
-                "Réforme de la santé",
-                "Loi sur la sécurité"
-            ];
+        <div class="depute-card" id="selected-depute">
+          <img class="depute-photo" id="depute-img" src="" alt="Photo" />
+          <div class="depute-info">
+            <h3 id="depute-name">Nom du Député</h3>
+            <p id="depute-group">Groupe Politique</p>
+            <p id="depute-circum">Circonscription</p>
+          </div>
+        </div>
 
-            const positions = ['Pour', 'Contre', 'Abstention'];
+        <div id="messages"></div>
 
-            return textes.slice(0, 5 + Math.floor(Math.random() * 5)).map(texte => ({
-                texte,
-                vote: positions[Math.floor(Math.random() * positions.length)],
-                date: `2024-${String(Math.floor(Math.random() * 12) + 1).padStart(2, '0')}-${String(Math.floor(Math.random() * 28) + 1).padStart(2, '0')}`
-            }));
-        }
+        <textarea id="user-input" placeholder="Posez votre question sur les votes de ce député..." rows="3" disabled></textarea>
+        <button id="send-btn" disabled>Envoyer</button>
 
-        // ==================== INITIALISATION IA ====================
-        async function initAI() {
-            const status = document.getElementById('loading-status');
-            try {
-                status.textContent = '⏳ Téléchargement du modèle Mistral ONNX (peut prendre 2-5 min)...';
+        <div class="loader" id="ai-loader">L'IA réfléchit…</div>
+      </div>
+    </div>
 
-                // Note: Mistral-3B-ONNX n'est pas encore dans xenova
-                // Utilisation d'un modèle compatible WebGPU en attendant
-                generator = await pipeline(
-                    'text-generation',
-                    'onnx-community/Llama-3.2-1B-Instruct',
-                    { 
-                        device: 'webgpu',
-                        dtype: 'q4'
-                    }
-                );
+    <footer>
+      <p>
+        Données :
+        <a href="https://data.assemblee-nationale.fr" target="_blank" rel="noopener noreferrer">Assemblée Nationale Open Data</a>
+        — Modèle :
+        <a href="https://huggingface.co/" target="_blank" rel="noopener noreferrer">Hugging Face</a>
+      </p>
+    </footer>
+  </div>
 
-                status.textContent = '✅ IA Prête ! Sélectionnez un député pour commencer.';
-                status.className = 'ready';
-                document.getElementById('send-btn').disabled = false;
-                document.getElementById('user-input').disabled = false;
+  <!-- SCRIPT : uniquement du JS -->
+  <script type="module">
+    import * as transformers from './js/transformers.min.js';
+    const { pipeline, env } = transformers;
 
-            } catch (error) {
-                status.textContent = '❌ Erreur WebGPU: ' + error.message + ' (Utilisez Chrome/Edge 113+)';
-                status.className = 'error';
-                console.error('Erreur WebGPU:', error);
-            }
-        }
+    // Configuration WebGPU
+    env.allowLocalModels = false;
+    env.useBrowserCache = true;
 
-        // ==================== SÉLECTION DÉPUTÉ ====================
-        function selectRandomDepute(groupeCode) {
-            const deputes = deputesData.filter(d => d.groupe === groupeCode);
-            if (deputes.length === 0) return;
+    // Données globales
+    let generator;
+    let currentDepute = null;
+    let deputesData = [];
 
-            const depute = deputes[Math.floor(Math.random() * deputes.length)];
-            selectDepute(depute);
-        }
+    // Groupes politiques (pour la légende + démos)
+    const groupesPolitiques = [
+      { code: 'GDR', nom: 'GDR', couleur: '#dd0000', seats: 17 },
+      { code: 'LFI', nom: 'La France Insoumise', couleur: '#cc2443', seats: 75 },
+      { code: 'ECO', nom: 'Écologistes', couleur: '#00c000', seats: 35 },
+      { code: 'SOC', nom: 'Socialistes', couleur: '#ff8080', seats: 65 },
+      { code: 'LIOT', nom: 'LIOT', couleur: '#e1a5e1', seats: 45 },
+      { code: 'DEM', nom: 'Les Démocrates', couleur: '#ff9900', seats: 35 },
+      { code: 'EPR', nom: 'Ensemble', couleur: '#ffeb00', seats: 145 },
+      { code: 'HOR', nom: 'Horizons', couleur: '#0001b8', seats: 35 },
+      { code: 'LR',  nom: 'Droite Républicaine', couleur: '#0066cc', seats: 62 },
+      { code: 'UED', nom: "Union extrême droite", couleur: '#162561', seats: 16 },
+      { code: 'RN',  nom: 'Rassemblement National', couleur: '#0d378a', seats: 88 },
+      { code: 'NI',  nom: 'Indépendants', couleur: '#dddddd', seats: 9 }
+    ];
 
-        function selectDepute(depute) {
-            currentDepute = depute;
+    function renderLegend(){
+      const legend = document.getElementById('legend');
+      legend.innerHTML = '';
 
-            const card = document.getElementById('selected-depute');
-            card.classList.add('active');
+      groupesPolitiques.forEach(g => {
+        const item = document.createElement('div');
+        item.className = 'legend-item';
+        item.innerHTML = `
+          <div class="legend-color" style="background-color:${g.couleur}"></div>
+          <span>${g.nom} (${g.seats})</span>
+        `;
+        // Click sur la légende = sélection aléatoire dans le groupe (plus simple que click sur SVG)
+        item.addEventListener('click', () => selectRandomDepute(g.code));
+        legend.appendChild(item);
+      });
+    }
 
-            document.getElementById('depute-name').textContent = depute.nom;
-            document.getElementById('depute-group').textContent = depute.groupeNom;
-            document.getElementById('depute-circum').textContent = depute.circonscription;
-            document.getElementById('depute-img').src = depute.photo;
+    async function loadDeputesData(){
+      // Version simple : on garde tes données de démo (tu peux remettre ton fetch API si tu veux)
+      deputesData = generateMockDeputes();
+    }
 
-            // Afficher les stats
-            document.getElementById('stats-container').style.display = 'grid';
-            document.getElementById('stat-votes').textContent = depute.votes.length;
-            document.getElementById('stat-pour').textContent = depute.votes.filter(v => v.vote === 'Pour').length;
-            document.getElementById('stat-contre').textContent = depute.votes.filter(v => v.vote === 'Contre').length;
+    function generateMockDeputes(){
+      const prenoms = ['Jean','Marie','Pierre','Sophie','Luc','Anne','François','Claire','Marc','Julie'];
+      const noms = ['Martin','Bernard','Dubois','Thomas','Robert','Petit','Durand','Leroy','Moreau','Simon'];
 
-            addMessage('system', `Vous discutez maintenant avec les données de vote de ${depute.nom}.`);
-        }
+      // Répartir arbitrairement 120 députés de démo
+      const groupes = groupesPolitiques.map(g => g.code);
 
-        // ==================== RECHERCHE ====================
-        document.getElementById('search-input').addEventListener('input', (e) => {
-            const query = e.target.value.toLowerCase();
-            if (query.length < 2) return;
+      return Array.from({ length: 120 }, (_, i) => {
+        const prenom = prenoms[Math.floor(Math.random() * prenoms.length)];
+        const nom = noms[Math.floor(Math.random() * noms.length)];
+        const groupe = groupes[i % groupes.length];
 
-            const results = deputesData.filter(d => 
-                d.nom.toLowerCase().includes(query) ||
-                d.groupeNom.toLowerCase().includes(query) ||
-                d.circonscription.toLowerCase().includes(query)
-            );
+        return {
+          id: `DEP${i}`,
+          nom: `${prenom} ${nom}`,
+          groupe,
+          groupeNom: (groupesPolitiques.find(g => g.code === groupe)?.nom) || groupe,
+          circonscription: `${Math.floor(Math.random() * 18) + 1}e circonscription`,
+          photo: `https://i.pravatar.cc/200?img=${(i % 70) + 1}`,
+          votes: generateMockVotes()
+        };
+      });
+    }
 
-            if (results.length > 0) {
-                selectDepute(results[0]);
-            }
+    function generateMockVotes(){
+      const textes = [
+        'Loi sur la transition énergétique',
+        'Réforme des retraites 2025',
+        "Budget de l'éducation nationale",
+        "Loi sur le pouvoir d'achat",
+        "Réforme de l'assurance chômage",
+        "Budget de la défense",
+        "Loi sur l'immigration"
+      ];
+      const positions = ['Pour', 'Contre', 'Abstention'];
+
+      const n = 4 + Math.floor(Math.random() * 4);
+      return Array.from({ length: n }, () => ({
+        texte: textes[Math.floor(Math.random() * textes.length)],
+        vote: positions[Math.floor(Math.random() * positions.length)],
+        date: `2024-${String(Math.floor(Math.random()*12)+1).padStart(2,'0')}-${String(Math.floor(Math.random()*28)+1).padStart(2,'0')}`
+      }));
+    }
+
+    function selectRandomDepute(groupeCode){
+      const deputes = deputesData.filter(d => d.groupe === groupeCode);
+      if (!deputes.length) return;
+      const d = deputes[Math.floor(Math.random() * deputes.length)];
+      selectDepute(d);
+    }
+
+    function selectDepute(depute){
+      currentDepute = depute;
+
+      const card = document.getElementById('selected-depute');
+      card.classList.add('active');
+
+      document.getElementById('depute-name').textContent = depute.nom;
+      document.getElementById('depute-group').textContent = depute.groupeNom;
+      document.getElementById('depute-circum').textContent = depute.circonscription;
+      document.getElementById('depute-img').src = depute.photo;
+
+      // Stats
+      document.getElementById('stats-container').style.display = 'grid';
+      document.getElementById('stat-votes').textContent = depute.votes.length;
+      document.getElementById('stat-pour').textContent = depute.votes.filter(v => v.vote === 'Pour').length;
+      document.getElementById('stat-contre').textContent = depute.votes.filter(v => v.vote === 'Contre').length;
+
+      addMessage('system', `Vous discutez maintenant avec les données de vote de ${depute.nom}.`);
+    }
+
+    async function initAI(){
+      const status = document.getElementById('loading-status');
+
+      try{
+        status.textContent = "Téléchargement du modèle WebGPU (cela peut prendre un moment)…";
+
+        // Modèle de démo compatible WebGPU (adapter si besoin)
+        generator = await pipeline('text-generation', 'onnx-community/Llama-3.2-1B-Instruct', {
+          device: 'webgpu',
+          dtype: 'q4'
         });
 
-        // ==================== CHAT IA ====================
-        document.getElementById('send-btn').addEventListener('click', async () => {
-            if (!currentDepute) {
-                addMessage('system', "Veuillez d'abord sélectionner un député.");
-                return;
-            }
+        status.textContent = "IA prête ! Sélectionnez un député (via la légende ou la recherche).";
+        status.className = 'ready';
 
-            const input = document.getElementById('user-input');
-            const question = input.value.trim();
-            if (!question) return;
+        document.getElementById('send-btn').disabled = false;
+        document.getElementById('user-input').disabled = false;
+      }catch(err){
+        status.textContent = `Erreur WebGPU : ${err?.message || err}`;
+        status.className = 'error';
+        console.error(err);
+      }
+    }
 
-            addMessage('user', question);
-            input.value = '';
+    function addMessage(type, text){
+      const messagesDiv = document.getElementById('messages');
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `message ${type}`;
 
-            const loader = document.getElementById('ai-loader');
-            loader.classList.add('active');
+      const label = (type === 'user') ? 'Vous' : (type === 'ai') ? 'IA' : 'Système';
+      messageDiv.innerHTML = `<strong>${label}</strong>${escapeHtml(text)}`;
 
-            try {
-                // Construction du contexte RAG
-                const votesContext = currentDepute.votes.map(v => 
-                    `- ${v.date}: "${v.texte}" → ${v.vote}`
-                ).join('\n');
+      messagesDiv.appendChild(messageDiv);
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
 
-                const systemPrompt = `Tu es un assistant politique expert. Tu dois répondre UNIQUEMENT en te basant sur l'historique de vote ci-dessous.
+    function escapeHtml(str){
+      return String(str)
+        .replaceAll('&','&amp;')
+        .replaceAll('<','&lt;')
+        .replaceAll('>','&gt;');
+    }
 
-Député: ${currentDepute.nom} (${currentDepute.groupeNom})
-Circonscription: ${currentDepute.circonscription}
+    function setupSearch(){
+      const input = document.getElementById('search-input');
+      input.addEventListener('input', (e) => {
+        const q = e.target.value.trim().toLowerCase();
+        if (q.length < 2) return;
 
-Votes enregistrés:
-${votesContext}
+        const results = deputesData.filter(d =>
+          d.nom.toLowerCase().includes(q) ||
+          d.groupeNom.toLowerCase().includes(q) ||
+          d.circonscription.toLowerCase().includes(q)
+        );
 
+        if (results.length) selectDepute(results[0]);
+      });
+    }
 
-Réponds de manière factuelle et concise.`;
+    function setupChat(){
+      const sendBtn = document.getElementById('send-btn');
+      const input = document.getElementById('user-input');
+      const loader = document.getElementById('ai-loader');
 
-                const messages = [
-                    { role: 'system', content: systemPrompt },
-                    { role: 'user', content: question }
-                ];
-
-                const output = await generator(messages, {
-                    max_new_tokens: 200,
-                    temperature: 0.7,
-                    do_sample: true,
-                    top_p: 0.9
-                });
-
-                const answer = output[0].generated_text[output[0].generated_text.length - 1].content;
-                addMessage('ai', answer);
-
-            } catch (error) {
-                addMessage('system', '❌ Erreur: ' + error.message);
-                console.error(error);
-            } finally {
-                loader.classList.remove('active');
-            }
-        });
-
-        // Touche Entrée pour envoyer
-        document.getElementById('user-input').addEventListener('keypress', (e) => {
-            if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                document.getElementById('send-btn').click();
-            }
-        });
-
-        function addMessage(type, text) {
-            const messagesDiv = document.getElementById('messages');
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `message ${type}`;
-
-            const label = {
-                'user': 'Vous',
-                'ai': '🤖 IA',
-                'system': '📢 Système'
-            }[type];
-
-            messageDiv.innerHTML = `<strong>${label}</strong>${text}`;
-            messagesDiv.appendChild(messageDiv);
-            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+      sendBtn.addEventListener('click', async () => {
+        if (!currentDepute){
+          addMessage('system', "Veuillez d'abord sélectionner un député.");
+          return;
         }
 
-        // ==================== INITIALISATION ====================
-        async function init() {
-            await loadDeputesData();
-            await initAI();
-        }
+        const question = input.value.trim();
+        if (!question) return;
 
-        init();
-    </script>
+        addMessage('user', question);
+        input.value = '';
+        loader.classList.add('active');
+
+        try{
+          const votesContext = currentDepute.votes
+            .map(v => `- ${v.date} : ${v.texte} → ${v.vote}`)
+            .join('\n');
+
+          const systemPrompt =
+            "Tu es un assistant politique expert. Tu dois répondre uniquement à partir de l'historique de vote ci-dessous.\n\n" +
+            `Député: ${currentDepute.nom}\nGroupe: ${currentDepute.groupeNom}\nCirconscription: ${currentDepute.circonscription}\n\n` +
+            `Votes:\n${votesContext}\n\n` +
+            "Réponds de manière factuelle et concise.";
+
+          const messages = [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: question }
+          ];
+
+          const out = await generator(messages, {
+            max_new_tokens: 200,
+            temperature: 0.7,
+            do_sample: true,
+            top_p: 0.9
+          });
+
+          const answer = out?.[0]?.generated_text?.at(-1)?.content || "(Réponse vide)";
+          addMessage('ai', answer);
+        }catch(err){
+          addMessage('system', `Erreur: ${err?.message || err}`);
+          console.error(err);
+        }finally{
+          loader.classList.remove('active');
+        }
+      });
+
+      input.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey){
+          e.preventDefault();
+          sendBtn.click();
+        }
+      });
+    }
+
+    async function init(){
+      renderLegend();
+      setupSearch();
+      setupChat();
+
+      await loadDeputesData();
+      await initAI();
+    }
+
+    init();
+  </script>
 </body>
 </html>
