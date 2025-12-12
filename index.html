@@ -459,12 +459,12 @@
       }
     
       // 2) (Optionnel) Vérifier le content-type
-      //const ct = r.headers.get('content-type') || '';
-      //if (!ct.includes('application/json')) {
-        //const txt = await r.text(); // pareil: on veut voir si c'est du HTML [web:787]
-        //const head = txt.slice(0, 60);
-        //throw new Error("Pas du JSON (" + ct + ") sur " + url + ". Début: " + head);
-      //}
+      const ct = r.headers.get('content-type') || '';
+      if (!ct.includes('application/json')) {
+        const txt = await r.text(); // pareil: on veut voir si c'est du HTML [web:787]
+        const head = txt.slice(0, 60);
+        throw new Error("Pas du JSON (" + ct + ") sur " + url + ". Début: " + head);
+      }
     
       // 3) Parser seulement si tout semble OK
       return r.json(); // parse JSON [web:788]
