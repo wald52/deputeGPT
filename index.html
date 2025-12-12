@@ -494,9 +494,21 @@
       card.classList.add('active');
 
       document.getElementById('depute-name').textContent = `${depute.prenom} ${depute.nom}`;
-      document.getElementById('depute-group').textContent = depute.groupeNom;
-      document.getElementById('depute-circum').textContent = depute.circonscription;
-      document.getElementById('depute-img').src = depute.photo;
+      document.getElementById('depute-group').textContent = depute.groupe || depute.groupeNom;
+      const circoTexte = depute.departementNom ? `${depute.departementNom} (${depute.circo})` : depute.circonscription;
+      document.getElementById('depute-circum').textContent = circoTexte;
+            // 2. GESTION PHOTO (C'est ici qu'on change tout)
+      // ---------------------------------------------------------
+      const idNum = depute.id.replace('PA', '');
+      const photoUrl = `https://www2.assemblee-nationale.fr/static/tribun/17/photos/${idNum}.jpg`;
+
+      const imgEl = document.getElementById('depute-img');
+      imgEl.src = photoUrl;
+      // Si l'image charge mal, on met une image par défaut
+      imgEl.onerror = () => { 
+        imgEl.src = 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'; 
+      };
+      // ---------------------------------------------------------
 
       // Stats
       document.getElementById('stats-container').style.display = 'grid';
@@ -504,7 +516,7 @@
       document.getElementById('stat-pour').textContent = depute.votes.filter(v => v.vote === 'Pour').length;
       document.getElementById('stat-contre').textContent = depute.votes.filter(v => v.vote === 'Contre').length;
 
-      addMessage('system', `Vous discutez maintenant avec les données de vote de ${depute.nom}.`);
+      addMessage('system', `Vous discutez maintenant avec les données de vote de ${depute.prenom} ${depute.nom}.`);
     }
 
 function fmtTime(seconds) {
