@@ -449,10 +449,30 @@
       });
     }
 
+    async function fetchJsonDebug(url, fetchOptions = {}) {
+      const r = await fetch(url, fetchOptions);
+    
+      // 1) Vérifier le code HTTP (404, 500, etc.)
+      if (!r.ok) {
+        const txt = await r.text(); // lire le body en texte pour voir ce que c'est [web:787]
+        throw new Error(`HTTP ${r.status} sur ${url}. Début de réponse: ${txt.slice(0, 60)}`);
+      }
+    
+      // 2) (Optionnel) Vérifier le content-type
+      const ct = r.headers.get('content-type') || '';
+      if (!ct.includes('application/json')) {
+        const txt = await r.text(); // pareil: on veut voir si c'est du HTML [web:787]
+        throw new Error(`Pas du JSON (${ct}) sur ${url}. Début: ${txt.slice(0, 60)}`);
+      }
+    
+      // 3) Parser seulement si tout semble OK
+      return r.json(); // parse JSON [web:788]
+    }
+
     async function loadDeputesData() {
-      const latest = await fetch("/data/deputes_actifs/latest.json", { cache: "no-store" }).then(r => r.json());
-      const url = `/data/deputes_actifs/${latest.version}.json`;
-      deputesData = await fetch(url, { cache: "force-cache" }).then(r => r.json());
+      const latest = await fetchJsonDebug("data/deputes_actifs/latest.json", { cache: "no-store" });
+      const url = `data/deputes_actifs/${latest.version}.json`;
+      deputesData = await fetchJsonDebug(url, { cache: "force-cache" });
     }
 
     function selectRandomDepute(groupeCode){
