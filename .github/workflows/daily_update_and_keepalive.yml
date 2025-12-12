@@ -29,7 +29,7 @@ jobs:
           python-version: "3.12"
 
       - name: Update deputes_actifs
-        run: python scripts/update_deputes_actifs.py
+        run: python -u scripts/update_deputes_actifs.py
 
       - name: Commit data if changed (main)
         id: commit_main
