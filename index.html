@@ -585,13 +585,13 @@
       });
     }
 
-    async function init(){
+    async function init() {
       renderLegend();
       setupSearch();
       setupChat();
 
       await loadDeputesData();
-      await initAI();
+      setupModelLoadUI();   // <-- nouveau
     }
 
     init();
