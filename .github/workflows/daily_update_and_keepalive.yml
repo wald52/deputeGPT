@@ -28,6 +28,12 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Debug files
+        run: |
+          pwd
+          ls -la
+          ls -la scripts || true
+
       - name: Update deputes_actifs
         run: python -u scripts/update_deputes_actifs.py
 
