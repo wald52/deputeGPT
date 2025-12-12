@@ -584,30 +584,6 @@ async function initAI() {
   }
 }
 
-    async function initAI(){
-      const status = document.getElementById('loading-status');
-
-      try{
-        status.textContent = "Téléchargement du modèle WebGPU (cela peut prendre un moment)…";
-
-        // Modèle de démo compatible WebGPU (adapter si besoin)
-        generator = await pipeline('text-generation', 'onnx-community/Llama-3.2-1B-Instruct', {
-          device: 'webgpu',
-          dtype: 'q4'
-        });
-
-        status.textContent = "IA prête ! Sélectionnez un député (via la légende ou la recherche).";
-        status.className = 'ready';
-
-        document.getElementById('send-btn').disabled = false;
-        document.getElementById('user-input').disabled = false;
-      }catch(err){
-        status.textContent = `Erreur WebGPU : ${err?.message || err}`;
-        status.className = 'error';
-        console.error(err);
-      }
-    }
-
     function addMessage(type, text){
       const messagesDiv = document.getElementById('messages');
       const messageDiv = document.createElement('div');
