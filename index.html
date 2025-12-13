@@ -677,9 +677,9 @@ function setupModelLoadUI() {
         // 2. Charger le modèle de discussion (Llama)
         updateProgress(20, 'Initialisation du cerveau...');
         
-        generator = await pipeline('text-generation', 'onnx-community/Qwen2.5-1.5B-Instruct', {
+        generator = await pipeline('text-generation', 'onnx-community/Llama-3.2-3B-Instruct', {
           device: 'webgpu',
-          dtype: 'q4',
+          dtype: 'q4f16',
           progress_callback: (info) => {
             if (info.status === 'progress') {
                const p = info.progress || 0;
