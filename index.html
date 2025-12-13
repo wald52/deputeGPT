@@ -489,8 +489,7 @@
     async function selectDepute(depute){
       currentDepute = depute;
 
-      // 1. Affichage immédiat des infos (Nom, Photo, etc.)
-      // Cela permet à l'utilisateur de voir quelque chose tout de suite, même si les votes chargent.
+      // 1. Mise à jour visuelle immédiate (Carte d'identité)
       const card = document.getElementById('selected-depute');
       card.classList.add('active');
 
@@ -500,7 +499,7 @@
       const circoTexte = depute.departementNom ? `${depute.departementNom} (${depute.circo})` : depute.circonscription;
       document.getElementById('depute-circum').textContent = circoTexte;
 
-      // Gestion Photo
+      // Photo
       const idNum = depute.id.replace('PA', '');
       const photoUrl = `https://www2.assemblee-nationale.fr/static/tribun/17/photos/${idNum}.jpg`;
       const imgEl = document.getElementById('depute-img');
@@ -509,56 +508,73 @@
         imgEl.src = 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'; 
       };
 
-      // 2. CHARGEMENT ASYNCHRONE DES VOTES
-      // On met un petit indicateur visuel (opacité réduite) sur les stats pour dire "ça charge"
+      // 2. Préparation de l'interface "Chat"
+      // On bloque le chat tant que les données ne sont pas prêtes
+      const sendBtn = document.getElementById('send-btn');
+      const userInput = document.getElementById('user-input');
+      
+      sendBtn.disabled = true;
+      userInput.disabled = true;
+      userInput.placeholder = "Chargement des votes en cours...";
+
+      // Stats en "chargement"
       const statsContainer = document.getElementById('stats-container');
       statsContainer.style.display = 'grid';
       statsContainer.style.opacity = '0.5';
-      
-      // Reset des compteurs à 0 ou "..." en attendant
       document.getElementById('stat-votes').textContent = "...";
       document.getElementById('stat-pour').textContent = "...";
       document.getElementById('stat-contre').textContent = "...";
 
       try {
-        // On va chercher le JSON spécifique du député dans le dossier "votes"
-        // Note: Le chemin est relatif à la racine du site web (public/)
-        const response = await fetch(`public/data/votes/${depute.id}.json`);
+        // 3. Téléchargement du fichier JSON des votes
+        // Note: Assurez-vous que le chemin 'data/votes/' est correct par rapport à votre index.html
+        const response = await fetch(`data/votes/${depute.id}.json`);
         
         if (response.ok) {
           const votes = await response.json();
-          currentDepute.votes = votes; // On sauvegarde les votes chargés dans l'objet député
+          currentDepute.votes = votes;
         } else {
-          // Si le fichier n'existe pas (député sans historique), on met une liste vide
-          console.warn(`Pas d'historique de vote trouvé pour ${depute.id}`);
+          console.warn(`Pas d'historique trouvé pour ${depute.id}`);
           currentDepute.votes = [];
         }
       } catch (error) {
-        console.error("Erreur technique chargement votes :", error);
+        console.error("Erreur chargement votes :", error);
         currentDepute.votes = [];
       }
 
-      // 3. MISE A JOUR DE L'INTERFACE AVEC LES VOTES
+      // 4. Mise à jour des stats finales
       statsContainer.style.opacity = '1';
       document.getElementById('stat-votes').textContent = currentDepute.votes.length;
       document.getElementById('stat-pour').textContent = currentDepute.votes.filter(v => v.vote === 'Pour').length;
       document.getElementById('stat-contre').textContent = currentDepute.votes.filter(v => v.vote === 'Contre').length;
 
-      addMessage('system', `Vous discutez maintenant avec les données de vote de ${depute.prenom} ${depute.nom}.`);
-            // --- PARTIE RAG : On prépare les votes pour la recherche ---
+      addMessage('system', `Données chargées pour ${depute.prenom} ${depute.nom}.`);
+
+      // 5. INDEXATION INTELLIGENTE (RAG)
+      // C'est l'étape cruciale pour la recherche sémantique
       if (featureExtractor && currentDepute.votes.length > 0) {
-        addMessage('system', "Indexation des votes en cours pour la recherche intelligente...");
+        userInput.placeholder = "Analyse intelligente des votes...";
+        addMessage('system', "L'IA analyse l'historique des votes (création des vecteurs)...");
         
-        // On prend le texte de chaque vote
-        const textes = currentDepute.votes.map(v => `Sujet: ${v.titre}. Vote: ${v.vote}`);
+        // On crée les vecteurs mathématiques (ça prend 1 à 2 secondes)
+        // On combine Titre + Objet + Vote pour que l'IA trouve tout
+        const textes = currentDepute.votes.map(v => 
+            `Sujet: ${v.titre}. Contexte: ${v.objet || ''}. Vote: ${v.vote}`
+        );
         
-        // On calcule les "vecteurs" (empreintes mathématiques)
-        // Cela peut prendre 1 ou 2 secondes, c'est normal
         const output = await featureExtractor(textes, { pooling: 'mean', normalize: true });
         deputeVectors = output.tolist();
         
-        addMessage('system', "Indexation terminée. Posez votre question !");
+        addMessage('system', "Analyse terminée. L'IA est prête à répondre !");
+      } else {
+        // Si pas de modèle chargé ou pas de votes
+        deputeVectors = []; 
       }
+
+      // 6. Tout est prêt, on débloque le chat
+      sendBtn.disabled = false;
+      userInput.disabled = false;
+      userInput.placeholder = "Posez votre question sur les votes de ce député...";
     }
 
 function fmtTime(seconds) {
