@@ -797,9 +797,22 @@ function setupModelLoadUI() {
           console.log("PROMPT ENVOYÉ À L'IA :", systemPrompt);
 
           const out = await generator(messages, {
-            max_new_tokens: 300,
-            temperature: 0.3, // Assez bas pour être précis et factuel
-            do_sample: true
+            // PARAMÈTRES DE GÉNÉRATION
+            max_new_tokens: 400,    // Assez long pour expliquer, mais pas trop pour ne pas divaguer
+            
+            // 1. Contrôle de la créativité (Très bas pour du factuel)
+            temperature: 0.2,       // 0.1 à 0.3 est idéal pour "Lire et rapporter". 0.7 est trop créatif.
+            
+            // 2. Échantillonnage (Sampling)
+            do_sample: true,        // Indispensable pour que temperature/top_p fonctionnent
+            top_p: 0.90,            // "Nucleus sampling" : évite les mots trop farfelus
+            top_k: 40,              // Limite le choix aux 40 mots les plus probables à chaque étape
+            
+            // 3. Pénalités (Anti-radotage)
+            repetition_penalty: 1.1, // Empêche l'IA de répéter "Le député a voté... Le député a voté..."
+            
+            // 4. Optimisation spécifique (Optionnel selon version transformers.js)
+            use_cache: true         // Accélère la génération en réutilisant le contexte
           });
 
           const answer = out?.[0]?.generated_text?.at(-1)?.content || "(Pas de réponse)";
