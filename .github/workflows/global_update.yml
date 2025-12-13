@@ -1,0 +1,88 @@
+name: Global Update (Deputes + Votes)
+
+on:
+  schedule:
+    # On lance tout à 4h00 du matin
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-all:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # --- ETAPE 1 : DEPUTES ---
+      - name: Update Deputes Data
+        run: |
+          echo "Mise à jour de la liste des députés..."
+          python -u scripts/update_deputes_actifs.py
+
+      # --- ETAPE 2 : VOTES ---
+      - name: Download & Update Votes Data
+        run: |
+          echo "Téléchargement des votes..."
+          mkdir -p Scrutins
+          wget -q -O Scrutins.json.zip "https://data.assemblee-nationale.fr/static/openData/repository/17/loi/scrutins/Scrutins.json.zip"
+          unzip -q Scrutins.json.zip -d Scrutins
+          
+          echo "Traitement des votes..."
+          python scripts/process_votes.py
+
+      # --- ETAPE 3 : COMMIT UNIQUE ---
+      - name: Commit & Push Changes (Main)
+        id: commit_main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # On ajoute tout ce qui a pu changer dans public/data
+          git add public/data
+
+          # Vérification s'il y a des changements réels
+          if git diff --cached --quiet; then
+            echo "Aucun changement détecté sur les données."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "Changements détectés, commit en cours..."
+            # Un seul commit pour tout !
+            git commit -m "data: daily update (deputes + votes)"
+            git push origin HEAD:main
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # --- ETAPE 4 : KEEPALIVE (Seulement si rien n'a changé) ---
+      - name: Keepalive (si aucun changement data)
+        if: steps.commit_main.outputs.changed == 'false'
+        run: |
+          set -euo pipefail
+          KEEPALIVE_BRANCH="keepalive"
+          
+          echo "Aucune donnée n'a changé aujourd'hui. Lancement du keepalive sur la branche $KEEPALIVE_BRANCH."
+          
+          git fetch origin "$KEEPALIVE_BRANCH":"$KEEPALIVE_BRANCH" || true
+          git checkout "$KEEPALIVE_BRANCH" || git checkout -b "$KEEPALIVE_BRANCH"
+          git reset --hard
+          git clean -fd
+
+          mkdir -p .github
+          date -u +"%Y-%m-%dT%H:%M:%SZ" > .github/keepalive.txt
+
+          git add .github/keepalive.txt
+          git commit -m "chore: keepalive"
+          git push -u origin "$KEEPALIVE_BRANCH"
