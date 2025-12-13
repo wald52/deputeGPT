@@ -780,16 +780,21 @@ function setupModelLoadUI() {
             .join('\n');
 
           const systemPrompt =
-            `Tu es un expert politique. Tu as accès aux votes suivants de ${currentDepute.nom} :\n` +
-            `${contextStr}\n\n` +
-            `Consigne : En utilisant UNIQUEMENT ces votes, réponds à la question de l'utilisateur.\n` +
-            `Si la question porte sur le dernier vote, regarde les dates.\n` +
-            `Si aucun vote ne correspond, dis-le.`;
+            `Tu es un expert politique. Voici l'historique officiel des votes de ${currentDepute.nom} :\n` +
+            `----------------\n` +
+            `${contextStr}\n` +
+            `----------------\n` +
+            `Consigne IMPERATIVE : Utilise UNIQUEMENT la liste ci-dessus pour répondre.\n` +
+            `Si l'utilisateur demande "le dernier vote", cite le premier vote de la liste (le plus récent en haut).\n` +
+            `Ne dis jamais "Je n'ai pas accès aux infos", car les infos sont juste au-dessus.\n` +
+            `Réponds directement : "Son dernier vote date du [Date] sur [Titre] où il a voté [Vote]".`;
 
           const messages = [
             { role: 'system', content: systemPrompt },
             { role: 'user', content: question }
           ];
+
+          console.log("PROMPT ENVOYÉ À L'IA :", systemPrompt);
 
           const out = await generator(messages, {
             max_new_tokens: 300,
