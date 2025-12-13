@@ -483,38 +483,63 @@
       selectDepute(d);
     }
 
-    function selectDepute(depute){
+    async function selectDepute(depute){
       currentDepute = depute;
 
-      // Garde-fou : si tes députés viennent d'un JSON "sans votes"
-      // on initialise votes à [] pour éviter les erreurs sur .length/.filter
-      currentDepute.votes ??= [];
-
+      // 1. Affichage immédiat des infos (Nom, Photo, etc.)
+      // Cela permet à l'utilisateur de voir quelque chose tout de suite, même si les votes chargent.
       const card = document.getElementById('selected-depute');
       card.classList.add('active');
 
       document.getElementById('depute-name').textContent = `${depute.prenom} ${depute.nom}`;
       document.getElementById('depute-group').textContent = depute.groupe || depute.groupeNom;
+      
       const circoTexte = depute.departementNom ? `${depute.departementNom} (${depute.circo})` : depute.circonscription;
       document.getElementById('depute-circum').textContent = circoTexte;
-            // 2. GESTION PHOTO (C'est ici qu'on change tout)
-      // ---------------------------------------------------------
+
+      // Gestion Photo
       const idNum = depute.id.replace('PA', '');
       const photoUrl = `https://www2.assemblee-nationale.fr/static/tribun/17/photos/${idNum}.jpg`;
-
       const imgEl = document.getElementById('depute-img');
       imgEl.src = photoUrl;
-      // Si l'image charge mal, on met une image par défaut
       imgEl.onerror = () => { 
         imgEl.src = 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'; 
       };
-      // ---------------------------------------------------------
 
-      // Stats
-      document.getElementById('stats-container').style.display = 'grid';
-      document.getElementById('stat-votes').textContent = depute.votes.length;
-      document.getElementById('stat-pour').textContent = depute.votes.filter(v => v.vote === 'Pour').length;
-      document.getElementById('stat-contre').textContent = depute.votes.filter(v => v.vote === 'Contre').length;
+      // 2. CHARGEMENT ASYNCHRONE DES VOTES
+      // On met un petit indicateur visuel (opacité réduite) sur les stats pour dire "ça charge"
+      const statsContainer = document.getElementById('stats-container');
+      statsContainer.style.display = 'grid';
+      statsContainer.style.opacity = '0.5';
+      
+      // Reset des compteurs à 0 ou "..." en attendant
+      document.getElementById('stat-votes').textContent = "...";
+      document.getElementById('stat-pour').textContent = "...";
+      document.getElementById('stat-contre').textContent = "...";
+
+      try {
+        // On va chercher le JSON spécifique du député dans le dossier "votes"
+        // Note: Le chemin est relatif à la racine du site web (public/)
+        const response = await fetch(`data/votes/${depute.id}.json`);
+        
+        if (response.ok) {
+          const votes = await response.json();
+          currentDepute.votes = votes; // On sauvegarde les votes chargés dans l'objet député
+        } else {
+          // Si le fichier n'existe pas (député sans historique), on met une liste vide
+          console.warn(`Pas d'historique de vote trouvé pour ${depute.id}`);
+          currentDepute.votes = [];
+        }
+      } catch (error) {
+        console.error("Erreur technique chargement votes :", error);
+        currentDepute.votes = [];
+      }
+
+      // 3. MISE A JOUR DE L'INTERFACE AVEC LES VOTES
+      statsContainer.style.opacity = '1';
+      document.getElementById('stat-votes').textContent = currentDepute.votes.length;
+      document.getElementById('stat-pour').textContent = currentDepute.votes.filter(v => v.vote === 'Pour').length;
+      document.getElementById('stat-contre').textContent = currentDepute.votes.filter(v => v.vote === 'Contre').length;
 
       addMessage('system', `Vous discutez maintenant avec les données de vote de ${depute.prenom} ${depute.nom}.`);
     }
