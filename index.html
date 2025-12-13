@@ -520,7 +520,7 @@
       try {
         // On va chercher le JSON spécifique du député dans le dossier "votes"
         // Note: Le chemin est relatif à la racine du site web (public/)
-        const response = await fetch(`data/votes/${depute.id}.json`);
+        const response = await fetch(`public/data/votes/${depute.id}.json`);
         
         if (response.ok) {
           const votes = await response.json();
