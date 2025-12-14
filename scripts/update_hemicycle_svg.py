@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 
 # Configuration
 URL_PAGE = "https://www.assemblee-nationale.fr/dyn/vos-deputes/hemicycle"
-OUTPUT_SVG = "hemicycle.svg" # Racine du repo (comme votre fichier actuel)
+OUTPUT_SVG = "public/data/hemicycle_svg/hemicycle.svg" # Racine du repo (comme votre fichier actuel)
 
 def update_svg():
     print(f"Téléchargement de la page {URL_PAGE}...")
@@ -44,6 +44,7 @@ def update_svg():
             target_svg['id'] = "hemicycle-svg-content" # ID utile pour le CSS
             
             # Sauvegarde
+            os.makedirs(os.path.dirname(OUTPUT_SVG), exist_ok=True)
             with open(OUTPUT_SVG, "w", encoding="utf-8") as f:
                 f.write(str(target_svg))
             print(f"SVG sauvegardé sous : {OUTPUT_SVG}")
