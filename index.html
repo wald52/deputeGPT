@@ -986,6 +986,14 @@ function setupModelLoadUI() {
         const svgText = await response.text();
         container.innerHTML = svgText;
 
+        const svgElement = container.querySelector('svg');
+        if (svgElement) {
+          svgElement.style.width = '100%';      // Force la largeur
+          svgElement.style.height = 'auto';     // Garde les proportions
+          svgElement.style.display = 'block';   // Évite les espaces fantômes
+          svgElement.style.maxHeight = '100%';  // Limite en hauteur
+        }
+
         // TABLE DE CORRESPONDANCE CRUCIALE
         // Clé = groupeAbrev du JSON, Valeur = Index du SVG (0, 1, 2...)
         // Basé sur l'ordre de vos groupesPolitiques
