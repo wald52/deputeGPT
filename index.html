@@ -114,19 +114,72 @@
       border: 1px solid #eee;
     }
     
-    /* Zone de saisie collée en bas */
+    /* --- ZONE DE SAISIE (Input + Bouton alignés) --- */
+    .input-area {
+      display: flex;
+      gap: 10px; /* Espace entre le champ et le bouton */
+      padding-top: 10px;
+      border-top: 1px solid #eee; /* Séparation visuelle avec le chat */
+      background: white;
+    }
+    
     #user-input {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      resize: none;
+      flex: 1; /* Prend tout l'espace disponible */
+      padding: 12px;
+      border: 1px solid #dfe1e5;
+      border-radius: 20px; /* Arrondi moderne */
+      resize: none; /* Empêche de déformer le design */
       font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s;
+      height: 50px; /* Hauteur fixe pour l'alignement */
+    }
+    
+    #user-input:focus {
+      border-color: #4a90e2;
+      box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
     }
 
-    /* --- BUTTONS & UI ELEMENTS --- */
-    .send-btn { /* Votre style violet */
-      /* (Déjà inline dans votre HTML, sinon mettre ici) */
+    /* --- BOUTON ENVOYER --- */
+    #send-btn {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Votre style violet */
+      color: white;
+      border: none;
+      padding: 0 25px;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.1s, opacity 0.2s;
+      height: 50px; /* Même hauteur que le champ texte */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0; /* Empêche le bouton de s'écraser */
+    }
+    
+    #send-btn:hover:not(:disabled) {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+    
+    #send-btn:active:not(:disabled) {
+      transform: translateY(1px);
+    }
+    
+    #send-btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      transform: none;
+    }
+    
+    /* --- LOADER --- */
+    .loader {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 5px;
+      font-style: italic;
+      /* Assurez-vous de gérer l'affichage via JS (style.display = 'block'/'none') */
     }
 
     /* --- TOOLTIP (Votre code existant) --- */
@@ -299,10 +352,10 @@
 
         <div id="messages"></div>
 
-        <textarea id="user-input" placeholder="Posez votre question sur les votes de ce député..." rows="3" disabled></textarea>
+        <textarea id="user-input" placeholder="Posez votre question sur les votes de ce député..." rows="1" disabled></textarea>
         <button id="send-btn" disabled>Envoyer</button>
 
-        <div class="loader" id="ai-loader">L'IA réfléchit…</div>
+        <div class="loader" id="ai-loader" style="display: none">L'IA réfléchit… 🧠</div>
       </div>
     </div>
 
