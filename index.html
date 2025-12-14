@@ -385,7 +385,7 @@
                - Mets le CSS hover DANS hemicycle.svg (voir plus bas)
           -->
           <object class="hemicycle-svg-object"
-                  data="./hemicycle.svg"
+                  data="./public/data/hemicycle_svg/hemicycle.svg"
                   type="image/svg+xml"
                   aria-label="Hémicycle">
             Le navigateur ne supporte pas l’affichage SVG via object.
@@ -977,100 +977,105 @@ function setupModelLoadUI() {
       });
     }
 
-    async function setupHemicycle() {
-      const container = document.getElementById('hemicycle-container');
-      
-      try {
-        const response = await fetch('hemicycle.svg');
-        if (!response.ok) throw new Error("SVG introuvable");
-        const svgText = await response.text();
-        container.innerHTML = svgText;
+async function setupHemicycle() {
+  const container = document.getElementById('hemicycle-container');
+  
+  try {
+    // 1. On charge le NOUVEAU SVG (celui téléchargé par Python)
+    const responseSvg = await fetch('public/data/hemicycle_svg/hemicycle.svg');
+    if (!responseSvg.ok) throw new Error("SVG introuvable (Vérifiez le workflow Github)");
+    const svgText = await responseSvg.text();
+    container.innerHTML = svgText;
 
-        const svgElement = container.querySelector('svg');
-        if (svgElement) {
-          svgElement.style.width = '100%';      // Force la largeur
-          svgElement.style.height = 'auto';     // Garde les proportions
-          svgElement.style.display = 'block';   // Évite les espaces fantômes
-          svgElement.style.maxHeight = '100%';  // Limite en hauteur
-        }
-
-        // TABLE DE CORRESPONDANCE CRUCIALE
-        // Clé = groupeAbrev du JSON, Valeur = Index du SVG (0, 1, 2...)
-        // Basé sur l'ordre de vos groupesPolitiques
-        const mappingGroupeToSvgIndex = {
-          'GDR': 0,
-          'LFI': 1,
-          'ECO': 2, 'EcoS': 2, // Cas possibles pour Ecologistes
-          'SOC': 3,
-          'LIOT': 4,
-          'DEM': 5,
-          'EPR': 6, 'ENS': 6, // Ensemble / Renaissance
-          'HOR': 7,
-          'DR': 8, 'LR': 8,   // DR = Droite Républicaine = LR
-          'UED': 9, 'UDR': 9, // Union Extreme Droite
-          'RN': 10,
-          'NI': 11
-        };
-
-        // On groupe les députés par leur code groupe corrigé
-        const deputesParGroupe = {};
-        
-        deputesData.forEach(depute => {
-          const code = depute.groupeAbrev; // ex: "SOC", "DR"
-          const svgIndex = mappingGroupeToSvgIndex[code];
-          
-          if (svgIndex !== undefined) {
-            if (!deputesParGroupe[svgIndex]) deputesParGroupe[svgIndex] = [];
-            deputesParGroupe[svgIndex].push(depute);
-          }
-        });
-
-        // Maintenant on remplit le SVG groupe par groupe
-        Object.keys(deputesParGroupe).forEach(svgIndex => {
-          const svgGroup = container.querySelector(`g[id^="${svgIndex}-"]`);
-          if (!svgGroup) return;
-
-          const circles = svgGroup.querySelectorAll('circle');
-          const deputes = deputesParGroupe[svgIndex];
-
-          circles.forEach((circle, i) => {
-            if (deputes[i]) {
-              const d = deputes[i];
-              
-              // Rendre interactif
-              circle.style.cursor = 'pointer';
-              circle.onclick = () => selectDepute(d); // Déclenche l'affichage dans le panneau droit
-              
-              // Tooltip simple
-              const title = document.createElement('title');
-              title.textContent = `${d.prenom} ${d.nom} (${d.departementNom})`;
-              circle.appendChild(title);
-
-              // Feedback visuel au survol
-              circle.addEventListener('mouseenter', () => {
-                circle.setAttribute('r', '5'); // Grossit
-                circle.style.stroke = '#333';
-                circle.style.strokeWidth = '2px';
-              });
-              circle.addEventListener('mouseleave', () => {
-                circle.setAttribute('r', '3.04'); // Taille normale
-                circle.style.stroke = 'none';
-              });
-
-            } else {
-              // Siège vide
-              circle.style.opacity = 0.2;
-              circle.style.cursor = 'default';
-            }
-          });
-        });
-
-      } catch (e) {
-        console.error("Erreur hémicycle :", e);
-        container.innerHTML = `<p style="color:red">Erreur plan: ${e.message}</p>`;
-      }
+    // Stabilisation CSS
+    const svgElement = container.querySelector('svg');
+    if (svgElement) {
+        svgElement.style.width = '100%';
+        svgElement.style.height = 'auto';
+        svgElement.style.display = 'block';
+        // On nettoie les tailles fixes qui pourraient gêner
+        svgElement.removeAttribute('width');
+        svgElement.removeAttribute('height');
     }
 
+    // 2. On charge le MAPPING (Le fichier qui lie PA... -> Siège N°)
+    const responseMapping = await fetch('public/data/place_mapping/places_mapping.json');
+    let placesMapping = {};
+    if (responseMapping.ok) {
+        placesMapping = await responseMapping.json();
+    } else {
+        console.warn("Mapping introuvable. Les députés ne seront pas placés précisément.");
+    }
+
+    // 3. On place chaque député à sa place exacte
+    deputesData.forEach(depute => {
+        const seatId = placesMapping[depute.id]; // Ex: "601"
+
+        if (seatId) {
+            // On cherche le siège dans le SVG.
+            // L'Assemblée utilise souvent des IDs numériques directs ou des data-attributes.
+            // Ce sélecteur essaie les cas les plus courants :
+            let seatElement = container.getElementById(seatId) || 
+                              container.querySelector(`[id="place_${seatId}"]`) ||
+                              container.querySelector(`[data-place="${seatId}"]`);
+
+            if (seatElement) {
+                // On applique les interactions sur ce siège
+                applySeatStyle(seatElement, depute);
+            }
+        }
+    });
+
+  } catch (e) {
+    console.error("Erreur hémicycle :", e);
+    container.innerHTML = `<div style="text-align:center; color:#666; padding:20px;">
+        ⚠️ Hémicycle indisponible<br><small>${e.message}</small>
+    </div>`;
+  }
+}
+
+// Fonction pour gérer le style et les clics (séparée pour la clarté)
+function applySeatStyle(element, d) {
+    // 1. COULEUR
+    const groupeInfo = groupesPolitiques.find(g => g.code === d.groupeAbrev);
+    const color = groupeInfo ? groupeInfo.couleur : '#bdc3c7'; // Gris si inconnu
+    
+    // Le SVG officiel utilise souvent des <path>, donc on colore le fill
+    element.style.fill = color;
+    
+    // 2. INTERACTION
+    element.style.cursor = 'pointer';
+    element.style.pointerEvents = 'all'; // Rend le siège cliquable
+    element.style.transition = 'all 0.15s ease';
+
+    // 3. TOOLTIP (Survol souris)
+    const title = document.createElement('title');
+    title.textContent = `${d.prenom} ${d.nom} (${d.groupeAbrev})`;
+    element.innerHTML = ''; // Nettoie d'anciens titres
+    element.appendChild(title);
+
+    // 4. CLIC
+    element.onclick = (e) => {
+        e.stopPropagation();
+        selectDepute(d); // Votre fonction existante
+    };
+
+    // 5. HOVER EFFECT
+    // Attention: sur des <path> complexes, changer le rayon (r) ne marche pas.
+    // On joue plutôt sur l'opacité ou le contour.
+    element.onmouseenter = function() {
+        this.style.opacity = '0.7';      // Devient un peu transparent
+        this.style.stroke = '#000';      // Contour noir
+        this.style.strokeWidth = '2px';
+        // Note: transform: scale() est risqué sur un SVG complexe sans transform-origin défini
+    };
+    
+    element.onmouseleave = function() {
+        this.style.opacity = '1';        // Retour à la normale
+        this.style.stroke = 'none';
+        this.style.strokeWidth = '0';
+    };
+}
     
     async function init() {
       renderLegend();
