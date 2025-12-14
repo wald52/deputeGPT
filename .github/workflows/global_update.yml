@@ -44,18 +44,23 @@ jobs:
           echo "Traitement des votes..."
           python scripts/process_votes.py
 
-      # --- ETAPE 2.5 : SIEGES (NOUVEAU) ---
-      - name: Scrap Hemicycle Places
+      # --- ETAPE 2.5 : HEMICYCLE (SVG + PLACES) ---
+      - name: Update Hemicycle Graphics & Data
         run: |
-          echo "Récupération des places de l'hémicycle..."
-          # Installation des dépendances nécessaires au scraping
+          echo "Mise à jour graphique de l'hémicycle..."
+          
+          # 1. Installation des dépendances (une seule fois pour les deux scripts)
           pip install requests beautifulsoup4
           
-          # Exécution du script
+          # 2. Récupérer le plan SVG (Remplace le fichier à la racine)
+          python scripts/update_hemicycle_svg.py
+          
+          # 3. Récupérer le mapping Places <-> Députés (Génère public/data/places_mapping.json)
           python scripts/scrap_places.py
           
-          # Optionnel : Vérifier si le fichier a bien été créé
-          ls -l public/data/places_mapping.json || echo "Attention: Fichier places non généré"
+          # Vérifications
+          ls -l hemicycle.svg || echo "⚠️ SVG non généré"
+          ls -l public/data/places_mapping.json || echo "⚠️ Mapping places non généré"
 
       # --- ETAPE 3 : COMMIT UNIQUE ---
       - name: Commit & Push Changes (Main)
@@ -66,6 +71,7 @@ jobs:
 
           # On ajoute tout ce qui a pu changer dans public/data
           git add public/data
+          git add hemicycle.svg
 
           # Vérification s'il y a des changements réels
           if git diff --cached --quiet; then
