@@ -8,37 +8,47 @@
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    body{
+    body {
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: #f8f9fa; /* Fond gris très clair (plus pro, moins "carte") */
       min-height: 100vh;
-      padding: 20px;
+      margin: 0;           /* Reset standard */
+      padding: 0;          /* On enlève les 20px de marge autour ! */
     }
 
-    .container{
-      max-width: 1600px;
-      margin: 0 auto;
+    .container {
+      max-width: 100%;       /* Prend toute la largeur */
+      margin: 0;             /* Colle aux bords */
       background: white;
-      border-radius: 20px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.30);
-      overflow: hidden;
+      border-radius: 0;      /* Enlève les coins arrondis qui ne servent plus */
+      box-shadow: none;      /* Enlève l'ombre (inutile si ça prend tout l'écran) */
+      overflow-x: hidden;    /* Garde juste la sécurité horizontale */
+      padding: 15px;         /* Un petit padding interne pour que le contenu ne touche pas les bords de l'écran */
+      min-height: 100vh;     /* S'assure que le fond blanc couvre toute la hauteur */
     }
 
-    header{
+    header {
       background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
       color: white;
-      padding: 30px;
-      text-align: center;
+      padding: 10px 20px; /* Beaucoup moins de hauteur (30px -> 10px) */
+      display: flex;      /* On passe en ligne ! */
+      align-items: center;
+      justify-content: space-between; /* Titre à gauche, sous-titre à droite (ou caché sur mobile) */
     }
 
-    header h1{
-      font-size: 2.5em;
-      margin-bottom: 10px;
+    header h1 {
+      font-size: 1.4em;   /* Plus petit (2.5em -> 1.4em) */
+      margin: 0;          /* Plus de marge en bas */
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    header p{
-      opacity: 0.9;
-      font-size: 1.1em;
+    header p {
+      margin: 0;
+      opacity: 0.8;
+      font-size: 0.9em;   /* Discret */
+      text-align: right;
     }
 
     .main-content{
@@ -327,14 +337,33 @@
         visibility: visible;
         opacity: 1;
     }
+
+        /* Media Query pour Mobile */
+    @media (max-width: 768px) {
+        header {
+            flex-direction: column;
+            text-align: center;
+            padding: 15px;
+        }
+        header p {
+            display: none; 
+        }
+        header h1 {
+            font-size: 1.2em;
+        }
+    }
   </style>
 </head>
 
 <body>
   <div class="container">
     <header>
-      <h1>DéputeGPT</h1>
-      <p>Interrogez l'IA sur les votes des députés français — Propulsé par WebGPU et Transformers.js</p>
+      <h1>
+        🗳️ DéputeGPT
+      </h1>
+      <p class="subtitle-header">
+        Interrogez l'IA sur les votes des députés (WebGPU)
+      </p>
     </header>
 
     <div class="main-content">
