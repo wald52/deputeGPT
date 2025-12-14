@@ -336,6 +336,21 @@
       line-height: 1.4;
     }
 
+    /* Fond gris de la barre */
+    .progress-bar-bg {
+      width: 100%;
+      height: 8px;
+      background-color: #e9ecef;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    /* Remplissage coloré */
+    #progress-bar-fill {
+      height: 100%;
+      background-color: #667eea; /* Violet */
+      transition: width 0.2s;
+    }
 
   </style>
 </head>
@@ -706,97 +721,89 @@ function setupModelLoadUI() {
 }
 
     async function initAI() {
-      const status = document.getElementById('loading-status');
+      // --- 1. RÉCUPÉRATION DES BONS ÉLÉMENTS (NOUVEAU HTML) ---
       const btn = document.getElementById('load-model-btn');
-      const wrap = document.getElementById('model-progress-wrap');
-      const label = document.getElementById('model-progress-label');
-      const pctEl = document.getElementById('model-progress-pct');
-      const bar = document.getElementById('model-progress-bar');
-      const etaEl = document.getElementById('model-progress-eta');
-      const modelSelect = document.getElementById('model-select'); // <--- MODIF : Récupérer le select
-
-      // <--- MODIF : Récupérer la config choisie
+      const progressContainer = document.getElementById('progress-container');
+      const barFill = document.getElementById('progress-bar-fill');
+      const textEl = document.getElementById('progress-text');
+      const modelSelect = document.getElementById('model-select');
+      
+      // Récupération de la config choisie
       const selectedModelKey = modelSelect.value;
-      const modelConfig = MODELS_CONFIG[selectedModelKey]; 
-      
-      // Préparation UI
-      btn.style.display = 'none';
-      modelSelect.disabled = true; // <--- MODIF : Bloquer le select pendant le chargement
-      wrap.style.display = 'block';
-      label.textContent = `Démarrage (${modelConfig.name})...`; // <--- MODIF : Afficher le nom
-      
-      if(etaEl) etaEl.style.display = 'none';
+      const modelConfig = MODELS_CONFIG[selectedModelKey];
 
+      // --- 2. GESTION UI : On bascule l'affichage ---
+      btn.style.display = 'none';            // On cache le bouton
+      progressContainer.style.display = 'block'; // On affiche la barre
+      
+      // Fonction utilitaire locale pour mettre à jour VOTRE barre
       function updateProgress(pct, text) {
         const safePct = Math.min(100, Math.max(0, pct));
-        pctEl.textContent = `${safePct.toFixed(0)}%`;
-        bar.style.width = `${safePct}%`;
-        if(text) label.textContent = text;
+        // Mise à jour de la largeur de la barre colorée
+        if(barFill) barFill.style.width = `${safePct}%`;
+        // Mise à jour du texte sous la barre
+        if(textEl) textEl.textContent = `${text} (${safePct.toFixed(0)}%)`;
       }
 
       try {
-        // 1. Charger le modèle RAG (Inchangé)
-        updateProgress(5, 'Chargement recherche sémantique...');
+        // --- ÉTAPE A : Charger le modèle de recherche (Embeddings) ---
+        updateProgress(0, 'Chargement recherche...');
         
         featureExtractor = await pipeline('feature-extraction', 'Xenova/all-MiniLM-L6-v2', {
           quantized: true,
           progress_callback: (info) => {
              if (info.status === 'progress') {
-                const p = info.progress || 0;
-                updateProgress(p * 20, 'Chargement recherche sémantique...'); // p * 20 car c'est sur 100% de la partie 20%
+                // Ce modèle pèse peu, on lui donne les premiers 20% de la barre
+                const p = info.progress || 0; 
+                // p est souvent entre 0 et 100 dans transformers.js v3, ou 0-1. 
+                // Si ça saute directement, supposez 0-100.
+                updateProgress(p * 0.2, 'Chargement recherche...'); 
              }
           }
         });
 
-        // 2. Charger le modèle de discussion (DYNAMIQUE)
-        updateProgress(20, 'Initialisation du cerveau...');
+        // --- ÉTAPE B : Charger le gros modèle (LLM) ---
+        updateProgress(20, 'Chargement du cerveau...');
         
-        // <--- MODIF : On utilise modelConfig.path et modelConfig.dtype
         generator = await pipeline('text-generation', modelConfig.path, {
-          device: 'webgpu',
-          dtype: modelConfig.dtype, // 'q4' ou 'q4f16' selon le choix
-          use_cache: true,
-          progress_callback: (info) => {
-            if (info.status === 'progress') {
-               const p = info.progress || 0;
-               // On mappe 0-100% du téléchargement sur 20-100% de la barre globale
-               updateProgress(20 + (p * 0.8), `Téléchargement ${modelConfig.name}...`);
+            dtype: modelConfig.dtype,
+            device: 'webgpu',
+            progress_callback: (info) => {
+              if (info.status === 'progress') {
+                const p = info.progress || 0;
+                // On mappe ce chargement sur les 80% restants (de 20% à 100%)
+                const totalPct = 20 + (p * 0.8);
+                updateProgress(totalPct, 'Chargement du cerveau...');
+              }
             }
-            if (info.status === 'initiate') {
-               updateProgress(20, "Connexion au GPU...");
-            }
-            if (info.status === 'done') {
-               updateProgress(98, "Assemblage final...");
-            }
-          }
         });
 
-        // 3. Terminé !
-        updateProgress(100, 'Système prêt !');
-        status.className = 'loading-status ready';
+        // --- FIN : Tout est chargé ---
+        updateProgress(100, 'Chargement terminé !');
         
-        document.getElementById('send-btn').disabled = false;
-        document.getElementById('user-input').disabled = false;
-
+        // Petite pause pour voir le 100% puis on cache
         setTimeout(() => {
-            wrap.style.opacity = '0';
-            wrap.style.transition = 'opacity 0.5s';
-            setTimeout(() => { wrap.style.display = 'none'; }, 500);
+            progressContainer.style.display = 'none';
             
-            // <--- MODIF : Petit message de succès personnalisé
-            status.innerHTML = `<div style="color:#28a745; font-weight:bold; font-size:0.85em; margin-top:5px; text-align:center;">✅ ${modelConfig.name} actif</div>`;
-        }, 2000);
+            // On débloque l'interface de chat
+            const userInput = document.getElementById('user-input');
+            const sendBtn = document.getElementById('send-btn');
+            
+            if(userInput) {
+                userInput.disabled = false;
+                userInput.placeholder = "Modèle prêt ! Posez votre question...";
+                userInput.focus();
+            }
+            if(sendBtn) sendBtn.disabled = false;
+            
+        }, 800);
 
-      } catch (error) {
-        status.className = 'loading-status error';
-        label.textContent = `Erreur : ${error.message}`;
-        bar.style.backgroundColor = '#dc3545';
-        console.error("Erreur initAI:", error);
-        
-        // <--- MODIF : Réactiver le bouton pour réessayer
-        modelSelect.disabled = false;
-        btn.style.display = 'inline-block';
-        btn.textContent = "Réessayer";
+      } catch (err) {
+        console.error(err);
+        alert("Erreur critique : " + err);
+        // En cas d'échec, on réaffiche le bouton pour réessayer
+        btn.style.display = 'block';
+        progressContainer.style.display = 'none';
       }
     }
 
