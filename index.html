@@ -59,7 +59,7 @@
 
     .main-content {
       display: grid;
-      grid-template-columns: 350px 1fr; /* Gauche fixe, Droite flexible */
+      grid-template-columns: 500px 1fr; /* Gauche fixe, Droite flexible */
       gap: 10px; /* Espace minimal entre les panneaux */
       height: 100%; /* Remplit le container */
     }
@@ -95,12 +95,22 @@
       border: 1px solid #ddd;
       border-radius: 6px;
     }
-    
+
     /* Hémicycle qui s'adapte */
     #hemicycle-container {
-      flex: 1; /* Prend la place dispo */
+      flex: 1;
       position: relative;
-      min-height: 200px;
+      min-height: 300px; /* Augmentez un peu la hauteur minimale (était 200px) */
+      display: flex;     /* Aide à centrer le SVG */
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hemicycle-svg-object {
+      width: 100%;       /* Prend toute la largeur du panneau */
+      height: auto;      /* Garde les proportions */
+      display: block;    /* Évite les espaces fantômes sous l'image */
+      max-height: 100%;  /* Empêche de dépasser en hauteur si nécessaire */
     }
 
     /* --- PANNEAU DROITE (Chat & IA) --- */
