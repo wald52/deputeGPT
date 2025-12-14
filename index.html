@@ -232,6 +232,111 @@
       }
     }
 
+    /* --- BARRE D'OUTILS MODÈLE --- */
+    .model-toolbar {
+      display: flex;
+      gap: 15px; /* Espace entre sélecteur et bouton */
+      background: #f8f9fa;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #e9ecef;
+      align-items: flex-start; /* Aligne en haut pour gérer les barres de chargement */
+    }
+    
+    .model-group {
+      flex: 1; /* Prend l'espace disponible */
+    }
+    
+    .model-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 4px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #555;
+    }
+    
+    #model-select {
+      width: 100%;
+      padding: 6px;
+      border-radius: 4px;
+      border: 1px solid #ced4da;
+    }
+    
+    .load-group {
+      flex: 0 0 140px; /* Largeur fixe pour le bouton */
+      display: flex;
+      flex-direction: column;
+    }
+    
+    #load-model-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+    
+    .model-note {
+      font-size: 0.75rem;
+      color: #999;
+      margin: 5px 0 15px 5px;
+      font-style: italic;
+    }
+    
+    /* --- CARTE DÉPUTÉ (Design Horizontal) --- */
+    .depute-card {
+      display: flex; /* Active le mode horizontal */
+      align-items: center; /* Centre verticalement */
+      gap: 20px; /* Espace entre photo et texte */
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #eee; /* Optionnel : cadre léger */
+      border-radius: 8px;
+    }
+    
+    .photo-container {
+      position: relative;
+      width: 80px;  /* Taille fixe pour le cercle */
+      height: 80px;
+      flex-shrink: 0; /* Empêche l'écrasement */
+    }
+    
+    .depute-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Recadre l'image proprement */
+      border-radius: 50%; /* Cercle parfait */
+      border: 3px solid #667eea; /* Liseré couleur (violet ici) */
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      background: #eee; /* Fond gris si pas d'image */
+    }
+    
+    .depute-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 80px; /* Force la même hauteur que la photo */
+    }
+    
+    .depute-info h3 {
+      margin: 0 0 5px 0;
+      font-size: 1.1rem;
+      color: #2c3e50;
+    }
+    
+    .depute-info p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.4;
+    }
+
+
   </style>
 </head>
 
@@ -290,73 +395,49 @@
       <div class="panel">
         <h2>Conversation avec l'IA</h2>
 
-              <!-- SÉLECTEUR DE MODÈLE -->
-        <div style="margin-bottom: 15px; padding: 10px; background: #f8f9fa; border-radius: 8px; border: 1px solid #e9ecef;">
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 5px;">
-                <label for="model-select" style="font-weight: 600; font-size: 0.9em; color: #495057;">Modèle IA :</label>
-                
-                <!-- Tooltip simple en CSS pur -->
-                <div class="tooltip-container" style="position: relative; display: inline-block; cursor: help;">
-                    <span style="color: #667eea; font-weight: bold;">?</span>
+            <!-- BARRE D'OUTILS (Modèle + Bouton) -->
+            <div class="model-toolbar">
+              <!-- Groupe Sélecteur -->
+              <div class="model-group">
+                <div class="model-header">
+                  <label for="model-select">Modèle IA</label>
+                  <div class="tooltip-container" title="Info Modèles">
+                    <span>?</span>
                     <div class="tooltip-text">
-                        <strong>Llama 1B :</strong> Rapide (PC Standard)<br>
-                        <strong>Llama 3B :</strong> Puissant (PC Gamer/Mac M1)
+                        <strong>1B :</strong> Rapide (Tous PC)<br>
+                        <strong>3B :</strong> Puissant (PC Gamer)
                     </div>
+                  </div>
                 </div>
+                <select id="model-select">
+                  <option value="1B" selected>Llama 3.2 1B (Rapide)</option>
+                  <option value="3B">Llama 3.2 3B (Précis)</option>
+                </select>
+              </div>
+            
+              <!-- Groupe Bouton -->
+              <div class="load-group">
+                <button id="load-model-btn">
+                  🚀 CHARGER
+                </button>
+                <!-- Barres de progression (cachées par défaut) -->
+                <div id="progress-container" style="display:none; margin-top: 5px;">
+                   <div class="progress-bar-bg"><div id="progress-bar-fill" style="width:0%"></div></div>
+                   <div id="progress-text" style="font-size: 10px; text-align: center;">0%</div>
+                </div>
+              </div>
             </div>
             
-            <select id="model-select" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #ced4da; font-size: 0.9em;">
-                <option value="1B" selected>Llama 3.2 1B (Rapide)</option>
-                <option value="3B">Llama 3.2 3B (Haute Précision)</option>
-            </select>
-            <p style="font-size: 0.75em; color: #888; margin-top: 8px; margin-bottom: 0; font-style: italic; line-height: 1.2;">
-                ℹ️ Pour changer de modèle après chargement, vous devrez rafraîchir la page.
-            </p>
-        </div>
-
-      <div id="loading-status" class="loading-status">
-          <button id="load-model-btn" type="button" 
-              style="
-                  width: 100%; 
-                  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
-                  color: white; 
-                  font-weight: bold; 
-                  padding: 12px 20px; 
-                  border: none; 
-                  border-radius: 8px; 
-                  cursor: pointer; 
-                  font-size: 1rem; 
-                  box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
-                  transition: transform 0.1s, box-shadow 0.1s;
-                  text-transform: uppercase;
-                  letter-spacing: 0.5px;
-              "
-              onmouseover="this.style.transform='translateY(-1px)'; this.style.boxShadow='0 6px 8px rgba(0,0,0,0.15)';"
-              onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 6px rgba(0,0,0,0.1)';"
-              onmousedown="this.style.transform='translateY(1px)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.1)';"
-          >
-              🚀 Charger le modèle IA
-          </button>
-
-        <div id="model-progress-wrap" style="display:none; margin-top:5px;">
-          <div style="display:flex; justify-content:space-between; font-weight:600; font-size: 0.8em; margin-bottom: 2px; line-height: 1;">
-            <span id="model-progress-label">Préparation…</span>
-            <span id="model-progress-pct">0%</span>
-          </div>
-
-          <div style="height:8px; background:#e9ecef; border-radius:4px; overflow:hidden;">
-            <div id="model-progress-bar" style="height:100%; width:0%; background:#667eea; transition: width 0.2s;"></div>
-          </div>
-
-        </div>
-      </div>
+            <p class="model-note">ℹ️ Rafraîchir la page pour changer de modèle.</p>
 
         <div class="depute-card" id="selected-depute">
-          <img class="depute-photo" id="depute-img" src="" alt="Photo" />
+          <div class="photo-container">
+            <img class="depute-photo" id="depute-img" src="" alt="Photo" />
+          </div>
           <div class="depute-info">
-            <h3 id="depute-name">Nom du Député</h3>
-            <p id="depute-group">Groupe Politique</p>
-            <p id="depute-circum">Circonscription</p>
+            <h3 id="depute-name">Sélectionnez un député</h3>
+            <p id="depute-group" class="info-group">Groupe Politique</p>
+            <p id="depute-circum" class="info-circum">Circonscription</p>
           </div>
         </div>
 
