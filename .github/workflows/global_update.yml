@@ -44,6 +44,19 @@ jobs:
           echo "Traitement des votes..."
           python scripts/process_votes.py
 
+      # --- ETAPE 2.5 : SIEGES (NOUVEAU) ---
+      - name: Scrap Hemicycle Places
+        run: |
+          echo "Récupération des places de l'hémicycle..."
+          # Installation des dépendances nécessaires au scraping
+          pip install requests beautifulsoup4
+          
+          # Exécution du script
+          python scripts/scrap_places.py
+          
+          # Optionnel : Vérifier si le fichier a bien été créé
+          ls -l public/data/places_mapping.json || echo "Attention: Fichier places non généré"
+
       # --- ETAPE 3 : COMMIT UNIQUE ---
       - name: Commit & Push Changes (Main)
         id: commit_main
