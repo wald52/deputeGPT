@@ -1,0 +1,74 @@
+[
+  {
+    "code": "RN",
+    "nom": "Rassemblement National",
+    "seats": 123,
+    "couleur": "#0d378a"
+  },
+  {
+    "code": "EPR",
+    "nom": "Ensemble pour la République",
+    "seats": 89,
+    "couleur": "#ffeb00"
+  },
+  {
+    "code": "LFI-NFP",
+    "nom": "La France insoumise - Nouveau Front Populaire",
+    "seats": 71,
+    "couleur": "#cc2443"
+  },
+  {
+    "code": "SOC",
+    "nom": "Socialistes et apparentés",
+    "seats": 69,
+    "couleur": "#ff8080"
+  },
+  {
+    "code": "DR",
+    "nom": "Droite Républicaine",
+    "seats": 47,
+    "couleur": "#0066cc"
+  },
+  {
+    "code": "ECOS",
+    "nom": "Écologiste et Social",
+    "seats": 38,
+    "couleur": "#bdc3c7"
+  },
+  {
+    "code": "DEM",
+    "nom": "Les Démocrates",
+    "seats": 36,
+    "couleur": "#ff9900"
+  },
+  {
+    "code": "HOR",
+    "nom": "Horizons & Indépendants",
+    "seats": 33,
+    "couleur": "#0001b8"
+  },
+  {
+    "code": "LIOT",
+    "nom": "Libertés, Indépendants, Outre-mer et Territoires",
+    "seats": 22,
+    "couleur": "#e1a5e1"
+  },
+  {
+    "code": "GDR",
+    "nom": "Gauche Démocrate et Républicaine",
+    "seats": 17,
+    "couleur": "#dd0000"
+  },
+  {
+    "code": "UDDPLR",
+    "nom": "Union des droites pour la République",
+    "seats": 16,
+    "couleur": "#bdc3c7"
+  },
+  {
+    "code": "NI",
+    "nom": "Non inscrit",
+    "seats": 14,
+    "couleur": "#dddddd"
+  }
+]
