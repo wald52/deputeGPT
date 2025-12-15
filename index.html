@@ -1010,18 +1010,14 @@ async function setupHemicycle() {
 
     // 3. On place chaque député à sa place exacte
     deputesData.forEach(depute => {
-        const seatId = placesMapping[depute.id]; // Ex: "601"
+        const seatId = placesMapping[depute.id]; // Ex: "389"
 
         if (seatId) {
-            // On cherche le siège dans le SVG.
-            // L'Assemblée utilise souvent des IDs numériques directs ou des data-attributes.
-            // Ce sélecteur essaie les cas les plus courants :
-            let seatElement = container.querySelector(`[id="${seatId}"]`) || 
-                              container.querySelector(`#seat-${seatId}`) ||
-                              container.querySelector(`[data-place="${seatId}"]`);
+            // CORRECTION : On cible le format exact "p389" vu dans votre SVG
+            let seatElement = container.querySelector(`#p${seatId}`);
 
             if (seatElement) {
-                // On applique les interactions sur ce siège
+                // VICTOIRE : On a trouvé le siège !
                 applySeatStyle(seatElement, depute);
             }
         }
