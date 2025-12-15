@@ -7,20 +7,26 @@ BASE = f"https://tabular-api.data.gouv.fr/api/resources/{RESOURCE_ID}/data/"
 OUT_DIR = "public/data/deputes_actifs"
 
 # Définition des couleurs connues (Table de correspondance)
-COULEURS_OFFICIELLES = {
-    "GDR": "#dd0000",
-    "LFI": "#cc2443", "LFI-NFP": "#cc2443",
-    "SOC": "#ff8080",
-    "ECO": "#00c000", "EcoS": "#00c000",
-    "LIOT": "#e1a5e1",
-    "DEM": "#ff9900",
-    "EPR": "#ffeb00", "ENS": "#ffeb00", "RE": "#ffeb00", "Ensemble": "#ffeb00",
-    "HOR": "#0001b8",
-    "DR": "#0066cc", "LR": "#0066cc",
-    "UDR": "#162561", "UED": "#162561",
-    "RN": "#0d378a",
-    "NI": "#dddddd"
-}
+def load_official_colors():
+    """Charge les couleurs depuis le fichier généré par le scraping Wiki"""
+    path = "public/data/couleurs_groupes.json"
+    if os.path.exists(path):
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                colors = json.load(f)
+                # On peut garder quelques valeurs par défaut de sécurité ici si on veut
+                # au cas où le scraping wiki échoue ou est incomplet
+                defaults = {"NI": "#dddddd", "DIV": "#dddddd"}
+                defaults.update(colors)
+                return defaults
+        except Exception as e:
+            print(f"⚠️ Erreur lecture couleurs: {e}")
+    
+    print("⚠️ Fichier couleurs introuvable, usage d'un set minimal.")
+    return {
+        "GDR": "#dd0000", "LFI": "#cc2443", "SOC": "#ff8080", 
+        "ECO": "#00c000", "EPR": "#ffeb00", "RN": "#0d378a", "DR": "#0066cc"
+    }
 
 def fetch_json(url: str) -> dict:
     req = urllib.request.Request(
@@ -53,6 +59,10 @@ def read_latest_sha256(latest_path: str) -> str | None:
 
 def main():
     os.makedirs(OUT_DIR, exist_ok=True)
+
+    COULEURS_OFFICIELLES = load_official_colors()
+    print(f"Couleurs chargées : {len(COULEURS_OFFICIELLES)} nuances disponibles.")
+    
     latest_path = os.path.join(OUT_DIR, "latest.json")
 
     # 1) Récupération paginée des députés
