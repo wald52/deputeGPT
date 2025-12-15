@@ -106,11 +106,12 @@
       justify-content: center;
     }
 
-    .hemicycle-svg-object {
-      width: 100%;       /* Prend toute la largeur du panneau */
-      height: auto;      /* Garde les proportions */
-      display: block;    /* Évite les espaces fantômes sous l'image */
-      max-height: 100%;  /* Empêche de dépasser en hauteur si nécessaire */
+    /* Cible le SVG injecté directement */
+    #hemicycle-container svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      max-height: 100%; /* Important pour ne pas déborder verticalement */
     }
 
     /* --- PANNEAU DROITE (Chat & IA) --- */
