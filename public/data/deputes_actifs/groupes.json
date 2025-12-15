@@ -3,7 +3,7 @@
     "code": "RN",
     "nom": "Rassemblement National",
     "seats": 123,
-    "couleur": "#0d378a"
+    "couleur": "#bdc3c7"
   },
   {
     "code": "EPR",
@@ -15,7 +15,7 @@
     "code": "LFI-NFP",
     "nom": "La France insoumise - Nouveau Front Populaire",
     "seats": 71,
-    "couleur": "#bdc3c7"
+    "couleur": "#cc2443"
   },
   {
     "code": "SOC",
@@ -51,7 +51,7 @@
     "code": "LIOT",
     "nom": "Libertés, Indépendants, Outre-mer et Territoires",
     "seats": 22,
-    "couleur": "#bdc3c7"
+    "couleur": "#e1a5e1"
   },
   {
     "code": "GDR",
@@ -69,6 +69,6 @@
     "code": "NI",
     "nom": "Non inscrit",
     "seats": 14,
-    "couleur": "#bdc3c7"
+    "couleur": "#dddddd"
   }
 ]
