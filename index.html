@@ -1039,6 +1039,14 @@ async function setupHemicycle() {
 function applySeatStyle(element, d) {
     // 1. COULEUR
     const groupeInfo = groupesPolitiques.find(g => g.code === d.groupeAbrev);
+
+    if (groupeInfo) {
+        element.style.fill = groupeInfo.couleur;
+    } else {
+        console.warn(`Pas de couleur trouvée pour le groupe : ${d.groupeAbrev}`);
+        element.style.fill = '#999'; // Gris foncé pour les inconnus
+    }
+  
     const color = groupeInfo ? groupeInfo.couleur : '#bdc3c7'; // Gris si inconnu
     
     // Le SVG officiel utilise souvent des <path>, donc on colore le fill
