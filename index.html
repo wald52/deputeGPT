@@ -516,20 +516,7 @@
     let deputesData = [];
 
     // Groupes politiques (pour la légende + démos)
-    const groupesPolitiques = [
-      { code: 'GDR', nom: 'GDR', couleur: '#dd0000', seats: 17 },
-      { code: 'LFI', nom: 'La France Insoumise', couleur: '#cc2443', seats: 75 },
-      { code: 'ECO', nom: 'Écologistes', couleur: '#00c000', seats: 35 },
-      { code: 'SOC', nom: 'Socialistes', couleur: '#ff8080', seats: 65 },
-      { code: 'LIOT', nom: 'LIOT', couleur: '#e1a5e1', seats: 45 },
-      { code: 'DEM', nom: 'Les Démocrates', couleur: '#ff9900', seats: 35 },
-      { code: 'EPR', nom: 'Ensemble', couleur: '#ffeb00', seats: 145 },
-      { code: 'HOR', nom: 'Horizons', couleur: '#0001b8', seats: 35 },
-      { code: 'LR',  nom: 'Droite Républicaine', couleur: '#0066cc', seats: 62 },
-      { code: 'UED', nom: "Union extrême droite", couleur: '#162561', seats: 16 },
-      { code: 'RN',  nom: 'Rassemblement National', couleur: '#0d378a', seats: 88 },
-      { code: 'NI',  nom: 'Indépendants', couleur: '#dddddd', seats: 9 }
-    ];
+    let groupesPolitiques = [];
 
     function renderLegend(){
       const legend = document.getElementById('legend');
@@ -573,6 +560,20 @@
       const latest = await fetchJsonDebug("public/data/deputes_actifs/latest.json", { cache: "no-store" });
       const url = `public/data/deputes_actifs/${latest.version}.json`;
       deputesData = await fetchJsonDebug(url, { cache: "force-cache" });
+    }
+
+    async function loadGroupesData() {
+        try {
+            const response = await fetch('public/data/deputes_actifs/groupes.json');
+            if (response.ok) {
+                groupesPolitiques = await response.json();
+                console.log("Groupes chargés :", groupesPolitiques.length);
+            }
+        } catch (e) {
+            console.error("Erreur chargement groupes:", e);
+            // Fallback minimal au cas où
+            groupesPolitiques = []; 
+        }
     }
 
     function selectRandomDepute(groupeCode){
@@ -1083,12 +1084,19 @@ function applySeatStyle(element, d) {
 }
     
     async function init() {
-      renderLegend();
       setupSearch();
       setupChat();
 
-      await loadDeputesData(); // 1. On charge les données
-      await setupHemicycle();  // 2. On dessine l'hémicycle
+      // 1. Chargement parallèle des données (Députés + Groupes)
+      await Promise.all([
+          loadDeputesData(),
+          loadGroupesData() // Nouvelle fonction qu'on a ajoutée
+      ]);
+      
+      // 2. Une fois qu'on a les groupes (et leurs couleurs), on dessine l'interface graphique
+      renderLegend(); 
+      await setupHemicycle();
+      
       setupModelLoadUI();
     }
 
