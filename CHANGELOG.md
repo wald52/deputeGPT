@@ -1,6 +1,6 @@
 # Changelog
 
-Tous les changements notables de ce projet seront documentés ici.
+Tous les changements notables de ce projet seront documentés ici. 
 
 Le format est basé sur [Keep a Changelog](https://keepachangelog.com/fr/1.0.0/).
 
