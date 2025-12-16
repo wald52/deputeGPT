@@ -27,21 +27,9 @@ jobs:
         with:
           python-version: "3.12"
 
-      # --- ETAPE 0 : COULEURS (NOUVEAU) ---
-      - name: Update Group Colors from Wiki
+      - name: Install Dependencies
         run: |
-          echo "Récupération des couleurs officielles..."
-          # Installation des libs requises pour le scraping wiki
           pip install requests beautifulsoup4
-          
-          # On s'assure que le dossier de destination existe
-          mkdir -p public/data
-          
-          # On lance le script
-          python -u scripts/update_colors_from_wiki.py
-          
-          # Petite vérif dans les logs
-          ls -l public/data/couleurs_groupes.json || echo "⚠️ Fichier couleurs non généré"
 
       # --- ETAPE 1 : DEPUTES ---
       - name: Update Deputes Data
