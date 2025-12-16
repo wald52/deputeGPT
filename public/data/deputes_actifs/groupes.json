@@ -3,7 +3,7 @@
     "code": "RN",
     "nom": "Rassemblement National",
     "seats": 123,
-    "couleur": "#bdc3c7"
+    "couleur": "#0D378A"
   },
   {
     "code": "EPR",
@@ -45,7 +45,7 @@
     "code": "HOR",
     "nom": "Horizons & Indépendants",
     "seats": 33,
-    "couleur": "#bdc3c7"
+    "couleur": "#0001B8"
   },
   {
     "code": "LIOT",
