@@ -1,32 +1,40 @@
-import json, hashlib, os, sys, urllib.request
-from datetime import datetime, timezone
+import json
+import hashlib
+import os
+import sys
+import urllib.request
 import urllib.error
+from datetime import datetime, timezone
 
 RESOURCE_ID = "092bd7bb-1543-405b-b53c-932ebb49bb8e"
 BASE = f"https://tabular-api.data.gouv.fr/api/resources/{RESOURCE_ID}/data/"
 OUT_DIR = "public/data/deputes_actifs"
 
-# Définition des couleurs connues (Table de correspondance)
-def load_official_colors():
-    """Charge les couleurs depuis le fichier généré par le scraping Wiki"""
-    path = "public/data/couleurs_groupes.json"
-    if os.path.exists(path):
-        try:
-            with open(path, "r", encoding="utf-8") as f:
-                colors = json.load(f)
-                # On peut garder quelques valeurs par défaut de sécurité ici si on veut
-                # au cas où le scraping wiki échoue ou est incomplet
-                defaults = {"NI": "#dddddd", "DIV": "#dddddd"}
-                defaults.update(colors)
-                return defaults
-        except Exception as e:
-            print(f"⚠️ Erreur lecture couleurs: {e}")
+# --- TABLE DE CORRESPONDANCE DES COULEURS (OFFICIEL/STABLE) ---
+# Sert pour la légende et les cartes. L'hémicycle, lui, utilise ses propres couleurs par siège.
+COULEURS_OFFICIELLES = {
+    # Gauche
+    "GDR": "#dd0000",   # Gauche Démocrate et Républicaine
+    "LFI": "#cc2443", "LFI-NFP": "#cc2443", # La France Insoumise
+    "SOC": "#ff8080",   # Socialistes
+    "ECO": "#00c000", "EcoS": "#00c000",    # Ecologistes
     
-    print("⚠️ Fichier couleurs introuvable, usage d'un set minimal.")
-    return {
-        "GDR": "#dd0000", "LFI": "#cc2443", "SOC": "#ff8080", 
-        "ECO": "#00c000", "EPR": "#ffeb00", "RN": "#0d378a", "DR": "#0066cc"
-    }
+    # Centre / Majorité
+    "LIOT": "#e1a5e1",  # Libertés, Indépendants... (Violet)
+    "DEM": "#ff9900",   # MoDem (Orange)
+    "EPR": "#ffeb00", "ENS": "#ffeb00", "RE": "#ffeb00", "Ensemble": "#ffeb00", # Renaissance (Jaune)
+    "HOR": "#0001b8",   # Horizons (Bleu marine)
+
+    # Droite
+    "DR": "#0066cc", "LR": "#0066cc", # Droite Républicaine (Bleu)
+    "UDR": "#162561", "UED": "#162561", # Union des Droites (Bleu foncé)
+
+    # Extrême Droite
+    "RN": "#0d378a",    # Rassemblement National
+
+    # Autres
+    "NI": "#dddddd"     # Non Inscrits (Gris)
+}
 
 def fetch_json(url: str) -> dict:
     req = urllib.request.Request(
@@ -42,7 +50,7 @@ def fetch_json(url: str) -> dict:
     except urllib.error.HTTPError as e:
         body = e.read().decode("utf-8", errors="replace")
         print(f"HTTPError {e.code} {e.reason} on URL: {url}")
-        print("Body (first 1000 chars):", body[:1000])
+        print("Body truncated:", body[:500])
         raise
 
 def canonical_bytes(rows) -> bytes:
@@ -59,25 +67,25 @@ def read_latest_sha256(latest_path: str) -> str | None:
 
 def main():
     os.makedirs(OUT_DIR, exist_ok=True)
-
-    COULEURS_OFFICIELLES = load_official_colors()
-    print(f"Couleurs chargées : {len(COULEURS_OFFICIELLES)} nuances disponibles.")
-    
     latest_path = os.path.join(OUT_DIR, "latest.json")
 
-    # 1) Récupération paginée des députés
+    # 1) Récupération paginée
     url = BASE
     all_rows = []
+    print("Début du téléchargement des données députés...")
+    
     while url:
-        print("GET:", url)
+        print(f"GET: {url}")
         payload = fetch_json(url)
         all_rows.extend(payload.get("data", []))
         
         links = payload.get("links") or payload.get("link") or {}
         url = links.get("next")
 
-    # --- AJOUT: GÉNÉRATION DU FICHIER GROUPES.JSON ---
-    # On profite d'avoir la liste à jour pour extraire les groupes
+    print(f"✅ {len(all_rows)} députés récupérés.")
+
+    # 2) GÉNÉRATION AUTOMATIQUE DU FICHIER GROUPES (groupes.json)
+    # C'est ici qu'on associe les couleurs pour la légende
     print("Génération du fichier groupes.json...")
     groupes_map = {}
     
@@ -85,37 +93,41 @@ def main():
         code = d.get('groupeAbrev')
         nom_complet = d.get('groupe')
         
-        if code: # Sécurité si code vide
+        if code:
             if code not in groupes_map:
+                # Recherche de la couleur (Directe ou par synonyme)
+                color = COULEURS_OFFICIELLES.get(code, "#bdc3c7") # Gris si inconnu
+                
                 groupes_map[code] = {
                     "code": code,
                     "nom": nom_complet,
                     "seats": 0,
-                    "couleur": COULEURS_OFFICIELLES.get(code, "#bdc3c7") # Couleur ou Gris par défaut
+                    "couleur": color
                 }
             groupes_map[code]["seats"] += 1
 
-    # Transformation en liste et tri par nombre de sièges (décroissant)
+    # Conversion en liste et tri par nombre de sièges (décroissant)
     groupes_list = list(groupes_map.values())
     groupes_list.sort(key=lambda x: x['seats'], reverse=True)
 
-    # Sauvegarde du fichier groupes.json TOUJOURS (même si hash députés identique, c'est pas grave)
+    # Sauvegarde groupes.json
     groupes_path = os.path.join(OUT_DIR, "groupes.json")
     with open(groupes_path, 'w', encoding='utf-8') as f:
         json.dump(groupes_list, f, indent=2, ensure_ascii=False)
-    print(f"✅ Groupes sauvegardés : {len(groupes_list)} groupes trouvés.")
-    # --------------------------------------------------
+    print(f"✅ groupes.json généré avec {len(groupes_list)} groupes.")
 
-    # 2) Hash + comparaison avec latest (Logique existante pour les députés)
+    # 3) Hash + Versioning des députés (Logique existante)
     blob = canonical_bytes(all_rows)
     sha256 = hashlib.sha256(blob).hexdigest()
     prev_sha256 = read_latest_sha256(latest_path)
 
     if prev_sha256 == sha256:
-        print("No change detected on deputes list (sha256 identical).")
+        print("Aucun changement détecté (sha256 identique).")
+        # On ne quitte pas forcément ici si on veut forcer la regénération de groupes.json
+        # mais pour le versioning des députés, on s'arrête.
         return 0
 
-    # 3) Écriture nouvelle version députés
+    # Écriture nouvelle version
     version = "v" + datetime.now(timezone.utc).strftime("%Y-%m-%d")
     out_path = os.path.join(OUT_DIR, f"{version}.json")
 
@@ -134,7 +146,7 @@ def main():
         )
     os.replace(tmp_latest, latest_path)
 
-    print(f"Updated Deputes: {out_path} rows={len(all_rows)} sha256={sha256}")
+    print(f"✅ Mise à jour terminée : {out_path} (SHA: {sha256})")
     return 0
 
 if __name__ == "__main__":
