@@ -60,15 +60,15 @@
     "couleur": "#dd0000"
   },
   {
+    "code": "NI",
+    "nom": "Non inscrit",
+    "seats": 16,
+    "couleur": "#dddddd"
+  },
+  {
     "code": "UDDPLR",
     "nom": "Union des droites pour la République",
     "seats": 16,
     "couleur": "#bdc3c7"
-  },
-  {
-    "code": "NI",
-    "nom": "Non inscrit",
-    "seats": 15,
-    "couleur": "#dddddd"
   }
 ]
