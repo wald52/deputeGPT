@@ -54,16 +54,16 @@
     "couleur": "#e1a5e1"
   },
   {
+    "code": "UDDPLR",
+    "nom": "Union des droites pour la République",
+    "seats": 17,
+    "couleur": "#bdc3c7"
+  },
+  {
     "code": "GDR",
     "nom": "Gauche Démocrate et Républicaine",
     "seats": 17,
     "couleur": "#dd0000"
-  },
-  {
-    "code": "UDDPLR",
-    "nom": "Union des droites pour la République",
-    "seats": 16,
-    "couleur": "#bdc3c7"
   },
   {
     "code": "NI",
