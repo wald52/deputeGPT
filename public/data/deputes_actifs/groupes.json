@@ -8,7 +8,7 @@
   {
     "code": "EPR",
     "nom": "Ensemble pour la République",
-    "seats": 90,
+    "seats": 92,
     "couleur": "#ffeb00"
   },
   {
@@ -26,7 +26,7 @@
   {
     "code": "DR",
     "nom": "Droite Républicaine",
-    "seats": 47,
+    "seats": 49,
     "couleur": "#0066cc"
   },
   {
@@ -44,7 +44,7 @@
   {
     "code": "HOR",
     "nom": "Horizons & Indépendants",
-    "seats": 33,
+    "seats": 34,
     "couleur": "#0001b8"
   },
   {
@@ -68,7 +68,7 @@
   {
     "code": "NI",
     "nom": "Non inscrit",
-    "seats": 15,
+    "seats": 10,
     "couleur": "#dddddd"
   }
 ]
