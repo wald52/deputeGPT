@@ -1,363 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DéputéGPT - IA WebGPU pour l'Assemblée Nationale</title>
+  <!-- Favicon vide pour éviter l'affichage d'un logo par défaut -->
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="public/styles/app.css">
 
-  <style>
-    /* --- RESET & BASE --- */
-    * { box-sizing: border-box; } /* Indispensable pour éviter que ça déborde */
-    
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: "Segoe UI", system-ui, sans-serif;
-      background: #f4f6f8; /* Gris très clair pro */
-      color: #333;
-      height: 100vh; /* Prend tout l'écran */
-      display: flex;
-      flex-direction: column;
-      overflow: hidden; /* Empêche le scroll global sur PC */
-    }
-
-    /* --- HEADER COMPACT (Collé en haut) --- */
-    header {
-      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-      color: white;
-      padding: 8px 15px; /* Très fin (Hauteur ~50px) */
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      flex-shrink: 0; /* Ne rétrécit pas */
-    }
-
-    header h1 {
-      font-size: 1.1rem; /* Titre discret */
-      margin: 0;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .subtitle-header {
-      margin: 0;
-      font-size: 0.85rem;
-      opacity: 0.8;
-    }
-
-    /* --- LAYOUT PRINCIPAL (Plein écran) --- */
-    .container {
-      flex: 1; /* Prend tout l'espace restant sous le header */
-      width: 100%;
-      max-width: 1600px; /* Limite sur écrans géants */
-      margin: 0 auto;
-      padding: 10px; /* Petit espace autour des panneaux */
-      overflow: hidden; /* Important */
-    }
-
-    .main-content {
-      display: grid;
-      grid-template-columns: 500px 1fr; /* Gauche fixe, Droite flexible */
-      gap: 10px; /* Espace minimal entre les panneaux */
-      height: 100%; /* Remplit le container */
-    }
-
-    /* --- PANNEAUX (Cartes blanches) --- */
-    .panel {
-      background: white;
-      padding: 12px; /* Marges internes réduites */
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      border: 1px solid #e1e4e8;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden; /* Garde le contenu dedans */
-    }
-
-    .panel h2 {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #2c3e50;
-      margin: 0 0 10px 0;
-      padding-bottom: 8px;
-      border-bottom: 2px solid #f1f3f5;
-    }
-
-    /* --- PANNEAU GAUCHE (Recherche & Stats) --- */
-    .search-box {
-      margin-bottom: 10px;
-    }
-    .search-box input {
-      width: 100%;
-      padding: 8px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-    }
-
-    /* Hémicycle qui s'adapte */
-    #hemicycle-container {
-      flex: 1;
-      position: relative;
-      min-height: 300px; /* Augmentez un peu la hauteur minimale (était 200px) */
-      display: flex;     /* Aide à centrer le SVG */
-      align-items: center;
-      justify-content: center;
-    }
-
-    #hemicycle-container svg {
-      width: 100% !important; /* Force la largeur */
-      height: auto !important;
-      display: block;
-      /* On enlève max-height pour laisser le SVG grandir si besoin */
-      /* max-height: 100%; */ 
-    }
-
-    /* --- PANNEAU DROITE (Chat & IA) --- */
-    #messages {
-      flex: 1; /* Prend tout l'espace vertical libre */
-      overflow-y: auto; /* Scroll uniquement ici */
-      background: #fafafa;
-      border-radius: 6px;
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 1px solid #eee;
-    }
-    
-    /* --- ZONE DE SAISIE (Input + Bouton alignés) --- */
-    .input-area {
-      display: flex;
-      gap: 10px; /* Espace entre le champ et le bouton */
-      padding-top: 10px;
-      border-top: 1px solid #eee; /* Séparation visuelle avec le chat */
-      background: white;
-    }
-    
-    #user-input {
-      flex: 1; /* Prend tout l'espace disponible */
-      padding: 12px;
-      border: 1px solid #dfe1e5;
-      border-radius: 20px; /* Arrondi moderne */
-      resize: none; /* Empêche de déformer le design */
-      font-family: inherit;
-      outline: none;
-      transition: border-color 0.2s;
-      height: 50px; /* Hauteur fixe pour l'alignement */
-    }
-    
-    #user-input:focus {
-      border-color: #4a90e2;
-      box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
-    }
-
-    /* --- BOUTON ENVOYER --- */
-    #send-btn {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Votre style violet */
-      color: white;
-      border: none;
-      padding: 0 25px;
-      border-radius: 20px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: transform 0.1s, opacity 0.2s;
-      height: 50px; /* Même hauteur que le champ texte */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0; /* Empêche le bouton de s'écraser */
-    }
-    
-    #send-btn:hover:not(:disabled) {
-      opacity: 0.9;
-      transform: translateY(-1px);
-    }
-    
-    #send-btn:active:not(:disabled) {
-      transform: translateY(1px);
-    }
-    
-    #send-btn:disabled {
-      background: #ccc;
-      cursor: not-allowed;
-      transform: none;
-    }
-    
-    /* --- LOADER --- */
-    .loader {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #666;
-      margin-top: 5px;
-      font-style: italic;
-      /* Assurez-vous de gérer l'affichage via JS (style.display = 'block'/'none') */
-    }
-
-    /* --- TOOLTIP (Votre code existant) --- */
-    .tooltip-text {
-        visibility: hidden; width: 200px; background-color: #333; color: #fff;
-        text-align: left; border-radius: 6px; padding: 10px; font-size: 12px;
-        position: absolute; z-index: 10; bottom: 125%; left: 50%;
-        margin-left: -100px; opacity: 0; transition: opacity 0.3s;
-    }
-    .tooltip-container:hover .tooltip-text { visibility: visible; opacity: 1; }
-
-    /* --- MOBILE (RESPONSIVE) --- */
-    @media (max-width: 768px) {
-      body {
-        height: auto; /* Laisse scroller sur mobile */
-        overflow: auto;
-      }
-      
-      header {
-        padding: 10px;
-        flex-direction: column;
-        gap: 5px;
-      }
-      .subtitle-header { display: none; } /* On cache le sous-titre */
-
-      .main-content {
-        grid-template-columns: 1fr; /* Une seule colonne */
-        grid-template-rows: auto auto; /* Empile les panneaux */
-        height: auto;
-        gap: 15px;
-      }
-
-      .panel {
-        height: auto; /* Hauteur auto sur mobile */
-        min-height: 400px; /* Taille mini pour le chat */
-      }
-      
-      #hemicycle-container {
-        min-height: 250px; /* Force une taille pour le graphique */
-      }
-    }
-
-    /* --- BARRE D'OUTILS MODÈLE --- */
-    .model-toolbar {
-      display: flex;
-      gap: 15px;
-      background: #f8f9fa;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #e9ecef;
-      align-items: flex-start;
-      justify-content: space-between; /* Pousse les éléments aux extrémités si besoin, ou garde 'flex-start' pour tout coller à gauche */
-    }
-    
-    .model-group {
-      /* Supprimer flex: 1 qui force l'extension maximale */
-      width: 300px; /* Largeur fixe raisonnable, ou 'auto' selon préférence */
-      display: flex;
-      flex-direction: column;
-    }
-    
-    .model-header {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 4px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #555;
-    }
-    
-    #model-select {
-      width: 100%;
-      padding: 6px;
-      border-radius: 4px;
-      border: 1px solid #ced4da;
-    }
-    
-    .load-group {
-      flex: 0 0 140px; /* Largeur fixe pour le bouton */
-      display: flex;
-      flex-direction: column;
-    }
-    
-    #load-model-btn {
-      width: 100%;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      border: none;
-      padding: 8px;
-      border-radius: 4px;
-      font-weight: 700;
-      font-size: 0.8rem;
-      cursor: pointer;
-    }
-    
-    .model-note {
-      font-size: 0.75rem;
-      color: #999;
-      margin: 5px 0 15px 5px;
-      font-style: italic;
-    }
-    
-    /* --- CARTE DÉPUTÉ (Design Horizontal) --- */
-    .depute-card {
-      display: flex; /* Active le mode horizontal */
-      align-items: center; /* Centre verticalement */
-      gap: 20px; /* Espace entre photo et texte */
-      margin-bottom: 15px;
-      padding: 10px;
-      border: 1px solid #eee; /* Optionnel : cadre léger */
-      border-radius: 8px;
-    }
-    
-    .photo-container {
-      position: relative;
-      width: 80px;  /* Taille fixe pour le cercle */
-      height: 80px;
-      flex-shrink: 0; /* Empêche l'écrasement */
-    }
-    
-    .depute-photo {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* Recadre l'image proprement */
-      border-radius: 50%; /* Cercle parfait */
-      border: 3px solid #667eea; /* Liseré couleur (violet ici) */
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      background: #eee; /* Fond gris si pas d'image */
-    }
-    
-    .depute-info {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      height: 80px; /* Force la même hauteur que la photo */
-    }
-    
-    .depute-info h3 {
-      margin: 0 0 5px 0;
-      font-size: 1.1rem;
-      color: #2c3e50;
-    }
-    
-    .depute-info p {
-      margin: 0;
-      font-size: 0.9rem;
-      color: #666;
-      line-height: 1.4;
-    }
-
-    /* Fond gris de la barre */
-    .progress-bar-bg {
-      width: 100%;
-      height: 8px;
-      background-color: #e9ecef;
-      border-radius: 4px;
-      overflow: hidden;
-    }
-    
-    /* Remplissage coloré */
-    #progress-bar-fill {
-      height: 100%;
-      background-color: #667eea; /* Violet */
-      transition: width 0.2s;
-    }
-
-  </style>
+  
 </head>
 
 <body>
@@ -370,32 +22,33 @@
       Interrogez l'IA sur les votes des députés (WebGPU)
     </p>
   </header>
-  
+
   <div class="container">
 
     <div class="main-content">
       <!-- Panneau Gauche -->
       <div class="panel">
-        <h2>Sélectionnez un Député</h2>
+        <div class="panel-title-row">
+          <h2>Sélectionnez un Député</h2>
+          <p class="panel-intro">Cliquez sur un siège ou recherchez un nom.</p>
+        </div>
 
-        <input type="text" id="search-input" placeholder="Rechercher par nom, groupe, ou circonscription..." />
+        <div class="search-box">
+          <input type="text" id="search-input" placeholder="Rechercher par nom, groupe, ou circonscription..."
+            autocomplete="off" />
+          <div id="search-results" class="search-results"></div>
+        </div>
 
         <div id="hemicycle-container">
-          <!-- IMPORTANT :
-               - Place un fichier hemicycle.svg à côté de index.html
-               - Mets le CSS hover DANS hemicycle.svg (voir plus bas)
-          -->
-          <object class="hemicycle-svg-object"
-                  data="./public/data/hemicycle_svg/hemicycle.svg"
-                  type="image/svg+xml"
-                  aria-label="Hémicycle">
+          <object class="hemicycle-svg-object" data="./public/data/hemicycle_svg/hemicycle.svg" type="image/svg+xml"
+            aria-label="Hémicycle">
             Le navigateur ne supporte pas l’affichage SVG via object.
           </object>
         </div>
 
-        <div class="legend" id="legend"></div>
+        <div id="legend" class="legend"></div>
 
-        <div class="stats" id="stats-container" style="display:none;">
+        <div id="stats-container" class="stats" hidden>
           <div class="stat-box">
             <div class="stat-number" id="stat-votes">0</div>
             <div class="stat-label">Votes analysés</div>
@@ -413,700 +66,187 @@
 
       <!-- Panneau Droit -->
       <div class="panel">
-        <h2>Conversation avec l'IA</h2>
+        <div class="model-toolbar-shell">
+          <!-- LIGNE UNIFIÉE: Titre + Résumé compact + Bouton -->
+          <div class="unified-header-row">
+            <h2>Chat IA</h2>
+            <div class="header-center">
+              <span id="model-settings-summary" class="model-settings-summary" title="Configuration IA sélectionnée">
+                Profil IA par défaut
+              </span>
+              <button id="model-settings-toggle" class="header-action-btn settings-toggle-btn" type="button"
+                aria-controls="advanced-options" aria-expanded="false">
+                Réglages IA
+              </button>
+            </div>
+            <button id="load-model-btn" class="btn-load-mini" type="button">Charger IA</button>
+          </div>
+          <div id="progress-container" class="progress-inline" hidden>
+            <div class="progress-bar-bg"><div id="progress-bar-fill"></div></div>
+            <span id="progress-text">0%</span>
+          </div>
 
-            <!-- BARRE D'OUTILS (Modèle + Bouton) -->
-            <div class="model-toolbar">
-              <!-- Groupe Sélecteur -->
-              <div class="model-group">
-                <div class="model-header">
-                  <label for="model-select">Modèle IA</label>
-                  <div class="tooltip-container" title="Info Modèles">
-                    <span>?</span>
-                    <div class="tooltip-text">
-                        <strong>1B :</strong> Rapide (Tous PC)<br>
-                        <strong>3B :</strong> Puissant (PC Gamer)
-                    </div>
+          <!-- Réglages IA à la demande -->
+          <div id="advanced-options" class="advanced-options" hidden aria-hidden="true">
+            <div class="advanced-options-header">
+              <div class="advanced-options-copy">
+                <h3>Réglages IA</h3>
+                <p>Ces choix sont mémorisés localement et restent appliqués même quand ce panneau est fermé.</p>
+              </div>
+              <button id="close-advanced-options-btn" class="header-action-btn" type="button">Fermer</button>
+            </div>
+            <div class="advanced-toolbar">
+              <div class="model-select-grid">
+                <div class="model-group-compact model-field-card">
+                  <div class="model-field-label">
+                    <label for="model-select">Modèle</label>
+                    <span class="tooltip-container field-info" tabindex="0" aria-label="Informations sur le choix du modèle">i
+                      <span class="tooltip-text tooltip-text-start">Choisissez la famille testée dans l'application avant chargement.</span>
+                    </span>
                   </div>
+                  <select id="model-select"><option value="">Chargement...</option></select>
                 </div>
-                <select id="model-select">
-                  <option value="1B" selected>Llama 3.2 1B (Rapide)</option>
-                  <option value="3B">Llama 3.2 3B (Précis)</option>
-                </select>
-
-                <div id="active-model-badge" style="display: none; margin-top: 8px; color: #27ae60; font-weight: bold; font-size: 0.9rem; align-items: center; gap: 5px;">
-                    ✅ <span id="active-model-name">Modèle Actif</span>
+                <div class="model-group-compact model-field-card">
+                  <div class="model-field-label">
+                    <label for="quant-select">Quantification</label>
+                    <span class="tooltip-container field-info" tabindex="0" aria-label="Informations sur la quantification">i
+                      <span class="tooltip-text tooltip-text-end">La taille affichée sert de base au consentement de téléchargement.</span>
+                    </span>
+                  </div>
+                  <select id="quant-select"><option value="">Sélectionnez</option></select>
                 </div>
               </div>
-            
-              <!-- Groupe Bouton -->
-              <div class="load-group">
-                <button id="load-model-btn">
-                  🚀 CHARGER
-                </button>
-                <!-- Barres de progression (cachées par défaut) -->
-                <div id="progress-container" style="display:none; margin-top: 5px;">
-                   <div class="progress-bar-bg"><div id="progress-bar-fill" style="width:0%"></div></div>
-                   <div id="progress-text" style="font-size: 10px; text-align: center;">0%</div>
+              <div class="model-group-compact model-group-toggle">
+                <div class="thinking-card">
+                  <div class="thinking-card-top">
+                    <div class="thinking-card-heading">
+                      <span class="thinking-card-title">Raisonnement</span>
+                      <span class="thinking-card-badge">Avancé</span>
+                    </div>
+                    <div class="thinking-card-toggle-slot">
+                      <label class="advanced-toggle-compact" aria-label="Activer le mode thinking">
+                        <input type="checkbox" id="thinking-mode-toggle" />
+                        <span class="toggle-slider-small"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <p class="thinking-help">Plus lent, réservé aux usages avancés. Le raisonnement interne reste masqué dans l'interface.</p>
+                </div>
+                <div class="thinking-card semantic-rag-card">
+                  <div class="thinking-card-top">
+                    <div class="thinking-card-heading">
+                      <span class="thinking-card-title">RAG sémantique local</span>
+                      <span class="thinking-card-badge">Expérimental</span>
+                    </div>
+                    <div class="thinking-card-toggle-slot">
+                      <label class="advanced-toggle-compact" aria-label="Activer le RAG sémantique local">
+                        <input type="checkbox" id="semantic-rag-toggle" />
+                        <span class="toggle-slider-small"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="semantic-rag-mode">
+                    <label for="semantic-rag-mode-select">Mode</label>
+                    <select id="semantic-rag-mode-select">
+                      <option value="single_vector">Single-vector</option>
+                    </select>
+                  </div>
+                  <p id="semantic-rag-helper" class="thinking-help">Reranking local après la recherche lexicale. Consentement explicite requis avant téléchargement.</p>
+                  <div class="semantic-rag-meta">
+                    <span id="semantic-rag-size" class="semantic-rag-size">Taille à mesurer</span>
+                    <button id="semantic-rag-load-btn" class="header-action-btn semantic-rag-load-btn" type="button">Activer</button>
+                  </div>
+                  <div id="semantic-rag-status" class="semantic-rag-status">Mode lexical uniquement.</div>
                 </div>
               </div>
             </div>
-            
-            <p class="model-note">ℹ️ Rafraîchir la page pour changer de modèle.</p>
-
-        <div class="depute-card" id="selected-depute">
-          <div class="photo-container">
-            <img class="depute-photo" id="depute-img" src="" alt="Photo" />
-          </div>
-          <div class="depute-info">
-            <h3 id="depute-name">Sélectionnez un député</h3>
-            <p id="depute-group" class="info-group">Groupe Politique</p>
-            <p id="depute-circum" class="info-circum">Circonscription</p>
           </div>
         </div>
 
-        <div id="messages"></div>
+        <div class="depute-card" id="selected-depute">
+          <div id="depute-placeholder">
+            Sélectionnez un député dans l'hémicycle
+          </div>
+          <div id="depute-content" hidden>
+            <div class="photo-container">
+              <img class="depute-photo" id="depute-img" src="" alt="Photo" />
+            </div>
+            <div class="depute-info">
+              <h3 id="depute-name"></h3>
+              <p id="depute-details" class="info-details"></p>
+            </div>
+          </div>
+        </div>
 
-        <textarea id="user-input" placeholder="Posez votre question sur les votes de ce député..." rows="1" disabled></textarea>
-        <button id="send-btn" disabled>Envoyer</button>
+        <div id="chat-quick-actions" class="chat-quick-actions"></div>
+        <div id="chat-scope-summary" class="chat-scope-summary hidden" aria-live="polite"></div>
+        <div id="chat-scope-actions" class="chat-scope-actions hidden"></div>
+        <div id="messages" role="log" aria-live="polite" aria-relevant="additions text">
+          <div id="chat-empty-state" class="chat-empty-state">
+            Sélectionnez un député, puis posez une question exacte (liste, nombre, période, thème) ou lancez une analyse IA.
+          </div>
+        </div>
 
-        <div class="loader" id="ai-loader" style="display: none">L'IA réfléchit… 🧠</div>
+        <div class="input-area">
+          <textarea id="user-input" placeholder="Posez votre question sur les votes de ce député..." rows="1"
+            disabled></textarea>
+          <button id="send-btn" disabled>Envoyer</button>
+        </div>
+        <div class="input-hint">Entrée pour envoyer · Maj + Entrée pour une nouvelle ligne</div>
+
+
       </div>
     </div>
 
-    <footer>
-      <p>
-        Données :
-        <a href="https://data.assemblee-nationale.fr/travaux-parlementaires/votes" target="_blank" rel="noopener noreferrer">Assemblée Nationale Open Data</a>
-        — Modèles IA :
-        <a href="https://huggingface.co/" target="_blank" rel="noopener noreferrer">Hugging Face</a>
-      </p>
-    </footer>
   </div>
 
-  <!-- SCRIPT : uniquement du JS -->
-  <script type="module">
-    import * as transformers from './js/transformers.min.js';
-    const { pipeline, env } = transformers;
-    
-
-    // Configuration WebGPU
-    env.allowLocalModels = false;
-    env.useBrowserCache = true;
-
-    const MODELS_CONFIG = {
-        '1B': { 
-            path: 'onnx-community/Llama-3.2-1B-Instruct', 
-            dtype: 'q4',
-            name: 'Llama 1B'
-        },
-        '3B': { 
-            path: 'onnx-community/Llama-3.2-3B-Instruct', 
-            dtype: 'q4f16', // Version optimisée pour 3B
-            name: 'Llama 3B'
-        }
-    };
-
-    // Données globales
-    let generator;
-    let featureExtractor; // Le cerveau qui cherche (RAG)
-    let deputeVectors = []; // Les votes du député transformés en mathématiques
-    
-    let currentDepute = null;
-    let deputesData = [];
-
-    // Groupes politiques (pour la légende + démos)
-    let groupesPolitiques = [];
-
-    function renderLegend(){
-      const legend = document.getElementById('legend');
-      legend.innerHTML = '';
-
-      groupesPolitiques.forEach(g => {
-        const item = document.createElement('div');
-        item.className = 'legend-item';
-        item.innerHTML = `
-          <div class="legend-color" style="background-color:${g.couleur}"></div>
-          <span>${g.nom} (${g.seats})</span>
-        `;
-        // Click sur la légende = sélection aléatoire dans le groupe (plus simple que click sur SVG)
-        item.addEventListener('click', () => selectRandomDepute(g.code));
-        legend.appendChild(item);
-      });
-    }
-
-    async function fetchJsonDebug(url, fetchOptions = {}) {
-      const r = await fetch(url, fetchOptions);
-    
-      // 1) Vérifier le code HTTP (404, 500, etc.)
-      if (!r.ok) {
-        const txt = await r.text(); // lire le body en texte pour voir ce que c'est [web:787]
-        throw new Error(`HTTP ${r.status} sur ${url}. Début de réponse: ${txt.slice(0, 60)}`);
-      }
-    
-      // 2) (Optionnel) Vérifier le content-type
-      const ct = r.headers.get('content-type') || '';
-      if (!ct.includes('application/json')) {
-        const txt = await r.text(); // pareil: on veut voir si c'est du HTML [web:787]
-        const head = txt.slice(0, 60);
-        throw new Error("Pas du JSON (" + ct + ") sur " + url + ". Début: " + head);
-      }
-    
-      // 3) Parser seulement si tout semble OK
-      return r.json(); // parse JSON [web:788]
-    }
-
-    async function loadDeputesData() {
-      const latest = await fetchJsonDebug("public/data/deputes_actifs/latest.json", { cache: "no-store" });
-      const url = `public/data/deputes_actifs/${latest.version}.json`;
-      deputesData = await fetchJsonDebug(url, { cache: "force-cache" });
-    }
-
-    async function loadGroupesData() {
-        try {
-            const response = await fetch('public/data/deputes_actifs/groupes.json');
-            if (response.ok) {
-                groupesPolitiques = await response.json();
-                console.log("Groupes chargés :", groupesPolitiques.length);
-            }
-        } catch (e) {
-            console.error("Erreur chargement groupes:", e);
-            // Fallback minimal au cas où
-            groupesPolitiques = []; 
-        }
-    }
-
-    function selectRandomDepute(groupeCode){
-      const deputes = deputesData.filter(d => d.groupe === groupeCode);
-      if (!deputes.length) return;
-      const d = deputes[Math.floor(Math.random() * deputes.length)];
-      selectDepute(d);
-    }
-
-    async function selectDepute(depute){
-      // 1. Debug : On vérifie quel député on a reçu
-      console.log("--- DEBUG: selectDepute ---");
-      console.log("Député sélectionné :", depute.nom, "| ID:", depute.id);
-      
-      currentDepute = depute;
-
-      // ... (Mise à jour UI : Carte, Nom, Photo... on garde ça, c'est OK) ...
-      const card = document.getElementById('selected-depute');
-      card.classList.add('active');
-      document.getElementById('depute-name').textContent = `${depute.prenom} ${depute.nom}`;
-      document.getElementById('depute-group').textContent = depute.groupe || depute.groupeNom;
-      const circoTexte = depute.departementNom ? `${depute.departementNom} (${depute.circo})` : depute.circonscription;
-      document.getElementById('depute-circum').textContent = circoTexte;
-      
-      const idNum = depute.id.replace('PA', '');
-      const photoUrl = `https://www2.assemblee-nationale.fr/static/tribun/17/photos/${idNum}.jpg`;
-      const imgEl = document.getElementById('depute-img');
-      imgEl.src = photoUrl;
-      imgEl.onerror = () => { imgEl.src = 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'; };
-
-      // 2. Préparation UI Chat
-      const sendBtn = document.getElementById('send-btn');
-      const userInput = document.getElementById('user-input');
-      sendBtn.disabled = true;
-      userInput.disabled = true;
-      userInput.placeholder = "Chargement des votes en cours...";
-
-      // 3. CHARGEMENT DES VOTES (Le point critique)
-      const statsContainer = document.getElementById('stats-container');
-      statsContainer.style.opacity = '0.5';
-      document.getElementById('stat-votes').textContent = "0";
-
-      // On construit l'URL et on l'affiche dans la console
-      const urlVotes = `public/data/votes/${depute.id}.json`;
-      console.log("Tentative de chargement URL :", urlVotes);
-
-      try {
-        const response = await fetch(urlVotes);
-        console.log("Statut réponse HTTP :", response.status, response.statusText);
-
-        if (response.ok) {
-          const votes = await response.json();
-          console.log("Succès ! Nombre de votes trouvés :", votes.length);
-          
-          if(votes.length > 0) {
-             console.log("Exemple du premier vote :", votes[0]);
-          }
-
-          currentDepute.votes = votes;
-        } else {
-          console.warn(`ERREUR HTTP : Le fichier ${urlVotes} n'existe pas ou est inaccessible.`);
-          currentDepute.votes = [];
-        }
-      } catch (error) {
-        console.error("ERREUR TECHNIQUE (Fetch) :", error);
-        currentDepute.votes = [];
-      }
-
-      // 4. Debug des compteurs finaux
-      console.log("Compteurs finaux -> Total:", currentDepute.votes.length);
-      
-      // Mise à jour de l'affichage
-      statsContainer.style.opacity = '1';
-      document.getElementById('stat-votes').textContent = currentDepute.votes.length;
-      document.getElementById('stat-pour').textContent = currentDepute.votes.filter(v => v.vote === 'Pour').length;
-      document.getElementById('stat-contre').textContent = currentDepute.votes.filter(v => v.vote === 'Contre').length;
-
-      addMessage('system', `Données chargées pour ${depute.prenom} ${depute.nom}. (${currentDepute.votes.length} votes)`);
-
-      // 5. INDEXATION INTELLIGENTE (RAG) - VERSION NON-BLOQUANTE
-      if (featureExtractor && currentDepute.votes.length > 0) {
-        userInput.placeholder = "Analyse complète en cours...";
-        
-        // On affiche un message initial
-        addMessage('system', `Début de l'analyse de ${currentDepute.votes.length} votes...`);
-        
-        deputeVectors = []; // On vide les anciens vecteurs
-        const BATCH_SIZE = 50; // On traite 50 votes à la fois
-        const totalVotes = currentDepute.votes.length;
-        
-        // Fonction qui traite un paquet et rappelle le suivant
-        async function processBatch(startIndex) {
-            // Mise à jour visuelle (pour faire patienter)
-            const percent = Math.round((startIndex / totalVotes) * 100);
-            userInput.placeholder = `Analyse : ${percent}%...`;
-            
-            // On prépare le paquet actuel
-            const endIndex = Math.min(startIndex + BATCH_SIZE, totalVotes);
-            const batchVotes = currentDepute.votes.slice(startIndex, endIndex);
-            
-            const textes = batchVotes.map(v => 
-                `Sujet: ${v.titre}. Contexte: ${v.objet || ''}. Vote: ${v.vote}`
-            );
-
-            // Calcul lourd (mais court car seulement 50 items)
-            const output = await featureExtractor(textes, { pooling: 'mean', normalize: true });
-            
-            // On ajoute les résultats à la liste globale
-            deputeVectors.push(...output.tolist());
-
-            // Est-ce qu'il en reste ?
-            if (endIndex < totalVotes) {
-                // OUI : On fait une pause de 10ms pour rendre la main au navigateur, puis on continue
-                setTimeout(() => processBatch(endIndex), 10);
-            } else {
-                // NON : C'est fini !
-                userInput.placeholder = "Posez votre question...";
-                addMessage('system', "Analyse complète terminée (100%).");
-                
-                // On débloque tout
-                sendBtn.disabled = false;
-                userInput.disabled = false;
-            }
-        }
-
-        // Démarrage du premier paquet
-        processBatch(0);
-
-      } else {
-        // Pas de modèle ou pas de votes
-        deputeVectors = []; 
-        sendBtn.disabled = false;
-        userInput.disabled = false;
-      }
-
-      sendBtn.disabled = false;
-      userInput.disabled = false;
-      userInput.placeholder = "Posez votre question...";
-    }
-
-function fmtTime(seconds) {
-  if (!Number.isFinite(seconds) || seconds < 0) return '--:--';
-  const s = Math.round(seconds);
-  const m = Math.floor(s / 60);
-  const r = s % 60;
-  return `${String(m).padStart(2,'0')}:${String(r).padStart(2,'0')}`;
-}
-
-function setupModelLoadUI() {
-  const btn = document.getElementById('load-model-btn');
-  btn.addEventListener('click', async () => {
-    btn.disabled = true;
-    await initAI(); // charge seulement maintenant
-  });
-}
-
-    async function initAI() {
-      // --- 1. RÉCUPÉRATION DES BONS ÉLÉMENTS (NOUVEAU HTML) ---
-      const btn = document.getElementById('load-model-btn');
-      const progressContainer = document.getElementById('progress-container');
-      const barFill = document.getElementById('progress-bar-fill');
-      const textEl = document.getElementById('progress-text');
-      const modelSelect = document.getElementById('model-select');
-      
-      // Récupération de la config choisie
-      const selectedModelKey = modelSelect.value;
-      const modelConfig = MODELS_CONFIG[selectedModelKey];
-
-      // --- 2. GESTION UI : On bascule l'affichage ---
-      btn.style.display = 'none';            // On cache le bouton
-      progressContainer.style.display = 'block'; // On affiche la barre
-      
-      // Fonction utilitaire locale pour mettre à jour VOTRE barre
-      function updateProgress(pct, text) {
-        const safePct = Math.min(100, Math.max(0, pct));
-        // Mise à jour de la largeur de la barre colorée
-        if(barFill) barFill.style.width = `${safePct}%`;
-        // Mise à jour du texte sous la barre
-        if(textEl) textEl.textContent = `${text} (${safePct.toFixed(0)}%)`;
-      }
-
-      try {
-        // --- ÉTAPE A : Charger le modèle de recherche (Embeddings) ---
-        updateProgress(0, 'Chargement recherche...');
-        
-        featureExtractor = await pipeline('feature-extraction', 'Xenova/all-MiniLM-L6-v2', {
-          quantized: true,
-          progress_callback: (info) => {
-             if (info.status === 'progress') {
-                // Ce modèle pèse peu, on lui donne les premiers 20% de la barre
-                const p = info.progress || 0; 
-                // p est souvent entre 0 et 100 dans transformers.js v3, ou 0-1. 
-                // Si ça saute directement, supposez 0-100.
-                updateProgress(p * 0.2, 'Chargement recherche...'); 
-             }
-          }
-        });
-
-        // --- ÉTAPE B : Charger le gros modèle (LLM) ---
-        updateProgress(20, 'Chargement du cerveau...');
-        
-        generator = await pipeline('text-generation', modelConfig.path, {
-            dtype: modelConfig.dtype,
-            device: 'webgpu',
-            progress_callback: (info) => {
-              if (info.status === 'progress') {
-                const p = info.progress || 0;
-                // On mappe ce chargement sur les 80% restants (de 20% à 100%)
-                const totalPct = 20 + (p * 0.8);
-                updateProgress(totalPct, 'Chargement du cerveau...');
-              }
-            }
-        });
-
-        // --- FIN : Tout est chargé ---
-        updateProgress(100, 'Chargement terminé !');
-        
-        // Petite pause pour voir le 100% puis on cache
-        setTimeout(() => {
-            // 1. Cacher la barre de progression
-            progressContainer.style.display = 'none';
-            
-            // 2. Gérer l'affichage du modèle actif
-            const modelSelect = document.getElementById('model-select');
-            const activeBadge = document.getElementById('active-model-badge');
-            const activeName = document.getElementById('active-model-name');
-            
-            // On cache le selecteur (dropdown)
-            modelSelect.style.display = 'none';
-            
-            // On affiche le badge vert avec le nom du modèle
-            if (activeBadge && activeName) {
-                // Récupère le texte de l'option choisie (ex: "Llama 3.2 1B (Rapide)")
-                const selectedText = modelSelect.options[modelSelect.selectedIndex].text;
-                activeName.textContent = selectedText;
-                activeBadge.style.display = 'flex'; // Affiche le badge
-            }
-            
-            // ... (Reste du code pour débloquer l'input) ...
-            
-        }, 800);
-
-      } catch (err) {
-        console.error(err);
-        alert("Erreur critique : " + err);
-        // En cas d'échec, on réaffiche le bouton pour réessayer
-        btn.style.display = 'block';
-        progressContainer.style.display = 'none';
-      }
-    }
-
-    function addMessage(type, text){
-      const messagesDiv = document.getElementById('messages');
-      const messageDiv = document.createElement('div');
-      messageDiv.className = `message ${type}`;
-
-      const label = (type === 'user') ? 'Vous' : (type === 'ai') ? 'IA' : 'Système';
-      messageDiv.innerHTML = `<strong>${label}</strong>${escapeHtml(text)}`;
-
-      messagesDiv.appendChild(messageDiv);
-      messagesDiv.scrollTop = messagesDiv.scrollHeight;
-    }
-
-    function escapeHtml(str){
-      return String(str)
-        .replaceAll('&','&amp;')
-        .replaceAll('<','&lt;')
-        .replaceAll('>','&gt;');
-    }
-
-    function setupSearch(){
-      const input = document.getElementById('search-input');
-      input.addEventListener('input', (e) => {
-        const q = e.target.value.trim().toLowerCase();
-        if (q.length < 2) return;
-
-        const results = deputesData.filter(d =>
-          d.nom.toLowerCase().includes(q) ||
-          d.prenom.toLowerCase().includes(q) ||
-          `${d.prenom} ${d.nom}`.toLowerCase().includes(q) ||
-          d.groupeNom.toLowerCase().includes(q) ||
-          d.circonscription.toLowerCase().includes(q)
-        );
-
-        if (results.length) selectDepute(results[0]);
-      });
-    }
-
-    function setupChat(){
-      const sendBtn = document.getElementById('send-btn');
-      const input = document.getElementById('user-input');
-      const loader = document.getElementById('ai-loader');
-
-      sendBtn.addEventListener('click', async () => {
-        if (!currentDepute){
-          addMessage('system', "Veuillez d'abord sélectionner un député.");
-          return;
-        }
-        
-        const question = input.value.trim();
-        if (!question) return;
-
-        // On bloque l'interface
-        addMessage('user', question);
-        input.value = '';
-        loader.classList.add('active');
-        sendBtn.disabled = true;
-
-        try{
-          let contextVotes = [];
-
-          // STRATEGIE HYBRIDE (La meilleure pour simuler ChatGPT)
-          // ----------------------------------------------------
-          
-          // 1. Récupération des votes "Sémantiques" (par le sens)
-          if (featureExtractor && deputeVectors.length > 0) {
-            const qOutput = await featureExtractor(question, { pooling: 'mean', normalize: true });
-            const qVector = qOutput.tolist()[0];
-
-            const scores = deputeVectors.map((vector, index) => {
-                let dot = 0;
-                for(let i=0; i < vector.length; i++) dot += vector[i] * qVector[i];
-                return { index: index, score: dot };
-            });
-            
-            // On prend les 5 meilleurs votes liés au sujet
-            scores.sort((a, b) => b.score - a.score);
-            const semanticVotes = scores.slice(0, 5).map(s => currentDepute.votes[s.index]);
-            contextVotes.push(...semanticVotes);
-          }
-
-          // 2. Récupération des votes "Chronologiques" (les plus récents)
-          // On ajoute TOUJOURS les 5 derniers votes, quoi qu'il arrive.
-          // Comme ça, si la question est "C'était quoi le dernier vote ?", l'info est là.
-          const recentVotes = currentDepute.votes.slice(0, 5);
-          contextVotes.push(...recentVotes);
-
-          // 3. Nettoyage (Dédoublonnage)
-          // Si un vote est à la fois récent ET pertinent, on ne le met pas deux fois.
-          const uniqueVotes = Array.from(new Set(contextVotes.map(v => JSON.stringify(v))))
-                                   .map(s => JSON.parse(s));
-
-          // ----------------------------------------------------
-
-          // Construction du texte pour l'IA
-          const contextStr = uniqueVotes
-            .map(v => `- [${v.date}] ${v.titre} => A VOTÉ : ${v.vote}`)
-            .join('\n');
-
-          const systemPrompt =
-            `Tu es un expert politique. Voici l'historique officiel des votes de ${currentDepute.nom} :\n` +
-            `----------------\n` +
-            `${contextStr}\n` +
-            `----------------\n` +
-            `Consigne IMPERATIVE : Utilise UNIQUEMENT la liste ci-dessus pour répondre.\n` +
-            `Si l'utilisateur demande "le dernier vote", cite le premier vote de la liste (le plus récent en haut).\n` +
-            `Ne dis jamais "Je n'ai pas accès aux infos", car les infos sont juste au-dessus.\n` +
-            `Réponds directement : "Son dernier vote date du [Date] sur [Titre] où il a voté [Vote]".`;
-
-          const messages = [
-            { role: 'system', content: systemPrompt },
-            { role: 'user', content: question }
-          ];
-
-          console.log("PROMPT ENVOYÉ À L'IA :", systemPrompt);
-
-          const out = await generator(messages, {
-            // PARAMÈTRES DE GÉNÉRATION
-            max_new_tokens: 400,    // Assez long pour expliquer, mais pas trop pour ne pas divaguer
-            
-            // 1. Contrôle de la créativité (Très bas pour du factuel)
-            temperature: 0.2,       // 0.1 à 0.3 est idéal pour "Lire et rapporter". 0.7 est trop créatif.
-            
-            // 2. Échantillonnage (Sampling)
-            do_sample: true,        // Indispensable pour que temperature/top_p fonctionnent
-            top_p: 0.90,            // "Nucleus sampling" : évite les mots trop farfelus
-            top_k: 40,              // Limite le choix aux 40 mots les plus probables à chaque étape
-            
-            // 3. Pénalités (Anti-radotage)
-            repetition_penalty: 1.1, // Empêche l'IA de répéter "Le député a voté... Le député a voté..."
-            
-            // 4. Optimisation spécifique (Optionnel selon version transformers.js)
-            use_cache: true         // Accélère la génération en réutilisant le contexte
-          });
-
-          const answer = out?.[0]?.generated_text?.at(-1)?.content || "(Pas de réponse)";
-          addMessage('ai', answer);
-
-        }catch(err){
-          addMessage('system', `Erreur: ${err.message}`);
-          console.error(err);
-        }finally{
-          loader.classList.remove('active');
-          sendBtn.disabled = false;
-        }
-      });
-
-      input.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter' && !e.shiftKey){
-          e.preventDefault();
-          sendBtn.click();
-        }
-      });
-    }
-
-async function setupHemicycle() {
-  const container = document.getElementById('hemicycle-container');
-  
-  try {
-    // --- 1. CHARGEMENT DES RESSOURCES ---
-    const [responseSvg, responseMapping, responseColors] = await Promise.all([
-        fetch('public/data/hemicycle_svg/hemicycle.svg'),
-        fetch('public/data/place_mapping/places_mapping.json'),
-        fetch('public/data/hemicycle_svg/sieges_couleurs.json') // <--- NOUVEAU
-    ]);
-
-    if (!responseSvg.ok) throw new Error("SVG introuvable");
-    
-    // Insertion SVG
-    const svgText = await responseSvg.text();
-    container.innerHTML = svgText;
-
-    // Stabilisation CSS
-    const svgElement = container.querySelector('svg');
-    if (svgElement) {
-        svgElement.style.width = '100%';
-        svgElement.style.height = 'auto';
-        svgElement.style.display = 'block';
-        svgElement.removeAttribute('width');
-        svgElement.removeAttribute('height');
-    }
-
-    // Parsage des données
-    let placesMapping = responseMapping.ok ? await responseMapping.json() : {};
-    let seatColors = responseColors.ok ? await responseColors.json() : {}; // <--- NOUVEAU
-
-    // --- 2. PLACEMENT ET COLORATION ---
-    deputesData.forEach(depute => {
-        const seatId = placesMapping[depute.id]; // Ex: "389"
-
-        if (seatId) {
-            let seatElement = container.querySelector(`#p${seatId}`);
-
-            if (seatElement) {
-                // On récupère la couleur officielle du siège (si dispo)
-                const officialColor = seatColors[seatId];
-                
-                // On l'applique. 
-                // Note : il faudra adapter applySeatStyle pour accepter cette couleur
-                applySeatStyle(seatElement, depute, officialColor);
-            }
-        }
-    });
-
-  } catch (e) {
-    console.error("Erreur hémicycle :", e);
-    container.innerHTML = `<div style="text-align:center; color:#666; padding:20px;">
-        ⚠️ Hémicycle indisponible<br><small>${e.message}</small>
-    </div>`;
-  }
-}
-
-// Fonction pour gérer le style et les clics (séparée pour la clarté)
-function applySeatStyle(element, d, forcedColor = null) {
-    // 1. COULEUR
-    let finalColor = '#bdc3c7'; // Gris par défaut
-
-    if (forcedColor) {
-        // Cas A : Couleur officielle du siège (Priorité absolue)
-        finalColor = forcedColor;
-    } else {
-        // Cas B : Couleur via le Groupe (Fallback)
-        const groupeInfo = groupesPolitiques.find(g => g.code === d.groupeAbrev);
-        if (groupeInfo) {
-            finalColor = groupeInfo.couleur;
-        } else {
-            // Debug si besoin
-            // console.warn(`Pas de couleur pour ${d.nom} (${d.groupeAbrev})`);
-        }
-    }
-    
-    // Application de la couleur
-    element.style.fill = finalColor;
-    
-    // 2. INTERACTION
-    element.style.cursor = 'pointer';
-    element.style.pointerEvents = 'all'; 
-    element.style.transition = 'all 0.15s ease';
-
-    // 3. TOOLTIP
-    const title = document.createElement('title');
-    title.textContent = `${d.prenom} ${d.nom} (${d.groupeAbrev})`;
-    element.innerHTML = ''; 
-    element.appendChild(title);
-
-    // 4. CLIC
-    element.onclick = (e) => {
-        e.stopPropagation();
-        selectDepute(d); 
-    };
-
-    // 5. HOVER EFFECT
-    element.onmouseenter = function() {
-        this.style.opacity = '0.7';
-        this.style.stroke = '#333'; 
-        this.style.strokeWidth = '1px'; // Un peu plus fin pour être élégant
-    };
-    
-    element.onmouseleave = function() {
-        this.style.opacity = '1';
-        this.style.stroke = 'none';
-        this.style.strokeWidth = '0';
-    };
-}
-    
-    async function init() {
-      setupSearch();
-      setupChat();
-
-      // 1. Chargement parallèle des données (Députés + Groupes)
-      await Promise.all([
-          loadDeputesData(),
-          loadGroupesData() // Nouvelle fonction qu'on a ajoutée
-      ]);
-      
-      // 2. Une fois qu'on a les groupes (et leurs couleurs), on dessine l'interface graphique
-      renderLegend(); 
-      await setupHemicycle();
-      
-      setupModelLoadUI();
-    }
-
-    init();
-  </script>
+  <div id="model-consent-overlay" class="consent-overlay" aria-hidden="true">
+    <div class="consent-dialog" role="dialog" aria-modal="true" aria-labelledby="consent-title">
+      <h3 id="consent-title">Confirmer le téléchargement du modèle</h3>
+      <p>Le chat IA n'est jamais préchargé. Vérifiez la taille et confirmez avant de lancer le téléchargement.</p>
+      <div class="consent-details">
+        <div class="consent-detail-row">
+          <strong>Modèle</strong>
+          <span id="consent-model-name">-</span>
+        </div>
+        <div class="consent-detail-row">
+          <strong>Profil</strong>
+          <span id="consent-model-profile">-</span>
+        </div>
+        <div class="consent-detail-row">
+          <strong>Taille estimée</strong>
+          <span id="consent-model-size">-</span>
+        </div>
+        <div class="consent-detail-row">
+          <strong>Notes</strong>
+          <span id="consent-model-notes">-</span>
+        </div>
+      </div>
+      <div class="consent-alert">
+        Le téléchargement peut consommer plusieurs centaines de Mo, voire plusieurs Go selon le modèle choisi. Utilisez de préférence une connexion non facturée au volume.
+      </div>
+      <div class="consent-actions">
+        <button id="cancel-consent-btn" type="button">Annuler</button>
+        <button id="confirm-consent-btn" type="button">Télécharger</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>
+      Données :
+      <a href="https://data.assemblee-nationale.fr/travaux-parlementaires/votes" target="_blank"
+        rel="noopener noreferrer">Assemblée Nationale Open Data</a>
+      — Modèles IA :
+      <a href="https://huggingface.co/" target="_blank" rel="noopener noreferrer">Hugging Face</a>
+    </p>
+  </footer>
+
+  <!-- Runtime principal -->
+  <!-- MiniSearch pour l'index lexical côté navigateur -->
+  <script src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js"></script>
+
+  <script type="module" src="js/app.js"></script>
 </body>
+
 </html>

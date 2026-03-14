@@ -24,8 +24,13 @@ logs/
 
 # Fichiers temporaires
 *.tmp
+.tmp-*
 *.temp
 ~*
+playwright-*.png
+__pycache__/
+*.pyc
+test-results/.last-run.json
 
 # Environnement
 .env
