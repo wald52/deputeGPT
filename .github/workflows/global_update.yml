@@ -65,6 +65,56 @@ jobs:
           # Vérifications
           ls -l public/data/hemicycle_svg/hemicycle.svg || echo "⚠️ SVG non généré"
           ls -l public/data/place_mapping/places_mapping.json || echo "⚠️ Mapping non généré"
+        
+      # --- ETAPE 2.75 : UPDATE GROUP COLORS ---
+      - name: Update Group Colors
+        run: |
+          echo "Mise à jour des couleurs des groupes..."
+          python scripts/update_group_colors.py
+          ls -l public/data/deputes_actifs/groupes.json || echo "⚠️ Fichier des groupes non mis à jour"
+
+      # --- ETAPE 2.9 : GÉNÉRATION ARTEFACTS RAG ---
+      - name: Generate RAG Artifacts
+        run: |
+          echo "🧠 Génération des artefacts RAG..."
+          
+          # Installation des dépendances pour BGE-M3
+          pip install FlagEmbedding numpy sentence-transformers
+          
+          # Génération des index lexicaux + sémantiques
+          python scripts/generate_semantic_index.py
+          
+          # Vérifications des artefacts publics et du manifest RAG
+          if [ -f "public/data/rag/lexical_index.json" ]; then
+            SIZE=$(du -h public/data/rag/lexical_index.json | cut -f1)
+            echo "✅ Index lexical RAG généré: $SIZE"
+          else
+            echo "⚠️ Index lexical RAG non généré"
+            exit 1
+          fi
+
+          if [ -f "public/data/rag/semantic_index.json" ]; then
+            SIZE=$(du -h public/data/rag/semantic_index.json | cut -f1)
+            echo "✅ Index sémantique RAG généré: $SIZE"
+          else
+            echo "⚠️ Index sémantique RAG non généré"
+            exit 1
+          fi
+
+          if [ -f "public/data/rag/semantic_multivector_index.json" ]; then
+            SIZE=$(du -h public/data/rag/semantic_multivector_index.json | cut -f1)
+            echo "✅ Index sémantique multi-vector généré: $SIZE"
+          else
+            echo "⚠️ Index sémantique multi-vector non généré"
+            exit 1
+          fi
+
+          if [ -f "public/data/rag/manifest.json" ]; then
+            echo "✅ Manifest RAG généré"
+          else
+            echo "⚠️ Manifest RAG non généré"
+            exit 1
+          fi
 
       # --- ETAPE 3 : COMMIT UNIQUE ---
       - name: Commit & Push Changes (Main)
