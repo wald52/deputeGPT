@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Portrait indisponible</title>
+  <desc id="desc">Silhouette grise utilisee en attendant une photo de depute.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f4f6f8"/>
+      <stop offset="100%" stop-color="#d8dee6"/>
+    </linearGradient>
+  </defs>
+  <rect width="160" height="160" rx="80" fill="url(#bg)"/>
+  <circle cx="80" cy="58" r="28" fill="#9aa6b2"/>
+  <path d="M40 138c4-26 20-42 40-42s36 16 40 42" fill="#9aa6b2"/>
+</svg>
