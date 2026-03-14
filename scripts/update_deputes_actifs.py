@@ -6,6 +6,12 @@ import urllib.request
 import urllib.error
 from datetime import datetime, timezone
 
+# Force UTF-8 encoding for stdout/stderr to handle emojis on Windows
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
+if hasattr(sys.stderr, 'reconfigure'):
+    sys.stderr.reconfigure(encoding='utf-8')
+
 RESOURCE_ID = "092bd7bb-1543-405b-b53c-932ebb49bb8e"
 BASE = f"https://tabular-api.data.gouv.fr/api/resources/{RESOURCE_ID}/data/"
 OUT_DIR = "public/data/deputes_actifs"
@@ -17,23 +23,23 @@ COULEURS_OFFICIELLES = {
     "GDR": "#dd0000",   # Gauche Démocrate et Républicaine
     "LFI": "#cc2443", "LFI-NFP": "#cc2443", # La France Insoumise
     "SOC": "#ff8080",   # Socialistes
-    "ECO": "#00c000", "EcoS": "#00c000",    # Ecologistes
+    "ECOS": "#77AA79", "ECO": "#77AA79", "EcoS": "#77AA79",    # Écologiste et Social (Vert)
     
     # Centre / Majorité
     "LIOT": "#e1a5e1",  # Libertés, Indépendants... (Violet)
-    "DEM": "#ff9900",   # MoDem (Orange)
-    "EPR": "#ffeb00", "ENS": "#ffeb00", "RE": "#ffeb00", "Ensemble": "#ffeb00", # Renaissance (Jaune)
-    "HOR": "#0001b8",   # Horizons (Bleu marine)
+    "DEM": "#ff9900",   # Les Démocrates (Orange)
+    "EPR": "#ffeb00", "ENS": "#ffeb00", "RE": "#ffeb00", "Ensemble": "#ffeb00", # Ensemble pour la République (Jaune)
+    "HOR": "#0001b8",   # Horizons & Indépendants (Bleu marine)
 
     # Droite
     "DR": "#0066cc", "LR": "#0066cc", # Droite Républicaine (Bleu)
-    "UDR": "#162561", "UED": "#162561", # Union des Droites (Bleu foncé)
+    "UDDPLR": "#8D949A", "UDR": "#8D949A", "UED": "#8D949A", # Union des droites pour la République (Gris foncé)
 
     # Extrême Droite
-    "RN": "#0d378a",    # Rassemblement National
+    "RN": "#0d378a",    # Rassemblement National (Bleu très foncé)
 
     # Autres
-    "NI": "#dddddd"     # Non Inscrits (Gris)
+    "NI": "#dddddd"     # Non Inscrits (Gris clair)
 }
 
 def fetch_json(url: str) -> dict:

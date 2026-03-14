@@ -4,6 +4,13 @@ import os
 import re
 import json
 import html
+import sys
+
+# Force UTF-8 encoding for stdout/stderr to handle emojis on Windows
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
+if hasattr(sys.stderr, 'reconfigure'):
+    sys.stderr.reconfigure(encoding='utf-8')
 
 # Config
 URL_PAGE = "https://www.assemblee-nationale.fr/dyn/vos-deputes/hemicycle"
@@ -45,6 +52,10 @@ def update_hemicycle_data():
             for seat in target_svg.find_all(['path', 'circle', 'rect']):
                 if 'style' in seat.attrs: del seat['style']
                 seat['fill'] = '#e0e0e0' # Gris neutre de base
+                
+                # Cas spécial : Le Perchoir (Président)
+                if seat.get('id') == 'ppresident':
+                    seat['id'] = 'pPRESIDENT'
 
             # ViewBox et Dimensions
             if 'width' in target_svg.attrs: del target_svg['width']
@@ -66,14 +77,14 @@ def update_hemicycle_data():
         
         sieges_map = {}
         
-        # MÉTHODE A : Via attribut data-siege (Le plus fiable sur la page actuelle)
+        # MÉTHODE A : Via attribut data-siegedata (Le plus fiable sur la page actuelle)
         # On cherche n'importe quel élément ayant cet attribut
-        elements_with_data = soup.find_all(attrs={"data-siege": True})
+        elements_with_data = soup.find_all(attrs={"data-siegedata": True})
         
         if elements_with_data:
             print(f"Trouvé {len(elements_with_data)} élément(s) avec data-siege.")
             try:
-                raw_json = elements_with_data[0]["data-siege"]
+                raw_json = elements_with_data[0]["data-siegedata"]
                 # Décodage des entités HTML (&quot; -> ")
                 clean_json = html.unescape(raw_json)
                 data = json.loads(clean_json)
@@ -82,7 +93,15 @@ def update_hemicycle_data():
                 count = 0
                 for num, infos in data.items():
                     if isinstance(infos, dict) and "couleur" in infos:
-                        sieges_map[num] = "#" + infos["couleur"]
+                        color = infos["couleur"]
+                        # S'assurer que la couleur commence par #
+                        if not color.startswith('#'):
+                            color = "#" + color
+                        # Standardisation de l'ID pour le président
+                        if num == 'president':
+                            num = 'PRESIDENT'
+                            
+                        sieges_map[num] = color
                         count += 1
                 print(f"Méthode data-siege : {count} couleurs trouvées.")
             except Exception as e:

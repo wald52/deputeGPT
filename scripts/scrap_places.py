@@ -3,6 +3,13 @@ import re
 import html
 import json
 import os
+import sys
+
+# Force UTF-8 encoding for stdout/stderr to handle emojis on Windows
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
+if hasattr(sys.stderr, 'reconfigure'):
+    sys.stderr.reconfigure(encoding='utf-8')
 
 # 1. Configuration
 URL_PAGE = "https://www.assemblee-nationale.fr/dyn/vos-deputes/hemicycle"
