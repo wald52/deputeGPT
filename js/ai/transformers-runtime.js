@@ -4,8 +4,8 @@ const TRANSFORMERS_CHANNELS = {
     label: 'transformers.js 3.8.1'
   },
   next: {
-    url: 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.0.0-next.6',
-    label: 'transformers.js 4.0.0-next.6'
+    url: 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.0.0-next.7',
+    label: 'transformers.js 4.0.0-next.7'
   }
 };
 
