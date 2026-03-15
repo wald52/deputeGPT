@@ -51,6 +51,7 @@ export function createModelLoader({
       const safePct = Math.round(safeRatio * 100);
       progressBarFill.style.width = `${safePct}%`;
       progressText.textContent = `${label} (${safePct}%)`;
+      progressBarFill.parentElement?.setAttribute('aria-valuenow', String(safePct));
     };
 
     try {
