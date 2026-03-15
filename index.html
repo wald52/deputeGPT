@@ -4,206 +4,238 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DéputéGPT - IA WebGPU pour l'Assemblée Nationale</title>
-  <!-- Favicon vide pour éviter l'affichage d'un logo par défaut -->
-  <link rel="icon" href="data:,">
+  <title>DéputéGPT | Explorer et analyser les votes des députés français</title>
+  <meta name="description" content="Explorez les votes des députés français, filtrez les scrutins et obtenez des réponses factuelles ou analytiques en français à partir des données de l'Assemblée nationale." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="theme-color" content="#0f47aa" />
+  <meta name="application-name" content="DéputéGPT" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:title" content="DéputéGPT" />
+  <meta property="og:description" content="Interrogez les votes des députés français avec une interface statique, factuelle d'abord, puis analytique quand le contexte est pertinent." />
+  <meta name="twitter:card" content="summary" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='10' y='20' width='44' height='32' rx='6' fill='%230f47aa'/%3E%3Crect x='24' y='10' width='16' height='18' rx='2' fill='%23f8fbff'/%3E%3Cpath d='M24 28h16' stroke='%23f8fbff' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "DéputéGPT",
+      "applicationCategory": "GovernmentApplication",
+      "operatingSystem": "Web Browser",
+      "inLanguage": "fr-FR",
+      "description": "Application web statique permettant d'explorer et d'analyser les votes des députés français à partir des données de l'Assemblée nationale."
+    }
+  </script>
   <link rel="stylesheet" href="public/styles/app.css">
-
-  
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">Aller au contenu principal</a>
 
   <header>
-    <h1>
-      🗳️ DéputéGPT
-    </h1>
-    <p class="subtitle-header">
-      Interrogez l'IA sur les votes des députés (WebGPU)
-    </p>
+    <div class="brand-block">
+      <h1>
+        <span aria-hidden="true">🗳️</span>
+        <span>DéputéGPT</span>
+      </h1>
+      <p class="subtitle-header">
+        Interrogez les votes des députés avec une réponse factuelle d'abord, puis une synthèse IA si besoin.
+      </p>
+    </div>
   </header>
 
-  <div class="container">
+  <noscript>
+    <div class="noscript-banner">
+      DéputéGPT a besoin de JavaScript pour charger les données et activer la recherche dans les votes des députés.
+    </div>
+  </noscript>
 
-    <div class="main-content">
-      <!-- Panneau Gauche -->
-      <div class="panel">
-        <div class="panel-title-row">
-          <h2>Sélectionnez un Député</h2>
-          <p class="panel-intro">Cliquez sur un siège ou recherchez un nom.</p>
-        </div>
-
-        <div class="search-box">
-          <input type="text" id="search-input" placeholder="Rechercher par nom, groupe, ou circonscription..."
-            autocomplete="off" />
-          <div id="search-results" class="search-results"></div>
-        </div>
-
-        <div id="hemicycle-container">
-          <object class="hemicycle-svg-object" data="./public/data/hemicycle_svg/hemicycle.svg" type="image/svg+xml"
-            aria-label="Hémicycle">
-            Le navigateur ne supporte pas l’affichage SVG via object.
-          </object>
-        </div>
-
-        <div id="legend" class="legend"></div>
-
-        <div id="stats-container" class="stats" hidden>
-          <div class="stat-box">
-            <div class="stat-number" id="stat-votes">0</div>
-            <div class="stat-label">Votes analysés</div>
+  <main id="main-content" tabindex="-1">
+    <div class="container">
+      <div class="main-content">
+        <!-- Panneau Gauche -->
+        <section class="panel" aria-labelledby="depute-panel-title">
+          <div class="panel-title-row">
+            <h2 id="depute-panel-title">Sélectionnez un député</h2>
+            <p class="panel-intro">Cliquez sur un siège ou recherchez un nom.</p>
           </div>
-          <div class="stat-box">
-            <div class="stat-number" id="stat-pour">0</div>
-            <div class="stat-label">Pour</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-number" id="stat-contre">0</div>
-            <div class="stat-label">Contre</div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Panneau Droit -->
-      <div class="panel">
-        <div class="model-toolbar-shell">
-          <!-- LIGNE UNIFIÉE: Titre + Résumé compact + Bouton -->
-          <div class="unified-header-row">
-            <h2>Chat IA</h2>
-            <div class="header-center">
-              <span id="model-settings-summary" class="model-settings-summary" title="Configuration IA sélectionnée">
-                Profil IA par défaut
-              </span>
-              <button id="model-settings-toggle" class="header-action-btn settings-toggle-btn" type="button"
-                aria-controls="advanced-options" aria-expanded="false">
-                Réglages IA
-              </button>
+          <div class="search-box" role="search" aria-labelledby="search-label">
+            <label id="search-label" class="sr-only" for="search-input">Rechercher un député par nom, groupe ou circonscription</label>
+            <p id="search-help" class="sr-only">Saisissez au moins deux caractères pour afficher jusqu'à dix résultats.</p>
+            <input type="text" id="search-input" placeholder="Rechercher par nom, groupe, ou circonscription..."
+              autocomplete="off" aria-describedby="search-help search-status" aria-controls="search-results" />
+            <p id="search-status" class="sr-only" aria-live="polite"></p>
+            <ul id="search-results" class="search-results" aria-label="Résultats de recherche de députés" hidden></ul>
+          </div>
+
+          <figure id="hemicycle-container" aria-labelledby="hemicycle-caption">
+            <object class="hemicycle-svg-object" data="./public/data/hemicycle_svg/hemicycle.svg" type="image/svg+xml"
+              aria-label="Hémicycle des députés de l'Assemblée nationale">
+              Le navigateur ne supporte pas l’affichage SVG via object.
+            </object>
+            <figcaption id="hemicycle-caption" class="sr-only">Utilisez la recherche ou cliquez sur un siège de l'hémicycle pour sélectionner un député.</figcaption>
+          </figure>
+
+          <div id="legend" class="legend"></div>
+
+          <div id="stats-container" class="stats" hidden aria-live="polite">
+            <div class="stat-box">
+              <div class="stat-number" id="stat-votes">0</div>
+              <div class="stat-label">Votes analysés</div>
             </div>
-            <button id="load-model-btn" class="btn-load-mini" type="button">Charger IA</button>
+            <div class="stat-box">
+              <div class="stat-number" id="stat-pour">0</div>
+              <div class="stat-label">Pour</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number" id="stat-contre">0</div>
+              <div class="stat-label">Contre</div>
+            </div>
           </div>
-          <div id="progress-container" class="progress-inline" hidden>
-            <div class="progress-bar-bg"><div id="progress-bar-fill"></div></div>
-            <span id="progress-text">0%</span>
-          </div>
+        </section>
 
-          <!-- Réglages IA à la demande -->
-          <div id="advanced-options" class="advanced-options" hidden aria-hidden="true">
-            <div class="advanced-options-header">
-              <div class="advanced-options-copy">
-                <h3>Réglages IA</h3>
-                <p>Ces choix sont mémorisés localement et restent appliqués même quand ce panneau est fermé.</p>
+        <!-- Panneau Droit -->
+        <section class="panel" aria-labelledby="chat-panel-title">
+          <div class="model-toolbar-shell">
+            <!-- LIGNE UNIFIÉE: Titre + Résumé compact + Bouton -->
+            <div class="unified-header-row">
+              <h2 id="chat-panel-title">Chat IA</h2>
+              <div class="header-center">
+                <span id="model-settings-summary" class="model-settings-summary" title="Configuration IA sélectionnée" aria-live="polite">
+                  Profil IA par défaut
+                </span>
+                <button id="model-settings-toggle" class="header-action-btn settings-toggle-btn" type="button"
+                  aria-controls="advanced-options" aria-expanded="false">
+                  Réglages IA
+                </button>
               </div>
-              <button id="close-advanced-options-btn" class="header-action-btn" type="button">Fermer</button>
+              <button id="load-model-btn" class="btn-load-mini" type="button">Charger IA</button>
             </div>
-            <div class="advanced-toolbar">
-              <div class="model-select-grid">
-                <div class="model-group-compact model-field-card">
-                  <div class="model-field-label">
-                    <label for="model-select">Modèle</label>
-                    <span class="tooltip-container field-info" tabindex="0" aria-label="Informations sur le choix du modèle">i
-                      <span class="tooltip-text tooltip-text-start">Choisissez la famille testée dans l'application avant chargement.</span>
-                    </span>
-                  </div>
-                  <select id="model-select"><option value="">Chargement...</option></select>
+            <div id="progress-container" class="progress-inline" hidden role="status" aria-live="polite">
+              <div class="progress-bar-bg" role="progressbar" aria-label="Progression du téléchargement du modèle" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progress-bar-fill"></div></div>
+              <span id="progress-text">0%</span>
+            </div>
+
+            <!-- Réglages IA à la demande -->
+            <div id="advanced-options" class="advanced-options" hidden aria-hidden="true" role="region" aria-labelledby="advanced-options-title">
+              <div class="advanced-options-header">
+                <div class="advanced-options-copy">
+                  <h3 id="advanced-options-title">Réglages IA</h3>
+                  <p>Ces choix sont mémorisés localement et restent appliqués même quand ce panneau est fermé.</p>
                 </div>
-                <div class="model-group-compact model-field-card">
-                  <div class="model-field-label">
-                    <label for="quant-select">Quantification</label>
-                    <span class="tooltip-container field-info" tabindex="0" aria-label="Informations sur la quantification">i
-                      <span class="tooltip-text tooltip-text-end">La taille affichée sert de base au consentement de téléchargement.</span>
-                    </span>
+                <button id="close-advanced-options-btn" class="header-action-btn" type="button">Fermer</button>
+              </div>
+              <div class="advanced-toolbar">
+                <div class="model-select-grid">
+                  <div class="model-group-compact model-field-card">
+                    <div class="model-field-label">
+                      <label for="model-select">Modèle</label>
+                      <button type="button" class="tooltip-container field-info" aria-label="Informations sur le choix du modèle" aria-describedby="model-tooltip">i
+                        <span id="model-tooltip" role="tooltip" class="tooltip-text tooltip-text-start">Choisissez la famille testée dans l'application avant chargement.</span>
+                      </button>
+                    </div>
+                    <select id="model-select"><option value="">Chargement...</option></select>
                   </div>
-                  <select id="quant-select"><option value="">Sélectionnez</option></select>
+                  <div class="model-group-compact model-field-card">
+                    <div class="model-field-label">
+                      <label for="quant-select">Quantification</label>
+                      <button type="button" class="tooltip-container field-info" aria-label="Informations sur la quantification" aria-describedby="quant-tooltip">i
+                        <span id="quant-tooltip" role="tooltip" class="tooltip-text tooltip-text-end">La taille affichée sert de base au consentement de téléchargement.</span>
+                      </button>
+                    </div>
+                    <select id="quant-select"><option value="">Sélectionnez</option></select>
+                  </div>
+                </div>
+                <div class="model-group-compact model-group-toggle">
+                  <div class="thinking-card">
+                    <div class="thinking-card-top">
+                      <div class="thinking-card-heading">
+                        <span class="thinking-card-title">Raisonnement</span>
+                        <span class="thinking-card-badge">Avancé</span>
+                      </div>
+                      <div class="thinking-card-toggle-slot">
+                        <label class="advanced-toggle-compact" for="thinking-mode-toggle">
+                          <input type="checkbox" id="thinking-mode-toggle" aria-describedby="thinking-help" />
+                          <span class="toggle-slider-small" aria-hidden="true"></span>
+                          <span class="sr-only">Activer le mode de raisonnement avancé</span>
+                        </label>
+                      </div>
+                    </div>
+                    <p id="thinking-help" class="thinking-help">Plus lent, réservé aux usages avancés. Le raisonnement interne reste masqué dans l'interface.</p>
+                  </div>
+                  <div class="thinking-card semantic-rag-card">
+                    <div class="thinking-card-top">
+                      <div class="thinking-card-heading">
+                        <span class="thinking-card-title">RAG sémantique local</span>
+                        <span class="thinking-card-badge">Expérimental</span>
+                      </div>
+                      <div class="thinking-card-toggle-slot">
+                        <label class="advanced-toggle-compact" for="semantic-rag-toggle">
+                          <input type="checkbox" id="semantic-rag-toggle" aria-describedby="semantic-rag-helper semantic-rag-status" />
+                          <span class="toggle-slider-small" aria-hidden="true"></span>
+                          <span class="sr-only">Activer le RAG sémantique local</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="semantic-rag-mode">
+                      <label for="semantic-rag-mode-select">Mode</label>
+                      <select id="semantic-rag-mode-select">
+                        <option value="single_vector">Single-vector</option>
+                      </select>
+                    </div>
+                    <p id="semantic-rag-helper" class="thinking-help">Reranking local après la recherche lexicale. Consentement explicite requis avant téléchargement.</p>
+                    <div class="semantic-rag-meta">
+                      <span id="semantic-rag-size" class="semantic-rag-size">Taille à mesurer</span>
+                      <button id="semantic-rag-load-btn" class="header-action-btn semantic-rag-load-btn" type="button">Activer</button>
+                    </div>
+                    <div id="semantic-rag-status" class="semantic-rag-status" role="status" aria-live="polite">Mode lexical uniquement.</div>
+                  </div>
                 </div>
               </div>
-              <div class="model-group-compact model-group-toggle">
-                <div class="thinking-card">
-                  <div class="thinking-card-top">
-                    <div class="thinking-card-heading">
-                      <span class="thinking-card-title">Raisonnement</span>
-                      <span class="thinking-card-badge">Avancé</span>
-                    </div>
-                    <div class="thinking-card-toggle-slot">
-                      <label class="advanced-toggle-compact" aria-label="Activer le mode thinking">
-                        <input type="checkbox" id="thinking-mode-toggle" />
-                        <span class="toggle-slider-small"></span>
-                      </label>
-                    </div>
-                  </div>
-                  <p class="thinking-help">Plus lent, réservé aux usages avancés. Le raisonnement interne reste masqué dans l'interface.</p>
-                </div>
-                <div class="thinking-card semantic-rag-card">
-                  <div class="thinking-card-top">
-                    <div class="thinking-card-heading">
-                      <span class="thinking-card-title">RAG sémantique local</span>
-                      <span class="thinking-card-badge">Expérimental</span>
-                    </div>
-                    <div class="thinking-card-toggle-slot">
-                      <label class="advanced-toggle-compact" aria-label="Activer le RAG sémantique local">
-                        <input type="checkbox" id="semantic-rag-toggle" />
-                        <span class="toggle-slider-small"></span>
-                      </label>
-                    </div>
-                  </div>
-                  <div class="semantic-rag-mode">
-                    <label for="semantic-rag-mode-select">Mode</label>
-                    <select id="semantic-rag-mode-select">
-                      <option value="single_vector">Single-vector</option>
-                    </select>
-                  </div>
-                  <p id="semantic-rag-helper" class="thinking-help">Reranking local après la recherche lexicale. Consentement explicite requis avant téléchargement.</p>
-                  <div class="semantic-rag-meta">
-                    <span id="semantic-rag-size" class="semantic-rag-size">Taille à mesurer</span>
-                    <button id="semantic-rag-load-btn" class="header-action-btn semantic-rag-load-btn" type="button">Activer</button>
-                  </div>
-                  <div id="semantic-rag-status" class="semantic-rag-status">Mode lexical uniquement.</div>
-                </div>
+            </div>
+          </div>
+
+          <div class="depute-card" id="selected-depute" aria-live="polite">
+            <div id="depute-placeholder">
+              Sélectionnez un député dans l’hémicycle ou via la recherche
+            </div>
+            <div id="depute-content" hidden>
+              <div class="photo-container">
+                <img class="depute-photo" id="depute-img" src="" alt="Portrait du député sélectionné" />
+              </div>
+              <div class="depute-info">
+                <h3 id="depute-name"></h3>
+                <p id="depute-details" class="info-details"></p>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="depute-card" id="selected-depute">
-          <div id="depute-placeholder">
-            Sélectionnez un député dans l'hémicycle
-          </div>
-          <div id="depute-content" hidden>
-            <div class="photo-container">
-              <img class="depute-photo" id="depute-img" src="" alt="Photo" />
-            </div>
-            <div class="depute-info">
-              <h3 id="depute-name"></h3>
-              <p id="depute-details" class="info-details"></p>
+          <div id="chat-quick-actions" class="chat-quick-actions" aria-label="Questions suggérées"></div>
+          <div id="chat-scope-summary" class="chat-scope-summary hidden" aria-live="polite"></div>
+          <div id="chat-scope-actions" class="chat-scope-actions hidden" aria-label="Actions liées au contexte courant"></div>
+          <div id="messages" role="log" aria-live="polite" aria-relevant="additions text">
+            <div id="chat-empty-state" class="chat-empty-state">
+              Sélectionnez un député, puis posez une question exacte (liste, nombre, période, thème) ou lancez une analyse IA.
             </div>
           </div>
-        </div>
 
-        <div id="chat-quick-actions" class="chat-quick-actions"></div>
-        <div id="chat-scope-summary" class="chat-scope-summary hidden" aria-live="polite"></div>
-        <div id="chat-scope-actions" class="chat-scope-actions hidden"></div>
-        <div id="messages" role="log" aria-live="polite" aria-relevant="additions text">
-          <div id="chat-empty-state" class="chat-empty-state">
-            Sélectionnez un député, puis posez une question exacte (liste, nombre, période, thème) ou lancez une analyse IA.
+          <div class="input-area">
+            <label class="sr-only" for="user-input">Votre question sur les votes du député sélectionné</label>
+            <textarea id="user-input" placeholder="Posez votre question sur les votes de ce député..." rows="1"
+              disabled aria-describedby="user-input-hint"></textarea>
+            <button id="send-btn" type="button" aria-label="Envoyer la question" disabled>Envoyer</button>
           </div>
-        </div>
-
-        <div class="input-area">
-          <textarea id="user-input" placeholder="Posez votre question sur les votes de ce député..." rows="1"
-            disabled></textarea>
-          <button id="send-btn" disabled>Envoyer</button>
-        </div>
-        <div class="input-hint">Entrée pour envoyer · Maj + Entrée pour une nouvelle ligne</div>
-
-
+          <div id="user-input-hint" class="input-hint">Entrée pour envoyer · Maj + Entrée pour une nouvelle ligne</div>
+        </section>
       </div>
     </div>
-
-  </div>
+  </main>
 
   <div id="model-consent-overlay" class="consent-overlay" aria-hidden="true">
-    <div class="consent-dialog" role="dialog" aria-modal="true" aria-labelledby="consent-title">
+    <div class="consent-dialog" role="dialog" aria-modal="true" aria-labelledby="consent-title" aria-describedby="consent-description consent-alert">
       <h3 id="consent-title">Confirmer le téléchargement du modèle</h3>
-      <p>Le chat IA n'est jamais préchargé. Vérifiez la taille et confirmez avant de lancer le téléchargement.</p>
+      <p id="consent-description">Le chat IA n'est jamais préchargé. Vérifiez la taille et confirmez avant de lancer le téléchargement.</p>
       <div class="consent-details">
         <div class="consent-detail-row">
           <strong>Modèle</strong>
@@ -222,7 +254,7 @@
           <span id="consent-model-notes">-</span>
         </div>
       </div>
-      <div class="consent-alert">
+      <div id="consent-alert" class="consent-alert">
         Le téléchargement peut consommer plusieurs centaines de Mo, voire plusieurs Go selon le modèle choisi. Utilisez de préférence une connexion non facturée au volume.
       </div>
       <div class="consent-actions">
