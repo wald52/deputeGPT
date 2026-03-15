@@ -3,72 +3,72 @@
     "code": "RN",
     "nom": "Rassemblement National",
     "seats": 122,
-    "couleur": "#0d378a"
+    "couleur": "#313567"
   },
   {
     "code": "EPR",
     "nom": "Ensemble pour la République",
     "seats": 91,
-    "couleur": "#ffeb00"
+    "couleur": "#7B4591"
   },
   {
     "code": "LFI-NFP",
     "nom": "La France insoumise - Nouveau Front Populaire",
     "seats": 71,
-    "couleur": "#cc2443"
+    "couleur": "#C00D0D"
   },
   {
     "code": "SOC",
     "nom": "Socialistes et apparentés",
     "seats": 69,
-    "couleur": "#ff8080"
+    "couleur": "#F5B4CE"
   },
   {
     "code": "DR",
     "nom": "Droite Républicaine",
     "seats": 49,
-    "couleur": "#0066cc"
+    "couleur": "#8CB0DC"
   },
   {
     "code": "ECOS",
     "nom": "Écologiste et Social",
     "seats": 38,
-    "couleur": "#bdc3c7"
+    "couleur": "#77AA79"
   },
   {
     "code": "DEM",
     "nom": "Les Démocrates",
     "seats": 36,
-    "couleur": "#ff9900"
+    "couleur": "#F07E26"
   },
   {
     "code": "HOR",
     "nom": "Horizons & Indépendants",
     "seats": 34,
-    "couleur": "#0001b8"
+    "couleur": "#B5E2F9"
   },
   {
     "code": "LIOT",
     "nom": "Libertés, Indépendants, Outre-mer et Territoires",
     "seats": 22,
-    "couleur": "#e1a5e1"
+    "couleur": "#FFD96F"
   },
   {
     "code": "UDDPLR",
     "nom": "Union des droites pour la République",
     "seats": 17,
-    "couleur": "#bdc3c7"
+    "couleur": "#3367A7"
   },
   {
     "code": "GDR",
     "nom": "Gauche Démocrate et Républicaine",
     "seats": 17,
-    "couleur": "#dd0000"
+    "couleur": "#830E21"
   },
   {
     "code": "NI",
     "nom": "Non inscrit",
     "seats": 11,
-    "couleur": "#dddddd"
+    "couleur": "#8D949A"
   }
 ]

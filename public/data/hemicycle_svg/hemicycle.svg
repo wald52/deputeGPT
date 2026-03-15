@@ -1761,6 +1761,6 @@
 <path class="place" d="M484.51983,97.35095L491.85408,98.8712L498.37158,100.36445L496.00908,110.33495L488.55183999999997,108.6392L482.62757999999997,107.4227L484.51984,97.35095000000001Z" fill="#e0e0e0" id="p288" transform="matrix(0.28,0,0,0.28,0,0)"></path>
 </g>
 <g>
-<circle class="place" cx="118.3" cy="132" fill="#e0e0e0" id="ppresident" r="3"></circle>
+<circle class="place" cx="118.3" cy="132" fill="#e0e0e0" id="pPRESIDENT" r="3"></circle>
 </g>
 </svg>
