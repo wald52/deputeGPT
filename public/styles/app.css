@@ -2368,3 +2368,135 @@ header h1 {
         font-size: 0.72rem;
       }
     }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  border: 0;
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 5000;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #0f47aa;
+  border: 2px solid #0f47aa;
+  text-decoration: none;
+  font-weight: 700;
+  transform: translateY(-180%);
+  transition: transform 0.18s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.brand-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+main {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.noscript-banner {
+  padding: 10px 14px;
+  background: #fff5d8;
+  color: #724200;
+  border-bottom: 1px solid #e0c072;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.search-results {
+  display: block;
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.search-result-item {
+  padding: 0;
+}
+
+.search-result-button {
+  width: 100%;
+  padding: 10px;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+.search-result-button:hover {
+  background-color: #f8f9fa;
+}
+
+.search-result-button:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: -2px;
+  background: #edf4ff;
+}
+
+.search-result-empty {
+  padding: 10px;
+  list-style: none;
+}
+
+.tooltip-container.field-info {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 0;
+  font-family: inherit;
+  line-height: 1;
+}
+
+.tooltip-container.field-info:focus-visible {
+  outline: 2px solid #0f47aa;
+  outline-offset: 2px;
+}
+
+.advanced-toggle-compact {
+  position: relative;
+}
+
+.advanced-toggle-compact input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.advanced-toggle-compact input:focus-visible + .toggle-slider-small {
+  outline: 2px solid #0f47aa;
+  outline-offset: 3px;
+}
+
+#depute-placeholder {
+  color: #52657f;
+  font-weight: 600;
+}
