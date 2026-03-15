@@ -28,11 +28,76 @@ export function createSearchPanelController({
 }) {
   function setupSearch() {
     const input = document.getElementById('search-input');
-    const resultsDiv = document.getElementById('search-results');
+    const resultsList = document.getElementById('search-results');
+    const searchStatus = document.getElementById('search-status');
+
+    if (!input || !resultsList) {
+      return;
+    }
+
+    const setStatus = message => {
+      if (searchStatus) {
+        searchStatus.textContent = message || '';
+      }
+    };
+
+    const setResultsVisibility = visible => {
+      const isVisible = Boolean(visible);
+      resultsList.hidden = !isVisible;
+    };
+
+    const clearResults = ({ clearStatus = false } = {}) => {
+      resultsList.innerHTML = '';
+      setResultsVisibility(false);
+      if (clearStatus) {
+        setStatus('');
+      }
+    };
+
+    const focusResult = direction => {
+      const resultButtons = Array.from(resultsList.querySelectorAll('.search-result-button'));
+      if (resultButtons.length === 0) {
+        return;
+      }
+
+      const activeIndex = resultButtons.indexOf(document.activeElement);
+      const nextIndex = activeIndex === -1
+        ? (direction > 0 ? 0 : resultButtons.length - 1)
+        : (activeIndex + direction + resultButtons.length) % resultButtons.length;
+
+      resultButtons[nextIndex]?.focus();
+    };
+
+    const handleResultSelection = (depute, fullName) => {
+      selectDepute(depute);
+      input.value = fullName;
+      clearResults();
+      setStatus(`Député sélectionné: ${fullName}.`);
+    };
 
     document.addEventListener('click', event => {
-      if (!input.contains(event.target) && !resultsDiv.contains(event.target)) {
-        resultsDiv.style.display = 'none';
+      if (!input.contains(event.target) && !resultsList.contains(event.target)) {
+        clearResults();
+      }
+    });
+
+    resultsList.addEventListener('keydown', event => {
+      if (event.key === 'ArrowDown') {
+        event.preventDefault();
+        focusResult(1);
+        return;
+      }
+
+      if (event.key === 'ArrowUp') {
+        event.preventDefault();
+        focusResult(-1);
+        return;
+      }
+
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        clearResults();
+        input.focus();
       }
     });
 
@@ -41,7 +106,8 @@ export function createSearchPanelController({
         const query = event.target.value.trim().toLowerCase();
 
         if (query.length < 2) {
-          resultsDiv.style.display = 'none';
+          clearResults();
+          setStatus(query.length === 0 ? '' : 'Saisissez au moins deux caractères pour lancer la recherche.');
           return;
         }
 
@@ -59,18 +125,28 @@ export function createSearchPanelController({
             circo.includes(query);
         });
 
+        resultsList.innerHTML = '';
+
         if (results.length === 0) {
-          resultsDiv.innerHTML = '<div class="search-result-item search-result-empty">Aucun resultat</div>';
-          resultsDiv.style.display = 'block';
+          const emptyItem = document.createElement('li');
+          emptyItem.className = 'search-result-item search-result-empty';
+          emptyItem.textContent = 'Aucun résultat';
+          resultsList.appendChild(emptyItem);
+          setResultsVisibility(true);
+          setStatus('Aucun député ne correspond à cette recherche.');
           return;
         }
 
-        resultsDiv.innerHTML = '';
-        resultsDiv.style.display = 'block';
+        const limitedResults = results.slice(0, 10);
+        const fragment = document.createDocumentFragment();
 
-        results.slice(0, 10).forEach(depute => {
-          const item = document.createElement('div');
+        limitedResults.forEach(depute => {
+          const item = document.createElement('li');
           item.className = 'search-result-item';
+
+          const action = document.createElement('button');
+          action.type = 'button';
+          action.className = 'search-result-button';
 
           const fullName = `${depute.prenom} ${depute.nom}`;
           let circoDisplay = depute.circonscription;
@@ -82,22 +158,29 @@ export function createSearchPanelController({
           }
 
           const groupeDisplay = depute.groupeNom || depute.groupe || '';
-          item.innerHTML = buildSearchResultHtmlInternal(depute, {
+          action.innerHTML = buildSearchResultHtmlInternal(depute, {
             fullName,
             circoDisplay,
             groupeDisplay,
             getDeputePhotoUrl,
             deputePhotoPlaceholderUrl
           });
-
-          item.addEventListener('click', () => {
-            selectDepute(depute);
-            input.value = fullName;
-            resultsDiv.style.display = 'none';
+          action.setAttribute('aria-label', `${fullName}, ${groupeDisplay}${circoDisplay ? `, ${circoDisplay}` : ''}`);
+          action.addEventListener('click', () => {
+            handleResultSelection(depute, fullName);
           });
 
-          resultsDiv.appendChild(item);
+          item.appendChild(action);
+          fragment.appendChild(item);
         });
+
+        resultsList.appendChild(fragment);
+        setResultsVisibility(true);
+        setStatus(
+          limitedResults.length === results.length
+            ? `${results.length} résultat${results.length > 1 ? 's' : ''} disponible${results.length > 1 ? 's' : ''}.`
+            : `${limitedResults.length} résultats affichés sur ${results.length}.`
+        );
       } catch (error) {
         console.error(error);
       }
@@ -105,7 +188,13 @@ export function createSearchPanelController({
 
     input.addEventListener('keydown', event => {
       if (event.key === 'Escape') {
-        resultsDiv.style.display = 'none';
+        clearResults();
+        return;
+      }
+
+      if (event.key === 'ArrowDown' && !resultsList.hidden) {
+        event.preventDefault();
+        focusResult(1);
       }
     });
   }
