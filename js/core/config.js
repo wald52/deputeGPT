@@ -1,8 +1,12 @@
 export const STORAGE_KEYS = {
+  inferenceSource: 'deputegpt:inference-source',
   modelId: 'deputegpt:last-model-id',
   quantId: 'deputegpt:last-quant-id',
   acceptedModelId: 'deputegpt:last-accepted-model-id',
   acceptedQuantId: 'deputegpt:last-accepted-quant-id',
+  openRouterModelId: 'deputegpt:openrouter-model-id',
+  openRouterApiKey: 'deputegpt:openrouter-api-key',
+  openRouterRememberKey: 'deputegpt:openrouter-remember-key',
   thinkingMode: 'deputegpt:thinking-mode',
   semanticRagEnabled: 'deputegpt:semantic-rag-enabled',
   semanticRagMode: 'deputegpt:semantic-rag-mode',
