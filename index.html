@@ -130,6 +130,17 @@
                 <div class="model-select-grid">
                   <div class="model-group-compact model-field-card">
                     <div class="model-field-label">
+                      <label for="ai-source-select">Source IA</label>
+                      <button type="button" class="tooltip-container field-info" aria-label="Informations sur la source d inference" aria-describedby="source-tooltip">i
+                        <span id="source-tooltip" role="tooltip" class="tooltip-text tooltip-text-start">Local pour rester dans le navigateur, OpenRouter pour une analyse distante optionnelle.</span>
+                      </button>
+                    </div>
+                    <select id="ai-source-select">
+                      <option value="local">Modèle local</option>
+                    </select>
+                  </div>
+                  <div id="local-model-card" class="model-group-compact model-field-card">
+                    <div class="model-field-label">
                       <label for="model-select">Modèle</label>
                       <button type="button" class="tooltip-container field-info" aria-label="Informations sur le choix du modèle" aria-describedby="model-tooltip">i
                         <span id="model-tooltip" role="tooltip" class="tooltip-text tooltip-text-start">Choisissez la famille testée dans l'application avant chargement.</span>
@@ -137,7 +148,7 @@
                     </div>
                     <select id="model-select"><option value="">Chargement...</option></select>
                   </div>
-                  <div class="model-group-compact model-field-card">
+                  <div id="local-quant-card" class="model-group-compact model-field-card">
                     <div class="model-field-label">
                       <label for="quant-select">Quantification</label>
                       <button type="button" class="tooltip-container field-info" aria-label="Informations sur la quantification" aria-describedby="quant-tooltip">i
@@ -145,6 +156,33 @@
                       </button>
                     </div>
                     <select id="quant-select"><option value="">Sélectionnez</option></select>
+                  </div>
+                  <div id="openrouter-model-card" class="model-group-compact model-field-card" hidden>
+                    <div class="model-field-label">
+                      <label for="openrouter-model-select">Modèle OpenRouter</label>
+                      <button type="button" class="tooltip-container field-info" aria-label="Informations sur le modele OpenRouter" aria-describedby="openrouter-model-tooltip">i
+                        <span id="openrouter-model-tooltip" role="tooltip" class="tooltip-text tooltip-text-end">Le routeur gratuit peut varier selon les disponibilités et quotas du service distant.</span>
+                      </button>
+                    </div>
+                    <select id="openrouter-model-select"><option value="">Chargement...</option></select>
+                  </div>
+                  <div id="openrouter-api-card" class="model-group-compact model-field-card remote-api-card" hidden>
+                    <div class="model-field-label">
+                      <label for="openrouter-api-key">Clé API OpenRouter</label>
+                      <button type="button" class="tooltip-container field-info" aria-label="Informations sur la cle API OpenRouter" aria-describedby="openrouter-key-tooltip">i
+                        <span id="openrouter-key-tooltip" role="tooltip" class="tooltip-text tooltip-text-start">La clé est fournie par vous. Elle n'est jamais commise dans le dépôt et n'est mémorisée localement que si vous le demandez.</span>
+                      </button>
+                    </div>
+                    <input id="openrouter-api-key" class="model-text-input" type="password" placeholder="sk-or-v1-..." autocomplete="off" spellcheck="false" />
+                    <div class="remote-provider-actions">
+                      <label class="remote-provider-checkbox" for="openrouter-remember-key">
+                        <input type="checkbox" id="openrouter-remember-key" />
+                        <span>Mémoriser sur cet appareil</span>
+                      </label>
+                      <button id="openrouter-clear-key-btn" class="header-action-btn" type="button">Effacer la clé</button>
+                    </div>
+                    <p class="model-field-hint">Les réponses exactes restent déterministes dans l'application. Seules les analyses enverront un contexte court à OpenRouter.</p>
+                    <div id="openrouter-status" class="remote-provider-status" role="status" aria-live="polite">Ajoutez votre clé API OpenRouter.</div>
                   </div>
                 </div>
                 <div class="model-group-compact model-group-toggle">
@@ -211,6 +249,9 @@
             </div>
           </div>
 
+          <div id="chat-capabilities" class="chat-capabilities" aria-live="polite">
+            Sélectionnez un député pour activer le chat.
+          </div>
           <div id="chat-quick-actions" class="chat-quick-actions" aria-label="Questions suggérées"></div>
           <div id="chat-scope-summary" class="chat-scope-summary hidden" aria-live="polite"></div>
           <div id="chat-scope-actions" class="chat-scope-actions hidden" aria-label="Actions liées au contexte courant"></div>
