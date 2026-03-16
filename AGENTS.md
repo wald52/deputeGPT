@@ -12,6 +12,10 @@
 - Runtime IA navigateur: `transformers.js` + WebGPU.
 - Chat stable: famille `Qwen3` ONNX.
 - Chat experimental: famille `Qwen3.5` ONNX, a garder seulement si les tests sont vraiment bons.
+- Backend distant optionnel autorise: `OpenRouter`, uniquement en opt-in explicite utilisateur.
+- Le backend distant ne doit jamais remplacer silencieusement la voie locale par defaut.
+- Toute cle API OpenRouter doit etre fournie par l'utilisateur, jamais committee dans le depot.
+- En mode OpenRouter, seules les demandes d'analyse envoient un contexte court hors du navigateur.
 - Le chat ne doit jamais utiliser un modele generatif comme modele d'embedding.
 - Le telechargement d'un modele IA ne doit jamais etre silencieux: consentement explicite, taille affichee, dernier choix memorise localement.
 
@@ -136,6 +140,7 @@
 - Ne jamais afficher le raisonnement interne du modele.
 - En analyse, citer des votes precis avec date.
 - Si l'information manque, le dire clairement.
+- Si un backend distant est utilise, l'UI doit l'indiquer clairement avant l'envoi.
 
 ### Donnees et RAG
 - Ne pas utiliser le modele de chat comme modele d'embedding.
@@ -158,6 +163,7 @@
 - Pas de backend runtime serveur pour le chat.
 - Les gros poids de modeles ne doivent pas etre commites dans le depot.
 - S'appuyer sur Hugging Face + cache navigateur pour les modeles.
+- Si OpenRouter est active, l'appel doit partir directement du navigateur avec une cle utilisateur explicite.
 
 ## Actions a faire ensuite
 
