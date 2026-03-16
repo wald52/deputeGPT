@@ -11,6 +11,7 @@ export function createChatController({
   executeDeterministicRoute,
   extractAnswerFromOutput,
   getChatHistory,
+  getSelectedInferenceSource,
   getVoteId,
   hasWebGPU,
   isThinkingModeEnabled,
@@ -177,9 +178,14 @@ export function createChatController({
         }
 
         if (!appState.generator) {
-          const guidance = hasWebGPU()
-            ? 'Cette question demande une synthese. Chargez un modele via le bouton CHARGER pour lancer l\'analyse. Sans modele, vous pouvez me demander une liste, un comptage, une periode ou un theme precis.'
-            : 'Cette question demande une synthese. Sur cet appareil, seules les questions exactes sans IA sont disponibles car WebGPU est absent.';
+          const selectedInferenceSource = typeof getSelectedInferenceSource === 'function'
+            ? getSelectedInferenceSource()
+            : 'local';
+          const guidance = selectedInferenceSource === 'openrouter'
+            ? 'Cette question demande une synthese. Activez OpenRouter avec votre cle API pour lancer l analyse. Sans backend distant, vous pouvez me demander une liste, un comptage, une periode ou un theme precis.'
+            : hasWebGPU()
+              ? 'Cette question demande une synthese. Chargez un modele via le bouton CHARGER pour lancer l analyse. Sans modele, vous pouvez me demander une liste, un comptage, une periode ou un theme precis.'
+              : 'Cette question demande une synthese. Sur cet appareil, seules les questions exactes sans IA sont disponibles car WebGPU est absent.';
           await renderAssistantMessage(messagesDiv, tempLoader, guidance, { method: 'clarify' });
           return;
         }

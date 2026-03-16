@@ -1,6 +1,7 @@
 export function createChatAvailabilityController({
   appState,
   hasWebGPU,
+  getSelectedInferenceSource,
   resolveThinkingModeFlag,
   updateChatScopeSummary,
   renderQuickActions,
@@ -13,6 +14,10 @@ export function createChatAvailabilityController({
     if (!badge) {
       return;
     }
+
+    const selectedInferenceSource = typeof getSelectedInferenceSource === 'function'
+      ? getSelectedInferenceSource()
+      : 'local';
 
     if (appState.isChatBusy) {
       badge.textContent = 'Analyse en cours... vous pouvez preparer la prochaine question.';
@@ -30,8 +35,15 @@ export function createChatAvailabilityController({
     }
 
     if (appState.generator && appState.activeModelConfig) {
-      const modeLabel = resolveThinkingModeFlag(appState.activeModelConfig) ? 'thinking' : 'non-thinking';
+      const modeLabel = appState.activeModelConfig.provider === 'openrouter'
+        ? 'distant'
+        : resolveThinkingModeFlag(appState.activeModelConfig) ? 'thinking' : 'non-thinking';
       badge.textContent = `Modele actif: ${appState.activeModelConfig.displayName} (${modeLabel}).`;
+      return;
+    }
+
+    if (selectedInferenceSource === 'openrouter') {
+      badge.textContent = 'Reponses exactes actives. Activez OpenRouter pour les analyses distantes.';
       return;
     }
 
@@ -77,6 +89,20 @@ export function createChatAvailabilityController({
 
     if (appState.generator) {
       userInput.placeholder = 'Posez votre question sur les votes de ce depute...';
+      updateChatCapabilitiesBanner();
+      renderQuickActions();
+      syncSendButtonState();
+      adjustChatInputHeight(userInput);
+      updateChatEmptyState();
+      return;
+    }
+
+    const selectedInferenceSource = typeof getSelectedInferenceSource === 'function'
+      ? getSelectedInferenceSource()
+      : 'local';
+
+    if (selectedInferenceSource === 'openrouter') {
+      userInput.placeholder = 'Questions exactes disponibles. Activez OpenRouter pour les analyses distantes.';
       updateChatCapabilitiesBanner();
       renderQuickActions();
       syncSendButtonState();
