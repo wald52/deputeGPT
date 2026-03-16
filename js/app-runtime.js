@@ -41,6 +41,7 @@ import { createPipelineRuntime as createPipelineRuntimeFactory } from './ai/pipe
 import { createQwen3Runtime as createQwen3RuntimeFactory } from './ai/qwen3-runtime.js';
 import { createQwen35Runtime as createQwen35RuntimeFactory } from './ai/qwen35-runtime.js';
 import { createSemanticRagRuntime } from './ai/semantic-rag-runtime.js';
+import { createOpenRouterRuntime as createOpenRouterRuntimeFactory } from './ai/openrouter-runtime.js';
 import {
   createGeneratorAdapter,
   createTransformersRuntimeManager,
@@ -407,6 +408,10 @@ async function createQwen35Runtime(modelConfig, updateProgress) {
   });
 }
 
+async function createOpenRouterRuntime(modelConfig) {
+  return createOpenRouterRuntimeFactory(modelConfig);
+}
+
 const modelLoader = createModelLoader({
   appState,
   hasWebGPU,
@@ -418,6 +423,7 @@ const modelLoader = createModelLoader({
   createPipelineRuntime,
   createQwen3Runtime,
   createQwen35Runtime,
+  createOpenRouterRuntime,
   createGeneratorAdapter,
   resolveThinkingModeFlag: (modelConfig = null, explicitValue) => modelSelection.resolveThinkingModeFlag(modelConfig, explicitValue),
   syncActiveModelThinkingState: () => modelSelection.syncActiveModelThinkingState(),
@@ -437,6 +443,7 @@ const consentModal = createConsentModalController({
 const modelSelection = createModelSelectionController({
   appState,
   getModelsConfig: () => modelsConfig,
+  getModelCatalog: () => modelCatalog,
   defaultModelId: DEFAULT_MODEL_ID,
   defaultQuantId: DEFAULT_QUANT_ID,
   getStoredValue,
@@ -444,6 +451,7 @@ const modelSelection = createModelSelectionController({
   storageKeys: STORAGE_KEYS,
   formatDownloadSize,
   hasWebGPU,
+  syncChatAvailability: () => chatAvailability.syncChatAvailability(),
   updateChatCapabilitiesBanner,
   addSystemMessage: message => addMessage('system', message),
   initAI: modelConfig => modelUiFacade.initAI(modelConfig),
@@ -499,6 +507,7 @@ const chatScopeController = createChatScopeController({
 const chatAvailability = createChatAvailabilityController({
   appState,
   hasWebGPU,
+  getSelectedInferenceSource: () => modelUiFacade.getSelectedInferenceSource(),
   resolveThinkingModeFlag: (modelConfig = null, explicitValue) => modelUiFacade.resolveThinkingModeFlag(modelConfig, explicitValue),
   updateChatScopeSummary: () => chatScopeController.updateChatScopeSummary(),
   renderQuickActions: () => chatComposer.renderQuickActions(),
@@ -546,6 +555,7 @@ const chatController = createChatController({
   executeDeterministicRoute,
   extractAnswerFromOutput,
   getChatHistory: () => chatHistoryProvider.getChatHistory(),
+  getSelectedInferenceSource: () => modelUiFacade.getSelectedInferenceSource(),
   getVoteId,
   hasWebGPU,
   isThinkingModeEnabled: () => modelUiFacade.isThinkingModeEnabled(),
