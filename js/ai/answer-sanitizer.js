@@ -15,6 +15,23 @@ export function extractAnswerFromOutput(out) {
     }
   }
 
+  if (!answer && out && Array.isArray(out?.choices) && out.choices.length > 0) {
+    const firstChoice = out.choices[0];
+    const messageContent = firstChoice?.message?.content;
+
+    if (typeof messageContent === 'string') {
+      answer = messageContent;
+    } else if (Array.isArray(messageContent)) {
+      answer = messageContent
+        .map(part => (typeof part === 'string' ? part : part?.text || ''))
+        .filter(Boolean)
+        .join(' ')
+        .trim();
+    } else if (typeof firstChoice?.text === 'string') {
+      answer = firstChoice.text;
+    }
+  }
+
   return answer;
 }
 

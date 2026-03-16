@@ -9,6 +9,7 @@ export function createModelLoader({
   createPipelineRuntime,
   createQwen3Runtime,
   createQwen35Runtime,
+  createOpenRouterRuntime,
   createGeneratorAdapter,
   resolveThinkingModeFlag,
   syncActiveModelThinkingState,
@@ -38,7 +39,9 @@ export function createModelLoader({
       return;
     }
 
-    if (!hasWebGPU()) {
+    const usesRemoteProvider = modelConfig.runtime === 'openrouter_remote' || modelConfig.provider === 'openrouter';
+
+    if (!usesRemoteProvider && !hasWebGPU()) {
       addSystemMessage('WebGPU n\'est pas disponible sur cet appareil. Le chat IA reste desactive.');
       return;
     }
@@ -61,29 +64,45 @@ export function createModelLoader({
         return;
       }
 
-      const runtimeChannel = modelConfig.runtime === 'qwen3_5_low_level' ? 'next' : 'stable';
-      updateProgress(0.02, runtimeChannel === 'next' ? 'Chargement du runtime experimental' : 'Chargement du runtime stable');
-      await transformersRuntime.loadRuntime(runtimeChannel);
-
-      updateProgress(0.08, 'Preparation');
       await releaseCurrentModel();
 
-      const runtime = modelConfig.runtime === 'qwen3_5_low_level'
-        ? await createQwen35Runtime(modelConfig, updateProgress)
-        : modelConfig.runtime === 'qwen3_low_level'
-          ? await createQwen3Runtime(modelConfig, updateProgress)
-          : await createPipelineRuntime(modelConfig, updateProgress);
+      let runtime;
+
+      if (usesRemoteProvider) {
+        updateProgress(0.12, 'Connexion OpenRouter');
+        runtime = await createOpenRouterRuntime(modelConfig);
+      } else {
+        const runtimeChannel = modelConfig.runtime === 'qwen3_5_low_level' ? 'next' : 'stable';
+        updateProgress(0.02, runtimeChannel === 'next' ? 'Chargement du runtime experimental' : 'Chargement du runtime stable');
+        await transformersRuntime.loadRuntime(runtimeChannel);
+
+        updateProgress(0.08, 'Preparation');
+        runtime = modelConfig.runtime === 'qwen3_5_low_level'
+          ? await createQwen35Runtime(modelConfig, updateProgress)
+          : modelConfig.runtime === 'qwen3_low_level'
+            ? await createQwen3Runtime(modelConfig, updateProgress)
+            : await createPipelineRuntime(modelConfig, updateProgress);
+      }
 
       appState.generator = createGeneratorAdapter(runtime);
       appState.activeModelConfig = modelConfig;
       syncActiveModelThinkingState();
       updateProgress(1, 'Modele pret');
       updateActiveModelBadge(appState.activeModelConfig);
-      setStoredValue(storageKeys.modelId, modelConfig.id);
-      setStoredValue(storageKeys.quantId, modelConfig.selectedQuant.id);
-      setStoredValue(storageKeys.acceptedModelId, modelConfig.id);
-      setStoredValue(storageKeys.acceptedQuantId, modelConfig.selectedQuant.id);
-      addSystemMessage(`Modele pret : ${modelConfig.displayName} (${resolveThinkingModeFlag(appState.activeModelConfig) ? 'thinking' : 'non-thinking'}).`);
+
+      if (usesRemoteProvider) {
+        setStoredValue(storageKeys.inferenceSource, 'openrouter');
+        setStoredValue(storageKeys.openRouterModelId, modelConfig.id);
+        addSystemMessage(`Backend distant actif : ${modelConfig.displayName}.`);
+      } else {
+        setStoredValue(storageKeys.inferenceSource, 'local');
+        setStoredValue(storageKeys.modelId, modelConfig.id);
+        setStoredValue(storageKeys.quantId, modelConfig.selectedQuant.id);
+        setStoredValue(storageKeys.acceptedModelId, modelConfig.id);
+        setStoredValue(storageKeys.acceptedQuantId, modelConfig.selectedQuant.id);
+        addSystemMessage(`Modele pret : ${modelConfig.displayName} (${resolveThinkingModeFlag(appState.activeModelConfig) ? 'thinking' : 'non-thinking'}).`);
+      }
+
       syncChatAvailability();
     } catch (error) {
       console.error('Erreur de chargement du modele:', error);

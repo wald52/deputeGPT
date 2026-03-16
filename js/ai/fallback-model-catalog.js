@@ -1,5 +1,32 @@
 export const FALLBACK_MODEL_CATALOG = {
   schemaVersion: 1,
+  remote_providers: [
+    {
+      id: 'openrouter',
+      name: 'OpenRouter',
+      mode: 'remote',
+      status: 'experimental',
+      default: false,
+      requires_api_key: true,
+      api_base_url: 'https://openrouter.ai/api/v1',
+      notes: 'Backend distant optionnel. La cle API est fournie par l utilisateur et ne doit jamais etre committee.',
+      models: [
+        {
+          id: 'openrouter-free-auto',
+          name: 'OpenRouter Free Auto',
+          provider_model_id: 'openrouter/free',
+          status: 'experimental',
+          default: true,
+          supports_thinking: false,
+          notes: 'Routeur automatique vers un modele gratuit compatible sur OpenRouter. Quotas et disponibilites variables cote service distant.',
+          non_thinking: {
+            temperature: 0.2,
+            top_p: 0.9
+          }
+        }
+      ]
+    }
+  ],
   models: [
     {
       id: 'qwen3-0.6b',

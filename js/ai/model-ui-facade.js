@@ -22,6 +22,7 @@ export function createModelUiFacade({
   return {
     getDefaultModel: () => modelSelection.getDefaultModel(),
     getDefaultQuant: model => modelSelection.getDefaultQuant(model),
+    getSelectedInferenceSource: () => modelSelection.getSelectedInferenceSource(),
     isAdvancedOptionsOpen: () => modelSelection.isAdvancedOptionsOpen(),
     isThinkingModeEnabled: () => modelSelection.isThinkingModeEnabled(),
     resolveThinkingModeFlag: (modelConfig = null, explicitValue) => modelSelection.resolveThinkingModeFlag(modelConfig, explicitValue),
