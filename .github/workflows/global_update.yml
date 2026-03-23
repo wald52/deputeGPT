@@ -27,9 +27,16 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
       - name: Install Dependencies
         run: |
           pip install requests beautifulsoup4
+          npm ci
 
       # --- ETAPE 1 : DEPUTES ---
       - name: Update Deputes Data
@@ -116,6 +123,11 @@ jobs:
             exit 1
           fi
 
+      - name: Build bundled app
+        run: |
+          echo "📦 Construction du bundle front..."
+          npm run build:app
+
       # --- ETAPE 3 : COMMIT UNIQUE ---
       - name: Commit & Push Changes (Main)
         id: commit_main
@@ -123,8 +135,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # On ajoute tout ce qui a pu changer dans public/data
-          git add public/data
+          # On ajoute les donnees publiees et le bundle servi en production
+          git add public/data js/dist
 
           # Vérification s'il y a des changements réels
           if git diff --cached --quiet; then
