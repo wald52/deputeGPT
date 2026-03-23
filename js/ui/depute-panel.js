@@ -18,6 +18,7 @@ function buildDeputePanelDetailsInternal(depute, placesMapping) {
 export function createDeputePanelController({
   appState,
   getPlacesMapping,
+  initChatHistory,
   resetChatSession,
   setActiveSeatByDepute,
   updateChatScopeSummary,
@@ -37,7 +38,10 @@ export function createDeputePanelController({
     setActiveSeatByDepute(depute);
     updateChatScopeSummary();
 
-    const chatHistory = getChatHistory();
+    const chatHistoryPromise = typeof initChatHistory === 'function'
+      ? initChatHistory()
+      : Promise.resolve(getChatHistory());
+    const chatHistory = await chatHistoryPromise;
     if (chatHistory) {
       try {
         await chatHistory.getOrCreateActiveSession(depute, getActiveModelConfig());
@@ -72,14 +76,18 @@ export function createDeputePanelController({
 
     appState.currentDepute.votes = await loadDeputeVotes(depute.id);
 
+    statsContainer.hidden = false;
     statsContainer.style.opacity = '1';
     document.getElementById('stat-votes').textContent = appState.currentDepute.votes.length;
-    document.getElementById('stat-pour').textContent = appState.currentDepute.votes.filter(vote => vote.vote === 'Pour').length;
-    document.getElementById('stat-contre').textContent = appState.currentDepute.votes.filter(vote => vote.vote === 'Contre').length;
 
     await addMessage('system', `Donnees chargees pour ${depute.prenom} ${depute.nom}. (${appState.currentDepute.votes.length} votes)`, { method: 'system' });
     syncChatAvailability();
     updateChatScopeSummary();
+    document.dispatchEvent(new CustomEvent('depute:selected', {
+      detail: {
+        deputeId: depute.id
+      }
+    }));
   }
 
   return {

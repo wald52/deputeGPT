@@ -1,11 +1,19 @@
-function createChatScopeChipInternal(label, value) {
+function createChatScopeChipInternal(label, value, options = {}) {
+  const { multiline = false } = options;
   const chip = document.createElement('span');
   chip.className = 'chat-scope-chip';
+  if (multiline) {
+    chip.classList.add('chat-scope-chip-multiline');
+  }
 
   const strong = document.createElement('strong');
   strong.textContent = `${label}:`;
   chip.appendChild(strong);
-  chip.appendChild(document.createTextNode(value));
+
+  const valueSpan = document.createElement('span');
+  valueSpan.className = 'chat-scope-chip-value';
+  valueSpan.textContent = value;
+  chip.appendChild(valueSpan);
 
   return chip;
 }
@@ -55,11 +63,12 @@ export function createChatScopeController({
   resolveVotesByIds,
   describeDateFilter,
   describeQueryFilter,
-  truncateAnalysisField,
   addMessage,
   executeDeterministicRoute,
+  buildInlineVoteItems,
   buildMessageReferencesFromVoteIds,
   getChatHistory,
+  syncInteractiveMessageStates,
   updateChatCapabilitiesBanner,
   renderQuickActions
 }) {
@@ -76,6 +85,7 @@ export function createChatScopeController({
       dateTo: result.filters?.dateTo || null
     };
     session.lastPlan = result.plan || session.lastPlan || null;
+    session.pendingClarification = null;
     updateChatScopeSummary();
   }
 
@@ -122,7 +132,7 @@ export function createChatScopeController({
       filteredVotes: resolveVotesByIds(chatSessionState.lastResultVoteIds)
     });
     if (queryDescription) {
-      container.appendChild(createChatScopeChipInternal('Cible', queryDescription));
+      container.appendChild(createChatScopeChipInternal('Cible', queryDescription, { multiline: true }));
     }
 
     if (chatSessionState.lastSort) {
@@ -135,7 +145,7 @@ export function createChatScopeController({
     }
 
     if (chatSessionState.lastResultQuery) {
-      container.appendChild(createChatScopeChipInternal('Derniere demande', truncateAnalysisField(chatSessionState.lastResultQuery, 70)));
+      container.appendChild(createChatScopeChipInternal('Derniere demande', chatSessionState.lastResultQuery, { multiline: true }));
     }
 
     container.classList.remove('hidden');
@@ -145,15 +155,28 @@ export function createChatScopeController({
   function buildDeterministicMessageMetadata(result, intentKind = 'list') {
     const displayedVoteIds = result.displayedVoteIds || result.voteIds || [];
     const pageSize = Number.isFinite(result.limit) && result.limit > 0 ? result.limit : defaultChatListLimit;
+    const inlineVoteMode = result.inlineVoteMode || (intentKind === 'subjects' ? 'subjects' : 'list');
+    const referencePresentation = result.referencePresentation === 'inline_rows' ? 'inline_rows' : 'panel';
+    const inlineVoteItems = referencePresentation === 'inline_rows'
+      ? (typeof buildInlineVoteItems === 'function'
+        ? buildInlineVoteItems(resolveVotesByIds(displayedVoteIds), { mode: inlineVoteMode })
+        : [])
+      : [];
 
     return {
       method: 'deterministic',
-      listMode: intentKind === 'subjects' ? 'subjects' : 'list',
+      listMode: inlineVoteMode,
       pageSize,
       voteIds: displayedVoteIds,
       allVoteIds: result.voteIds || [],
       displayedVoteIds,
-      references: buildMessageReferencesFromVoteIds(displayedVoteIds, { maxItems: 8 }),
+      references: referencePresentation === 'inline_rows'
+        ? []
+        : buildMessageReferencesFromVoteIds(displayedVoteIds, { maxItems: 8 }),
+      referencePresentation,
+      inlineVoteMode,
+      inlineVoteItems,
+      summaryText: String(result.summaryText || '').trim() || null,
       filters: result.filters,
       plan: result.plan || null,
       sort: result.sort,
@@ -245,6 +268,7 @@ export function createChatScopeController({
     updateChatCapabilitiesBanner();
     renderQuickActions();
     renderChatScopeActions();
+    syncInteractiveMessageStates?.();
 
     try {
       await addMessage('user', actionLabel, { saveToHistory: true });
@@ -278,6 +302,7 @@ export function createChatScopeController({
       updateChatCapabilitiesBanner();
       renderQuickActions();
       renderChatScopeActions();
+      syncInteractiveMessageStates?.();
     }
   }
 

@@ -56,9 +56,102 @@ export function createHemicyclePanelController({
 }) {
   let hemicycleActiveSeatElement = null;
   let hemicyclePlacesMapping = {};
+  let hemicycleAssetsPromise = null;
+  let hemicycleSetupPromise = null;
+
+  function getHemicycleContainer() {
+    return document.getElementById('hemicycle-container');
+  }
+
+  function getHemicycleStage(container = getHemicycleContainer()) {
+    return container?.querySelector('[data-hemicycle-stage]') || container || null;
+  }
 
   function getPlacesMapping() {
     return hemicyclePlacesMapping;
+  }
+
+  async function preloadHemicycleAssets() {
+    if (hemicycleAssetsPromise) {
+      return hemicycleAssetsPromise;
+    }
+
+    hemicycleAssetsPromise = (async () => {
+      const [responseSvg, responseMapping, responseColors] = await Promise.all([
+        fetch(HEMICYCLE_ASSET_PATHS.svg),
+        fetch(HEMICYCLE_ASSET_PATHS.placesMapping),
+        fetch(HEMICYCLE_ASSET_PATHS.seatColors)
+      ]);
+
+      if (!responseSvg.ok) {
+        throw new Error('SVG introuvable');
+      }
+
+      return {
+        svgText: await responseSvg.text(),
+        placesMapping: responseMapping.ok ? await responseMapping.json() : {},
+        seatColors: responseColors.ok ? await responseColors.json() : {}
+      };
+    })();
+
+    try {
+      return await hemicycleAssetsPromise;
+    } catch (error) {
+      hemicycleAssetsPromise = null;
+      throw error;
+    }
+  }
+
+  function renderHemicyclePlaceholder({
+    loading = false,
+    error = null
+  } = {}) {
+    const stage = getHemicycleStage();
+    if (!stage) {
+      return;
+    }
+
+    if (loading) {
+      stage.innerHTML = `
+        <div class="hemicycle-loading-placeholder" role="status" aria-live="polite">
+          <div class="hemicycle-placeholder-copy">
+            <strong>Chargement de l'hemicycle officiel...</strong>
+            <span>Recuperation du plan des sieges et des couleurs en cours.</span>
+          </div>
+        </div>
+      `;
+      return;
+    }
+
+    if (error) {
+      stage.innerHTML = `
+        <div class="hemicycle-loading-placeholder" role="status" aria-live="polite">
+          <div class="hemicycle-placeholder-copy">
+            <strong>Hemicycle indisponible</strong>
+            <span>${escapeHtml(error)}</span>
+          </div>
+          <button type="button" class="hemicycle-load-btn" data-load-hemicycle>
+            Reessayer le chargement
+          </button>
+        </div>
+      `;
+    } else {
+      stage.innerHTML = `
+        <div class="hemicycle-loading-placeholder" role="status" aria-live="polite">
+          <div class="hemicycle-placeholder-copy">
+            <strong>Hemicycle a la demande</strong>
+            <span>Chargez le plan des sieges si besoin.</span>
+          </div>
+          <button type="button" class="hemicycle-load-btn" data-load-hemicycle>
+            Charger l'hemicycle
+          </button>
+        </div>
+      `;
+    }
+
+    stage.querySelector('[data-load-hemicycle]')?.addEventListener('click', () => {
+      void setupHemicycle();
+    });
   }
 
   function updateTooltipPosition(event) {
@@ -128,8 +221,8 @@ export function createHemicyclePanelController({
   }
 
   function setActiveSeatByDepute(depute) {
-    const container = document.getElementById('hemicycle-container');
-    if (!container || !depute || !hemicyclePlacesMapping) {
+    const stage = getHemicycleStage();
+    if (!stage || !depute || !hemicyclePlacesMapping) {
       clearActiveSeat();
       return;
     }
@@ -140,7 +233,7 @@ export function createHemicyclePanelController({
       return;
     }
 
-    const seatElement = findHemicycleSeatElementInternal(container, String(seatIdRaw));
+    const seatElement = findHemicycleSeatElementInternal(stage, String(seatIdRaw));
     if (!seatElement) {
       clearActiveSeat();
       return;
@@ -224,61 +317,79 @@ export function createHemicyclePanelController({
   }
 
   async function setupHemicycle() {
-    const container = document.getElementById('hemicycle-container');
-
-    try {
-      const [responseSvg, responseMapping, responseColors] = await Promise.all([
-        fetch(HEMICYCLE_ASSET_PATHS.svg),
-        fetch(HEMICYCLE_ASSET_PATHS.placesMapping),
-        fetch(HEMICYCLE_ASSET_PATHS.seatColors)
-      ]);
-
-      if (!responseSvg.ok) {
-        throw new Error('SVG introuvable');
-      }
-
-      const svgText = await responseSvg.text();
-      container.innerHTML = svgText;
-
-      const svgElement = container.querySelector('svg');
-      if (svgElement) {
-        svgElement.style.width = '100%';
-        svgElement.style.height = 'auto';
-        svgElement.style.maxWidth = '100%';
-        svgElement.style.display = 'block';
-        svgElement.setAttribute('preserveAspectRatio', 'xMidYMid meet');
-        svgElement.removeAttribute('width');
-        svgElement.removeAttribute('height');
-      }
-
-      hemicyclePlacesMapping = responseMapping.ok ? await responseMapping.json() : {};
-      const seatColors = responseColors.ok ? await responseColors.json() : {};
-
-      getDeputesData().forEach(depute => {
-        const seatId = hemicyclePlacesMapping[depute.id];
-        if (!seatId) {
-          return;
-        }
-
-        const seatElement = findHemicycleSeatElementInternal(container, seatId);
-        if (!seatElement) {
-          return;
-        }
-
-        const forcedColor = seatColors[seatId] || seatColors[String(seatId).toLowerCase()] || null;
-        applySeatStyle(seatElement, depute, forcedColor);
-      });
-
-      updateHemicycleSyncStatus(Object.keys(hemicyclePlacesMapping).length);
-      setActiveSeatByDepute(appState.currentDepute);
-    } catch (error) {
-      console.error('Erreur hemicycle :', error);
-      container.innerHTML = `<div style="text-align:center; color:#666; padding:20px;">Hemicycle indisponible<br><small>${escapeHtml(error.message)}</small></div>`;
+    if (hemicycleSetupPromise) {
+      return hemicycleSetupPromise;
     }
+
+    hemicycleSetupPromise = (async () => {
+      const stage = getHemicycleStage();
+      if (!stage) {
+        return;
+      }
+
+      renderHemicyclePlaceholder({ loading: true });
+
+      try {
+        const {
+          svgText,
+          placesMapping,
+          seatColors
+        } = await preloadHemicycleAssets();
+        stage.innerHTML = svgText;
+
+        const svgElement = stage.querySelector('svg');
+
+        if (svgElement) {
+          svgElement.style.width = '100%';
+          svgElement.style.height = 'auto';
+          svgElement.style.maxWidth = '100%';
+          svgElement.style.display = 'block';
+          svgElement.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+          svgElement.removeAttribute('width');
+          svgElement.removeAttribute('height');
+        }
+
+        hemicyclePlacesMapping = placesMapping;
+
+        getDeputesData().forEach(depute => {
+          const seatId = hemicyclePlacesMapping[depute.id];
+          if (!seatId) {
+            return;
+          }
+
+          const seatElement = findHemicycleSeatElementInternal(stage, seatId);
+          if (!seatElement) {
+            return;
+          }
+
+          const forcedColor = seatColors[seatId] || seatColors[String(seatId).toLowerCase()] || null;
+          applySeatStyle(seatElement, depute, forcedColor);
+        });
+
+        updateHemicycleSyncStatus(Object.keys(hemicyclePlacesMapping).length);
+        setActiveSeatByDepute(appState.currentDepute);
+      } catch (error) {
+        console.error('Erreur hemicycle :', error);
+        renderHemicyclePlaceholder({
+          error: error?.message || 'Erreur de chargement'
+        });
+      } finally {
+        hemicycleSetupPromise = null;
+      }
+    })();
+
+    return hemicycleSetupPromise;
+  }
+
+  function setupHemicycleOnDemand() {
+    renderHemicyclePlaceholder();
   }
 
   function selectRandomDepute(groupeCode) {
-    const deputes = getDeputesData().filter(depute => depute.groupe === groupeCode);
+    const deputes = getDeputesData().filter(depute => (
+      depute.groupeAbrev === groupeCode ||
+      depute.groupe === groupeCode
+    ));
     if (!deputes.length) {
       return;
     }
@@ -289,11 +400,15 @@ export function createHemicyclePanelController({
 
   function renderLegend() {
     const legend = document.getElementById('legend');
+    if (!legend) {
+      return;
+    }
     legend.innerHTML = '';
 
     getGroupesPolitiques().forEach(groupe => {
       const item = document.createElement('div');
       item.className = 'legend-item';
+      item.dataset.groupCode = groupe.code || '';
       item.innerHTML = `
         <div class="legend-color" style="background-color:${groupe.couleur}"></div>
         <span>${groupe.nom} (${groupe.seats})</span>
@@ -306,6 +421,7 @@ export function createHemicyclePanelController({
   return {
     getPlacesMapping,
     setActiveSeatByDepute,
+    setupHemicycleOnDemand,
     setupHemicycle,
     renderLegend
   };

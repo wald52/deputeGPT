@@ -3,11 +3,12 @@ export function createChatPaginationController({
   chatSessionState,
   defaultChatListLimit,
   resolveVotesByIds,
+  buildInlineVoteItems,
   buildPaginationContinuationMessage,
-  buildMessageReferencesFromVoteIds,
   addMessage,
   updateSessionFromResult,
   getChatHistory,
+  syncInteractiveMessageStates,
   updateChatCapabilitiesBanner,
   renderQuickActions
 }) {
@@ -50,15 +51,17 @@ export function createChatPaginationController({
     appState.isChatBusy = true;
     updateChatCapabilitiesBanner();
     renderQuickActions();
+    syncInteractiveMessageStates?.();
 
     try {
-      await addMessage('user', buttonLabel, { saveToHistory: true });
-      await addMessage('ai', buildPaginationContinuationMessage(nextVotes, {
+      const continuationMessage = buildPaginationContinuationMessage(nextVotes, {
         mode: listMode,
         startIndex: currentOffset + 1,
         endIndex: nextOffset,
         total: allVoteIds.length
-      }), {
+      });
+      await addMessage('user', buttonLabel, { saveToHistory: true });
+      await addMessage('ai', continuationMessage.message, {
         method: 'deterministic',
         metadata: {
           method: 'deterministic',
@@ -67,7 +70,13 @@ export function createChatPaginationController({
           allVoteIds,
           displayedVoteIds: cumulativeVoteIds,
           voteIds: nextVoteIds,
-          references: buildMessageReferencesFromVoteIds(nextVoteIds, { maxItems: Math.min(8, nextVoteIds.length) }),
+          references: [],
+          referencePresentation: 'inline_rows',
+          inlineVoteMode: listMode,
+          inlineVoteItems: typeof buildInlineVoteItems === 'function'
+            ? buildInlineVoteItems(nextVotes, { mode: listMode })
+            : [],
+          summaryText: continuationMessage.summaryText,
           filters: metadata?.filters || chatSessionState.lastFilters,
           sort: metadata?.sort || chatSessionState.lastSort,
           limit: nextOffset
@@ -94,6 +103,7 @@ export function createChatPaginationController({
       appState.isChatBusy = false;
       updateChatCapabilitiesBanner();
       renderQuickActions();
+      syncInteractiveMessageStates?.();
     }
   }
 

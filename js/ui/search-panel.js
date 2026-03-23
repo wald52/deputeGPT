@@ -26,6 +26,8 @@ export function createSearchPanelController({
   formatCirco,
   selectDepute
 }) {
+  const SEARCH_RESULT_LIMIT = 10;
+
   function setupSearch() {
     const input = document.getElementById('search-input');
     const resultsList = document.getElementById('search-results');
@@ -111,6 +113,12 @@ export function createSearchPanelController({
           return;
         }
 
+        if (getDeputesData().length === 0) {
+          clearResults();
+          setStatus('Chargement de la liste des deputes en cours...');
+          return;
+        }
+
         const results = getDeputesData().filter(depute => {
           const nom = (depute.nom || '').toLowerCase();
           const prenom = (depute.prenom || '').toLowerCase();
@@ -137,10 +145,10 @@ export function createSearchPanelController({
           return;
         }
 
-        const limitedResults = results.slice(0, 10);
+        const visibleResults = results.slice(0, SEARCH_RESULT_LIMIT);
         const fragment = document.createDocumentFragment();
 
-        limitedResults.forEach(depute => {
+        visibleResults.forEach(depute => {
           const item = document.createElement('li');
           item.className = 'search-result-item';
 
@@ -177,9 +185,9 @@ export function createSearchPanelController({
         resultsList.appendChild(fragment);
         setResultsVisibility(true);
         setStatus(
-          limitedResults.length === results.length
-            ? `${results.length} résultat${results.length > 1 ? 's' : ''} disponible${results.length > 1 ? 's' : ''}.`
-            : `${limitedResults.length} résultats affichés sur ${results.length}.`
+          visibleResults.length < results.length
+            ? `${results.length} resultats trouves. Affichage limite aux ${visibleResults.length} premiers.`
+            : `${results.length} résultat${results.length > 1 ? 's' : ''} disponible${results.length > 1 ? 's' : ''}.`
         );
       } catch (error) {
         console.error(error);

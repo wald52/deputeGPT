@@ -17,7 +17,7 @@ export function createChatAvailabilityController({
 
     const selectedInferenceSource = typeof getSelectedInferenceSource === 'function'
       ? getSelectedInferenceSource()
-      : 'local';
+      : 'online';
 
     if (appState.isChatBusy) {
       badge.textContent = 'Analyse en cours... vous pouvez preparer la prochaine question.';
@@ -35,15 +35,20 @@ export function createChatAvailabilityController({
     }
 
     if (appState.generator && appState.activeModelConfig) {
-      const modeLabel = appState.activeModelConfig.provider === 'openrouter'
-        ? 'distant'
+      const modeLabel = appState.activeModelConfig.provider === 'online'
+        ? 'en ligne'
         : resolveThinkingModeFlag(appState.activeModelConfig) ? 'thinking' : 'non-thinking';
+      if (appState.activeModelConfig.provider === 'online' && appState.lastOnlineResponseMeta?.provider) {
+        badge.textContent = `IA en ligne active: ${appState.lastOnlineResponseMeta.provider} · ${appState.lastOnlineResponseMeta.model || 'modele distant'}.`;
+        return;
+      }
+
       badge.textContent = `Modele actif: ${appState.activeModelConfig.displayName} (${modeLabel}).`;
       return;
     }
 
-    if (selectedInferenceSource === 'openrouter') {
-      badge.textContent = 'Reponses exactes actives. Activez OpenRouter pour les analyses distantes.';
+    if (selectedInferenceSource === 'online') {
+      badge.textContent = 'Reponses exactes actives. L analyse IA en ligne est prete des que vous posez une question interpretative.';
       return;
     }
 
@@ -99,10 +104,10 @@ export function createChatAvailabilityController({
 
     const selectedInferenceSource = typeof getSelectedInferenceSource === 'function'
       ? getSelectedInferenceSource()
-      : 'local';
+      : 'online';
 
-    if (selectedInferenceSource === 'openrouter') {
-      userInput.placeholder = 'Questions exactes disponibles. Activez OpenRouter pour les analyses distantes.';
+    if (selectedInferenceSource === 'online') {
+      userInput.placeholder = 'Questions exactes disponibles. Les analyses utilisent l IA en ligne par defaut.';
       updateChatCapabilitiesBanner();
       renderQuickActions();
       syncSendButtonState();

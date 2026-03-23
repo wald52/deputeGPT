@@ -16,8 +16,7 @@ function buildChatHistoryPanelHtmlInternal() {
 }
 
 function buildChatHistoryButtonsInternal({
-  toggleHistoryPanel,
-  showExportMenu
+  toggleHistoryPanel
 }) {
   const historyButtons = document.createElement('div');
   historyButtons.className = 'history-buttons';
@@ -30,18 +29,11 @@ function buildChatHistoryButtonsInternal({
   historyBtn.addEventListener('click', toggleHistoryPanel);
   historyButtons.appendChild(historyBtn);
 
-  const exportBtn = document.createElement('button');
-  exportBtn.id = 'export-btn';
-  exportBtn.className = 'header-action-btn';
-  exportBtn.title = 'Exporter les chats';
-  exportBtn.textContent = 'Exporter';
-  exportBtn.addEventListener('click', showExportMenu);
-  historyButtons.appendChild(exportBtn);
-
   return historyButtons;
 }
 
 export function createChatHistoryPanelController({
+  initChatHistory,
   getChatHistory,
   getDeputesData,
   chatSessionState,
@@ -54,6 +46,19 @@ export function createChatHistoryPanelController({
 }) {
   function getHistoryPanel() {
     return document.getElementById('history-panel');
+  }
+
+  async function ensureChatHistoryReady() {
+    const existing = getChatHistory();
+    if (existing) {
+      return existing;
+    }
+
+    if (typeof initChatHistory === 'function') {
+      return initChatHistory();
+    }
+
+    return null;
   }
 
   function updateHistoryPanelLayout(panel = getHistoryPanel()) {
@@ -82,8 +87,11 @@ export function createChatHistoryPanelController({
 
   async function refreshHistoryList() {
     const listDiv = document.getElementById('history-list');
-    const chatHistory = getChatHistory();
+    const chatHistory = await ensureChatHistoryReady();
     if (!listDiv || !chatHistory) {
+      if (listDiv) {
+        listDiv.innerHTML = '<div style="text-align: center; padding: 20px; color: #999;">Historique indisponible</div>';
+      }
       return;
     }
 
@@ -146,7 +154,7 @@ export function createChatHistoryPanelController({
   }
 
   async function restoreSession(sessionId) {
-    const chatHistory = getChatHistory();
+    const chatHistory = await ensureChatHistoryReady();
     if (!chatHistory) {
       return;
     }
@@ -266,12 +274,18 @@ export function createChatHistoryPanelController({
       return;
     }
 
+    const chatHistory = await ensureChatHistoryReady();
+    if (!chatHistory) {
+      alert('Historique non disponible sur cet appareil.');
+      return;
+    }
+
     await refreshHistoryList();
     panel.style.right = '0px';
   }
 
-  function showExportMenu() {
-    const chatHistory = getChatHistory();
+  async function showExportMenu() {
+    const chatHistory = await ensureChatHistoryReady();
     if (!chatHistory) {
       alert('Historique non disponible');
       return;
@@ -287,12 +301,6 @@ export function createChatHistoryPanelController({
   }
 
   function setupChatHistoryUI() {
-    const chatHistory = getChatHistory();
-    if (!chatHistory) {
-      console.warn('ChatHistory non disponible, UI historique desactivee.');
-      return;
-    }
-
     const chatHeader = document.querySelector('.unified-header-row');
     if (!chatHeader) {
       return;
@@ -304,8 +312,7 @@ export function createChatHistoryPanelController({
     }
 
     const historyButtons = buildChatHistoryButtonsInternal({
-      toggleHistoryPanel,
-      showExportMenu
+      toggleHistoryPanel
     });
 
     const loadBtn = document.getElementById('load-model-btn');
