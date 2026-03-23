@@ -23,29 +23,48 @@ function buildOpenRouterBody(modelConfig, messages, options = {}) {
     stream: false
   };
 
-  if (Number.isFinite(options.max_new_tokens)) {
-    body.max_tokens = Math.max(1, Math.round(options.max_new_tokens));
+  const maxTokens = Number.isFinite(options.max_tokens)
+    ? options.max_tokens
+    : Number.isFinite(options.max_new_tokens)
+      ? options.max_new_tokens
+      : null;
+
+  if (Number.isFinite(maxTokens)) {
+    body.max_tokens = Math.max(1, Math.round(maxTokens));
   }
 
-  if (Number.isFinite(options.temperature)) {
-    body.temperature = options.temperature;
-  }
+  [
+    'temperature',
+    'top_p',
+    'top_k',
+    'frequency_penalty',
+    'presence_penalty',
+    'repetition_penalty',
+    'min_p',
+    'top_a',
+    'seed',
+    'logit_bias',
+    'logprobs',
+    'top_logprobs',
+    'response_format',
+    'structured_outputs',
+    'stop',
+    'tools',
+    'tool_choice',
+    'parallel_tool_calls',
+    'verbosity'
+  ].forEach(key => {
+    const value = options[key];
+    if (value === null || value === undefined) {
+      return;
+    }
 
-  if (Number.isFinite(options.top_p)) {
-    body.top_p = options.top_p;
-  }
+    if (typeof value === 'number' && !Number.isFinite(value)) {
+      return;
+    }
 
-  if (Number.isFinite(options.top_k)) {
-    body.top_k = options.top_k;
-  }
-
-  if (Number.isFinite(options.min_p)) {
-    body.min_p = options.min_p;
-  }
-
-  if (Number.isFinite(options.repetition_penalty)) {
-    body.repetition_penalty = options.repetition_penalty;
-  }
+    body[key] = value;
+  });
 
   return body;
 }

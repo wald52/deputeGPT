@@ -70,10 +70,47 @@ function scoreQuantizedMultiEmbeddings(queryVector, vectorEntries, scale = 127, 
   return bestScore;
 }
 
+function ensureSemanticPrefix(text, prefix) {
+  const rawText = String(text || '').trim();
+  const rawPrefix = String(prefix || '').trim();
+
+  if (!rawPrefix) {
+    return rawText;
+  }
+
+  const compactPrefix = rawPrefix;
+  const canonicalPrefix = compactPrefix.endsWith(' ') ? compactPrefix : `${compactPrefix} `;
+
+  if (!rawText) {
+    return compactPrefix;
+  }
+
+  if (rawText.toLowerCase().startsWith(compactPrefix.toLowerCase())) {
+    const suffix = rawText.slice(compactPrefix.length).trimStart();
+    return suffix ? `${canonicalPrefix}${suffix}` : compactPrefix;
+  }
+
+  return `${canonicalPrefix}${rawText}`;
+}
+
+function prepareSemanticQuery(question, modelConfig = null) {
+  const rawQuestion = String(question || '').trim();
+  if (!rawQuestion) {
+    return '';
+  }
+
+  if (modelConfig?.usage === 'asymmetric_retrieval') {
+    return ensureSemanticPrefix(rawQuestion, modelConfig.queryPrefix || 'query: ');
+  }
+
+  return rawQuestion;
+}
+
 export function createSemanticRagRuntime({
   appState,
   transformersRuntime,
   hasWebGPU,
+  getWebGPUStatus,
   ensureSemanticIndexReady,
   getSemanticSearchConfig,
   getSemanticIndex,
@@ -84,6 +121,35 @@ export function createSemanticRagRuntime({
   logger = console
 }) {
   let loadPromise = null;
+
+  async function resolveWebGPUStatus() {
+    if (typeof getWebGPUStatus === 'function') {
+      try {
+        const status = await getWebGPUStatus();
+        if (status && typeof status === 'object') {
+          return status;
+        }
+      } catch (error) {
+        logger.warn('Verification WebGPU indisponible pour le RAG semantique.', error);
+      }
+    }
+
+    const supported = hasWebGPU();
+    return {
+      supported,
+      adapterAvailable: supported,
+      reason: supported ? 'unknown' : 'unsupported',
+      message: supported ? '' : 'WebGPU n est pas disponible sur cet appareil.'
+    };
+  }
+
+  function getWebGPUBlockingMessage(status) {
+    if (!status?.supported) {
+      return 'Le RAG semantique local requiert WebGPU sur cet appareil.';
+    }
+
+    return `${status?.message || 'Aucun adaptateur GPU compatible n est disponible pour le RAG semantique local.'} Le telechargement du modele d embedding n a pas ete lance.`;
+  }
 
   function getSelectedMode() {
     return getStoredValue(storageKeys.semanticRagMode) || appState.semanticIndexMode || DEFAULT_SEMANTIC_MODE;
@@ -135,9 +201,10 @@ export function createSemanticRagRuntime({
         return false;
       }
 
-      if (!hasWebGPU()) {
+      const webGPUStatus = await resolveWebGPUStatus();
+      if (!webGPUStatus.adapterAvailable) {
         appState.semanticRagStatus = 'error';
-        addSystemMessage('Le RAG semantique local experimental requiert WebGPU sur cet appareil.');
+        addSystemMessage(getWebGPUBlockingMessage(webGPUStatus));
         return false;
       }
 
@@ -216,7 +283,8 @@ export function createSemanticRagRuntime({
       return new Map();
     }
 
-    const queryEmbedding = flattenEmbeddingOutput(await appState.semanticEncoder(question, {
+    const preparedQuestion = prepareSemanticQuery(question, appState.semanticModelConfig);
+    const queryEmbedding = flattenEmbeddingOutput(await appState.semanticEncoder(preparedQuestion, {
       pooling: appState.semanticModelConfig?.pooling || 'mean',
       normalize: appState.semanticModelConfig?.normalize !== false
     }));

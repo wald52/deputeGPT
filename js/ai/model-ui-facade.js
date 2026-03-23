@@ -12,11 +12,11 @@ export function createModelUiFacade({
     return consentModal.hideConsentModal();
   }
 
-  async function initAI(modelConfig = getSelectedModelConfig()) {
+  async function initAI(modelConfig = getSelectedModelConfig(), options = {}) {
     return modelLoader.initAI(modelConfig, {
       ...getLoadUi(),
       onFinally: hideConsentModal
-    });
+    }, options);
   }
 
   return {

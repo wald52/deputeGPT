@@ -9,7 +9,7 @@ export function createModelLoader({
   createPipelineRuntime,
   createQwen3Runtime,
   createQwen35Runtime,
-  createOpenRouterRuntime,
+  createOnlineRuntime,
   createGeneratorAdapter,
   resolveThinkingModeFlag,
   syncActiveModelThinkingState,
@@ -25,7 +25,7 @@ export function createModelLoader({
     updateActiveModelBadge(null);
   }
 
-  async function initAI(modelConfig, ui) {
+  async function initAI(modelConfig, ui, options = {}) {
     const {
       loadButton,
       progressContainer,
@@ -33,33 +33,48 @@ export function createModelLoader({
       progressText,
       onFinally
     } = ui;
+    const { quiet = false } = options;
 
     if (!modelConfig) {
-      addSystemMessage('Selectionnez un modele et une quantification valides.');
+      if (!quiet) {
+        addSystemMessage('Selectionnez un modele et une quantification valides.');
+      }
       return;
     }
 
-    const usesRemoteProvider = modelConfig.runtime === 'openrouter_remote' || modelConfig.provider === 'openrouter';
+    const usesRemoteProvider = modelConfig.runtime === 'online_remote' || modelConfig.provider === 'online';
 
     if (!usesRemoteProvider && !hasWebGPU()) {
-      addSystemMessage('WebGPU n\'est pas disponible sur cet appareil. Le chat IA reste desactive.');
+      if (!quiet) {
+        addSystemMessage('WebGPU n\'est pas disponible sur cet appareil. Le chat IA reste desactive.');
+      }
       return;
     }
 
-    loadButton.disabled = true;
-    progressContainer.hidden = false;
+    if (loadButton) {
+      loadButton.disabled = true;
+    }
+    if (progressContainer) {
+      progressContainer.hidden = false;
+    }
 
     const updateProgress = (progressRatio, label) => {
       const safeRatio = Math.max(0, Math.min(1, progressRatio));
       const safePct = Math.round(safeRatio * 100);
-      progressBarFill.style.width = `${safePct}%`;
-      progressText.textContent = `${label} (${safePct}%)`;
-      progressBarFill.parentElement?.setAttribute('aria-valuenow', String(safePct));
+      if (progressBarFill) {
+        progressBarFill.style.width = `${safePct}%`;
+        progressBarFill.parentElement?.setAttribute('aria-valuenow', String(safePct));
+      }
+      if (progressText) {
+        progressText.textContent = `${label} (${safePct}%)`;
+      }
     };
 
     try {
       if (appState.activeModelConfig?.signature === modelConfig.signature && appState.generator) {
-        addSystemMessage(`${modelConfig.displayName} est deja actif.`);
+        if (!quiet) {
+          addSystemMessage(`${modelConfig.displayName} est deja actif.`);
+        }
         syncChatAvailability();
         return;
       }
@@ -69,8 +84,8 @@ export function createModelLoader({
       let runtime;
 
       if (usesRemoteProvider) {
-        updateProgress(0.12, 'Connexion OpenRouter');
-        runtime = await createOpenRouterRuntime(modelConfig);
+        updateProgress(0.12, 'Connexion IA en ligne');
+        runtime = await createOnlineRuntime(modelConfig);
       } else {
         const runtimeChannel = modelConfig.runtime === 'qwen3_5_low_level' ? 'next' : 'stable';
         updateProgress(0.02, runtimeChannel === 'next' ? 'Chargement du runtime experimental' : 'Chargement du runtime stable');
@@ -91,27 +106,39 @@ export function createModelLoader({
       updateActiveModelBadge(appState.activeModelConfig);
 
       if (usesRemoteProvider) {
-        setStoredValue(storageKeys.inferenceSource, 'openrouter');
-        setStoredValue(storageKeys.openRouterModelId, modelConfig.id);
-        addSystemMessage(`Backend distant actif : ${modelConfig.displayName}.`);
+        setStoredValue(storageKeys.inferenceSource, 'online');
+        if (!quiet) {
+          addSystemMessage(`Service IA en ligne actif : ${modelConfig.displayName}.`);
+        }
       } else {
         setStoredValue(storageKeys.inferenceSource, 'local');
         setStoredValue(storageKeys.modelId, modelConfig.id);
         setStoredValue(storageKeys.quantId, modelConfig.selectedQuant.id);
         setStoredValue(storageKeys.acceptedModelId, modelConfig.id);
         setStoredValue(storageKeys.acceptedQuantId, modelConfig.selectedQuant.id);
-        addSystemMessage(`Modele pret : ${modelConfig.displayName} (${resolveThinkingModeFlag(appState.activeModelConfig) ? 'thinking' : 'non-thinking'}).`);
+        if (!quiet) {
+          addSystemMessage(`Modele pret : ${modelConfig.displayName} (${resolveThinkingModeFlag(appState.activeModelConfig) ? 'thinking' : 'non-thinking'}).`);
+        }
       }
 
       syncChatAvailability();
     } catch (error) {
       console.error('Erreur de chargement du modele:', error);
       const errorDetail = error?.message || error?.toString?.() || 'erreur inconnue';
-      addSystemMessage(`Erreur de chargement : ${errorDetail}`);
+      if (!quiet) {
+        addSystemMessage(`Erreur de chargement : ${errorDetail}`);
+      }
       await releaseCurrentModel();
+      if (quiet) {
+        throw error;
+      }
     } finally {
-      loadButton.disabled = false;
-      progressContainer.hidden = true;
+      if (loadButton) {
+        loadButton.disabled = false;
+      }
+      if (progressContainer) {
+        progressContainer.hidden = true;
+      }
       onFinally?.();
     }
   }

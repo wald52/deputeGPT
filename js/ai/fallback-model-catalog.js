@@ -2,27 +2,38 @@ export const FALLBACK_MODEL_CATALOG = {
   schemaVersion: 1,
   remote_providers: [
     {
-      id: 'openrouter',
-      name: 'OpenRouter',
+      id: 'online',
+      name: 'IA en ligne',
       mode: 'remote',
-      status: 'experimental',
-      default: false,
-      requires_api_key: true,
-      api_base_url: 'https://openrouter.ai/api/v1',
-      notes: 'Backend distant optionnel. La cle API est fournie par l utilisateur et ne doit jamais etre committee.',
+      status: 'stable',
+      default: true,
+      requires_api_key: false,
+      live_catalog: false,
+      api_base_url: '',
+      turnstile_site_key: '',
+      notes: 'Service distant multi-fournisseurs via Cloudflare Worker et AI Gateway. Configurez api_base_url avant usage.',
       models: [
         {
-          id: 'openrouter-free-auto',
-          name: 'OpenRouter Free Auto',
-          provider_model_id: 'openrouter/free',
-          status: 'experimental',
-          default: true,
-          supports_thinking: false,
-          notes: 'Routeur automatique vers un modele gratuit compatible sur OpenRouter. Quotas et disponibilites variables cote service distant.',
-          non_thinking: {
+          id: 'online/default',
+          name: 'multi-fournisseurs',
+          providerModelId: 'dynamic/deputegpt-analysis',
+          providerLabel: 'Cloudflare AI Gateway',
+          providerGroup: 'online',
+          pricing: {
+            prompt: 0,
+            completion: 0
+          },
+          isFree: true,
+          priceStatus: 'free',
+          supportedParameters: ['temperature', 'top_p', 'max_tokens'],
+          defaultParameters: {
             temperature: 0.2,
             top_p: 0.9
-          }
+          },
+          contextLength: 18000,
+          maxCompletionTokens: 512,
+          status: 'stable',
+          notes: 'Route dynamique Google -> OpenRouter -> Groq -> Cerebras -> Workers AI, avec fallback gere cote Cloudflare.'
         }
       ]
     }

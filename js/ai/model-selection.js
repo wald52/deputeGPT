@@ -1,8 +1,130 @@
+import {
+  OPENROUTER_PARAMETER_KEYS
+} from './generation-options.js';
+
 const LOCAL_SOURCE_ID = 'local';
-const OPENROUTER_SOURCE_ID = 'openrouter';
+const ONLINE_SOURCE_ID = 'online';
+const LEGACY_OPENROUTER_SOURCE_ID = 'openrouter';
+const OPENROUTER_SOURCE_ID = ONLINE_SOURCE_ID;
+const OPENROUTER_DEFAULT_MODEL_ID = 'online/default';
+const OPENROUTER_FALLBACK_MODEL_ID = 'online/fallback';
+const OPENROUTER_FILTER_IDS = new Set(['all', 'free', 'paid']);
 
 const DEFAULT_THINKING_HELP_TEXT = 'Plus lent, reserve aux usages avances. Le raisonnement interne reste masque dans l interface.';
-const REMOTE_THINKING_HELP_TEXT = 'Le mode OpenRouter gratuit reste en sortie finale uniquement. Le raisonnement interne n est jamais affiche.';
+const REMOTE_THINKING_INFO_TITLE = 'Sortie finale uniquement';
+const REMOTE_THINKING_INFO_TEXT = 'Le service IA en ligne n envoie qu un contexte court pour les analyses, puis renvoie uniquement la reponse finale. L interface masque toujours le raisonnement interne.';
+
+const OPENROUTER_PARAMETER_LABELS = {
+  temperature: 'temperature',
+  top_p: 'top_p',
+  top_k: 'top_k',
+  frequency_penalty: 'frequency_penalty',
+  presence_penalty: 'presence_penalty',
+  repetition_penalty: 'repetition_penalty',
+  min_p: 'min_p',
+  top_a: 'top_a',
+  seed: 'seed',
+  max_tokens: 'max_tokens',
+  logit_bias: 'logit_bias',
+  logprobs: 'logprobs',
+  top_logprobs: 'top_logprobs',
+  response_format: 'response_format',
+  structured_outputs: 'structured_outputs',
+  stop: 'stop',
+  tools: 'tools',
+  tool_choice: 'tool_choice',
+  parallel_tool_calls: 'parallel_tool_calls',
+  verbosity: 'verbosity'
+};
+
+function formatIntegerLabel(value) {
+  return Number.isFinite(value)
+    ? Math.round(value).toLocaleString('fr-FR')
+    : 'Inconnu';
+}
+
+function formatUsdPerMillion(rawValue) {
+  if (!Number.isFinite(rawValue)) {
+    return null;
+  }
+
+  const perMillion = rawValue * 1000000;
+  const digits = perMillion < 1 ? 3 : perMillion < 10 ? 2 : 1;
+  return `${perMillion.toLocaleString('fr-FR', {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: digits
+  })} $/1M`;
+}
+
+function formatUsdFlat(rawValue) {
+  if (!Number.isFinite(rawValue)) {
+    return null;
+  }
+
+  const digits = rawValue < 1 ? 3 : rawValue < 10 ? 2 : 1;
+  return `${rawValue.toLocaleString('fr-FR', {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: digits
+  })} $/req`;
+}
+
+function buildOpenRouterPricingSummary(modelConfig) {
+  const pricing = modelConfig?.pricing || {};
+  const promptLabel = formatUsdPerMillion(pricing.prompt);
+  const completionLabel = formatUsdPerMillion(pricing.completion);
+  const requestLabel = formatUsdFlat(pricing.request);
+
+  if (modelConfig?.priceStatus === 'free') {
+    return 'Quotas gratuits mutualises cote service';
+  }
+
+  if (modelConfig?.priceStatus === 'variable') {
+    return 'Routage dynamique selon disponibilite';
+  }
+
+  const parts = [];
+  if (promptLabel) {
+    parts.push(`prompt ${promptLabel}`);
+  }
+  if (completionLabel) {
+    parts.push(`completion ${completionLabel}`);
+  }
+  if (requestLabel) {
+    parts.push(`requete ${requestLabel}`);
+  }
+
+  return parts.length > 0 ? parts.join(' · ') : 'Tarif indisponible';
+}
+
+function buildOpenRouterPriceBadge(modelConfig) {
+  const priceStatus = modelConfig?.priceStatus || 'unknown';
+  if (priceStatus === 'free') {
+    return { label: 'gratuit', tone: 'free' };
+  }
+  if (priceStatus === 'paid') {
+    return { label: 'payant', tone: 'paid' };
+  }
+  if (priceStatus === 'variable') {
+    return { label: 'variable', tone: 'variable' };
+  }
+  return { label: 'inconnu', tone: 'unknown' };
+}
+
+function formatOpenRouterParameterValue(value) {
+  if (Array.isArray(value)) {
+    return value.length > 0 ? value.join(', ') : '[]';
+  }
+
+  if (typeof value === 'object' && value !== null) {
+    return JSON.stringify(value);
+  }
+
+  if (typeof value === 'boolean') {
+    return value ? 'true' : 'false';
+  }
+
+  return String(value);
+}
 
 function getSessionStoredValue(key, sessionStorageApi = globalThis.sessionStorage) {
   try {
@@ -37,6 +159,7 @@ export function createModelSelectionController({
   appState,
   getModelsConfig,
   getModelCatalog,
+  fetchOpenRouterModels,
   defaultModelId,
   defaultQuantId,
   getStoredValue,
@@ -44,10 +167,14 @@ export function createModelSelectionController({
   storageKeys,
   formatDownloadSize,
   hasWebGPU,
+  getWebGPUStatus,
+  resolveGenerationOptions,
+  analysisMaxNewTokens,
   syncChatAvailability,
   updateChatCapabilitiesBanner,
   addSystemMessage,
   initAI,
+  releaseCurrentModel,
   getSemanticSearchConfig,
   getSemanticSearchModes,
   getSemanticRagStatus,
@@ -55,6 +182,60 @@ export function createModelSelectionController({
   releaseSemanticRag,
   consentModal
 }) {
+  const openRouterCatalogState = {
+    status: appState.openRouterCatalogStatus || 'idle',
+    models: Array.isArray(appState.openRouterModels) ? [...appState.openRouterModels] : [],
+    error: appState.openRouterCatalogError || null,
+    filter: 'all',
+    searchQuery: '',
+    loadingPromise: null
+  };
+  const openRouterPickerState = {
+    isOpen: false,
+    activeIndex: -1,
+    detailsExpanded: false,
+    flatModelIds: []
+  };
+  let semanticRagUiReady = false;
+  let semanticRagUiBootPromise = null;
+
+  function syncOpenRouterCatalogState() {
+    appState.openRouterCatalogStatus = openRouterCatalogState.status;
+    appState.openRouterModels = [...openRouterCatalogState.models];
+    appState.openRouterCatalogError = openRouterCatalogState.error || null;
+  }
+
+  syncOpenRouterCatalogState();
+
+  async function resolveSemanticWebGPUStatus() {
+    if (typeof getWebGPUStatus === 'function') {
+      try {
+        const status = await getWebGPUStatus();
+        if (status && typeof status === 'object') {
+          return status;
+        }
+      } catch (error) {
+        console.warn('Verification WebGPU indisponible pour le resume du RAG semantique.', error);
+      }
+    }
+
+    const supported = hasWebGPU();
+    return {
+      supported,
+      adapterAvailable: supported,
+      reason: supported ? 'unknown' : 'unsupported',
+      message: supported ? '' : 'WebGPU n est pas disponible sur cet appareil.'
+    };
+  }
+
+  function buildSemanticWebGPUBlockedText(status) {
+    if (!status?.supported) {
+      return 'WebGPU absent: ce mode semantique local reste indisponible sur cet appareil.';
+    }
+
+    return `${status?.message || 'Aucun adaptateur GPU compatible n est disponible pour ce mode semantique local.'} Le telechargement du modele d embedding reste bloque.`;
+  }
+
   function getDefaultModel() {
     const modelsConfig = getModelsConfig();
     return modelsConfig.find(model => model.id === defaultModelId) || modelsConfig[0] || null;
@@ -76,12 +257,54 @@ export function createModelSelectionController({
 
   function getOpenRouterProviderConfig() {
     const providers = getRemoteProviders();
-    return providers.find(provider => provider.id === OPENROUTER_SOURCE_ID) || providers[0] || null;
+    return providers.find(provider => provider.id === OPENROUTER_SOURCE_ID)
+      || providers.find(provider => provider.id === LEGACY_OPENROUTER_SOURCE_ID)
+      || providers[0]
+      || null;
+  }
+
+  function getOpenRouterModels() {
+    return Array.isArray(openRouterCatalogState.models) ? openRouterCatalogState.models : [];
+  }
+
+  function setOpenRouterCatalogStatus(status, { models, error } = {}) {
+    openRouterCatalogState.status = status;
+
+    if (Array.isArray(models)) {
+      openRouterCatalogState.models = models;
+    }
+
+    if (error !== undefined) {
+      openRouterCatalogState.error = error;
+    }
+
+    syncOpenRouterCatalogState();
+  }
+
+  function getRemoteProviderModels(providerConfig = getOpenRouterProviderConfig()) {
+    if (providerConfig?.id === OPENROUTER_SOURCE_ID && providerConfig?.live_catalog === true) {
+      return getOpenRouterModels();
+    }
+
+    return Array.isArray(providerConfig?.models) ? providerConfig.models : [];
+  }
+
+  function resolvePreferredOpenRouterModel(remoteModels) {
+    if (!Array.isArray(remoteModels) || remoteModels.length === 0) {
+      return null;
+    }
+
+    const storedModelId = getStoredValue(storageKeys.openRouterModelId);
+    return remoteModels.find(model => model.id === storedModelId)
+      || remoteModels.find(model => model.id === OPENROUTER_DEFAULT_MODEL_ID)
+      || remoteModels.find(model => model.isFree)
+      || remoteModels.find(model => model.id === OPENROUTER_FALLBACK_MODEL_ID)
+      || remoteModels[0]
+      || null;
   }
 
   function getDefaultOpenRouterModel(providerConfig = getOpenRouterProviderConfig()) {
-    const models = Array.isArray(providerConfig?.models) ? providerConfig.models : [];
-    return models.find(model => model.default) || models[0] || null;
+    return resolvePreferredOpenRouterModel(getRemoteProviderModels(providerConfig));
   }
 
   function hasOpenRouterProvider() {
@@ -96,7 +319,11 @@ export function createModelSelectionController({
   function getSelectedInferenceSource() {
     const sourceSelect = document.getElementById('ai-source-select');
     const storedSource = getStoredValue(storageKeys.inferenceSource);
-    const preferredSource = sourceSelect?.value || storedSource || LOCAL_SOURCE_ID;
+    const normalizedStoredSource = storedSource === LEGACY_OPENROUTER_SOURCE_ID
+      ? ONLINE_SOURCE_ID
+      : storedSource;
+    const fallbackSource = hasOpenRouterProvider() ? ONLINE_SOURCE_ID : LOCAL_SOURCE_ID;
+    const preferredSource = sourceSelect?.value || normalizedStoredSource || fallbackSource;
 
     if (preferredSource === OPENROUTER_SOURCE_ID && !hasOpenRouterProvider()) {
       return LOCAL_SOURCE_ID;
@@ -226,7 +453,16 @@ export function createModelSelectionController({
   function setAdvancedOptionsOpen(enabled) {
     const options = document.getElementById('advanced-options');
     const toggleBtn = document.getElementById('model-settings-toggle');
+    const toolbarShell = document.querySelector('.model-toolbar-shell');
+    const chatPanel = toolbarShell?.closest('.panel-chat') || document.getElementById('chat-panel');
     const isEnabled = Boolean(enabled);
+
+    if (!isEnabled) {
+      closeOpenRouterPicker({
+        resetSearch: true,
+        skipRender: true
+      });
+    }
 
     if (options) {
       options.hidden = !isEnabled;
@@ -236,6 +472,14 @@ export function createModelSelectionController({
     if (toggleBtn) {
       toggleBtn.setAttribute('aria-expanded', isEnabled ? 'true' : 'false');
       toggleBtn.classList.toggle('active', isEnabled);
+    }
+
+    if (toolbarShell) {
+      toolbarShell.classList.toggle('advanced-options-open', isEnabled);
+    }
+
+    if (chatPanel) {
+      chatPanel.classList.toggle('advanced-options-open', isEnabled);
     }
   }
 
@@ -255,7 +499,10 @@ export function createModelSelectionController({
     updateModelSelectionSummary();
   }
 
-  function setSemanticRagEnabled(enabled, { persist = true } = {}) {
+  function setSemanticRagEnabled(enabled, {
+    persist = true,
+    refreshSummary = true
+  } = {}) {
     const toggle = document.getElementById('semantic-rag-toggle');
     if (toggle) {
       toggle.checked = Boolean(enabled);
@@ -265,10 +512,15 @@ export function createModelSelectionController({
       setStoredValue(storageKeys.semanticRagEnabled, enabled ? 'true' : 'false');
     }
 
-    void updateSemanticRagSummary();
+    if (refreshSummary) {
+      void ensureSemanticRagUiReady().then(() => updateSemanticRagSummary());
+    }
   }
 
-  function setSemanticRagMode(mode, { persist = true } = {}) {
+  function setSemanticRagMode(mode, {
+    persist = true,
+    refreshSummary = true
+  } = {}) {
     const nextMode = mode || 'single_vector';
     const select = document.getElementById('semantic-rag-mode-select');
     if (select) {
@@ -279,30 +531,42 @@ export function createModelSelectionController({
       setStoredValue(storageKeys.semanticRagMode, nextMode);
     }
 
-    void updateSemanticRagSummary();
+    if (refreshSummary) {
+      void ensureSemanticRagUiReady().then(() => updateSemanticRagSummary());
+    }
   }
 
   function syncThinkingAvailability() {
     const toggle = document.getElementById('thinking-mode-toggle');
     const help = document.getElementById('thinking-help');
-    if (!toggle || !help) {
+    const localToggleSlot = document.getElementById('thinking-local-toggle-slot');
+    const remoteInfo = document.getElementById('thinking-remote-info');
+    const remoteInfoTitle = remoteInfo?.querySelector('.thinking-remote-title');
+    const remoteInfoCopy = remoteInfo?.querySelector('.thinking-remote-copy');
+    if (!toggle || !help || !localToggleSlot || !remoteInfo || !remoteInfoTitle || !remoteInfoCopy) {
       return;
     }
 
     const isRemoteSource = getSelectedInferenceSource() === OPENROUTER_SOURCE_ID;
+    const storedThinkingMode = getStoredValue(storageKeys.thinkingMode) === 'true';
+
+    toggle.checked = storedThinkingMode;
+    help.textContent = DEFAULT_THINKING_HELP_TEXT;
+    remoteInfoTitle.textContent = REMOTE_THINKING_INFO_TITLE;
+    remoteInfoCopy.textContent = REMOTE_THINKING_INFO_TEXT;
 
     if (isRemoteSource) {
-      toggle.checked = false;
       toggle.disabled = true;
-      help.textContent = REMOTE_THINKING_HELP_TEXT;
+      localToggleSlot.hidden = true;
+      help.hidden = true;
+      remoteInfo.hidden = false;
       return;
     }
 
     toggle.disabled = false;
-    help.textContent = DEFAULT_THINKING_HELP_TEXT;
-
-    const storedThinkingMode = getStoredValue(storageKeys.thinkingMode) === 'true';
-    toggle.checked = storedThinkingMode;
+    localToggleSlot.hidden = false;
+    help.hidden = false;
+    remoteInfo.hidden = true;
   }
 
   async function populateSemanticRagModeSelect() {
@@ -334,14 +598,34 @@ export function createModelSelectionController({
     setStoredValue(storageKeys.semanticRagMode, selectedMode);
   }
 
+  async function ensureSemanticRagUiReady() {
+    if (semanticRagUiReady) {
+      return;
+    }
+
+    if (semanticRagUiBootPromise) {
+      return semanticRagUiBootPromise;
+    }
+
+    semanticRagUiBootPromise = populateSemanticRagModeSelect()
+      .then(async () => {
+        await updateSemanticRagSummary();
+        semanticRagUiReady = true;
+      })
+      .finally(() => {
+        semanticRagUiBootPromise = null;
+      });
+
+    return semanticRagUiBootPromise;
+  }
+
   async function updateSemanticRagSummary() {
     const helperEl = document.getElementById('semantic-rag-helper');
     const sizeEl = document.getElementById('semantic-rag-size');
     const statusEl = document.getElementById('semantic-rag-status');
-    const loadBtn = document.getElementById('semantic-rag-load-btn');
     const toggle = document.getElementById('semantic-rag-toggle');
     const modeSelect = document.getElementById('semantic-rag-mode-select');
-    if (!helperEl || !sizeEl || !statusEl || !loadBtn || !toggle || !modeSelect) {
+    if (!helperEl || !sizeEl || !statusEl || !toggle || !modeSelect) {
       return;
     }
 
@@ -355,53 +639,46 @@ export function createModelSelectionController({
     const totalLabel = formatDownloadSize(config?.totalEstimatedDownloadMb ?? null);
     const artifactLabel = formatDownloadSize(config?.artifact?.downloadMb ?? null);
     const semanticModelLabel = config?.model?.id || config?.model?.browserModelId || 'modele dedie';
+    const semanticModelDescriptor = config?.model?.family === 'e5'
+      ? `encodeur multilingue dedie ${semanticModelLabel}`
+      : `modele dedie ${semanticModelLabel}`;
     const modeLabel = config?.label || selectedMode;
+    const webGPUStatus = await resolveSemanticWebGPUStatus();
 
     if (!config?.available) {
       helperEl.textContent = `Mode ${modeLabel} non publie pour le moment. Le chemin exact reste lexical et le mode single-vector demeure la voie stable.`;
       sizeEl.textContent = 'Artefact semantique indisponible';
-      statusEl.textContent = 'Selectionnez un autre mode ou restez en lexical uniquement.';
+      statusEl.textContent = 'Ce mode n est pas disponible. Les analyses restent sur le chemin lexical.';
       toggle.disabled = true;
-      loadBtn.textContent = 'Indisponible';
-      loadBtn.disabled = true;
       return;
     }
 
-    helperEl.textContent = `Reranking ${modeLabel} apres la recherche lexicale. Modele dedie: ${semanticModelLabel}.`;
+    helperEl.textContent = `Reranking ${modeLabel} apres la recherche lexicale. Le mode semantique utilise ${semanticModelDescriptor}.`;
     sizeEl.textContent = `Telechargement estime: ${totalLabel} (index: ${artifactLabel})`;
     toggle.disabled = false;
 
     if (runtimeStatus.status === 'loading') {
-      statusEl.textContent = `Chargement local du mode ${modeLabel} en cours.`;
-      loadBtn.textContent = 'Chargement...';
-      loadBtn.disabled = true;
+      statusEl.textContent = `Chargement local de ${modeLabel} en cours.`;
       return;
     }
 
     if (runtimeStatus.ready && runtimeStatus.modeId === config.modeId) {
-      statusEl.textContent = `Actif pour le reranking d analyse en ${modeLabel}. Le chemin exact reste lexical par defaut.`;
-      loadBtn.textContent = 'Pret';
-      loadBtn.disabled = true;
+      statusEl.textContent = `${modeLabel} actif pour le reranking semantique des analyses. Les reponses factuelles restent sur le chemin lexical.`;
       return;
     }
 
-    if (!hasWebGPU()) {
-      statusEl.textContent = 'WebGPU absent: ce mode semantique local experimental reste indisponible.';
-      loadBtn.textContent = 'WebGPU requis';
-      loadBtn.disabled = true;
+    if (!webGPUStatus.adapterAvailable) {
+      statusEl.textContent = buildSemanticWebGPUBlockedText(webGPUStatus);
+      toggle.disabled = true;
       return;
     }
 
     if (isSemanticRagEnabled()) {
-      statusEl.textContent = `Preference active pour ${modeLabel}, mais confirmation requise avant un chargement local sur cet appareil.`;
-      loadBtn.textContent = 'Charger';
-      loadBtn.disabled = false;
+      statusEl.textContent = `${modeLabel} est memorise pour cet appareil, mais pas encore charge dans cette session. Coupez puis reactivez le commutateur pour confirmer le chargement local.`;
       return;
     }
 
-    statusEl.textContent = `Desactive. Les analyses continuent a utiliser le chemin lexical uniquement tant que ${modeLabel} n est pas charge.`;
-    loadBtn.textContent = 'Activer';
-    loadBtn.disabled = false;
+    statusEl.textContent = `Desactive. Activez le commutateur pour charger ${modeLabel} en local.`;
   }
 
   async function activateSemanticRagFromUi() {
@@ -416,14 +693,16 @@ export function createModelSelectionController({
       return false;
     }
 
-    if (!hasWebGPU()) {
-      addSystemMessage('Le RAG semantique local experimental requiert WebGPU sur cet appareil.');
+    const webGPUStatus = await resolveSemanticWebGPUStatus();
+    if (!webGPUStatus.adapterAvailable) {
+      addSystemMessage(buildSemanticWebGPUBlockedText(webGPUStatus));
       setSemanticRagEnabled(false);
+      await updateSemanticRagSummary();
       return false;
     }
 
     const confirmed = globalThis.confirm?.(
-      `Activer le mode ${config.label || config.modeId} du RAG semantique local ?\n\nModele dedie: ${config.model?.id || config.model?.browserModelId}\nIndex semantique: ${formatDownloadSize(config.artifact?.downloadMb ?? null)}\nTelechargement total estime: ${formatDownloadSize(config.totalEstimatedDownloadMb ?? null)}\n\nLe telechargement n est jamais lance sans votre confirmation.`
+      `Activer le mode ${config.label || config.modeId} du RAG semantique local ?\n\nEncodeur dedie: ${config.model?.id || config.model?.browserModelId}\nUsage: ${config.model?.usage === 'asymmetric_retrieval' ? 'retrieval asymetrique multilingue' : 'recherche semantique locale'}\nIndex semantique: ${formatDownloadSize(config.artifact?.downloadMb ?? null)}\nTelechargement total estime: ${formatDownloadSize(config.totalEstimatedDownloadMb ?? null)}\n\nLe telechargement n est jamais lance sans votre confirmation.`
     );
 
     if (confirmed === false) {
@@ -443,25 +722,723 @@ export function createModelSelectionController({
     return true;
   }
 
+  function buildOpenRouterAppliedParameters(modelConfig) {
+    if (!modelConfig || typeof resolveGenerationOptions !== 'function') {
+      return {};
+    }
+
+    const resolved = resolveGenerationOptions(
+      modelConfig,
+      {},
+      { max_new_tokens: analysisMaxNewTokens }
+    );
+    const applied = {};
+    const maxTokens = Number.isFinite(resolved.max_tokens)
+      ? resolved.max_tokens
+      : Number.isFinite(resolved.max_new_tokens)
+        ? resolved.max_new_tokens
+        : null;
+
+    if (Number.isFinite(maxTokens)) {
+      applied.max_tokens = maxTokens;
+    }
+
+    OPENROUTER_PARAMETER_KEYS
+      .filter(key => key !== 'max_tokens')
+      .forEach(key => {
+        const value = resolved[key];
+        if (value === null || value === undefined) {
+          return;
+        }
+
+        if (typeof value === 'number' && !Number.isFinite(value)) {
+          return;
+        }
+
+        applied[key] = value;
+      });
+
+    return applied;
+  }
+
+  function renderOpenRouterParameterList(container, entries, emptyLabel) {
+    if (!container) {
+      return;
+    }
+
+    container.innerHTML = '';
+
+    if (!Array.isArray(entries) || entries.length === 0) {
+      const chip = document.createElement('span');
+      chip.className = 'openrouter-parameter-chip empty';
+      chip.textContent = emptyLabel;
+      container.appendChild(chip);
+      return;
+    }
+
+    entries.forEach(entry => {
+      const chip = document.createElement('span');
+      chip.className = 'openrouter-parameter-chip';
+      chip.textContent = entry.value
+        ? `${entry.label}: ${entry.value}`
+        : entry.label;
+      container.appendChild(chip);
+    });
+  }
+
+  function syncOpenRouterFilterButtons() {
+    document.querySelectorAll('[data-openrouter-filter]').forEach(button => {
+      const isActive = button.dataset.openrouterFilter === openRouterCatalogState.filter;
+      button.classList.toggle('active', isActive);
+      button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+    });
+  }
+
+  function updateOpenRouterPickerTrigger(modelConfig = getSelectedOpenRouterModelConfig()) {
+    const trigger = document.getElementById('openrouter-model-trigger');
+    const nameEl = document.getElementById('openrouter-trigger-name');
+    const idEl = document.getElementById('openrouter-trigger-id');
+    const badgeEl = document.getElementById('openrouter-trigger-price-badge');
+    const providerConfig = getOpenRouterProviderConfig();
+
+    if (!trigger || !nameEl || !idEl || !badgeEl) {
+      return;
+    }
+
+    trigger.disabled = !providerConfig;
+    trigger.setAttribute('aria-expanded', openRouterPickerState.isOpen ? 'true' : 'false');
+
+    let label = 'Choisir un modèle OpenRouter';
+    let secondary = 'Le catalogue distant sera chargé à la demande.';
+    let badge = { label: 'indisponible', tone: 'unknown' };
+
+    if (!providerConfig) {
+      label = 'OpenRouter indisponible';
+      secondary = 'Le fournisseur distant n apparaît pas dans le catalogue local.';
+    } else if (modelConfig?.provider === OPENROUTER_SOURCE_ID) {
+      label = modelConfig.name || 'Modèle distant';
+      secondary = modelConfig.providerModelId || modelConfig.id || 'Identifiant indisponible';
+      badge = buildOpenRouterPriceBadge(modelConfig);
+    } else if (openRouterCatalogState.status === 'loading') {
+      label = 'Chargement du catalogue OpenRouter';
+      secondary = 'Le catalogue distant est en cours de récupération.';
+    } else if (openRouterCatalogState.status === 'error') {
+      label = 'Catalogue OpenRouter indisponible';
+      secondary = openRouterCatalogState.error?.message || 'Réessayez plus tard.';
+    }
+
+    nameEl.textContent = label;
+    idEl.textContent = secondary;
+    badgeEl.textContent = badge.label;
+    badgeEl.className = `openrouter-price-badge ${badge.tone}`;
+  }
+
+  function syncOpenRouterDetailsUi(modelConfig = getSelectedOpenRouterModelConfig()) {
+    const detailsToggle = document.getElementById('openrouter-model-details-toggle');
+    const detailsEl = document.getElementById('openrouter-model-details');
+    const hasDetails = Boolean(modelConfig && modelConfig.provider === OPENROUTER_SOURCE_ID);
+
+    if (!detailsToggle || !detailsEl) {
+      return;
+    }
+
+    detailsToggle.hidden = !hasDetails;
+    if (!hasDetails) {
+      detailsToggle.textContent = 'Afficher les détails du modèle';
+      detailsToggle.setAttribute('aria-expanded', 'false');
+      detailsEl.hidden = true;
+      return;
+    }
+
+    detailsToggle.textContent = openRouterPickerState.detailsExpanded
+      ? 'Masquer les détails du modèle'
+      : 'Afficher les détails du modèle';
+    detailsToggle.setAttribute('aria-expanded', openRouterPickerState.detailsExpanded ? 'true' : 'false');
+    detailsEl.hidden = !openRouterPickerState.detailsExpanded;
+  }
+
+  function buildOpenRouterCompactNote(modelConfig) {
+    if (!modelConfig) {
+      return 'Le catalogue OpenRouter est consulté en direct et n envoie aucun prompt utilisateur pendant ce chargement.';
+    }
+
+    const note = modelConfig.notes || 'Backend distant optionnel. Seules les analyses enverront un contexte court hors du navigateur.';
+    return note.length > 180
+      ? `${note.slice(0, 177).trimEnd()}...`
+      : note;
+  }
+
+  function updateOpenRouterModelSummary(modelConfig = getSelectedOpenRouterModelConfig()) {
+    const summaryEl = document.getElementById('openrouter-model-summary');
+    const nameEl = document.getElementById('openrouter-selected-name');
+    const idEl = document.getElementById('openrouter-selected-id');
+    const noteEl = document.getElementById('openrouter-selected-note');
+    const priceBadgeEl = document.getElementById('openrouter-selected-price-badge');
+    const pricingEl = document.getElementById('openrouter-selected-pricing');
+    const contextEl = document.getElementById('openrouter-selected-context');
+    const outputEl = document.getElementById('openrouter-selected-output');
+    const appliedEl = document.getElementById('openrouter-params-applied');
+    const inactiveEl = document.getElementById('openrouter-params-inactive');
+    const unsupportedEl = document.getElementById('openrouter-params-unsupported');
+
+    updateOpenRouterPickerTrigger(modelConfig);
+
+    if (!summaryEl || !nameEl || !idEl || !noteEl || !priceBadgeEl || !pricingEl || !contextEl || !outputEl || !appliedEl || !inactiveEl || !unsupportedEl) {
+      return;
+    }
+
+    if (!modelConfig || modelConfig.provider !== OPENROUTER_SOURCE_ID) {
+      summaryEl.hidden = true;
+      syncOpenRouterDetailsUi(null);
+      return;
+    }
+
+    summaryEl.hidden = false;
+    nameEl.textContent = modelConfig.name || 'Modèle distant';
+    idEl.textContent = modelConfig.providerModelId || modelConfig.id || 'Identifiant indisponible';
+    noteEl.textContent = buildOpenRouterCompactNote(modelConfig);
+
+    const priceBadge = buildOpenRouterPriceBadge(modelConfig);
+    priceBadgeEl.textContent = priceBadge.label;
+    priceBadgeEl.className = `openrouter-price-badge ${priceBadge.tone}`;
+
+    pricingEl.textContent = buildOpenRouterPricingSummary(modelConfig);
+    contextEl.textContent = modelConfig.contextLength
+      ? `${formatIntegerLabel(modelConfig.contextLength)} tokens`
+      : 'Inconnu';
+    outputEl.textContent = modelConfig.maxCompletionTokens
+      ? `${formatIntegerLabel(modelConfig.maxCompletionTokens)} tokens`
+      : 'Selon le provider';
+
+    const appliedParameters = buildOpenRouterAppliedParameters(modelConfig);
+    const appliedKeys = Object.keys(appliedParameters);
+    const supportedSet = new Set(Array.isArray(modelConfig.supportedParameters) ? modelConfig.supportedParameters : []);
+    const inactiveKeys = OPENROUTER_PARAMETER_KEYS.filter(key => supportedSet.has(key) && !appliedKeys.includes(key));
+    const unsupportedKeys = OPENROUTER_PARAMETER_KEYS.filter(key => !supportedSet.has(key));
+
+    renderOpenRouterParameterList(
+      appliedEl,
+      appliedKeys.map(key => ({
+        label: OPENROUTER_PARAMETER_LABELS[key] || key,
+        value: formatOpenRouterParameterValue(appliedParameters[key])
+      })),
+      'Aucun'
+    );
+    renderOpenRouterParameterList(
+      inactiveEl,
+      inactiveKeys.map(key => ({
+        label: OPENROUTER_PARAMETER_LABELS[key] || key,
+        value: null
+      })),
+      'Aucun'
+    );
+    renderOpenRouterParameterList(
+      unsupportedEl,
+      unsupportedKeys.map(key => ({
+        label: OPENROUTER_PARAMETER_LABELS[key] || key,
+        value: null
+      })),
+      'Aucun'
+    );
+
+    syncOpenRouterDetailsUi(modelConfig);
+  }
+
+  function getFilteredOpenRouterModels() {
+    const normalizedQuery = openRouterCatalogState.searchQuery.trim().toLowerCase();
+
+    return getOpenRouterModels().filter(model => {
+      if (openRouterCatalogState.filter === 'free' && !model.isFree) {
+        return false;
+      }
+
+      if (openRouterCatalogState.filter === 'paid' && model.priceStatus === 'free') {
+        return false;
+      }
+
+      if (!normalizedQuery) {
+        return true;
+      }
+
+      return model.searchText.includes(normalizedQuery);
+    });
+  }
+
+  function buildSuggestedFreeOpenRouterModels(filteredModels) {
+    const stableModels = [];
+    const experimentalModels = [];
+
+    filteredModels.forEach(model => {
+      if (!model.isFree) {
+        return;
+      }
+
+      if (model.status === 'experimental') {
+        experimentalModels.push(model);
+        return;
+      }
+
+      stableModels.push(model);
+    });
+
+    return stableModels.concat(experimentalModels).slice(0, 6);
+  }
+
+  function buildOpenRouterModelGroups(selectedModel = getSelectedOpenRouterModelConfig()) {
+    const filteredModels = getFilteredOpenRouterModels();
+    const filteredIds = new Set(filteredModels.map(model => model.id));
+    const groups = [];
+
+    if (selectedModel && !filteredIds.has(selectedModel.id)) {
+      groups.push({
+        key: 'selection-actuelle',
+        title: 'Sélection actuelle',
+        models: [selectedModel]
+      });
+    }
+
+    const suggestedModels = buildSuggestedFreeOpenRouterModels(filteredModels);
+    const suggestedIds = new Set(suggestedModels.map(model => model.id));
+
+    if (suggestedModels.length > 0) {
+      groups.push({
+        key: 'suggestions-gratuites',
+        title: 'Suggestions gratuites',
+        models: suggestedModels
+      });
+    }
+
+    const providerGroups = new Map();
+    filteredModels.forEach(model => {
+      if (suggestedIds.has(model.id)) {
+        return;
+      }
+
+      const groupName = model.providerLabel || model.providerGroup || 'Autres';
+      if (!providerGroups.has(groupName)) {
+        providerGroups.set(groupName, []);
+      }
+      providerGroups.get(groupName).push(model);
+    });
+
+    providerGroups.forEach((models, groupName) => {
+      groups.push({
+        key: `provider-${groupName}`,
+        title: groupName,
+        models
+      });
+    });
+
+    return groups;
+  }
+
+  function resolvePreferredOpenRouterActiveIndex(selectedModelId = getSelectedOpenRouterModelConfig()?.id) {
+    if (!Array.isArray(openRouterPickerState.flatModelIds) || openRouterPickerState.flatModelIds.length === 0) {
+      return -1;
+    }
+
+    const selectedIndex = selectedModelId
+      ? openRouterPickerState.flatModelIds.indexOf(selectedModelId)
+      : -1;
+
+    return selectedIndex >= 0 ? selectedIndex : 0;
+  }
+
+  function syncOpenRouterOptionStates(selectedModelId = getSelectedOpenRouterModelConfig()?.id) {
+    const resultsEl = document.getElementById('openrouter-model-results');
+    const searchInput = document.getElementById('openrouter-model-search');
+
+    if (!resultsEl) {
+      return;
+    }
+
+    let activeOptionId = '';
+    resultsEl.querySelectorAll('[data-openrouter-option-index]').forEach(option => {
+      const optionIndex = Number(option.dataset.openrouterOptionIndex);
+      const modelId = option.dataset.openrouterModelId || '';
+      const isActive = optionIndex === openRouterPickerState.activeIndex;
+      const isSelected = Boolean(selectedModelId && modelId === selectedModelId);
+
+      option.classList.toggle('active', isActive);
+      option.classList.toggle('selected', isSelected);
+      option.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+
+      if (isActive) {
+        activeOptionId = option.id;
+      }
+    });
+
+    if (searchInput) {
+      if (activeOptionId && openRouterPickerState.isOpen) {
+        searchInput.setAttribute('aria-activedescendant', activeOptionId);
+      } else {
+        searchInput.removeAttribute('aria-activedescendant');
+      }
+    }
+  }
+
+  function scrollActiveOpenRouterOptionIntoView() {
+    const resultsEl = document.getElementById('openrouter-model-results');
+    if (!resultsEl || openRouterPickerState.activeIndex < 0) {
+      return;
+    }
+
+    const activeOption = resultsEl.querySelector(`[data-openrouter-option-index="${openRouterPickerState.activeIndex}"]`);
+    activeOption?.scrollIntoView({ block: 'nearest' });
+  }
+
+  function setOpenRouterActiveIndex(nextIndex, { scroll = false } = {}) {
+    if (!Array.isArray(openRouterPickerState.flatModelIds) || openRouterPickerState.flatModelIds.length === 0) {
+      openRouterPickerState.activeIndex = -1;
+      syncOpenRouterOptionStates();
+      return;
+    }
+
+    const total = openRouterPickerState.flatModelIds.length;
+    let normalizedIndex = nextIndex;
+
+    if (normalizedIndex < 0) {
+      normalizedIndex = total - 1;
+    } else if (normalizedIndex >= total) {
+      normalizedIndex = 0;
+    }
+
+    openRouterPickerState.activeIndex = normalizedIndex;
+    syncOpenRouterOptionStates();
+
+    if (scroll) {
+      requestAnimationFrame(scrollActiveOpenRouterOptionIntoView);
+    }
+  }
+
+  function syncOpenRouterPickerVisibility() {
+    const trigger = document.getElementById('openrouter-model-trigger');
+    const popover = document.getElementById('openrouter-model-popover');
+
+    if (trigger) {
+      trigger.setAttribute('aria-expanded', openRouterPickerState.isOpen ? 'true' : 'false');
+    }
+
+    if (popover) {
+      popover.hidden = !openRouterPickerState.isOpen;
+    }
+  }
+
+  function closeOpenRouterPicker({
+    resetSearch = true,
+    focusTrigger = false,
+    skipRender = false
+  } = {}) {
+    const searchInput = document.getElementById('openrouter-model-search');
+    const trigger = document.getElementById('openrouter-model-trigger');
+
+    openRouterPickerState.isOpen = false;
+    if (resetSearch) {
+      openRouterCatalogState.searchQuery = '';
+      if (searchInput) {
+        searchInput.value = '';
+      }
+    }
+    openRouterPickerState.activeIndex = -1;
+
+    syncOpenRouterPickerVisibility();
+
+    if (!skipRender) {
+      renderOpenRouterModelResults({ resetActive: true });
+    } else {
+      syncOpenRouterOptionStates();
+    }
+
+    if (focusTrigger) {
+      trigger?.focus();
+    }
+  }
+
+  function openOpenRouterPicker() {
+    const searchInput = document.getElementById('openrouter-model-search');
+
+    if (!hasOpenRouterProvider()) {
+      return;
+    }
+
+    openRouterPickerState.isOpen = true;
+    syncOpenRouterPickerVisibility();
+    renderOpenRouterModelResults({
+      resetActive: true,
+      scrollActiveIntoView: true
+    });
+
+    requestAnimationFrame(() => {
+      searchInput?.focus();
+      searchInput?.select?.();
+    });
+  }
+
+  function selectOpenRouterModel(modelId, { closePicker = true } = {}) {
+    const select = document.getElementById('openrouter-model-select');
+
+    if (!select || !modelId) {
+      return;
+    }
+
+    const hasMatchingOption = Array.from(select.options).some(option => option.value === modelId);
+    if (!hasMatchingOption) {
+      return;
+    }
+
+    select.value = modelId;
+    setStoredValue(storageKeys.openRouterModelId, modelId);
+    openRouterPickerState.detailsExpanded = false;
+
+    if (closePicker) {
+      closeOpenRouterPicker({
+        resetSearch: true,
+        skipRender: true
+      });
+    }
+
+    updateModelSelectionSummary();
+    renderOpenRouterModelResults({ resetActive: true });
+  }
+
+  function renderOpenRouterModelResults({
+    resetActive = false,
+    scrollActiveIntoView = false
+  } = {}) {
+    const resultsEl = document.getElementById('openrouter-model-results');
+    const searchInput = document.getElementById('openrouter-model-search');
+    const selectedModel = getSelectedOpenRouterModelConfig();
+
+    if (!resultsEl || !searchInput) {
+      return;
+    }
+
+    syncOpenRouterFilterButtons();
+    searchInput.disabled = openRouterCatalogState.status !== 'ready';
+    searchInput.value = openRouterCatalogState.searchQuery;
+    resultsEl.innerHTML = '';
+    openRouterPickerState.flatModelIds = [];
+
+    const appendEmptyState = message => {
+      const stateEl = document.createElement('div');
+      stateEl.className = 'openrouter-model-empty';
+      stateEl.textContent = message;
+      resultsEl.appendChild(stateEl);
+      openRouterPickerState.activeIndex = -1;
+      syncOpenRouterOptionStates(selectedModel?.id);
+      updateOpenRouterModelSummary(selectedModel);
+    };
+
+    if (openRouterCatalogState.status === 'loading') {
+      appendEmptyState('Chargement du catalogue OpenRouter en cours...');
+      return;
+    }
+
+    if (openRouterCatalogState.status === 'error') {
+      appendEmptyState(openRouterCatalogState.error?.message || 'Impossible de charger la liste des modèles OpenRouter.');
+      return;
+    }
+
+    if (openRouterCatalogState.status !== 'ready') {
+      appendEmptyState('Sélectionnez OpenRouter pour charger le catalogue distant.');
+      return;
+    }
+
+    const groups = buildOpenRouterModelGroups(selectedModel);
+    const hasRenderableModels = groups.some(group => Array.isArray(group.models) && group.models.length > 0);
+    if (!hasRenderableModels) {
+      appendEmptyState('Aucun modèle ne correspond à la recherche ou au filtre actif.');
+      return;
+    }
+
+    groups.forEach(group => {
+      if (!Array.isArray(group.models) || group.models.length === 0) {
+        return;
+      }
+
+      const groupEl = document.createElement('div');
+      groupEl.className = 'openrouter-model-group';
+
+      const titleEl = document.createElement('div');
+      titleEl.className = 'openrouter-model-group-title';
+      titleEl.textContent = group.title;
+      groupEl.appendChild(titleEl);
+
+      group.models.forEach(model => {
+        const optionIndex = openRouterPickerState.flatModelIds.length;
+        const badge = buildOpenRouterPriceBadge(model);
+        const isSelected = selectedModel?.id === model.id;
+
+        openRouterPickerState.flatModelIds.push(model.id);
+
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.id = `openrouter-option-${optionIndex}`;
+        button.className = 'openrouter-model-option';
+        button.setAttribute('role', 'option');
+        button.dataset.openrouterOptionIndex = String(optionIndex);
+        button.dataset.openrouterModelId = model.id;
+
+        const mainRow = document.createElement('div');
+        mainRow.className = 'openrouter-model-option-main';
+
+        const copyEl = document.createElement('div');
+        copyEl.className = 'openrouter-model-option-copy';
+
+        const nameEl = document.createElement('span');
+        nameEl.className = 'openrouter-model-option-name';
+        nameEl.textContent = model.name;
+
+        const idEl = document.createElement('span');
+        idEl.className = 'openrouter-model-option-id';
+        idEl.textContent = model.id;
+
+        copyEl.appendChild(nameEl);
+        copyEl.appendChild(idEl);
+
+        if (isSelected) {
+          const stateEl = document.createElement('span');
+          stateEl.className = 'openrouter-model-option-state';
+          stateEl.textContent = 'Actif';
+          copyEl.appendChild(stateEl);
+        }
+
+        const badgeEl = document.createElement('span');
+        badgeEl.className = `openrouter-price-badge ${badge.tone}`;
+        badgeEl.textContent = badge.label;
+
+        mainRow.appendChild(copyEl);
+        mainRow.appendChild(badgeEl);
+
+        const metaRow = document.createElement('div');
+        metaRow.className = 'openrouter-model-option-meta';
+
+        const pricingEl = document.createElement('span');
+        pricingEl.className = 'openrouter-pill';
+        pricingEl.textContent = buildOpenRouterPricingSummary(model);
+
+        const contextEl = document.createElement('span');
+        contextEl.className = 'openrouter-pill';
+        contextEl.textContent = model.contextLength
+          ? `${formatIntegerLabel(model.contextLength)} tok`
+          : 'contexte inconnu';
+
+        metaRow.appendChild(pricingEl);
+        metaRow.appendChild(contextEl);
+
+        button.appendChild(mainRow);
+        button.appendChild(metaRow);
+        button.addEventListener('click', () => {
+          selectOpenRouterModel(model.id);
+        });
+        button.addEventListener('mouseenter', () => {
+          setOpenRouterActiveIndex(optionIndex);
+        });
+
+        groupEl.appendChild(button);
+      });
+
+      resultsEl.appendChild(groupEl);
+    });
+
+    const hasActiveOption = openRouterPickerState.activeIndex >= 0
+      && openRouterPickerState.activeIndex < openRouterPickerState.flatModelIds.length;
+
+    if (resetActive || !hasActiveOption) {
+      openRouterPickerState.activeIndex = resolvePreferredOpenRouterActiveIndex(selectedModel?.id);
+    }
+
+    syncOpenRouterOptionStates(selectedModel?.id);
+    if (scrollActiveIntoView) {
+      requestAnimationFrame(scrollActiveOpenRouterOptionIntoView);
+    }
+
+    updateOpenRouterModelSummary(selectedModel);
+  }
+
+  async function ensureOpenRouterCatalogLoaded({ force = false } = {}) {
+    const providerConfig = getOpenRouterProviderConfig();
+    if (!providerConfig || !hasOpenRouterProvider()) {
+      return [];
+    }
+
+    if (providerConfig.live_catalog !== true) {
+      const models = Array.isArray(providerConfig.models) ? providerConfig.models : [];
+      setOpenRouterCatalogStatus('ready', {
+        models,
+        error: null
+      });
+      return models;
+    }
+
+    if (typeof fetchOpenRouterModels !== 'function') {
+      return [];
+    }
+
+    if (!force && openRouterCatalogState.status === 'ready' && getOpenRouterModels().length > 0) {
+      return getOpenRouterModels();
+    }
+
+    if (openRouterCatalogState.loadingPromise) {
+      return openRouterCatalogState.loadingPromise;
+    }
+
+    setOpenRouterCatalogStatus('loading', {
+      error: null
+    });
+    renderOpenRouterModelResults();
+    updateOpenRouterStatus();
+
+    openRouterCatalogState.loadingPromise = Promise.resolve(fetchOpenRouterModels())
+      .then(models => {
+        setOpenRouterCatalogStatus('ready', {
+          models,
+          error: null
+        });
+        populateOpenRouterModelSelect();
+        renderOpenRouterModelResults();
+        updateOpenRouterStatus();
+        updateModelSelectionSummary();
+        return models;
+      })
+      .catch(error => {
+        console.error('Chargement OpenRouter impossible:', error);
+        setOpenRouterCatalogStatus('error', {
+          models: [],
+          error
+        });
+        populateOpenRouterModelSelect();
+        renderOpenRouterModelResults();
+        updateOpenRouterStatus();
+        updateModelSelectionSummary();
+        return [];
+      })
+      .finally(() => {
+        openRouterCatalogState.loadingPromise = null;
+      });
+
+    return openRouterCatalogState.loadingPromise;
+  }
+
   function populateInferenceSourceSelect() {
     const sourceSelect = document.getElementById('ai-source-select');
     if (!sourceSelect) {
       return;
     }
 
-    const options = [
-      {
-        value: LOCAL_SOURCE_ID,
-        label: 'Modele local'
-      }
-    ];
+    const options = [];
 
     if (hasOpenRouterProvider()) {
       options.push({
         value: OPENROUTER_SOURCE_ID,
-        label: 'OpenRouter'
+        label: 'IA en ligne'
       });
     }
+
+    options.push({
+      value: LOCAL_SOURCE_ID,
+      label: 'Modele local'
+    });
 
     const preferredSource = getSelectedInferenceSource();
     sourceSelect.innerHTML = '';
@@ -475,31 +1452,63 @@ export function createModelSelectionController({
 
     sourceSelect.value = options.some(option => option.value === preferredSource)
       ? preferredSource
-      : LOCAL_SOURCE_ID;
+      : (hasOpenRouterProvider() ? OPENROUTER_SOURCE_ID : LOCAL_SOURCE_ID);
 
     setStoredValue(storageKeys.inferenceSource, sourceSelect.value);
   }
 
   function populateOpenRouterModelSelect() {
     const select = document.getElementById('openrouter-model-select');
+    const searchInput = document.getElementById('openrouter-model-search');
     if (!select) {
       return;
     }
 
     const providerConfig = getOpenRouterProviderConfig();
-    const remoteModels = Array.isArray(providerConfig?.models) ? providerConfig.models : [];
-    const storedModelId = getStoredValue(storageKeys.openRouterModelId);
-    const defaultModel = getDefaultOpenRouterModel(providerConfig);
-    const selectedModel = remoteModels.find(model => model.id === storedModelId) || defaultModel;
+    const remoteModels = getRemoteProviderModels(providerConfig);
+    const selectedModel = resolvePreferredOpenRouterModel(remoteModels);
 
     select.innerHTML = '';
 
-    if (!providerConfig || remoteModels.length === 0) {
+    if (searchInput) {
+      searchInput.disabled = openRouterCatalogState.status !== 'ready';
+    }
+
+    if (!providerConfig) {
       const option = document.createElement('option');
       option.value = '';
-      option.textContent = 'Aucun modele distant';
+      option.textContent = 'OpenRouter indisponible';
       select.appendChild(option);
       select.disabled = true;
+      closeOpenRouterPicker({
+        resetSearch: true,
+        skipRender: true
+      });
+      renderOpenRouterModelResults();
+      return;
+    }
+
+    if (openRouterCatalogState.status === 'loading') {
+      const option = document.createElement('option');
+      option.value = '';
+      option.textContent = 'Chargement du catalogue...';
+      select.appendChild(option);
+      select.disabled = true;
+      renderOpenRouterModelResults();
+      return;
+    }
+
+    if (openRouterCatalogState.status === 'error' || remoteModels.length === 0) {
+      const option = document.createElement('option');
+      option.value = '';
+      option.textContent = 'Catalogue indisponible';
+      select.appendChild(option);
+      select.disabled = true;
+      closeOpenRouterPicker({
+        resetSearch: true,
+        skipRender: true
+      });
+      renderOpenRouterModelResults();
       return;
     }
 
@@ -514,7 +1523,10 @@ export function createModelSelectionController({
     if (selectedModel) {
       select.value = selectedModel.id;
       setStoredValue(storageKeys.openRouterModelId, selectedModel.id);
+      openRouterPickerState.detailsExpanded = false;
     }
+
+    renderOpenRouterModelResults();
   }
 
   function getSelectedOpenRouterModelConfig() {
@@ -523,7 +1535,7 @@ export function createModelSelectionController({
       return null;
     }
 
-    const remoteModels = Array.isArray(providerConfig.models) ? providerConfig.models : [];
+    const remoteModels = getRemoteProviderModels(providerConfig);
     const defaultModel = getDefaultOpenRouterModel(providerConfig);
     const remoteModelSelect = document.getElementById('openrouter-model-select');
     const preferredModelId = remoteModelSelect?.value || getStoredValue(storageKeys.openRouterModelId) || defaultModel?.id || null;
@@ -536,15 +1548,24 @@ export function createModelSelectionController({
     return {
       ...selectedRemoteModel,
       provider: OPENROUTER_SOURCE_ID,
-      family: providerConfig.name || 'OpenRouter',
-      runtime: 'openrouter_remote',
-      apiBaseUrl: providerConfig.api_base_url || 'https://openrouter.ai/api/v1',
-      providerModelId: selectedRemoteModel.provider_model_id,
-      apiKey: getOpenRouterApiKey(),
+      family: providerConfig.name || 'IA en ligne',
+      runtime: 'online_remote',
+      apiBaseUrl: providerConfig.api_base_url || '',
+      turnstileSiteKey: providerConfig.turnstile_site_key || '',
+      providerModelId: selectedRemoteModel.providerModelId || selectedRemoteModel.id,
       estimatedDownloadMb: null,
-      supportsThinking: selectedRemoteModel.supports_thinking !== true ? false : true,
+      supportsThinking: false,
       thinkingEnabled: false,
-      displayName: `${providerConfig.name || 'OpenRouter'} · ${selectedRemoteModel.name}`,
+      pricing: selectedRemoteModel.pricing || {},
+      priceStatus: selectedRemoteModel.priceStatus || 'unknown',
+      isFree: selectedRemoteModel.isFree === true,
+      providerLabel: selectedRemoteModel.providerLabel || providerConfig.name || 'IA en ligne',
+      providerGroup: selectedRemoteModel.providerGroup || OPENROUTER_SOURCE_ID,
+      supportedParameters: Array.isArray(selectedRemoteModel.supportedParameters) ? selectedRemoteModel.supportedParameters : [],
+      defaultParameters: selectedRemoteModel.defaultParameters || {},
+      contextLength: selectedRemoteModel.contextLength ?? null,
+      maxCompletionTokens: selectedRemoteModel.maxCompletionTokens ?? null,
+      displayName: `${providerConfig.name || 'IA en ligne'} · ${selectedRemoteModel.name}`,
       signature: `${OPENROUTER_SOURCE_ID}:${selectedRemoteModel.id}`
     };
   }
@@ -587,39 +1608,37 @@ export function createModelSelectionController({
   }
 
   function updateOpenRouterStatus() {
-    const statusEl = document.getElementById('openrouter-status');
-    const clearKeyBtn = document.getElementById('openrouter-clear-key-btn');
+    const statusEl = document.getElementById('online-status');
     if (!statusEl) {
       return;
     }
 
     const providerConfig = getOpenRouterProviderConfig();
     const activeRemoteModel = appState.activeModelConfig?.provider === OPENROUTER_SOURCE_ID && appState.generator;
-    const apiKey = getOpenRouterApiKey();
-    const remember = isOpenRouterRememberKeyEnabled();
-
-    if (clearKeyBtn) {
-      clearKeyBtn.disabled = !apiKey && !getStoredOpenRouterApiKey();
-    }
+    const lastMeta = appState.lastOnlineResponseMeta || null;
 
     if (!providerConfig) {
-      statusEl.textContent = 'OpenRouter n est pas disponible dans le catalogue local.';
+      statusEl.textContent = 'Le service IA en ligne n est pas disponible dans le catalogue local.';
+      return;
+    }
+
+    if (!String(providerConfig.api_base_url || '').trim()) {
+      statusEl.textContent = 'Configurez d abord l URL du Worker Cloudflare dans le catalogue pour activer l IA en ligne.';
       return;
     }
 
     if (activeRemoteModel) {
-      statusEl.textContent = `Backend distant actif: ${appState.activeModelConfig.displayName}. Les questions exactes restent deterministes.`;
+      const providerLabel = lastMeta?.provider && lastMeta?.model
+        ? `Dernier service: ${lastMeta.provider} · ${lastMeta.model}.`
+        : 'Service prete.';
+      statusEl.textContent = `${providerLabel} Les questions exactes restent deterministes et seules les analyses envoient un contexte court hors du navigateur.`;
       return;
     }
 
-    if (apiKey) {
-      statusEl.textContent = remember
-        ? 'Cle API presente et memorisee localement sur cet appareil.'
-        : 'Cle API presente pour cette session. Rien n est envoye tant que vous n activez pas OpenRouter.';
-      return;
-    }
-
-    statusEl.textContent = 'Ajoutez votre cle API OpenRouter. Seules les analyses enverront un contexte court hors du navigateur.';
+    const selectedModel = getSelectedOpenRouterModelConfig();
+    statusEl.textContent = selectedModel
+      ? `IA en ligne par defaut: ${selectedModel.name}. Les questions exactes restent locales; seules les analyses enverront un contexte court hors du navigateur.`
+      : 'IA en ligne par defaut. Les questions exactes restent locales; seules les analyses enverront un contexte court hors du navigateur.';
   }
 
   function syncSourceSpecificControls() {
@@ -627,6 +1646,7 @@ export function createModelSelectionController({
     const localQuantCard = document.getElementById('local-quant-card');
     const remoteModelCard = document.getElementById('openrouter-model-card');
     const remoteApiCard = document.getElementById('openrouter-api-card');
+    const onlineServiceCard = document.getElementById('online-service-card');
     const loadBtn = document.getElementById('load-model-btn');
     const source = getSelectedInferenceSource();
     const isRemoteSource = source === OPENROUTER_SOURCE_ID;
@@ -640,16 +1660,32 @@ export function createModelSelectionController({
     }
 
     if (remoteModelCard) {
-      remoteModelCard.hidden = !isRemoteSource;
+      remoteModelCard.hidden = true;
     }
 
     if (remoteApiCard) {
-      remoteApiCard.hidden = !isRemoteSource;
+      remoteApiCard.hidden = true;
+    }
+
+    if (onlineServiceCard) {
+      onlineServiceCard.hidden = !isRemoteSource;
+    }
+
+    if (!isRemoteSource) {
+      closeOpenRouterPicker({
+        resetSearch: true,
+        skipRender: true
+      });
     }
 
     if (loadBtn) {
-      loadBtn.textContent = isRemoteSource ? 'Activer OpenRouter' : 'Charger IA';
-      loadBtn.disabled = isRemoteSource ? !hasOpenRouterProvider() : !hasWebGPU();
+      loadBtn.hidden = isRemoteSource;
+      loadBtn.textContent = 'Charger IA locale';
+      loadBtn.disabled = !isRemoteSource && !hasWebGPU();
+    }
+
+    if (isRemoteSource) {
+      void ensureOpenRouterCatalogLoaded();
     }
 
     syncThinkingAvailability();
@@ -664,8 +1700,8 @@ export function createModelSelectionController({
         summaryEl.title = 'Configuration IA indisponible';
         summaryEl.classList.remove('experimental');
       } else if (modelConfig.provider === OPENROUTER_SOURCE_ID) {
-        summaryEl.textContent = `OpenRouter · ${modelConfig.name || 'gratuit'}`;
-        summaryEl.title = `${modelConfig.displayName || 'OpenRouter'} · backend distant optionnel`;
+        summaryEl.textContent = `IA en ligne · ${modelConfig.name || 'par defaut'}`;
+        summaryEl.title = `${modelConfig.displayName || 'IA en ligne'} · service distant par defaut`;
         summaryEl.classList.toggle('experimental', modelConfig.status === 'experimental');
       } else {
         const summaryParts = [
@@ -706,11 +1742,11 @@ export function createModelSelectionController({
     }
 
     if (modelConfig.provider === OPENROUTER_SOURCE_ID) {
-      modelNameEl.textContent = modelConfig.displayName || 'OpenRouter';
-      sizeEl.textContent = 'Aucun telechargement local';
-      notesEl.textContent = modelConfig.notes || 'Backend distant optionnel.';
+      modelNameEl.textContent = modelConfig.displayName || 'IA en ligne';
+      sizeEl.textContent = buildOpenRouterPricingSummary(modelConfig);
+      notesEl.textContent = modelConfig.notes || 'Service distant par defaut.';
       statusChip.textContent = modelConfig.status === 'experimental' ? 'expérimental' : 'stable';
-      runtimeChip.textContent = 'backend distant';
+      runtimeChip.textContent = 'service distant';
       thinkingChip.textContent = 'sortie finale';
       statusChip.classList.toggle('experimental', modelConfig.status === 'experimental');
       runtimeChip.classList.add('experimental');
@@ -748,7 +1784,7 @@ export function createModelSelectionController({
       if (selectedSource === OPENROUTER_SOURCE_ID) {
         fallbackTitle = selectedModelConfig
           ? `Configuration activable: ${selectedModelConfig.displayName}`
-          : 'Configuration activable: OpenRouter';
+          : 'Configuration activable: IA en ligne';
       } else if (selectedModelConfig) {
         fallbackTitle = `Configuration sélectionnée: ${selectedModelConfig.displayName}`;
       } else if (defaultModel && defaultQuant) {
@@ -778,7 +1814,7 @@ export function createModelSelectionController({
 
     if (activeName) {
       const modeLabel = modelConfig.provider === OPENROUTER_SOURCE_ID
-        ? 'distant'
+        ? 'en ligne'
         : resolveThinkingModeFlag(modelConfig) ? 'thinking' : 'non-thinking';
       activeName.textContent = `${modelConfig.displayName} · ${modeLabel}`;
       badge?.classList.toggle('experimental', modelConfig.status === 'experimental');
@@ -794,6 +1830,7 @@ export function createModelSelectionController({
   function updateModelSelectionSummary() {
     syncSourceSpecificControls();
     updateAdvancedModelPreview();
+    updateOpenRouterModelSummary();
     updateActiveModelBadge(appState.activeModelConfig);
     syncChatAvailability?.();
   }
@@ -890,17 +1927,24 @@ export function createModelSelectionController({
     const modelConfig = getSelectedModelConfig();
 
     if (!modelConfig || modelConfig.provider !== OPENROUTER_SOURCE_ID) {
-      addSystemMessage('Selectionnez un profil OpenRouter valide avant activation.');
+      addSystemMessage('Selectionnez un profil IA en ligne valide avant activation.');
       return false;
     }
 
     if (!modelConfig.apiKey) {
-      addSystemMessage('Ajoutez une cle API OpenRouter avant d activer le backend distant.');
+      addSystemMessage('Ajoutez une cle API du service en ligne avant d activer l analyse distante.');
       return false;
     }
 
+    const pricingSummary = buildOpenRouterPricingSummary(modelConfig);
+    const pricingNotice = modelConfig.priceStatus === 'free'
+      ? 'Modele gratuit selon le catalogue du service en ligne.'
+      : modelConfig.priceStatus === 'variable'
+        ? 'Tarif variable selon le service en ligne. Verifiez bien le modele avant envoi.'
+        : `Modele payant: ${pricingSummary}.`;
+
     const confirmed = globalThis.confirm?.(
-      `Activer OpenRouter avec ${modelConfig.name} ?\n\nSeules les analyses enverront un contexte court hors du navigateur.\nLes questions exactes restent deterministes dans l application.\nVotre cle API restera locale a cet appareil uniquement si vous choisissez de la memoriser.`
+      `Activer l IA en ligne avec ${modelConfig.name} ?\n\n${pricingNotice}\nSeules les analyses enverront un contexte court vers le Worker Cloudflare.\nLes questions exactes restent deterministes dans l application.\nVotre cle API restera locale a cet appareil uniquement si vous choisissez de la memoriser.`
     );
 
     if (confirmed === false) {
@@ -922,6 +1966,11 @@ export function createModelSelectionController({
     const modelSelect = document.getElementById('model-select');
     const quantSelect = document.getElementById('quant-select');
     const openRouterModelSelect = document.getElementById('openrouter-model-select');
+    const openRouterModelTrigger = document.getElementById('openrouter-model-trigger');
+    const openRouterModelSearch = document.getElementById('openrouter-model-search');
+    const openRouterPickerShell = document.querySelector('#openrouter-model-card .openrouter-picker-shell');
+    const openRouterFilterGroup = document.getElementById('openrouter-filter-group');
+    const openRouterDetailsToggle = document.getElementById('openrouter-model-details-toggle');
     const openRouterApiKeyInput = document.getElementById('openrouter-api-key');
     const openRouterRememberToggle = document.getElementById('openrouter-remember-key');
     const openRouterClearKeyBtn = document.getElementById('openrouter-clear-key-btn');
@@ -935,7 +1984,6 @@ export function createModelSelectionController({
     const thinkingToggle = document.getElementById('thinking-mode-toggle');
     const semanticToggle = document.getElementById('semantic-rag-toggle');
     const semanticModeSelect = document.getElementById('semantic-rag-mode-select');
-    const semanticLoadBtn = document.getElementById('semantic-rag-load-btn');
 
     const storedThinkingMode = getStoredValue(storageKeys.thinkingMode) === 'true';
     const storedSemanticRagEnabled = getStoredValue(storageKeys.semanticRagEnabled) === 'true';
@@ -943,15 +1991,19 @@ export function createModelSelectionController({
 
     setAdvancedOptionsOpen(false);
     setThinkingMode(storedThinkingMode, { persist: false });
-    setSemanticRagEnabled(storedSemanticRagEnabled, { persist: false });
-    setSemanticRagMode(storedSemanticRagMode, { persist: false });
+    setSemanticRagEnabled(storedSemanticRagEnabled, { persist: false, refreshSummary: false });
+    setSemanticRagMode(storedSemanticRagMode, { persist: false, refreshSummary: false });
     loadOpenRouterCredentialsIntoUi();
     syncSourceSpecificControls();
 
     if (settingsToggleBtn) {
       settingsToggleBtn.addEventListener('click', event => {
         event.stopPropagation();
-        setAdvancedOptionsOpen(!isAdvancedOptionsOpen());
+        const nextOpenState = !isAdvancedOptionsOpen();
+        setAdvancedOptionsOpen(nextOpenState);
+        if (nextOpenState) {
+          void ensureSemanticRagUiReady();
+        }
       });
     }
 
@@ -962,9 +2014,17 @@ export function createModelSelectionController({
     }
 
     if (sourceSelect) {
-      sourceSelect.addEventListener('change', () => {
+      sourceSelect.addEventListener('change', async () => {
         setStoredValue(storageKeys.inferenceSource, sourceSelect.value);
+        const nextProvider = sourceSelect.value === OPENROUTER_SOURCE_ID ? OPENROUTER_SOURCE_ID : LOCAL_SOURCE_ID;
+        const activeProvider = appState.activeModelConfig?.provider || null;
+        if (activeProvider && activeProvider !== nextProvider) {
+          await releaseCurrentModel?.();
+        }
         syncSourceSpecificControls();
+        if (sourceSelect.value === OPENROUTER_SOURCE_ID) {
+          await ensureOpenRouterCatalogLoaded();
+        }
         updateModelSelectionSummary();
       });
     }
@@ -978,6 +2038,7 @@ export function createModelSelectionController({
 
     if (semanticToggle) {
       semanticToggle.addEventListener('change', async () => {
+        await ensureSemanticRagUiReady();
         if (semanticToggle.checked) {
           const activated = await activateSemanticRagFromUi();
           if (!activated) {
@@ -995,19 +2056,9 @@ export function createModelSelectionController({
 
     if (semanticModeSelect) {
       semanticModeSelect.addEventListener('change', async () => {
+        await ensureSemanticRagUiReady();
         setSemanticRagMode(semanticModeSelect.value);
         await releaseSemanticRag?.();
-        await updateSemanticRagSummary();
-      });
-    }
-
-    if (semanticLoadBtn) {
-      semanticLoadBtn.addEventListener('click', async () => {
-        setSemanticRagEnabled(true);
-        const activated = await activateSemanticRagFromUi();
-        if (!activated) {
-          setSemanticRagEnabled(false);
-        }
         await updateSemanticRagSummary();
       });
     }
@@ -1022,9 +2073,114 @@ export function createModelSelectionController({
       updateModelSelectionSummary();
     });
 
+    openRouterModelTrigger?.addEventListener('click', () => {
+      if (openRouterPickerState.isOpen) {
+        closeOpenRouterPicker();
+        return;
+      }
+
+      openOpenRouterPicker();
+    });
+
+    openRouterModelTrigger?.addEventListener('keydown', event => {
+      if (event.key === 'ArrowDown') {
+        event.preventDefault();
+        if (!openRouterPickerState.isOpen) {
+          openOpenRouterPicker();
+          return;
+        }
+
+        setOpenRouterActiveIndex(openRouterPickerState.activeIndex + 1, { scroll: true });
+        return;
+      }
+
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        if (openRouterPickerState.isOpen) {
+          closeOpenRouterPicker();
+          return;
+        }
+
+        openOpenRouterPicker();
+      }
+    });
+
     openRouterModelSelect?.addEventListener('change', () => {
       setStoredValue(storageKeys.openRouterModelId, openRouterModelSelect.value);
+      openRouterPickerState.detailsExpanded = false;
+      updateOpenRouterModelSummary();
+      renderOpenRouterModelResults({ resetActive: true });
       updateModelSelectionSummary();
+    });
+
+    openRouterModelSearch?.addEventListener('input', () => {
+      openRouterCatalogState.searchQuery = openRouterModelSearch.value || '';
+      renderOpenRouterModelResults({ resetActive: true });
+    });
+
+    openRouterModelSearch?.addEventListener('keydown', event => {
+      if (event.key === 'ArrowDown') {
+        event.preventDefault();
+        if (!openRouterPickerState.isOpen) {
+          openOpenRouterPicker();
+          return;
+        }
+
+        setOpenRouterActiveIndex(openRouterPickerState.activeIndex + 1, { scroll: true });
+        return;
+      }
+
+      if (event.key === 'ArrowUp') {
+        event.preventDefault();
+        if (!openRouterPickerState.isOpen) {
+          openOpenRouterPicker();
+          return;
+        }
+
+        setOpenRouterActiveIndex(openRouterPickerState.activeIndex - 1, { scroll: true });
+        return;
+      }
+
+      if (event.key === 'Enter') {
+        const modelId = openRouterPickerState.flatModelIds[openRouterPickerState.activeIndex];
+        if (!modelId) {
+          return;
+        }
+
+        event.preventDefault();
+        selectOpenRouterModel(modelId);
+        return;
+      }
+
+      if (event.key === 'Escape' && openRouterPickerState.isOpen) {
+        event.preventDefault();
+        closeOpenRouterPicker({
+          focusTrigger: true
+        });
+      }
+    });
+
+    openRouterFilterGroup?.addEventListener('click', event => {
+      const button = event.target instanceof Element
+        ? event.target.closest('[data-openrouter-filter]')
+        : null;
+      if (!button) {
+        return;
+      }
+
+      const nextFilter = button.dataset.openrouterFilter;
+      if (!OPENROUTER_FILTER_IDS.has(nextFilter)) {
+        return;
+      }
+
+      openRouterCatalogState.filter = nextFilter;
+      renderOpenRouterModelResults({ resetActive: true });
+      openRouterModelSearch?.focus();
+    });
+
+    openRouterDetailsToggle?.addEventListener('click', () => {
+      openRouterPickerState.detailsExpanded = !openRouterPickerState.detailsExpanded;
+      syncOpenRouterDetailsUi();
     });
 
     openRouterApiKeyInput?.addEventListener('input', () => {
@@ -1083,6 +2239,12 @@ export function createModelSelectionController({
     });
 
     document.addEventListener('click', event => {
+      if (openRouterPickerState.isOpen && openRouterPickerShell && !openRouterPickerShell.contains(event.target)) {
+        closeOpenRouterPicker({
+          skipRender: true
+        });
+      }
+
       if (!isAdvancedOptionsOpen()) {
         return;
       }
@@ -1093,13 +2255,21 @@ export function createModelSelectionController({
     });
 
     document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && openRouterPickerState.isOpen) {
+        event.preventDefault();
+        closeOpenRouterPicker({
+          focusTrigger: true
+        });
+        return;
+      }
+
       if (event.key === 'Escape' && isAdvancedOptionsOpen()) {
         setAdvancedOptionsOpen(false);
       }
     });
 
     updateModelSelectionSummary();
-    void populateSemanticRagModeSelect().then(() => updateSemanticRagSummary());
+    renderOpenRouterModelResults();
     updateChatCapabilitiesBanner();
   }
 
