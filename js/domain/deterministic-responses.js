@@ -1,3 +1,5 @@
+import { stripLeadingFrenchArticle } from './vote-title-display.js';
+
 function buildClosedVoteResponseInternal(question, scope, depute, filteredVotes, context = {}, deps) {
   const { deputeQueryMatches = [], globalQueryMatches = [] } = context;
   const displayedVotes = filteredVotes.slice(0, scope.filters.limit || deps.defaultChatListLimit);
@@ -10,23 +12,23 @@ function buildClosedVoteResponseInternal(question, scope, depute, filteredVotes,
   const deputeLabel = `${depute.prenom} ${depute.nom}`;
 
   if (filteredVotes.length > 0) {
-    let message = `Oui. ${deputeLabel} a ${filteredVotes.length} vote${filteredVotes.length > 1 ? 's' : ''}`;
+    let summaryText = `Oui. ${deputeLabel} a ${filteredVotes.length} vote${filteredVotes.length > 1 ? 's' : ''}`;
     if (targetDescription) {
-      message += ` ${targetDescription}`;
+      summaryText += ` ${targetDescription}`;
     }
-    message += '.';
+    summaryText += '.';
 
     if (displayedVotes.length > 0) {
-      message += '\n';
       if (displayedVotes.length < filteredVotes.length) {
-        message += `J'en affiche ${displayedVotes.length}, tries par date.\n`;
+        summaryText += `\nJ'en affiche ${displayedVotes.length}, tries par date.`;
       }
-      message += displayedVotes.map(vote => deps.formatVoteLine(vote, 'list')).join('\n');
+
+      return buildInlineListResponseInternal(summaryText, displayedVotes, 'list', deps);
     }
 
     return {
       kind: 'response',
-      message,
+      message: summaryText,
       displayedVotes
     };
   }
@@ -143,14 +145,43 @@ function buildCountResponseInternal(filteredVotes, scope, depute, deps) {
   return `${depute.prenom} ${depute.nom} a ${total} ${filterBits.join(' ')}.`;
 }
 
-function buildListResponseInternal(filteredVotes, scope, depute, deps) {
-  if (deps.shouldClarifyLargeList(scope, { kind: 'list' }, filteredVotes.length)) {
-    return {
-      kind: 'clarify',
-      message: deps.buildLargeListClarification(filteredVotes.length)
-    };
+function buildLargeResultHintInternal(requestedLimit, totalMatches) {
+  const remainingMatches = Math.max(0, totalMatches - requestedLimit);
+  const nextSuggestedLimit = requestedLimit < 20
+    ? Math.min(20, totalMatches)
+    : requestedLimit < 50
+      ? Math.min(50, totalMatches)
+      : null;
+
+  if (remainingMatches <= 0) {
+    return '';
   }
 
+  if (nextSuggestedLimit && nextSuggestedLimit > requestedLimit) {
+    return `Dites "${nextSuggestedLimit} derniers" si vous voulez elargir directement, ou utilisez "Afficher ${Math.min(requestedLimit, remainingMatches)} de plus".`;
+  }
+
+  return 'Utilisez le bouton "Afficher plus" pour continuer.';
+}
+
+function buildInlineListResponseInternal(summaryText, displayedVotes, inlineVoteMode, deps) {
+  const trimmedSummaryText = String(summaryText || '').trimEnd();
+  const lines = Array.isArray(displayedVotes) && displayedVotes.length > 0
+    ? displayedVotes.map(vote => deps.formatVoteLine(vote, inlineVoteMode)).join('\n')
+    : '';
+  const message = lines ? `${trimmedSummaryText}\n${lines}` : trimmedSummaryText;
+
+  return {
+    kind: 'response',
+    message,
+    summaryText: trimmedSummaryText,
+    displayedVotes,
+    referencePresentation: lines ? 'inline_rows' : null,
+    inlineVoteMode: lines ? inlineVoteMode : null
+  };
+}
+
+function buildListResponseInternal(filteredVotes, scope, depute, deps) {
   const requestedLimit = scope.filters.limit || deps.defaultChatListLimit;
   const displayedVotes = filteredVotes.slice(0, requestedLimit);
   const dateDescription = deps.describeDateFilter(scope.filters);
@@ -173,18 +204,12 @@ function buildListResponseInternal(filteredVotes, scope, depute, deps) {
     introParts.push(dateDescription);
   }
 
-  let message = `${introParts.join(' ')}.\n`;
+  let summaryText = `${introParts.join(' ')}.`;
   if (displayedVotes.length < filteredVotes.length) {
-    message += `J'en affiche ${displayedVotes.length}, tries par date.\n`;
+    summaryText += `\nJ'en affiche ${displayedVotes.length}, tries par date. ${buildLargeResultHintInternal(displayedVotes.length, filteredVotes.length)}`;
   }
 
-  message += displayedVotes.map(vote => deps.formatVoteLine(vote, 'list')).join('\n');
-
-  return {
-    kind: 'response',
-    message,
-    displayedVotes
-  };
+  return buildInlineListResponseInternal(summaryText, displayedVotes, 'list', deps);
 }
 
 function buildThemeSummaryResponseInternal(filteredVotes, scope, depute, deps) {
@@ -229,13 +254,6 @@ function buildThemeSummaryResponseInternal(filteredVotes, scope, depute, deps) {
 }
 
 function buildSubjectsResponseInternal(filteredVotes, scope, depute, question, deps) {
-  if (deps.shouldClarifyLargeList(scope, { kind: 'subjects' }, filteredVotes.length)) {
-    return {
-      kind: 'clarify',
-      message: deps.buildLargeListClarification(filteredVotes.length)
-    };
-  }
-
   if (deps.detectThemeSummaryRequest(deps.normalizeQuestion(question))) {
     const themeSummaryResponse = buildThemeSummaryResponseInternal(filteredVotes, scope, depute, deps);
     if (themeSummaryResponse) {
@@ -247,28 +265,26 @@ function buildSubjectsResponseInternal(filteredVotes, scope, depute, question, d
   const displayedVotes = filteredVotes.slice(0, requestedLimit);
   const dateDescription = deps.describeDateFilter(scope.filters);
   const queryDescription = deps.describeQueryFilter(scope.filters, { filteredVotes, displayedVotes });
-  let message = `Voici les sujets des ${displayedVotes.length} vote${displayedVotes.length > 1 ? 's' : ''} retenu${displayedVotes.length > 1 ? 's' : ''} pour ${depute.prenom} ${depute.nom}`;
+  let summaryText = `Voici les sujets des ${displayedVotes.length} vote${displayedVotes.length > 1 ? 's' : ''} retenu${displayedVotes.length > 1 ? 's' : ''} pour ${depute.prenom} ${depute.nom}`;
 
   if (queryDescription) {
-    message += ` pour ${queryDescription}`;
+    summaryText += ` pour ${queryDescription}`;
   }
 
   if (dateDescription) {
-    message += ` ${dateDescription}`;
+    summaryText += ` ${dateDescription}`;
   }
 
   if (filteredVotes.length > displayedVotes.length) {
-    message += ` (sur ${filteredVotes.length} correspondances)`;
+    summaryText += ` (sur ${filteredVotes.length} correspondances)`;
   }
 
-  message += ' :\n';
-  message += displayedVotes.map(vote => deps.formatVoteLine(vote, 'subjects')).join('\n');
+  summaryText += ' :';
+  if (displayedVotes.length < filteredVotes.length) {
+    summaryText += `\n${buildLargeResultHintInternal(displayedVotes.length, filteredVotes.length)}`;
+  }
 
-  return {
-    kind: 'response',
-    message,
-    displayedVotes
-  };
+  return buildInlineListResponseInternal(summaryText, displayedVotes, 'subjects', deps);
 }
 
 function formatPercentInternal(value) {
@@ -375,10 +391,11 @@ function buildScrutinyDetailResponseInternal(filteredVotes, question, deps) {
 
   if (filteredVotes.length === 1) {
     const vote = filteredVotes[0];
+    const displayTitle = stripLeadingFrenchArticle(vote?.titre || '');
     let message = `Le scrutin ${deps.getVoteId(vote)} a eu lieu le ${formatVoteDateInternal(vote?.date)}.`;
 
-    if (vote?.titre) {
-      message += ` Intitule retenu : ${vote.titre}.`;
+    if (displayTitle) {
+      message += ` Intitule retenu : ${displayTitle}.`;
     }
 
     if (asksHour) {
@@ -394,7 +411,7 @@ function buildScrutinyDetailResponseInternal(filteredVotes, question, deps) {
 
   let message = `Je trouve ${filteredVotes.length} scrutins correspondants. Voici les numeros et dates des ${displayedVotes.length} premiers :\n`;
   message += displayedVotes
-    .map(vote => `- scrutin ${deps.getVoteId(vote)} - ${formatVoteDateInternal(vote?.date)} - ${vote?.titre || 'scrutin sans titre'}`)
+    .map(vote => `- scrutin ${deps.getVoteId(vote)} - ${formatVoteDateInternal(vote?.date)} - ${stripLeadingFrenchArticle(vote?.titre || '') || 'scrutin sans titre'}`)
     .join('\n');
 
   if (asksHour) {
@@ -505,14 +522,13 @@ function buildThematicStanceResponseInternal(filteredVotes, scope, depute, deps)
   message += '\nCette synthese repose sur les scrutins classes dans ce theme, pas sur une evaluation generale de toutes ses prises de position.';
 
   if (examples.length > 0) {
-    message += '\n\nExemples recents :\n';
-    message += examples.map(vote => deps.formatVoteLine(vote, 'list')).join('\n');
+    return buildInlineListResponseInternal(`${message}\n\nExemples recents :`, examples, 'list', deps);
   }
 
   return {
     kind: 'response',
     message,
-    displayedVotes: filteredVotes
+    displayedVotes: []
   };
 }
 
@@ -571,6 +587,9 @@ export function createDeterministicRouteExecutor(deps) {
         message: responseBuilder.message,
         voteIds: filteredVotes.map(deps.getVoteId),
         displayedVoteIds: (responseBuilder.displayedVotes || []).map(deps.getVoteId),
+        summaryText: responseBuilder.summaryText || null,
+        referencePresentation: responseBuilder.referencePresentation || null,
+        inlineVoteMode: responseBuilder.inlineVoteMode || null,
         ...baseResult
       };
     }
@@ -600,6 +619,9 @@ export function createDeterministicRouteExecutor(deps) {
         message: responseBuilder.message,
         voteIds: filteredVotes.map(deps.getVoteId),
         displayedVoteIds: (responseBuilder.displayedVotes || filteredVotes).map(deps.getVoteId),
+        summaryText: responseBuilder.summaryText || null,
+        referencePresentation: responseBuilder.referencePresentation || null,
+        inlineVoteMode: responseBuilder.inlineVoteMode || null,
         ...baseResult,
         limit: route.scope.filters.limit || deps.defaultChatListLimit
       };
@@ -614,7 +636,8 @@ export function createDeterministicRouteExecutor(deps) {
     if (responseBuilder.kind === 'clarify') {
       return {
         kind: 'clarify',
-        message: responseBuilder.message
+        message: responseBuilder.message,
+        clarificationKind: responseBuilder.clarificationKind || null
       };
     }
 
@@ -623,6 +646,9 @@ export function createDeterministicRouteExecutor(deps) {
       message: responseBuilder.message,
       voteIds: filteredVotes.map(deps.getVoteId),
       displayedVoteIds: (responseBuilder.displayedVotes || filteredVotes).map(deps.getVoteId),
+      summaryText: responseBuilder.summaryText || null,
+      referencePresentation: responseBuilder.referencePresentation || null,
+      inlineVoteMode: responseBuilder.inlineVoteMode || null,
       ...baseResult,
       limit: route.scope.filters.limit || deps.defaultChatListLimit
     };

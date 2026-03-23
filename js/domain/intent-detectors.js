@@ -1,4 +1,4 @@
-import { normalizeQuestion, stripExtractedQueryFromQuestion } from './vote-normalizer.js';
+import { escapeRegExp, normalizeQuestion, stripExtractedQueryFromQuestion } from './vote-normalizer.js';
 import {
   ANALYSIS_MARKERS,
   LIST_MARKERS,
@@ -87,20 +87,86 @@ function hasComparativeAnalysisMarkersInternal(normalizedQuestion) {
   const normalizedSearchText = String(normalizedQuestion || '').replace(/['’-]/gu, ' ').replace(/-/g, ' ');
   return (
     /\b(equilibre entre|plus souvent|selon qu on parle|change d avis|changé d avis|coherent|coherente|coherence|contradictoire|stable|evolution|evolue|tiennent ils compte|repondent ils|vision du|vote t il pareil|vote t elle pareil|plutot\b.+\bou\b|plus\b.+\bque\b)\b/.test(normalizedSearchText) ||
+    /\bplus\s+favorables?\b[\s\S]{0,120}\bou\b/.test(normalizedSearchText) ||
     /\b(davantage|privilegient ils|favorisent ils)\b/.test(normalizedSearchText) && /\bou\b/.test(normalizedSearchText) ||
     /\b(defendu|defend|favorise|privilegie|privilégie)\b/.test(normalizedSearchText) && /,/.test(normalizedSearchText) && /\bou\b/.test(normalizedSearchText) ||
+    /\bavait\b[\s\S]{0,80}\bcritiqu(?:e|es|ee|ees|ait|aient)\b[\s\S]{0,80}\bopposition\b/.test(normalizedSearchText) ||
     /\b(autorite|egalite des chances|egalite territoriale|liberte d installation|rigueur budgetaire|compromis plus souples|humanitaire|securitaire|budgetaire|atlantistes?|souverainistes?)\b/.test(normalizedSearchText) && /\bou\b/.test(normalizedSearchText)
   );
 }
 
+function normalizeThemeSearchTextInternal(value) {
+  return normalizeQuestion(value)
+    .replace(/['’-]/gu, ' ')
+    .replace(/-/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function extractThemeSearchTokensInternal(value) {
+  return new Set(
+    normalizeThemeSearchTextInternal(value)
+      .split(/[^a-z0-9]+/g)
+      .filter(Boolean)
+  );
+}
+
+function matchesThemeKeywordInternal(searchText, searchTokens, keyword) {
+  const normalizedKeyword = normalizeThemeSearchTextInternal(keyword);
+  if (!normalizedKeyword) {
+    return false;
+  }
+
+  if (normalizedKeyword.includes(' ')) {
+    return searchText.includes(normalizedKeyword);
+  }
+
+  if (searchTokens.has(normalizedKeyword)) {
+    return true;
+  }
+
+  if (normalizedKeyword.length >= 5) {
+    for (const token of searchTokens) {
+      if (token.startsWith(normalizedKeyword)) {
+        return true;
+      }
+    }
+  }
+
+  return false;
+}
+
+function buildImpactClarificationMessageInternal(normalizedQuestion, scope) {
+  const normalizedSearchText = normalizeThemeSearchTextInternal(normalizedQuestion);
+  if (normalizedSearchText.includes('pouvoir d achat')) {
+    return 'Je ne peux pas mesurer directement votre pouvoir d achat a partir des votes seuls. Je peux en revanche vous proposer une liste, un comptage ou une analyse thematique sur le pouvoir d achat.';
+  }
+
+  if (scope?.filters?.theme) {
+    return `Je ne peux pas mesurer directement cet impact a partir des votes seuls. Je peux en revanche vous proposer une liste, un comptage ou une analyse thematique sur le theme "${scope.filters.theme}".`;
+  }
+
+  return 'Je ne peux pas mesurer directement cet impact a partir des votes seuls. Je peux en revanche vous proposer une liste, un comptage ou une analyse thematique sur ce theme.';
+}
+
 export function detectMarker(question, markers) {
-  return markers.some(marker => question.includes(marker));
+  const normalizedQuestion = normalizeThemeSearchTextInternal(question);
+  return markers.some(marker => {
+    const normalizedMarker = normalizeThemeSearchTextInternal(marker);
+    if (!normalizedMarker) {
+      return false;
+    }
+
+    const markerPattern = new RegExp(`(^|[^a-z0-9])${escapeRegExp(normalizedMarker)}(?=$|[^a-z0-9])`, 'u');
+    return markerPattern.test(normalizedQuestion);
+  });
 }
 
 export function detectTheme(question) {
-  const normalizedSearchQuestion = String(question || '').replace(/['’-]/gu, ' ');
+  const normalizedSearchQuestion = normalizeThemeSearchTextInternal(question);
+  const questionTokens = extractThemeSearchTokensInternal(question);
   for (const [theme, keywords] of Object.entries(THEME_KEYWORDS)) {
-    if (keywords.some(keyword => normalizedSearchQuestion.includes(normalizeQuestion(keyword).replace(/['’-]/gu, ' ')))) {
+    if (keywords.some(keyword => matchesThemeKeywordInternal(normalizedSearchQuestion, questionTokens, keyword))) {
       return theme;
     }
   }
@@ -587,6 +653,15 @@ export function detectClarifyOnlyQuestion(question, scope) {
       /\b(vie quotidienne|familles|libertes|maires ruraux)\b/.test(normalizedQuestion)
     )
   ) {
+    if (normalizeThemeSearchTextInternal(normalizedQuestion).includes('pouvoir d achat')) {
+      return {
+        reason: 'needs_mode',
+        signal: 'impact_inference_needs_mode',
+        clarificationKind: 'mode',
+        message: buildImpactClarificationMessageInternal(normalizedQuestion, scope)
+      };
+    }
+
     return {
       reason: 'unsupported',
       signal: 'impact_inference',

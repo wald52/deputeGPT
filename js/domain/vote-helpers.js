@@ -1,3 +1,5 @@
+import { stripLeadingFrenchArticle } from './vote-title-display.js';
+
 export function dedupeVotes(votes = []) {
   const seen = new Set();
 
@@ -20,8 +22,7 @@ export function createVoteHelpers({
   getVoteIndexText,
   getVoteSubject,
   getVoteThemeLabel,
-  getVoteSourceUrl,
-  truncateAnalysisField
+  getVoteSourceUrl
 }) {
   function getVoteMap() {
     return new Map((getCurrentVotes?.() || []).map(vote => [getVoteId(vote), vote]));
@@ -73,15 +74,15 @@ export function createVoteHelpers({
 
       const vote = voteMap.get(voteId) || { numero: voteId };
       const metadata = lookupVoteMetadata(vote) || {};
-      const title = lookupVoteSubject(vote) || metadata?.titre || `Scrutin ${voteId}`;
-      const queryText = metadata?.titre || lookupVoteSubject(vote) || title;
+      const title = stripLeadingFrenchArticle(lookupVoteSubject(vote) || metadata?.titre || `Scrutin ${voteId}`);
+      const followupTarget = String(metadata?.titre || lookupVoteSubject(vote) || '').trim();
       const date = vote?.date || metadata?.date || '';
       const theme = lookupVoteThemeLabel(vote) || metadata?.category || '';
 
       references.push({
         voteId,
-        title: truncateAnalysisField(title, 140),
-        queryText,
+        title,
+        followupPrompt: followupTarget ? `montre le vote sur ${followupTarget}` : '',
         date,
         theme: theme && theme !== 'autre' ? theme : '',
         sourceUrl: lookupVoteSourceUrl(vote)

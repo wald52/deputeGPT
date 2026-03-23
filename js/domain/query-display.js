@@ -1,3 +1,5 @@
+import { stripLeadingFrenchArticle } from './vote-title-display.js';
+
 export function createQueryDisplayHelpers({
   getVoteId,
   lookupVoteSubject,
@@ -71,17 +73,17 @@ export function createQueryDisplayHelpers({
     const preferredPattern = getQueryDisplayLeadPattern(queryText);
     const preferredMatch = preferredPattern ? rawTitle.match(preferredPattern) : null;
     if (preferredMatch && Number.isInteger(preferredMatch.index)) {
-      return rawTitle.slice(preferredMatch.index).replace(/[.]+$/g, '').trim();
+      return stripLeadingFrenchArticle(rawTitle.slice(preferredMatch.index));
     }
 
     const genericMatch = rawTitle.match(
       /(?:projet de loi|proposition de loi|proposition de r[ée]solution europ[ée]enne|proposition de r[ée]solution|r[ée]solution europ[ée]enne|r[ée]solution|d[ée]claration du gouvernement|d[ée]claration|motion|amendement|article|trait[ée]|loi)/iu
     );
     if (genericMatch && Number.isInteger(genericMatch.index)) {
-      return rawTitle.slice(genericMatch.index).replace(/[.]+$/g, '').trim();
+      return stripLeadingFrenchArticle(rawTitle.slice(genericMatch.index));
     }
 
-    return rawTitle.replace(/[.]+$/g, '').trim();
+    return stripLeadingFrenchArticle(rawTitle);
   }
 
   function resolveQueryDisplayLabel(filters, context = {}) {
