@@ -1,0 +1,49 @@
+# Dépendances
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cache navigateurs
+.cache/
+*.cache
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Logs
+*.log
+logs/
+
+# Fichiers temporaires
+*.tmp
+.tmp-*
+*.temp
+~*
+playwright-*.png
+__pycache__/
+*.pyc
+test-results/.last-run.json
+
+# Environnement
+.env
+.env.local
+
+# Build (si utilisation de bundler)
+dist/
+build/
+*.min.js
+*.min.css
+
+# Modèles locaux (si téléchargés)
+models/
+*.onnx
+*.bin
+*.safetensors

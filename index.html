@@ -14,7 +14,560 @@
   <meta property="og:title" content="DéputéGPT" />
   <meta property="og:description" content="Interrogez les votes des députés français avec une interface statique, factuelle d'abord, puis analytique quand le contexte est pertinent." />
   <meta name="twitter:card" content="summary" />
+  <link rel="modulepreload" href="js/dist/app.js" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='10' y='20' width='44' height='32' rx='6' fill='%230f47aa'/%3E%3Crect x='24' y='10' width='16' height='18' rx='2' fill='%23f8fbff'/%3E%3Cpath d='M24 28h16' stroke='%23f8fbff' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+    <style>
+    :root {
+      --surface-page: #ede6d8;
+      --surface-panel: rgba(252, 248, 241, 0.84);
+      --surface-panel-strong: #fcf8f1;
+      --line-soft: rgba(16, 38, 63, 0.14);
+      --ink-strong: #10263f;
+      --ink-soft: #667587;
+      --brand: #153f72;
+      --brand-strong: #0d2c51;
+      --radius-panel: 24px;
+      --radius-control: 16px;
+      --shadow-panel: 0 24px 52px rgba(24, 35, 50, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      min-height: 100%;
+    }
+
+    body {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background:
+        radial-gradient(circle at top left, rgba(166, 67, 62, 0.12), transparent 28%),
+        radial-gradient(circle at top right, rgba(21, 63, 114, 0.13), transparent 34%),
+        linear-gradient(180deg, #f6f0e4 0%, #f1eadf 38%, #e9dfcf 100%);
+      color: var(--ink-strong);
+      font-family: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    [hidden],
+    .hidden {
+      display: none !important;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 5000;
+      padding: 10px 14px;
+      border: 2px solid var(--brand);
+      border-radius: 12px;
+      background: #ffffff;
+      color: var(--brand);
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.16);
+      transform: translateY(-180%);
+      transition: transform 0.18s ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    header,
+    main,
+    footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      overflow: hidden;
+      padding: 22px clamp(18px, 2.5vw, 30px) 18px;
+      border-bottom: 1px solid rgba(16, 38, 63, 0.1);
+      background: rgba(251, 247, 239, 0.9);
+      backdrop-filter: blur(18px);
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 3px;
+      background: linear-gradient(90deg, #133d72 0 44%, #f7f0df 44% 56%, #a6433e 56% 100%);
+    }
+
+    .brand-block {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 1560px;
+      margin: 0 auto;
+    }
+
+    header h1 {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(1.95rem, 1.68rem + 0.92vw, 2.65rem);
+      font-weight: 600;
+      line-height: 0.94;
+      letter-spacing: 0.01em;
+      color: var(--ink-strong);
+    }
+
+    header h1::before {
+      content: "";
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.68), transparent 40%),
+        linear-gradient(135deg, #143d73 0%, #143d73 44%, #f6ecda 44%, #f6ecda 61%, #a6433e 61%, #a6433e 100%);
+      box-shadow: 0 0 0 5px rgba(21, 63, 114, 0.08);
+    }
+
+    header h1 span {
+      display: inline-block;
+    }
+
+    .subtitle-header {
+      margin: 0;
+      max-width: 72ch;
+      color: rgba(16, 38, 63, 0.76);
+      font-size: 0.92rem;
+      line-height: 1.5;
+    }
+
+    #main-content {
+      display: flex;
+      flex: 1 1 auto;
+      min-height: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+      width: min(1560px, 100%);
+      max-width: 1560px;
+      margin: 0 auto;
+      min-height: 0;
+      padding: 22px clamp(16px, 2vw, 24px) 20px;
+    }
+
+    .mobile-workspace-switcher {
+      display: none;
+    }
+
+    .main-content {
+      display: grid;
+      grid-template-columns: minmax(340px, 0.82fr) minmax(0, 1.18fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    .panel {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      min-width: 0;
+      width: 100%;
+      padding: 20px;
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-panel);
+      background: var(--surface-panel);
+      box-shadow: var(--shadow-panel);
+      backdrop-filter: blur(16px);
+    }
+
+    .panel-explorer {
+      color: #edf3fb;
+      background:
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.08), transparent 34%),
+        linear-gradient(180deg, #10243d 0%, #16304f 58%, #12263c 100%);
+    }
+
+    .panel-chat {
+      background:
+        linear-gradient(180deg, rgba(252, 249, 242, 0.98) 0%, rgba(248, 243, 234, 0.95) 100%);
+    }
+
+    .panel-chat::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(rgba(18, 39, 62, 0.02) 1px, transparent 1px);
+      background-size: 100% 52px;
+      opacity: 0.18;
+      pointer-events: none;
+    }
+
+    .panel > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .panel-title-row,
+    .unified-header-row {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 12px 14px;
+    }
+
+    .panel-title-row {
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .panel-chat .unified-header-row {
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(16, 38, 63, 0.1);
+    }
+
+    .panel h2,
+    .panel-title-row h2,
+    .unified-header-row h2,
+    .panel h3,
+    .panel p {
+      margin-top: 0;
+    }
+
+    .panel h2,
+    .panel-title-row h2,
+    .unified-header-row h2 {
+      margin-bottom: 0;
+      color: var(--ink-strong);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .panel-explorer h2,
+    .panel-explorer .panel-intro {
+      color: #f3f0ea;
+    }
+
+    .panel-explorer .panel-intro {
+      opacity: 0.78;
+    }
+
+    .panel-intro,
+    .model-field-hint,
+    .input-hint,
+    .depute-placeholder-copy {
+      color: rgba(16, 38, 63, 0.76);
+      line-height: 1.45;
+    }
+
+    .search-box {
+      position: relative;
+      margin-bottom: 18px;
+    }
+
+    .search-results {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      right: 0;
+      z-index: 20;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      max-height: min(56vh, 560px);
+      border: 1px solid var(--line-soft);
+      border-radius: 18px;
+      background: rgba(252, 248, 241, 0.98);
+      box-shadow: 0 20px 40px rgba(8, 16, 28, 0.22);
+      overflow-y: auto;
+    }
+
+    .search-result-item {
+      border-bottom: 1px solid rgba(16, 38, 63, 0.08);
+    }
+
+    .search-result-item:last-child {
+      border-bottom: 0;
+    }
+
+    .search-result-button {
+      width: 100%;
+      padding: 14px 15px;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      cursor: pointer;
+      font: inherit;
+      text-align: left;
+    }
+
+    .search-result-content {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .search-result-photo {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      background: #e9ecef;
+      border: 1px solid #d9dee4;
+    }
+
+    .search-result-body {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .search-result-name {
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .search-result-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      color: var(--ink-soft);
+      font-size: 0.82rem;
+    }
+
+    .search-box input,
+    #user-input,
+    .model-group-compact select,
+    .model-text-input {
+      width: 100%;
+      min-height: 52px;
+      padding: 13px 16px;
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-control);
+      background: var(--surface-panel-strong);
+      color: var(--ink-strong);
+      font: inherit;
+    }
+
+    .panel-explorer .search-box input {
+      border-color: rgba(255, 255, 255, 0.14);
+      background: rgba(8, 20, 36, 0.34);
+      color: #f8fbff;
+    }
+
+    .panel-explorer .search-box input::placeholder {
+      color: rgba(233, 239, 246, 0.6);
+    }
+
+    .header-action-btn,
+    .btn-load-mini,
+    #send-btn,
+    .workspace-switch-btn {
+      appearance: none;
+      min-height: 42px;
+      padding: 0 14px;
+      border: 1px solid rgba(16, 38, 63, 0.12);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.76);
+      color: var(--brand-strong);
+      cursor: pointer;
+      font: inherit;
+      font-weight: 600;
+    }
+
+    #send-btn {
+      border-color: transparent;
+      background: linear-gradient(135deg, #123b6f 0%, #183e6a 100%);
+      color: #ffffff;
+    }
+
+    #hemicycle-container {
+      position: relative;
+      min-height: clamp(320px, 42vh, 580px);
+      margin: 0 0 16px;
+      padding: 18px 18px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 26px;
+      background:
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.98), rgba(245, 237, 223, 0.98) 64%, rgba(239, 228, 209, 0.98) 100%);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.84),
+        0 18px 44px rgba(5, 14, 25, 0.22);
+      overflow: hidden;
+    }
+
+    #legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    @media (max-width: 920px) {
+      header {
+        padding: 18px 14px 14px;
+      }
+
+      .container {
+        padding: 16px 12px calc(18px + env(safe-area-inset-bottom));
+      }
+
+      .main-content {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .panel {
+        padding: 18px;
+        border-radius: 22px;
+      }
+
+      .panel-chat::before {
+        opacity: 0.12;
+      }
+
+      .panel-explorer,
+      .panel-chat {
+        backdrop-filter: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      header h1 {
+        font-size: clamp(1.72rem, 1.44rem + 1.7vw, 2.08rem);
+      }
+
+      .subtitle-header {
+        font-size: 0.84rem;
+      }
+
+      .panel-title-row,
+      .unified-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .header-action-btn,
+      .btn-load-mini,
+      #send-btn,
+      .workspace-switch-btn {
+        width: 100%;
+      }
+    }
+  </style>
+  <noscript>
+    <link rel="stylesheet" href="public/styles/app.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </noscript>
+  <script>
+    (() => {
+      const deferredAssets = {
+        appCss: 'public/styles/app.css',
+        fonts: 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap'
+      };
+
+      function ensureDeferredStylesheet(id, href) {
+        if (document.querySelector(`link[data-deferred-asset="${id}"]`)) {
+          return;
+        }
+
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = href;
+        link.dataset.deferredAsset = id;
+        document.head.appendChild(link);
+      }
+
+      function loadDeferredFonts() {
+        ensureDeferredStylesheet('fonts', deferredAssets.fonts);
+      }
+
+      function loadDeferredAppCss() {
+        ensureDeferredStylesheet('app-css', deferredAssets.appCss);
+      }
+
+      function scheduleDeferredFonts() {
+        if (typeof window.requestIdleCallback === 'function') {
+          window.requestIdleCallback(loadDeferredFonts, { timeout: 2200 });
+        } else {
+          window.setTimeout(loadDeferredFonts, 1200);
+        }
+      }
+
+      function loadDeferredAssets() {
+        loadDeferredAppCss();
+        scheduleDeferredFonts();
+        detachInteractionListeners();
+      }
+
+      function detachInteractionListeners() {
+        ['pointerdown', 'keydown', 'focusin', 'touchstart'].forEach(eventName => {
+          window.removeEventListener(eventName, loadDeferredAssets, true);
+        });
+      }
+
+      ['pointerdown', 'keydown', 'focusin', 'touchstart'].forEach(eventName => {
+        window.addEventListener(eventName, loadDeferredAssets, true);
+      });
+
+      function scheduleAutomaticStylesLoad() {
+        const loadAfterFirstPaint = () => {
+          const triggerLoad = () => {
+            if (typeof window.requestIdleCallback === 'function') {
+              window.requestIdleCallback(loadDeferredAssets, { timeout: 1600 });
+            } else {
+              window.setTimeout(loadDeferredAssets, 900);
+            }
+          };
+
+          if (typeof window.requestAnimationFrame === 'function') {
+            window.requestAnimationFrame(triggerLoad);
+          } else {
+            triggerLoad();
+          }
+        };
+
+        if (document.readyState === 'complete') {
+          loadAfterFirstPaint();
+          return;
+        }
+
+        window.addEventListener('load', loadAfterFirstPaint, { once: true });
+      }
+
+      scheduleAutomaticStylesLoad();
+    })();
+  </script>
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -26,7 +579,6 @@
       "description": "Application web statique permettant d'explorer et d'analyser les votes des députés français à partir des données de l'Assemblée nationale."
     }
   </script>
-  <link rel="stylesheet" href="public/styles/app.css">
 </head>
 
 <body>
@@ -35,7 +587,6 @@
   <header>
     <div class="brand-block">
       <h1>
-        <span aria-hidden="true">🗳️</span>
         <span>DéputéGPT</span>
       </h1>
       <p class="subtitle-header">
@@ -52,9 +603,29 @@
 
   <main id="main-content" tabindex="-1">
     <div class="container">
+      <div class="mobile-workspace-switcher" role="group" aria-label="Choisir l'espace de travail">
+        <button
+          id="workspace-switch-explore"
+          class="workspace-switch-btn is-active"
+          type="button"
+          aria-controls="explorer-panel"
+          aria-pressed="true"
+        >
+          Explorer
+        </button>
+        <button
+          id="workspace-switch-chat"
+          class="workspace-switch-btn"
+          type="button"
+          aria-controls="chat-panel"
+          aria-pressed="false"
+        >
+          Chat
+        </button>
+      </div>
       <div class="main-content">
         <!-- Panneau Gauche -->
-        <section class="panel" aria-labelledby="depute-panel-title">
+        <section id="explorer-panel" class="panel panel-explorer" aria-labelledby="depute-panel-title">
           <div class="panel-title-row">
             <h2 id="depute-panel-title">Sélectionnez un député</h2>
             <p class="panel-intro">Cliquez sur un siège ou recherchez un nom.</p>
@@ -70,33 +641,22 @@
           </div>
 
           <figure id="hemicycle-container" aria-labelledby="hemicycle-caption">
-            <object class="hemicycle-svg-object" data="./public/data/hemicycle_svg/hemicycle.svg" type="image/svg+xml"
-              aria-label="Hémicycle des députés de l'Assemblée nationale">
-              Le navigateur ne supporte pas l’affichage SVG via object.
-            </object>
+            <div class="hemicycle-stage" data-hemicycle-stage>
+              <div class="hemicycle-loading-placeholder" role="status" aria-live="polite">
+                <div class="hemicycle-placeholder-copy">
+                  <strong>Chargement de l’hémicycle officiel...</strong>
+                  <span>Récupération du plan des sièges et des couleurs en cours.</span>
+                </div>
+              </div>
+            </div>
             <figcaption id="hemicycle-caption" class="sr-only">Utilisez la recherche ou cliquez sur un siège de l'hémicycle pour sélectionner un député.</figcaption>
           </figure>
 
           <div id="legend" class="legend"></div>
-
-          <div id="stats-container" class="stats" hidden aria-live="polite">
-            <div class="stat-box">
-              <div class="stat-number" id="stat-votes">0</div>
-              <div class="stat-label">Votes analysés</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-number" id="stat-pour">0</div>
-              <div class="stat-label">Pour</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-number" id="stat-contre">0</div>
-              <div class="stat-label">Contre</div>
-            </div>
-          </div>
         </section>
 
         <!-- Panneau Droit -->
-        <section class="panel" aria-labelledby="chat-panel-title">
+        <section id="chat-panel" class="panel panel-chat" aria-labelledby="chat-panel-title">
           <div class="model-toolbar-shell">
             <!-- LIGNE UNIFIÉE: Titre + Résumé compact + Bouton -->
             <div class="unified-header-row">
@@ -110,7 +670,7 @@
                   Réglages IA
                 </button>
               </div>
-              <button id="load-model-btn" class="btn-load-mini" type="button">Charger IA</button>
+              <button id="load-model-btn" class="btn-load-mini" type="button">Charger IA locale</button>
             </div>
             <div id="progress-container" class="progress-inline" hidden role="status" aria-live="polite">
               <div class="progress-bar-bg" role="progressbar" aria-label="Progression du téléchargement du modèle" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progress-bar-fill"></div></div>
@@ -132,12 +692,23 @@
                     <div class="model-field-label">
                       <label for="ai-source-select">Source IA</label>
                       <button type="button" class="tooltip-container field-info" aria-label="Informations sur la source d inference" aria-describedby="source-tooltip">i
-                        <span id="source-tooltip" role="tooltip" class="tooltip-text tooltip-text-start">Local pour rester dans le navigateur, OpenRouter pour une analyse distante optionnelle.</span>
+                        <span id="source-tooltip" role="tooltip" class="tooltip-text tooltip-text-start">IA en ligne par defaut pour les analyses, modele local uniquement si vous l activez vous-meme.</span>
                       </button>
                     </div>
                     <select id="ai-source-select">
+                      <option value="online">IA en ligne</option>
                       <option value="local">Modèle local</option>
                     </select>
+                  </div>
+                  <div id="online-service-card" class="model-group-compact model-field-card remote-api-card">
+                    <div class="model-field-label">
+                      <div id="online-status-label" class="model-field-title">Service IA en ligne</div>
+                      <button type="button" class="tooltip-container field-info" aria-label="Informations sur le service IA en ligne" aria-describedby="online-service-tooltip">i
+                        <span id="online-service-tooltip" role="tooltip" class="tooltip-text tooltip-text-start">Les questions exactes restent deterministes. Seules les analyses envoient un contexte court vers le Worker Cloudflare, qui route ensuite vers plusieurs fournisseurs.</span>
+                      </button>
+                    </div>
+                    <p class="model-field-hint">Le service en ligne est prioritaire. Si ses quotas sont epuises, l application vous proposera ensuite d activer l IA locale.</p>
+                    <div id="online-status" class="remote-provider-status" role="status" aria-live="polite" aria-labelledby="online-status-label">IA en ligne par defaut. Les analyses utilisent un contexte court hors du navigateur.</div>
                   </div>
                   <div id="local-model-card" class="model-group-compact model-field-card">
                     <div class="model-field-label">
@@ -161,10 +732,79 @@
                     <div class="model-field-label">
                       <label for="openrouter-model-select">Modèle OpenRouter</label>
                       <button type="button" class="tooltip-container field-info" aria-label="Informations sur le modele OpenRouter" aria-describedby="openrouter-model-tooltip">i
-                        <span id="openrouter-model-tooltip" role="tooltip" class="tooltip-text tooltip-text-end">Le routeur gratuit peut varier selon les disponibilités et quotas du service distant.</span>
+                        <span id="openrouter-model-tooltip" role="tooltip" class="tooltip-text tooltip-text-end">Le catalogue est charge en direct depuis OpenRouter. Les modeles payants restent visibles pour un choix explicite.</span>
                       </button>
                     </div>
-                    <select id="openrouter-model-select"><option value="">Chargement...</option></select>
+                    <div class="openrouter-picker-shell">
+                      <div class="openrouter-combobox">
+                        <button id="openrouter-model-trigger" class="openrouter-combobox-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="openrouter-model-popover">
+                          <span class="openrouter-combobox-copy">
+                            <span id="openrouter-trigger-name" class="openrouter-combobox-name">Choisir un modèle OpenRouter</span>
+                            <span id="openrouter-trigger-id" class="openrouter-combobox-id">Le catalogue distant sera chargé à la demande.</span>
+                          </span>
+                          <span class="openrouter-combobox-meta">
+                            <span id="openrouter-trigger-price-badge" class="openrouter-price-badge unknown">indisponible</span>
+                            <span class="openrouter-combobox-chevron" aria-hidden="true"></span>
+                          </span>
+                        </button>
+                        <div id="openrouter-model-popover" class="openrouter-model-popover" hidden>
+                          <div class="openrouter-model-popover-top">
+                            <input id="openrouter-model-search" class="model-text-input" type="search" placeholder="Rechercher un modele ou un fournisseur" autocomplete="off" spellcheck="false" />
+                            <div id="openrouter-filter-group" class="openrouter-filter-group" role="tablist" aria-label="Filtrer les modeles OpenRouter">
+                              <button type="button" class="openrouter-filter-chip active" data-openrouter-filter="all" aria-pressed="true">Tous</button>
+                              <button type="button" class="openrouter-filter-chip" data-openrouter-filter="free" aria-pressed="false">Gratuits</button>
+                              <button type="button" class="openrouter-filter-chip" data-openrouter-filter="paid" aria-pressed="false">Payants</button>
+                            </div>
+                          </div>
+                          <div id="openrouter-model-results" class="openrouter-model-results" role="listbox" aria-label="Liste des modeles OpenRouter" tabindex="-1"></div>
+                        </div>
+                      </div>
+                      <select id="openrouter-model-select" hidden aria-hidden="true"><option value="">Chargement...</option></select>
+                      <p id="openrouter-model-picker-hint" class="model-field-hint">Selectionnez un modele exact pour eviter un routeur aleatoire quand vous cherchez plus de qualite ou un cout donne.</p>
+                      <div id="openrouter-model-summary" class="openrouter-model-summary" hidden>
+                        <div class="openrouter-model-summary-header">
+                          <div class="openrouter-model-heading">
+                            <strong id="openrouter-selected-name">Modele OpenRouter</strong>
+                            <span id="openrouter-selected-id" class="openrouter-selected-id">Aucun modele selectionne</span>
+                          </div>
+                          <span id="openrouter-selected-price-badge" class="openrouter-price-badge">indisponible</span>
+                        </div>
+                        <p id="openrouter-selected-note" class="openrouter-model-note">Le catalogue OpenRouter est consulté en direct et n'envoie aucun prompt utilisateur pendant ce chargement.</p>
+                        <div class="openrouter-model-summary-grid">
+                          <div class="openrouter-summary-stat">
+                            <span>Cout</span>
+                            <strong id="openrouter-selected-pricing">A mesurer</strong>
+                          </div>
+                          <div class="openrouter-summary-stat">
+                            <span>Contexte</span>
+                            <strong id="openrouter-selected-context">Inconnu</strong>
+                          </div>
+                          <div class="openrouter-summary-stat">
+                            <span>Sortie max</span>
+                            <strong id="openrouter-selected-output">Inconnue</strong>
+                          </div>
+                        </div>
+                        <div class="openrouter-model-summary-actions">
+                          <button id="openrouter-model-details-toggle" class="openrouter-details-toggle" type="button" aria-expanded="false" aria-controls="openrouter-model-details">Afficher les détails du modèle</button>
+                        </div>
+                        <div id="openrouter-model-details" class="openrouter-model-details" hidden>
+                          <div class="openrouter-parameter-grid">
+                            <div class="openrouter-parameter-card">
+                              <span class="openrouter-parameter-title">Appliques</span>
+                              <div id="openrouter-params-applied" class="openrouter-parameter-list"></div>
+                            </div>
+                            <div class="openrouter-parameter-card">
+                              <span class="openrouter-parameter-title">Supportes mais inactifs</span>
+                              <div id="openrouter-params-inactive" class="openrouter-parameter-list"></div>
+                            </div>
+                            <div class="openrouter-parameter-card">
+                              <span class="openrouter-parameter-title">Non supportes</span>
+                              <div id="openrouter-params-unsupported" class="openrouter-parameter-list"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <div id="openrouter-api-card" class="model-group-compact model-field-card remote-api-card" hidden>
                     <div class="model-field-label">
@@ -192,7 +832,7 @@
                         <span class="thinking-card-title">Raisonnement</span>
                         <span class="thinking-card-badge">Avancé</span>
                       </div>
-                      <div class="thinking-card-toggle-slot">
+                      <div id="thinking-local-toggle-slot" class="thinking-card-toggle-slot">
                         <label class="advanced-toggle-compact" for="thinking-mode-toggle">
                           <input type="checkbox" id="thinking-mode-toggle" aria-describedby="thinking-help" />
                           <span class="toggle-slider-small" aria-hidden="true"></span>
@@ -201,6 +841,10 @@
                       </div>
                     </div>
                     <p id="thinking-help" class="thinking-help">Plus lent, réservé aux usages avancés. Le raisonnement interne reste masqué dans l'interface.</p>
+                    <div id="thinking-remote-info" class="thinking-remote-info" hidden>
+                      <strong class="thinking-remote-title">Sortie finale uniquement</strong>
+                      <p class="thinking-help thinking-remote-copy">OpenRouter n'expose pas ici de sélection de raisonnement. Le backend distant renvoie uniquement la réponse finale et l'interface masque toujours le raisonnement interne.</p>
+                    </div>
                   </div>
                   <div class="thinking-card semantic-rag-card">
                     <div class="thinking-card-top">
@@ -225,9 +869,8 @@
                     <p id="semantic-rag-helper" class="thinking-help">Reranking local après la recherche lexicale. Consentement explicite requis avant téléchargement.</p>
                     <div class="semantic-rag-meta">
                       <span id="semantic-rag-size" class="semantic-rag-size">Taille à mesurer</span>
-                      <button id="semantic-rag-load-btn" class="header-action-btn semantic-rag-load-btn" type="button">Activer</button>
                     </div>
-                    <div id="semantic-rag-status" class="semantic-rag-status" role="status" aria-live="polite">Mode lexical uniquement.</div>
+                    <div id="semantic-rag-status" class="semantic-rag-status" role="status" aria-live="polite">Désactivé. Les analyses utilisent uniquement le chemin lexical.</div>
                   </div>
                 </div>
               </div>
@@ -236,7 +879,8 @@
 
           <div class="depute-card" id="selected-depute" aria-live="polite">
             <div id="depute-placeholder">
-              Sélectionnez un député dans l’hémicycle ou via la recherche
+              <p class="depute-placeholder-title">Choisissez un député pour ouvrir l’espace de travail.</p>
+              <p class="depute-placeholder-copy">Le bandeau affichera ensuite son identité, son siège et un résumé rapide de ses votes.</p>
             </div>
             <div id="depute-content" hidden>
               <div class="photo-container">
@@ -246,18 +890,27 @@
                 <h3 id="depute-name"></h3>
                 <p id="depute-details" class="info-details"></p>
               </div>
+              <div id="stats-container" class="stats" hidden aria-live="polite">
+                <div class="stat-box">
+                  <div class="stat-number" id="stat-votes">0</div>
+                  <div class="stat-label">Votes</div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div id="chat-capabilities" class="chat-capabilities" aria-live="polite">
-            Sélectionnez un député pour activer le chat.
-          </div>
-          <div id="chat-quick-actions" class="chat-quick-actions" aria-label="Questions suggérées"></div>
+          <div id="chat-quick-actions" class="chat-quick-actions" role="group" aria-label="Questions suggérées"></div>
           <div id="chat-scope-summary" class="chat-scope-summary hidden" aria-live="polite"></div>
-          <div id="chat-scope-actions" class="chat-scope-actions hidden" aria-label="Actions liées au contexte courant"></div>
+          <div id="chat-scope-actions" class="chat-scope-actions hidden" role="group" aria-label="Actions liées au contexte courant"></div>
           <div id="messages" role="log" aria-live="polite" aria-relevant="additions text">
             <div id="chat-empty-state" class="chat-empty-state">
-              Sélectionnez un député, puis posez une question exacte (liste, nombre, période, thème) ou lancez une analyse IA.
+              <p class="chat-empty-title">Commencez par une question exacte, puis passez à l’analyse si besoin.</p>
+              <p class="chat-empty-copy">Une fois un député sélectionné, vous pouvez demander :</p>
+              <ul class="chat-empty-list">
+                <li>les derniers votes ou un comptage précis</li>
+                <li>un filtre par période, sens de vote ou thème</li>
+                <li>une synthèse courte à partir d’un sous-ensemble de scrutins</li>
+              </ul>
             </div>
           </div>
 
@@ -305,6 +958,41 @@
     </div>
   </div>
 
+  <div id="vote-source-overlay" class="consent-overlay vote-source-overlay" aria-hidden="true">
+    <div class="consent-dialog vote-source-dialog" role="dialog" aria-modal="true"
+      aria-labelledby="vote-source-title" aria-describedby="vote-source-status">
+      <div class="vote-source-header">
+        <div class="vote-source-heading">
+          <div class="vote-source-title-row">
+            <h3 id="vote-source-title">Source Assemblée</h3>
+            <span id="vote-source-meta" class="vote-source-meta" hidden></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="vote-source-frame-shell">
+        <div id="vote-source-loading" class="vote-source-loading" role="status" aria-live="polite">
+          Chargement de la page de l’Assemblée…
+        </div>
+        <iframe id="vote-source-frame" class="vote-source-frame" title="Source Assemblée" src="about:blank"
+          tabindex="-1" referrerpolicy="strict-origin-when-cross-origin" hidden></iframe>
+      </div>
+
+      <div class="vote-source-footer">
+        <p id="vote-source-status" class="vote-source-status">
+          Si la page Assemblée reste vide ou partielle, ouvrez la source dans un nouvel onglet.
+        </p>
+
+        <div class="consent-actions vote-source-actions">
+          <a id="vote-source-link" class="vote-source-open-link" href="" target="_blank" rel="noopener noreferrer">
+            Source Assemblée
+          </a>
+          <button id="dismiss-vote-source-btn" type="button">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer>
     <p>
       Données :
@@ -315,11 +1003,9 @@
     </p>
   </footer>
 
-  <!-- Runtime principal -->
-  <!-- MiniSearch pour l'index lexical côté navigateur -->
-  <script src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js"></script>
-
-  <script type="module" src="js/app.js"></script>
+  <div id="online-turnstile-slot" hidden></div>
+  <script type="module" src="js/dist/app.js"></script>
 </body>
 
 </html>
+
