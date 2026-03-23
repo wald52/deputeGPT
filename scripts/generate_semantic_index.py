@@ -14,7 +14,7 @@ import glob
 import re
 import hashlib
 from collections import defaultdict
-from typing import Dict, List
+from typing import Dict, List, Sequence
 import numpy as np
 import sys
 from datetime import datetime, timezone
@@ -33,14 +33,24 @@ FICHIER_SEMANTIC_MULTIVECTOR_INDEX = "./public/data/rag/semantic_multivector_ind
 FICHIER_LEGACY_SEARCH_INDEX = "./public/data/search_index.json"
 FICHIER_RAG_MANIFEST = "./public/data/rag/manifest.json"
 INDEX_SCHEMA_VERSION = 2
-SEMANTIC_INDEX_SCHEMA_VERSION = 1
-SEMANTIC_MULTIVECTOR_INDEX_SCHEMA_VERSION = 1
-SEMANTIC_BROWSER_MODEL_ID = "Xenova/paraphrase-multilingual-MiniLM-L12-v2"
-SEMANTIC_PYTHON_MODEL_ID = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
-SEMANTIC_MODEL_ID = "paraphrase-multilingual-minilm-l12-v2"
+RAG_MANIFEST_SCHEMA_VERSION = 3
+SEMANTIC_INDEX_SCHEMA_VERSION = 2
+SEMANTIC_MULTIVECTOR_INDEX_SCHEMA_VERSION = 2
+SEMANTIC_BROWSER_MODEL_ID = "Xenova/multilingual-e5-small"
+SEMANTIC_PYTHON_MODEL_ID = "intfloat/multilingual-e5-small"
+SEMANTIC_MODEL_ID = "multilingual-e5-small"
+SEMANTIC_MODEL_FAMILY = "e5"
+SEMANTIC_MODEL_USAGE = "asymmetric_retrieval"
+SEMANTIC_QUERY_PREFIX = "query: "
+SEMANTIC_DOCUMENT_PREFIX = "passage: "
+SEMANTIC_MODEL_TASK = "feature-extraction"
+SEMANTIC_MODEL_POOLING = "mean"
+SEMANTIC_MODEL_NORMALIZE = True
+SEMANTIC_MODEL_EXPECTED_DIMENSION = 384
+SEMANTIC_MODEL_MAX_LENGTH = 512
 SEMANTIC_MODEL_ESTIMATED_DOWNLOAD_MB = 120
 SEMANTIC_VECTOR_SCALE = 127
-SEMANTIC_MULTI_VECTOR_MODEL_ID = "paraphrase-multilingual-minilm-l12-v2-multi-vector"
+SEMANTIC_MULTI_VECTOR_MODEL_ID = "multilingual-e5-small-multi-vector"
 SEMANTIC_MULTI_VECTOR_SLOT_WEIGHTS = {
     "subject_summary": 1.0,
     "title_keywords": 0.94,
@@ -263,25 +273,123 @@ def quantize_normalized_embedding(vector: np.ndarray) -> List[int]:
     clipped = np.clip(vector, -1.0, 1.0)
     return np.rint(clipped * SEMANTIC_VECTOR_SCALE).astype(np.int16).tolist()
 
+
+def apply_semantic_prefix(text: str, prefix: str) -> str:
+    """Ajoute un prefixe de retrieval asymetrique sans le dupliquer."""
+    cleaned = clean_label(text)
+    normalized_prefix = str(prefix or "").strip()
+    if not normalized_prefix:
+        return cleaned
+
+    canonical_prefix = normalized_prefix if normalized_prefix.endswith(" ") else f"{normalized_prefix} "
+    compact_prefix = canonical_prefix.rstrip()
+
+    if not cleaned:
+        return compact_prefix
+
+    lowered_cleaned = cleaned.lower()
+    lowered_compact_prefix = compact_prefix.lower()
+    if lowered_cleaned.startswith(lowered_compact_prefix):
+        suffix = cleaned[len(compact_prefix):].lstrip()
+        return f"{canonical_prefix}{suffix}".rstrip() if suffix else compact_prefix
+
+    return f"{canonical_prefix}{cleaned}"
+
+
+class E5MeanPoolingEncoder:
+    """Encodeur E5 explicite via AutoTokenizer + AutoModel + mean pooling + L2."""
+
+    def __init__(self, model_name: str = SEMANTIC_PYTHON_MODEL_ID):
+        try:
+            import torch
+            from transformers import AutoModel, AutoTokenizer
+        except ImportError:
+            raise RuntimeError("transformers et torch sont requis pour generer les artefacts E5")
+
+        self.torch = torch
+        self.model_name = model_name
+        self.device = "cuda" if torch.cuda.is_available() else "cpu"
+
+        print(f"🧭 Chargement du modele semantique {model_name} ({self.device})...")
+        self.tokenizer = AutoTokenizer.from_pretrained(model_name)
+        self.model = AutoModel.from_pretrained(model_name)
+        self.model.to(self.device)
+        self.model.eval()
+
+    def _average_pool(self, last_hidden_state, attention_mask):
+        mask = attention_mask[..., None].bool()
+        masked_hidden_state = last_hidden_state.masked_fill(~mask, 0.0)
+        token_counts = attention_mask.sum(dim=1, keepdim=True).clamp(min=1)
+        return masked_hidden_state.sum(dim=1) / token_counts
+
+    def encode(
+        self,
+        texts: Sequence[str],
+        batch_size: int = 64,
+        show_progress_bar: bool = True,
+        normalize_embeddings: bool = True,
+        convert_to_numpy: bool = True
+    ):
+        if not texts:
+            if convert_to_numpy:
+                return np.zeros((0, SEMANTIC_MODEL_EXPECTED_DIMENSION), dtype=np.float32)
+            return self.torch.empty((0, SEMANTIC_MODEL_EXPECTED_DIMENSION))
+
+        outputs = []
+        total_batches = (len(texts) + batch_size - 1) // batch_size
+
+        with self.torch.no_grad():
+            for batch_index, start in enumerate(range(0, len(texts), batch_size), start=1):
+                batch_texts = list(texts[start:start + batch_size])
+                encoded_inputs = self.tokenizer(
+                    batch_texts,
+                    max_length=SEMANTIC_MODEL_MAX_LENGTH,
+                    padding=True,
+                    truncation=True,
+                    return_tensors="pt"
+                )
+                encoded_inputs = {
+                    key: value.to(self.device)
+                    for key, value in encoded_inputs.items()
+                }
+
+                model_output = self.model(**encoded_inputs)
+                embeddings = self._average_pool(model_output.last_hidden_state, encoded_inputs["attention_mask"])
+
+                if normalize_embeddings:
+                    embeddings = self.torch.nn.functional.normalize(embeddings, p=2, dim=1)
+
+                if convert_to_numpy:
+                    outputs.append(embeddings.cpu().numpy())
+                else:
+                    outputs.append(embeddings.cpu())
+
+                if show_progress_bar:
+                    print(f"  Encodage semantique {batch_index}/{total_batches}")
+
+        if convert_to_numpy:
+            return np.concatenate(outputs, axis=0)
+
+        return self.torch.cat(outputs, dim=0)
+
+
 def load_semantic_encoder(model_name: str = SEMANTIC_PYTHON_MODEL_ID):
     """Charge le modele d'encodage semantique dedie."""
     try:
-        from sentence_transformers import SentenceTransformer
-    except ImportError:
-        print("⚠️ sentence-transformers non installe, artefacts semantiques ignores")
+        return E5MeanPoolingEncoder(model_name)
+    except Exception as error:
+        print(f"⚠️ Modele semantique indisponible ({error}), artefacts semantiques ignores")
         return None
 
-    print(f"🧭 Chargement du modele semantique {model_name}...")
-    return SentenceTransformer(model_name)
 
-
-def encode_semantic_texts(model, texts: List[str]) -> np.ndarray:
+def encode_semantic_texts(model, texts: List[str], prefix: str = SEMANTIC_DOCUMENT_PREFIX) -> np.ndarray:
     """Encode une liste de textes en embeddings normalises."""
+    prepared_texts = [apply_semantic_prefix(text, prefix) for text in texts]
     embeddings = model.encode(
-        texts,
+        prepared_texts,
         batch_size=64,
         show_progress_bar=True,
-        normalize_embeddings=True,
+        normalize_embeddings=SEMANTIC_MODEL_NORMALIZE,
         convert_to_numpy=True
     )
 
@@ -322,22 +430,53 @@ def build_semantic_model_descriptor(model_id: str, python_model_id: str, dimensi
     """Construit le descripteur de modele semantique publie dans les artefacts."""
     descriptor = {
         "id": model_id,
+        "family": SEMANTIC_MODEL_FAMILY,
+        "usage": SEMANTIC_MODEL_USAGE,
         "python_model_id": python_model_id,
         "browser_model_id": SEMANTIC_BROWSER_MODEL_ID,
-        "task": "feature-extraction",
-        "pooling": "mean",
-        "normalize": True,
+        "pythonModelId": python_model_id,
+        "browserModelId": SEMANTIC_BROWSER_MODEL_ID,
+        "task": SEMANTIC_MODEL_TASK,
+        "queryPrefix": SEMANTIC_QUERY_PREFIX,
+        "documentPrefix": SEMANTIC_DOCUMENT_PREFIX,
+        "query_prefix": SEMANTIC_QUERY_PREFIX,
+        "document_prefix": SEMANTIC_DOCUMENT_PREFIX,
+        "pooling": SEMANTIC_MODEL_POOLING,
+        "normalize": SEMANTIC_MODEL_NORMALIZE,
         "dimension": int(dimension),
         "estimated_download_mb": SEMANTIC_MODEL_ESTIMATED_DOWNLOAD_MB,
+        "estimatedDownloadMb": SEMANTIC_MODEL_ESTIMATED_DOWNLOAD_MB,
         "vector_scale": SEMANTIC_VECTOR_SCALE,
+        "vectorScale": SEMANTIC_VECTOR_SCALE,
         "strategy": strategy
     }
 
     if strategy == "multi_vector_sections":
         descriptor["slot_weights"] = SEMANTIC_MULTI_VECTOR_SLOT_WEIGHTS
+        descriptor["slotWeights"] = SEMANTIC_MULTI_VECTOR_SLOT_WEIGHTS
         descriptor["aggregation"] = "max"
 
     return descriptor
+
+
+def build_manifest_model_payload(model_payload: Dict | None, default_model_id: str, notes: str) -> Dict:
+    """Construit la projection publique du modele semantique pour le manifest."""
+    payload = model_payload or {}
+    return {
+        "id": payload.get("id", default_model_id),
+        "family": payload.get("family", SEMANTIC_MODEL_FAMILY),
+        "usage": payload.get("usage", SEMANTIC_MODEL_USAGE),
+        "pythonModelId": payload.get("pythonModelId") or payload.get("python_model_id", SEMANTIC_PYTHON_MODEL_ID),
+        "browserModelId": payload.get("browserModelId") or payload.get("browser_model_id", SEMANTIC_BROWSER_MODEL_ID),
+        "task": payload.get("task", SEMANTIC_MODEL_TASK),
+        "queryPrefix": payload.get("queryPrefix") or payload.get("query_prefix", SEMANTIC_QUERY_PREFIX),
+        "documentPrefix": payload.get("documentPrefix") or payload.get("document_prefix", SEMANTIC_DOCUMENT_PREFIX),
+        "pooling": payload.get("pooling", SEMANTIC_MODEL_POOLING),
+        "normalize": payload.get("normalize", SEMANTIC_MODEL_NORMALIZE),
+        "dimension": int(payload.get("dimension", SEMANTIC_MODEL_EXPECTED_DIMENSION)),
+        "estimatedDownloadMb": payload.get("estimatedDownloadMb") or payload.get("estimated_download_mb", SEMANTIC_MODEL_ESTIMATED_DOWNLOAD_MB),
+        "notes": notes
+    }
 
 
 def generate_semantic_index(index: Dict, model=None, model_name: str = SEMANTIC_PYTHON_MODEL_ID) -> Dict | None:
@@ -482,17 +621,12 @@ def build_rag_manifest(index: Dict) -> Dict:
             "strategy": semantic_payload.get("model", {}).get("strategy", "single_vector"),
             "default": True,
             "experimental": False,
-            "notes": "Voie stable par defaut. Un vecteur dense par scrutin.",
-            "model": {
-                "id": semantic_payload.get("model", {}).get("id", SEMANTIC_MODEL_ID),
-                "pythonModelId": semantic_payload.get("model", {}).get("python_model_id", SEMANTIC_PYTHON_MODEL_ID),
-                "browserModelId": semantic_payload.get("model", {}).get("browser_model_id", SEMANTIC_BROWSER_MODEL_ID),
-                "task": semantic_payload.get("model", {}).get("task", "feature-extraction"),
-                "pooling": semantic_payload.get("model", {}).get("pooling", "mean"),
-                "normalize": semantic_payload.get("model", {}).get("normalize", True),
-                "estimatedDownloadMb": semantic_payload.get("model", {}).get("estimated_download_mb", SEMANTIC_MODEL_ESTIMATED_DOWNLOAD_MB),
-                "notes": "Mode stable dedie au reranking local."
-            },
+            "notes": "Voie stable par defaut. Un vecteur dense par scrutin avec encodeur E5 multilingue dedie.",
+            "model": build_manifest_model_payload(
+                semantic_payload.get("model"),
+                SEMANTIC_MODEL_ID,
+                "Mode stable dedie au reranking local avec retrieval asymetrique query/passage."
+            ),
             "artifact": semantic_artifact
         }
 
@@ -504,38 +638,28 @@ def build_rag_manifest(index: Dict) -> Dict:
             "strategy": semantic_multivector_payload.get("model", {}).get("strategy", "multi_vector_sections"),
             "default": False,
             "experimental": True,
-            "notes": "Mode avance experimental. Plusieurs vecteurs par scrutin pour des appuis plus fins.",
-            "model": {
-                "id": semantic_multivector_payload.get("model", {}).get("id", SEMANTIC_MULTI_VECTOR_MODEL_ID),
-                "pythonModelId": semantic_multivector_payload.get("model", {}).get("python_model_id", SEMANTIC_PYTHON_MODEL_ID),
-                "browserModelId": semantic_multivector_payload.get("model", {}).get("browser_model_id", SEMANTIC_BROWSER_MODEL_ID),
-                "task": semantic_multivector_payload.get("model", {}).get("task", "feature-extraction"),
-                "pooling": semantic_multivector_payload.get("model", {}).get("pooling", "mean"),
-                "normalize": semantic_multivector_payload.get("model", {}).get("normalize", True),
-                "estimatedDownloadMb": semantic_multivector_payload.get("model", {}).get("estimated_download_mb", SEMANTIC_MODEL_ESTIMATED_DOWNLOAD_MB),
-                "notes": "Mode experimental multi-vector par sections de scrutin."
-            },
+            "notes": "Mode avance experimental. Plusieurs vecteurs par scrutin avec le meme encodeur E5 multilingue dedie.",
+            "model": build_manifest_model_payload(
+                semantic_multivector_payload.get("model"),
+                SEMANTIC_MULTI_VECTOR_MODEL_ID,
+                "Mode experimental multi-vector par sections de scrutin avec retrieval asymetrique query/passage."
+            ),
             "artifact": semantic_multivector_artifact
         }
 
     return {
-        "schemaVersion": 2,
+        "schemaVersion": RAG_MANIFEST_SCHEMA_VERSION,
         "generatedAt": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
         "documentType": "scrutin",
         "stats": {
             "totalDocuments": index.get("stats", {}).get("totalVotes", 0),
             "totalKeywords": index.get("stats", {}).get("totalKeywords", 0)
         },
-        "embeddingModel": {
-            "id": SEMANTIC_MODEL_ID,
-            "pythonModelId": SEMANTIC_PYTHON_MODEL_ID,
-            "browserModelId": SEMANTIC_BROWSER_MODEL_ID,
-            "task": "feature-extraction",
-            "pooling": "mean",
-            "normalize": True,
-            "estimatedDownloadMb": SEMANTIC_MODEL_ESTIMATED_DOWNLOAD_MB,
-            "notes": "Voie stable par defaut pour le reranking semantique local opt-in."
-        },
+        "embeddingModel": build_manifest_model_payload(
+            semantic_payload.get("model") if semantic_payload else None,
+            SEMANTIC_MODEL_ID,
+            "Voie stable par defaut pour le reranking semantique local opt-in."
+        ),
         "semanticModes": {
             "single_vector": single_vector_mode,
             "multi_vector": multi_vector_mode
@@ -754,8 +878,14 @@ def main():
         print("ℹ️ Artefact semantique desactive pour cette execution")
     else:
         semantic_encoder = load_semantic_encoder()
+        if semantic_encoder is None:
+            raise RuntimeError("Impossible de charger l encodeur semantique multilingual-e5-small")
+
         semantic_index = generate_semantic_index(index, model=semantic_encoder)
         semantic_multivector_index = generate_semantic_multivector_index(index, model=semantic_encoder)
+        if semantic_index is None or semantic_multivector_index is None:
+            raise RuntimeError("Generation incomplete des artefacts semantiques E5")
+
         if semantic_index:
             write_json(FICHIER_SEMANTIC_INDEX, semantic_index)
             print(f"💾 Index semantique RAG sauvegarde dans {FICHIER_SEMANTIC_INDEX}")

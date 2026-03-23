@@ -15,6 +15,19 @@ if hasattr(sys.stderr, 'reconfigure'):
 RESOURCE_ID = "092bd7bb-1543-405b-b53c-932ebb49bb8e"
 BASE = f"https://tabular-api.data.gouv.fr/api/resources/{RESOURCE_ID}/data/"
 OUT_DIR = "public/data/deputes_actifs"
+BOOT_FILENAME_PREFIX = "boot-"
+BOOT_FIELDS = (
+    "id",
+    "prenom",
+    "nom",
+    "groupe",
+    "groupeNom",
+    "groupeAbrev",
+    "departementNom",
+    "circo",
+    "circonscription",
+    "dateMaj",
+)
 
 # --- TABLE DE CORRESPONDANCE DES COULEURS (OFFICIEL/STABLE) ---
 # Sert pour la légende et les cartes. L'hémicycle, lui, utilise ses propres couleurs par siège.
@@ -62,14 +75,37 @@ def fetch_json(url: str) -> dict:
 def canonical_bytes(rows) -> bytes:
     return json.dumps(rows, ensure_ascii=False, separators=(",", ":"), sort_keys=True).encode("utf-8")
 
-def read_latest_sha256(latest_path: str) -> str | None:
+def read_latest_metadata(latest_path: str) -> dict:
     if not os.path.exists(latest_path):
-        return None
+        return {}
     try:
         with open(latest_path, "r", encoding="utf-8") as f:
-            return json.load(f).get("sha256")
+            payload = json.load(f)
+            return payload if isinstance(payload, dict) else {}
     except Exception:
-        return None
+        return {}
+
+def format_circonscription(departement_nom, circo):
+    if not departement_nom:
+        return ""
+    if circo in (None, ""):
+        return departement_nom
+
+    try:
+        circo_num = int(circo)
+        suffix = "1re" if circo_num == 1 else f"{circo_num}e"
+        return f"{departement_nom} ({suffix} circonscription)"
+    except (TypeError, ValueError):
+        return f"{departement_nom} ({circo})"
+
+def build_boot_rows(rows):
+    boot_rows = []
+    for row in rows:
+        boot_row = {field: row.get(field) for field in BOOT_FIELDS if field not in {"groupeNom", "circonscription"}}
+        boot_row["groupeNom"] = row.get("groupe")
+        boot_row["circonscription"] = format_circonscription(row.get("departementNom"), row.get("circo"))
+        boot_rows.append(boot_row)
+    return boot_rows
 
 def main():
     os.makedirs(OUT_DIR, exist_ok=True)
@@ -125,27 +161,44 @@ def main():
     # 3) Hash + Versioning des députés (Logique existante)
     blob = canonical_bytes(all_rows)
     sha256 = hashlib.sha256(blob).hexdigest()
-    prev_sha256 = read_latest_sha256(latest_path)
+    latest_meta = read_latest_metadata(latest_path)
+    prev_sha256 = latest_meta.get("sha256")
 
-    if prev_sha256 == sha256:
-        print("Aucun changement détecté (sha256 identique).")
-        # On ne quitte pas forcément ici si on veut forcer la regénération de groupes.json
-        # mais pour le versioning des députés, on s'arrête.
-        return 0
+    boot_rows = build_boot_rows(all_rows)
+    boot_blob = canonical_bytes(boot_rows)
+    boot_sha256 = hashlib.sha256(boot_blob).hexdigest()
 
-    # Écriture nouvelle version
-    version = "v" + datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    current_utc = datetime.now(timezone.utc)
+    should_write_full = prev_sha256 != sha256 or not latest_meta.get("version")
+    version = latest_meta.get("version") if not should_write_full else "v" + current_utc.strftime("%Y-%m-%d")
     out_path = os.path.join(OUT_DIR, f"{version}.json")
+    boot_filename = f"{BOOT_FILENAME_PREFIX}{version}.json"
+    boot_path = os.path.join(OUT_DIR, boot_filename)
 
-    tmp = out_path + ".tmp"
-    with open(tmp, "wb") as f:
-        f.write(blob)
-    os.replace(tmp, out_path)
+    if should_write_full or not os.path.exists(out_path):
+        tmp = out_path + ".tmp"
+        with open(tmp, "wb") as f:
+            f.write(blob)
+        os.replace(tmp, out_path)
+    else:
+        print("Aucun changement détecté sur le fichier détaillé (sha256 identique).")
+
+    tmp_boot = boot_path + ".tmp"
+    with open(tmp_boot, "wb") as f:
+        f.write(boot_blob)
+    os.replace(tmp_boot, boot_path)
 
     tmp_latest = latest_path + ".tmp"
     with open(tmp_latest, "w", encoding="utf-8") as f:
         json.dump(
-            {"version": version, "generated_at": datetime.now(timezone.utc).isoformat(), "sha256": sha256},
+            {
+                "version": version,
+                "generated_at": current_utc.isoformat(),
+                "sha256": sha256,
+                "detail_path": f"{version}.json",
+                "boot_path": boot_filename,
+                "boot_sha256": boot_sha256,
+            },
             f,
             ensure_ascii=False,
             separators=(",", ":"),
@@ -153,6 +206,7 @@ def main():
     os.replace(tmp_latest, latest_path)
 
     print(f"✅ Mise à jour terminée : {out_path} (SHA: {sha256})")
+    print(f"✅ Artefact boot généré : {boot_path} (SHA: {boot_sha256})")
     return 0
 
 if __name__ == "__main__":
