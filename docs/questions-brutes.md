@@ -1,0 +1,1448 @@
+# Questions brutes
+
+## Lot 2026-03 - pouvoir d'achat
+
+- Mon député a-t-il voté pour des mesures visant à faire baisser la facture d’électricité ?
+- A-t-il soutenu des votes pour limiter la hausse du prix du gaz ?
+- A-t-il voté pour protéger le pouvoir d’achat face à l’inflation ?
+- A-t-il soutenu des mesures pour réduire le coût des carburants ?
+- A-t-il voté pour maintenir des avantages sur le superéthanol E85 ?
+- A-t-il soutenu des aides pour les ménages les plus modestes ?
+- A-t-il voté pour mieux indexer certains revenus sur l’inflation ?
+- A-t-il défendu davantage les consommateurs ou les finances publiques ?
+- Ses votes vont-ils plutôt dans le sens du pouvoir d’achat immédiat ou de la rigueur budgétaire ?
+- Quels sont ses votes les plus importants sur le coût de la vie ?
+
+## Lot 2026-03 - budget et justice fiscale
+
+- Mon député a-t-il voté pour le budget 2026 ?
+- A-t-il voté pour le budget de la Sécurité sociale 2026 ?
+- A-t-il soutenu la hausse de la CSG sur les revenus du capital ?
+- A-t-il voté pour surtaxer les grandes entreprises ?
+- A-t-il soutenu une fiscalité plus lourde pour les hauts revenus ou patrimoines ?
+- A-t-il voté contre les coupes dans l’Éducation, la Santé ou l’Écologie ?
+- A-t-il rejeté la fiscalisation des indemnités journalières pour affection longue durée ?
+- Vote-t-il plutôt pour augmenter les recettes ou pour baisser les dépenses ?
+- Ses votes sur la dette sont-ils cohérents avec ses discours publics ?
+- Quels votes montrent le mieux sa vision de la justice fiscale ?
+
+## Lot 2026-03 - santé
+
+- Mon député a-t-il voté pour réguler l’installation des médecins dans les déserts médicaux ?
+- A-t-il soutenu des mesures pour améliorer l’accès à un médecin traitant ?
+- A-t-il voté pour augmenter les dépenses d’assurance maladie ?
+- A-t-il soutenu davantage de moyens pour l’hôpital public ?
+- A-t-il voté pour renforcer les soins de proximité dans les territoires ?
+- A-t-il soutenu des mesures sur la santé mentale ?
+- A-t-il voté pour améliorer l’accès aux soins palliatifs ?
+- Ses votes en santé favorisent-ils la liberté d’installation ou l’égalité territoriale ?
+- A-t-il surtout défendu l’hôpital, la médecine de ville ou les urgences ?
+- Quels votes résument le mieux sa position sur l’accès aux soins ?
+
+## Lot 2026-03 - retraites et protection sociale
+
+- Mon député a-t-il voté pour suspendre ou abroger la réforme des retraites ?
+- A-t-il soutenu le gel des pensions de retraite ?
+- A-t-il voté pour mieux protéger les pensions contre l’inflation ?
+- A-t-il défendu les petites retraites ?
+- A-t-il soutenu des mesures pour les carrières longues ou les métiers pénibles ?
+- A-t-il voté pour durcir certaines règles de protection sociale ?
+- A-t-il soutenu des mesures favorables aux personnes en ALD ou en arrêt maladie ?
+- Défend-il davantage les retraités, les salariés ou les comptes sociaux ?
+- Ses votes sur la Sécu sont-ils cohérents avec ses prises de position sur les retraites ?
+- Quels votes permettent de comprendre sa vraie ligne sur l’avenir du système de retraite ?
+
+## Lot 2026-03 - sécurité, justice et narcotrafic
+
+- Mon député a-t-il voté la loi contre le narcotrafic ?
+- A-t-il soutenu la création d’un parquet national anticriminalité organisée ?
+- A-t-il voté pour durcir la réponse pénale contre les réseaux criminels ?
+- A-t-il soutenu des mesures contestées sur les messageries chiffrées ?
+- A-t-il voté pour faciliter l’expulsion de locataires liés au narcotrafic ?
+- A-t-il soutenu les prisons ou quartiers de haute sécurité pour narcotrafiquants ?
+- Vote-t-il plutôt pour la fermeté pénale ou pour les libertés publiques ?
+- Sur la sécurité, s’aligne-t-il toujours sur son groupe ?
+- Quels votes montrent le mieux sa position sur le narcotrafic ?
+- Est-il plus répressif sur la criminalité organisée que sur les autres sujets de justice ?
+
+## Lot 2026-03 - immigration et AME
+
+- Mon député a-t-il voté pour maintenir ou restreindre l’aide médicale d’État ?
+- A-t-il soutenu le gel des crédits de l’AME ?
+- A-t-il voté pour faire payer une contribution aux étrangers hors UE soignés en France ?
+- A-t-il soutenu un durcissement global de la politique migratoire ?
+- A-t-il voté pour restreindre davantage certains droits sociaux des étrangers ?
+- A-t-il soutenu des mesures d’intégration plutôt que des mesures de restriction ?
+- Ses votes sur l’immigration sont-ils plus durs que ceux de son groupe ?
+- Vote-t-il différemment selon qu’on parle d’asile, de travail, de santé ou de sécurité ?
+- Quels votes résument le mieux sa position sur l’accueil des étrangers ?
+- Sur l’immigration, est-il surtout humanitaire, sécuritaire ou budgétaire ?
+
+## Lot 2026-03 - logement
+
+- Mon député a-t-il voté pour plus de logements sociaux ?
+- A-t-il soutenu des crédits pour l’hébergement d’urgence ?
+- A-t-il voté pour renforcer le plan Logement d’abord ?
+- A-t-il soutenu MaPrimeRénov’ et la rénovation énergétique ?
+- A-t-il voté pour aider davantage les primo-accédants ?
+- A-t-il soutenu des mesures pour relancer la construction ?
+- A-t-il voté pour mieux protéger les locataires ?
+- A-t-il plutôt défendu les bailleurs, les locataires ou les collectivités ?
+- Ses votes sur le logement répondent-ils à la crise actuelle du secteur ?
+- Quels votes montrent sa vision du logement comme droit social ou comme marché à relancer ?
+
+## Lot 2026-03 - école et jeunesse
+
+- Mon député a-t-il voté pour protéger le budget de l’Éducation nationale ?
+- A-t-il soutenu des mesures contre le harcèlement scolaire ?
+- A-t-il voté pour renforcer la sécurité à l’école ?
+- A-t-il soutenu des mesures pour mieux encadrer les réseaux sociaux chez les mineurs ?
+- A-t-il voté pour mieux protéger les enfants face aux plateformes numériques ?
+- A-t-il soutenu l’inclusion scolaire des élèves en situation de handicap ?
+- A-t-il voté pour améliorer l’orientation, l’apprentissage ou la réussite scolaire ?
+- Ses votes sur l’école privilégient-ils l’autorité, les moyens ou l’égalité des chances ?
+- A-t-il plus souvent soutenu la protection des mineurs ou la liberté des plateformes ?
+- Quels votes permettent de comprendre sa position sur l’école et la jeunesse ?
+
+## Lot 2026-03 - agriculture et pesticides
+
+- Mon député a-t-il voté pour la loi Duplomb ?
+- A-t-il soutenu la réintroduction conditionnelle de l’acétamipride ?
+- A-t-il voté contre l’interdiction d’importer des produits traités avec des pesticides interdits en France ?
+- A-t-il soutenu l’allègement des normes environnementales pour les agriculteurs ?
+- A-t-il voté pour mieux protéger le revenu des agriculteurs ?
+- A-t-il soutenu davantage l’agriculture conventionnelle ou l’agriculture bio ?
+- A-t-il voté pour protéger la santé publique ou pour alléger les contraintes des producteurs ?
+- Ses votes agricoles privilégient-ils la compétitivité, la souveraineté alimentaire ou l’écologie ?
+- A-t-il une ligne cohérente entre agriculture, pesticides et environnement ?
+- Quels votes montrent sa vraie position sur la crise agricole ?
+
+## Lot 2026-03 - écologie, énergie et vie quotidienne
+
+- Mon député a-t-il voté pour renforcer l’adaptation aux canicules, sécheresses et inondations ?
+- A-t-il soutenu des crédits pour la transition écologique malgré la contrainte budgétaire ?
+- A-t-il voté pour préserver les aides à la rénovation énergétique ?
+- A-t-il soutenu des mesures contre la pollution de l’air ou les nuisances locales ?
+- A-t-il voté pour développer les transports collectifs ?
+- A-t-il soutenu les filières de biocarburants comme l’E85 ou le B100 ?
+- A-t-il voté pour des contraintes écologiques fortes ou pour des compromis plus souples ?
+- Ses votes écologiques tiennent-ils compte des territoires ruraux ?
+- A-t-il davantage voté pour le climat ou pour le pouvoir d’achat immédiat ?
+- Quels votes montrent sa position sur l’équilibre entre écologie et vie quotidienne ?
+
+## Lot 2026-03 - comportement de vote et ligne politique
+
+- Mon député vote-t-il souvent sur les textes importants ou est-il souvent absent ?
+- Quels sont les votes où il s’est démarqué de son groupe ?
+- A-t-il changé d’avis depuis les dernières législatives ?
+- Vote-t-il surtout par discipline de groupe ou selon sa circonscription ?
+- Quels textes a-t-il soutenus alors qu’ils étaient impopulaires ?
+- Quels textes a-t-il rejetés alors qu’ils semblaient soutenus par l’opinion ?
+- Son comportement de vote est-il stable ou contradictoire ?
+- Quelles sont ses principales abstentions sur les textes sensibles ?
+- Est-il plus radical ou plus modéré que la moyenne de son groupe ?
+- Si on résume sa ligne politique à partir de ses votes, à quoi ressemble-t-elle ?
+
+## Lot 2026-03 - défense, Europe et Ukraine
+
+- Mon député a-t-il voté la résolution de soutien à l’Ukraine ?
+- A-t-il soutenu la saisie des avoirs russes gelés ?
+- A-t-il voté pour augmenter le budget de la défense ?
+- A-t-il soutenu une défense européenne plus forte ?
+- A-t-il voté pour financer l’effort de défense sans augmenter les impôts ?
+- Ses votes internationaux sont-ils plutôt européens, atlantistes ou souverainistes ?
+- A-t-il soutenu des textes renforçant l’autonomie stratégique de la France ?
+- A-t-il voté différemment de son camp sur l’Ukraine ?
+- Quels votes montrent sa position sur la guerre, la paix et les engagements de la France ?
+- Est-il cohérent entre ses votes sur la dette et ses votes sur la défense ?
+
+## Lot 2026-03 - grandes questions de société
+
+- Mon député a-t-il voté pour le droit à l’aide à mourir ?
+- A-t-il soutenu le développement des soins palliatifs ?
+- A-t-il voté pour des garde-fous plus stricts sur l’aide à mourir ?
+- A-t-il soutenu la suppression du vote “assis et levé” à l’Assemblée ?
+- A-t-il voté pour améliorer l’accessibilité et l’inclusion des personnes handicapées ?
+- A-t-il soutenu des textes sur la politique familiale face à la baisse de la natalité ?
+- A-t-il voté pour mieux protéger les aidants et les familles ?
+- A-t-il défendu, dans ses votes, les intérêts des outre-mer sur la vie chère, l’eau ou la sécurité ?
+- Quels votes révèlent sa position sur les grandes questions de société ?
+- Sur les sujets éthiques, vote-t-il selon sa conscience, son groupe ou son électorat ?
+
+## Lot 2026-03 - vie locale, territoire et décalages
+
+- Ce député vote-t-il plus pour sa circonscription que pour la ligne nationale de son parti ?
+- Sur quels sujets vote-t-il le plus à contre-courant de l’opinion publique ?
+- A-t-il plus soutenu les ménages modestes ou les classes moyennes ?
+- Ses votes sont-ils plus favorables aux zones rurales ou aux grandes villes ?
+- A-t-il durci sa ligne depuis son élection ?
+- Est-il plus actif sur les sujets régaliens ou sur les sujets sociaux ?
+- Quand il faut arbitrer, privilégie-t-il la dépense publique ou la rigueur budgétaire ?
+- Quels votes surprennent le plus au regard de son étiquette politique ?
+- Son comportement de vote est-il cohérent avec ce qu’il met en avant sur TikTok, à la télévision ou en circonscription ?
+- Si on compare ses votes aux préoccupations actuelles des Français, sur quels sujets est-il le plus en phase ou en décalage ?
+
+## Lot 2026-03 - impacts concrets et sélection courte
+
+- Quels votes de mon député ont pu avoir un impact sur ma facture d’électricité ?
+- Quels votes peuvent influencer l’accès à un médecin dans mon territoire ?
+- A-t-il voté des mesures qui touchent directement le prix de l’essence ou du chauffage ?
+- Quels votes concernent le plus les retraités de ma commune ?
+- A-t-il soutenu des textes qui peuvent changer l’offre de logement près de chez moi ?
+- Quels votes ont un effet direct sur la sécurité dans mon quartier ?
+- A-t-il voté des mesures qui concernent l’école de mes enfants ?
+- Quels votes touchent les agriculteurs, commerçants ou artisans de mon département ?
+- A-t-il soutenu des textes qui concernent concrètement les jeunes, les étudiants ou les apprentis ?
+- Si je ne devais regarder que cinq votes pour comprendre ce député, lesquels sont les plus révélateurs ?
+
+## Lot 2026-03 - comprendre un vote précis
+
+- Comment mon député a-t-il voté sur ce texte précis ?
+- Mon député a-t-il voté pour, contre, s’est-il abstenu, ou n’a-t-il pas pris part au vote ?
+- Où trouver le numéro exact du scrutin correspondant à ce vote ?
+- À quelle date et à quelle heure ce vote a-t-il eu lieu ?
+- Pourquoi je ne retrouve pas le nom de mon député dans certains votes ?
+- Est-ce que je regarde le vote final ou seulement un vote sur un amendement ?
+- Le texte voté était-il déjà modifié avant ce scrutin ?
+- Comment lire correctement l’analyse officielle d’un scrutin ?
+- Peut-on voir le détail du vote groupe par groupe ?
+- Comment vérifier qu’une capture d’écran virale sur un vote n’est pas trompeuse ?
+
+## Lot 2026-03 - discipline de groupe, absences et procédure
+
+- Mon député a-t-il suivi la consigne de son groupe ?
+- Son groupe avait-il laissé une liberté de vote sur ce texte ?
+- Quels députés ont voté contre leur propre camp ?
+- Quels groupes ont été les plus divisés sur ce vote ?
+- Qui vote le plus souvent comme son groupe ?
+- Un député subit-il des pressions internes s’il vote différemment ?
+- Peut-il perdre des responsabilités s’il s’écarte trop souvent de la ligne du groupe ?
+- Mon député était-il absent au moment du vote ?
+- A-t-il donné une délégation de vote ?
+- Quelle est la différence entre abstention, absence et non-participation au scrutin ?
+- Le suppléant d’un député peut-il voter à sa place ?
+- Pourquoi certains votes se font-ils à main levée et d’autres de manière nominative ?
+- Quelle est la différence entre scrutin public ordinaire et scrutin public solennel ?
+- Qu’est-ce qu’un vote à la tribune ?
+- Dans quels cas y a-t-il un vote secret ?
+- Le gouvernement a-t-il utilisé l’article 49.3 sur ce texte ?
+- Si le texte passe sans vote, comment connaître la position des députés ?
+- Qui a signé la motion de censure ?
+- Quels députés ont voté pour faire tomber le gouvernement ?
+- Combien de voix faut-il pour adopter une motion de censure ?
+- Quelle est la différence entre vote de confiance et motion de censure ?
+- Un député peut-il s’abstenir sur un vote de confiance ?
+- Quelles sont les conséquences concrètes d’une motion de censure adoptée ?
+
+## Lot 2026-03 - budgets, politiques publiques et grands thèmes
+
+- Comment mon député a-t-il voté sur le budget de l’État ?
+- A-t-il voté pour une hausse ou une baisse d’impôts ?
+- A-t-il soutenu une nouvelle taxe ou un allègement fiscal ?
+- Comment a-t-il voté sur le budget de la Sécurité sociale ?
+- A-t-il voté des coupes dans l’hôpital, l’école ou les collectivités ?
+- Comment mon député a-t-il voté sur la réforme des retraites ?
+- A-t-il soutenu le recul de l’âge légal ?
+- Comment a-t-il voté sur l’assurance chômage ?
+- A-t-il voté pour une hausse du SMIC ?
+- A-t-il soutenu des exonérations pour les entreprises ?
+- Comment mon député a-t-il voté sur la loi immigration ?
+- A-t-il voté pour durcir l’entrée et le séjour des étrangers ?
+- Comment a-t-il voté sur l’asile, la rétention ou les OQTF ?
+- A-t-il soutenu davantage de moyens pour la police ?
+- A-t-il soutenu des restrictions de liberté au nom de la sécurité ?
+- Comment mon député a-t-il voté sur la fin de vie ou l’aide à mourir ?
+- A-t-il soutenu des mesures contre les déserts médicaux ?
+- Comment a-t-il voté sur le financement de l’hôpital public ?
+- A-t-il soutenu l’école publique ou davantage le privé ?
+- Comment mon député a-t-il voté sur la loi Duplomb ou sur les pesticides ?
+- Comment a-t-il voté sur les ZFE ?
+- A-t-il soutenu le nucléaire, l’éolien ou d’autres énergies renouvelables ?
+- Comment a-t-il voté sur l’encadrement des loyers ou la crise du logement ?
+- A-t-il soutenu la rénovation énergétique des logements ?
+- Comment mon député a-t-il voté sur un traité européen ?
+- A-t-il soutenu les textes relatifs à l’aide à l’Ukraine ?
+- Comment a-t-il voté sur le budget de la défense ?
+
+## Gabarits récurrents - questions paramétrées sur des textes antérieurs
+
+Les blocs suivants reviennent de manière quasi identique avec des paramètres. Ils sont conservés ici comme gabarits pour éviter un fichier brut ingérable.
+
+### Variables récurrentes
+
+- `[Nom du député]`
+- `[Député A]`
+- `[Député B]`
+- `[circonscription]`
+- `[ville/département]`
+- `[sujet]`
+- `[article controversé]`
+- `[lobby/sectoriel]`
+
+### Textes concernés
+
+- ordonnances travail en 2017
+- transformation de l’ISF en IFI en 2017
+- réduction de l’impôt sur les sociétés
+- mesures d’urgences économiques et sociales en réponse au mouvement des Gilets jaunes en 2018
+- plan de relance de l’économie à 100 milliards d’euros en 2020
+- passe sanitaire et vaccinal en 2021
+- mise en place de Parcoursup en 2018
+- réforme du bac en 2018
+- interdiction des téléphones portables à l’école et au collège en 2018
+- loi Climat et résilience en 2021
+- interdiction progressive de la location des passoires thermiques en 2021
+- mise en place expérimentale d’un score carbone en 2021
+- réforme constitutionnelle en 2018
+- loi anti-casseurs en 2019
+- loi sur la prévention du terrorisme et au renseignement en 2021
+- mesures sanitaires en réponse à la crise du COVID-19 en 2020
+- réforme de l’assurance chômage en 2020
+- cadre financier pluriannuel de l’Union européenne en 2018
+- consultation citoyenne sur l’abstention et la participation électorale en 2021
+
+### Gabarits
+
+- Comment [Nom du député] a-t-il/elle voté sur [texte] ?
+- Pourquoi [Député A] a voté pour [texte] alors que [Député B] du même parti a voté contre ?
+- Quels arguments [Nom du député] a-t-il avancés pour justifier son vote contre [texte] ?
+- Quels impacts concrets le vote de [Nom du député] sur [texte] a-t-il eus pour les habitants de [circonscription] ?
+- Comment concilier le vote de [Nom du député] sur [texte] avec ses prises de position passées sur le sujet ?
+- Pourquoi [Nom du député] était-il absent lors du vote crucial sur [texte] ?
+- Quel est le taux d’absence aux votes de [Nom du député] depuis le début de la législature ?
+- Quels amendements [Nom du député] a-t-il proposés ou soutenus sur [texte] ?
+- Pourquoi son amendement sur [sujet] a-t-il été rejeté ?
+- Est-ce que [Nom du député] a reçu des financements de [lobby/sectoriel] avant de voter sur [texte] ?
+- Son vote sur [texte] correspond-il aux positions de son parti ou à celles de ses donateurs ?
+- Comment [Nom du député] compte-t-il voter sur le prochain projet de loi sur [texte] ?
+- Quelle est sa position sur [texte] au regard de ses votes passés ?
+- En quoi le vote de [Nom du député] sur [texte] affecte-t-il spécifiquement [ville/département] ?
+- A-t-il consulté les acteurs locaux (maires, associations) avant de voter sur [texte] ?
+- En tant que rapporteur de [texte], comment [Nom du député] a-t-il influencé le texte final ?
+- Quel a été son rôle dans les négociations sur [article controversé] de [texte] ?
+- Pourquoi [Nom du député] vote-t-il systématiquement contre les lois qu’il défend en meeting ?
+- Est-ce que [Nom du député] a déjà voté une loi qu’il ne comprend pas ?
+
+## Gabarits récurrents - questions directes au député
+
+### Justification et raisonnement personnel
+
+- Pourquoi avez vous voté pour ou contre [mesure] ?
+- Avez vous voté pour [mesure] ou l’avez vous rejetée ?
+- Quel était votre raisonnement personnel au moment du vote ?
+- Aviez-vous des hésitations avant de voter ?
+- Qu’est-ce qui a fait pencher votre décision au dernier moment ?
+- Avez-vous lu le texte complet avant de voter ?
+- Quels articles du texte vous ont convaincu de voter pour ?
+- Quels articles vous ont poussé à voter contre ?
+- Si vous vous êtes abstenu, qu’est-ce qui vous empêchait de voter clairement pour ou contre ?
+- Considérez-vous que votre vote reflète exactement votre position personnelle ?
+
+### Discipline de groupe et cohérence publique
+
+- Votre vote suivait-il la consigne de votre groupe politique ?
+- Si oui, étiez-vous personnellement d’accord avec cette consigne ?
+- Si non, pourquoi avez-vous choisi de vous en écarter ?
+- Jusqu’où êtes-vous prêt à aller contre votre groupe sur un vote important ?
+- Avez-vous déjà voté contre votre camp par conviction ?
+- Estimez-vous qu’un député doit d’abord représenter son groupe ou ses électeurs ?
+- Avez-vous subi des pressions internes avant ce vote ?
+- Vos votes sont-ils cohérents avec ce que vous dites dans les médias ?
+- Vos votes sont-ils cohérents avec ce que vous dites dans votre circonscription ?
+- Y a-t-il un décalage entre vos prises de parole locales et vos votes à Paris ?
+
+### Impact concret des politiques publiques
+
+- Pourquoi avez-vous voté ainsi sur ce texte qui touche directement le pouvoir d’achat ?
+- Selon vous, ce vote va-t-il faire gagner ou perdre de l’argent aux ménages ?
+- Avez-vous évalué l’impact de votre vote sur les classes moyennes ?
+- Votre vote protège-t-il davantage les salaires ou les finances publiques ?
+- Quels impôts ou quelles dépenses ce vote change-t-il réellement pour vos électeurs ?
+- Votre vote renforce-t-il ou affaiblit-il l’accès aux soins ?
+- Votre vote améliore-t-il les conditions d’apprentissage des élèves ?
+- Votre vote améliore-t-il réellement l’autonomie des personnes concernées ?
+- Votre vote sur l’immigration était-il motivé par l’efficacité, la fermeté ou l’humanité ?
+- Votre vote sur l’écologie prend-il en compte le coût pour les ménages et les entreprises ?
+
+### Territoire et responsabilité politique
+
+- Avez-vous consulté les habitants de votre circonscription avant de voter sur ce sujet sensible ?
+- Pourquoi avez-vous voté pour ou contre ce texte alors qu’il concernait directement votre territoire ?
+- Quels élus locaux, syndicats, associations ou professionnels de terrain avez-vous écoutés avant ce vote ?
+- Votre vote reflète-t-il ce que vous entendez le plus souvent dans votre circonscription ?
+- Si votre circonscription pensait majoritairement l’inverse, auriez-vous maintenu le même vote ?
+- Quel vote avez-vous pris contre l’avis dominant de votre territoire, et pourquoi ?
+- Comment vos électeurs peuvent-ils vous sanctionner politiquement si vos votes ne leur correspondent pas ?
+- Parmi tous vos votes récents, lequel souhaitez-vous défendre en face-à-face devant vos électeurs pendant cinq minutes ?
+
+## Lot complémentaire - exemples de formulations ultra ciblées
+
+- Pourquoi avez-vous voté pour la hausse des taxes sur l'électricité dans le dernier budget ?
+- Comment justifiez-vous votre vote sur la désindexation partielle des retraites par rapport à l'inflation ?
+- Lors du vote sur le bouclier tarifaire, pourquoi vous êtes-vous abstenu ?
+- Avez-vous soutenu la proposition de loi visant à baisser la TVA sur les produits de première nécessité ?
+- Pourquoi avoir voté contre l'augmentation du SMIC proposée par l'opposition ?
+- Qu'est-ce qui a motivé votre vote favorable à la réduction des aides personnalisées au logement (APL) ?
+- Avez-vous voté pour la taxe sur les superprofits des grandes entreprises, et pour quelles raisons ?
+- Pourquoi n'étiez-vous pas présent dans l'hémicycle lors du vote crucial sur le budget de l'État pour 2025 ?
+- Allez-vous voter en faveur d'une baisse de l'impôt sur le revenu pour les classes moyennes ?
+- Comment expliquez-vous votre vote sur la réforme de la taxe foncière qui pénalise les propriétaires de nos communes ?
+- Pourquoi avez-vous voté en faveur de la loi visant à sortir la France du piège du narcotrafic ?
+- Avez-vous soutenu la suppression de l'Aide Médicale d'État (AME) pour les étrangers en situation irrégulière ?
+- Quel a été votre vote personnel lors de la constitutionnalisation historique du droit à l'interruption volontaire de grossesse ?
+- Avez-vous soutenu la légalisation de l'aide active à mourir lors de son épineux examen en première lecture ?
+- Pourquoi avez-vous voté contre l'interdiction définitive de l'usage du glyphosate sur notre territoire agricole ?
+- Avez-vous soutenu le financement public massif pour la construction des nouveaux réacteurs nucléaires EPR ?
+- Pourquoi avez-vous voté pour l'obligation d'expérimenter le port d'une tenue unique ou de l'uniforme à l'école publique ?
+- Avez-vous soutenu la suppression définitive de la contribution à l'audiovisuel public pour financer directement la télévision d'État ?
+- Pourquoi n'avez-vous pas voté la dernière motion de censure transpartisane déposée contre le gouvernement actuel ?
+- Pourquoi avez-vous voté pour des mesures compliquant significativement la collecte de signatures citoyennes nécessaires au déclenchement d'un Référendum d'Initiative Partagée (RIP) ?
+
+## Lot complémentaire - assiduité, groupe et institutions
+
+- Quel est le taux de participation de ce député aux scrutins publics cette législature ?
+- Combien de fois ce député s'est-il/elle absenté(e) lors d'un vote solennel ?
+- Y a-t-il des périodes où ce député vote moins souvent qu'à d'autres moments ?
+- Ce député a-t-il/elle déjà délégué son vote à un autre élu, et si oui, à qui ?
+- À quels votes importants ce député n'a-t-il/elle pas participé sans explication ?
+- Sur quels grands textes ce député a-t-il/elle voté contre la ligne officielle de son groupe ?
+- Sur quels sujets ce député s'abstient-il/elle le plus souvent ?
+- Ce député a-t-il/elle respecté ses promesses de campagne dans ses votes ?
+- Y a-t-il des contradictions notables entre ses déclarations publiques et ses votes réels ?
+- Comment évolue le vote de ce député sur un même sujet entre deux législatures ?
+
+## Lot 2026-03 - complément import utilisateur
+
+- Mon député a-t-il respecté ses promesses de campagne dans ce vote ?
+- A-t-il expliqué publiquement pourquoi il a voté ainsi ?
+- A-t-il voté dans le sens majoritaire de sa circonscription ?
+- Défend-il sa circonscription ou surtout la ligne de son parti ?
+- Vote-t-il différemment sur les sujets locaux et sur les sujets nationaux ?
+- A-t-il changé de position depuis son élection ?
+- Vote-t-il différemment depuis qu’il a changé de groupe politique ?
+- Pourquoi a-t-il voté contre ce que demandait une partie de ses électeurs ?
+- Répond-il aux citoyens qui l’interrogent sur ses votes ?
+- Peut-on réellement “sanctionner” un député à l’élection suivante à cause de ses votes ?
+- Ce vote traduit-il une conviction personnelle ou une stratégie politique ?
+- Pourquoi deux députés du même groupe ont-ils voté à l’opposé ?
+- Est-ce une alliance ponctuelle entre groupes qui ne s’entendent pas d’habitude ?
+- Pourquoi était-il absent sur un texte présenté comme important ?
+- Combien de délégations de vote sont autorisées ?
+- Pourquoi voit-on parfois autant de sièges vides dans l’hémicycle ?
+- Comment calcule-t-on le taux de participation d’un député ?
+- Existe-t-il des sanctions financières en cas d’absences répétées ?
+- Mon député était-il en commission, en circonscription ou ailleurs pendant ce vote ?
+- Un ancien ministre redevenu député peut-il voter immédiatement ?
+- Pourquoi certains députés se déplacent surtout pour les votes solennels ?
+- Qui sont les députés les plus assidus sur les votes ?
+- L’absentéisme peut-il faire basculer le résultat d’un texte ?
+- Un vote peut-il être contesté s’il y a eu trop peu de députés présents ?
+- Qui décide qu’un vote sera public et nominatif ?
+- Pourquoi vote-t-on parfois un amendement avant l’article lui-même ?
+- À quel moment peut-on dire qu’une loi est vraiment adoptée ?
+- Pourquoi l’Assemblée doit-elle parfois revoter après le Sénat ?
+- Qu’est-ce que la navette parlementaire change concrètement au vote ?
+- Pourquoi certains votes ont-ils lieu tard le soir ou de nuit ?
+- Pourquoi ce texte n’a-t-il pas été soumis à un vote classique ?
+- Pourquoi un député peut-il refuser un texte sans voter la censure ?
+- Mon député a-t-il voté pour l’ensemble du texte mais contre un article clé ?
+- A-t-il déposé un amendement puis voté contre le texte final ?
+- Quels amendements ont été adoptés grâce à lui ?
+- A-t-il contribué à supprimer un article important ?
+- Pourquoi son amendement a-t-il été jugé irrecevable ?
+- Qu’est-ce qu’un sous-amendement et pourquoi est-ce important ?
+- Que se passe-t-il si la commission mixte paritaire change le texte ?
+- Mon député doit-il revoter après la commission mixte paritaire ?
+- Pourquoi l’Assemblée nationale a-t-elle parfois le dernier mot ?
+- Peut-il y avoir plusieurs votes différents sur le même sujet ?
+- Pourquoi faut-il souvent consulter plusieurs sites pour comprendre un vote ?
+- Peut-on avoir une fiche simple avec le vote et la justification du député ?
+- Qui garantit l’exactitude des données publiques sur les scrutins ?
+- Un député est-il obligé d’expliquer ses votes ?
+- Peut-on comparer facilement ses votes et ses déclarations dans les médias ?
+- Y a-t-il un risque de conflit d’intérêts sur ce texte ?
+- Les lobbys peuvent-ils influencer un vote parlementaire ?
+- Existe-t-il des sanctions si un député ment sur son vote ?
+- Qui contrôle l’éthique d’un député au-delà de ses prises de parole ?
+- Comment distinguer la communication politique de la réalité du scrutin ?
+- A-t-il soutenu un budget présenté sans majorité stable ?
+- A-t-il rejeté les recettes mais approuvé les dépenses ?
+- Pourquoi certains députés sont-ils absents lors des votes budgétaires ?
+- Quels groupes soutiennent ou rejettent presque toujours les budgets ?
+- Ce vote budgétaire avantage-t-il surtout une catégorie précise de Français ?
+- A-t-il voté pour conditionner certaines aides sociales ?
+- A-t-il soutenu l’indexation des pensions ou des salaires sur l’inflation ?
+- Comment a-t-il voté sur les heures supplémentaires défiscalisées ?
+- A-t-il soutenu le partage de la valeur, les primes ou l’intéressement ?
+- Son vote protège-t-il davantage les salariés, les employeurs ou les retraités ?
+- A-t-il voté sur la justice des mineurs ou l’aggravation des peines ?
+- Comment a-t-il voté sur la vidéosurveillance ou la surveillance numérique ?
+- A-t-il voté en faveur d’un texte antiterroriste ?
+- Son vote renforce-t-il la sécurité ou affaiblit-il les libertés ?
+- Vote-t-il pareil sur les sujets policiers et sur les sujets judiciaires ?
+- A-t-il voté sur l’IVG, la contraception ou les droits reproductifs ?
+- Comment a-t-il voté sur la laïcité ou le harcèlement scolaire ?
+- A-t-il voté sur l’inclusion des élèves en situation de handicap ?
+- Comment a-t-il voté sur les droits LGBT, la PMA ou l’égalité familiale ?
+- A-t-il soutenu des mesures sur la protection de l’enfance ?
+- Son vote améliore-t-il concrètement la vie quotidienne des familles ?
+- A-t-il soutenu la réautorisation de substances controversées ?
+- A-t-il voté contre des normes écologiques jugées trop contraignantes ?
+- A-t-il privilégié le ferroviaire, la route ou l’automobile dans ses votes ?
+- Comment a-t-il voté sur la protection des mineurs sur les réseaux sociaux ?
+- Son vote est-il plutôt pro-climat, pro-agriculteurs, pro-automobilistes ou pro-locataires ?
+- Vote-t-il toujours dans le même sens sur les textes liés à l’Union européenne ?
+- A-t-il soutenu un accord international contesté ?
+- A-t-il voté pour renforcer la souveraineté industrielle de la France ?
+- Vote-t-il pareil sur l’OTAN, l’Europe et le commerce international ?
+- Comment a-t-il voté sur une réforme institutionnelle ou constitutionnelle ?
+- A-t-il soutenu la proportionnelle ou d’autres réformes du mode de scrutin ?
+- Son vote institutionnel vise-t-il davantage la stabilité ou la représentation pluraliste ?
+- Où puis-je recevoir une alerte à chaque vote de mon député ?
+- Peut-on comparer automatiquement mes opinions à ses votes ?
+- Quels sites ou médias suivre pour vérifier les votes sans tomber dans la propagande ?
+- Comment repérer qu’un extrait viral coupe le contexte réel d’un vote ?
+- Quelle est la meilleure question à poser directement à mon député pour l’obliger à assumer ses votes ?
+- Quel est le taux de présence global de mon député lors des votes dans l'hémicycle ?
+- Mon député vote-t-il systématiquement selon les consignes de son parti politique ?
+- Sur quels textes mon député a-t-il voté contre son propre groupe parlementaire ("frondeur") ?
+- Comment savoir si mon député s'est abstenu ou s'il était absent lors d'un vote clé ?
+- Les votes par procuration sont-ils fréquents pour mon élu ?
+- Où puis-je trouver l'explication de vote de mon député sur un texte précis ?
+- Quel est le député de mon département qui vote le plus souvent avec la majorité ?
+- Mon député a-t-il déjà voté pour une motion de censure déposée par l'opposition ?
+- Pourquoi mon député a-t-il voté "pour" en commission mais "contre" en séance publique ?
+- Mon député a-t-il voté la levée de l'immunité parlementaire d'un de ses collègues ?
+- Comment mon député s'est-il positionné sur les sanctions disciplinaires au sein de l'Assemblée ?
+- Mon élu est-il souvent présent lors des votes de nuit ou le week-end ?
+- Existe-t-il un historique téléchargeable de tous les votes de mon député depuis 2022 ?
+- Comment les députés justifient-ils leurs absences lors de l'examen du budget ?
+- Mon député a-t-il cosigné une motion de rejet préalable récemment ?
+- Comment mon député a-t-il voté sur le blocage des prix des produits de première nécessité ?
+- Quel a été le vote de mon élu concernant la réforme des retraites (article par article) ?
+- Mon député a-t-il soutenu la mise en place d'une taxe sur les superprofits des grandes entreprises ?
+- Qui a voté pour ou contre la suppression de la redevance télévisuelle ?
+- Comment mon député s'est-il positionné sur la baisse de la TVA sur l'électricité et le carburant ?
+- Mon député a-t-il voté en faveur de l'augmentation du SMIC ?
+- Quel a été le vote de mon élu sur la réforme de l'assurance chômage (réduction de la durée d'indemnisation) ?
+- Mon député a-t-il soutenu le conditionnement du RSA à 15 heures d'activité ?
+- Comment les élus de ma région ont-ils voté sur la suppression de la CVAE (impôt de production pour les entreprises) ?
+- Mon député a-t-il approuvé le maintien du bouclier tarifaire sur l'énergie ?
+- Quel a été le vote concernant la taxation des dividendes et des rachats d'actions ?
+- Mon député a-t-il soutenu l'indexation des salaires sur l'inflation ?
+- Comment mon élu a-t-il voté sur les aides (CICE, subventions) accordées aux grandes entreprises ?
+- Mon député a-t-il voté pour le dernier budget de la Sécurité sociale (PLFSS) ?
+- Quel a été le vote de mon député sur l'augmentation du livret A ou l'épargne populaire ?
+- Comment mon député a-t-il voté sur l'interdiction des vols intérieurs en cas d'alternative en train ?
+- Mon élu a-t-il voté pour la loi d'accélération sur le nucléaire ?
+- Quel a été le vote de mon député concernant l'interdiction de l'usage du glyphosate ?
+- Mon député a-t-il soutenu l'interdiction ou l'encadrement des PFAS (polluants éternels) ?
+- Comment s'est positionné mon député sur le financement public du "plan vélo" ?
+- Mon élu a-t-il voté pour l'interdiction des "mégabassines" agricoles ?
+- Quel a été le vote sur l'objectif "Zéro Artificialisation Nette" (ZAN) des sols ?
+- Mon député a-t-il soutenu la surtaxe ou l'interdiction des jets privés ?
+- Comment mon élu a-t-il voté sur la mise en place des Zones à Faibles Émissions (ZFE) ?
+- Mon député a-t-il voté pour l'obligation de rénovation thermique des "passoires thermiques" (logements G et F) ?
+- Quel a été le vote sur la conditionnalité écologique des aides publiques aux entreprises ?
+- Mon élu a-t-il soutenu la loi d'orientation agricole récemment débattue ?
+- Comment mon député s'est-il positionné sur la protection de la biodiversité marine (ex: chalutage de fond) ?
+- Mon député a-t-il voté en faveur de l'augmentation du budget du ministère de la Transition écologique ?
+- Quel a été le vote concernant les subventions pour l'achat de véhicules électriques ?
+- Comment mon député a-t-il voté sur la dernière grande loi Asile et Immigration ?
+- Mon élu a-t-il soutenu l'allongement de la durée de rétention dans les CRA (Centres de Rétention Administrative) ?
+- Quel a été le vote de mon député sur la suppression du droit du sol à Mayotte ?
+- Mon député a-t-il voté pour la régularisation des travailleurs sans-papiers dans les métiers en tension ?
+- Comment s'est positionné mon élu sur l'augmentation du budget de la police (LOPMI) ?
+- Mon député a-t-il voté en faveur de la création de nouvelles places de prison ?
+- Quel a été le vote sur l'utilisation des drones et de la vidéosurveillance algorithmique par les forces de l'ordre ?
+- Mon élu a-t-il soutenu les peines planchers pour les agresseurs de forces de l'ordre ou de maires ?
+- Comment mon député a-t-il voté sur la loi durcissant les sanctions contre les squatteurs (Loi Kasbarian) ?
+- Mon député a-t-il voté pour la création du délit d'outrage en ligne ?
+- Quel a été le vote de mon élu concernant la garde à vue prolongée pour certains délits ?
+- Mon député a-t-il soutenu les mesures renforçant la lutte contre les violences intrafamiliales ?
+- Comment mon élu s'est-il positionné sur la pénalisation des clients de la prostitution ?
+- Mon député a-t-il voté pour l'augmentation des effectifs de magistrats ?
+- Quel a été le vote sur l'abaissement de la majorité pénale ?
+- Mon député a-t-il soutenu l'inscription de l'IVG (Interruption Volontaire de Grossesse) dans la Constitution ?
+- Comment mon élu a-t-il voté sur la loi concernant l'aide active à mourir (fin de vie) ?
+- Quel a été le vote de mon député sur la régulation de l'installation des médecins pour lutter contre les déserts médicaux ?
+- Mon député a-t-il voté pour la réintégration des soignants non-vaccinés contre le Covid-19 ?
+- Comment s'est positionné mon élu sur le remboursement intégral des fauteuils roulants ?
+- Mon député a-t-il soutenu la déconjugalisation de l'Allocation aux Adultes Handicapés (AAH) ?
+- Quel a été le vote sur la proposition de repas à 1 euro pour tous les étudiants ?
+- Mon élu a-t-il voté pour le port de l'uniforme ou de la tenue unique à l'école ?
+- Comment mon député a-t-il voté sur la hausse de la rémunération des enseignants ?
+- Mon député a-t-il voté en faveur de la gratuité des protections périodiques ?
+- Quel a été le vote de mon élu sur le contrôle strict des crèches privées (suite aux scandales récents) ?
+- Mon député a-t-il soutenu la réforme des bourses étudiantes ?
+- Comment s'est positionné mon élu sur l'allongement du congé paternité ?
+- Mon député a-t-il voté pour la création d'un congé menstruel en entreprise ?
+- Quel a été le vote concernant la loi "Grand âge et autonomie" pour les EHPAD ?
+- Combien de fois mon député a-t-il voté contre l'utilisation de l'article 49.3 par le gouvernement ?
+- Mon élu a-t-il soutenu l'instauration d'une dose de proportionnelle aux élections législatives ?
+- Quel a été le vote de mon député sur la prise en compte du vote blanc dans les suffrages exprimés ?
+- Mon député a-t-il voté en faveur du vote obligatoire ?
+- Comment mon élu s'est-il positionné sur l'élargissement du Référendum d'Initiative Partagée (RIP) ?
+- Mon député a-t-il soutenu la réduction du nombre de parlementaires (députés et sénateurs) ?
+- Quel a été le vote sur la limitation du cumul des mandats dans le temps (maximum de mandats consécutifs) ?
+- Mon élu a-t-il voté pour la suppression de la Cour de Justice de la République (CJR) ?
+- Comment mon député a-t-il voté concernant l'indépendance financière de l'audiovisuel public ?
+- Mon député a-t-il soutenu les propositions de loi visant à encadrer le recours aux cabinets de conseil privés par l'État ?
+- Quel a été le vote sur le financement et la transparence budgétaire des partis politiques ?
+- Mon élu a-t-il voté pour abaisser l'âge du droit de vote à 16 ans ?
+- Comment mon député s'est-il positionné sur la réforme du Conseil Économique, Social et Environnemental (CESE) ?
+- Comment mon député a-t-il voté sur l'accord bilatéral de sécurité et le soutien financier/militaire à l'Ukraine ?
+- Mon élu a-t-il soutenu la dernière Loi de Programmation Militaire (LPM) augmentant le budget des Armées ?
+- Quel a été le vote de mon député concernant les traités de libre-échange européens (CETA, Mercosur) ?
+- Mon député a-t-il voté en faveur de l'élargissement de l'Union européenne à de nouveaux pays ?
+- Comment s'est positionné mon élu sur les résolutions de l'Assemblée nationale concernant le conflit israélo-palestinien ?
+- Mon député a-t-il voté la résolution condamnant la politique de la Chine à l'égard des Ouïghours ?
+- Quel a été le vote de mon élu sur la sortie de la France du commandement intégré de l'OTAN ?
+- Mon député a-t-il soutenu le budget alloué à l'aide publique au développement pour les pays du Sud ?
+- Comment mon élu a-t-il voté sur le déploiement de forces ou d'instructeurs militaires français à l'étranger ?
+- Comment mon député a-t-il voté sur l'instauration d'une majorité numérique (15 ans) pour l'inscription sur les réseaux sociaux ?
+- Mon élu a-t-il soutenu la loi visant à sécuriser et réguler l'espace numérique (SREN) ?
+- Quel a été le vote de mon député sur l'encadrement strict des influenceurs et de leurs pratiques commerciales ?
+- Mon député a-t-il voté pour l'interdiction de l'application TikTok pour les fonctionnaires d'État ?
+- Comment s'est positionné mon élu sur le financement et la prolongation du Pass Culture pour les jeunes ?
+- Mon député a-t-il soutenu l'interdiction de la corrida sur le territoire français ?
+- Quel a été le vote de mon député concernant le bien-être animal (interdiction des colliers de dressage, fin de la vente de chiens en animalerie) ?
+- Mon élu a-t-il voté pour restreindre sévèrement le démarchage téléphonique ?
+- Comment mon député a-t-il voté sur le renforcement du statut et de la protection des lanceurs d'alerte ?
+- Mon député a-t-il soutenu l'encadrement des loyers dans les zones tendues ?
+- Quel a été le vote sur la limitation de l'implantation des "dark stores" et "dark kitchens" en ville ?
+- Mon élu a-t-il voté pour la reconnaissance de nouveaux droits ou statuts pour les travailleurs des plateformes (Uber, Deliveroo) ?
+- Comment mon député s'est-il positionné sur les réglementations françaises liées à l'Intelligence Artificielle ?
+- Comment [Nom du député] a-t-il/elle voté sur les ordonnances travail en 2017 ?
+- Pourquoi [Député A] a voté pour la réforme du marché du travail alors que [Député B] du même parti a voté contre ?
+- Quels arguments [Nom du député] a-t-il avancés pour justifier son vote contre la réforme du marché du travail ?
+- Quels impacts concrets le vote de [Nom du député] sur la réforme du marché du travail a-t-il eus pour les habitants de [circonscription] ?
+- Comment concilier le vote de [Nom du député] sur la réforme du marché du travail avec ses prises de position passées sur le sujet ?
+- Pourquoi [Nom du député] était-il absent lors du vote crucial sur la réforme du marché du travail ?
+- Quels amendements [Nom du député] a-t-il proposés ou soutenus sur la réforme du marché du travail ?
+- Est-ce que [Nom du député] a reçu des financements de [lobby/sectoriel] avant de voter sur la réforme du marché du travail ?
+- Son vote sur la réforme du marché du travail correspond-il aux positions de son parti ou à celles de ses donateurs ?
+- Comment [Nom du député] compte-t-il voter sur le prochain projet de loi sur la réforme du marché du travail ?
+- Quelle est sa position sur la réforme du marché du travail au regard de ses votes passés ?
+- En quoi le vote de [Nom du député] sur la réforme du marché du travail affecte-t-il spécifiquement [ville/département] ?
+- A-t-il consulté les acteurs locaux (maires, associations) avant de voter sur la réforme du marché du travail ?
+- En tant que rapporteur de la réforme du marché du travail, comment [Nom du député] a-t-il influencé le texte final ?
+- Quel a été son rôle dans les négociations sur [article controversé] de la réforme du marché du travail ?
+- Comment [Nom du député] a-t-il/elle voté sur la transformation de l'impôt de solidarité sur la fortune en impôt sur la fortune immobilière en 2017 ?
+- Pourquoi [Député A] a voté pour la réduction de l'impôt sur les sociétés alors que [Député B] du même parti a voté contre ?
+- Quels arguments [Nom du député] a-t-il avancés pour justifier son vote contre la réduction de l'impôt sur les sociétés ?
+- Quels impacts concrets le vote de [Nom du député] sur la réduction de l'impôt sur les sociétés a-t-il eus pour les habitants de [circonscription] ?
+- Comment concilier le vote de [Nom du député] sur la réduction de l'impôt sur les sociétés avec ses prises de position passées sur le sujet ?
+- Pourquoi [Nom du député] était-il absent lors du vote crucial sur la réduction de l'impôt sur les sociétés ?
+- Quels amendements [Nom du député] a-t-il proposés ou soutenus sur la réduction de l'impôt sur les sociétés ?
+- Est-ce que [Nom du député] a reçu des financements de [lobby/sectoriel] avant de voter sur la réduction de l'impôt sur les sociétés ?
+- Son vote sur la réduction de l'impôt sur les sociétés correspond-il aux positions de son parti ou à celles de ses donateurs ?
+- Comment [Nom du député] compte-t-il voter sur le prochain projet de loi sur la réduction de l'impôt sur les sociétés ?
+- Quelle est sa position sur la réduction de l'impôt sur les sociétés au regard de ses votes passés ?
+- En quoi le vote de [Nom du député] sur la réduction de l'impôt sur les sociétés affecte-t-il spécifiquement [ville/département] ?
+- A-t-il consulté les acteurs locaux (maires, associations) avant de voter sur la réduction de l'impôt sur les sociétés ?
+- En tant que rapporteur de la réduction de l'impôt sur les sociétés, comment [Nom du député] a-t-il influencé le texte final ?
+- Quel a été son rôle dans les négociations sur [article controversé] de la réduction de l'impôt sur les sociétés ?
+- Comment [Nom du député] a-t-il/elle voté sur les mesures d'urgences économiques et sociales en réponse au mouvement des Gilets jaunes en 2018 ?
+- Pourquoi [Député A] a voté pour les mesures d'urgences économiques et sociales alors que [Député B] du même parti a voté contre ?
+- Quels arguments [Nom du député] a-t-il avancés pour justifier son vote contre les mesures d'urgences économiques et sociales ?
+- Quels impacts concrets le vote de [Nom du député] sur les mesures d'urgences économiques et sociales a-t-il eus pour les habitants de [circonscription] ?
+- Comment concilier le vote de [Nom du député] sur les mesures d'urgences économiques et sociales avec ses prises de position passées sur le sujet ?
+- Pourquoi [Nom du député] était-il absent lors du vote crucial sur les mesures d'urgences économiques et sociales ?
+- Quels amendements [Nom du député] a-t-il proposés ou soutenus sur les mesures d'urgences économiques et sociales ?
+- Est-ce que [Nom du député] a reçu des financements de [lobby/sectoriel] avant de voter sur les mesures d'urgences économiques et sociales ?
+- Son vote sur les mesures d'urgences économiques et sociales correspond-il aux positions de son parti ou à celles de ses donateurs ?
+- Comment [Nom du député] compte-t-il voter sur le prochain projet de loi sur les mesures d'urgences économiques et sociales ?
+- Quelle est sa position sur les mesures d'urgences économiques et sociales au regard de ses votes passés ?
+- En quoi le vote de [Nom du député] sur les mesures d'urgences économiques et sociales affecte-t-il spécifiquement [ville/département] ?
+- A-t-il consulté les acteurs locaux (maires, associations) avant de voter sur les mesures d'urgences économiques et sociales ?
+- En tant que rapporteur des mesures d'urgences économiques et sociales, comment [Nom du député] a-t-il influencé le texte final ?
+- Quel a été son rôle dans les négociations sur [article controversé] des mesures d'urgences économiques et sociales ?
+- Comment [Nom du député] a-t-il/elle voté sur le plan de relance de l'économie à 100 milliards d'euros en 2020 ?
+- Pourquoi [Député A] a voté pour le plan de relance de l'économie alors que [Député B] du même parti a voté contre ?
+- Quels arguments [Nom du député] a-t-il avancés pour justifier son vote contre le plan de relance de l'économie ?
+- Quels impacts concrets le vote de [Nom du député] sur le plan de relance de l'économie a-t-il eus pour les habitants de [circonscription] ?
+- Comment concilier le vote de [Nom du député] sur le plan de relance de l'économie avec ses prises de position passées sur le sujet ?
+- Pourquoi [Nom du député] était-il absent lors du vote crucial sur le plan de relance de l'économie ?
+- Quels amendements [Nom du député] a-t-il proposés ou soutenus sur le plan de relance de l'économie ?
+- Est-ce que [Nom du député] a reçu des financements de [lobby/sectoriel] avant de voter sur le plan de relance de l'économie ?
+- Son vote sur le plan de relance de l'économie correspond-il aux positions de son parti ou à celles de ses donateurs ?
+- Comment [Nom du député] compte-t-il voter sur le prochain projet de loi sur le plan de relance de l'économie ?
+- Quelle est sa position sur le plan de relance de l'économie au regard de ses votes passés ?
+- En quoi le vote de [Nom du député] sur le plan de relance de l'économie affecte-t-il spécifiquement [ville/département] ?
+- A-t-il consulté les acteurs locaux (maires, associations) avant de voter sur le plan de relance de l'économie ?
+- En tant que rapporteur du plan de relance de l'économie, comment [Nom du député] a-t-il influencé le texte final ?
+- Quel a été son rôle dans les négociations sur [article controversé] du plan de relance de l'économie ?
+- Comment [Nom du député] a-t-il/elle voté sur le passe sanitaire et vaccinal en 2021 ?
+- Pourquoi [Député A] a voté pour le passe sanitaire et vaccinal alors que [Député B] du même parti a voté contre ?
+- Quels arguments [Nom du député] a-t-il avancés pour justifier son vote contre le passe sanitaire et vaccinal ?
+- Quels impacts concrets le vote de [Nom du député] sur le passe sanitaire et vaccinal a-t-il eus pour les habitants de [circonscription] ?
+- Comment concilier le vote de [Nom du député] sur le passe sanitaire et vaccinal avec ses prises de position passées sur le sujet ?
+- Pourquoi [Nom du député] était-il absent lors du vote crucial sur le passe sanitaire et vaccinal ?
+- Quels amendements [Nom du député] a-t-il proposés ou soutenus sur le passe sanitaire et vaccinal ?
+- Est-ce que [Nom du député] a reçu des financements de [lobby/sectoriel] avant de voter sur le passe sanitaire et vaccinal ?
+- Son vote sur le passe sanitaire et vaccinal correspond-il aux positions de son parti ou à celles de ses donateurs ?
+- Comment [Nom du député] compte-t-il voter sur le prochain projet de loi sur le passe sanitaire et vaccinal ?
+- Quelle est sa position sur le passe sanitaire et vaccinal au regard de ses votes passés ?
+- En quoi le vote de [Nom du député] sur le passe sanitaire et vaccinal affecte-t-il spécifiquement [ville/département] ?
+- A-t-il consulté les acteurs locaux (maires, associations) avant de voter sur le passe sanitaire et vaccinal ?
+- En tant que rapporteur du passe sanitaire et vaccinal, comment [Nom du député] a-t-il influencé le texte final ?
+- Quel a été son rôle dans les négociations sur [article controversé] du passe sanitaire et vaccinal ?
+- Comment [Nom du député] a-t-il/elle voté sur la mise en place de Parcoursup en 2018 ?
+- Pourquoi [Député A] a voté pour la mise en place de Parcoursup alors que [Député B] du même parti a voté contre ?
+- Quels arguments [Nom du député] a-t-il avancés pour justifier son vote contre la mise en place de Parcoursup ?
+- Quels impacts concrets le vote de [Nom du député] sur la mise en place de Parcoursup a-t-il eus pour les habitants de [circonscription] ?
+- Comment concilier le vote de [Nom du député] sur la mise en place de Parcoursup avec ses prises de position passées sur le sujet ?
+- Pourquoi [Nom du député] était-il absent lors du vote crucial sur la mise en place de Parcoursup ?
+- Quels amendements [Nom du député] a-t-il proposés ou soutenus sur la mise en place de Parcoursup ?
+- Est-ce que [Nom du député] a reçu des financements de [lobby/sectoriel] avant de voter sur la mise en place de Parcoursup ?
+- Son vote sur la mise en place de Parcoursup correspond-il aux positions de son parti ou à celles de ses donateurs ?
+- Comment [Nom du député] compte-t-il voter sur le prochain projet de loi sur la mise en place de Parcoursup ?
+- Quelle est sa position sur la mise en place de Parcoursup au regard de ses votes passés ?
+- En quoi le vote de [Nom du député] sur la mise en place de Parcoursup affecte-t-il spécifiquement [ville/département] ?
+- A-t-il consulté les acteurs locaux (maires, associations) avant de voter sur la mise en place de Parcoursup ?
+- En tant que rapporteur de la mise en place de Parcoursup, comment [Nom du député] a-t-il influencé le texte final ?
+- Quel a été son rôle dans les négociations sur [article controversé] de la mise en place de Parcoursup ?
+- Comment [Nom du député] a-t-il/elle voté sur la réforme du bac en 2018 ?
+- Pourquoi [Député A] a voté pour la réforme du bac alors que [Député B] du même parti a voté contre ?
+- Quels arguments [Nom du député] a-t-il avancés pour justifier son vote contre la réforme du bac ?
+- Quels impacts concrets le vote de [Nom du député] sur la réforme du bac a-t-il eus pour les habitants de [circonscription] ?
+- Comment concilier le vote de [Nom du député] sur la réforme du bac avec ses prises de position passées sur le sujet ?
+- Pourquoi [Nom du député] était-il absent lors du vote crucial sur la réforme du bac ?
+- Quels amendements [Nom du député] a-t-il proposés ou soutenus sur la réforme du bac ?
+- Est-ce que [Nom du député] a reçu des financements de [lobby/sectoriel] avant de voter sur la réforme du bac ?
+- Son vote sur la réforme du bac correspond-il aux positions de son parti ou à celles de ses donateurs ?
+- Comment [Nom du député] compte-t-il voter sur le prochain projet de loi sur la réforme du bac ?
+- Quelle est sa position sur la réforme du bac au regard de ses votes passés ?
+- En quoi le vote de [Nom du député] sur la réforme du bac affecte-t-il spécifiquement [ville/département] ?
+- A-t-il consulté les acteurs locaux (maires, associations) avant de voter sur la réforme du bac ?
+- En tant que rapporteur de la réforme du bac, comment [Nom du député] a-t-il influencé le texte final ?
+- Quel a été son rôle dans les négociations sur [article controversé] de la réforme du bac ?
+- Comment [Nom du député] a-t-il/elle voté sur l'interdiction des téléphones portables à l'école et au collège en 2018 ?
+- Pourquoi [Député A] a voté pour l'interdiction des téléphones portables à l'école et au collège alors que [Député B] du même parti a voté contre ?
+- Quels arguments [Nom du député] a-t-il avancés pour justifier son vote contre l'interdiction des téléphones portables à l'école et au collège ?
+- Quels impacts concrets le vote de [Nom du député] sur l'interdiction des téléphones portables à l'école et au collège a-t-il eus pour les habitants de [circonscription] ?
+- Comment concilier le vote de [Nom du député] sur l'interdiction des téléphones portables à l'école et au collège avec ses prises de position passées sur le sujet ?
+- Pourquoi [Nom du député] était-il absent lors du vote crucial sur l'interdiction des téléphones portables à l'école et au collège ?
+- Quels amendements [Nom du député] a-t-il proposés ou soutenus sur l'interdiction des téléphones portables à l'école et au collège ?
+- Est-ce que [Nom du député] a reçu des financements de [lobby/sectoriel] avant de voter sur l'interdiction des téléphones portables à l'école et au collège ?
+- Son vote sur l'interdiction des téléphones portables à l'école et au collège correspond-il aux positions de son parti ou à celles de ses donateurs ?
+- Comment [Nom du député] compte-t-il voter sur le prochain projet de loi sur l'interdiction des téléphones portables à l'école et au collège ?
+- Quelle est sa position sur l'interdiction des téléphones portables à l'école et au collège au regard de ses votes passés ?
+- En quoi le vote de [Nom du député] sur l'interdiction des téléphones portables à l'école et au collège affecte-t-il spécifiquement [ville/département] ?
+- A-t-il consulté les acteurs locaux (maires, associations) avant de voter sur l'interdiction des téléphones portables à l'école et au collège ?
+- En tant que rapporteur de l'interdiction des téléphones portables à l'école et au collège, comment [Nom du député] a-t-il influencé le texte final ?
+- Quel a été son rôle dans les négociations sur [article controversé] de l'interdiction des téléphones portables à l'école et au collège ?
+- Comment [Nom du député] a-t-il/elle voté sur la loi climat et résilience en 2021 ?
+- Pourquoi [Député A] a voté pour la loi climat et résilience alors que [Député B] du même parti a voté contre ?
+- Quels arguments [Nom du député] a-t-il avancés pour justifier son vote contre la loi climat et résilience ?
+- Quels impacts concrets le vote de [Nom du député] sur la loi climat et résilience a-t-il eus pour les habitants de [circonscription] ?
+- Comment concilier le vote de [Nom du député] sur la loi climat et résilience avec ses prises de position passées sur le sujet ?
+- Pourquoi [Nom du député] était-il absent lors du vote crucial sur la loi climat et résilience ?
+- Quels amendements [Nom du député] a-t-il proposés ou soutenus sur la loi climat et résilience ?
+- Est-ce que [Nom du député] a reçu des financements de [lobby/sectoriel] avant de voter sur la loi climat et résilience ?
+- Son vote sur la loi climat et résilience correspond-il aux positions de son parti ou à celles de ses donateurs ?
+- Comment [Nom du député] compte-t-il voter sur le prochain projet de loi sur la loi climat et résilience ?
+- Quelle est sa position sur la loi climat et résilience au regard de ses votes passés ?
+- En quoi le vote de [Nom du député] sur la loi climat et résilience affecte-t-il spécifiquement [ville/département] ?
+- A-t-il consulté les acteurs locaux (maires, associations) avant de voter sur la loi climat et résilience ?
+- En tant que rapporteur de la loi climat et résilience, comment [Nom du député] a-t-il influencé le texte final ?
+- Quel a été son rôle dans les négociations sur [article controversé] de la loi climat et résilience ?
+- Comment [Nom du député] a-t-il/elle voté sur l'interdiction progressive de la location des passoires thermiques en 2021 ?
+- Pourquoi [Député A] a voté pour l'interdiction progressive de la location des passoires thermiques alors que [Député B] du même parti a voté contre ?
+- Quels arguments [Nom du député] a-t-il avancés pour justifier son vote contre l'interdiction progressive de la location des passoires thermiques ?
+- Quels impacts concrets le vote de [Nom du député] sur l'interdiction progressive de la location des passoires thermiques a-t-il eus pour les habitants de [circonscription] ?
+- Comment concilier le vote de [Nom du député] sur l'interdiction progressive de la location des passoires thermiques avec ses prises de position passées sur le sujet ?
+- Pourquoi [Nom du député] était-il absent lors du vote crucial sur l'interdiction progressive de la location des passoires thermiques ?
+- Quels amendements [Nom du député] a-t-il proposés ou soutenus sur l'interdiction progressive de la location des passoires thermiques ?
+- Est-ce que [Nom du député] a reçu des financements de [lobby/sectoriel] avant de voter sur l'interdiction progressive de la location des passoires thermiques ?
+- Son vote sur l'interdiction progressive de la location des passoires thermiques correspond-il aux positions de son parti ou à celles de ses donateurs ?
+- Comment [Nom du député] compte-t-il voter sur le prochain projet de loi sur l'interdiction progressive de la location des passoires thermiques ?
+- Quelle est sa position sur l'interdiction progressive de la location des passoires thermiques au regard de ses votes passés ?
+- En quoi le vote de [Nom du député] sur l'interdiction progressive de la location des passoires thermiques affecte-t-il spécifiquement [ville/département] ?
+- A-t-il consulté les acteurs locaux (maires, associations) avant de voter sur l'interdiction progressive de la location des passoires thermiques ?
+- En tant que rapporteur de l'interdiction progressive de la location des passoires thermiques, comment [Nom du député] a-t-il influencé le texte final ?
+- Quel a été son rôle dans les négociations sur [article controversé] de l'interdiction progressive de la location des passoires thermiques ?
+- Comment [Nom du député] a-t-il/elle voté sur la mise en place expérimentale d'un score carbone en 2021 ?
+- Pourquoi [Député A] a voté pour la mise en place expérimentale d'un score carbone alors que [Député B] du même parti a voté contre ?
+- Quels arguments [Nom du député] a-t-il avancés pour justifier son vote contre la mise en place expérimentale d'un score carbone ?
+- Quels impacts concrets le vote de [Nom du député] sur la mise en place expérimentale d'un score carbone a-t-il eus pour les habitants de [circonscription] ?
+- Comment concilier le vote de [Nom du député] sur la mise en place expérimentale d'un score carbone avec ses prises de position passées sur le sujet ?
+- Pourquoi [Nom du député] était-il absent lors du vote crucial sur la mise en place expérimentale d'un score carbone ?
+- Quels amendements [Nom du député] a-t-il proposés ou soutenus sur la mise en place expérimentale d'un score carbone ?
+- Est-ce que [Nom du député] a reçu des financements de [lobby/sectoriel] avant de voter sur la mise en place expérimentale d'un score carbone ?
+- Son vote sur la mise en place expérimentale d'un score carbone correspond-il aux positions de son parti ou à celles de ses donateurs ?
+- Comment [Nom du député] compte-t-il voter sur le prochain projet de loi sur la mise en place expérimentale d'un score carbone ?
+- Quelle est sa position sur la mise en place expérimentale d'un score carbone au regard de ses votes passés ?
+- En quoi le vote de [Nom du député] sur la mise en place expérimentale d'un score carbone affecte-t-il spécifiquement [ville/département] ?
+- A-t-il consulté les acteurs locaux (maires, associations) avant de voter sur la mise en place expérimentale d'un score carbone ?
+- En tant que rapporteur de la mise en place expérimentale d'un score carbone, comment [Nom du député] a-t-il influencé le texte final ?
+- Quel a été son rôle dans les négociations sur [article controversé] de la mise en place expérimentale d'un score carbone ?
+- Comment [Nom du député] a-t-il/elle voté sur la réforme constitutionnelle en 2018 ?
+- Pourquoi [Député A] a voté pour la réforme constitutionnelle alors que [Député B] du même parti a voté contre ?
+- Quels arguments [Nom du député] a-t-il avancés pour justifier son vote contre la réforme constitutionnelle ?
+- Quels impacts concrets le vote de [Nom du député] sur la réforme constitutionnelle a-t-il eus pour les habitants de [circonscription] ?
+- Comment concilier le vote de [Nom du député] sur la réforme constitutionnelle avec ses prises de position passées sur le sujet ?
+- Pourquoi [Nom du député] était-il absent lors du vote crucial sur la réforme constitutionnelle ?
+- Quels amendements [Nom du député] a-t-il proposés ou soutenus sur la réforme constitutionnelle ?
+- Est-ce que [Nom du député] a reçu des financements de [lobby/sectoriel] avant de voter sur la réforme constitutionnelle ?
+- Son vote sur la réforme constitutionnelle correspond-il aux positions de son parti ou à celles de ses donateurs ?
+- Comment [Nom du député] compte-t-il voter sur le prochain projet de loi sur la réforme constitutionnelle ?
+- Quelle est sa position sur la réforme constitutionnelle au regard de ses votes passés ?
+- En quoi le vote de [Nom du député] sur la réforme constitutionnelle affecte-t-il spécifiquement [ville/département] ?
+- A-t-il consulté les acteurs locaux (maires, associations) avant de voter sur la réforme constitutionnelle ?
+- En tant que rapporteur de la réforme constitutionnelle, comment [Nom du député] a-t-il influencé le texte final ?
+- Quel a été son rôle dans les négociations sur [article controversé] de la réforme constitutionnelle ?
+- Comment [Nom du député] a-t-il/elle voté sur la loi anti-casseurs en 2019 ?
+- Pourquoi [Député A] a voté pour la loi anti-casseurs alors que [Député B] du même parti a voté contre ?
+- Quels arguments [Nom du député] a-t-il avancés pour justifier son vote contre la loi anti-casseurs ?
+- Quels impacts concrets le vote de [Nom du député] sur la loi anti-casseurs a-t-il eus pour les habitants de [circonscription] ?
+- Comment concilier le vote de [Nom du député] sur la loi anti-casseurs avec ses prises de position passées sur le sujet ?
+- Pourquoi [Nom du député] était-il absent lors du vote crucial sur la loi anti-casseurs ?
+- Quels amendements [Nom du député] a-t-il proposés ou soutenus sur la loi anti-casseurs ?
+- Est-ce que [Nom du député] a reçu des financements de [lobby/sectoriel] avant de voter sur la loi anti-casseurs ?
+- Son vote sur la loi anti-casseurs correspond-il aux positions de son parti ou à celles de ses donateurs ?
+- Comment [Nom du député] compte-t-il voter sur le prochain projet de loi sur la loi anti-casseurs ?
+- Quelle est sa position sur la loi anti-casseurs au regard de ses votes passés ?
+- En quoi le vote de [Nom du député] sur la loi anti-casseurs affecte-t-il spécifiquement [ville/département] ?
+- A-t-il consulté les acteurs locaux (maires, associations) avant de voter sur la loi anti-casseurs ?
+- En tant que rapporteur de la loi anti-casseurs, comment [Nom du député] a-t-il influencé le texte final ?
+- Quel a été son rôle dans les négociations sur [article controversé] de la loi anti-casseurs ?
+- Comment [Nom du député] a-t-il/elle voté sur la loi sur la prévention du terrorisme et au renseignement en 2021 ?
+- Pourquoi [Député A] a voté pour la loi sur la prévention du terrorisme et au renseignement alors que [Député B] du même parti a voté contre ?
+- Quels arguments [Nom du député] a-t-il avancés pour justifier son vote contre la loi sur la prévention du terrorisme et au renseignement ?
+- Quels impacts concrets le vote de [Nom du député] sur la loi sur la prévention du terrorisme et au renseignement a-t-il eus pour les habitants de [circonscription] ?
+- Comment concilier le vote de [Nom du député] sur la loi sur la prévention du terrorisme et au renseignement avec ses prises de position passées sur le sujet ?
+- Pourquoi [Nom du député] était-il absent lors du vote crucial sur la loi sur la prévention du terrorisme et au renseignement ?
+- Quels amendements [Nom du député] a-t-il proposés ou soutenus sur la loi sur la prévention du terrorisme et au renseignement ?
+- Est-ce que [Nom du député] a reçu des financements de [lobby/sectoriel] avant de voter sur la loi sur la prévention du terrorisme et au renseignement ?
+- Son vote sur la loi sur la prévention du terrorisme et au renseignement correspond-il aux positions de son parti ou à celles de ses donateurs ?
+- Comment [Nom du député] compte-t-il voter sur le prochain projet de loi sur la prévention du terrorisme et au renseignement ?
+- Quelle est sa position sur la loi sur la prévention du terrorisme et au renseignement au regard de ses votes passés ?
+- En quoi le vote de [Nom du député] sur la loi sur la prévention du terrorisme et au renseignement affecte-t-il spécifiquement [ville/département] ?
+- A-t-il consulté les acteurs locaux (maires, associations) avant de voter sur la loi sur la prévention du terrorisme et au renseignement ?
+- En tant que rapporteur de la loi sur la prévention du terrorisme et au renseignement, comment [Nom du député] a-t-il influencé le texte final ?
+- Quel a été son rôle dans les négociations sur [article controversé] de la loi sur la prévention du terrorisme et au renseignement ?
+- Comment [Nom du député] a-t-il/elle voté sur les mesures sanitaires en réponse à la crise du COVID-19 en 2020 ?
+- Pourquoi [Député A] a voté pour les mesures sanitaires alors que [Député B] du même parti a voté contre ?
+- Quels arguments [Nom du député] a-t-il avancés pour justifier son vote contre les mesures sanitaires ?
+- Quels impacts concrets le vote de [Nom du député] sur les mesures sanitaires a-t-il eus pour les habitants de [circonscription] ?
+- Comment concilier le vote de [Nom du député] sur les mesures sanitaires avec ses prises de position passées sur le sujet ?
+- Pourquoi [Nom du député] était-il absent lors du vote crucial sur les mesures sanitaires ?
+- Quels amendements [Nom du député] a-t-il proposés ou soutenus sur les mesures sanitaires ?
+- Est-ce que [Nom du député] a reçu des financements de [lobby/sectoriel] avant de voter sur les mesures sanitaires ?
+- Son vote sur les mesures sanitaires correspond-il aux positions de son parti ou à celles de ses donateurs ?
+- Comment [Nom du député] compte-t-il voter sur le prochain projet de loi sur les mesures sanitaires ?
+- Quelle est sa position sur les mesures sanitaires au regard de ses votes passés ?
+- En quoi le vote de [Nom du député] sur les mesures sanitaires affecte-t-il spécifiquement [ville/département] ?
+- A-t-il consulté les acteurs locaux (maires, associations) avant de voter sur les mesures sanitaires ?
+- En tant que rapporteur des mesures sanitaires, comment [Nom du député] a-t-il influencé le texte final ?
+- Quel a été son rôle dans les négociations sur [article controversé] des mesures sanitaires ?
+- Comment [Nom du député] a-t-il/elle voté sur la réforme de l'assurance chômage en 2020 ?
+- Pourquoi [Député A] a voté pour la réforme de l'assurance chômage alors que [Député B] du même parti a voté contre ?
+- Quels arguments [Nom du député] a-t-il avancés pour justifier son vote contre la réforme de l'assurance chômage ?
+- Quels impacts concrets le vote de [Nom du député] sur la réforme de l'assurance chômage a-t-il eus pour les habitants de [circonscription] ?
+- Comment concilier le vote de [Nom du député] sur la réforme de l'assurance chômage avec ses prises de position passées sur le sujet ?
+- Pourquoi [Nom du député] était-il absent lors du vote crucial sur la réforme de l'assurance chômage ?
+- Quels amendements [Nom du député] a-t-il proposés ou soutenus sur la réforme de l'assurance chômage ?
+- Est-ce que [Nom du député] a reçu des financements de [lobby/sectoriel] avant de voter sur la réforme de l'assurance chômage ?
+- Son vote sur la réforme de l'assurance chômage correspond-il aux positions de son parti ou à celles de ses donateurs ?
+- Comment [Nom du député] compte-t-il voter sur le prochain projet de loi sur la réforme de l'assurance chômage ?
+- Quelle est sa position sur la réforme de l'assurance chômage au regard de ses votes passés ?
+- En quoi le vote de [Nom du député] sur la réforme de l'assurance chômage affecte-t-il spécifiquement [ville/département] ?
+- A-t-il consulté les acteurs locaux (maires, associations) avant de voter sur la réforme de l'assurance chômage ?
+- En tant que rapporteur de la réforme de l'assurance chômage, comment [Nom du député] a-t-il influencé le texte final ?
+- Quel a été son rôle dans les négociations sur [article controversé] de la réforme de l'assurance chômage ?
+- Comment [Nom du député] a-t-il/elle voté sur le cadre financier pluriannuel de l'Union européenne en 2018 ?
+- Pourquoi [Député A] a voté pour le cadre financier pluriannuel de l'Union européenne alors que [Député B] du même parti a voté contre ?
+- Quels arguments [Nom du député] a-t-il avancés pour justifier son vote contre le cadre financier pluriannuel de l'Union européenne ?
+- Quels impacts concrets le vote de [Nom du député] sur le cadre financier pluriannuel de l'Union européenne a-t-il eus pour les habitants de [circonscription] ?
+- Comment concilier le vote de [Nom du député] sur le cadre financier pluriannuel de l'Union européenne avec ses prises de position passées sur le sujet ?
+- Pourquoi [Nom du député] était-il absent lors du vote crucial sur le cadre financier pluriannuel de l'Union européenne ?
+- Quels amendements [Nom du député] a-t-il proposés ou soutenus sur le cadre financier pluriannuel de l'Union européenne ?
+- Est-ce que [Nom du député] a reçu des financements de [lobby/sectoriel] avant de voter sur le cadre financier pluriannuel de l'Union européenne ?
+- Son vote sur le cadre financier pluriannuel de l'Union européenne correspond-il aux positions de son parti ou à celles de ses donateurs ?
+- Comment [Nom du député] compte-t-il voter sur le prochain projet de loi sur le cadre financier pluriannuel de l'Union européenne ?
+- Quelle est sa position sur le cadre financier pluriannuel de l'Union européenne au regard de ses votes passés ?
+- En quoi le vote de [Nom du député] sur le cadre financier pluriannuel de l'Union européenne affecte-t-il spécifiquement [ville/département] ?
+- A-t-il consulté les acteurs locaux (maires, associations) avant de voter sur le cadre financier pluriannuel de l'Union européenne ?
+- En tant que rapporteur du cadre financier pluriannuel de l'Union européenne, comment [Nom du député] a-t-il influencé le texte final ?
+- Quel a été son rôle dans les négociations sur [article controversé] du cadre financier pluriannuel de l'Union européenne ?
+- Comment [Nom du député] a-t-il/elle voté sur la consultation citoyenne sur l'abstention et la participation électorale en 2021 ?
+- Pourquoi [Député A] a voté pour la consultation citoyenne sur l'abstention et la participation électorale alors que [Député B] du même parti a voté contre ?
+- Quels arguments [Nom du député] a-t-il avancés pour justifier son vote contre la consultation citoyenne sur l'abstention et la participation électorale ?
+- Quels impacts concrets le vote de [Nom du député] sur la consultation citoyenne sur l'abstention et la participation électorale a-t-il eus pour les habitants de [circonscription] ?
+- Comment concilier le vote de [Nom du député] sur la consultation citoyenne sur l'abstention et la participation électorale avec ses prises de position passées sur le sujet ?
+- Pourquoi [Nom du député] était-il absent lors du vote crucial sur la consultation citoyenne sur l'abstention et la participation électorale ?
+- Quels amendements [Nom du député] a-t-il proposés ou soutenus sur la consultation citoyenne sur l'abstention et la participation électorale ?
+- Est-ce que [Nom du député] a reçu des financements de [lobby/sectoriel] avant de voter sur la consultation citoyenne sur l'abstention et la participation électorale ?
+- Son vote sur la consultation citoyenne sur l'abstention et la participation électorale correspond-il aux positions de son parti ou à celles de ses donateurs ?
+- Comment [Nom du député] compte-t-il voter sur le prochain projet de loi sur la consultation citoyenne sur l'abstention et la participation électorale ?
+- Quelle est sa position sur la consultation citoyenne sur l'abstention et la participation électorale au regard de ses votes passés ?
+- En quoi le vote de [Nom du député] sur la consultation citoyenne sur l'abstention et la participation électorale affecte-t-il spécifiquement [ville/département] ?
+- A-t-il consulté les acteurs locaux (maires, associations) avant de voter sur la consultation citoyenne sur l'abstention et la participation électorale ?
+- En tant que rapporteur de la consultation citoyenne sur l'abstention et la participation électorale, comment [Nom du député] a-t-il influencé le texte final ?
+- Quel a été son rôle dans les négociations sur [article controversé] de la consultation citoyenne sur l'abstention et la participation électorale ?
+- Pourquoi avez vous voté pour ou contre la réforme des retraites à 64 ans ?
+- Avez vous voté pour augmenter le SMIC ou pour le maintenir au même niveau ?
+- Pourquoi avez vous voté pour ou contre la suppression de la retraite à 60 ans pour les carrières longues ?
+- Avez vous voté pour ou contre la hausse des pensions pour les retraités modestes ?
+- Pourquoi avez vous voté pour ou contre la hausse des cotisations sociales ?
+- Avez vous voté pour des mesures de pouvoir d’achat (prime inflation, chèques énergie, etc.) ou les avez vous rejetées ?
+- Pourquoi avez vous voté pour ou contre la baisse d’impôts sur les revenus les plus élevés ?
+- Avez vous voté pour des mesures pour protéger les travailleurs précaires ou les indépendants ?
+- Pourquoi avez vous voté pour ou contre la hausse de la CSG sur les retraites ?
+- Avez vous voté pour des mesures pour lutter contre la précarité ou pour durcir les contrôles sur les allocations ?
+- Pourquoi avez vous voté pour ou contre la suppression de la taxe d’habitation sur les logements secondaires ?
+- Avez vous voté pour des mesures d’encadrement des loyers ou pour les affaiblir ?
+- Pourquoi avez vous voté pour ou contre la hausse du minimum vieillesse ?
+- Avez vous voté pour des incitations à l’emploi des seniors ou pour des mesures de préretraite ?
+- Pourquoi avez vous voté pour ou contre la création d’un revenu universel d’activité ?
+- Pourquoi avez vous voté pour ou contre la baisse de l’IS sur les grandes entreprises ?
+- Avez vous voté pour la suppression de l’ISF ou pour son rétablissement ?
+- Pourquoi avez vous voté pour ou contre la hausse de la taxation sur les dividendes ?
+- Avez vous voté pour des mesures contre l’évasion fiscale ou les cadeaux fiscaux aux très riches ?
+- Pourquoi avez vous voté pour ou contre la hausse de la TVA sur certains produits de première nécessité ?
+- Avez vous voté pour des mesures contre les niches fiscales ou pour les multiplier ?
+- Pourquoi avez vous voté pour ou contre la hausse de la contribution sociale sur les revenus du capital ?
+- Avez vous voté pour ou contre des mesures visant à pénaliser les entreprises qui délocalisent ?
+- Pourquoi avez vous voté pour ou contre la réduction de l’impôt sur les sociétés ?
+- Avez vous voté pour des mesures pour protéger les PME ou favoriser les grandes entreprises ?
+- Pourquoi avez vous voté pour ou contre la loi sur l’immigration de 2024 ?
+- Avez vous voté pour des mesures durcissant l’accès au droit du sol ou au regroupement familial ?
+- Pourquoi avez vous voté pour ou contre la réduction des droits d’asile pour les demandeurs d’asile ?
+- Avez vous voté pour des mesures facilitant ou rendant plus difficiles les expulsions ?
+- Pourquoi avez vous voté pour ou contre l’extension des centres de rétention ?
+- Avez vous voté pour des mesures renforçant les contrôles d’identité ou pour les limiter ?
+- Pourquoi avez vous voté pour ou contre le renforcement des pouvoirs de la police et de la gendarmerie ?
+- Avez vous voté pour des mesures de sécurité dans les quartiers ou pour des politiques de prévention ?
+- Pourquoi avez vous voté pour ou contre la création de nouvelles lois sur le terrorisme et la surveillance ?
+- Avez vous voté pour des mesures de répression sociale ou pour des politiques sociales de prévention ?
+- Pourquoi avez vous voté pour ou contre la loi sur le climat et la résilience ?
+- Avez vous voté pour des mesures contraignantes sur les émissions de gaz à effet de serre ou pour les affaiblir ?
+- Pourquoi avez vous voté pour ou contre la sortie progressive du nucléaire ?
+- Avez vous voté pour des mesures pour lutter contre les pesticides ou pour les protéger ?
+- Pourquoi avez vous voté pour ou contre la limitation des vitesses sur les routes ?
+- Avez vous voté pour des mesures de protection des zones naturelles ou pour les détruire pour des projets immobiliers/hydrauliques ?
+- Pourquoi avez vous voté pour ou contre les subventions aux énergies fossiles ?
+- Avez vous voté pour ou contre des mesures pour conforter le nucléaire comme pilier énergétique ?
+- Pourquoi avez vous voté pour ou contre la loi contre le gaspillage alimentaire ?
+- Avez vous voté pour des mesures de transition écologique dans le bâtiment ou les transports ?
+- Pourquoi avez vous voté pour ou contre la réforme de l’hôpital et la coupe budgétaire ?
+- Avez vous voté pour augmenter les salaires des soignants ou pour les maintenir ?
+- Pourquoi avez vous voté pour ou contre la fermeture de certains hôpitaux ou services de maternité ?
+- Avez vous voté pour des mesures pour recruter des médecins dans les zones désertifiées ou pour les laisser se dégrader ?
+- Pourquoi avez vous voté pour ou contre la hausse des remboursements des soins pour les personnes âgées ?
+- Avez vous voté pour des mesures de prévention des maladies ou pour les négliger au profit du traitement curatif ?
+- Pourquoi avez vous voté pour ou contre la réforme de la carte de santé et des droits des patients ?
+- Avez vous voté pour ou contre des mesures pour protéger les soignants face à la violence ?
+- Pourquoi avez vous voté pour ou contre des mesures pour mieux encadrer les complémentaires santé ?
+- Avez vous voté pour des mesures pour lutter contre les inégalités territoriales en santé ?
+- Pourquoi avez vous voté pour ou contre la réforme de l’éducation nationale et la réduction d’enseignants ?
+- Avez vous voté pour augmenter le budget de l’école ou pour le baisser ?
+- Pourquoi avez vous voté pour ou contre la hausse des frais d’inscription à l’université ?
+- Avez vous voté pour des mesures pour réduire les inégalités scolaires ou pour les laisser perdurer ?
+- Pourquoi avez vous voté pour ou contre la suppression de certaines classes ou postes ?
+- Avez vous voté pour ou contre des mesures pour renforcer l’inclusion des élèves en situation de handicap ?
+- Pourquoi avez vous voté pour ou contre des mesures pour mieux encadrer l’enseignement à distance ?
+- Avez vous voté pour des mesures pour protéger les enseignants ou pour les pénaliser en cas de grève ?
+- Pourquoi avez vous voté pour ou contre des mesures pour lutter contre le harcèlement scolaire ?
+- Avez vous voté pour ou contre des mesures pour renforcer la formation des enseignants ?
+- Pourquoi avez vous voté pour ou contre la loi sur le logement abordable ?
+- Avez vous voté pour des mesures pour lutter contre les expulsions locatives ou pour les faciliter ?
+- Pourquoi avez vous voté pour ou contre la création de logements sociaux ?
+- Avez vous voté pour ou contre des mesures pour protéger les locataires contre les loyers abusifs ?
+- Pourquoi avez vous voté pour ou contre la destruction de bidonvilles ou de squats ?
+- Avez vous voté pour des mesures pour protéger les agriculteurs face à l’urbanisation fouillie ou pour les laisser dépendre des constructeurs ?
+- Pourquoi avez vous voté pour ou contre des mesures pour encadrer les AirBnB et les logements vacants ?
+- Avez vous voté pour des mesures pour protéger les espaces agricoles ou pour les vendre aux promoteurs ?
+- Pourquoi avez vous voté pour ou contre des mesures pour favoriser les petits propriétaires ou les investisseurs ?
+- Avez vous voté pour des mesures pour lutter contre les bidonvilles ou pour les ignorées ?
+- Pourquoi avez vous voté pour ou contre la loi travail ou la rupture conventionnelle ?
+- Avez vous voté pour renforcer ou affaiblir le droit des syndicats à intervenir dans les entreprises ?
+- Pourquoi avez vous voté pour ou contre la flexibilisation des conditions de travail ?
+- Avez vous voté pour des mesures pour protéger les travailleurs précaires ou pour les rendre plus précaires ?
+- Pourquoi avez vous voté pour ou contre la création de contrats de travail plus instables ?
+- Avez vous voté pour des mesures pour protéger les salariés contre les licenciements ou pour les faciliter ?
+- Pourquoi avez vous voté pour ou contre des mesures pour encadrer les plateformes de travail (Uber, Deliveroo, etc.) ?
+- Avez vous voté pour des mesures pour protéger le droit de grève ou pour le réduire ?
+- Pourquoi avez vous voté pour ou contre des mesures pour faciliter le télétravail ?
+- Avez vous voté pour des mesures pour protéger les travailleurs saisonniers ou pour les oublier ?
+- Pourquoi avez vous voté pour ou contre la loi sur la liberté de la presse ?
+- Avez vous voté pour des mesures pour protéger les journalistes ou pour les pénaliser ?
+- Pourquoi avez vous voté pour ou contre des mesures de contrôle des contenus en ligne ?
+- Avez vous voté pour des mesures pour protéger les libraires ou les remettre en cause au profit des plateformes ?
+- Pourquoi avez vous voté pour ou contre des mesures pour protéger le financement public de la culture ?
+- Avez vous voté pour des mesures pour protéger la liberté d’expression artistique ou pour la limiter ?
+- Pourquoi avez vous voté pour ou contre des mesures pour encadrer les réseaux sociaux ?
+- Avez vous voté pour des mesures pour protéger les droits d’auteur ou pour les affaiblir ?
+- Pourquoi avez vous voté pour ou contre des mesures pour encadrer la publicité ciblée ?
+- Avez vous voté pour des mesures pour protéger les lanceurs d’alerte ou pour les pénaliser ?
+- Pourquoi avez vous voté pour ou contre les réformes constitutionnelles sur le droit de vote des étrangers ?
+- Avez vous voté pour des mesures pour renforcer la séparation des pouvoirs ou pour les affaiblir ?
+- Pourquoi avez vous voté pour ou contre la limitation du nombre de mandats électoraux ?
+- Avez vous voté pour ou contre des mesures pour renforcer la démocratie participative (tirages au sort, référendums d’initiative citoyenne) ?
+- Pourquoi avez vous voté pour ou contre des mesures pour renforcer le rôle du Parlement ou pour le limiter ?
+- Avez vous voté pour des mesures pour protéger l’indépendance de la justice ou pour la remettre en cause ?
+- Pourquoi avez vous voté pour ou contre des mesures pour encadrer les conflits d’intérêts des élus ?
+- Avez vous voté pour des mesures pour protéger les droits fondamentaux en cas de crise ou pour les supprimer ?
+- Pourquoi avez vous voté pour ou contre des mesures pour réduire le pouvoir du président de la République ?
+- Avez vous voté pour des mesures pour protéger les droits des femmes ou pour les restreindre ?
+- Pourquoi avoir voté “pour” alors que vous aviez annoncé que vous étiez “contre” pendant la campagne ?
+- Pourquoi avez vous souvent voté la même chose que votre groupe plutôt que suivant votre conviction ?
+- Pourquoi parfois vous abstenir au lieu de voter clairement pour ou contre ?
+- Pourquoi avez vous parfois voté avec des partis que vous critiquez dans vos discours ?
+- Pourquoi avez vous parfois voté en l’absence des débats ou en urgence ?
+- Pourquoi avez vous parfois voté pour des textes que vous jugiez “mauvais” par calcul politique ?
+- Pourquoi avez vous parfois voté pour ou contre des amendements que vous n’avez jamais défendus publiquement ?
+- Pourquoi avez vous parfois voté pour des textes très longs sans que le temps de lecture soit suffisant ?
+- Pourquoi avez vous parfois voté pour des textes qui vont à l’encontre des engagements de votre camp ?
+- Pourquoi avez vous parfois voté pour des textes qui semblent contradictoires avec vos discours ?
+- Pourquoi avez vous parfois voté pour des textes sans avoir consulté vos électeurs ?
+- Pourquoi avez vous parfois voté pour des textes qui semblent favoriser des intérêts privés plutôt que publics ?
+- Pourquoi avez vous parfois voté pour des textes qui semblent inutiles ou purement symboliques ?
+- Pourquoi avez vous parfois voté pour des textes qui semblent impopulaires auprès de vos administrés ?
+- Pourquoi avez vous parfois voté pour des textes qui semblent contradictoires avec vos positions antérieures ?
+- Sur quels sujets avez vous voté différemment de votre groupe ?
+- Sur quels sujets votre façon de voter est elle la plus proche de vos électeurs ?
+- Sur quels sujets votre façon de voter est elle la plus éloignée de vos électeurs ?
+- Sur quels sujets refusez vous de voter par prudence ou par pression de votre groupe ?
+- Sur quels sujets acceptez vous de voter “à l’encontre” de vos convictions pour préserver l’unité ?
+- Sur quels sujets avez vous déjà changé d’avis entre deux scrutins ?
+- Sur quels sujets avez vous déjà regretté votre vote ?
+- Sur quels sujets refuseriez vous de voter, même sous pression ?
+- Sur quels sujets avez vous voté “en conscience” au lieu de suivre votre groupe ?
+- Sur quels sujets auriez vous voulu voter autrement si vous en aviez eu la possibilité ?
+- Pourquoi avez-vous voté ainsi sur ce texte précis ?
+- Votre vote correspondait-il à un engagement de campagne ?
+- Avez-vous expliqué ce vote publiquement après la séance ?
+- Où les électeurs peuvent-ils retrouver votre position exacte sur ce vote ?
+- Acceptez-vous de publier un résumé simple de chacun de vos votes importants ?
+- Quels votes récents estimez-vous avoir le plus mal expliqués à vos électeurs ?
+- Y a-t-il un vote que vous regrettez de ne pas avoir mieux justifié ?
+- Est-ce que vous consultez des experts avant de voter sur des sujets techniques ?
+- Sur ce texte, qui avez-vous consulté avant de prendre position ?
+- Faites-vous une différence entre un vote de conviction et un vote de compromis ?
+- Quels critères priment chez vous au moment du vote : principe, efficacité, coût ou urgence ?
+- À partir de quand estimez-vous qu’un électeur peut dire que vous n’avez pas été transparent ?
+- Pensez-vous devoir rendre des comptes sur chaque vote important, ou seulement sur les plus médiatisés ?
+- Avez-vous déjà changé d’avis après avoir entendu les débats en séance ?
+- Prévenez-vous vos électeurs avant un vote sensible ou seulement après ?
+- Quel vote de cette législature résume le mieux vos convictions ?
+- Quel vote de cette législature a été le plus difficile à assumer publiquement ?
+- Quand votre parti change de ligne, revoyez-vous automatiquement votre position de vote ?
+- Votre vote était-il motivé par la discipline de groupe ou par l’intérêt général selon vous ?
+- Avez-vous tenté de convaincre d’autres députés de voter comme vous ?
+- Vous arrive-t-il de voter une mesure dont vous critiquez pourtant la mise en œuvre ?
+- Peut-on être loyal à son groupe tout en votant différemment sur certains textes ?
+- Sur quels sujets considérez-vous qu’aucune discipline de groupe ne devrait s’imposer ?
+- Avez-vous déjà soutenu un amendement puis voté contre le texte final ?
+- Comment expliquez-vous à vos électeurs un vote différent de vos déclarations passées ?
+- Préférez-vous améliorer un mauvais texte par amendements ou le rejeter entièrement ?
+- Votez-vous parfois “le moins mauvais” plutôt qu’un texte que vous approuvez vraiment ?
+- Quelle différence faites-vous entre voter contre un texte et voter contre le gouvernement ?
+- Quand vous votez une motion de censure, est-ce un vote de fond ou un vote de stratégie ?
+- Votre vote a-t-il déjà été influencé par le risque de dissolution ou de crise politique ?
+- Avez-vous déjà voté “utile” plutôt que “sincère” ?
+- Comment prouvez-vous la cohérence de vos votes sur plusieurs années ?
+- Pourquoi avez-vous voté pour ou contre cette mesure qui touche directement le pouvoir d’achat ?
+- Ce vote protège-t-il davantage les salaires ou les finances publiques ?
+- Pourquoi avez-vous soutenu ou rejeté cette hausse de taxe ou d’impôt ?
+- Considérez-vous que votre vote favorise trop certains contribuables au détriment d’autres ?
+- Comment avez-vous voté sur les textes liés à l’inflation et pourquoi ?
+- Votre vote a-t-il aidé les foyers modestes de façon concrète ?
+- Pourquoi avoir voté pour ou contre une mesure sur les retraites ?
+- Pensez-vous que votre vote sur les retraites respecte la pénibilité des métiers ?
+- Votre vote sur les retraites tient-il compte des carrières longues ?
+- Pourquoi avez-vous approuvé ou refusé une réforme de l’assurance chômage ?
+- Votre vote protège-t-il réellement les travailleurs précaires ?
+- Pourquoi avoir voté pour ou contre un texte sur les aides sociales ?
+- Comment justifiez-vous votre vote sur les minimas sociaux ?
+- Votre vote visait-il à réduire la dépense publique ou à mieux protéger les plus fragiles ?
+- Pourquoi avez-vous soutenu ou rejeté une mesure sur les prix de l’énergie ?
+- Avez-vous voté en pensant au coût du chauffage pour les ménages de votre circonscription ?
+- Votre vote sur le budget améliore-t-il concrètement la vie quotidienne des habitants ?
+- Avez-vous voté de la même manière sur tous les textes liés au budget du quotidien ?
+- Estimez-vous que vos votes économiques sont plus favorables au travail, au capital ou aux services publics ?
+- Sur les sujets de consommation, votez-vous d’abord selon votre idéologie ou selon les effets mesurables ?
+- Pourquoi avez-vous voté pour ou contre les aides aux entreprises dans ce texte ?
+- Quels résultats concrets permettront de dire que votre vote économique était le bon ?
+- Pourquoi avez-vous voté ainsi sur les crédits de l’hôpital public ?
+- Avez-vous tenu compte des déserts médicaux dans votre décision ?
+- Pourquoi avoir voté pour ou contre ce texte sur l’école ?
+- Avez-vous pris en compte la situation des enseignants avant de voter ?
+- Pourquoi avez-vous soutenu ou rejeté des mesures sur l’université et la vie étudiante ?
+- Votre vote aide-t-il les jeunes à se loger, se former et s’insérer ?
+- Comment justifiez-vous votre vote sur les moyens de la justice ?
+- Pensez-vous que votre vote accélère réellement le traitement des affaires judiciaires ?
+- Pourquoi avez-vous voté pour ou contre des effectifs supplémentaires dans la police ou la gendarmerie ?
+- Votre vote améliore-t-il la sécurité sans réduire les libertés publiques ?
+- Avez-vous voté en tenant compte des besoins des pompiers et de la sécurité civile ?
+- Pourquoi avoir voté ainsi sur les transports publics ?
+- Ce vote aide-t-il les usagers du train, du bus ou des mobilités du quotidien ?
+- Votre vote sur le logement favorise-t-il vraiment les locataires et les primo-accédants ?
+- Avez-vous voté pour freiner la hausse des loyers ou pour soutenir davantage la construction ?
+- Pourquoi avez-vous soutenu ou refusé ce texte sur l’accès au logement social ?
+- Votre vote protège-t-il mieux les personnes âgées dépendantes ?
+- Avez-vous pris en compte le quotidien des aidants familiaux avant de voter ?
+- Votre vote sur le handicap améliore-t-il réellement l’autonomie des personnes concernées ?
+- Pourquoi avez-vous voté pour ou contre ce texte sur la santé mentale ?
+- Quel effet concret votre vote aura-t-il sur les services publics dans votre circonscription ?
+- Si un service public local ferme après votre vote, assumerez-vous une part de responsabilité ?
+- Quels indicateurs locaux suivrez-vous pour vérifier si votre vote a produit les effets annoncés ?
+- Pourquoi avez-vous voté pour ou contre ce texte sur l’immigration ?
+- Pensez-vous que votre vote sur l’immigration soit fidèle aux valeurs que vous défendez publiquement ?
+- Avez-vous voté différemment selon qu’il s’agissait d’immigration de travail, d’asile ou de prestations sociales ?
+- Pourquoi avez-vous voté ainsi sur une mesure liée à la nationalité ou à l’intégration ?
+- Votre vote sur la sécurité respecte-t-il les libertés individuelles ?
+- Pourquoi avoir soutenu ou rejeté une loi antiterroriste ou de surveillance ?
+- Où placez-vous votre limite personnelle entre protection et contrôle ?
+- Pourquoi avez-vous voté pour ou contre ce texte sur l’agriculture ?
+- Votre vote protège-t-il le revenu des agriculteurs de votre territoire ?
+- Avez-vous tenu compte des normes, des charges et de la concurrence étrangère avant de voter ?
+- Votre vote sur l’agriculture cherchait-il d’abord à soutenir la production, l’environnement ou les deux ?
+- Pourquoi avez-vous voté pour ou contre une mesure sur les pesticides ou les normes environnementales ?
+- Pourquoi avez-vous soutenu ou rejeté ce texte sur l’énergie nucléaire, les renouvelables ou la sobriété ?
+- Votre vote aide-t-il réellement la France à réduire ses émissions sans pénaliser les territoires ruraux ?
+- Pourquoi avez-vous voté ainsi sur les sujets liés à l’eau, à la biodiversité ou aux déchets ?
+- Votre vote sur le numérique protège-t-il mieux les données personnelles des citoyens ?
+- Pourquoi avez-vous voté pour ou contre une régulation de l’intelligence artificielle ou des plateformes ?
+- Votre vote protège-t-il davantage la liberté d’expression ou la lutte contre les abus en ligne ?
+- Pourquoi avez-vous voté ainsi sur les sujets de bioéthique ou de fin de vie ?
+- Votre décision sur les sujets de société repose-t-elle sur une conviction intime ou sur une logique politique ?
+- Pourquoi avoir rejeté l'amendement limitant les frais bancaires pour les profils les plus précaires ?
+- Quel a été votre vote concernant le maintien du chèque énergie cette année ?
+- Pourquoi avez-vous voté pour le recul de l'âge légal de départ à la retraite à 64 ans ?
+- Qu'avez-vous voté sur la réforme durcissant les conditions d'accès à l'assurance chômage ?
+- Avez-vous soutenu l'obligation de quinze heures d'activité pour les bénéficiaires du Revenu de Solidarité Active (RSA) ?
+- Comment justifiez-vous votre vote sur la loi imposant un préavis plus long pour les grèves dans les transports en commun ?
+- Pourquoi avoir voté contre l'indexation automatique de tous les salaires sur le taux de l'inflation ?
+- Quel a été votre vote concernant la loi contre la fraude aux aides sociales et aux subventions publiques ?
+- Avez-vous voté pour l'extension des horaires d'ouverture des commerces le dimanche ?
+- Pourquoi avoir rejeté la proposition de loi visant à expérimenter la semaine de quatre jours en entreprise ?
+- Comment expliquez-vous votre vote contre l'allongement du congé de paternité ?
+- Avez-vous soutenu la pérennisation et l'encadrement strict du télétravail dans le code du travail ?
+- Pourquoi avez-vous voté pour la baisse des cotisations patronales sur les bas salaires ?
+- Comment justifiez-vous votre vote contre l'augmentation des effectifs de police dans notre département ?
+- Qu'avez-vous voté sur la création spécifique du délit d'homicide routier et pourquoi ?
+- Avez-vous soutenu le renforcement de l'autorité de la justice face aux mineurs délinquants et à leurs parents ?
+- Pourquoi vous êtes-vous opposé à l'amendement finançant la construction de nouvelles places de prison ?
+- Quel a été votre vote sur la loi renforçant considérablement la sûreté dans les transports en commun ?
+- Pourquoi avez-vous voté pour la limitation des peines de prison aménageables ?
+- Avez-vous voté pour le renforcement des sanctions pénales contre les squats illégaux de logements ?
+- Pourquoi avoir rejeté le texte sur la pénalisation accrue des violences faites aux maires et aux élus de la République ?
+- Lors du vote sur le déploiement de la vidéosurveillance algorithmique, avez-vous suivi la consigne de votre parti ou vos convictions ?
+- Comment expliquez-vous votre vote sur l'élargissement de la présomption de légitime défense pour les forces de l'ordre ?
+- Pourquoi avez-vous voté pour la récente loi réduisant les délais d'instruction des demandes d'asile politique ?
+- Comment justifiez-vous votre vote sur l'instauration de quotas migratoires annuels décidés à l'Assemblée ?
+- Pourquoi vous êtes-vous abstenu sur le texte facilitant les expulsions d'étrangers multirécidivistes ?
+- Qu'avez-vous voté concernant le durcissement des critères de revenus pour le regroupement familial ?
+- Avez-vous voté pour la régularisation temporaire des travailleurs sans-papiers dans les métiers dits en tension ?
+- Pourquoi avoir rejeté la proposition de loi autorisant le droit de vote des étrangers aux élections municipales ?
+- Quel a été votre vote sur la limitation de l'accès aux allocations familiales pour les étrangers extra-européens récents ?
+- Pourquoi avez-vous voté contre le maintien inconditionnel du droit du sol tel qu'il existe aujourd'hui en France ?
+- Avez-vous soutenu l'amendement augmentant la taxe imposée aux employeurs embauchant massivement des travailleurs étrangers ?
+- Pourquoi avoir voté pour le renforcement des contrôles systématiques à nos frontières nationales ?
+- Pourquoi avez-vous voté contre la réintégration anticipée du personnel soignant non vacciné lors de la crise sanitaire ?
+- Qu'avez-vous voté sur la loi visant à encadrer l'installation des jeunes médecins pour lutter contre les déserts médicaux ?
+- Avez-vous soutenu l'augmentation historique du budget alloué aux hôpitaux publics dans la loi de financement de la Sécurité sociale ?
+- Pourquoi avoir voté pour le doublement des franchises médicales sur les boîtes de médicaments remboursés ?
+- Quel a été votre positionnement sur la législation visant à mieux encadrer les tarifs des mutuelles de santé complémentaires ?
+- Comment justifiez-vous votre abstention sur le texte visant à reconnaître le burn-out comme une véritable maladie professionnelle ?
+- Pourquoi avez-vous rejeté la proposition de loi instaurant un ratio minimum et obligatoire de soignants par patient en EHPAD ?
+- Avez-vous voté pour le plafonnement strict des dépassements d'honoraires pratiqués par de nombreux médecins spécialistes ?
+- Pourquoi avoir soutenu la fermeture ou la restructuration des lits d'hospitalisation de nuit dans notre bassin de vie local ?
+- Qu'avez-vous voté sur la loi visant à interdire les vols intérieurs en avion lorsqu'une alternative ferroviaire de moins de deux heures et demie existe ?
+- Comment expliquez-vous votre vote favorable au projet de loi assouplissant la gestion des compétences locales liées à l'eau potable ?
+- Pourquoi vous êtes-vous opposé au durcissement du malus écologique basé spécifiquement sur le poids des véhicules thermiques ?
+- Avez-vous voté pour l'obligation de rénovation thermique contraignante des logements classés comme passoires énergétiques avant toute mise en location ?
+- Pourquoi avoir rejeté l'amendement écologique visant à interdire de manière stricte la chasse le dimanche et les jours fériés ?
+- Quel a été votre vote concernant le texte sur l'interdiction progressive de l'élevage en cage des poules pondeuses ?
+- Avez-vous soutenu la mise en place d'une consigne nationale obligatoire pour les bouteilles en plastique vides ?
+- Pourquoi avez-vous voté pour le développement de nouveaux parcs éoliens offshore malgré la grogne des associations locales de pêcheurs ?
+- Qu'avez-vous voté concernant la réduction drastique des aides de l'État à l'achat pour les véhicules 100% électriques ?
+- Pourquoi avoir voté contre l'inscription juridique du crime d'écocide pour condamner les entreprises très polluantes ?
+- Pourquoi avez-vous soutenu la loi renforçant la compétitivité du secteur agroalimentaire au détriment de certaines normes environnementales ?
+- Qu'avez-vous voté lors de la résolution parlementaire concernant le renouvellement des accords de libre-échange très contestés avec le Mercosur ?
+- Avez-vous voté pour la garantie juridique de mise en place de prix planchers afin de rémunérer dignement nos agriculteurs ?
+- Pourquoi avoir rejeté l'amendement prévoyant la transparence obligatoire et la révision à la baisse des marges de la grande distribution ?
+- Comment expliquez-vous votre vote sur la loi de simplification administrative de l'agriculture contournant la protection de la biodiversité ?
+- Quel a été votre vote concernant le maintien prolongé de la détaxe sur le Gazole Non Routier (GNR) agricole ?
+- Avez-vous voté pour l'obligation de servir une part majoritaire de produits locaux et issus de l'agriculture biologique dans les cantines scolaires ?
+- Pourquoi avoir voté contre le moratoire national sur la construction des méga-bassines destinées à l'irrigation agricole intensive ?
+- Avez-vous soutenu la revalorisation immédiate des aides financières pour les jeunes agriculteurs s'installant en dehors des sentiers battus ?
+- Pourquoi vous êtes-vous abstenu sur la loi de sauvegarde des terres agricoles arables face à la pression constante de l'artificialisation ?
+- Quel a été votre vote sur l'encadrement strict et la limitation des méga-promotions sur les denrées alimentaires en supermarché ?
+- Qu'avez-vous voté sur l'interdiction stricte des téléphones portables dans l'enceinte de tous les collèges et écoles primaires ?
+- Avez-vous soutenu la proposition de geler les frais d'inscription à l'université pour protéger le portefeuille fragile des étudiants ?
+- Comment justifiez-vous votre vote contre l'instauration de la gratuité totale des repas au CROUS pour l'ensemble des étudiants boursiers ?
+- Pourquoi avoir voté en faveur de la mise en place fortement contestée des groupes de niveau pour les élèves au collège ?
+- Quel a été votre vote concernant le maintien ou la suppression des aides au mérite pour les lycéens obtenant une mention très bien au baccalauréat ?
+- Avez-vous voté pour la redéfinition du temps de travail des enseignants en échange de primes spécifiques via le Pacte enseignant ?
+- Pourquoi vous êtes-vous abstenu sur la refonte globale de la formation professionnelle et la réorganisation des lycées professionnels ?
+- Quel a été votre vote sur l'augmentation du budget alloué au dispositif du Pass Culture en pleine période de restriction budgétaire ?
+- Pourquoi avoir voté contre l'abaissement du droit de vote et de la majorité électorale à l'âge symbolique de seize ans ?
+- Pourquoi avez-vous voté contre la loi cherchant à geler ou limiter l'augmentation annuelle des loyers dans les zones fortement tendues ?
+- Qu'avez-vous voté concernant le maintien du Prêt à Taux Zéro (PTZ) pour faciliter l'achat de maisons individuelles neuves en périphérie ?
+- Avez-vous soutenu la proposition de loi facilitant les procédures d'expulsion rapide des locataires en situation prolongée d'impayé ?
+- Comment expliquez-vous votre vote visant à reporter l'interdiction stricte de louer les pires passoires thermiques du parc immobilier ?
+- Pourquoi avoir voté pour la fermeture ou la suppression des subventions étatiques ciblant les petites lignes ferroviaires de notre département ?
+- Quel a été votre positionnement clair sur le financement pérenne du pass rail estival à tarif unique pour promouvoir la mobilité de la jeunesse ?
+- Avez-vous voté pour l'accélération de l'ouverture à la concurrence et la libéralisation forcée des réseaux de bus urbains ?
+- Pourquoi avoir rejeté l'amendement permettant de cofinancer massivement la construction de pistes cyclables sécurisées en zone périurbaine ?
+- Comment justifiez-vous votre vote sur l'assouplissement du calendrier des Zones à Faibles Émissions (ZFE) qui restreignent l'accès des véhicules anciens aux centres-villes ?
+- Avez-vous soutenu le renforcement de la fiscalité et des régulations limitant la prolifération incontrôlée des locations touristiques de courte durée de type Airbnb ?
+- Pourquoi avez-vous voté en faveur des contrats concédant une nouvelle augmentation tarifaire des péages autoroutiers cet été ?
+- Comment justifiez-vous d'avoir voté à plus de 95% comme la majorité de votre groupe politique, sans parfois tenir compte de nos spécificités locales ?
+- Lors de l'adoption polémique du budget via l'article constitutionnel 49.3, pourquoi avoir refusé de signer la motion de rejet de l'opposition ?
+- Pourquoi avez-vous voté contre la loi visant à instaurer le non-cumul strict des mandats dans le temps, limitant un élu à trois mandats consécutifs ?
+- Quel a été votre vote sur l'obligation pour chaque parlementaire de publier publiquement l'intégralité et le détail de ses notes de frais de mandat ?
+- Avez-vous voté pour l'introduction d'une dose significative de proportionnelle pour les prochaines élections législatives nationales ?
+- Pourquoi avoir voté contre la proposition de loi visant à reconnaître et comptabiliser le vote blanc comme un suffrage valablement exprimé ?
+- Lors de l'examen de la récente réforme des retraites, pourquoi avez-vous privilégié une délégation de vote à un collègue plutôt que d'être physiquement présent ?
+- Avez-vous soutenu la modification du règlement interne de l'Assemblée nationale visant à réduire mécaniquement le temps de parole des partis de l'opposition ?
+- Quelle est la fréquence hebdomadaire de présence de ce député en séance plénière ?
+- Y a-t-il une corrélation entre les périodes électorales et une hausse de présence en séance ?
+- Ce député est-il/elle plus souvent présent(e) en commission qu'en hémicycle ?
+- Combien de fois ce député a-t-il/elle voté par délégation plutôt qu'en personne ?
+- A-t-il/elle manqué des votes sur des textes concernant directement sa circonscription ?
+- Ce député a-t-il/elle voté pour ou contre la réforme des retraites ?
+- Comment a voté ce député sur le budget de l'État lors de la dernière loi de finances ?
+- A-t-il/elle voté pour ou contre la motion de censure du dernier gouvernement ?
+- Sur quels textes ce député a-t-il/elle voté différemment de la majorité de son groupe ?
+- Ce député a-t-il/elle voté pour ou contre la réforme de l'assurance chômage ?
+- A-t-il/elle soutenu ou refusé les lois d'urgence liées aux crises récentes ?
+- Comment ce député vote-t-il/elle sur les textes proposés par l'opposition ?
+- Ce député a-t-il/elle voté pour ou contre la loi immigration ?
+- Comment ce député a-t-il/elle voté sur les lois liées au changement climatique ?
+- A-t-il/elle soutenu ou combattu la loi sur les énergies renouvelables ?
+- Ce député s'est-il/elle prononcé(e) pour ou contre la relance du nucléaire ?
+- A-t-il/elle voté pour ou contre les mesures de protection de la biodiversité ?
+- Comment ce député a-t-il/elle voté sur la loi relative à l'artificialisation des sols ?
+- A-t-il/elle soutenu des amendements en faveur de la transition écologique ?
+- Ce député a-t-il/elle voté pour ou contre les taxes carbone ou la fiscalité verte ?
+- Quel est son bilan de vote sur les textes liés à l'agriculture et à la protection de l'environnement ?
+- A-t-il/elle voté pour ou contre les mesures de protection des zones humides ?
+- Ce député soutient-il/elle les objectifs de réduction des émissions de CO₂ dans ses votes ?
+- Comment ce député a-t-il/elle voté sur la suppression de la taxe d'habitation ?
+- A-t-il/elle voté pour ou contre les baisses d'impôts pour les ménages les plus aisés ?
+- Quel a été son vote sur le plafonnement des niches fiscales ?
+- A-t-il/elle voté pour ou contre l'augmentation du SMIC ou des salaires minimaux ?
+- Ce député a-t-il/elle soutenu des amendements pour augmenter le budget de l'éducation ?
+- Comment a-t-il/elle voté sur le budget de l'hôpital public et de la santé ?
+- A-t-il/elle défendu ou combattu les aides aux PME lors des votes budgétaires ?
+- Quel est le vote de ce député sur la réforme de la fiscalité des successions ?
+- A-t-il/elle voté pour ou contre la taxation des superprofits des grandes entreprises ?
+- Ce député a-t-il/elle soutenu les coupes budgétaires dans les services publics ?
+- Comment ce député a-t-il/elle voté sur le financement de la Sécurité sociale (PLFSS) ?
+- A-t-il/elle soutenu ou combattu la réforme du remboursement des médicaments ?
+- Ce député a-t-il/elle voté pour une meilleure prise en charge des maladies chroniques ?
+- Quel est son vote sur les déserts médicaux et l'accès aux soins en zones rurales ?
+- A-t-il/elle voté pour ou contre les mesures relatives à la santé mentale ?
+- Ce député s'est-il/elle prononcé(e) pour ou contre la légalisation du cannabis thérapeutique ?
+- Comment a-t-il/elle voté sur les droits des personnes handicapées et leur inclusion ?
+- A-t-il/elle soutenu l'augmentation du nombre de médecins formés chaque année ?
+- Ce député a-t-il/elle voté pour la fin des dépassements d'honoraires médicaux ?
+- Quel a été son vote sur la réforme du congé maternité et parental ?
+- Comment ce député a-t-il/elle voté sur la réforme du baccalauréat ?
+- A-t-il/elle soutenu l'augmentation des budgets alloués à l'enseignement public ?
+- Ce député a-t-il/elle voté pour ou contre l'aide financière aux étudiants précaires ?
+- Quel est son vote sur la réforme des bourses étudiantes ?
+- A-t-il/elle voté pour ou contre l'interdiction des téléphones portables à l'école ?
+- Ce député a-t-il/elle soutenu des mesures pour lutter contre le décrochage scolaire ?
+- Comment a-t-il/elle voté sur la revalorisation du salaire des enseignants ?
+- A-t-il/elle voté pour ou contre l'interdiction des réseaux sociaux aux moins de 15 ans ?
+- Ce député a-t-il/elle soutenu des amendements sur la mixité sociale dans les établissements scolaires ?
+- Quel est son vote sur l'enseignement des langues régionales à l'école ?
+- Comment ce député a-t-il/elle voté sur les lois de sécurité intérieure et de surveillance ?
+- A-t-il/elle voté pour ou contre l'élargissement des pouvoirs des forces de l'ordre ?
+- Ce député a-t-il/elle soutenu ou combattu la réforme de la justice pénale ?
+- Quel est son vote sur les peines minimales et le durcissement du Code pénal ?
+- A-t-il/elle voté pour ou contre la reconnaissance faciale dans l'espace public ?
+- Ce député a-t-il/elle soutenu les mesures de protection des lanceurs d'alerte ?
+- Comment a-t-il/elle voté sur la réforme des tribunaux et l'accès à la justice ?
+- A-t-il/elle voté pour ou contre la suppression de l'aide juridictionnelle ?
+- Ce député s'est-il/elle prononcé(e) pour ou contre le droit à l'IVG constitutionnalisé ?
+- Quel est son vote sur les lois relatives aux violences conjugales et intrafamiliales ?
+- Comment ce député a-t-il/elle voté sur la loi concernant l'encadrement des loyers ?
+- A-t-il/elle soutenu des mesures contre les marchands de sommeil ?
+- Ce député a-t-il/elle voté pour ou contre le développement du logement social ?
+- Quel est son vote sur la réforme de l'hébergement d'urgence pour les sans-abri ?
+- A-t-il/elle voté pour ou contre la réforme des aides au logement (APL) ?
+- Ce député s'est-il/elle prononcé(e) en faveur des maires ruraux lors des votes sur la décentralisation ?
+- Comment a-t-il/elle voté sur la suppression de la taxe foncière pour les ménages modestes ?
+- A-t-il/elle défendu des amendements spécifiques à sa circonscription lors de votes budgétaires ?
+- Ce député a-t-il/elle voté pour le développement des transports en commun dans les zones rurales ?
+- Quel est son vote sur le renforcement des services publics de proximité ?
+- Comment ce député a-t-il/elle voté sur la loi immigration de 2024 ?
+- A-t-il/elle soutenu ou rejeté les mesures de régularisation des sans-papiers ?
+- Ce député a-t-il/elle voté pour ou contre le droit d'asile et la protection des réfugiés ?
+- Quel est son vote sur les centres de rétention administrative (CRA) ?
+- A-t-il/elle voté pour ou contre le regroupement familial ?
+- Ce député s'est-il/elle prononcé(e) pour ou contre la déchéance de nationalité ?
+- Comment ce député a-t-il/elle voté sur l'égalité salariale entre femmes et hommes ?
+- A-t-il/elle soutenu des mesures de lutte contre les discriminations à l'embauche ?
+- Ce député a-t-il/elle voté pour ou contre le mariage pour tous et ses extensions ?
+- Quel est son vote sur les droits des personnes LGBTQ+ ?
+- A-t-il/elle voté pour ou contre la gestation pour autrui (GPA) ?
+- Ce député a-t-il/elle soutenu des lois sur la parité dans les instances politiques ?
+- Comment a-t-il/elle voté sur les aides sociales pour les familles monoparentales ?
+- A-t-il/elle voté pour ou contre le congé menstruel ?
+- Ce député s'est-il/elle prononcé(e) pour ou contre l'extension du droit de vote aux étrangers ?
+- Quel est son vote sur la lutte contre la pauvreté et l'exclusion sociale ?
+- Comment ce député a-t-il/elle voté sur les accords de libre-échange européens (CETA, etc.) ?
+- A-t-il/elle soutenu ou refusé les transferts de souveraineté vers l'Union européenne ?
+- Ce député a-t-il/elle voté pour ou contre l'aide militaire à l'Ukraine ?
+- Quel est son vote sur les engagements de la France à l'OTAN ?
+- A-t-il/elle soutenu la politique européenne d'aide au développement ?
+- Ce député a-t-il/elle voté pour ou contre les sanctions internationales ?
+- Ce député a-t-il/elle voté pour ou contre la loi sur la transparence de la vie publique ?
+- A-t-il/elle soutenu la publication des délégations de vote nominatives ?
+- Ce député a-t-il/elle voté pour renforcer les pouvoirs du Parlement face à l'exécutif ?
+- Quel est son vote sur la réforme du financement des partis politiques ?
+- A-t-il/elle voté pour ou contre le non-cumul des mandats ?
+- Ce député a-t-il/elle soutenu la création d'une dose de proportionnelle aux législatives ?
+- Comment a-t-il/elle voté sur le référendum d'initiative citoyenne (RIC) ?
+- A-t-il/elle voté pour des lois limitant le recours aux ordonnances par le gouvernement ?
+- Ce député a-t-il/elle soutenu des mesures contre le pantouflage des élus dans le privé ?
+- Quel est son vote sur la réforme du statut de l'élu local ?
+- A-t-il/elle voté pour ou contre la suppression du régime spécial de retraite des parlementaires ?
+- Ce député a-t-il/elle voté des textes favorisant la participation citoyenne ?
+- Comment ce député a-t-il/elle voté sur le Code du travail et ses réformes successives ?
+- A-t-il/elle soutenu ou combattu la réforme de l'assurance chômage ?
+- Ce député a-t-il/elle voté pour ou contre la semaine de 4 jours expérimentale ?
+- Quel est son vote sur le droit de grève dans les services publics essentiels ?
+- A-t-il/elle voté pour ou contre la réforme de la formation professionnelle ?
+- Ce député a-t-il/elle soutenu la réindustrialisation du territoire français ?
+- Comment ce député a-t-il/elle voté sur la loi de régulation des plateformes numériques ?
+- A-t-il/elle soutenu ou combattu la loi sur la cybersécurité nationale ?
+- Ce député a-t-il/elle voté pour la souveraineté numérique de la France ?
+- Quel est son vote sur l'intelligence artificielle et son encadrement légal ?
+- A-t-il/elle voté pour ou contre le développement de la 5G sur le territoire ?
+- Ce député vote-t-il/elle différemment en commission qu'en séance plénière ?
+- A-t-il/elle changé de position sur un texte entre la première et la deuxième lecture ?
+- Ce député a-t-il/elle voté des textes qu'il/elle avait critiqués dans l'opposition ?
+- Ses votes reflètent-ils les préoccupations exprimées lors de ses visites de terrain ?
+- Y a-t-il des domaines où ce député vote systématiquement contre l'avis de ses électeurs ?
+- Ce député a-t-il/elle soutenu des amendements déposés par l'opposition qu'il/elle jugeait pertinents ?
+- Comment justifie-t-il/elle ses abstentions sur des textes jugés importants par ses électeurs ?
+- Pourquoi avez-vous voté pour la suspension de la réforme des retraites proposée en novembre 2025 ?
+- Quel est votre motif pour avoir voté contre l’abrogation de la réforme des retraites à 64 ans ?
+- Avez-vous soutenu la proposition de loi visant à abaisser l’âge légal de la retraite à 62 ans, et pourquoi ?
+- Comment justifiez-vous votre vote en faveur du maintien du dispositif du 49 3 sur la réforme des retraites ?
+- Pensez-vous que votre vote sur la réforme des retraites reflète la volonté majoritaire de vos électeurs ?
+- Pourquoi avez-vous voté pour le durcissement du malus poids sur les véhicules thermiques dans le PLF 2024 ?
+- Soutenez vous l’inclusion des véhicules électriques et hybrides dans le barème du malus poids, et pourquoi ?
+- Quel est votre position concernant la suppression du malus poids défendue par le Rassemblement national ?
+- Avez-vous voté en faveur de l’exclusion stricte des logements classés E, F et G du marché locatif ?
+- Pourquoi avez-vous soutenu ou rejeté le bouclier tarifaire sur l’énergie entre 2021 et 2023 ?
+- Quel est votre avis sur la proposition de diminuer la TVA sur le gaz et les carburants à 5,5 % ?
+- Avez-vous voté pour augmenter le chèque énergie afin d’aider les ménages précaires ?
+- Pourquoi avez-vous voté contre la loi immigration adoptée en décembre 2023 ?
+- Soutenez vous les mesures de la loi immigration qui ont été jugées contraires à la Constitution par la Première ministre ?
+- Quel est votre motif pour vous être abstenu lors du vote sur la loi immigration ?
+- Avez-vous voté pour démarquer votre voix de celle du Rassemblement national sur la question de l’immigration ?
+- Pourquoi avez-vous soutenu la création d’une commission d’enquête parlementaire sur les violences en milieu ?
+- Pensez tu que le vote secret devrait être autorisé pour certains scrutins afin de protéger les députés ?
+- Quel est votre avis sur la possibilité de permettre à un certain nombre de députés de demander la confidentialité de leur vote ?
+- Avez-vous voté en faveur de la motion de rejet préalable au projet de loi immigration en décembre 2023 ?
+- Pourquoi avez-vous voté pour ou contre la motion de rejet du projet de loi immigration à l’Assemblée ?
+- Soutenez vous l’idée d’une convention citoyenne tirée au sort pour réformer les retraites ?
+- Quel est votre position concernant le référendum d’initiative partagée sur la réforme des retraites ?
+- Avez-vous voté pour la proposition de loi visant à abroger la réforme des retraites lors de la commission des affaires sociales en novembre 2024 ?
+- Pourquoi avez-vous choisi de déléguer votre vote lors d’un scrutin public, et à qui ?
+- Pensez tu que les délégations de vote devraient être exceptionnelles plutôt que systématiques ?
+- Quel est votre avis sur la publication systématique des votes individuels des députés en scrutin public ?
+- Avez-vous soutenu les propositions visant à renforcer la transparence des votes de l’Assemblée nationale ?
+- Pourquoi avez-vous voté pour le durcissement des mesures contre l’artificialisation des sols dans le projet de loi Climat ?
+- Soutenez vous l’objectif de zéro artificialisation nette d’ici 2050 fixé par la loi Climat ?
+- Quel est votre motif pour avoir voté contre l’interdiction de construire des centres commerciaux sur des sols naturels ?
+- Avez-vous voté en faveur de la division par deux du rythme d’artificialisation des sols par rapport à la précédente décennie ?
+- Pourquoi avez-vous soutenu ou rejeté les amendements visant à renforcer la protection des zones humides ?
+- Quel est votre avis sur la création d’un fonds dédié à la rénovation thermique des bâtiments publics ?
+- Avez-vous voté pour le financement du plan de relance vert adopté en 2022 ?
+- Pourquoi avez-vous voté pour ou contre la hausse du budget de la défense en 2024 ?
+- Soutenez vous l’augmentation des effectifs des forces armées dans le cadre de la loi de programmation militaire ?
+- Quel est votre position concernant la coopération européenne en matière de défense commune ?
+- Avez-vous voté pour le rétablissement du service national universel obligatoire ?
+- Pourquoi avez-vous soutenu ou rejeté la proposition de loi visant à renforcer le contrôle des exportations d’armements ?
+- Quel est votre avis sur la réforme du système de santé visant à renforcer les effectifs médicaux dans les déserts médicaux ?
+- Avez-vous voté pour l’augmentation du numerus clausus en médecine à partir de 2025 ?
+- Pourquoi avez-vous soutenu ou rejeté la mesure de télémédecine remboursée par l’assurance maladie ?
+- Quel est votre motif pour avoir voté en faveur de la création de maisons de santé pluridisciplinaires en zone rurale ?
+- Avez-vous voté pour la réduction du temps de travail hebdomadaire à 32 heures dans la fonction publique ?
+- Pourquoi avez-vous soutenu ou rejeté l’instauration d’un revenu universel d’activité ?
+- Quel est votre avis sur la réforme de l’assurance chômage visant à durcir les conditions d’indemnisation ?
+- Avez-vous voté pour la hausse de la CSG sur les retraites complémentaires en 2024 ?
+- Pourquoi avez-vous voté pour ou contre la suppression de la taxe d’habitation sur les résidences principales ?
+- Quel est votre position concernant la réforme des valeurs locatives utilisées pour le calcul de la taxe foncière ?
+- Avez-vous soutenu la proposition de loi visant à encadrer les loyers dans les zones tendues ?
+- Pourquoi avez-vous voté pour l’interdiction de la location courte durée type Airbnb dans certains centres villes ?
+- Quel est votre avis sur la création d’un statut juridique unique pour les travailleurs des plateformes numériques ?
+- Avez-vous voté pour la mise en place d’un droit à la déconnexion dans le secteur privé ?
+- Pourquoi avez-vous soutenu ou rejeté la loi visant à lutter contre la haine en ligne ?
+- Quel est votre motif pour avoir voté en faveur du retrait des subventions publiques aux chaînes de télévision privées ?
+- Avez-vous voté pour l’augmentation de la redevance audiovisuelle afin de financer le service public ?
+- Pourquoi avez-vous soutenu ou rejeté la proposition de loi visant à protéger le droit d’auteur à l’ère du streaming ?
+- Quel est votre avis sur la réforme de l’audiovisuel public visant à renforcer son indépendance éditoriale ?
+- Avez-vous voté pour la création d’une chaîne d’information publique nationale en continu ?
+- Pourquoi avez-vous voté pour ou contre la loi visant à renforcer la lutte contre l’illettrisme ?
+- Quel est votre position concernant l’enseignement des langues régionales à l’école publique ?
+- Avez-vous soutenu la proposition de loi rendant obligatoire l’éducation au développement durable dès l’école primaire ?
+- Pourquoi avez-vous voté pour l’augmentation du budget de l’enseignement supérieur et de la recherche en 2024 ?
+- Quel est votre avis sur la réforme du accès aux études de santé visant à diversifier les profils d’admission ?
+- Avez-vous voté pour la suppression des frais d’inscription à l’université pour les boursiers ?
+- Pourquoi avez-vous soutenu ou rejeté la mesure visant à encadrer les stages non rémunérés dans les entreprises ?
+- Quel est votre motif pour avoir voté en faveur de la création d’un statut protecteur pour les stagiaires ?
+- Avez-vous voté pour la hausse du smic horaire à 12,50 euros en janvier 2025 ?
+- Pourquoi avez-vous voté pour ou contre la prime de pouvoir d’achat versée aux fonctionnaires en 2024 ?
+- Quel est votre avis sur la réforme de la retraite progressive permettant de cumuler emploi et pension partielle ?
+- Avez-vous voté pour l’allègement des cotisations patronales sur les bas salaires afin de favoriser l’embauche ?
+- Pourquoi avez-vous soutenu ou rejeté la proposition de loi visant à instaurer un salaire maximum dans les entreprises publiques ?
+- Quel est votre position concernant la représentation équilibrée hommes femmes dans les conseils d’administration des grandes entreprises ?
+- Avez-vous voté pour la quotité de 40 % de femmes dans les hautes fonctions publiques d’ici 2027 ?
+- Pourquoi avez-vous voté pour ou contre la loi visant à renforcer la lutte contre les violences faites aux femmes ?
+- Quel est votre avis sur la création d’un tribunal spécialisé pour les crimes sexuels ?
+- Avez-vous soutenu la proposition de loi visant à allonger le délai de prescription pour les crimes de viol ?
+- Pourquoi avez-vous voté pour l’interdiction de la thérapie de conversion visant à changer l’orientation sexuelle ?
+- Quel est votre motif pour avoir voté en faveur du mariage pour tous et de son maintien malgré les recours ?
+- Avez-vous voté pour la reconnaissance légale du statut de parent d’intention dans les couples homosexuels ?
+- Pourquoi avez-vous soutenu ou rejeté la mesure visant à faciliter l’adoption internationale ?
+- Quel est votre avis sur la réforme de l’aide sociale à l’enfance visant à renforcer les placements en famille d’accueil ?
+- Avez-vous voté pour l’augmentation du budget dédié à la protection de l’enfance en danger ?
+- Pourquoi avez-vous voté pour ou contre la création d’un fichier national des personnes interdites de travailler avec des mineurs ?
+- Quel est votre position concernant la dépénalisation du cannabis à usage récréatif ?
+- Avez-vous soutenu la proposition de loi visant à autoriser l’usage thérapeutique du cannabis sous contrôle médical ?
+- Pourquoi avez-vous voté pour l’interdiction de la vente de protoxyde d’azote (gaz hilarant) aux mineurs ?
+- Quel est votre avis sur la réglementation renforcée des produits du vapotage auprès des jeunes ?
+- Avez-vous voté pour la taxe sur les boissons sucrées afin de financer la prévention de l’obésité infantile ?
+- Pourquoi avez-vous soutenu ou rejeté la mesure visant à instaurer des menus végétariens obligatoires dans les cantines scolaires deux fois par semaine ?
+- Quel est votre avis sur l’interdiction des produits contenant de l’huile de palme non certifiée durable dans les cantines publiques ?
+- Avez-vous voté pour le financement d’un plan national de lutte contre le gaspillage alimentaire ?
+- Pourquoi avez-vous voté pour ou contre la création d’une consigne sur les bouteilles en plastique ?
+- Quel est votre position concernant l’interdiction des plastiques à usage unique d’ici 2030 ?
+- Avez-vous soutenu la proposition de loi visant à instaurer un réemploi obligatoire des emballages en verre pour les boissons alcoolisées ?
+- Pourquoi avez-vous voté pour l’allègement des normes environnementales pour les petites entreprises afin de soutenir la relance post covid ?
+- Quel est votre avis sur la création d’un crédit d’impôt pour les entreprises investissant dans la transition écologique ?
+- Avez-vous voté pour la hausse de la taxe carbone afin d’accélérer la décarbonation de l’industrie ?
+- Pourquoi avez-vous soutenu ou rejeté la mesure visant à interdire l’exploitation du pétrole et du gaz en métropole d’ici 2035 ?
+- Quel est votre motif pour avoir voté en faveur du développement des énergies marines renouvelables (houlomoteur, marémoteur) ?
+- Avez-vous soutenu la proposition de loi visant à accélérer le déploiement de l’hydrogène vert dans l’industrie lourde ?
+- Pourquoi avez-vous voté pour l’interdiction de la fracturation hydraulique (fracking) sur le territoire français ?
+- Quel est votre avis sur la création d’un fonds souverain dédié à la transition énergétique financé par les prélèvements sur les superprofits énergétiques ?
+- Avez-vous voté pour la nationalisation temporaire des autoroutes afin de financer la rénovation du réseau ferroviaire ?
+- Pourquoi avez-vous soutenu ou rejeté la mesure visant à instaurer un péage urbain dans les agglomérations de plus de 500 000 habitants ?
+- Quel est votre position concernant la gratuité des transports publics les week ends afin de réduire la pollution de l’air ?
+- Avez-vous voté pour le financement d’un plan national de pistes cyclables sécurisées reliant les principales villes ?
+- Pourquoi avez-vous voté pour l’interdiction de la circulation des véhicules diesel de plus de 13 ans dans les zones à faibles émissions ?
+- Quel est votre avis sur la prime à la conversion visant à remplacer les véhicules anciens par des électriques ou hybrides ?
+- Avez-vous soutenu la proposition de loi visant à instaurer un revenu minimum garanti pour les agriculteurs afin de stabiliser leurs revenus ?
+- Pourquoi avez-vous voté pour ou contre la réduction des normes phytosanitaires afin de compétitivité face aux importations ?
+- Quel est votre avis sur l’interdiction de l’utilisation du glyphosate en agriculture d’ici 2027 ?
+- Avez-vous voté pour le soutien financier à la conversion vers l’agriculture biologique ou raisonnée ?
+- Pourquoi avez-vous soutenu ou rejeté la mesure visant à créer des corridors écologiques destinés à protéger la biodiversité ?
+- Quel est votre position concernant la réintroduction d’espèces autrefois disparues comme le lynx boréal dans certains massifs ?
+- Avez-vous voté pour l’augmentation du budget consacré à la lutte contre les espèces exotiques envahissantes ?
+- Pourquoi avez-vous voté pour ou contre la création d’une réserve naturelle nationale dans le massif des Pyrénées ?
+- Quel est votre avis sur la réforme du code de l’environnement visant à renforcer la responsabilité élargie des producteurs (REP) ?
+- Avez-vous soutenu la proposition de loi visant à instaurer une consigne sur les emballages en verre afin de augmenter leur taux de recyclage ?
