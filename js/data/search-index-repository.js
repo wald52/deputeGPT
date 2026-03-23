@@ -5,8 +5,10 @@ import {
   RAG_SEMANTIC_INDEX_PATH,
   RAG_SEMANTIC_MULTIVECTOR_INDEX_PATH,
 } from '../core/config.js';
+import { loadExternalScript } from '../core/external-script-loader.js';
 
-const DEFAULT_SEMANTIC_MODE = 'single_vector';
+const SEARCH_INDEX_DEFAULT_SEMANTIC_MODE = 'single_vector';
+const MINI_SEARCH_CDN_URL = 'https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js';
 
 function createFallbackArtifactInfo(path, versionToken = null, extra = {}) {
   return {
@@ -18,12 +20,12 @@ function createFallbackArtifactInfo(path, versionToken = null, extra = {}) {
 }
 
 function normalizeSemanticModeId(mode) {
-  return String(mode || DEFAULT_SEMANTIC_MODE).trim() || DEFAULT_SEMANTIC_MODE;
+  return String(mode || SEARCH_INDEX_DEFAULT_SEMANTIC_MODE).trim() || SEARCH_INDEX_DEFAULT_SEMANTIC_MODE;
 }
 
 function buildLegacySingleVectorMode(manifest = null) {
   return {
-    id: DEFAULT_SEMANTIC_MODE,
+    id: SEARCH_INDEX_DEFAULT_SEMANTIC_MODE,
     label: 'Single-vector',
     strategy: 'single_vector',
     default: true,
@@ -57,8 +59,25 @@ export function createSearchIndexRepository({
     semanticIndexes: {},
     semanticIndexLoadedModes: {},
     semanticIndexLoadPromises: {},
-    semanticArtifactInfos: {}
+    semanticArtifactInfos: {},
+    searchIndexWarmupScheduled: false
   };
+
+  async function ensureMiniSearchCtor() {
+    if (typeof globalThis.MiniSearch === 'function') {
+      return globalThis.MiniSearch;
+    }
+
+    try {
+      const miniSearchCtor = await loadExternalScript(MINI_SEARCH_CDN_URL, {
+        globalName: 'MiniSearch'
+      });
+      return typeof miniSearchCtor === 'function' ? miniSearchCtor : null;
+    } catch (error) {
+      logger.warn('⚠️ Chargement differe de MiniSearch impossible.', error);
+      return null;
+    }
+  }
 
   async function resolveRagManifest() {
     if (state.ragManifest) {
@@ -96,8 +115,8 @@ export function createSearchIndexRepository({
       return Object.values(manifestModes)
         .filter(Boolean)
         .map(entry => ({
-          id: entry.id || DEFAULT_SEMANTIC_MODE,
-          label: entry.label || entry.id || DEFAULT_SEMANTIC_MODE,
+          id: entry.id || SEARCH_INDEX_DEFAULT_SEMANTIC_MODE,
+          label: entry.label || entry.id || SEARCH_INDEX_DEFAULT_SEMANTIC_MODE,
           strategy: entry.strategy || 'single_vector',
           default: entry.default === true,
           experimental: entry.experimental === true,
@@ -142,7 +161,7 @@ export function createSearchIndexRepository({
     return state.searchIndexArtifactInfo;
   }
 
-  async function resolveSemanticArtifactInfo(mode = DEFAULT_SEMANTIC_MODE) {
+  async function resolveSemanticArtifactInfo(mode = SEARCH_INDEX_DEFAULT_SEMANTIC_MODE) {
     const requestedModeId = normalizeSemanticModeId(mode);
     if (state.semanticArtifactInfos[requestedModeId]) {
       return state.semanticArtifactInfos[requestedModeId];
@@ -154,7 +173,7 @@ export function createSearchIndexRepository({
       || modes.find(entry => entry.default)
       || modes[0]
       || buildLegacySingleVectorMode(manifest);
-    const modeId = resolvedMode.id || DEFAULT_SEMANTIC_MODE;
+    const modeId = resolvedMode.id || SEARCH_INDEX_DEFAULT_SEMANTIC_MODE;
     const artifact = resolvedMode.artifact || null;
     const model = resolvedMode.model || null;
 
@@ -221,7 +240,7 @@ export function createSearchIndexRepository({
           }
 
           const candidateIndex = await response.json();
-          const MiniSearchCtor = globalThis.MiniSearch;
+          const MiniSearchCtor = await ensureMiniSearchCtor();
           if (!candidateIndex.votes || typeof MiniSearchCtor === 'undefined') {
             continue;
           }
@@ -270,7 +289,7 @@ export function createSearchIndexRepository({
     }
   }
 
-  async function loadSemanticIndex(mode = DEFAULT_SEMANTIC_MODE) {
+  async function loadSemanticIndex(mode = SEARCH_INDEX_DEFAULT_SEMANTIC_MODE) {
     const artifactInfo = await resolveSemanticArtifactInfo(mode);
     const modeId = artifactInfo.modeId || normalizeSemanticModeId(mode);
     if (state.semanticIndexLoadedModes[modeId] && state.semanticIndexes[modeId]?.votes) {
@@ -334,7 +353,7 @@ export function createSearchIndexRepository({
     }
   }
 
-  async function ensureSemanticIndexReady(mode = DEFAULT_SEMANTIC_MODE) {
+  async function ensureSemanticIndexReady(mode = SEARCH_INDEX_DEFAULT_SEMANTIC_MODE) {
     try {
       return await loadSemanticIndex(mode);
     } catch (error) {
@@ -343,7 +362,7 @@ export function createSearchIndexRepository({
     }
   }
 
-  async function getSemanticSearchConfig(mode = DEFAULT_SEMANTIC_MODE) {
+  async function getSemanticSearchConfig(mode = SEARCH_INDEX_DEFAULT_SEMANTIC_MODE) {
     const artifactInfo = await resolveSemanticArtifactInfo(mode);
     const model = artifactInfo?.model || null;
     const artifact = artifactInfo?.artifact || null;
@@ -360,11 +379,16 @@ export function createSearchIndexRepository({
       notes: artifactInfo?.notes || '',
       model: model ? {
         id: model.id || null,
-        browserModelId: model.browserModelId,
-        pythonModelId: model.pythonModelId || null,
+        family: model.family || null,
+        usage: model.usage || null,
+        browserModelId: model.browserModelId || model.browser_model_id || null,
+        pythonModelId: model.pythonModelId || model.python_model_id || null,
         task: model.task || 'feature-extraction',
+        queryPrefix: model.queryPrefix || model.query_prefix || null,
+        documentPrefix: model.documentPrefix || model.document_prefix || null,
         pooling: model.pooling || 'mean',
         normalize: model.normalize !== false,
+        dimension: Number(model.dimension) || Number(artifact?.vectorDimension) || null,
         estimatedDownloadMb: modelDownloadMb,
         notes: model.notes || ''
       } : null,
@@ -379,20 +403,38 @@ export function createSearchIndexRepository({
   }
 
   function scheduleSearchIndexWarmup() {
-    if (state.searchIndexLoaded || state.searchIndexLoadPromise) {
+    if (state.searchIndexLoaded || state.searchIndexLoadPromise || state.searchIndexWarmupScheduled) {
       return;
     }
 
     const warmup = () => {
+      state.searchIndexWarmupScheduled = false;
       ensureSearchIndexReady();
     };
 
-    if (typeof window !== 'undefined' && typeof window.requestIdleCallback === 'function') {
-      window.requestIdleCallback(() => warmup(), { timeout: 2500 });
+    if (typeof window === 'undefined') {
       return;
     }
 
-    setTimeout(warmup, 0);
+    state.searchIndexWarmupScheduled = true;
+
+    const scheduleDeferredWarmup = () => {
+      window.setTimeout(() => {
+        if (typeof window.requestIdleCallback === 'function') {
+          window.requestIdleCallback(() => warmup(), { timeout: 5000 });
+          return;
+        }
+
+        window.setTimeout(warmup, 0);
+      }, 15000);
+    };
+
+    if (document.readyState === 'complete') {
+      scheduleDeferredWarmup();
+      return;
+    }
+
+    window.addEventListener('load', scheduleDeferredWarmup, { once: true });
   }
 
   function searchVotesInIndex(query, limit = 15) {
@@ -427,7 +469,7 @@ export function createSearchIndexRepository({
       });
   }
 
-  function getSemanticIndex(mode = DEFAULT_SEMANTIC_MODE) {
+  function getSemanticIndex(mode = SEARCH_INDEX_DEFAULT_SEMANTIC_MODE) {
     return state.semanticIndexes[normalizeSemanticModeId(mode)] || null;
   }
 
