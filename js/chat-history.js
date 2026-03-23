@@ -52,7 +52,8 @@ let chatHistoryDb = null;
  *     lastScopeSource: string | null,
  *     lastTheme: string | null,
  *     lastDateRange: object | null,
- *     lastPlan: object | null
+ *     lastPlan: object | null,
+ *     pendingClarification: object | null
  *   }
  * }
  */
@@ -121,7 +122,8 @@ async function createSession(depute, modelConfig = null) {
       lastScopeSource: 'depute_all',
       lastTheme: null,
       lastDateRange: null,
-      lastPlan: null
+      lastPlan: null,
+      pendingClarification: null
     }
   };
 

@@ -1,9 +1,6 @@
-import { init } from './app-runtime.js';
-
-export async function bootstrapApp() {
-  return init();
-}
+import { init as bootstrapApp } from './app-runtime.js';
 
 bootstrapApp();
 
+export { bootstrapApp };
 export default bootstrapApp;

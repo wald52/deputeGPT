@@ -1,5 +1,6 @@
 import {
   DEFAULT_MODEL_ID,
+  DEFAULT_INFERENCE_SOURCE,
   DEFAULT_QUANT_ID,
   SCOPE_SOURCE_LABELS,
   STORAGE_KEYS,
@@ -23,9 +24,13 @@ import {
   getStoredValue,
   setStoredValue,
 } from './core/storage.js';
-import { loadDeputesData as fetchDeputesData } from './data/deputes-repository.js';
+import {
+  ensureDeputesDetailsReady as fetchDeputesDetailsReady,
+  loadDeputesData as fetchDeputesData
+} from './data/deputes-repository.js';
 import { loadGroupesData as fetchGroupesData } from './data/groupes-repository.js';
 import { loadModelCatalog as fetchModelCatalog } from './data/model-catalog-repository.js';
+import { loadOpenRouterModels as fetchOpenRouterModels } from './data/openrouter-models-repository.js';
 import { createSearchIndexRepository } from './data/search-index-repository.js';
 import { loadDeputeVotes } from './data/votes-repository.js';
 import {
@@ -37,15 +42,6 @@ import { resolveGenerationOptions } from './ai/generation-options.js';
 import { createModelLoader } from './ai/model-loader.js';
 import { createModelUiFacade } from './ai/model-ui-facade.js';
 import { createModelSelectionController } from './ai/model-selection.js';
-import { createPipelineRuntime as createPipelineRuntimeFactory } from './ai/pipeline-runtime.js';
-import { createQwen3Runtime as createQwen3RuntimeFactory } from './ai/qwen3-runtime.js';
-import { createQwen35Runtime as createQwen35RuntimeFactory } from './ai/qwen35-runtime.js';
-import { createSemanticRagRuntime } from './ai/semantic-rag-runtime.js';
-import { createOpenRouterRuntime as createOpenRouterRuntimeFactory } from './ai/openrouter-runtime.js';
-import {
-  createGeneratorAdapter,
-  createTransformersRuntimeManager,
-} from './ai/transformers-runtime.js';
 import {
   createChatAvailabilityController,
   createChatComposer,
@@ -56,8 +52,10 @@ import {
   createChatScopeController,
   createChatViewportController,
   createConsentModalController,
+  createVoteSourceModalController,
   createDeputePanelController,
   createHemicyclePanelController,
+  createMobileWorkspaceController,
   createSearchPanelController,
   createUiHelpers,
   escapeHtml,
@@ -117,12 +115,14 @@ import {
   shouldClarifyLargeList,
 } from './domain/deterministic-router.js';
 
-const transformersRuntime = createTransformersRuntimeManager();
+const transformersRuntime = createLazyTransformersRuntimeManager();
 const chatHistoryProvider = createChatHistoryProvider();
 
 let modelCatalog = FALLBACK_MODEL_CATALOG;
 let modelsConfig = [];
 let deputesData = [];
+let deputesDataDetailLevel = 'idle';
+let deputesLatest = null;
 let groupesPolitiques = [];
 
 const DEPUTE_PHOTOS_DIR = 'public/data/deputes_photos';
@@ -139,6 +139,53 @@ const ANALYSIS_SEARCH_RESULT_LIMIT = 80;
 const ANALYSIS_MAX_NEW_TOKENS = 220;
 const THEMATIC_STANCE_EXAMPLE_LIMIT = 4;
 
+let aiRuntimeModulesPromise = null;
+let transformersRuntimeManagerPromise = null;
+
+async function loadAiRuntimeModules() {
+  if (!aiRuntimeModulesPromise) {
+    aiRuntimeModulesPromise = Promise.all([
+      import('./ai/online-runtime.js'),
+      import('./ai/pipeline-runtime.js'),
+      import('./ai/qwen3-runtime.js'),
+      import('./ai/qwen35-runtime.js'),
+      import('./ai/semantic-rag-runtime.js'),
+      import('./ai/transformers-runtime.js')
+    ]).then(([
+      onlineRuntimeModule,
+      pipelineRuntimeModule,
+      qwen3RuntimeModule,
+      qwen35RuntimeModule,
+      semanticRagRuntimeModule,
+      transformersRuntimeModule
+    ]) => ({
+      createOnlineRuntime: onlineRuntimeModule.createOnlineRuntime,
+      createPipelineRuntime: pipelineRuntimeModule.createPipelineRuntime,
+      createQwen3Runtime: qwen3RuntimeModule.createQwen3Runtime,
+      createQwen35Runtime: qwen35RuntimeModule.createQwen35Runtime,
+      createSemanticRagRuntime: semanticRagRuntimeModule.createSemanticRagRuntime,
+      createTransformersRuntimeManager: transformersRuntimeModule.createTransformersRuntimeManager
+    }));
+  }
+
+  return aiRuntimeModulesPromise;
+}
+
+async function getTransformersRuntimeManager() {
+  if (!transformersRuntimeManagerPromise) {
+    transformersRuntimeManagerPromise = loadAiRuntimeModules()
+      .then(({ createTransformersRuntimeManager }) => createTransformersRuntimeManager());
+  }
+
+  return transformersRuntimeManagerPromise;
+}
+
+function createGeneratorAdapter(runtime) {
+  const adapter = async (messages, generationOptions) => runtime.invoke(messages, generationOptions);
+  adapter.dispose = runtime.dispose;
+  return adapter;
+}
+
 function buildUrl(rawPath) {
   return new URL(rawPath, window.location.href).toString();
 }
@@ -153,6 +200,187 @@ function buildVersionedUrl(rawPath, versionToken = null) {
 
 function hasWebGPU() {
   return typeof navigator !== 'undefined' && 'gpu' in navigator;
+}
+
+let cachedWebGPUStatus = null;
+let pendingWebGPUStatusPromise = null;
+
+async function getWebGPUStatus({ forceRefresh = false } = {}) {
+  if (!hasWebGPU()) {
+    return {
+      supported: false,
+      adapterAvailable: false,
+      reason: 'unsupported',
+      message: 'WebGPU n est pas disponible sur cet appareil.'
+    };
+  }
+
+  if (!forceRefresh && cachedWebGPUStatus) {
+    return cachedWebGPUStatus;
+  }
+
+  if (!forceRefresh && pendingWebGPUStatusPromise) {
+    return pendingWebGPUStatusPromise;
+  }
+
+  pendingWebGPUStatusPromise = (async () => {
+    try {
+      const adapter = await navigator.gpu.requestAdapter();
+      cachedWebGPUStatus = adapter
+        ? {
+            supported: true,
+            adapterAvailable: true,
+            reason: 'ok',
+            message: ''
+          }
+        : {
+            supported: true,
+            adapterAvailable: false,
+            reason: 'no_adapter',
+            message: 'WebGPU est detecte, mais aucun adaptateur GPU compatible n est disponible dans ce navigateur.'
+          };
+    } catch (error) {
+      const detail = String(error?.message || error || '').trim();
+      cachedWebGPUStatus = {
+        supported: true,
+        adapterAvailable: false,
+        reason: 'adapter_error',
+        message: detail
+          ? `WebGPU est detecte, mais l adaptateur GPU est indisponible sur cet appareil (${detail}).`
+          : 'WebGPU est detecte, mais l adaptateur GPU est indisponible sur cet appareil.'
+      };
+    } finally {
+      pendingWebGPUStatusPromise = null;
+    }
+
+    return cachedWebGPUStatus;
+  })();
+
+  return pendingWebGPUStatusPromise;
+}
+
+function createLazyTransformersRuntimeManager() {
+  const state = {
+    transformers: null,
+    pipeline: null,
+    env: null,
+    AutoTokenizer: null,
+    Qwen3ForCausalLM: null,
+    Qwen35ForConditionalGeneration: null,
+    activeRuntimeChannel: null
+  };
+
+  return {
+    state,
+    async loadRuntime(channel = 'stable') {
+      const manager = await getTransformersRuntimeManager();
+      const runtime = await manager.loadRuntime(channel);
+      Object.assign(state, manager.state);
+      return runtime;
+    }
+  };
+}
+
+function createLazySemanticRagRuntimeController({
+  appState,
+  transformersRuntime,
+  hasWebGPU,
+  getWebGPUStatus,
+  ensureSemanticIndexReady,
+  getSemanticSearchConfig,
+  getSemanticIndex,
+  getStoredValue,
+  setStoredValue,
+  storageKeys,
+  addSystemMessage
+}) {
+  let runtimeInstance = null;
+  let runtimePromise = null;
+
+  function getSelectedMode() {
+    return getStoredValue(storageKeys.semanticRagMode) || appState.semanticIndexMode || 'single_vector';
+  }
+
+  function isEnabled() {
+    return getStoredValue(storageKeys.semanticRagEnabled) === 'true';
+  }
+
+  function isReady() {
+    return (
+      appState.semanticRagStatus === 'ready' &&
+      Boolean(appState.semanticEncoder) &&
+      Boolean(appState.semanticModelConfig?.modeId)
+    );
+  }
+
+  function getStatus() {
+    return {
+      enabled: isEnabled(),
+      ready: isReady(),
+      status: appState.semanticRagStatus,
+      modeId: appState.semanticIndexMode || getSelectedMode(),
+      model: appState.semanticModelConfig
+    };
+  }
+
+  async function ensureRuntime() {
+    if (runtimeInstance) {
+      return runtimeInstance;
+    }
+
+    if (!runtimePromise) {
+      runtimePromise = loadAiRuntimeModules()
+        .then(({ createSemanticRagRuntime }) => {
+          runtimeInstance = createSemanticRagRuntime({
+            appState,
+            transformersRuntime,
+            hasWebGPU,
+            getWebGPUStatus,
+            ensureSemanticIndexReady,
+            getSemanticSearchConfig,
+            getSemanticIndex,
+            getStoredValue,
+            setStoredValue,
+            storageKeys,
+            addSystemMessage
+          });
+          return runtimeInstance;
+        });
+    }
+
+    return runtimePromise;
+  }
+
+  return {
+    getSelectedMode,
+    getStatus,
+    isEnabled,
+    isReady,
+    async loadSemanticRag(mode) {
+      const runtime = await ensureRuntime();
+      return runtime.loadSemanticRag(mode);
+    },
+    async releaseSemanticRag() {
+      if (!runtimeInstance && !runtimePromise) {
+        appState.semanticEncoder = null;
+        appState.semanticModelConfig = null;
+        appState.semanticIndexMode = getSelectedMode();
+        appState.semanticRagStatus = 'disabled';
+        return;
+      }
+
+      const runtime = await ensureRuntime();
+      return runtime.releaseSemanticRag();
+    },
+    async buildSemanticScores(question, votes, getVoteIdResolver) {
+      if (!isEnabled() || !isReady()) {
+        return new Map();
+      }
+
+      const runtime = await ensureRuntime();
+      return runtime.buildSemanticScores(question, votes, getVoteIdResolver);
+    }
+  };
 }
 
 const searchIndexRepository = createSearchIndexRepository({
@@ -171,8 +399,15 @@ const appDataController = createAppDataController({
   },
   populateModelSelect: () => modelUiFacade.populateModelSelect(),
   fetchDeputesData,
+  ensureDeputesDetailsReady: fetchDeputesDetailsReady,
   setDeputesData: value => {
     deputesData = value;
+  },
+  setDeputesDataDetailLevel: value => {
+    deputesDataDetailLevel = value;
+  },
+  setDeputesLatest: value => {
+    deputesLatest = value;
   },
   fetchGroupesData,
   setGroupesPolitiques: value => {
@@ -193,10 +428,11 @@ function getSemanticIndexData() {
   return searchIndexRepository.getSemanticIndex(semanticRagRuntime.getSelectedMode()) || null;
 }
 
-const semanticRagRuntime = createSemanticRagRuntime({
+const semanticRagRuntime = createLazySemanticRagRuntimeController({
   appState,
   transformersRuntime,
   hasWebGPU,
+  getWebGPUStatus,
   ensureSemanticIndexReady: mode => appDataController.ensureSemanticIndexReady(mode),
   getSemanticSearchConfig: mode => appDataController.getSemanticSearchConfig(mode),
   getSemanticIndex: mode => searchIndexRepository.getSemanticIndex(mode),
@@ -271,11 +507,14 @@ const {
 
 const voteTextHelpers = createVoteTextHelpers({
   defaultChatListLimit: DEFAULT_CHAT_LIST_LIMIT,
+  getVoteId,
   lookupVoteSubject,
-  lookupVoteThemeLabel
+  lookupVoteThemeLabel,
+  lookupVoteSourceUrl
 });
 
 const {
+  buildInlineVoteItems,
   buildLargeListClarification,
   buildPaginationContinuationMessage,
   formatVoteLine
@@ -389,12 +628,14 @@ async function releaseCurrentModel() {
 }
 
 async function createPipelineRuntime(modelConfig, updateProgress) {
+  const { createPipelineRuntime: createPipelineRuntimeFactory } = await loadAiRuntimeModules();
   return createPipelineRuntimeFactory(modelConfig, updateProgress, {
     transformersRuntime
   });
 }
 
 async function createQwen3Runtime(modelConfig, updateProgress) {
+  const { createQwen3Runtime: createQwen3RuntimeFactory } = await loadAiRuntimeModules();
   return createQwen3RuntimeFactory(modelConfig, updateProgress, {
     transformersRuntime,
     resolveThinkingModeFlag: (currentModelConfig = null, explicitValue) => modelSelection.resolveThinkingModeFlag(currentModelConfig, explicitValue)
@@ -402,14 +643,16 @@ async function createQwen3Runtime(modelConfig, updateProgress) {
 }
 
 async function createQwen35Runtime(modelConfig, updateProgress) {
+  const { createQwen35Runtime: createQwen35RuntimeFactory } = await loadAiRuntimeModules();
   return createQwen35RuntimeFactory(modelConfig, updateProgress, {
     transformersRuntime,
     resolveThinkingModeFlag: (currentModelConfig = null, explicitValue) => modelSelection.resolveThinkingModeFlag(currentModelConfig, explicitValue)
   });
 }
 
-async function createOpenRouterRuntime(modelConfig) {
-  return createOpenRouterRuntimeFactory(modelConfig);
+async function createOnlineRuntime(modelConfig) {
+  const { createOnlineRuntime: createOnlineRuntimeFactory } = await loadAiRuntimeModules();
+  return createOnlineRuntimeFactory(modelConfig);
 }
 
 const modelLoader = createModelLoader({
@@ -423,7 +666,7 @@ const modelLoader = createModelLoader({
   createPipelineRuntime,
   createQwen3Runtime,
   createQwen35Runtime,
-  createOpenRouterRuntime,
+  createOnlineRuntime,
   createGeneratorAdapter,
   resolveThinkingModeFlag: (modelConfig = null, explicitValue) => modelSelection.resolveThinkingModeFlag(modelConfig, explicitValue),
   syncActiveModelThinkingState: () => modelSelection.syncActiveModelThinkingState(),
@@ -440,10 +683,13 @@ const consentModal = createConsentModalController({
   resolveThinkingModeFlag: (modelConfig = null, explicitValue) => modelSelection.resolveThinkingModeFlag(modelConfig, explicitValue)
 });
 
+const voteSourceModal = createVoteSourceModalController();
+
 const modelSelection = createModelSelectionController({
   appState,
   getModelsConfig: () => modelsConfig,
   getModelCatalog: () => modelCatalog,
+  fetchOpenRouterModels,
   defaultModelId: DEFAULT_MODEL_ID,
   defaultQuantId: DEFAULT_QUANT_ID,
   getStoredValue,
@@ -451,10 +697,14 @@ const modelSelection = createModelSelectionController({
   storageKeys: STORAGE_KEYS,
   formatDownloadSize,
   hasWebGPU,
+  getWebGPUStatus,
+  resolveGenerationOptions,
+  analysisMaxNewTokens: ANALYSIS_MAX_NEW_TOKENS,
   syncChatAvailability: () => chatAvailability.syncChatAvailability(),
   updateChatCapabilitiesBanner,
   addSystemMessage: message => addMessage('system', message),
   initAI: modelConfig => modelUiFacade.initAI(modelConfig),
+  releaseCurrentModel: () => modelLoader.releaseCurrentModel(),
   getSemanticSearchConfig: mode => appDataController.getSemanticSearchConfig(mode),
   getSemanticSearchModes: () => appDataController.getSemanticSearchModes(),
   getSemanticRagStatus: () => semanticRagRuntime.getStatus(),
@@ -475,6 +725,25 @@ const modelUiFacade = createModelUiFacade({
   })
 });
 
+async function ensureOnlineAnalysisReady() {
+  const selectedSource = modelUiFacade.getSelectedInferenceSource();
+  if (selectedSource !== DEFAULT_INFERENCE_SOURCE) {
+    return false;
+  }
+
+  if (appState.generator && appState.activeModelConfig?.provider === DEFAULT_INFERENCE_SOURCE) {
+    return true;
+  }
+
+  const modelConfig = modelUiFacade.getSelectedModelConfig();
+  if (!modelConfig) {
+    throw new Error('Le service IA en ligne n est pas configure dans le catalogue.');
+  }
+
+  await modelUiFacade.initAI(modelConfig, { quiet: true });
+  return true;
+}
+
 const chatComposer = createChatComposer({
   appState,
   quickActions: CHAT_QUICK_ACTIONS
@@ -483,6 +752,9 @@ const chatComposer = createChatComposer({
 const chatViewport = createChatViewportController({
   emptyStateText: 'Selectionnez un depute, puis posez une question exacte (liste, nombre, periode, theme) ou lancez une analyse IA.'
 });
+
+let chatRenderer = null;
+let chatPaginationController = null;
 
 const chatScopeController = createChatScopeController({
   appState,
@@ -498,8 +770,10 @@ const chatScopeController = createChatScopeController({
   truncateAnalysisField,
   addMessage,
   executeDeterministicRoute: (route, question, currentDepute) => executeDeterministicRoute(route, question, currentDepute),
+  buildInlineVoteItems,
   buildMessageReferencesFromVoteIds,
   getChatHistory: () => chatHistoryProvider.getChatHistory(),
+  syncInteractiveMessageStates: () => chatRenderer?.syncInteractiveMessageStates(),
   updateChatCapabilitiesBanner: () => chatAvailability.updateChatCapabilitiesBanner(),
   renderQuickActions: () => chatComposer.renderQuickActions()
 });
@@ -516,25 +790,27 @@ const chatAvailability = createChatAvailabilityController({
   updateChatEmptyState: () => chatViewport.updateChatEmptyState()
 });
 
-const chatPaginationController = createChatPaginationController({
+chatPaginationController = createChatPaginationController({
   appState,
   chatSessionState,
   defaultChatListLimit: DEFAULT_CHAT_LIST_LIMIT,
   resolveVotesByIds,
+  buildInlineVoteItems,
   buildPaginationContinuationMessage,
-  buildMessageReferencesFromVoteIds,
   addMessage,
   updateSessionFromResult: (session, result) => chatScopeController.updateSessionFromResult(session, result),
   getChatHistory: () => chatHistoryProvider.getChatHistory(),
+  syncInteractiveMessageStates: () => chatRenderer?.syncInteractiveMessageStates(),
   updateChatCapabilitiesBanner: () => chatAvailability.updateChatCapabilitiesBanner(),
   renderQuickActions: () => chatComposer.renderQuickActions()
 });
 
-const chatRenderer = createChatRenderer({
+chatRenderer = createChatRenderer({
   appState,
   defaultChatListLimit: DEFAULT_CHAT_LIST_LIMIT,
   formatChatTime,
   buildMessageReferencesFromVoteIds,
+  openVoteSourceModal: payload => voteSourceModal.showVoteSourceModal(payload),
   submitChatQuestion: question => chatComposer.submitChatQuestion(question),
   resolvePaginationOffset: metadata => chatPaginationController.resolvePaginationOffset(metadata),
   handlePaginationRequest: metadata => chatPaginationController.handlePaginationRequest(metadata),
@@ -551,6 +827,7 @@ const chatController = createChatController({
   buildDeterministicMessageMetadata: (result, intentKind = 'list') => chatScopeController.buildDeterministicMessageMetadata(result, intentKind),
   buildMessageReferencesFromVoteIds,
   dedupeVotes,
+  ensureOnlineAnalysisReady,
   ensureSearchIndexReady: () => appDataController.ensureSearchIndexReady(),
   executeDeterministicRoute,
   extractAnswerFromOutput,
@@ -569,6 +846,7 @@ const chatController = createChatController({
   sanitizeGeneratedAnswer,
   syncChatAvailability,
   syncSendButtonState,
+  syncInteractiveMessageStates: () => chatRenderer.syncInteractiveMessageStates(),
   truncateAnalysisField,
   updateChatCapabilitiesBanner,
   updateChatEmptyState,
@@ -589,6 +867,7 @@ const hemicyclePanel = createHemicyclePanelController({
 const deputePanel = createDeputePanelController({
   appState,
   getPlacesMapping: () => hemicyclePanel.getPlacesMapping(),
+  initChatHistory: () => chatHistoryProvider.initChatHistory(),
   resetChatSession,
   setActiveSeatByDepute: depute => hemicyclePanel.setActiveSeatByDepute(depute),
   updateChatScopeSummary: () => chatScopeController.updateChatScopeSummary(),
@@ -611,7 +890,12 @@ const searchPanel = createSearchPanelController({
   selectDepute: depute => selectDepute(depute)
 });
 
+const mobileWorkspaceController = createMobileWorkspaceController({
+  appState
+});
+
 const chatHistoryPanel = createChatHistoryPanelController({
+  initChatHistory: () => chatHistoryProvider.initChatHistory(),
   getChatHistory: () => chatHistoryProvider.getChatHistory(),
   getDeputesData: () => deputesData,
   chatSessionState,
@@ -690,7 +974,6 @@ function showExportMenu() {
 export async function init() {
   const appBootstrap = createAppBootstrap({
     autoCleanStorage,
-    initChatHistory: () => chatHistoryProvider.initChatHistory(),
     setupSearch: () => searchPanel.setupSearch(),
     setupChat: () => chatController.setupChat(),
     loadDeputesData: () => appDataController.loadDeputesData(),
@@ -699,12 +982,12 @@ export async function init() {
     renderLegend: () => hemicyclePanel.renderLegend(),
     setupHemicycle: () => hemicyclePanel.setupHemicycle(),
     setupModelLoadUI: () => modelUiFacade.setupModelLoadUI(),
+    setupResponsiveLayout: () => mobileWorkspaceController.setupMobileWorkspace(),
     setupChatHistoryUI: () => chatHistoryPanel.setupChatHistoryUI(),
     updateActiveModelBadge: modelConfig => modelUiFacade.updateActiveModelBadge(modelConfig),
     getActiveModelConfig: () => appState.activeModelConfig,
     updateModelSelectionSummary: () => modelUiFacade.updateModelSelectionSummary(),
     syncChatAvailability,
-    scheduleSearchIndexWarmup: () => appDataController.scheduleSearchIndexWarmup(),
     renderQuickActions,
     updateChatEmptyState,
     checkProtocol: () => showLocalProtocolWarning(),
