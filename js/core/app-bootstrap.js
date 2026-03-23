@@ -1,6 +1,5 @@
 export function createAppBootstrap({
   autoCleanStorage,
-  initChatHistory,
   setupSearch,
   setupChat,
   loadDeputesData,
@@ -9,12 +8,12 @@ export function createAppBootstrap({
   renderLegend,
   setupHemicycle,
   setupModelLoadUI,
+  setupResponsiveLayout,
   setupChatHistoryUI,
   updateActiveModelBadge,
   getActiveModelConfig,
   updateModelSelectionSummary,
   syncChatAvailability,
-  scheduleSearchIndexWarmup,
   renderQuickActions,
   updateChatEmptyState,
   checkProtocol,
@@ -53,10 +52,14 @@ export function createAppBootstrap({
       return;
     }
 
-    await initChatHistory();
-
     setupSearch();
     setupChat();
+    setupModelLoadUI();
+    setupChatHistoryUI();
+    setupResponsiveLayout?.();
+    renderQuickActions();
+    updateChatEmptyState();
+    checkProtocol();
 
     await Promise.all([
       loadDeputesData(),
@@ -65,16 +68,10 @@ export function createAppBootstrap({
     ]);
 
     renderLegend();
-    await setupHemicycle();
-    setupModelLoadUI();
-    setupChatHistoryUI();
+    setupHemicycle?.();
     updateActiveModelBadge(getActiveModelConfig());
     updateModelSelectionSummary();
     syncChatAvailability();
-    scheduleSearchIndexWarmup();
-    renderQuickActions();
-    updateChatEmptyState();
-    checkProtocol();
 
     validateBootstrapDataInternal();
     syncAcceptedModelSelectionInternal();

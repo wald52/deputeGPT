@@ -19,6 +19,7 @@ export const MANAGED_CACHE_PREFIXES = [
   'deputegpt',
 ];
 
+export const DEFAULT_INFERENCE_SOURCE = 'online';
 export const DEFAULT_MODEL_ID = 'qwen3-0.6b';
 export const DEFAULT_QUANT_ID = 'q4f16';
 

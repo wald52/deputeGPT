@@ -5,7 +5,10 @@ export function createAppDataController({
   setModelsConfig,
   populateModelSelect,
   fetchDeputesData,
+  ensureDeputesDetailsReady: fetchDeputesDetailsReady,
   setDeputesData,
+  setDeputesDataDetailLevel,
+  setDeputesLatest,
   fetchGroupesData,
   setGroupesPolitiques,
   searchIndexRepository
@@ -22,6 +25,17 @@ export function createAppDataController({
   async function loadDeputesData() {
     const result = await fetchDeputesData();
     setDeputesData(result.deputesData);
+    setDeputesDataDetailLevel?.(result.detailLevel || 'boot');
+    setDeputesLatest?.(result.latest || null);
+    return result;
+  }
+
+  async function ensureDeputesDetailsReady() {
+    const result = await fetchDeputesDetailsReady();
+    setDeputesData(result.deputesData);
+    setDeputesDataDetailLevel?.(result.detailLevel || 'full');
+    setDeputesLatest?.(result.latest || null);
+    return result;
   }
 
   async function loadGroupesData() {
@@ -53,6 +67,7 @@ export function createAppDataController({
   }
 
   return {
+    ensureDeputesDetailsReady,
     ensureSearchIndexReady,
     ensureSemanticIndexReady,
     getSemanticSearchConfig,

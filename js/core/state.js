@@ -9,7 +9,8 @@ export function createChatSessionState(activeDeputeId = null) {
     lastScopeSource: 'depute_all',
     lastTheme: null,
     lastDateRange: null,
-    lastPlan: null
+    lastPlan: null,
+    pendingClarification: null
   };
 }
 
@@ -20,6 +21,10 @@ export const appState = {
   generator: null,
   activeModelConfig: null,
   pendingModelConfig: null,
+  lastOnlineResponseMeta: null,
+  openRouterModels: [],
+  openRouterCatalogStatus: 'idle',
+  openRouterCatalogError: null,
   semanticEncoder: null,
   semanticModelConfig: null,
   semanticIndexMode: 'single_vector',
