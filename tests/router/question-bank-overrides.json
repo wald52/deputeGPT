@@ -1,0 +1,911 @@
+{
+  "q0087": {
+    "expected_route_action": "deterministic",
+    "expected_intent_kind": "list",
+    "expected_scope_filters": {
+      "theme": "sante",
+      "vote": "Pour"
+    }
+  },
+  "q0100": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis",
+    "expected_scope_filters": {
+      "theme": "ecologie"
+    }
+  },
+  "q0101": {
+    "expected_route_action": "deterministic",
+    "expected_intent_kind": "participation_rate"
+  },
+  "q0108": {
+    "expected_route_action": "deterministic",
+    "expected_intent_kind": "list",
+    "expected_scope_filters": {
+      "vote": "Abstention"
+    }
+  },
+  "q0128": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis",
+    "expected_scope_filters": {
+      "theme": "securite"
+    }
+  },
+  "q0141": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "needs_context"
+  },
+  "q0147": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "needs_context"
+  },
+  "q0151": {
+    "expected_route_action": "deterministic",
+    "expected_intent_kind": "group_alignment"
+  },
+  "q0154": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "needs_context"
+  },
+  "q0155": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "too_broad"
+  },
+  "q0158": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "needs_context"
+  },
+  "q0169": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "too_broad"
+  },
+  "q0206": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0207": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0210": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0211": {
+    "expected_route_action": "deterministic",
+    "expected_intent_kind": "participation_rate",
+    "expected_scope_filters": {
+      "dateFrom": "2022-06-01"
+    }
+  },
+  "q0216": {
+    "expected_route_action": "deterministic",
+    "expected_intent_kind": "participation_rate"
+  },
+  "q0223": {
+    "expected_route_action": "deterministic",
+    "expected_intent_kind": "list",
+    "expected_scope_filters": {
+      "theme": "budget"
+    }
+  },
+  "q0226": {
+    "expected_route_action": "deterministic",
+    "expected_intent_kind": "subjects"
+  },
+  "q0233": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0237": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0238": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0240": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0242": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0245": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "needs_context"
+  },
+  "q0248": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "too_broad"
+  },
+  "q0254": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "too_broad"
+  },
+  "q0255": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0259": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0260": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0262": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0268": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0269": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0270": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0274": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0278": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "too_broad"
+  },
+  "q0281": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "needs_context"
+  },
+  "q0284": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "too_broad"
+  },
+  "q0291": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis",
+    "expected_scope_filters": {
+      "theme": "budget"
+    }
+  },
+  "q0292": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0294": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0295": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "needs_context"
+  },
+  "q0305": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis",
+    "expected_scope_filters": {
+      "theme": "retraites"
+    }
+  },
+  "q0314": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0320": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis",
+    "expected_scope_filters": {
+      "theme": "education"
+    }
+  },
+  "q0325": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0327": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0333": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis",
+    "expected_scope_filters": {
+      "theme": "mobilite"
+    }
+  },
+  "q0345": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis"
+  },
+  "q0346": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0347": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0348": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0349": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0350": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0351": {
+    "expected_route_action": "deterministic",
+    "expected_intent_kind": "participation_rate",
+    "expected_scope_filters": {
+      "theme": "institutions"
+    }
+  },
+  "q0357": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis"
+  },
+  "q0358": {
+    "expected_route_action": "deterministic",
+    "expected_intent_kind": "list",
+    "expected_scope_filters": {
+      "vote": "Pour",
+      "queryText": "motion de censure déposée par l'opposition"
+    }
+  },
+  "q0359": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0360": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0369": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "too_broad"
+  },
+  "q0375": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0469": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0471": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0473": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis",
+    "expected_scope_filters": {
+      "theme": "emploi"
+    }
+  },
+  "q0477": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0488": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0490": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis",
+    "expected_scope_filters": {
+      "theme": "budget"
+    }
+  },
+  "q0494": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0503": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0505": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis",
+    "expected_scope_filters": {
+      "theme": "economie"
+    }
+  },
+  "q0509": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0518": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0520": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis",
+    "expected_scope_filters": {
+      "theme": "economie"
+    }
+  },
+  "q0524": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0533": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0535": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis"
+  },
+  "q0539": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0548": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0550": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis"
+  },
+  "q0554": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0563": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0565": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis"
+  },
+  "q0567": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0569": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0578": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0580": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis",
+    "expected_scope_filters": {
+      "theme": "education"
+    }
+  },
+  "q0584": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0593": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0599": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0608": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0610": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis"
+  },
+  "q0614": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0623": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0625": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis",
+    "expected_scope_filters": {
+      "theme": "ecologie"
+    }
+  },
+  "q0629": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0638": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0640": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis"
+  },
+  "q0644": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0653": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0659": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0668": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0674": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0683": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0685": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis"
+  },
+  "q0689": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0698": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0700": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis",
+    "expected_scope_filters": {
+      "theme": "emploi"
+    }
+  },
+  "q0704": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0713": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0715": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis",
+    "expected_scope_filters": {
+      "theme": "europe"
+    }
+  },
+  "q0719": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0728": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0730": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis",
+    "expected_scope_filters": {
+      "vote": "Abstention"
+    }
+  },
+  "q0734": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0840": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0842": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0865": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0868": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0869": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0873": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0874": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis",
+    "expected_scope_filters": {
+      "dateFrom": "2022-06-01"
+    }
+  },
+  "q0879": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0880": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0882": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0885": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0891": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0893": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "needs_context"
+  },
+  "q0902": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0908": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "needs_context"
+  },
+  "q0916": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0926": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0927": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "needs_context"
+  },
+  "q0943": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0963": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0964": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0967": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0969": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0973": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0976": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0979": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0982": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0989": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0993": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q0998": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q1001": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q1005": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q1007": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q1009": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q1014": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q1015": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q1017": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q1019": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q1024": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q1028": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q1032": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q1034": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q1043": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q1046": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q1051": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q1054": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q1063": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q1068": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis"
+  },
+  "q1071": {
+    "expected_route_action": "deterministic",
+    "expected_intent_kind": "list",
+    "expected_scope_filters": {
+      "vote": "Pour",
+      "queryText": "motion de censure du dernier gouvernement"
+    }
+  },
+  "q1074": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q1086": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q1093": {
+    "expected_route_action": "deterministic",
+    "expected_intent_kind": "list",
+    "expected_scope_filters": {
+      "theme": "budget"
+    }
+  },
+  "q1132": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q1183": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q1185": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q1187": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis"
+  },
+  "q1188": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q1189": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q1195": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "unsupported"
+  },
+  "q1312": {
+    "expected_route_action": "deterministic",
+    "expected_intent_kind": "list",
+    "expected_scope_filters": {
+      "queryText": "loi Duplomb"
+    }
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "depute.coherence_discours": {
+    "expected_route_action": "clarify",
+    "clarify_reason": "unsupported",
+    "expected_intent_kind": "clarify"
+  },
+  "depute.justification_vote": {
+    "expected_route_action": "clarify",
+    "clarify_reason": "unsupported",
+    "expected_intent_kind": "clarify"
+  },
+  "depute.position_future": {
+    "expected_route_action": "clarify",
+    "clarify_reason": "unsupported",
+    "expected_intent_kind": "clarify"
+  },
+  "depute.transparence": {
+    "expected_route_action": "clarify",
+    "clarify_reason": "unsupported",
+    "expected_intent_kind": "clarify"
+  },
+  "external.impact_local_causal": {
+    "expected_route_action": "clarify",
+    "clarify_reason": "unsupported",
+    "expected_intent_kind": "clarify"
+  },
+  "external.opinion_publique_alignment": {
+    "expected_route_action": "clarify",
+    "clarify_reason": "unsupported",
+    "expected_intent_kind": "clarify"
+  },
+  "external.promesses_campagne": {
+    "expected_route_action": "clarify",
+    "clarify_reason": "unsupported",
+    "expected_intent_kind": "clarify"
+  },
+  "procedure.49_3_censure": {
+    "expected_route_action": "clarify",
+    "clarify_reason": "unsupported",
+    "expected_intent_kind": "clarify"
+  },
+  "procedure.definition": {
+    "expected_route_action": "clarify",
+    "clarify_reason": "unsupported",
+    "expected_intent_kind": "clarify"
+  },
+  "vote_groupe.alignement": {
+    "expected_route_action": "clarify",
+    "clarify_reason": "unsupported",
+    "expected_intent_kind": "clarify"
+  },
+  "vote_groupe.alliance_ponctuelle": {
+    "expected_route_action": "clarify",
+    "clarify_reason": "unsupported",
+    "expected_intent_kind": "clarify"
+  },
+  "vote_groupe.comparaison_moyenne": {
+    "expected_route_action": "clarify",
+    "clarify_reason": "unsupported",
+    "expected_intent_kind": "clarify"
+  },
+  "vote_groupe.division": {
+    "expected_route_action": "clarify",
+    "clarify_reason": "unsupported",
+    "expected_intent_kind": "clarify"
+  },
+  "vote_groupe.ecart": {
+    "expected_route_action": "clarify",
+    "clarify_reason": "unsupported",
+    "expected_intent_kind": "clarify"
+  },
+  "vote_groupe.liberte_vote": {
+    "expected_route_action": "clarify",
+    "clarify_reason": "unsupported",
+    "expected_intent_kind": "clarify"
+  },
+  "vote_participation.absence_type": {
+    "expected_route_action": "clarify",
+    "clarify_reason": "unsupported",
+    "expected_intent_kind": "clarify"
+  },
+  "vote_participation.absence_patterns": {
+    "expected_route_action": "clarify",
+    "clarify_reason": "unsupported",
+    "expected_intent_kind": "clarify"
+  },
+  "vote_participation.delegation": {
+    "expected_route_action": "clarify",
+    "clarify_reason": "unsupported",
+    "expected_intent_kind": "clarify"
+  },
+  "vote_participation.taux": {
+    "expected_route_action": "clarify",
+    "clarify_reason": "unsupported",
+    "expected_intent_kind": "clarify"
+  },
+  "vote_participation.votes_solennels": {
+    "expected_route_action": "clarify",
+    "clarify_reason": "unsupported",
+    "expected_intent_kind": "clarify"
+  },
+  "vote_texte.motion_censure": {
+    "expected_route_action": "deterministic"
+  },
+  "vote_texte.parcours": {
+    "expected_route_action": "clarify",
+    "clarify_reason": "unsupported",
+    "expected_intent_kind": "clarify"
+  },
+  "vote_texte.position": {
+    "expected_route_action": "deterministic"
+  },
+  "vote_texte.precision_scrutin": {
+    "expected_route_action": "clarify",
+    "clarify_reason": "needs_context",
+    "expected_intent_kind": "clarify"
+  },
+  "vote_theme.arbitrage": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis"
+  },
+  "vote_theme.coherence_interne": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis"
+  },
+  "vote_theme.comparaison_sujets": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis"
+  },
+  "vote_theme.evolution": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis"
+  },
+  "vote_theme.impact_quotidien": {
+    "expected_route_action": "deterministic"
+  },
+  "vote_theme.position": {
+    "expected_route_action": "deterministic"
+  },
+  "vote_theme.votes_revelateurs": {
+    "expected_route_action": "deterministic"
+  }
+}
