@@ -13,6 +13,7 @@ const ICONS_DIR = path.join(ROOT_DIR, 'public', 'icons');
 const DIST_DIR = path.join(ROOT_DIR, 'js', 'dist');
 const LATEST_PATH = path.join(ROOT_DIR, 'public', 'data', 'deputes_actifs', 'latest.json');
 const OUTPUT_PATH = path.join(ROOT_DIR, 'pwa-assets.json');
+const SERVICE_WORKER_PATH = path.join(ROOT_DIR, 'sw.js');
 
 const CRC_TABLE = (() => {
   const table = new Uint32Array(256);
@@ -263,6 +264,21 @@ async function computeVersion(assetPaths) {
   return hash.digest('hex').slice(0, 12);
 }
 
+async function syncServiceWorkerVersion(version) {
+  const source = await fs.readFile(SERVICE_WORKER_PATH, 'utf8');
+  const pattern = /const SW_BUILD_VERSION = '[^']*';/;
+  if (!pattern.test(source)) {
+    throw new Error('Impossible de synchroniser la version du service worker.');
+  }
+
+  const nextSource = source.replace(
+    pattern,
+    `const SW_BUILD_VERSION = '${version}';`
+  );
+
+  await fs.writeFile(SERVICE_WORKER_PATH, nextSource, 'utf8');
+}
+
 async function run() {
   await ensureIcons();
 
@@ -302,6 +318,7 @@ async function run() {
   };
 
   await fs.writeFile(OUTPUT_PATH, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
+  await syncServiceWorkerVersion(version);
   console.log(`Manifeste PWA genere: ${OUTPUT_PATH}`);
 }
 
