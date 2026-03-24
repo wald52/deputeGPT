@@ -33,6 +33,7 @@ export function createPwaController({
   let isApplyingUpdate = false;
   let isOffline = navigatorObject?.onLine === false;
   let isStandalone = defaultIsStandalone(windowObject, navigatorObject);
+  const hadControllerAtInit = Boolean(navigatorObject?.serviceWorker?.controller);
   let shouldReloadAfterUpdate = false;
   let registration = null;
   let dismissedStateKey = '';
@@ -287,7 +288,7 @@ export function createPwaController({
       serviceWorkerReady = true;
       render();
 
-      if (shouldReloadAfterUpdate) {
+      if (shouldReloadAfterUpdate || hadControllerAtInit) {
         shouldReloadAfterUpdate = false;
         reloadPage();
       }
