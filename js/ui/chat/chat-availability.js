@@ -107,7 +107,7 @@ export function createChatAvailabilityController({
       : 'online';
 
     if (selectedInferenceSource === 'online') {
-      userInput.placeholder = 'Questions exactes disponibles. Les analyses utilisent l IA en ligne par defaut.';
+      userInput.placeholder = 'Posez votre question ici.';
       updateChatCapabilitiesBanner();
       renderQuickActions();
       syncSendButtonState();
