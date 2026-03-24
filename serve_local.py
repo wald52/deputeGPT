@@ -19,6 +19,8 @@ class COOPCOEPHandler(http.server.SimpleHTTPRequestHandler):
             return 'application/javascript'
         if path.endswith('.wasm'):
             return 'application/wasm'
+        if path.endswith('.webmanifest'):
+            return 'application/manifest+json'
         return mimetype
 
 if __name__ == '__main__':
