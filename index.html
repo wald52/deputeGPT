@@ -169,23 +169,31 @@
     }
 
     .pwa-toolbar {
-      display: flex;
+      position: fixed;
+      top: 14px;
+      right: clamp(18px, 2.5vw, 30px);
+      z-index: 6000;
+      display: inline-flex;
+      flex-direction: row;
       align-items: center;
-      justify-content: space-between;
-      gap: 12px 16px;
-      margin-top: 14px;
-      padding: 12px 14px;
+      justify-content: flex-start;
+      gap: 10px;
+      width: auto;
+      max-width: calc(100vw - 36px);
+      padding: 10px 14px;
       border: 1px solid rgba(16, 38, 63, 0.12);
       border-radius: 18px;
-      background: rgba(255, 255, 255, 0.56);
-      box-shadow: 0 10px 28px rgba(16, 38, 63, 0.08);
+      background: rgba(252, 248, 241, 0.94);
+      box-shadow: 0 14px 34px rgba(16, 38, 63, 0.14);
+      backdrop-filter: blur(18px);
     }
 
     .pwa-toolbar-copy {
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 3px;
       min-width: 0;
+      order: 1;
     }
 
     .pwa-status-text,
@@ -198,17 +206,52 @@
 
     .pwa-status-text {
       font-weight: 600;
+      white-space: nowrap;
     }
 
     .pwa-toolbar-actions {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 10px;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      gap: 8px;
+      width: auto;
+      flex: 0 0 auto;
+      order: 2;
     }
 
     .pwa-action-btn {
       white-space: nowrap;
+      flex: 0 0 auto;
+    }
+
+    .pwa-toolbar-dismiss {
+      position: static;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      padding: 0;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: rgba(16, 38, 63, 0.72);
+      font-size: 1.25rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: background-color 0.18s ease, color 0.18s ease;
+      order: 3;
+      flex: 0 0 auto;
+    }
+
+    .pwa-toolbar-dismiss:hover {
+      background: rgba(16, 38, 63, 0.08);
+      color: var(--ink-strong);
+    }
+
+    .pwa-toolbar-dismiss:focus-visible {
+      outline: 2px solid var(--brand);
+      outline-offset: 2px;
     }
 
     #main-content {
@@ -521,13 +564,39 @@
       }
 
       .pwa-toolbar {
+        top: auto;
+        bottom: calc(env(safe-area-inset-bottom, 0px) + 12px);
+        left: 12px;
+        right: 12px;
+        width: auto;
+        max-width: none;
+        padding: 14px 48px 14px 14px;
         flex-direction: column;
         align-items: flex-start;
+        gap: 12px;
       }
 
       .pwa-toolbar-actions {
         width: 100%;
-        justify-content: stretch;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+
+      .pwa-status-text {
+        white-space: normal;
+      }
+
+      .pwa-toolbar-dismiss {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 32px;
+        height: 32px;
+        font-size: 1.35rem;
+      }
+
+      .pwa-action-btn {
+        flex: 1 1 180px;
       }
 
       .panel-title-row,
@@ -667,29 +736,38 @@
       <h1>
         <span>DéputéGPT</span>
       </h1>
-      <p class="subtitle-header">
-        Interrogez les votes des députés avec une réponse factuelle d'abord, puis une synthèse IA si besoin.
-      </p>
-      <div id="pwa-toolbar" class="pwa-toolbar" hidden>
-        <div class="pwa-toolbar-copy">
-          <p id="pwa-status-text" class="pwa-status-text" role="status" aria-live="polite">
-            Hors ligne partiel disponible.
-          </p>
-          <p id="pwa-status-help" class="pwa-status-help" hidden></p>
-        </div>
-        <div class="pwa-toolbar-actions">
-          <button id="pwa-install-btn" class="header-action-btn pwa-action-btn" type="button" hidden>
-            Installer l app
-          </button>
-          <button id="pwa-update-btn" class="header-action-btn pwa-action-btn" type="button" hidden>
-            Actualiser
-          </button>
-        </div>
+        <p class="subtitle-header">
+          Interrogez les votes des députés avec une réponse factuelle d'abord, puis une synthèse IA si besoin.
+        </p>
+      </div>
+    </header>
+
+    <div id="pwa-toolbar" class="pwa-toolbar" hidden>
+      <button
+        id="pwa-dismiss-btn"
+        class="pwa-toolbar-dismiss"
+        type="button"
+        aria-label="Fermer l infobulle d installation"
+      >
+        &times;
+      </button>
+      <div class="pwa-toolbar-copy">
+        <p id="pwa-status-text" class="pwa-status-text" role="status" aria-live="polite">
+          Hors ligne partiel disponible.
+        </p>
+        <p id="pwa-status-help" class="pwa-status-help" hidden></p>
+      </div>
+      <div class="pwa-toolbar-actions">
+        <button id="pwa-install-btn" class="header-action-btn pwa-action-btn" type="button" hidden>
+          Installer l app
+        </button>
+        <button id="pwa-update-btn" class="header-action-btn pwa-action-btn" type="button" hidden>
+          Actualiser
+        </button>
       </div>
     </div>
-  </header>
 
-  <noscript>
+    <noscript>
     <div class="noscript-banner">
       DéputéGPT a besoin de JavaScript pour charger les données et activer la recherche dans les votes des députés.
     </div>
