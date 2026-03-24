@@ -135,8 +135,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          # On ajoute les donnees publiees et le bundle servi en production
-          git add public/data js/dist
+          # On ajoute les donnees publiees et tous les artefacts modifies par le build
+          git add public/data pwa-assets.json sw.js
+          git add -f js/dist
 
           # Vérification s'il y a des changements réels
           if git diff --cached --quiet; then
