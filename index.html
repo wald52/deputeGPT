@@ -9,11 +9,17 @@
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="theme-color" content="#0f47aa" />
   <meta name="application-name" content="DéputéGPT" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="DeputeGPT" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:title" content="DéputéGPT" />
   <meta property="og:description" content="Interrogez les votes des députés français avec une interface statique, factuelle d'abord, puis analytique quand le contexte est pertinent." />
   <meta name="twitter:card" content="summary" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" sizes="180x180" href="public/icons/apple-touch-icon.png" />
   <link rel="modulepreload" href="js/dist/app.js" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='10' y='20' width='44' height='32' rx='6' fill='%230f47aa'/%3E%3Crect x='24' y='10' width='16' height='18' rx='2' fill='%23f8fbff'/%3E%3Cpath d='M24 28h16' stroke='%23f8fbff' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
     <style>
@@ -160,6 +166,49 @@
       color: rgba(16, 38, 63, 0.76);
       font-size: 0.92rem;
       line-height: 1.5;
+    }
+
+    .pwa-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px 16px;
+      margin-top: 14px;
+      padding: 12px 14px;
+      border: 1px solid rgba(16, 38, 63, 0.12);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.56);
+      box-shadow: 0 10px 28px rgba(16, 38, 63, 0.08);
+    }
+
+    .pwa-toolbar-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 0;
+    }
+
+    .pwa-status-text,
+    .pwa-status-help {
+      margin: 0;
+      font-size: 0.88rem;
+      line-height: 1.45;
+      color: rgba(16, 38, 63, 0.86);
+    }
+
+    .pwa-status-text {
+      font-weight: 600;
+    }
+
+    .pwa-toolbar-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    .pwa-action-btn {
+      white-space: nowrap;
     }
 
     #main-content {
@@ -471,6 +520,16 @@
         font-size: 0.84rem;
       }
 
+      .pwa-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .pwa-toolbar-actions {
+        width: 100%;
+        justify-content: stretch;
+      }
+
       .panel-title-row,
       .unified-header-row {
         flex-direction: column;
@@ -560,11 +619,13 @@
       function scheduleAutomaticStylesLoad() {
         const loadAfterFirstPaint = () => {
           const triggerLoad = () => {
-            if (typeof window.requestIdleCallback === 'function') {
-              window.requestIdleCallback(loadDeferredAssets, { timeout: 1600 });
-            } else {
-              window.setTimeout(loadDeferredAssets, 900);
-            }
+            window.setTimeout(() => {
+              if (typeof window.requestIdleCallback === 'function') {
+                window.requestIdleCallback(loadDeferredAssets, { timeout: 1600 });
+              } else {
+                loadDeferredAssets();
+              }
+            }, 700);
           };
 
           if (typeof window.requestAnimationFrame === 'function') {
@@ -609,6 +670,22 @@
       <p class="subtitle-header">
         Interrogez les votes des députés avec une réponse factuelle d'abord, puis une synthèse IA si besoin.
       </p>
+      <div id="pwa-toolbar" class="pwa-toolbar" hidden>
+        <div class="pwa-toolbar-copy">
+          <p id="pwa-status-text" class="pwa-status-text" role="status" aria-live="polite">
+            Hors ligne partiel disponible.
+          </p>
+          <p id="pwa-status-help" class="pwa-status-help" hidden></p>
+        </div>
+        <div class="pwa-toolbar-actions">
+          <button id="pwa-install-btn" class="header-action-btn pwa-action-btn" type="button" hidden>
+            Installer l app
+          </button>
+          <button id="pwa-update-btn" class="header-action-btn pwa-action-btn" type="button" hidden>
+            Actualiser
+          </button>
+        </div>
+      </div>
     </div>
   </header>
 
