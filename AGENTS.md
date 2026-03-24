@@ -329,6 +329,7 @@
 - En analyse, citer des votes precis avec date.
 - Si l'information manque, le dire clairement.
 - Si un backend distant est utilise, l'UI doit l'indiquer clairement avant l'envoi.
+- Eviter les lignes horizontales pour separer des composants visuels; preferer l'espacement, les cartes et les contrastes de fond.
 
 ### Donnees et enrichissement
 - Enrichir les scrutins cote serveur avec:
