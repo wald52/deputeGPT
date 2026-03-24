@@ -980,7 +980,7 @@ export async function init() {
     loadGroupesData: () => appDataController.loadGroupesData(),
     loadModelCatalog: () => appDataController.loadModelCatalog(),
     renderLegend: () => hemicyclePanel.renderLegend(),
-    setupHemicycle: () => hemicyclePanel.setupHemicycleOnDemand(),
+    setupHemicycle: () => hemicyclePanel.setupHemicycle(),
     setupModelLoadUI: () => modelUiFacade.setupModelLoadUI(),
     setupResponsiveLayout: () => mobileWorkspaceController.setupMobileWorkspace(),
     setupChatHistoryUI: () => chatHistoryPanel.setupChatHistoryUI(),
