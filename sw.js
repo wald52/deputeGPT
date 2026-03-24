@@ -1,4 +1,4 @@
-const SW_BUILD_VERSION = '5240efe260ef';
+const SW_BUILD_VERSION = '13cd2cabb6c8';
 const PRECACHE_NAME = `deputegpt-precache-${SW_BUILD_VERSION}`;
 const RUNTIME_CACHE_NAME = `deputegpt-runtime-${SW_BUILD_VERSION}`;
 const NAVIGATION_CACHE_NAME = `deputegpt-navigation-${SW_BUILD_VERSION}`;
@@ -188,6 +188,8 @@ self.addEventListener('install', event => {
     const assetManifest = await loadAssetManifest({ forceRefresh: true });
     await syncPrecache(assetManifest.precache);
     await warmRuntime(assetManifest.runtimeWarmup);
+
+    await self.skipWaiting();
 
     const existingClients = await self.clients.matchAll({
       type: 'window',
