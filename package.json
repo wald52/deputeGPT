@@ -4,7 +4,7 @@
   "private": true,
   "description": "Setup local pour le debug Playwright de DeputeGPT",
   "scripts": {
-    "build:app": "esbuild js/app.js --bundle --format=esm --splitting --target=es2022 --minify --outdir=js/dist",
+    "build:app": "esbuild js/app.js --bundle --format=esm --splitting --target=es2022 --minify --outdir=js/dist && node scripts/generate_pwa_assets.mjs",
     "serve": "python serve_local.py",
     "playwright:install": "playwright install chromium",
     "test:playwright": "playwright test",
