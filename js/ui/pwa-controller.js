@@ -35,13 +35,15 @@ export function createPwaController({
   let isStandalone = defaultIsStandalone(windowObject, navigatorObject);
   let shouldReloadAfterUpdate = false;
   let registration = null;
+  let dismissedStateKey = '';
 
   const elements = {
     root: null,
     statusText: null,
     statusHelp: null,
     installButton: null,
-    updateButton: null
+    updateButton: null,
+    dismissButton: null
   };
 
   function readElements() {
@@ -50,18 +52,38 @@ export function createPwaController({
     elements.statusHelp = documentObject.getElementById('pwa-status-help');
     elements.installButton = documentObject.getElementById('pwa-install-btn');
     elements.updateButton = documentObject.getElementById('pwa-update-btn');
+    elements.dismissButton = documentObject.getElementById('pwa-dismiss-btn');
   }
 
-  function shouldShowRoot() {
+  function getBannerStateKey() {
+    if (updateReady) {
+      return 'update_ready';
+    }
+
+    if (isOffline) {
+      return 'offline';
+    }
+
+    if (isStandalone) {
+      return 'installed';
+    }
+
+    if (installMode === 'prompt' || installMode === 'ios') {
+      return `install_${installMode}`;
+    }
+
+    if (serviceWorkerReady || canRegisterServiceWorker) {
+      return 'offline_ready';
+    }
+
+    return '';
+  }
+
+  function shouldShowRoot(stateKey = getBannerStateKey()) {
     return Boolean(
       elements.root &&
-      (
-        canRegisterServiceWorker ||
-        installMode === 'ios' ||
-        installMode === 'prompt' ||
-        updateReady ||
-        isStandalone
-      )
+      stateKey &&
+      dismissedStateKey !== stateKey
     );
   }
 
@@ -78,6 +100,10 @@ export function createPwaController({
       return 'Application installee. Hors ligne partiel disponible.';
     }
 
+    if (installMode === 'prompt' || installMode === 'ios') {
+      return "Installer l'application";
+    }
+
     if (serviceWorkerReady || canRegisterServiceWorker) {
       return 'Hors ligne partiel disponible.';
     }
@@ -90,9 +116,10 @@ export function createPwaController({
       return;
     }
 
+    const stateKey = getBannerStateKey();
     const showInstallButton = installMode === 'prompt' || installMode === 'ios';
 
-    elements.root.hidden = !shouldShowRoot();
+    elements.root.hidden = !shouldShowRoot(stateKey);
 
     if (elements.statusText) {
       elements.statusText.textContent = computeStatusText();
@@ -116,6 +143,18 @@ export function createPwaController({
       elements.updateButton.disabled = isApplyingUpdate;
       elements.updateButton.textContent = isApplyingUpdate ? 'Activation...' : 'Actualiser';
     }
+  }
+
+  function dismissBanner() {
+    const stateKey = getBannerStateKey();
+    if (!stateKey) {
+      return false;
+    }
+
+    dismissedStateKey = stateKey;
+    showIosHelp = false;
+    render();
+    return true;
   }
 
   function setOfflineState(nextOffline) {
@@ -292,6 +331,7 @@ export function createPwaController({
 
     elements.installButton?.addEventListener('click', handlePrimaryButtonClick);
     elements.updateButton?.addEventListener('click', requestUpdateActivation);
+    elements.dismissButton?.addEventListener('click', dismissBanner);
 
     return initServiceWorker();
   }
