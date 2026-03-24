@@ -1,6 +1,7 @@
-const PRECACHE_NAME = 'deputegpt-precache-v1';
-const RUNTIME_CACHE_NAME = 'deputegpt-runtime-v1';
-const NAVIGATION_CACHE_NAME = 'deputegpt-navigation-v1';
+const SW_BUILD_VERSION = '5240efe260ef';
+const PRECACHE_NAME = `deputegpt-precache-${SW_BUILD_VERSION}`;
+const RUNTIME_CACHE_NAME = `deputegpt-runtime-${SW_BUILD_VERSION}`;
+const NAVIGATION_CACHE_NAME = `deputegpt-navigation-${SW_BUILD_VERSION}`;
 const CACHE_NAMES = [PRECACHE_NAME, RUNTIME_CACHE_NAME, NAVIGATION_CACHE_NAME];
 
 const SCOPE_ROOT_URL = new URL('./', self.location).toString();
