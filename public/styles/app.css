@@ -1489,7 +1489,7 @@ a {
     #legend {
       margin-top: 6px;
       padding: 6px 0 0;
-      border-top: 1px dashed #d5e2f3;
+      border-top: none;
       gap: 6px 10px;
     }
 
@@ -3464,7 +3464,7 @@ header h1 span {
 
 .panel-title-row,
 .unified-header-row {
-  padding-bottom: 14px;
+  padding-bottom: 0;
 }
 
 .panel-title-row {
@@ -3473,7 +3473,7 @@ header h1 span {
   justify-content: space-between;
   gap: 12px 14px;
   margin-bottom: 18px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: none;
 }
 
 .unified-header-row {
@@ -3482,7 +3482,7 @@ header h1 span {
   align-items: center;
   gap: 12px;
   margin-bottom: 0;
-  border-bottom: 1px solid rgba(16, 38, 63, 0.1);
+  border-bottom: none;
 }
 
 .panel h2,
