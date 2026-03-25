@@ -166,6 +166,9 @@ export function createVoteSourceModalController() {
       document.body.style.overflow = 'hidden';
     }
 
+    document.getElementById('main-content')?.setAttribute('inert', '');
+    document.querySelector('footer')?.setAttribute('inert', '');
+
     frame.src = sourceUrl;
 
     globalThis.requestAnimationFrame?.(() => {
@@ -186,6 +189,8 @@ export function createVoteSourceModalController() {
     overlay.setAttribute('aria-hidden', 'true');
     overlay.removeEventListener('keydown', handleOverlayKeydown);
     overlay.removeEventListener('click', handleOverlayClick);
+    document.getElementById('main-content')?.removeAttribute('inert');
+    document.querySelector('footer')?.removeAttribute('inert');
 
     if (document.body) {
       document.body.style.overflow = previousBodyOverflow;

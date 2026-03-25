@@ -13,6 +13,7 @@ export function createConsentModalController({
   resolveThinkingModeFlag
 }) {
   let lastFocusedElement = null;
+  let previousBodyOverflow = '';
 
   function fillConsentModal(modelConfig) {
     const modeLabel = resolveThinkingModeFlag(modelConfig) ? 'thinking' : 'non-thinking';
@@ -67,8 +68,12 @@ export function createConsentModalController({
     fillConsentModal(modelConfig);
     const overlay = document.getElementById('model-consent-overlay');
     lastFocusedElement = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    previousBodyOverflow = document.body?.style?.overflow || '';
     overlay.classList.add('visible');
     overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    document.getElementById('main-content')?.setAttribute('inert', '');
+    document.querySelector('footer')?.setAttribute('inert', '');
     overlay.addEventListener('keydown', handleOverlayKeydown);
 
     const initialFocusTarget = document.getElementById('cancel-consent-btn');
@@ -83,6 +88,10 @@ export function createConsentModalController({
     overlay.classList.remove('visible');
     overlay.setAttribute('aria-hidden', 'true');
     overlay.removeEventListener('keydown', handleOverlayKeydown);
+    document.body.style.overflow = previousBodyOverflow;
+    previousBodyOverflow = '';
+    document.getElementById('main-content')?.removeAttribute('inert');
+    document.querySelector('footer')?.removeAttribute('inert');
 
     if (lastFocusedElement && lastFocusedElement.isConnected) {
       lastFocusedElement.focus();
