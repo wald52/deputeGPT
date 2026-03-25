@@ -133,7 +133,7 @@ export async function autoCleanStorage({
   }
 
   const percentUsed = (usage / quota) * 100;
-  console.log(`Stockage: ${(usage / 1024 / 1024).toFixed(0)}MB / ${(quota / 1024 / 1024).toFixed(0)}MB (${percentUsed.toFixed(1)}%)`);
+  console.debug(`Stockage: ${(usage / 1024 / 1024).toFixed(0)}MB / ${(quota / 1024 / 1024).toFixed(0)}MB (${percentUsed.toFixed(1)}%)`);
 
   if (percentUsed > 100) {
     await clearManagedAppStorage({ indexedDbApi, cachesApi, localStorageApi });
