@@ -44,6 +44,12 @@ export const DEFAULT_THINKING_GENERATION = {
   min_p: 0
 };
 
+export const CIRCUIT_BREAKER = {
+  failureThreshold: 3,
+  resetTimeoutMs: 30000,
+  halfOpenMaxAttempts: 1
+};
+
 export const ASSEMBLEE_SCRUTIN_URL_BASE = 'https://www.assemblee-nationale.fr/dyn/17/scrutins/';
 
 export const SCOPE_SOURCE_LABELS = {
