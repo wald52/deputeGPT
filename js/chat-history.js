@@ -73,7 +73,7 @@ async function openChatHistoryDb() {
 
     request.onsuccess = () => {
       chatHistoryDb = request.result;
-      console.log('✅ Base de données d\'historique des chats ouverte.');
+      console.debug('✅ Base de données d\'historique des chats ouverte.');
       resolve(chatHistoryDb);
     };
 
@@ -85,7 +85,7 @@ async function openChatHistoryDb() {
         store.createIndex('deputeId', 'deputeId', { unique: false });
         store.createIndex('updatedAt', 'updatedAt', { unique: false });
         store.createIndex('createdAt', 'createdAt', { unique: false });
-        console.log('📦 Object store "sessions" créé pour l\'historique des chats.');
+        console.debug('📦 Object store "sessions" créé pour l\'historique des chats.');
       }
     };
   });
@@ -133,7 +133,7 @@ async function createSession(depute, modelConfig = null) {
     const request = store.add(session);
 
     request.onsuccess = () => {
-      console.log(`📝 Nouvelle session créée: ${session.id}`);
+      console.debug(`📝 Nouvelle session créée: ${session.id}`);
       resolve(session);
     };
 
@@ -284,7 +284,7 @@ async function deleteSession(sessionId) {
     const request = store.delete(sessionId);
 
     request.onsuccess = () => {
-      console.log(`🗑️ Session supprimée: ${sessionId}`);
+      console.debug(`🗑️ Session supprimée: ${sessionId}`);
       resolve(true);
     };
     request.onerror = () => reject(request.error);
@@ -300,7 +300,7 @@ async function deleteAllSessions() {
     const request = store.clear();
 
     request.onsuccess = () => {
-      console.log('🗑️ Toutes les sessions ont été supprimées.');
+      console.debug('🗑️ Toutes les sessions ont été supprimées.');
       resolve(true);
     };
     request.onerror = () => reject(request.error);
@@ -390,7 +390,7 @@ async function downloadExport(options = {}) {
   document.body.removeChild(link);
   URL.revokeObjectURL(url);
 
-  console.log(`📥 Export téléchargé: ${link.download}`);
+  console.debug(`📥 Export téléchargé: ${link.download}`);
 }
 
 /**
