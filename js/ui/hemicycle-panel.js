@@ -187,10 +187,6 @@ export function createHemicyclePanelController({
       element.style.stroke = 'none';
       element.style.strokeWidth = '0';
     }
-
-    if (document.activeElement === element && typeof element.blur === 'function') {
-      element.blur();
-    }
   }
 
   function activateSeatElement(element) {
@@ -206,11 +202,6 @@ export function createHemicyclePanelController({
     hemicycleActiveSeatElement = element;
     hemicycleActiveSeatElement.classList.add('seat-active');
     hemicycleActiveSeatElement.style.outline = 'none';
-
-    if (typeof hemicycleActiveSeatElement.blur === 'function') {
-      const activeSeatElement = hemicycleActiveSeatElement;
-      queueMicrotask(() => activeSeatElement?.blur());
-    }
   }
 
   function clearActiveSeat() {
@@ -259,8 +250,10 @@ export function createHemicyclePanelController({
     element.style.pointerEvents = 'all';
     element.style.transition = 'all 0.15s ease';
     element.style.outline = 'none';
-    element.setAttribute('tabindex', '-1');
-    element.setAttribute('focusable', 'false');
+    element.setAttribute('tabindex', '0');
+    element.setAttribute('role', 'button');
+    element.setAttribute('aria-label', `${depute.prenom} ${depute.nom} (${depute.groupeAbrev}), siege ${element.id ? element.id.substring(1) : '?'}`);
+    element.removeAttribute('focusable');
 
     const title = document.createElement('title');
     title.textContent = `${depute.prenom} ${depute.nom} (${depute.groupeAbrev})`;
@@ -313,6 +306,55 @@ export function createHemicyclePanelController({
       }
 
       document.removeEventListener('mousemove', updateTooltipPosition);
+    };
+
+    element.onkeydown = event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        event.stopPropagation();
+        activateSeatElement(element);
+        selectDepute(depute);
+      }
+    };
+
+    element.onfocus = () => {
+      element.style.opacity = '0.7';
+      element.style.stroke = '#333';
+      element.style.strokeWidth = '1px';
+
+      if (!window.seatTooltip) {
+        window.seatTooltip = document.createElement('div');
+        window.seatTooltip.className = 'seat-tooltip';
+        document.body.appendChild(window.seatTooltip);
+      }
+
+      const photoUrl = getDeputePhotoUrl(depute);
+      const groupeInfo = getGroupesPolitiques().find(groupe => groupe.code === depute.groupeAbrev);
+      const groupeNom = groupeInfo ? groupeInfo.nom : depute.groupeAbrev;
+
+      window.seatTooltip.innerHTML = buildHemicycleTooltipHtmlInternal(depute, {
+        seatNumber: element.id ? element.id.substring(1) : '?',
+        groupeNom,
+        photoUrl,
+        deputePhotoPlaceholderUrl
+      });
+      window.seatTooltip.classList.add('visible');
+
+      const rect = element.getBoundingClientRect();
+      window.seatTooltip.style.left = `${rect.left + rect.width / 2}px`;
+      window.seatTooltip.style.top = `${rect.top - 10}px`;
+    };
+
+    element.onblur = () => {
+      element.style.opacity = '1';
+      if (!element.classList.contains('seat-active')) {
+        element.style.stroke = 'none';
+        element.style.strokeWidth = '0';
+      }
+
+      if (window.seatTooltip) {
+        window.seatTooltip.classList.remove('visible');
+      }
     };
   }
 
@@ -409,11 +451,20 @@ export function createHemicyclePanelController({
       const item = document.createElement('div');
       item.className = 'legend-item';
       item.dataset.groupCode = groupe.code || '';
+      item.setAttribute('role', 'button');
+      item.setAttribute('tabindex', '0');
+      item.setAttribute('aria-label', `${groupe.nom}, ${groupe.seats} sieges. Selectionner un depute au hasard.`);
       item.innerHTML = `
         <div class="legend-color" style="background-color:${groupe.couleur}"></div>
         <span>${groupe.nom} (${groupe.seats})</span>
       `;
       item.addEventListener('click', () => selectRandomDepute(groupe.code));
+      item.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          selectRandomDepute(groupe.code);
+        }
+      });
       legend.appendChild(item);
     });
   }
