@@ -9,11 +9,14 @@
     "playwright:install": "playwright install chromium",
     "test:playwright": "playwright test",
     "test:router": "node scripts/run_router_regression.js --label ci",
+    "test:circuit-breaker": "node scripts/test_circuit_breaker.mjs",
+    "test:unit": "vitest run",
     "test:lighthouse": "node scripts/run_lighthouse_check.mjs --url http://127.0.0.1:8000/tmp-lighthouse-index.html --use-bundled-entry --output tmp-lighthouse-ci.json --min-performance 90 --max-lcp 3000"
   },
   "devDependencies": {
     "esbuild": "^0.27.4",
     "lighthouse": "^13.0.3",
-    "playwright": "^1.58.2"
+    "playwright": "^1.58.2",
+    "vitest": "^4.1.1"
   }
 }
