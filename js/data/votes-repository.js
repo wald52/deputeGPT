@@ -9,11 +9,13 @@ export async function loadDeputeVotes(
   try {
     const response = await fetchImpl(`${basePath}/${deputeId}.json`);
     if (!response.ok) {
-      return [];
+      const error = new Error(`HTTP ${response.status} sur le fichier de votes du depute ${deputeId}.`);
+      error.status = response.status;
+      throw error;
     }
-    return await response.json();
+    return { votes: await response.json(), error: null };
   } catch (error) {
-    logger.error('ERREUR TECHNIQUE (Fetch) :', error);
-    return [];
+    logger.error(`Votes: echec du chargement pour ${deputeId}.`, error);
+    return { votes: [], error: error.message || 'Chargement des votes impossible.' };
   }
 }
