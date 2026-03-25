@@ -9,7 +9,7 @@ function buildSearchResultHtmlInternal(depute, {
 }) {
   return `
     <div class="search-result-content">
-      <img src="${getDeputePhotoUrl(depute)}" alt="Portrait de ${fullName}" class="search-result-photo" onerror="this.onerror=null;this.src='${deputePhotoPlaceholderUrl}'">
+      <img src="${getDeputePhotoUrl(depute)}" alt="Portrait de ${fullName}" class="search-result-photo" loading="lazy" onerror="this.onerror=null;this.src='${deputePhotoPlaceholderUrl}'">
       <div class="search-result-body">
         <div class="search-result-name">${fullName}</div>
         <div class="search-result-info">
