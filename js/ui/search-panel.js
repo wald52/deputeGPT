@@ -1,3 +1,5 @@
+import { normalizeQuestion } from '../domain/vote-normalizer.js';
+
 function buildSearchResultHtmlInternal(depute, {
   fullName,
   circoDisplay,
@@ -105,7 +107,7 @@ export function createSearchPanelController({
 
     input.addEventListener('input', event => {
       try {
-        const query = event.target.value.trim().toLowerCase();
+        const query = normalizeQuestion(event.target.value);
 
         if (query.length < 2) {
           clearResults();
@@ -120,10 +122,10 @@ export function createSearchPanelController({
         }
 
         const results = getDeputesData().filter(depute => {
-          const nom = (depute.nom || '').toLowerCase();
-          const prenom = (depute.prenom || '').toLowerCase();
-          const groupe = (depute.groupeNom || depute.groupe || '').toLowerCase();
-          const circo = (depute.circonscription || depute.departementNom || '').toLowerCase();
+          const nom = normalizeQuestion(depute.nom);
+          const prenom = normalizeQuestion(depute.prenom);
+          const groupe = normalizeQuestion(depute.groupeNom || depute.groupe);
+          const circo = normalizeQuestion(depute.circonscription || depute.departementNom);
           const fullName = `${prenom} ${nom}`;
 
           return nom.includes(query) ||
