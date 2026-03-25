@@ -75,7 +75,7 @@ export function createTransformersRuntimeManager() {
 
       try {
         runtimeModule = await import(channelConfig.url);
-        console.log(`✅ ${channelConfig.label} charge depuis le CDN.`);
+        console.debug(`✅ ${channelConfig.label} charge depuis le CDN.`);
       } catch (cdnError) {
         if (channel !== 'stable') {
           throw new Error(`Impossible de charger ${channelConfig.label}: ${cdnError.message}`);
