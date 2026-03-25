@@ -1522,7 +1522,11 @@ a {
     #hemicycle-container .place:focus-visible,
     #hemicycle-container [id^="p"]:focus,
     #hemicycle-container [id^="p"]:focus-visible {
-      outline: none !important;
+      outline: 2px solid #1b63c6 !important;
+      outline-offset: 1px;
+      stroke: #333 !important;
+      stroke-width: 1px !important;
+      opacity: 0.7;
     }
 
     .seat-active {
