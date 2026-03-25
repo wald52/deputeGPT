@@ -226,7 +226,7 @@ export function createChatHistoryPanelController({
         });
       }
 
-      console.log(`Session restauree: ${sessionId}`);
+      console.debug(`Session restauree: ${sessionId}`);
     } catch (error) {
       console.error('Erreur restauration session:', error);
       await addMessage('system', 'Erreur lors de la restauration de la session. Reessayez ou selectionnez un autre depute.', { method: 'system' });
