@@ -39,11 +39,16 @@ export function createAppBootstrap({
     const deputesData = getDeputesData();
     if (!deputesData || deputesData.length === 0) {
       console.error('ERREUR CRITIQUE: aucune donnee de depute chargee.');
-      alert('Erreur : impossible de charger la liste des deputes.');
+      const messagesDiv = document.getElementById('messages');
+      const target = messagesDiv?.parentElement || document.body;
+      const errorBanner = document.createElement('div');
+      errorBanner.style.cssText = 'padding:16px; margin:16px; background:#fdecea; color:#611a15; border-radius:12px; font-size:0.9rem; text-align:center;';
+      errorBanner.textContent = 'Erreur critique : impossible de charger la liste des deputes. Verifiez votre connexion et rechargez la page.';
+      target.prepend(errorBanner);
       return;
     }
 
-    console.log(`Donnees chargees : ${deputesData.length} deputes.`);
+    console.debug(`Donnees chargees : ${deputesData.length} deputes.`);
   }
 
   async function init() {
