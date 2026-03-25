@@ -697,7 +697,10 @@ export function createChatController({
         let errorMessage = "Une erreur s'est produite pendant la generation.";
         const rawErrorMessage = String(error?.message || '');
         const normalizedErrorMessage = rawErrorMessage.toLowerCase();
-        if (error?.code === 'REMOTE_QUOTA_EXHAUSTED' || error?.nextAction === 'activate_local') {
+        if (error?.code === 'CIRCUIT_OPEN') {
+          const retrySeconds = Math.ceil((error.retryAfterMs || 30000) / 1000);
+          errorMessage = `Le service IA en ligne est temporairement indisponible apres plusieurs echecs. Reessayez dans ${retrySeconds}s, ou activez un modele local dans les reglages.`;
+        } else if (error?.code === 'REMOTE_QUOTA_EXHAUSTED' || error?.nextAction === 'activate_local') {
           errorMessage = 'Les quotas gratuits de l IA en ligne sont epuises pour le moment. Ouvrez Reglages IA puis activez un modele local si vous voulez continuer les analyses.';
         } else if (rawErrorMessage) {
           errorMessage = normalizedErrorMessage.includes('fetch')
