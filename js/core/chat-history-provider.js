@@ -8,7 +8,7 @@ export function createChatHistoryProvider() {
 
     try {
       const module = await import('../chat-history.js');
-      currentChatHistory = module.ChatHistory || window.ChatHistory;
+      currentChatHistory = module.ChatHistory;
       if (currentChatHistory) {
         await currentChatHistory.init();
       }
