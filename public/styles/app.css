@@ -13,6 +13,11 @@ body {
   display: none !important;
 }
 
+[inert] {
+  pointer-events: none;
+  user-select: none;
+}
+
 a {
   color: inherit;
 }
