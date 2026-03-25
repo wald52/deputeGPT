@@ -28,6 +28,7 @@ logs/
 *.temp
 ~*
 playwright-*.png
+tmp-codex-window*.png
 __pycache__/
 *.pyc
 test-results/.last-run.json
