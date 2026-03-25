@@ -74,13 +74,18 @@ export function createDeputePanelController({
     syncChatAvailability();
     document.getElementById('user-input').placeholder = 'Chargement des votes en cours...';
 
-    appState.currentDepute.votes = await loadDeputeVotes(depute.id);
+    const { votes, error } = await loadDeputeVotes(depute.id);
+    appState.currentDepute.votes = votes;
 
     statsContainer.hidden = false;
     statsContainer.style.opacity = '1';
-    document.getElementById('stat-votes').textContent = appState.currentDepute.votes.length;
+    document.getElementById('stat-votes').textContent = votes.length;
 
-    await addMessage('system', `Donnees chargees pour ${depute.prenom} ${depute.nom}. (${appState.currentDepute.votes.length} votes)`, { method: 'system' });
+    if (error) {
+      await addMessage('system', `Impossible de charger les votes de ${depute.prenom} ${depute.nom}. Verifiez votre connexion ou reessayez plus tard.`, { method: 'system' });
+    } else {
+      await addMessage('system', `Donnees chargees pour ${depute.prenom} ${depute.nom}. (${votes.length} votes)`, { method: 'system' });
+    }
     syncChatAvailability();
     updateChatScopeSummary();
     document.dispatchEvent(new CustomEvent('depute:selected', {
