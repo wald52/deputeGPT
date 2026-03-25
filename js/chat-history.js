@@ -3,6 +3,8 @@
  * Persistance longue durée pour les sessions de chat
  */
 
+import { createChatSessionState } from './core/state.js';
+
 const CHAT_HISTORY_DB_NAME = 'deputegpt-chat-history';
 const CHAT_HISTORY_DB_VERSION = 1;
 const CHAT_HISTORY_STORE_NAME = 'sessions';
@@ -91,12 +93,16 @@ async function openChatHistoryDb() {
   });
 }
 
+let idCounter = 0;
+
 function generateSessionId() {
-  return `session-${Date.now()}-${crypto.randomUUID?.() || Math.random().toString(36).slice(2, 11)}`;
+  idCounter += 1;
+  return `session-${Date.now()}-${crypto.randomUUID?.() || `${idCounter}-${performance.now().toFixed(3)}`}`;
 }
 
 function generateMessageId() {
-  return `msg-${Date.now()}-${crypto.randomUUID?.() || Math.random().toString(36).slice(2, 11)}`;
+  idCounter += 1;
+  return `msg-${Date.now()}-${crypto.randomUUID?.() || `${idCounter}-${performance.now().toFixed(3)}`}`;
 }
 
 async function createSession(depute, modelConfig = null) {
@@ -112,19 +118,7 @@ async function createSession(depute, modelConfig = null) {
     modelId: modelConfig?.id || null,
     modelName: modelConfig?.displayName || null,
     messages: [],
-    sessionState: {
-      activeDeputeId: depute?.id || null,
-      lastResultVoteIds: [],
-      lastResultQuery: '',
-      lastFilters: null,
-      lastSort: 'date_desc',
-      lastLimit: null,
-      lastScopeSource: 'depute_all',
-      lastTheme: null,
-      lastDateRange: null,
-      lastPlan: null,
-      pendingClarification: null
-    }
+    sessionState: createChatSessionState(depute?.id || null)
   };
 
   return new Promise((resolve, reject) => {
@@ -444,7 +438,7 @@ function clearActiveSession() {
 }
 
 // API publique
-window.ChatHistory = {
+export const ChatHistory = {
   // Gestion des sessions
   createSession,
   updateSession,
