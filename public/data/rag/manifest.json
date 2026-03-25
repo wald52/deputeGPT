@@ -1,18 +1,23 @@
 {
-  "schemaVersion": 2,
-  "generatedAt": "2026-03-23T05:51:30Z",
+  "schemaVersion": 3,
+  "generatedAt": "2026-03-25T05:38:40Z",
   "documentType": "scrutin",
   "stats": {
     "totalDocuments": 5828,
     "totalKeywords": 2686
   },
   "embeddingModel": {
-    "id": "paraphrase-multilingual-minilm-l12-v2",
-    "pythonModelId": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
-    "browserModelId": "Xenova/paraphrase-multilingual-MiniLM-L12-v2",
+    "id": "multilingual-e5-small",
+    "family": "e5",
+    "usage": "asymmetric_retrieval",
+    "pythonModelId": "intfloat/multilingual-e5-small",
+    "browserModelId": "Xenova/multilingual-e5-small",
     "task": "feature-extraction",
+    "queryPrefix": "query: ",
+    "documentPrefix": "passage: ",
     "pooling": "mean",
     "normalize": true,
+    "dimension": 384,
     "estimatedDownloadMb": 120,
     "notes": "Voie stable par defaut pour le reranking semantique local opt-in."
   },
@@ -23,21 +28,26 @@
       "strategy": "single_vector",
       "default": true,
       "experimental": false,
-      "notes": "Voie stable par defaut. Un vecteur dense par scrutin.",
+      "notes": "Voie stable par defaut. Un vecteur dense par scrutin avec encodeur E5 multilingue dedie.",
       "model": {
-        "id": "paraphrase-multilingual-minilm-l12-v2",
-        "pythonModelId": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
-        "browserModelId": "Xenova/paraphrase-multilingual-MiniLM-L12-v2",
+        "id": "multilingual-e5-small",
+        "family": "e5",
+        "usage": "asymmetric_retrieval",
+        "pythonModelId": "intfloat/multilingual-e5-small",
+        "browserModelId": "Xenova/multilingual-e5-small",
         "task": "feature-extraction",
+        "queryPrefix": "query: ",
+        "documentPrefix": "passage: ",
         "pooling": "mean",
         "normalize": true,
+        "dimension": 384,
         "estimatedDownloadMb": 120,
-        "notes": "Mode stable dedie au reranking local."
+        "notes": "Mode stable dedie au reranking local avec retrieval asymetrique query/passage."
       },
       "artifact": {
         "path": "semantic_index.json",
-        "bytes": 26264404,
-        "sha256": "9b01cc7dc88febc13fd2c396de4d49a695974d5696906baa9cf35dcd2302bc40",
+        "bytes": 26273844,
+        "sha256": "af164dcebf0961c1ab75b410ce8065ff857e9333f990e8113040dd084c0e28a9",
         "quantization": "int8",
         "vectorDimension": 384,
         "valueScale": 127
@@ -49,21 +59,26 @@
       "strategy": "multi_vector_sections",
       "default": false,
       "experimental": true,
-      "notes": "Mode avance experimental. Plusieurs vecteurs par scrutin pour des appuis plus fins.",
+      "notes": "Mode avance experimental. Plusieurs vecteurs par scrutin avec le meme encodeur E5 multilingue dedie.",
       "model": {
-        "id": "paraphrase-multilingual-minilm-l12-v2-multi-vector",
-        "pythonModelId": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
-        "browserModelId": "Xenova/paraphrase-multilingual-MiniLM-L12-v2",
+        "id": "multilingual-e5-small-multi-vector",
+        "family": "e5",
+        "usage": "asymmetric_retrieval",
+        "pythonModelId": "intfloat/multilingual-e5-small",
+        "browserModelId": "Xenova/multilingual-e5-small",
         "task": "feature-extraction",
+        "queryPrefix": "query: ",
+        "documentPrefix": "passage: ",
         "pooling": "mean",
         "normalize": true,
+        "dimension": 384,
         "estimatedDownloadMb": 120,
-        "notes": "Mode experimental multi-vector par sections de scrutin."
+        "notes": "Mode experimental multi-vector par sections de scrutin avec retrieval asymetrique query/passage."
       },
       "artifact": {
         "path": "semantic_multivector_index.json",
-        "bytes": 71217013,
-        "sha256": "eff2074a2554d6e19ad157cda3b2ea325f0c20b7920391f249acdc4f1a63db11",
+        "bytes": 71211577,
+        "sha256": "d23db75f93b93621f9fea8a3ad5f6ab05792a896a6f8edb755ccc63e65f4fdcd",
         "quantization": "int8",
         "vectorDimension": 384,
         "valueScale": 127,
@@ -75,20 +90,20 @@
     "lexicalIndex": {
       "path": "lexical_index.json",
       "bytes": 5535737,
-      "sha256": "eb61425fba17e2e511145da3be6bcb423161bb4dcbc502a155d3f261c2d3a2cc"
+      "sha256": "c0d6ec0559145d469e994bf3342de2a7f5b717969f38ec2bc3a0fe3c780bf4f7"
     },
     "semanticIndex": {
       "path": "semantic_index.json",
-      "bytes": 26264404,
-      "sha256": "9b01cc7dc88febc13fd2c396de4d49a695974d5696906baa9cf35dcd2302bc40",
+      "bytes": 26273844,
+      "sha256": "af164dcebf0961c1ab75b410ce8065ff857e9333f990e8113040dd084c0e28a9",
       "quantization": "int8",
       "vectorDimension": 384,
       "valueScale": 127
     },
     "semanticMultivectorIndex": {
       "path": "semantic_multivector_index.json",
-      "bytes": 71217013,
-      "sha256": "eff2074a2554d6e19ad157cda3b2ea325f0c20b7920391f249acdc4f1a63db11",
+      "bytes": 71211577,
+      "sha256": "d23db75f93b93621f9fea8a3ad5f6ab05792a896a6f8edb755ccc63e65f4fdcd",
       "quantization": "int8",
       "vectorDimension": 384,
       "valueScale": 127,

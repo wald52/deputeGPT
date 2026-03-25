@@ -1,0 +1,36 @@
+{
+  "version": "e0ff888b220a",
+  "generatedAt": "2026-03-25T05:38:41.914Z",
+  "precache": [
+    "./",
+    "index.html",
+    "manifest.webmanifest",
+    "public/styles/app.css",
+    "public/icons/favicon-16x16.png",
+    "public/icons/favicon-32x32.png",
+    "public/icons/favicon-48x48.png",
+    "public/icons/apple-touch-icon.png",
+    "public/icons/icon-192.png",
+    "public/icons/icon-512.png",
+    "public/icons/icon-maskable-192.png",
+    "public/icons/icon-maskable-512.png",
+    "js/dist/app.js",
+    "js/dist/chat-history-VAKTZ3G4.js",
+    "js/dist/chunk-5HUEVDYM.js",
+    "js/dist/chunk-F7STOLHW.js",
+    "js/dist/chunk-I7AUKTXE.js",
+    "js/dist/online-runtime-VTRWVRN6.js",
+    "js/dist/pipeline-runtime-NJUQUB3U.js",
+    "js/dist/qwen3-runtime-EMQKJJ3E.js",
+    "js/dist/qwen35-runtime-2OPRKAYP.js",
+    "js/dist/semantic-rag-runtime-X7C7AVJH.js",
+    "js/dist/transformers-runtime-PS2KVIFN.js",
+    "js/dist/transformers.min-B5RXFEIE.js"
+  ],
+  "runtimeWarmup": [
+    "public/data/model-catalog.json",
+    "public/data/deputes_actifs/latest.json",
+    "boot-v2026-03-25.json",
+    "public/data/deputes_actifs/groupes.json"
+  ]
+}
