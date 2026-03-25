@@ -183,6 +183,12 @@ async function getTransformersRuntimeManager() {
 function createGeneratorAdapter(runtime) {
   const adapter = async (messages, generationOptions) => runtime.invoke(messages, generationOptions);
   adapter.dispose = runtime.dispose;
+  if (typeof runtime.resetCircuit === 'function') {
+    adapter.resetCircuit = runtime.resetCircuit;
+  }
+  if (typeof runtime.getCircuitStatus === 'function') {
+    adapter.getCircuitStatus = runtime.getCircuitStatus;
+  }
   return adapter;
 }
 
