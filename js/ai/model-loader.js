@@ -16,6 +16,9 @@ export function createModelLoader({
   addSystemMessage
 }) {
   async function releaseCurrentModel() {
+    if (appState.generator && typeof appState.generator.resetCircuit === 'function') {
+      appState.generator.resetCircuit();
+    }
     if (appState.generator && typeof appState.generator.dispose === 'function') {
       await appState.generator.dispose();
     }

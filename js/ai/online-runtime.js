@@ -1,8 +1,87 @@
 import { loadExternalScript } from '../core/external-script-loader.js';
+import { CIRCUIT_BREAKER } from '../core/config.js';
 
 const SESSION_TOKEN_KEY = 'deputegpt:online-session-token';
 const SESSION_EXPIRY_KEY = 'deputegpt:online-session-expiry';
 const TURNSTILE_API_URL = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+
+function createCircuitBreaker(now) {
+  const state = {
+    status: 'closed',
+    consecutiveFailures: 0,
+    openedAt: 0,
+    halfOpenAttempts: 0
+  };
+
+  const threshold = CIRCUIT_BREAKER.failureThreshold;
+  const resetTimeout = CIRCUIT_BREAKER.resetTimeoutMs;
+  const halfOpenMax = CIRCUIT_BREAKER.halfOpenMaxAttempts;
+
+  function checkBeforeCall() {
+    if (state.status === 'open') {
+      const elapsed = now() - state.openedAt;
+      if (elapsed >= resetTimeout) {
+        state.status = 'half_open';
+        state.halfOpenAttempts = 0;
+        return;
+      }
+      const error = new Error('Le service IA en ligne est temporairement indisponible.');
+      error.code = 'CIRCUIT_OPEN';
+      error.retryAfterMs = resetTimeout - elapsed;
+      throw error;
+    }
+
+    if (state.status === 'half_open') {
+      if (state.halfOpenAttempts >= halfOpenMax) {
+        const error = new Error('Le service IA en ligne est temporairement indisponible.');
+        error.code = 'CIRCUIT_OPEN';
+        error.retryAfterMs = resetTimeout;
+        throw error;
+      }
+      state.halfOpenAttempts++;
+    }
+  }
+
+  function recordSuccess() {
+    state.consecutiveFailures = 0;
+    state.halfOpenAttempts = 0;
+    state.status = 'closed';
+  }
+
+  function recordFailure() {
+    if (state.status === 'half_open') {
+      state.status = 'open';
+      state.openedAt = now();
+      state.halfOpenAttempts = 0;
+      return;
+    }
+
+    state.consecutiveFailures++;
+    if (state.consecutiveFailures >= threshold) {
+      state.status = 'open';
+      state.openedAt = now();
+    }
+  }
+
+  function getStatus() {
+    if (state.status === 'open') {
+      return {
+        status: 'open',
+        retryAfterMs: Math.max(0, resetTimeout - (now() - state.openedAt))
+      };
+    }
+    return { status: state.status, retryAfterMs: 0 };
+  }
+
+  function reset() {
+    state.status = 'closed';
+    state.consecutiveFailures = 0;
+    state.openedAt = 0;
+    state.halfOpenAttempts = 0;
+  }
+
+  return { checkBeforeCall, recordSuccess, recordFailure, getStatus, reset };
+}
 
 function getStorageValue(key, storageApi = globalThis.sessionStorage) {
   try {
@@ -213,37 +292,48 @@ export function createOnlineRuntime(
     throw new Error('Fetch est indisponible dans ce navigateur.');
   }
 
+  const circuitBreaker = createCircuitBreaker(now);
+
   const resolveTurnstileToken = createTurnstileTokenResolver({
     siteKey: String(modelConfig?.turnstileSiteKey || '').trim()
   });
 
   async function requestSessionToken() {
-    const turnstileToken = await resolveTurnstileToken();
-    const response = await fetchImpl(`${endpointBase}/session`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        turnstile_token: turnstileToken
-      })
-    });
+    circuitBreaker.checkBeforeCall();
+    try {
+      const turnstileToken = await resolveTurnstileToken();
+      const response = await fetchImpl(`${endpointBase}/session`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          turnstile_token: turnstileToken
+        })
+      });
 
-    if (!response.ok) {
-      throw await parseOnlineError(response);
+      if (!response.ok) {
+        throw await parseOnlineError(response);
+      }
+
+      const payload = await response.json();
+      const sessionToken = String(payload?.session_token || '').trim();
+      const expiresAt = String(payload?.expires_at || '').trim();
+
+      if (!sessionToken) {
+        throw new Error('Le Worker IA en ligne ne renvoie aucun jeton de session.');
+      }
+
+      setStorageValue(SESSION_TOKEN_KEY, sessionToken, storageApi);
+      setStorageValue(SESSION_EXPIRY_KEY, expiresAt, storageApi);
+      circuitBreaker.recordSuccess();
+      return sessionToken;
+    } catch (error) {
+      if (error?.code !== 'CIRCUIT_OPEN') {
+        circuitBreaker.recordFailure();
+      }
+      throw error;
     }
-
-    const payload = await response.json();
-    const sessionToken = String(payload?.session_token || '').trim();
-    const expiresAt = String(payload?.expires_at || '').trim();
-
-    if (!sessionToken) {
-      throw new Error('Le Worker IA en ligne ne renvoie aucun jeton de session.');
-    }
-
-    setStorageValue(SESSION_TOKEN_KEY, sessionToken, storageApi);
-    setStorageValue(SESSION_EXPIRY_KEY, expiresAt, storageApi);
-    return sessionToken;
   }
 
   async function ensureSessionToken() {
@@ -262,43 +352,67 @@ export function createOnlineRuntime(
   }
 
   async function invoke(messages, options = {}) {
-    const sessionToken = await ensureSessionToken();
-    const response = await fetchImpl(`${endpointBase}/analysis`, {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${sessionToken}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(buildOnlineRequestBody(messages, options, {
-        source: 'deputegpt-web',
-        model_signature: modelConfig?.signature || null
-      }))
-    });
-
-    if (!response.ok) {
-      if (response.status === 401 || response.status === 403) {
-        setStorageValue(SESSION_TOKEN_KEY, null, storageApi);
-        setStorageValue(SESSION_EXPIRY_KEY, null, storageApi);
+    circuitBreaker.checkBeforeCall();
+    let sessionToken;
+    try {
+      sessionToken = await ensureSessionToken();
+    } catch (error) {
+      if (error?.code === 'CIRCUIT_OPEN') {
+        throw error;
       }
-
-      throw await parseOnlineError(response);
+      throw error;
     }
 
-    const payload = await response.json();
-    return {
-      choices: [
-        {
-          message: {
-            content: payload?.answer || ''
-          }
+    try {
+      const response = await fetchImpl(`${endpointBase}/analysis`, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${sessionToken}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(buildOnlineRequestBody(messages, options, {
+          source: 'deputegpt-web',
+          model_signature: modelConfig?.signature || null
+        }))
+      });
+
+      if (!response.ok) {
+        if (response.status === 401 || response.status === 403) {
+          setStorageValue(SESSION_TOKEN_KEY, null, storageApi);
+          setStorageValue(SESSION_EXPIRY_KEY, null, storageApi);
         }
-      ],
-      deputeGPTMeta: payload
-    };
+
+        throw await parseOnlineError(response);
+      }
+
+      const payload = await response.json();
+      circuitBreaker.recordSuccess();
+      return {
+        choices: [
+          {
+            message: {
+              content: payload?.answer || ''
+            }
+          }
+        ],
+        deputeGPTMeta: payload
+      };
+    } catch (error) {
+      if (error?.code !== 'CIRCUIT_OPEN') {
+        circuitBreaker.recordFailure();
+      }
+      throw error;
+    }
   }
 
   return {
     invoke,
+    getCircuitStatus() {
+      return circuitBreaker.getStatus();
+    },
+    resetCircuit() {
+      circuitBreaker.reset();
+    },
     async dispose() {
       return undefined;
     }
