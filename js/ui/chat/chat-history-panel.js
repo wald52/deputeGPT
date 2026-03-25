@@ -1,3 +1,33 @@
+function showInlineConfirmation(container, { message, confirmLabel, cancelLabel, confirmStyle, onConfirm, onCancel }) {
+  const wrapper = document.createElement('div');
+  wrapper.style.cssText = 'padding:12px; background:#fff8e1; border:1px solid #f0c36d; border-radius:8px; margin:8px 0;';
+
+  const msg = document.createElement('div');
+  msg.style.cssText = 'font-size:0.82rem; color:#5d4037; margin-bottom:10px;';
+  msg.textContent = message;
+  wrapper.appendChild(msg);
+
+  const btnRow = document.createElement('div');
+  btnRow.style.cssText = 'display:flex; gap:8px; justify-content:flex-end;';
+
+  const cancelBtn = document.createElement('button');
+  cancelBtn.textContent = cancelLabel || 'Annuler';
+  cancelBtn.style.cssText = 'padding:6px 14px; border:1px solid #ccc; border-radius:6px; background:white; cursor:pointer; font-size:0.78rem;';
+  cancelBtn.addEventListener('click', () => { wrapper.remove(); onCancel?.(); });
+  btnRow.appendChild(cancelBtn);
+
+  const okBtn = document.createElement('button');
+  okBtn.textContent = confirmLabel || 'Confirmer';
+  okBtn.style.cssText = confirmStyle || 'padding:6px 14px; border:none; border-radius:6px; background:#c62828; color:white; cursor:pointer; font-size:0.78rem; font-weight:600;';
+  okBtn.addEventListener('click', () => { wrapper.remove(); onConfirm?.(); });
+  btnRow.appendChild(okBtn);
+
+  wrapper.appendChild(btnRow);
+  container.appendChild(wrapper);
+  okBtn.focus();
+  return wrapper;
+}
+
 function buildChatHistoryPanelHtmlInternal() {
   return `
     <div style="padding: 12px; border-bottom: 1px solid #e2ebf5; display:flex; justify-content:space-between; align-items:center; background:#f6faff;">
@@ -162,7 +192,8 @@ export function createChatHistoryPanelController({
     try {
       const session = await chatHistory.getSession(sessionId);
       if (!session) {
-        alert('Session non trouvee');
+        closeHistoryPanel();
+        await addMessage('system', 'Session introuvable. Elle a peut-etre ete supprimee.', { method: 'system' });
         return;
       }
 
@@ -170,7 +201,7 @@ export function createChatHistoryPanelController({
 
       const depute = getDeputesData().find(currentDepute => currentDepute.id === session.deputeId);
       if (!depute) {
-        alert('Le depute de cette session n est plus disponible');
+        await addMessage('system', 'Le depute de cette session n\'est plus disponible dans les donnees actuelles.', { method: 'system' });
         return;
       }
 
@@ -198,7 +229,7 @@ export function createChatHistoryPanelController({
       console.log(`Session restauree: ${sessionId}`);
     } catch (error) {
       console.error('Erreur restauration session:', error);
-      alert('Erreur lors de la restauration de la session');
+      await addMessage('system', 'Erreur lors de la restauration de la session. Reessayez ou selectionnez un autre depute.', { method: 'system' });
     }
   }
 
@@ -253,10 +284,30 @@ export function createChatHistoryPanelController({
         return;
       }
 
-      if (confirm('Supprimer tout l\'historique des chats ? Cette action est irreversible.')) {
-        await chatHistory.deleteAllSessions();
-        await refreshHistoryList();
+      const btn = document.getElementById('clear-history-btn');
+      if (btn.dataset.confirmOpen === 'true') {
+        return;
       }
+      btn.dataset.confirmOpen = 'true';
+      btn.disabled = true;
+      btn.textContent = 'Confirmer la suppression ?';
+      showInlineConfirmation(btn.parentElement, {
+        message: 'Supprimer tout l\'historique des chats ? Cette action est irreversible.',
+        confirmLabel: 'Supprimer',
+        cancelLabel: 'Annuler',
+        onConfirm: async () => {
+          await chatHistory.deleteAllSessions();
+          await refreshHistoryList();
+          btn.disabled = false;
+          btn.textContent = 'Supprimer tout l\'historique';
+          delete btn.dataset.confirmOpen;
+        },
+        onCancel: () => {
+          btn.disabled = false;
+          btn.textContent = 'Supprimer tout l\'historique';
+          delete btn.dataset.confirmOpen;
+        }
+      });
     });
   }
 
@@ -276,7 +327,7 @@ export function createChatHistoryPanelController({
 
     const chatHistory = await ensureChatHistoryReady();
     if (!chatHistory) {
-      alert('Historique non disponible sur cet appareil.');
+      await addMessage('system', 'Historique non disponible sur cet appareil. Le stockage local est desactive.', { method: 'system' });
       return;
     }
 
@@ -287,17 +338,36 @@ export function createChatHistoryPanelController({
   async function showExportMenu() {
     const chatHistory = await ensureChatHistoryReady();
     if (!chatHistory) {
-      alert('Historique non disponible');
+      await addMessage('system', 'Historique non disponible pour l\'export.', { method: 'system' });
       return;
     }
 
-    const choice = confirm('Exporter en JSON (OK) ou JSONL (Annuler) ?\n\nJSON: format complet avec structure\nJSONL: une ligne par session (ideal pour RAG)');
-    if (choice) {
+    const panel = getHistoryPanel();
+    const exportContainer = panel?.querySelector('#export-json-btn')?.parentElement;
+    if (!exportContainer) {
       chatHistory.downloadExport({ format: 'json' });
       return;
     }
 
-    chatHistory.downloadExport({ format: 'jsonl' });
+    if (exportContainer.dataset.confirmOpen === 'true') {
+      return;
+    }
+    exportContainer.dataset.confirmOpen = 'true';
+
+    showInlineConfirmation(exportContainer, {
+      message: 'Choisir le format d\'export.',
+      confirmLabel: 'JSON (complet)',
+      cancelLabel: 'JSONL (RAG)',
+      confirmStyle: 'padding:6px 14px; border:none; border-radius:6px; background:#1b63c6; color:white; cursor:pointer; font-size:0.78rem; font-weight:600;',
+      onConfirm: () => {
+        chatHistory.downloadExport({ format: 'json' });
+        delete exportContainer.dataset.confirmOpen;
+      },
+      onCancel: () => {
+        chatHistory.downloadExport({ format: 'jsonl' });
+        delete exportContainer.dataset.confirmOpen;
+      }
+    });
   }
 
   function setupChatHistoryUI() {
