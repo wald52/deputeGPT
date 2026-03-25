@@ -241,28 +241,6 @@ a {
   }
 }
 
-@keyframes dotsAnimation {
-  0% {
-    content: 'L\'IA réfléchit… 🧠';
-  }
-
-  25% {
-    content: 'L\'IA réfléchit. 🧠';
-  }
-
-  50% {
-    content: 'L\'IA réfléchit.. 🧠';
-  }
-
-  75% {
-    content: 'L\'IA réfléchit... 🧠';
-  }
-
-  100% {
-    content: 'L\'IA réfléchit… 🧠';
-  }
-}
-
 .message-loading::after {
   content: ' 🧠';
   display: inline-block;
