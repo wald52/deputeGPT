@@ -1,10 +1,10 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-04-01T06:13:04Z",
+  "generatedAt": "2026-04-14T06:20:30Z",
   "documentType": "scrutin",
   "stats": {
-    "totalDocuments": 5957,
-    "totalKeywords": 2724
+    "totalDocuments": 6181,
+    "totalKeywords": 2779
   },
   "embeddingModel": {
     "id": "multilingual-e5-small",
@@ -46,8 +46,8 @@
       },
       "artifact": {
         "path": "semantic_index.json",
-        "bytes": 26855761,
-        "sha256": "6fa67cd853f316cbf0766f4a048ca3920d07b9de76a2877ff447e5ca41341a11",
+        "bytes": 27865765,
+        "sha256": "6fe2e04ccc9b6a18a881b94541ef3c37dd873409302de678a76ddda765d13ed6",
         "quantization": "int8",
         "vectorDimension": 384,
         "valueScale": 127
@@ -77,8 +77,8 @@
       },
       "artifact": {
         "path": "semantic_multivector_index.json",
-        "bytes": 72788184,
-        "sha256": "141fde0a0f126bfdb318c86b1dc87d84001613e0e0650496c7d1437d4dde432c",
+        "bytes": 75525653,
+        "sha256": "9e9dbce91c43ce0f93c3dfea765e9f1f32aa91a2780d3c56df23c3b417e6ba2e",
         "quantization": "int8",
         "vectorDimension": 384,
         "valueScale": 127,
@@ -89,21 +89,21 @@
   "artifacts": {
     "lexicalIndex": {
       "path": "lexical_index.json",
-      "bytes": 5661103,
-      "sha256": "a8cb68d215d4fc23b3d7e3d455cac8155df4f89ddfebc4864539ef757edbb8a5"
+      "bytes": 5903278,
+      "sha256": "636020d91bd3e8822ac3dbd13512d2d797c7b9bbd2990b59a3ffc6140567164d"
     },
     "semanticIndex": {
       "path": "semantic_index.json",
-      "bytes": 26855761,
-      "sha256": "6fa67cd853f316cbf0766f4a048ca3920d07b9de76a2877ff447e5ca41341a11",
+      "bytes": 27865765,
+      "sha256": "6fe2e04ccc9b6a18a881b94541ef3c37dd873409302de678a76ddda765d13ed6",
       "quantization": "int8",
       "vectorDimension": 384,
       "valueScale": 127
     },
     "semanticMultivectorIndex": {
       "path": "semantic_multivector_index.json",
-      "bytes": 72788184,
-      "sha256": "141fde0a0f126bfdb318c86b1dc87d84001613e0e0650496c7d1437d4dde432c",
+      "bytes": 75525653,
+      "sha256": "9e9dbce91c43ce0f93c3dfea765e9f1f32aa91a2780d3c56df23c3b417e6ba2e",
       "quantization": "int8",
       "vectorDimension": 384,
       "valueScale": 127,
