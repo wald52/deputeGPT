@@ -8,7 +8,7 @@
   {
     "code": "EPR",
     "nom": "Ensemble pour la République",
-    "seats": 90,
+    "seats": 91,
     "couleur": "#7B4591"
   },
   {
@@ -68,7 +68,7 @@
   {
     "code": "NI",
     "nom": "Non inscrit",
-    "seats": 11,
+    "seats": 10,
     "couleur": "#8D949A"
   }
 ]
