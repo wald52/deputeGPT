@@ -26,7 +26,7 @@
   {
     "code": "DR",
     "nom": "Droite Républicaine",
-    "seats": 46,
+    "seats": 48,
     "couleur": "#8CB0DC"
   },
   {
@@ -68,7 +68,7 @@
   {
     "code": "NI",
     "nom": "Non inscrit",
-    "seats": 13,
+    "seats": 11,
     "couleur": "#8D949A"
   }
 ]
