@@ -2,7 +2,7 @@
   {
     "code": "RN",
     "nom": "Rassemblement National",
-    "seats": 121,
+    "seats": 122,
     "couleur": "#313567"
   },
   {
@@ -68,7 +68,7 @@
   {
     "code": "NI",
     "nom": "Non inscrit",
-    "seats": 11,
+    "seats": 10,
     "couleur": "#8D949A"
   }
 ]
