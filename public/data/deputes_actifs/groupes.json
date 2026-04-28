@@ -38,7 +38,7 @@
   {
     "code": "DEM",
     "nom": "Les Démocrates",
-    "seats": 36,
+    "seats": 35,
     "couleur": "#F07E26"
   },
   {
@@ -68,7 +68,7 @@
   {
     "code": "NI",
     "nom": "Non inscrit",
-    "seats": 14,
+    "seats": 15,
     "couleur": "#8D949A"
   }
 ]
