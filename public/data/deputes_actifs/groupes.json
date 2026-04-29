@@ -2,13 +2,13 @@
   {
     "code": "RN",
     "nom": "Rassemblement National",
-    "seats": 121,
+    "seats": 122,
     "couleur": "#313567"
   },
   {
     "code": "EPR",
     "nom": "Ensemble pour la République",
-    "seats": 89,
+    "seats": 91,
     "couleur": "#7B4591"
   },
   {
@@ -38,7 +38,7 @@
   {
     "code": "DEM",
     "nom": "Les Démocrates",
-    "seats": 35,
+    "seats": 37,
     "couleur": "#F07E26"
   },
   {
@@ -68,7 +68,7 @@
   {
     "code": "NI",
     "nom": "Non inscrit",
-    "seats": 15,
+    "seats": 10,
     "couleur": "#8D949A"
   }
 ]
