@@ -2216,12 +2216,18 @@ export function createModelSelectionController({
     });
 
     confirmBtn?.addEventListener('click', async () => {
-      if (!appState.pendingModelConfig) {
+      const modelConfig = appState.pendingModelConfig;
+      if (!modelConfig) {
         return;
       }
 
       setAdvancedOptionsOpen(false);
-      await initAI(appState.pendingModelConfig);
+      // Fermer le modal de consentement avant de lancer le chargement : la barre
+      // de progression vit dans l'interface principale (derriere l'overlay et en
+      // inert), elle doit etre visible pendant le telechargement. hideConsentModal
+      // remet pendingModelConfig a null, d'ou la capture de modelConfig en amont.
+      consentModal.hideConsentModal();
+      await initAI(modelConfig);
     });
 
     document.addEventListener('click', event => {
