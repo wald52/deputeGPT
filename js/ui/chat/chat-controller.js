@@ -68,6 +68,54 @@ export function createChatController({
 
   function buildAnalysisPromptContextInternal(contextVotes, currentDepute) {
     const uniqueVotes = dedupeVotes(contextVotes);
+
+    const themeStats = new Map();
+    uniqueVotes.forEach(vote => {
+      const theme = lookupVoteThemeLabel(vote) || 'Autre';
+      if (!themeStats.has(theme)) {
+        themeStats.set(theme, { pour: 0, contre: 0, abstention: 0, total: 0 });
+      }
+
+      const s = themeStats.get(theme);
+      s.total++;
+      const v = (vote.vote || '').toLowerCase();
+      if (v === 'pour') {
+        s.pour++;
+      } else if (v === 'contre') {
+        s.contre++;
+      } else if (v === 'abstention') {
+        s.abstention++;
+      }
+    });
+
+    let thematicSection = '';
+    if (themeStats.size >= 2) {
+      const lines = [...themeStats.entries()]
+        .sort(([, a], [, b]) => b.total - a.total)
+        .map(([theme, s]) => {
+          const parts = [];
+          if (s.pour) {
+            parts.push(`Pour ${s.pour}`);
+          }
+
+          if (s.contre) {
+            parts.push(`Contre ${s.contre}`);
+          }
+
+          if (s.abstention) {
+            parts.push(`Abstention ${s.abstention}`);
+          }
+
+          const other = s.total - s.pour - s.contre - s.abstention;
+          if (other > 0) {
+            parts.push(`Autres ${other}`);
+          }
+
+          return `  ${theme} : ${s.total} vote(s) — ${parts.join(', ')}`;
+        });
+      thematicSection = `APERCU THEMATIQUE :\n${lines.join('\n')}\n\nVOTES PERTINENTS :\n`;
+    }
+
     const contextStr = uniqueVotes
       .map(vote => {
         const parts = [
@@ -97,6 +145,7 @@ export function createChatController({
     const systemPrompt =
       `Tu es un assistant expert en politique francaise. Tu analyses les votes des deputes a l'Assemblee Nationale.\n\n` +
       `CONTEXTE RETENU POUR ${currentDepute.prenom.toUpperCase()} ${currentDepute.nom.toUpperCase()} :\n` +
+      thematicSection +
       `${contextStr}\n\n` +
       `INSTRUCTIONS IMPORTANTES :\n` +
       `- Reponds exclusivement en francais.\n` +
@@ -105,7 +154,7 @@ export function createChatController({
       `- Utilise UNIQUEMENT les votes fournis ci-dessus.\n` +
       `- Si l'information n'est pas dans les votes, dis-le clairement.\n` +
       `- Adapte la longueur a la question : 80-120 mots pour une question simple ou factuelle, jusqu a 350 mots pour une analyse thematique ou un bilan. Ne te repete pas.\n` +
-      `- Cite 2 a 5 votes precis avec la date quand c'est utile. Mentionne le resultat du scrutin (adopte/rejete) lorsque c est pertinent.\n` +
+      `- Appuie ton analyse sur l apercu thematique (si disponible) et cite 2 a 5 votes specifiques avec la date. Mentionne le resultat du scrutin (adopte/rejete) lorsque c est pertinent.\n` +
       `- Reste factuel, synthetique et transparent sur tes limites.\n`;
 
     return {

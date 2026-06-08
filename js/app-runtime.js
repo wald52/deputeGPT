@@ -137,6 +137,7 @@ const ANALYSIS_CONTEXT_VOTE_LIMIT = 50;
 const ANALYSIS_CONTEXT_MIN_VOTES = 8;
 const ANALYSIS_SEARCH_RESULT_LIMIT = 120;
 const ANALYSIS_MAX_NEW_TOKENS = 512;
+const SEMANTIC_CANDIDATE_LIMIT = 80;
 const THEMATIC_STANCE_EXAMPLE_LIMIT = 4;
 
 let aiRuntimeModulesPromise = null;
@@ -545,6 +546,7 @@ const analysisRankingHelpers = createAnalysisRankingHelpers({
   hasLexicalSearchReady: () => isSearchIndexLexicallyReady() && Boolean(searchIndexRepository.state.miniSearch || globalThis.miniSearch),
   searchVotesInIndex: (query, limit) => searchIndexRepository.searchVotesInIndex(query, limit),
   analysisSearchResultLimit: ANALYSIS_SEARCH_RESULT_LIMIT,
+  semanticCandidateLimit: SEMANTIC_CANDIDATE_LIMIT,
   isSemanticRagEnabled: () => semanticRagRuntime.isEnabled(),
   isSemanticRagReady: () => semanticRagRuntime.isReady(),
   buildSemanticScores: (question, votes) => semanticRagRuntime.buildSemanticScores(question, votes, getVoteId),
