@@ -9,6 +9,7 @@ export function createModelLoader({
   createPipelineRuntime,
   createQwen3Runtime,
   createQwen35Runtime,
+  createGemma4Runtime,
   createOnlineRuntime,
   createGeneratorAdapter,
   resolveThinkingModeFlag,
@@ -98,6 +99,8 @@ export function createModelLoader({
           runtime = await createQwen3Runtime(modelConfig, updateProgress);
         } else if (modelConfig.runtime === 'qwen35_low_level') {
           runtime = await createQwen35Runtime(modelConfig, updateProgress);
+        } else if (modelConfig.runtime === 'gemma4_low_level') {
+          runtime = await createGemma4Runtime(modelConfig, updateProgress);
         } else {
           runtime = await createPipelineRuntime(modelConfig, updateProgress);
         }
