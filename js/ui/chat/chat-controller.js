@@ -166,6 +166,44 @@ export function createChatController({
     };
   }
 
+  async function buildConversationHistoryInternal(maxExchanges) {
+    const chatHistory = getChatHistory();
+    if (!chatHistory) {
+      return [];
+    }
+
+    const sessionId = chatHistory.getActiveSessionId?.();
+    if (!sessionId) {
+      return [];
+    }
+
+    try {
+      const session = await chatHistory.getSession(sessionId);
+      const allMessages = session?.messages || [];
+
+      // Exclut le dernier message (question courante déjà persistée avant cet appel)
+      const priorMessages = allMessages.slice(0, -1);
+
+      const pairs = [];
+      for (let i = priorMessages.length - 1; i >= 0 && pairs.length < maxExchanges * 2; i--) {
+        const msg = priorMessages[i];
+        if (msg.role === 'assistant' && msg.method === 'analysis_rag') {
+          const prevUser = priorMessages.slice(0, i).reverse().find(m => m.role === 'user');
+          if (prevUser) {
+            pairs.unshift(
+              { role: 'user', content: String(prevUser.content || '').slice(0, 600) },
+              { role: 'assistant', content: String(msg.content || '').slice(0, 600) }
+            );
+          }
+        }
+      }
+
+      return pairs;
+    } catch {
+      return [];
+    }
+  }
+
   async function syncHistorySessionStateInternal() {
     const chatHistory = getChatHistory();
     if (chatHistory && chatHistory.getActiveSessionId()) {
@@ -690,7 +728,12 @@ export function createChatController({
         await syncHistorySessionStateInternal();
 
         const analysisPrompt = buildAnalysisPromptContextInternal(contextVotes, appState.currentDepute);
-        analysisPrompt.messages[1].content = effectiveQuestion;
+        const historyMessages = await buildConversationHistoryInternal(2);
+        analysisPrompt.messages = [
+          analysisPrompt.messages[0],
+          ...historyMessages,
+          { role: 'user', content: effectiveQuestion }
+        ];
 
         const isRemoteModel = appState.activeModelConfig?.provider === 'online';
         const enableThinking = isRemoteModel

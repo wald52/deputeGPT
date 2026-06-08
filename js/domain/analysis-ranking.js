@@ -15,6 +15,17 @@ export function createAnalysisRankingHelpers({
   lookupVoteSubject,
   lookupVoteThemeLabel
 }) {
+  // Enrichit la requête sémantique avec les mots-clés du thème détecté pour rapprocher
+  // l'embedding de la question de l'espace des titres de scrutins (HyDE déterministe).
+  function buildEnrichedSemanticQuery(question, scope) {
+    const theme = scope?.filters?.theme;
+    if (!theme || !Array.isArray(themeKeywords[theme]) || themeKeywords[theme].length === 0) {
+      return question;
+    }
+
+    const themeTerms = themeKeywords[theme].slice(0, 8).join(' ');
+    return `${question} ${themeTerms}`;
+  }
   function extractAnalysisKeywords(question, scope) {
     const keywords = normalizeQuestion(question)
       .split(/[^a-z0-9]+/g)
@@ -107,7 +118,8 @@ export function createAnalysisRankingHelpers({
       const semanticCandidates = rankedCandidates
         .slice(0, semanticCandidateLimit)
         .map(entry => entry.vote);
-      const semanticScores = await Promise.resolve(buildSemanticScores(question, semanticCandidates));
+      const enrichedSemanticQuery = buildEnrichedSemanticQuery(question, scope);
+      const semanticScores = await Promise.resolve(buildSemanticScores(enrichedSemanticQuery, semanticCandidates));
 
       if (semanticScores instanceof Map && semanticScores.size > 0) {
         scoredVotes.forEach(entry => {
@@ -132,6 +144,7 @@ export function createAnalysisRankingHelpers({
 
   return {
     buildAnalysisLexicalScores,
+    buildEnrichedSemanticQuery,
     extractAnalysisKeywords,
     rankVotesForAnalysis
   };
