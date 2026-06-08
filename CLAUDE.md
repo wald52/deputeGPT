@@ -85,9 +85,8 @@ The request flow for a user question is the heart of the system:
 **AI runtimes** (under `js/ai/`) are pluggable behind model loading
 (`model-loader.js`, `model-selection.js`, `model-ui-facade.js`,
 `consent-modal.js`):
-- Local browser inference uses **transformers.js + WebGPU** (MLC/WebLLM were fully removed).
-- `qwen3-runtime.js` — **stable** local chat (Qwen3 ONNX, `AutoTokenizer + Qwen3ForCausalLM`).
-- `qwen35-runtime.js` — **experimental** Qwen3.5 (easy to remove if it doesn't pan out).
+- Local browser inference uses **transformers.js (stable channel, latest published release) + WebGPU** (MLC/WebLLM were fully removed).
+- `qwen3-runtime.js` — **stable** local chat (Qwen3 ONNX, `AutoTokenizer + Qwen3ForCausalLM`). This is the only local inference path (the experimental Qwen3.5 runtime was removed).
 - `online-runtime.js` — remote source via the **Cloudflare Worker** (default for analysis requests).
 - `semantic-rag-runtime.js` — opt-in local semantic reranking.
 - `answer-sanitizer.js` — strips `<think>` blocks; internal reasoning must never reach the UI.

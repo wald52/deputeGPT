@@ -8,7 +8,6 @@ export function createModelLoader({
   transformersRuntime,
   createPipelineRuntime,
   createQwen3Runtime,
-  createQwen35Runtime,
   createOnlineRuntime,
   createGeneratorAdapter,
   resolveThinkingModeFlag,
@@ -90,16 +89,13 @@ export function createModelLoader({
         updateProgress(0.12, 'Connexion IA en ligne');
         runtime = await createOnlineRuntime(modelConfig);
       } else {
-        const runtimeChannel = modelConfig.runtime === 'qwen3_5_low_level' ? 'next' : 'stable';
-        updateProgress(0.02, runtimeChannel === 'next' ? 'Chargement du runtime experimental' : 'Chargement du runtime stable');
-        await transformersRuntime.loadRuntime(runtimeChannel);
+        updateProgress(0.02, 'Chargement du runtime stable');
+        await transformersRuntime.loadRuntime('stable');
 
         updateProgress(0.08, 'Preparation');
-        runtime = modelConfig.runtime === 'qwen3_5_low_level'
-          ? await createQwen35Runtime(modelConfig, updateProgress)
-          : modelConfig.runtime === 'qwen3_low_level'
-            ? await createQwen3Runtime(modelConfig, updateProgress)
-            : await createPipelineRuntime(modelConfig, updateProgress);
+        runtime = modelConfig.runtime === 'qwen3_low_level'
+          ? await createQwen3Runtime(modelConfig, updateProgress)
+          : await createPipelineRuntime(modelConfig, updateProgress);
       }
 
       appState.generator = createGeneratorAdapter(runtime);
