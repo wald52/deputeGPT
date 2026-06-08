@@ -2,9 +2,12 @@ import { resolveGenerationOptions } from './generation-options.js';
 
 // Runtime local pour la famille Qwen3.5 (architecture vision-langage).
 // Contrairement a Qwen3, ces modeles ne se chargent ni via le pipeline
-// `text-generation` ni via `Qwen3ForCausalLM` : transformers.js expose la
-// classe dediee `Qwen3_5ForConditionalGeneration`. On l'utilise ici en mode
-// texte seul (aucune image en entree), avec le meme gabarit de chat que Qwen3.
+// `text-generation` ni via `Qwen3ForCausalLM`. Deux classes dediees existent :
+//  - `Qwen3_5ForConditionalGeneration` : repo multimodal complet (`-ONNX`),
+//    qui embarque un encodeur visuel inutile pour notre usage texte.
+//  - `Qwen3_5ForCausalLM` : repo texte seul (`-Text-ONNX`), plus leger.
+// Le modele indique la classe a utiliser via `modelConfig.modelClass`.
+// On charge toujours en mode texte seul, avec le meme gabarit de chat que Qwen3.
 export async function createQwen35Runtime(
   modelConfig,
   updateProgress,
@@ -15,8 +18,10 @@ export async function createQwen35Runtime(
 ) {
   await transformersRuntime.loadRuntime('stable');
 
-  if (!transformersRuntime.state.AutoTokenizer || !transformersRuntime.state.Qwen3_5ForConditionalGeneration) {
-    throw new Error('Cette version stable de transformers.js ne fournit pas le support necessaire pour Qwen3.5.');
+  const modelClassName = modelConfig.modelClass || 'Qwen3_5ForConditionalGeneration';
+  const ModelClass = transformersRuntime.state[modelClassName];
+  if (!transformersRuntime.state.AutoTokenizer || !ModelClass) {
+    throw new Error(`Cette version stable de transformers.js ne fournit pas la classe ${modelClassName} necessaire pour Qwen3.5.`);
   }
 
   updateProgress(0.08, 'Chargement du tokenizer');
@@ -36,7 +41,7 @@ export async function createQwen35Runtime(
 
   let model;
   try {
-    model = await transformersRuntime.state.Qwen3_5ForConditionalGeneration.from_pretrained(modelConfig.path, {
+    model = await ModelClass.from_pretrained(modelConfig.path, {
       device: 'webgpu',
       dtype: modelConfig.dtype,
       progress_callback: info => {
