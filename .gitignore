@@ -32,6 +32,7 @@ tmp-codex-window*.png
 __pycache__/
 *.pyc
 test-results/.last-run.json
+test-results/**/*.jsonl
 
 # Environnement
 .env
