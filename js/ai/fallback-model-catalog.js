@@ -124,6 +124,95 @@ export const FALLBACK_MODEL_CATALOG = {
         { id: 'q4f16', name: 'Q4F16', dtype: 'q4f16', estimated_download_mb: 2930, default: true },
         { id: 'fp16', name: 'FP16', dtype: 'fp16', estimated_download_mb: 7980 }
       ]
+    },
+    {
+      id: 'qwen3.5-0.8b',
+      name: 'Qwen3.5 0.8B',
+      family: 'Qwen3.5',
+      status: 'experimental',
+      default: false,
+      path: 'onnx-community/Qwen3.5-0.8B-ONNX',
+      runtime: 'qwen35_low_level',
+      modelClass: 'Qwen3_5ForConditionalGeneration',
+      task: 'text-generation',
+      estimated_download_mb: 950,
+      notes: 'Experimental. Variante multimodale complete chargee en mode texte (Qwen3_5ForConditionalGeneration), avec encodeur visuel inutile ici. Preferer la variante texte pour un telechargement plus leger. Plus lourd/lent que Qwen3 sur WebGPU. Tailles estimatives a confirmer.',
+      non_thinking: {
+        temperature: 0.7,
+        top_p: 0.8,
+        top_k: 20,
+        min_p: 0
+      },
+      thinking: {
+        temperature: 0.6,
+        top_p: 0.95,
+        top_k: 20,
+        min_p: 0
+      },
+      quantizations: [
+        { id: 'q4f16', name: 'Q4F16', dtype: 'q4f16', estimated_download_mb: 950, default: true },
+        { id: 'q4', name: 'Q4', dtype: 'q4', estimated_download_mb: 1300 },
+        { id: 'fp16', name: 'FP16', dtype: 'fp16', estimated_download_mb: 1700 }
+      ]
+    },
+    {
+      id: 'qwen3.5-0.8b-text',
+      name: 'Qwen3.5 0.8B (texte)',
+      family: 'Qwen3.5',
+      status: 'experimental',
+      default: false,
+      path: 'onnx-community/Qwen3.5-0.8B-Text-ONNX',
+      runtime: 'qwen35_low_level',
+      modelClass: 'Qwen3_5ForCausalLM',
+      task: 'text-generation',
+      estimated_download_mb: 700,
+      notes: 'Experimental. Variante texte seul (Qwen3_5ForCausalLM), sans encodeur visuel : plus legere. A valider dans le navigateur (necessite que transformers.js expose Qwen3_5ForCausalLM). Tailles estimatives a confirmer.',
+      non_thinking: {
+        temperature: 0.7,
+        top_p: 0.8,
+        top_k: 20,
+        min_p: 0
+      },
+      thinking: {
+        temperature: 0.6,
+        top_p: 0.95,
+        top_k: 20,
+        min_p: 0
+      },
+      quantizations: [
+        { id: 'q4f16', name: 'Q4F16', dtype: 'q4f16', estimated_download_mb: 700, default: true },
+        { id: 'q4', name: 'Q4', dtype: 'q4', estimated_download_mb: 1000 },
+        { id: 'fp16', name: 'FP16', dtype: 'fp16', estimated_download_mb: 1400 }
+      ]
+    },
+    {
+      id: 'qwen3.5-4b',
+      name: 'Qwen3.5 4B',
+      family: 'Qwen3.5',
+      status: 'experimental',
+      default: false,
+      path: 'onnx-community/Qwen3.5-4B-ONNX',
+      runtime: 'qwen35_low_level',
+      modelClass: 'Qwen3_5ForConditionalGeneration',
+      task: 'text-generation',
+      estimated_download_mb: 3300,
+      notes: 'Experimental, profil lourd. Architecture vision-langage chargee en mode texte (Qwen3_5ForConditionalGeneration). Plus lent que Qwen3 4B sur WebGPU. Tailles estimatives a confirmer.',
+      non_thinking: {
+        temperature: 0.7,
+        top_p: 0.8,
+        top_k: 20,
+        min_p: 0
+      },
+      thinking: {
+        temperature: 0.6,
+        top_p: 0.95,
+        top_k: 20,
+        min_p: 0
+      },
+      quantizations: [
+        { id: 'q4f16', name: 'Q4F16', dtype: 'q4f16', estimated_download_mb: 3300, default: true },
+        { id: 'fp16', name: 'FP16', dtype: 'fp16', estimated_download_mb: 8500 }
+      ]
     }
   ]
 };
