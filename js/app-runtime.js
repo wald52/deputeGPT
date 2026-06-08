@@ -149,6 +149,7 @@ async function loadAiRuntimeModules() {
       import('./ai/pipeline-runtime.js'),
       import('./ai/qwen3-runtime.js'),
       import('./ai/qwen35-runtime.js'),
+      import('./ai/gemma4-runtime.js'),
       import('./ai/semantic-rag-runtime.js'),
       import('./ai/transformers-runtime.js')
     ]).then(([
@@ -156,6 +157,7 @@ async function loadAiRuntimeModules() {
       pipelineRuntimeModule,
       qwen3RuntimeModule,
       qwen35RuntimeModule,
+      gemma4RuntimeModule,
       semanticRagRuntimeModule,
       transformersRuntimeModule
     ]) => ({
@@ -163,6 +165,7 @@ async function loadAiRuntimeModules() {
       createPipelineRuntime: pipelineRuntimeModule.createPipelineRuntime,
       createQwen3Runtime: qwen3RuntimeModule.createQwen3Runtime,
       createQwen35Runtime: qwen35RuntimeModule.createQwen35Runtime,
+      createGemma4Runtime: gemma4RuntimeModule.createGemma4Runtime,
       createSemanticRagRuntime: semanticRagRuntimeModule.createSemanticRagRuntime,
       createTransformersRuntimeManager: transformersRuntimeModule.createTransformersRuntimeManager
     }));
@@ -655,6 +658,14 @@ async function createQwen35Runtime(modelConfig, updateProgress) {
   });
 }
 
+async function createGemma4Runtime(modelConfig, updateProgress) {
+  const { createGemma4Runtime: createGemma4RuntimeFactory } = await loadAiRuntimeModules();
+  return createGemma4RuntimeFactory(modelConfig, updateProgress, {
+    transformersRuntime,
+    resolveThinkingModeFlag: (currentModelConfig = null, explicitValue) => modelSelection.resolveThinkingModeFlag(currentModelConfig, explicitValue)
+  });
+}
+
 async function createOnlineRuntime(modelConfig) {
   const { createOnlineRuntime: createOnlineRuntimeFactory } = await loadAiRuntimeModules();
   return createOnlineRuntimeFactory(modelConfig);
@@ -671,6 +682,7 @@ const modelLoader = createModelLoader({
   createPipelineRuntime,
   createQwen3Runtime,
   createQwen35Runtime,
+  createGemma4Runtime,
   createOnlineRuntime,
   createGeneratorAdapter,
   resolveThinkingModeFlag: (modelConfig = null, explicitValue) => modelSelection.resolveThinkingModeFlag(modelConfig, explicitValue),
