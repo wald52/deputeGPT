@@ -86,6 +86,10 @@ export function createChatController({
           parts.push(`theme : ${theme}`);
         }
 
+        if (vote.sort) {
+          parts.push(`resultat : ${vote.sort}`);
+        }
+
         return parts.join(' | ');
       })
       .join('\n');
@@ -100,8 +104,8 @@ export function createChatController({
       `- Donne uniquement la reponse finale, sans balises ni preambule technique.\n` +
       `- Utilise UNIQUEMENT les votes fournis ci-dessus.\n` +
       `- Si l'information n'est pas dans les votes, dis-le clairement.\n` +
-      `- Vise une reponse courte, idealement 120 mots maximum.\n` +
-      `- Cite 2 a 4 votes precis avec la date quand c'est utile.\n` +
+      `- Adapte la longueur a la question : 80-120 mots pour une question simple ou factuelle, jusqu a 350 mots pour une analyse thematique ou un bilan. Ne te repete pas.\n` +
+      `- Cite 2 a 5 votes precis avec la date quand c'est utile. Mentionne le resultat du scrutin (adopte/rejete) lorsque c est pertinent.\n` +
       `- Reste factuel, synthetique et transparent sur tes limites.\n`;
 
     return {

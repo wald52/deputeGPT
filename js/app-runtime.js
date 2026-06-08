@@ -133,10 +133,10 @@ const CHAT_QUICK_ACTIONS = [
   { label: 'Votes contre récents', question: 'Montre les 10 derniers votes contre de ce député.' },
   { label: 'Thèmes principaux', question: 'Quels sont les thèmes principaux dans ces votes ?' }
 ];
-const ANALYSIS_CONTEXT_VOTE_LIMIT = 18;
-const ANALYSIS_CONTEXT_MIN_VOTES = 6;
-const ANALYSIS_SEARCH_RESULT_LIMIT = 80;
-const ANALYSIS_MAX_NEW_TOKENS = 220;
+const ANALYSIS_CONTEXT_VOTE_LIMIT = 50;
+const ANALYSIS_CONTEXT_MIN_VOTES = 8;
+const ANALYSIS_SEARCH_RESULT_LIMIT = 120;
+const ANALYSIS_MAX_NEW_TOKENS = 512;
 const THEMATIC_STANCE_EXAMPLE_LIMIT = 4;
 
 let aiRuntimeModulesPromise = null;
