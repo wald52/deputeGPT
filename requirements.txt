@@ -1,0 +1,14 @@
+# Dependances Python du pipeline de mise a jour (scripts/ + workflow Global Update).
+# Source unique de verite : le workflow installe via `pip install -r requirements.txt`.
+# Bornes minimales conservatrices pour rester reproductible sans casser les mises a jour.
+
+# Telechargement / scraping des donnees (deputes, votes, hemicycle, couleurs)
+requests>=2.31
+beautifulsoup4>=4.12
+
+# Generation des artefacts RAG (index lexical + embeddings semantiques E5 / BGE-M3)
+numpy>=1.26
+FlagEmbedding>=1.2
+sentence-transformers>=2.7
+transformers>=4.40
+torch>=2.2

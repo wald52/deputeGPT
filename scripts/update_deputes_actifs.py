@@ -2,6 +2,7 @@ import json
 import hashlib
 import os
 import sys
+import time
 import urllib.request
 import urllib.error
 from datetime import datetime, timezone
@@ -55,7 +56,14 @@ COULEURS_OFFICIELLES = {
     "NI": "#dddddd"     # Non Inscrits (Gris clair)
 }
 
-def fetch_json(url: str) -> dict:
+def fetch_json(url: str, max_attempts: int = 3) -> dict:
+    """Recupere un JSON avec retry sur les erreurs reseau transitoires.
+
+    Les erreurs transitoires (timeout, URLError, HTTP 5xx, 429) sont reessayees
+    avec un backoff exponentiel (2s, 4s, 8s...). Les erreurs permanentes (4xx hors
+    429, p.ex. 404/410) ne sont PAS reessayees : on echoue immediatement et
+    bruyamment, car elles signalent un changement de la source de donnees.
+    """
     req = urllib.request.Request(
         url,
         headers={
@@ -63,14 +71,24 @@ def fetch_json(url: str) -> dict:
             "User-Agent": "deputeGPT-bot/1.0 (+https://github.com/wald52/deputeGPT)",
         },
     )
-    try:
-        with urllib.request.urlopen(req, timeout=60) as resp:
-            return json.loads(resp.read().decode("utf-8"))
-    except urllib.error.HTTPError as e:
-        body = e.read().decode("utf-8", errors="replace")
-        print(f"HTTPError {e.code} {e.reason} on URL: {url}")
-        print("Body truncated:", body[:500])
-        raise
+    for attempt in range(1, max_attempts + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=60) as resp:
+                return json.loads(resp.read().decode("utf-8"))
+        except urllib.error.HTTPError as e:
+            body = e.read().decode("utf-8", errors="replace")
+            print(f"HTTPError {e.code} {e.reason} on URL: {url}")
+            print("Body truncated:", body[:500])
+            transient = e.code == 429 or 500 <= e.code < 600
+            if not transient or attempt == max_attempts:
+                raise
+        except (urllib.error.URLError, TimeoutError) as e:
+            print(f"Erreur reseau transitoire ({e}) sur URL: {url}")
+            if attempt == max_attempts:
+                raise
+        backoff = 2 ** attempt
+        print(f"Nouvelle tentative {attempt + 1}/{max_attempts} dans {backoff}s...")
+        time.sleep(backoff)
 
 def canonical_bytes(rows) -> bytes:
     return json.dumps(rows, ensure_ascii=False, separators=(",", ":"), sort_keys=True).encode("utf-8")

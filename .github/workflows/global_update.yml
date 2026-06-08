@@ -8,10 +8,22 @@ on:
 
 permissions:
   contents: write
+  issues: write
+
+# Evite que deux mises a jour (cron + declenchement manuel) tournent en meme temps
+# et se marchent dessus lors du commit/push.
+concurrency:
+  group: global-update
+  cancel-in-progress: false
+
+env:
+  # Silence l'avertissement de deprecation du runtime Node 20 des actions.
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
 
 jobs:
   update-all:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     defaults:
       run:
         shell: bash
@@ -33,9 +45,20 @@ jobs:
           node-version: 20
           cache: npm
 
+      # Cache du modele d'embeddings HuggingFace (multilingual-e5-small + BGE-M3).
+      # Evite un retelechargement quotidien : reduit fortement le risque d'echec
+      # reseau (cf. incident du 5 juin) et accelere le job.
+      - name: Cache HuggingFace models
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-models-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            hf-models-
+
       - name: Install Dependencies
         run: |
-          pip install requests beautifulsoup4
+          pip install -r requirements.txt
           npm ci
 
       # --- ETAPE 1 : DEPUTES ---
@@ -49,9 +72,14 @@ jobs:
         run: |
           echo "Téléchargement des votes..."
           mkdir -p Scrutins
-          wget -q -O Scrutins.json.zip "https://data.assemblee-nationale.fr/static/openData/repository/17/loi/scrutins/Scrutins.json.zip"
+          wget -q --tries=3 --timeout=60 --retry-connrefused \
+            -O Scrutins.json.zip \
+            "https://data.assemblee-nationale.fr/static/openData/repository/17/loi/scrutins/Scrutins.json.zip"
+
+          # Verifie l'integrite de l'archive avant traitement (echec clair si tronquee/corrompue)
+          unzip -tq Scrutins.json.zip
           unzip -q Scrutins.json.zip -d Scrutins
-          
+
           echo "Traitement des votes..."
           python scripts/process_votes.py
 
@@ -59,14 +87,11 @@ jobs:
       - name: Update Hemicycle Graphics & Data
         run: |
           echo "Mise à jour graphique de l'hémicycle..."
-          
-          # 1. Installation des dépendances (une seule fois pour les deux scripts)
-          pip install requests beautifulsoup4
-          
-          # 2. Récupérer le plan SVG (Remplace le fichier à la racine)
+
+          # 1. Récupérer le plan SVG (Remplace le fichier à la racine)
           python scripts/update_hemicycle_svg.py
-          
-          # 3. Récupérer le mapping Places <-> Députés (Génère public/data/places_mapping.json)
+
+          # 2. Récupérer le mapping Places <-> Députés (Génère public/data/places_mapping.json)
           python scripts/scrap_places.py
           
           # Vérifications
@@ -84,14 +109,15 @@ jobs:
       - name: Generate RAG Artifacts
         run: |
           echo "🧠 Génération des artefacts RAG..."
-          
-          # Installation des dépendances pour BGE-M3
-          pip install FlagEmbedding numpy sentence-transformers
-          
+
           # Génération des index lexicaux + sémantiques
           python scripts/generate_semantic_index.py
-          
-          # Vérifications des artefacts publics et du manifest RAG
+
+          # Vérifications des artefacts publics et du manifest RAG.
+          # L'index lexical et le manifest sont toujours régénérés localement :
+          # leur absence est une vraie erreur (exit 1). Les index sémantiques
+          # peuvent être conservés de la veille en cas d'indispo HuggingFace :
+          # on se contente d'un avertissement (dégradation gracieuse).
           if [ -f "public/data/rag/lexical_index.json" ]; then
             SIZE=$(du -h public/data/rag/lexical_index.json | cut -f1)
             echo "✅ Index lexical RAG généré: $SIZE"
@@ -102,18 +128,16 @@ jobs:
 
           if [ -f "public/data/rag/semantic_index.json" ]; then
             SIZE=$(du -h public/data/rag/semantic_index.json | cut -f1)
-            echo "✅ Index sémantique RAG généré: $SIZE"
+            echo "✅ Index sémantique RAG présent: $SIZE"
           else
-            echo "⚠️ Index sémantique RAG non généré"
-            exit 1
+            echo "⚠️ Index sémantique RAG absent (dégradation gracieuse, non bloquant)"
           fi
 
           if [ -f "public/data/rag/semantic_multivector_index.json" ]; then
             SIZE=$(du -h public/data/rag/semantic_multivector_index.json | cut -f1)
-            echo "✅ Index sémantique multi-vector généré: $SIZE"
+            echo "✅ Index sémantique multi-vector présent: $SIZE"
           else
-            echo "⚠️ Index sémantique multi-vector non généré"
-            exit 1
+            echo "⚠️ Index sémantique multi-vector absent (dégradation gracieuse, non bloquant)"
           fi
 
           if [ -f "public/data/rag/manifest.json" ]; then
@@ -171,3 +195,42 @@ jobs:
           git add .github/keepalive.txt
           git commit -m "chore: keepalive"
           git push -u origin "$KEEPALIVE_BRANCH"
+
+      # --- ETAPE 5 : ALERTE EN CAS D'ECHEC ---
+      # Ouvre (ou rafraichit) une UNIQUE issue de suivi quand la mise a jour echoue,
+      # au lieu de noyer la boite mail sous une alerte GitHub par jour. L'issue est
+      # auto-deduppliquee via le label "ci-failure" : un commentaire est ajoute si
+      # elle existe deja. A refermer manuellement une fois le probleme resolu.
+      - name: Signaler l'echec (issue de suivi)
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const label = 'ci-failure';
+            const title = '⚠️ Mise à jour quotidienne (Global Update) en échec';
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const body = `La mise à jour automatique a échoué le ${new Date().toISOString()}.\n\n` +
+              `👉 Logs du run : ${runUrl}\n\n` +
+              `Cette issue se referme manuellement une fois le problème résolu.`;
+            const existing = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: label,
+            });
+            if (existing.data.length > 0) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.data[0].number,
+                body,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: [label],
+              });
+            }

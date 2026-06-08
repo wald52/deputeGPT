@@ -877,21 +877,31 @@ def main():
     if args.no_semantic:
         print("ℹ️ Artefact semantique desactive pour cette execution")
     else:
+        # Degradation gracieuse : si l'encodeur (telechargement HuggingFace) est
+        # indisponible ou que la generation est incomplete, on NE plante PAS le
+        # pipeline. Les index semantiques de la veille (deja commites) sont
+        # conserves tels quels et le reste de la mise a jour continue.
         semantic_encoder = load_semantic_encoder()
         if semantic_encoder is None:
-            raise RuntimeError("Impossible de charger l encodeur semantique multilingual-e5-small")
-
-        semantic_index = generate_semantic_index(index, model=semantic_encoder)
-        semantic_multivector_index = generate_semantic_multivector_index(index, model=semantic_encoder)
-        if semantic_index is None or semantic_multivector_index is None:
-            raise RuntimeError("Generation incomplete des artefacts semantiques E5")
-
-        if semantic_index:
-            write_json(FICHIER_SEMANTIC_INDEX, semantic_index)
-            print(f"💾 Index semantique RAG sauvegarde dans {FICHIER_SEMANTIC_INDEX}")
-        if semantic_multivector_index:
-            write_json(FICHIER_SEMANTIC_MULTIVECTOR_INDEX, semantic_multivector_index)
-            print(f"💾 Index semantique multi-vector sauvegarde dans {FICHIER_SEMANTIC_MULTIVECTOR_INDEX}")
+            print(
+                "⚠️ Encodeur semantique multilingual-e5-small indisponible : "
+                "artefacts semantiques NON regeneres, conservation des index existants."
+            )
+        else:
+            semantic_index = generate_semantic_index(index, model=semantic_encoder)
+            semantic_multivector_index = generate_semantic_multivector_index(index, model=semantic_encoder)
+            if semantic_index is None or semantic_multivector_index is None:
+                print(
+                    "⚠️ Generation incomplete des artefacts semantiques E5 : "
+                    "conservation des index existants, pipeline poursuivi."
+                )
+                semantic_index = None
+                semantic_multivector_index = None
+            else:
+                write_json(FICHIER_SEMANTIC_INDEX, semantic_index)
+                print(f"💾 Index semantique RAG sauvegarde dans {FICHIER_SEMANTIC_INDEX}")
+                write_json(FICHIER_SEMANTIC_MULTIVECTOR_INDEX, semantic_multivector_index)
+                print(f"💾 Index semantique multi-vector sauvegarde dans {FICHIER_SEMANTIC_MULTIVECTOR_INDEX}")
 
     # Sauvegarder l'artefact RAG primaire puis le manifest public.
     write_json(FICHIER_LEXICAL_INDEX, index)
