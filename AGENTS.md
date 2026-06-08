@@ -194,6 +194,9 @@
 
 ### Inference et backends
 - Abandon total de MLC et WebLLM.
+  - Pourquoi: leur seul avantage (debit de decodage brut, kernels TVM pre-compiles) ne sert pas notre usage, ou le LLM ne fait que la synthese finale sur un petit contexte deja filtre. Ce qui compte ici, c'est le TTFT et le poids de telechargement, pas le throughput, et MLC n'y gagne rien (poids quantifies comparables, WebGPU mobile aussi limite).
+  - Couts de MLC pour un site statique sans backend: format proprietaire a recompiler par couple (modele, quantization) avec la toolchain `mlc_llm`/TVM au lieu de pointer un repo HF ONNX; second moteur WebGPU a maintenir en plus de celui des embeddings RAG; perte de l'integration Hugging Face (`AutoTokenizer`, `apply_chat_template`, modeles ONNX publies tot par `onnx-community`).
+  - Conclusion: reprendre WebLLM serait un retour en arriere.
 - Runtime IA navigateur: `transformers.js` (canal stable, derniere version publiee) + WebGPU.
 - Chat stable: famille `Qwen3` ONNX. C'est la seule voie d'inference locale (la voie experimentale `Qwen3.5` a ete retiree).
 - Service distant autorise: source `online` via Worker Cloudflare + AI Gateway, par defaut pour les demandes d'analyse.
