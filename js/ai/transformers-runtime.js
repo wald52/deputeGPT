@@ -12,6 +12,7 @@ export function createTransformersRuntimeManager() {
     env: null,
     AutoTokenizer: null,
     Qwen3ForCausalLM: null,
+    Qwen3_5ForConditionalGeneration: null,
     activeRuntimeChannel: null
   };
 
@@ -25,6 +26,7 @@ export function createTransformersRuntimeManager() {
     state.env = runtimeModule.env;
     state.AutoTokenizer = runtimeModule.AutoTokenizer || null;
     state.Qwen3ForCausalLM = runtimeModule.Qwen3ForCausalLM || null;
+    state.Qwen3_5ForConditionalGeneration = runtimeModule.Qwen3_5ForConditionalGeneration || null;
 
     state.env.allowLocalModels = false;
     state.env.useBrowserCache = true;
