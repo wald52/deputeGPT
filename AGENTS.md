@@ -91,8 +91,6 @@
   - `js/ui/chat/consent-modal.js`
 - Runtime local stable Qwen3:
   - `js/ai/qwen3-runtime.js`
-- Runtime experimental Qwen3.5:
-  - `js/ai/qwen35-runtime.js`
 - Runtime distant `online` via Worker Cloudflare:
   - `js/ai/online-runtime.js`
 - Nettoyage de sortie / suppression `<think>`:
@@ -196,9 +194,8 @@
 
 ### Inference et backends
 - Abandon total de MLC et WebLLM.
-- Runtime IA navigateur: `transformers.js` + WebGPU.
-- Chat stable: famille `Qwen3` ONNX.
-- Chat experimental: famille `Qwen3.5` ONNX, facile a retirer si les tests ne sont pas convaincants.
+- Runtime IA navigateur: `transformers.js` (canal stable, derniere version publiee) + WebGPU.
+- Chat stable: famille `Qwen3` ONNX. C'est la seule voie d'inference locale (la voie experimentale `Qwen3.5` a ete retiree).
 - Service distant autorise: source `online` via Worker Cloudflare + AI Gateway, par defaut pour les demandes d'analyse.
 - Les questions exactes doivent rester deterministes dans le navigateur, meme quand `online` est la source IA par defaut.
 - Le service `online` ne doit jamais prendre la main sur les listes, comptages, periodes ou filtres exacts.
@@ -230,14 +227,9 @@
   - `Qwen3 0.6B`
   - `Qwen3 1.7B`
   - `Qwen3 4B`
-- Experimental:
-  - `Qwen3.5 0.8B`
-  - `Qwen3.5 2B`
-  - `Qwen3.5 4B`
 
 ### Contrats techniques
 - `Qwen3` stable utilise `AutoTokenizer + Qwen3ForCausalLM`.
-- `Qwen3.5` experimental utilise `AutoTokenizer + Qwen3_5*ForConditionalGeneration`.
 - Ne pas promettre une quantification qui n'a pas ete testee dans l'application.
 - Si `Qwen3 0.6B` reste insuffisant apres essais, monter le defaut vers `Qwen3 1.7B q4f16`.
 
@@ -307,9 +299,8 @@
 
 ## Ce qui est deja implemente
 - Chargement explicite du modele avec consentement utilisateur.
-- Separation stable/experimental dans le catalogue des modeles.
-- Quantifications separees pour `Qwen3.5`.
-- Runtimes distincts pour `Qwen3` stable et `Qwen3.5` experimental.
+- Separation stable/experimental dans le catalogue des modeles (le statut `experimental` reste utilise par la source `online`).
+- Runtime local unique `Qwen3` stable sur `transformers.js` (canal stable).
 - Manifeste RAG public et index semantique public prepares par `scripts/generate_semantic_index.py`.
 - RAG semantique local experimental en opt-in avec selection utilisateur `single-vector` / `multi-vector`.
 - Nettoyage des sorties pour supprimer les blocs de type `<think>`.

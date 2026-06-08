@@ -715,9 +715,7 @@ export function createChatController({
           normalizedErrorMessage.includes('invalid buffer') ||
           normalizedErrorMessage.includes('mapasync')
         ) {
-          errorMessage = appState.activeModelConfig?.runtime === 'qwen3_5_low_level'
-            ? "Erreur WebGPU pendant la generation. Le contexte a ete fortement reduit, mais Qwen3.5 reste experimental dans le navigateur. Reessayez avec Qwen3 stable ou une quantification plus legere."
-            : "Erreur WebGPU pendant la generation. Reessayez avec une question plus courte ou un modele plus leger.";
+          errorMessage = "Erreur WebGPU pendant la generation. Reessayez avec une question plus courte ou un modele plus leger.";
         }
 
         await addMessage('system', errorMessage, { method: 'system' });

@@ -1753,20 +1753,18 @@ export function createModelSelectionController({
       return;
     }
 
-    const hasExperimentalRuntime = modelConfig.runtime === 'qwen3_5_low_level';
     const hasExperimentalStatus = modelConfig.status === 'experimental';
-    const runtimeLabel = hasExperimentalRuntime ? 'runtime expérimental' : 'runtime stable';
     const statusLabel = hasExperimentalStatus ? 'expérimental' : 'stable';
 
     modelNameEl.textContent = modelConfig.displayName || modelConfig.name || 'Modèle';
     sizeEl.textContent = formatDownloadSize(modelConfig.estimatedDownloadMb);
     notesEl.textContent = modelConfig.notes || 'Aucune note spécifique.';
     statusChip.textContent = statusLabel;
-    runtimeChip.textContent = runtimeLabel;
+    runtimeChip.textContent = 'runtime stable';
     thinkingChip.textContent = resolveThinkingModeFlag(modelConfig) ? 'thinking activé' : 'standard';
 
     statusChip.classList.toggle('experimental', hasExperimentalStatus);
-    runtimeChip.classList.toggle('experimental', hasExperimentalRuntime);
+    runtimeChip.classList.remove('experimental');
   }
 
   function updateActiveModelBadge(modelConfig) {
@@ -1888,27 +1886,15 @@ export function createModelSelectionController({
       const stableGroup = document.createElement('optgroup');
       stableGroup.label = 'Modeles stables';
 
-      const experimentalGroup = document.createElement('optgroup');
-      experimentalGroup.label = 'Modeles experimentaux';
-
       modelsConfig.forEach(model => {
         const option = document.createElement('option');
         option.value = model.id;
         option.textContent = model.name;
-
-        if (model.status === 'experimental') {
-          experimentalGroup.appendChild(option);
-        } else {
-          stableGroup.appendChild(option);
-        }
+        stableGroup.appendChild(option);
       });
 
       if (stableGroup.children.length > 0) {
         modelSelect.appendChild(stableGroup);
-      }
-
-      if (experimentalGroup.children.length > 0) {
-        modelSelect.appendChild(experimentalGroup);
       }
 
       if (selectedModel) {

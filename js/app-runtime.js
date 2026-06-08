@@ -148,21 +148,18 @@ async function loadAiRuntimeModules() {
       import('./ai/online-runtime.js'),
       import('./ai/pipeline-runtime.js'),
       import('./ai/qwen3-runtime.js'),
-      import('./ai/qwen35-runtime.js'),
       import('./ai/semantic-rag-runtime.js'),
       import('./ai/transformers-runtime.js')
     ]).then(([
       onlineRuntimeModule,
       pipelineRuntimeModule,
       qwen3RuntimeModule,
-      qwen35RuntimeModule,
       semanticRagRuntimeModule,
       transformersRuntimeModule
     ]) => ({
       createOnlineRuntime: onlineRuntimeModule.createOnlineRuntime,
       createPipelineRuntime: pipelineRuntimeModule.createPipelineRuntime,
       createQwen3Runtime: qwen3RuntimeModule.createQwen3Runtime,
-      createQwen35Runtime: qwen35RuntimeModule.createQwen35Runtime,
       createSemanticRagRuntime: semanticRagRuntimeModule.createSemanticRagRuntime,
       createTransformersRuntimeManager: transformersRuntimeModule.createTransformersRuntimeManager
     }));
@@ -272,7 +269,6 @@ function createLazyTransformersRuntimeManager() {
     env: null,
     AutoTokenizer: null,
     Qwen3ForCausalLM: null,
-    Qwen35ForConditionalGeneration: null,
     activeRuntimeChannel: null
   };
 
@@ -648,14 +644,6 @@ async function createQwen3Runtime(modelConfig, updateProgress) {
   });
 }
 
-async function createQwen35Runtime(modelConfig, updateProgress) {
-  const { createQwen35Runtime: createQwen35RuntimeFactory } = await loadAiRuntimeModules();
-  return createQwen35RuntimeFactory(modelConfig, updateProgress, {
-    transformersRuntime,
-    resolveThinkingModeFlag: (currentModelConfig = null, explicitValue) => modelSelection.resolveThinkingModeFlag(currentModelConfig, explicitValue)
-  });
-}
-
 async function createOnlineRuntime(modelConfig) {
   const { createOnlineRuntime: createOnlineRuntimeFactory } = await loadAiRuntimeModules();
   return createOnlineRuntimeFactory(modelConfig);
@@ -671,7 +659,6 @@ const modelLoader = createModelLoader({
   transformersRuntime,
   createPipelineRuntime,
   createQwen3Runtime,
-  createQwen35Runtime,
   createOnlineRuntime,
   createGeneratorAdapter,
   resolveThinkingModeFlag: (modelConfig = null, explicitValue) => modelSelection.resolveThinkingModeFlag(modelConfig, explicitValue),

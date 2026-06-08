@@ -1,11 +1,7 @@
 const TRANSFORMERS_CHANNELS = {
   stable: {
-    url: 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.8.1',
-    label: 'transformers.js 3.8.1'
-  },
-  next: {
-    url: 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.0.0-next.7',
-    label: 'transformers.js 4.0.0-next.7'
+    url: 'https://cdn.jsdelivr.net/npm/@huggingface/transformers@4.2.0',
+    label: 'transformers.js 4.2.0'
   }
 };
 
@@ -16,7 +12,6 @@ export function createTransformersRuntimeManager() {
     env: null,
     AutoTokenizer: null,
     Qwen3ForCausalLM: null,
-    Qwen35ForConditionalGeneration: null,
     activeRuntimeChannel: null
   };
 
@@ -30,11 +25,6 @@ export function createTransformersRuntimeManager() {
     state.env = runtimeModule.env;
     state.AutoTokenizer = runtimeModule.AutoTokenizer || null;
     state.Qwen3ForCausalLM = runtimeModule.Qwen3ForCausalLM || null;
-    state.Qwen35ForConditionalGeneration =
-      runtimeModule.Qwen3_5ForConditionalGeneration ||
-      runtimeModule.Qwen3_5MoeForConditionalGeneration ||
-      runtimeModule.Qwen3_5OmniMoeForConditionalGeneration ||
-      null;
 
     state.env.allowLocalModels = false;
     state.env.useBrowserCache = true;
@@ -77,10 +67,6 @@ export function createTransformersRuntimeManager() {
         runtimeModule = await import(channelConfig.url);
         console.debug(`✅ ${channelConfig.label} charge depuis le CDN.`);
       } catch (cdnError) {
-        if (channel !== 'stable') {
-          throw new Error(`Impossible de charger ${channelConfig.label}: ${cdnError.message}`);
-        }
-
         console.warn(`⚠️ Impossible de charger ${channelConfig.label} depuis le CDN, fallback local.`, cdnError);
         runtimeModule = await import('../transformers.min.js');
       }
