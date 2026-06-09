@@ -44,7 +44,7 @@
   {
     "code": "HOR",
     "nom": "Horizons & Indépendants",
-    "seats": 34,
+    "seats": 35,
     "couleur": "#B5E2F9"
   },
   {
@@ -68,7 +68,7 @@
   {
     "code": "NI",
     "nom": "Non inscrit",
-    "seats": 11,
+    "seats": 10,
     "couleur": "#8D949A"
   }
 ]
