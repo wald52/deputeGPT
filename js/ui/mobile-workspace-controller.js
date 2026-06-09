@@ -92,12 +92,10 @@ export function createMobileWorkspaceController({
   }
 
   function handleDeputeSelected() {
-    if (!mediaQuery.matches) {
-      applyLayout();
-      return;
-    }
-
-    setActiveView('chat', { scrollIntoView: true });
+    // Sur mobile, on n'impose plus la bascule vers le Chat à la sélection :
+    // l'utilisateur garde l'hémicycle/le siège sélectionné en vue et bascule
+    // lui-même via l'onglet Chat (désormais activé par applyLayout).
+    applyLayout();
   }
 
   function setupMobileWorkspace() {

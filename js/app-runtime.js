@@ -767,7 +767,7 @@ const chatComposer = createChatComposer({
 });
 
 const chatViewport = createChatViewportController({
-  emptyStateText: 'Selectionnez un depute, puis posez une question exacte (liste, nombre, periode, theme) ou lancez une analyse IA.'
+  emptyStateText: 'Sélectionnez un député, puis posez une question exacte (liste, nombre, période, thème) ou lancez une analyse IA.'
 });
 
 let chatRenderer = null;

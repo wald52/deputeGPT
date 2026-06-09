@@ -326,14 +326,14 @@ export function createSearchIndexRepository({
 
           state.semanticIndexes[modeId] = payload;
           state.semanticIndexLoadedModes[modeId] = true;
-          logger.log(`✅ Index semantique (${modeId}) charge depuis ${candidatePath}.`);
+          logger.log(`✅ Index sémantique (${modeId}) chargé depuis ${candidatePath}.`);
           return true;
         } catch (error) {
-          logger.warn(`⚠️ Impossible de charger l'index semantique ${modeId} depuis ${candidatePath}`, error);
+          logger.warn(`⚠️ Impossible de charger l'index sémantique ${modeId} depuis ${candidatePath}`, error);
         }
       }
 
-      logger.warn(`⚠️ Aucun index semantique charge pour le mode ${modeId}.`);
+      logger.warn(`⚠️ Aucun index sémantique chargé pour le mode ${modeId}.`);
       return false;
     })();
 
@@ -348,7 +348,7 @@ export function createSearchIndexRepository({
     try {
       return await loadSearchIndex();
     } catch (error) {
-      logger.warn('⚠️ Chargement differe de l\'index lexical impossible.', error);
+      logger.warn('⚠️ Chargement différé de l\'index lexical impossible.', error);
       return false;
     }
   }
@@ -357,7 +357,7 @@ export function createSearchIndexRepository({
     try {
       return await loadSemanticIndex(mode);
     } catch (error) {
-      logger.warn('⚠️ Chargement differe de l\'index semantique impossible.', error);
+      logger.warn('⚠️ Chargement différé de l\'index sémantique impossible.', error);
       return false;
     }
   }

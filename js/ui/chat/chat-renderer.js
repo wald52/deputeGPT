@@ -151,7 +151,7 @@ export function createChatRenderer({
       if (themeLabel) {
         const theme = document.createElement('div');
         theme.className = 'message-inline-vote-theme';
-        theme.textContent = `Theme: ${themeLabel}`;
+        theme.textContent = `Thème: ${themeLabel}`;
         content.appendChild(theme);
       }
 

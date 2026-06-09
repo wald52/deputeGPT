@@ -130,7 +130,7 @@ export function createSemanticRagRuntime({
           return status;
         }
       } catch (error) {
-        logger.warn('Verification WebGPU indisponible pour le RAG semantique.', error);
+        logger.warn('Vérification WebGPU indisponible pour le RAG sémantique.', error);
       }
     }
 
@@ -145,10 +145,10 @@ export function createSemanticRagRuntime({
 
   function getWebGPUBlockingMessage(status) {
     if (!status?.supported) {
-      return 'Le RAG semantique local requiert WebGPU sur cet appareil.';
+      return 'Le RAG sémantique local requiert WebGPU sur cet appareil.';
     }
 
-    return `${status?.message || 'Aucun adaptateur GPU compatible n est disponible pour le RAG semantique local.'} Le telechargement du modele d embedding n a pas ete lance.`;
+    return `${status?.message || "Aucun adaptateur GPU compatible n'est disponible pour le RAG sémantique local."} Le téléchargement du modèle d'embedding n'a pas été lancé.`;
   }
 
   function getSelectedMode() {
@@ -197,7 +197,7 @@ export function createSemanticRagRuntime({
       const config = await getSemanticSearchConfig(requestedMode);
       if (!config?.available || !config?.model?.browserModelId) {
         appState.semanticRagStatus = 'unavailable';
-        addSystemMessage('Le RAG semantique local selectionne n est pas encore disponible dans les artefacts publics.');
+        addSystemMessage("Le RAG sémantique local sélectionné n'est pas encore disponible dans les artefacts publics.");
         return false;
       }
 
@@ -214,7 +214,7 @@ export function createSemanticRagRuntime({
       const semanticIndexReady = await ensureSemanticIndexReady(config.modeId || requestedMode);
       if (!semanticIndexReady) {
         appState.semanticRagStatus = 'error';
-        addSystemMessage('Impossible de charger l index semantique local pour ce mode.');
+        addSystemMessage("Impossible de charger l'index sémantique local pour ce mode.");
         return false;
       }
 
@@ -254,13 +254,13 @@ export function createSemanticRagRuntime({
         appState.semanticIndexMode = config.modeId || requestedMode;
         appState.semanticRagStatus = 'ready';
         setStoredValue(storageKeys.acceptedEmbeddingModelId, config.model.id || config.model.browserModelId);
-        addSystemMessage(`RAG semantique pret : ${config.label || config.modeId}.`);
+        addSystemMessage(`RAG sémantique prêt : ${config.label || config.modeId}.`);
         return true;
       } catch (error) {
-        logger.error('Erreur de chargement du modele d embedding:', error);
+        logger.error("Erreur de chargement du modèle d'embedding:", error);
         await releaseSemanticRag();
         appState.semanticRagStatus = 'error';
-        addSystemMessage(`Erreur de chargement du RAG semantique : ${error?.message || error}`);
+        addSystemMessage(`Erreur de chargement du RAG sémantique : ${error?.message || error}`);
         return false;
       }
     })();

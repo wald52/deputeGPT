@@ -1,6 +1,6 @@
 {
-  "version": "5ec12ed33e6b",
-  "generatedAt": "2026-06-09T08:12:39.701Z",
+  "version": "2cb8449bde67",
+  "generatedAt": "2026-06-09T14:43:29.080Z",
   "precache": [
     "./",
     "index.html",
@@ -26,7 +26,7 @@
     "js/dist/pipeline-runtime-NJUQUB3U.js",
     "js/dist/qwen3-runtime-PVRYNTVV.js",
     "js/dist/qwen35-runtime-5VBV3OEI.js",
-    "js/dist/semantic-rag-runtime-X7C7AVJH.js",
+    "js/dist/semantic-rag-runtime-YMY3Y2F2.js",
     "js/dist/transformers-runtime-O5NX5WY3.js",
     "js/dist/transformers.min-LGYMLAXP.js"
   ],

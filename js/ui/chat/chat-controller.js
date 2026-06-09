@@ -418,7 +418,7 @@ export function createChatController({
         }
       };
     } catch (error) {
-      console.warn('Clarification assistee indisponible, retour au guidage deterministe.', error);
+      console.warn('Clarification assistée indisponible, retour au guidage déterministe.', error);
       return {
         attempted: true,
         resolution: null,
@@ -438,12 +438,12 @@ export function createChatController({
 
     sendBtn.addEventListener('click', async () => {
       if (!appState.currentDepute) {
-        await addMessage('system', "Veuillez d'abord selectionner un depute.", { method: 'system' });
+        await addMessage('system', "Veuillez d'abord sélectionner un député.", { method: 'system' });
         return;
       }
 
       if (!appState.currentDepute.votes || appState.currentDepute.votes.length === 0) {
-        await addMessage('system', 'Aucun vote n\'est disponible pour ce depute.', { method: 'system' });
+        await addMessage('system', 'Aucun vote n\'est disponible pour ce député.', { method: 'system' });
         return;
       }
 
@@ -594,10 +594,10 @@ export function createChatController({
             ? getSelectedInferenceSource()
             : 'online';
           const guidance = selectedInferenceSource === 'online'
-            ? 'Cette question demande une synthese. Le service IA en ligne reste indisponible pour le moment. Vous pouvez continuer avec des listes, comptages, periodes ou themes precis, ou activer un modele local dans les reglages avances.'
+            ? 'Cette question demande une synthèse. Le service IA en ligne reste indisponible pour le moment. Vous pouvez continuer avec des listes, comptages, périodes ou thèmes précis, ou activer un modèle local dans les réglages avancés.'
             : hasWebGPU()
-              ? 'Cette question demande une synthese. Chargez un modele local via le bouton CHARGER pour lancer l analyse. Sans modele, vous pouvez me demander une liste, un comptage, une periode ou un theme precis.'
-              : 'Cette question demande une synthese. Sur cet appareil, seules les questions exactes sans IA sont disponibles car WebGPU est absent.';
+              ? "Cette question demande une synthèse. Chargez un modèle local via le bouton CHARGER pour lancer l'analyse. Sans modèle, vous pouvez me demander une liste, un comptage, une période ou un thème précis."
+              : 'Cette question demande une synthèse. Sur cet appareil, seules les questions exactes sans IA sont disponibles car WebGPU est absent.';
           await renderAssistantMessage(messagesDiv, tempLoader, guidance, {
             method: 'clarify',
             metadata: buildClarificationMetadataInternal({
@@ -694,19 +694,19 @@ export function createChatController({
         }
         tempLoader.remove();
 
-        let errorMessage = "Une erreur s'est produite pendant la generation.";
+        let errorMessage = "Une erreur s'est produite pendant la génération.";
         const rawErrorMessage = String(error?.message || '');
         const normalizedErrorMessage = rawErrorMessage.toLowerCase();
         if (error?.code === 'CIRCUIT_OPEN') {
           const retrySeconds = Math.ceil((error.retryAfterMs || 30000) / 1000);
-          errorMessage = `Le service IA en ligne est temporairement indisponible apres plusieurs echecs. Reessayez dans ${retrySeconds}s, ou activez un modele local dans les reglages.`;
+          errorMessage = `Le service IA en ligne est temporairement indisponible après plusieurs échecs. Réessayez dans ${retrySeconds}s, ou activez un modèle local dans les réglages.`;
         } else if (error?.code === 'REMOTE_QUOTA_EXHAUSTED' || error?.nextAction === 'activate_local') {
-          errorMessage = 'Les quotas gratuits de l IA en ligne sont epuises pour le moment. Ouvrez Reglages IA puis activez un modele local si vous voulez continuer les analyses.';
+          errorMessage = "Les quotas gratuits de l'IA en ligne sont épuisés pour le moment. Ouvrez Réglages IA puis activez un modèle local si vous voulez continuer les analyses.";
         } else if (rawErrorMessage) {
           errorMessage = normalizedErrorMessage.includes('fetch')
             ? (appState.activeModelConfig?.provider === 'online'
-              ? "Erreur reseau : impossible de joindre le service IA en ligne. Verifiez votre connexion et le Worker Cloudflare."
-              : "Erreur reseau : impossible de telecharger le modele. Verifiez votre connexion.")
+              ? "Erreur réseau : impossible de joindre le service IA en ligne. Vérifiez votre connexion et le Worker Cloudflare."
+              : "Erreur réseau : impossible de télécharger le modèle. Vérifiez votre connexion.")
             : `Erreur : ${rawErrorMessage}`;
         }
 
@@ -715,11 +715,11 @@ export function createChatController({
           normalizedErrorMessage.includes('invalid buffer') ||
           normalizedErrorMessage.includes('mapasync')
         ) {
-          errorMessage = "Erreur WebGPU pendant la generation. Reessayez avec une question plus courte ou un modele plus leger.";
+          errorMessage = "Erreur WebGPU pendant la génération. Réessayez avec une question plus courte ou un modèle plus léger.";
         }
 
         await addMessage('system', errorMessage, { method: 'system' });
-        console.error('Erreur detaillee:', error);
+        console.error('Erreur détaillée:', error);
       } finally {
         appState.isChatBusy = false;
         syncChatAvailability();

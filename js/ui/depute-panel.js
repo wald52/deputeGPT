@@ -3,7 +3,7 @@ function buildDeputePanelDetailsInternal(depute, placesMapping) {
   const seatNumber = placesMapping?.[depute.id];
 
   if (seatNumber) {
-    details += ` | Siege ${seatNumber}`;
+    details += ` | Siège ${seatNumber}`;
   }
 
   if (depute.departementNom && depute.circo) {
@@ -82,9 +82,9 @@ export function createDeputePanelController({
     document.getElementById('stat-votes').textContent = votes.length;
 
     if (error) {
-      await addMessage('system', `Impossible de charger les votes de ${depute.prenom} ${depute.nom}. Verifiez votre connexion ou reessayez plus tard.`, { method: 'system' });
+      await addMessage('system', `Impossible de charger les votes de ${depute.prenom} ${depute.nom}. Vérifiez votre connexion ou réessayez plus tard.`, { method: 'system' });
     } else {
-      await addMessage('system', `Donnees chargees pour ${depute.prenom} ${depute.nom}. (${votes.length} votes)`, { method: 'system' });
+      await addMessage('system', `Données chargées pour ${depute.prenom} ${depute.nom}. (${votes.length} votes)`, { method: 'system' });
     }
     syncChatAvailability();
     updateChatScopeSummary();

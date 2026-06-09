@@ -115,8 +115,8 @@ export function createHemicyclePanelController({
       stage.innerHTML = `
         <div class="hemicycle-loading-placeholder" role="status" aria-live="polite">
           <div class="hemicycle-placeholder-copy">
-            <strong>Chargement de l'hemicycle officiel...</strong>
-            <span>Recuperation du plan des sieges et des couleurs en cours.</span>
+            <strong>Chargement de l'hémicycle officiel...</strong>
+            <span>Récupération du plan des sièges et des couleurs en cours.</span>
           </div>
         </div>
       `;
@@ -127,11 +127,11 @@ export function createHemicyclePanelController({
       stage.innerHTML = `
         <div class="hemicycle-loading-placeholder" role="status" aria-live="polite">
           <div class="hemicycle-placeholder-copy">
-            <strong>Hemicycle indisponible</strong>
+            <strong>Hémicycle indisponible</strong>
             <span>${escapeHtml(error)}</span>
           </div>
           <button type="button" class="hemicycle-load-btn" data-load-hemicycle>
-            Reessayer le chargement
+            Réessayer le chargement
           </button>
         </div>
       `;
@@ -139,11 +139,11 @@ export function createHemicyclePanelController({
       stage.innerHTML = `
         <div class="hemicycle-loading-placeholder" role="status" aria-live="polite">
           <div class="hemicycle-placeholder-copy">
-            <strong>Hemicycle a la demande</strong>
-            <span>Chargez le plan des sieges si besoin.</span>
+            <strong>Hémicycle à la demande</strong>
+            <span>Chargez le plan des sièges si besoin.</span>
           </div>
           <button type="button" class="hemicycle-load-btn" data-load-hemicycle>
-            Charger l'hemicycle
+            Charger l'hémicycle
           </button>
         </div>
       `;
@@ -172,7 +172,7 @@ export function createHemicyclePanelController({
       return current > latest ? current : latest;
     }, '');
     const dateLabel = updatedOn || new Date().toISOString().slice(0, 10);
-    statusEl.textContent = `Hemicycle officiel charge (${mappedSeats} sieges) - reference ${dateLabel}.`;
+    statusEl.textContent = `Hémicycle officiel chargé (${mappedSeats} sièges) - référence ${dateLabel}.`;
   }
 
   function deactivateSeatElement(element) {
@@ -252,7 +252,7 @@ export function createHemicyclePanelController({
     element.style.outline = 'none';
     element.setAttribute('tabindex', '0');
     element.setAttribute('role', 'button');
-    element.setAttribute('aria-label', `${depute.prenom} ${depute.nom} (${depute.groupeAbrev}), siege ${element.id ? element.id.substring(1) : '?'}`);
+    element.setAttribute('aria-label', `${depute.prenom} ${depute.nom} (${depute.groupeAbrev}), siège ${element.id ? element.id.substring(1) : '?'}`);
     element.removeAttribute('focusable');
 
     const title = document.createElement('title');
@@ -411,7 +411,7 @@ export function createHemicyclePanelController({
         updateHemicycleSyncStatus(Object.keys(hemicyclePlacesMapping).length);
         setActiveSeatByDepute(appState.currentDepute);
       } catch (error) {
-        console.error('Erreur hemicycle :', error);
+        console.error('Erreur hémicycle :', error);
         renderHemicyclePlaceholder({
           error: error?.message || 'Erreur de chargement'
         });
@@ -453,7 +453,7 @@ export function createHemicyclePanelController({
       item.dataset.groupCode = groupe.code || '';
       item.setAttribute('role', 'button');
       item.setAttribute('tabindex', '0');
-      item.setAttribute('aria-label', `${groupe.nom}, ${groupe.seats} sieges. Selectionner un depute au hasard.`);
+      item.setAttribute('aria-label', `${groupe.nom}, ${groupe.seats} sièges. Sélectionner un député au hasard.`);
       item.innerHTML = `
         <div class="legend-color" style="background-color:${groupe.couleur}"></div>
         <span>${groupe.nom} (${groupe.seats})</span>

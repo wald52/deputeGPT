@@ -12,7 +12,7 @@ export function createVoteTextHelpers({
     const subject = stripLeadingFrenchArticle(lookupVoteSubject(vote));
     const title = stripLeadingFrenchArticle(vote.titre);
     const themeLabel = lookupVoteThemeLabel(vote);
-    const suffix = themeLabel ? ` [theme: ${themeLabel}]` : '';
+    const suffix = themeLabel ? ` [thème: ${themeLabel}]` : '';
     const prefix = includeBullet ? '- ' : '';
 
     if (mode === 'subjects') {
@@ -51,7 +51,7 @@ export function createVoteTextHelpers({
   }
 
   function buildLargeListClarification(totalMatches) {
-    return `La personne selectionnee a ${totalMatches} votes dans ce perimetre. Voulez-vous les ${defaultChatListLimit} plus recents, une periode precise, un type de vote (pour/contre/abstention) ou un theme ?`;
+    return `La personne sélectionnée a ${totalMatches} votes dans ce périmètre. Voulez-vous les ${defaultChatListLimit} plus récents, une période précise, un type de vote (pour/contre/abstention) ou un thème ?`;
   }
 
   function buildPaginationContinuationMessage(votes, options = {}) {
