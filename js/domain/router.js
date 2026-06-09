@@ -120,7 +120,7 @@ function buildResponseFirstAssumptionInternal(scope, intentKind, state = {}) {
     ? 'le dernier resultat affiche'
     : scope?.source === 'explicit_filter'
       ? 'le sous-ensemble en cours'
-      : 'tout l historique du depute';
+      : "tout l'historique du député";
 
   const correctionHints = [];
   if (scopeWasDefaulted) {
@@ -223,7 +223,7 @@ function routeQuestionInternal(question, session, options = {}) {
     intent.reason = 'needs_context';
     return {
       action: 'clarify',
-      message: 'Choisissez d\'abord un depute.',
+      message: 'Choisissez d\'abord un député.',
       intent,
       plan: buildRoutePlan(null, intent),
       resolvedQuestion: effectiveQuestion

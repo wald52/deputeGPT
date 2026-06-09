@@ -162,7 +162,7 @@ export function createChatHistoryPanelController({
 
         item.innerHTML = `
           <div style="font-weight: 600; font-size: 0.85rem; color: #2c3e50; margin-bottom: 4px;">
-            ${escapeHtml(session.deputeName || 'Depute inconnu')}
+            ${escapeHtml(session.deputeName || 'Député inconnu')}
           </div>
           <div style="font-size: 0.75rem; color: #666; margin-bottom: 4px;">
             ${session.messageCount} message${session.messageCount > 1 ? 's' : ''} • ${dateStr}
@@ -201,7 +201,7 @@ export function createChatHistoryPanelController({
 
       const depute = getDeputesData().find(currentDepute => currentDepute.id === session.deputeId);
       if (!depute) {
-        await addMessage('system', 'Le depute de cette session n\'est plus disponible dans les donnees actuelles.', { method: 'system' });
+        await addMessage('system', 'Le député de cette session n\'est plus disponible dans les données actuelles.', { method: 'system' });
         return;
       }
 
@@ -226,10 +226,10 @@ export function createChatHistoryPanelController({
         });
       }
 
-      console.debug(`Session restauree: ${sessionId}`);
+      console.debug(`Session restaurée: ${sessionId}`);
     } catch (error) {
       console.error('Erreur restauration session:', error);
-      await addMessage('system', 'Erreur lors de la restauration de la session. Reessayez ou selectionnez un autre depute.', { method: 'system' });
+      await addMessage('system', 'Erreur lors de la restauration de la session. Réessayez ou sélectionnez un autre député.', { method: 'system' });
     }
   }
 
@@ -327,7 +327,7 @@ export function createChatHistoryPanelController({
 
     const chatHistory = await ensureChatHistoryReady();
     if (!chatHistory) {
-      await addMessage('system', 'Historique non disponible sur cet appareil. Le stockage local est desactive.', { method: 'system' });
+      await addMessage('system', 'Historique non disponible sur cet appareil. Le stockage local est désactivé.', { method: 'system' });
       return;
     }
 

@@ -41,7 +41,7 @@ export function createModelLoader({
 
     if (!modelConfig) {
       if (!quiet) {
-        addSystemMessage('Selectionnez un modele et une quantification valides.');
+        addSystemMessage('Sélectionnez un modèle et une quantification valides.');
       }
       return;
     }
@@ -50,7 +50,7 @@ export function createModelLoader({
 
     if (!usesRemoteProvider && !hasWebGPU()) {
       if (!quiet) {
-        addSystemMessage('WebGPU n\'est pas disponible sur cet appareil. Le chat IA reste desactive.');
+        addSystemMessage('WebGPU n\'est pas disponible sur cet appareil. Le chat IA reste désactivé.');
       }
       return;
     }
@@ -77,7 +77,7 @@ export function createModelLoader({
     try {
       if (appState.activeModelConfig?.signature === modelConfig.signature && appState.generator) {
         if (!quiet) {
-          addSystemMessage(`${modelConfig.displayName} est deja actif.`);
+          addSystemMessage(`${modelConfig.displayName} est déjà actif.`);
         }
         syncChatAvailability();
         return;
@@ -94,7 +94,7 @@ export function createModelLoader({
         updateProgress(0.02, 'Chargement du runtime stable');
         await transformersRuntime.loadRuntime('stable');
 
-        updateProgress(0.08, 'Preparation');
+        updateProgress(0.08, 'Préparation');
         if (modelConfig.runtime === 'qwen3_low_level') {
           runtime = await createQwen3Runtime(modelConfig, updateProgress);
         } else if (modelConfig.runtime === 'qwen35_low_level') {
@@ -109,7 +109,7 @@ export function createModelLoader({
       appState.generator = createGeneratorAdapter(runtime);
       appState.activeModelConfig = modelConfig;
       syncActiveModelThinkingState();
-      updateProgress(1, 'Modele pret');
+      updateProgress(1, 'Modèle prêt');
       updateActiveModelBadge(appState.activeModelConfig);
 
       if (usesRemoteProvider) {
@@ -124,13 +124,13 @@ export function createModelLoader({
         setStoredValue(storageKeys.acceptedModelId, modelConfig.id);
         setStoredValue(storageKeys.acceptedQuantId, modelConfig.selectedQuant.id);
         if (!quiet) {
-          addSystemMessage(`Modele pret : ${modelConfig.displayName} (${resolveThinkingModeFlag(appState.activeModelConfig) ? 'thinking' : 'non-thinking'}).`);
+          addSystemMessage(`Modèle prêt : ${modelConfig.displayName} (${resolveThinkingModeFlag(appState.activeModelConfig) ? 'thinking' : 'non-thinking'}).`);
         }
       }
 
       syncChatAvailability();
     } catch (error) {
-      console.error('Erreur de chargement du modele:', error);
+      console.error('Erreur de chargement du modèle:', error);
       const errorDetail = error?.message || error?.toString?.() || 'erreur inconnue';
       if (!quiet) {
         addSystemMessage(`Erreur de chargement : ${errorDetail}`);

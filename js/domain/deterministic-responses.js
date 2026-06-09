@@ -20,7 +20,7 @@ function buildClosedVoteResponseInternal(question, scope, depute, filteredVotes,
 
     if (displayedVotes.length > 0) {
       if (displayedVotes.length < filteredVotes.length) {
-        summaryText += `\nJ'en affiche ${displayedVotes.length}, tries par date.`;
+        summaryText += `\nJ'en affiche ${displayedVotes.length}, triés par date.`;
       }
 
       return buildInlineListResponseInternal(summaryText, displayedVotes, 'list', deps);
@@ -34,11 +34,11 @@ function buildClosedVoteResponseInternal(question, scope, depute, filteredVotes,
   }
 
   if (scope.filters.queryText) {
-    let message = `Non. Je ne trouve aucun vote ${deps.describeQueryVotePhrase(scope.filters, phrasingContext)} enregistre pour ${deputeLabel} sur cette legislature.`;
+    let message = `Non. Je ne trouve aucun vote ${deps.describeQueryVotePhrase(scope.filters, phrasingContext)} enregistré pour ${deputeLabel} sur cette législature.`;
 
     if (scope.filters.vote && deputeQueryMatches.length > 0) {
       const distributionText = formatVoteDistributionInternal(buildVoteDistributionInternal(deputeQueryMatches));
-      message += ` En revanche, je trouve ${deputeQueryMatches.length} scrutin${deputeQueryMatches.length > 1 ? 's' : ''} correspondant${deputeQueryMatches.length > 1 ? 's' : ''} pour ce depute`;
+      message += ` En revanche, je trouve ${deputeQueryMatches.length} scrutin${deputeQueryMatches.length > 1 ? 's' : ''} correspondant${deputeQueryMatches.length > 1 ? 's' : ''} pour ce député`;
       if (distributionText) {
         message += ` (${distributionText})`;
       }
@@ -51,7 +51,7 @@ function buildClosedVoteResponseInternal(question, scope, depute, filteredVotes,
     }
 
     if (globalQueryMatches.length > 0) {
-      message += ` Je trouve toutefois ${globalQueryMatches.length} scrutin${globalQueryMatches.length > 1 ? 's' : ''} correspondant${globalQueryMatches.length > 1 ? 's' : ''} dans la base de cette legislature. Il est donc possible que ce depute n'ait pas pris part au vote ou qu'aucun vote ne soit enregistre pour lui sur ce${globalQueryMatches.length > 1 ? 's' : ''} scrutin${globalQueryMatches.length > 1 ? 's' : ''}.`;
+      message += ` Je trouve toutefois ${globalQueryMatches.length} scrutin${globalQueryMatches.length > 1 ? 's' : ''} correspondant${globalQueryMatches.length > 1 ? 's' : ''} dans la base de cette législature. Il est donc possible que ce député n'ait pas pris part au vote ou qu'aucun vote ne soit enregistré pour lui sur ce${globalQueryMatches.length > 1 ? 's' : ''} scrutin${globalQueryMatches.length > 1 ? 's' : ''}.`;
     }
 
     return {
@@ -76,21 +76,21 @@ function buildClosedVoteResponseInternal(question, scope, depute, filteredVotes,
 
 function buildNoResultMessageInternal(scope, intent, context = {}, deps) {
   if (intent.kind === 'count') {
-    return 'Je ne trouve aucun vote correspondant a ce filtre.';
+    return 'Je ne trouve aucun vote correspondant à ce filtre.';
   }
 
   const { deputeQueryMatches = [], globalQueryMatches = [] } = context;
   const dateDescription = deps.describeDateFilter(scope.filters);
   const queryDescription = deps.describeQueryFilter(scope.filters, context);
   if (queryDescription && !dateDescription) {
-    let message = `Je ne trouve aucun vote ${deps.describeQueryVotePhrase(scope.filters, context)} sur cette legislature.`;
+    let message = `Je ne trouve aucun vote ${deps.describeQueryVotePhrase(scope.filters, context)} sur cette législature.`;
 
     if (scope.filters.vote && deputeQueryMatches.length > 0) {
-      return `${message} En revanche, je trouve ${deputeQueryMatches.length} scrutin${deputeQueryMatches.length > 1 ? 's' : ''} correspondant${deputeQueryMatches.length > 1 ? 's' : ''} pour ce depute, mais pas avec ce sens de vote.`;
+      return `${message} En revanche, je trouve ${deputeQueryMatches.length} scrutin${deputeQueryMatches.length > 1 ? 's' : ''} correspondant${deputeQueryMatches.length > 1 ? 's' : ''} pour ce député, mais pas avec ce sens de vote.`;
     }
 
     if (globalQueryMatches.length > 0) {
-      message += ` Je trouve toutefois ${globalQueryMatches.length} scrutin${globalQueryMatches.length > 1 ? 's' : ''} correspondant${globalQueryMatches.length > 1 ? 's' : ''} dans la base de cette legislature. Il est donc possible que ce depute n'ait pas pris part au vote ou qu'aucun vote ne soit enregistre pour lui sur ce${globalQueryMatches.length > 1 ? 's' : ''} scrutin${globalQueryMatches.length > 1 ? 's' : ''}.`;
+      message += ` Je trouve toutefois ${globalQueryMatches.length} scrutin${globalQueryMatches.length > 1 ? 's' : ''} correspondant${globalQueryMatches.length > 1 ? 's' : ''} dans la base de cette législature. Il est donc possible que ce député n'ait pas pris part au vote ou qu'aucun vote ne soit enregistré pour lui sur ce${globalQueryMatches.length > 1 ? 's' : ''} scrutin${globalQueryMatches.length > 1 ? 's' : ''}.`;
     }
 
     return message;
@@ -104,18 +104,18 @@ function buildNoResultMessageInternal(scope, intent, context = {}, deps) {
     message += ` pour ${queryDescription}`;
   }
   if (scope.filters.theme) {
-    message += ` sur le theme "${scope.filters.theme}"`;
+    message += ` sur le thème "${scope.filters.theme}"`;
   }
   if (dateDescription) {
     if (dateDescription.startsWith('le ')) {
-      message += ` a la date du ${dateDescription.slice(3)}`;
+      message += ` à la date du ${dateDescription.slice(3)}`;
     } else {
       message += ` ${dateDescription}`;
     }
   }
 
   return message === 'Je ne trouve aucun vote correspondant'
-    ? 'Je ne trouve aucun vote correspondant a votre demande.'
+    ? 'Je ne trouve aucun vote correspondant à votre demande.'
     : `${message}.`;
 }
 
@@ -134,7 +134,7 @@ function buildCountResponseInternal(filteredVotes, scope, depute, deps) {
   }
 
   if (scope.filters.theme) {
-    filterBits.push(`sur le theme "${scope.filters.theme}"`);
+    filterBits.push(`sur le thème "${scope.filters.theme}"`);
   }
 
   if (dateDescription) {
@@ -158,7 +158,7 @@ function buildLargeResultHintInternal(requestedLimit, totalMatches) {
   }
 
   if (nextSuggestedLimit && nextSuggestedLimit > requestedLimit) {
-    return `Dites "${nextSuggestedLimit} derniers" si vous voulez elargir directement, ou utilisez "Afficher ${Math.min(requestedLimit, remainingMatches)} de plus".`;
+    return `Dites "${nextSuggestedLimit} derniers" si vous voulez élargir directement, ou utilisez "Afficher ${Math.min(requestedLimit, remainingMatches)} de plus".`;
   }
 
   return 'Utilisez le bouton "Afficher plus" pour continuer.';
@@ -193,7 +193,7 @@ function buildListResponseInternal(filteredVotes, scope, depute, deps) {
   }
 
   if (scope.filters.theme) {
-    introParts.push(`au theme "${scope.filters.theme}"`);
+    introParts.push(`au thème "${scope.filters.theme}"`);
   }
 
   if (scope.filters.vote) {
@@ -206,7 +206,7 @@ function buildListResponseInternal(filteredVotes, scope, depute, deps) {
 
   let summaryText = `${introParts.join(' ')}.`;
   if (displayedVotes.length < filteredVotes.length) {
-    summaryText += `\nJ'en affiche ${displayedVotes.length}, tries par date. ${buildLargeResultHintInternal(displayedVotes.length, filteredVotes.length)}`;
+    summaryText += `\nJ'en affiche ${displayedVotes.length}, triés par date. ${buildLargeResultHintInternal(displayedVotes.length, filteredVotes.length)}`;
   }
 
   return buildInlineListResponseInternal(summaryText, displayedVotes, 'list', deps);
@@ -235,7 +235,7 @@ function buildThemeSummaryResponseInternal(filteredVotes, scope, depute, deps) {
     return null;
   }
 
-  let message = `Themes principaux parmi les ${filteredVotes.length} votes retenus pour ${depute.prenom} ${depute.nom} :`;
+  let message = `Thèmes principaux parmi les ${filteredVotes.length} votes retenus pour ${depute.prenom} ${depute.nom} :`;
 
   if (rankedThemes.length === 0) {
     message += `\n- ${scope.filters.theme} : ${filteredVotes.length} vote${filteredVotes.length > 1 ? 's' : ''}`;
@@ -302,7 +302,7 @@ function formatPercentInternal(value) {
 function formatVoteDateInternal(isoDate) {
   const match = String(isoDate || '').match(/^(\d{4})-(\d{2})-(\d{2})$/);
   if (!match) {
-    return isoDate || 'date non renseignee';
+    return isoDate || 'date non renseignée';
   }
 
   return new Intl.DateTimeFormat('fr-FR', {
@@ -322,26 +322,26 @@ function buildParticipationRateResponseInternal(question, depute, route) {
   const parts = [];
 
   if (Number.isFinite(overallScore)) {
-    parts.push(`${deputeLabel} a un score de participation global de ${formatPercentInternal(overallScore)} aux scrutins publics de cette legislature.`);
+    parts.push(`${deputeLabel} a un score de participation global de ${formatPercentInternal(overallScore)} aux scrutins publics de cette législature.`);
   }
 
   if (Number.isFinite(specialtyScore)) {
-    parts.push(`Son score de participation de specialite est de ${formatPercentInternal(specialtyScore)}.`);
+    parts.push(`Son score de participation de spécialité est de ${formatPercentInternal(specialtyScore)}.`);
   } else if (wantsSpecialty) {
-    parts.push('Je n ai pas de score de participation de specialite exploitable dans les donnees chargees.');
+    parts.push("Je n'ai pas de score de participation de spécialité exploitable dans les données chargées.");
   }
 
   if (!parts.length) {
     return {
       kind: 'response',
-      message: `Je n ai pas de score de participation exploitable pour ${deputeLabel} dans les donnees publiques chargees.`
+      message: `Je n'ai pas de score de participation exploitable pour ${deputeLabel} dans les données publiques chargées.`
     };
   }
 
   if (/\b(hebdomadaire|seance pleniere|séance plénière|heure|jour)\b/.test(normalizedQuestion)) {
-    parts.push('Je ne dispose pas d une frequence par semaine ou par seance dans les donnees publiques chargees.');
+    parts.push("Je ne dispose pas d'une fréquence par semaine ou par séance dans les données publiques chargées.");
   } else if (/\b(absent|absence)\b/.test(normalizedQuestion) && Number.isFinite(overallScore)) {
-    parts.push(`Cela correspond a une participation ${overallScore >= 0.6 ? 'plutot reguliere' : overallScore >= 0.35 ? 'mitigee' : 'plutot faible'} sur les scrutins publics.`);
+    parts.push(`Cela correspond à une participation ${overallScore >= 0.6 ? 'plutôt régulière' : overallScore >= 0.35 ? 'mitigée' : 'plutôt faible'} sur les scrutins publics.`);
   }
 
   return {
@@ -359,7 +359,7 @@ function buildGroupAlignmentResponseInternal(question, depute, route) {
   if (!Number.isFinite(loyaltyScore)) {
     return {
       kind: 'response',
-      message: `Je n ai pas de score de loyaute exploitable pour ${deputeLabel} dans les donnees publiques chargees.`
+      message: `Je n'ai pas de score de loyauté exploitable pour ${deputeLabel} dans les données publiques chargées.`
     };
   }
 
@@ -369,14 +369,14 @@ function buildGroupAlignmentResponseInternal(question, depute, route) {
   const gapText = formatPercentInternal(gapScore);
   const followsGroup = normalizedLoyaltyScore >= 0.75;
   const responseParts = route.intent.kind === 'group_gap'
-    ? [`${deputeLabel} a un score de loyaute de ${loyaltyText} avec le groupe ${groupLabel}. Cela suggere un ecart global indicatif d environ ${gapText} par rapport a la ligne du groupe.`]
-    : [`${deputeLabel} a un score de loyaute de ${loyaltyText} avec le groupe ${groupLabel}. Cela suggere qu il ${followsGroup ? 'suit plutot souvent' : 'suit de facon plus variable'} la ligne de son groupe.`];
+    ? [`${deputeLabel} a un score de loyauté de ${loyaltyText} avec le groupe ${groupLabel}. Cela suggère un écart global indicatif d'environ ${gapText} par rapport à la ligne du groupe.`]
+    : [`${deputeLabel} a un score de loyauté de ${loyaltyText} avec le groupe ${groupLabel}. Cela suggère qu'il ${followsGroup ? 'suit plutôt souvent' : 'suit de façon plus variable'} la ligne de son groupe.`];
 
   if (/\b(circonscription|electorat|electeurs)\b/.test(normalizedQuestion)) {
-    responseParts.push('Je peux mesurer l alignement global au groupe, pas l effet direct de la circonscription dans ces donnees.');
+    responseParts.push("Je peux mesurer l'alignement global au groupe, pas l'effet direct de la circonscription dans ces données.");
   }
 
-  responseParts.push('Je n ai pas le detail scrutin par scrutin des consignes ou des ecarts internes du groupe dans les JSON publics charges.');
+  responseParts.push("Je n'ai pas le détail scrutin par scrutin des consignes ou des écarts internes du groupe dans les JSON publics chargés.");
 
   return {
     kind: 'response',
@@ -395,11 +395,11 @@ function buildScrutinyDetailResponseInternal(filteredVotes, question, deps) {
     let message = `Le scrutin ${deps.getVoteId(vote)} a eu lieu le ${formatVoteDateInternal(vote?.date)}.`;
 
     if (displayTitle) {
-      message += ` Intitule retenu : ${displayTitle}.`;
+      message += ` Intitulé retenu : ${displayTitle}.`;
     }
 
     if (asksHour) {
-      message += ' Je dispose de la date, pas de l heure, dans les donnees publiques chargees.';
+      message += " Je dispose de la date, pas de l'heure, dans les données publiques chargées.";
     }
 
     return {
@@ -409,13 +409,13 @@ function buildScrutinyDetailResponseInternal(filteredVotes, question, deps) {
     };
   }
 
-  let message = `Je trouve ${filteredVotes.length} scrutins correspondants. Voici les numeros et dates des ${displayedVotes.length} premiers :\n`;
+  let message = `Je trouve ${filteredVotes.length} scrutins correspondants. Voici les numéros et dates des ${displayedVotes.length} premiers :\n`;
   message += displayedVotes
     .map(vote => `- scrutin ${deps.getVoteId(vote)} - ${formatVoteDateInternal(vote?.date)} - ${stripLeadingFrenchArticle(vote?.titre || '') || 'scrutin sans titre'}`)
     .join('\n');
 
   if (asksHour) {
-    message += '\nJe dispose des dates, pas des heures, dans les donnees publiques chargees.';
+    message += '\nJe dispose des dates, pas des heures, dans les données publiques chargées.';
   }
 
   return {
@@ -462,7 +462,7 @@ function inferThematicStanceInternal(distribution) {
 
   if (decisiveVotes < 3) {
     return {
-      conclusion: 'Je n ai pas assez de votes sur ce theme pour conclure serieusement.'
+      conclusion: "Je n'ai pas assez de votes sur ce thème pour conclure sérieusement."
     };
   }
 
@@ -473,56 +473,56 @@ function inferThematicStanceInternal(distribution) {
 
   if (supportShare >= 0.6 && distribution.Pour >= distribution.Contre + 2) {
     return {
-      conclusion: 'Cela suggere une position plutot favorable sur ce theme.'
+      conclusion: 'Cela suggère une position plutôt favorable sur ce thème.'
     };
   }
 
   if (opposeShare >= 0.6 && distribution.Contre >= distribution.Pour + 2) {
     return {
-      conclusion: 'Cela suggere une position plutot opposee sur ce theme.'
+      conclusion: 'Cela suggère une position plutôt opposée sur ce thème.'
     };
   }
 
   if (abstentionShare >= 0.45 && gap <= 1) {
     return {
-      conclusion: 'La position parait difficile a trancher, avec beaucoup d abstentions.'
+      conclusion: "La position paraît difficile à trancher, avec beaucoup d'abstentions."
     };
   }
 
   if (gap <= 1) {
     return {
-      conclusion: 'La position parait partagee plutot que nettement alignee.'
+      conclusion: 'La position paraît partagée plutôt que nettement alignée.'
     };
   }
 
   if (distribution.Pour > distribution.Contre) {
     return {
-      conclusion: 'Cela suggere une position plutot favorable, mais sans ligne totalement nette.'
+      conclusion: 'Cela suggère une position plutôt favorable, mais sans ligne totalement nette.'
     };
   }
 
   return {
-    conclusion: 'Cela suggere une position plutot reservee, mais sans ligne totalement nette.'
+    conclusion: 'Cela suggère une position plutôt réservée, mais sans ligne totalement nette.'
   };
 }
 
 function buildThematicStanceResponseInternal(filteredVotes, scope, depute, deps) {
   const distribution = buildVoteDistributionInternal(filteredVotes);
   const examples = filteredVotes.slice(0, deps.thematicStanceExampleLimit);
-  const themeLabel = scope.filters.theme || 'ce theme';
+  const themeLabel = scope.filters.theme || 'ce thème';
   const stance = inferThematicStanceInternal(distribution);
   const distributionText = formatVoteDistributionInternal(distribution);
 
-  let message = `${depute.prenom} ${depute.nom} a ${filteredVotes.length} vote${filteredVotes.length > 1 ? 's' : ''} retenu${filteredVotes.length > 1 ? 's' : ''} sur le theme "${themeLabel}". ${stance.conclusion}`;
+  let message = `${depute.prenom} ${depute.nom} a ${filteredVotes.length} vote${filteredVotes.length > 1 ? 's' : ''} retenu${filteredVotes.length > 1 ? 's' : ''} sur le thème "${themeLabel}". ${stance.conclusion}`;
 
   if (distributionText) {
-    message += `\nRepere factuel : ${distributionText}.`;
+    message += `\nRepère factuel : ${distributionText}.`;
   }
 
-  message += '\nCette synthese repose sur les scrutins classes dans ce theme, pas sur une evaluation generale de toutes ses prises de position.';
+  message += '\nCette synthèse repose sur les scrutins classés dans ce thème, pas sur une évaluation générale de toutes ses prises de position.';
 
   if (examples.length > 0) {
-    return buildInlineListResponseInternal(`${message}\n\nExemples recents :`, examples, 'list', deps);
+    return buildInlineListResponseInternal(`${message}\n\nExemples récents :`, examples, 'list', deps);
   }
 
   return {

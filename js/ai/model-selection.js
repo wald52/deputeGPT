@@ -90,7 +90,7 @@ function buildOpenRouterPricingSummary(modelConfig) {
     parts.push(`completion ${completionLabel}`);
   }
   if (requestLabel) {
-    parts.push(`requete ${requestLabel}`);
+    parts.push(`requête ${requestLabel}`);
   }
 
   return parts.length > 0 ? parts.join(' · ') : 'Tarif indisponible';
@@ -215,7 +215,7 @@ export function createModelSelectionController({
           return status;
         }
       } catch (error) {
-        console.warn('Verification WebGPU indisponible pour le resume du RAG semantique.', error);
+        console.warn('Vérification WebGPU indisponible pour le résumé du RAG sémantique.', error);
       }
     }
 
@@ -230,10 +230,10 @@ export function createModelSelectionController({
 
   function buildSemanticWebGPUBlockedText(status) {
     if (!status?.supported) {
-      return 'WebGPU absent: ce mode semantique local reste indisponible sur cet appareil.';
+      return 'WebGPU absent: ce mode sémantique local reste indisponible sur cet appareil.';
     }
 
-    return `${status?.message || 'Aucun adaptateur GPU compatible n est disponible pour ce mode semantique local.'} Le telechargement du modele d embedding reste bloque.`;
+    return `${status?.message || "Aucun adaptateur GPU compatible n'est disponible pour ce mode sémantique local."} Le téléchargement du modèle d'embedding reste bloqué.`;
   }
 
   function getDefaultModel() {
@@ -646,15 +646,15 @@ export function createModelSelectionController({
     const webGPUStatus = await resolveSemanticWebGPUStatus();
 
     if (!config?.available) {
-      helperEl.textContent = `Mode ${modeLabel} non publie pour le moment. Le chemin exact reste lexical et le mode single-vector demeure la voie stable.`;
-      sizeEl.textContent = 'Artefact semantique indisponible';
-      statusEl.textContent = 'Ce mode n est pas disponible. Les analyses restent sur le chemin lexical.';
+      helperEl.textContent = `Mode ${modeLabel} non publié pour le moment. Le chemin exact reste lexical et le mode single-vector demeure la voie stable.`;
+      sizeEl.textContent = 'Artefact sémantique indisponible';
+      statusEl.textContent = "Ce mode n'est pas disponible. Les analyses restent sur le chemin lexical.";
       toggle.disabled = true;
       return;
     }
 
-    helperEl.textContent = `Reranking ${modeLabel} apres la recherche lexicale. Le mode semantique utilise ${semanticModelDescriptor}.`;
-    sizeEl.textContent = `Telechargement estime: ${totalLabel} (index: ${artifactLabel})`;
+    helperEl.textContent = `Reranking ${modeLabel} après la recherche lexicale. Le mode sémantique utilise ${semanticModelDescriptor}.`;
+    sizeEl.textContent = `Téléchargement estimé: ${totalLabel} (index: ${artifactLabel})`;
     toggle.disabled = false;
 
     if (runtimeStatus.status === 'loading') {
@@ -663,7 +663,7 @@ export function createModelSelectionController({
     }
 
     if (runtimeStatus.ready && runtimeStatus.modeId === config.modeId) {
-      statusEl.textContent = `${modeLabel} actif pour le reranking semantique des analyses. Les reponses factuelles restent sur le chemin lexical.`;
+      statusEl.textContent = `${modeLabel} actif pour le reranking sémantique des analyses. Les réponses factuelles restent sur le chemin lexical.`;
       return;
     }
 
@@ -674,11 +674,11 @@ export function createModelSelectionController({
     }
 
     if (isSemanticRagEnabled()) {
-      statusEl.textContent = `${modeLabel} est memorise pour cet appareil, mais pas encore charge dans cette session. Coupez puis reactivez le commutateur pour confirmer le chargement local.`;
+      statusEl.textContent = `${modeLabel} est mémorisé pour cet appareil, mais pas encore chargé dans cette session. Coupez puis réactivez le commutateur pour confirmer le chargement local.`;
       return;
     }
 
-    statusEl.textContent = `Desactive. Activez le commutateur pour charger ${modeLabel} en local.`;
+    statusEl.textContent = `Désactivé. Activez le commutateur pour charger ${modeLabel} en local.`;
   }
 
   async function activateSemanticRagFromUi() {
@@ -688,7 +688,7 @@ export function createModelSelectionController({
       : null;
 
     if (!config?.available) {
-      addSystemMessage('Le RAG semantique local n est pas encore disponible dans les artefacts publics.');
+      addSystemMessage("Le RAG sémantique local n'est pas encore disponible dans les artefacts publics.");
       setSemanticRagEnabled(false);
       return false;
     }
@@ -702,7 +702,7 @@ export function createModelSelectionController({
     }
 
     const confirmed = globalThis.confirm?.(
-      `Activer le mode ${config.label || config.modeId} du RAG semantique local ?\n\nEncodeur dedie: ${config.model?.id || config.model?.browserModelId}\nUsage: ${config.model?.usage === 'asymmetric_retrieval' ? 'retrieval asymetrique multilingue' : 'recherche semantique locale'}\nIndex semantique: ${formatDownloadSize(config.artifact?.downloadMb ?? null)}\nTelechargement total estime: ${formatDownloadSize(config.totalEstimatedDownloadMb ?? null)}\n\nLe telechargement n est jamais lance sans votre confirmation.`
+      `Activer le mode ${config.label || config.modeId} du RAG sémantique local ?\n\nEncodeur dédié: ${config.model?.id || config.model?.browserModelId}\nUsage: ${config.model?.usage === 'asymmetric_retrieval' ? 'retrieval asymétrique multilingue' : 'recherche sémantique locale'}\nIndex sémantique: ${formatDownloadSize(config.artifact?.downloadMb ?? null)}\nTéléchargement total estimé: ${formatDownloadSize(config.totalEstimatedDownloadMb ?? null)}\n\nLe téléchargement n'est jamais lancé sans votre confirmation.`
     );
 
     if (confirmed === false) {
@@ -1618,27 +1618,27 @@ export function createModelSelectionController({
     const lastMeta = appState.lastOnlineResponseMeta || null;
 
     if (!providerConfig) {
-      statusEl.textContent = 'Le service IA en ligne n est pas disponible dans le catalogue local.';
+      statusEl.textContent = "Le service IA en ligne n'est pas disponible dans le catalogue local.";
       return;
     }
 
     if (!String(providerConfig.api_base_url || '').trim()) {
-      statusEl.textContent = 'Configurez d abord l URL du Worker Cloudflare dans le catalogue pour activer l IA en ligne.';
+      statusEl.textContent = "Configurez d'abord l'URL du Worker Cloudflare dans le catalogue pour activer l'IA en ligne.";
       return;
     }
 
     if (activeRemoteModel) {
       const providerLabel = lastMeta?.provider && lastMeta?.model
         ? `Dernier service: ${lastMeta.provider} · ${lastMeta.model}.`
-        : 'Service prete.';
-      statusEl.textContent = `${providerLabel} Les questions exactes restent deterministes et seules les analyses envoient un contexte court hors du navigateur.`;
+        : 'Service prêt.';
+      statusEl.textContent = `${providerLabel} Les questions exactes restent déterministes et seules les analyses envoient un contexte court hors du navigateur.`;
       return;
     }
 
     const selectedModel = getSelectedOpenRouterModelConfig();
     statusEl.textContent = selectedModel
-      ? `IA en ligne par defaut: ${selectedModel.name}. Les questions exactes restent locales; seules les analyses enverront un contexte court hors du navigateur.`
-      : 'IA en ligne par defaut. Les questions exactes restent locales; seules les analyses enverront un contexte court hors du navigateur.';
+      ? `IA en ligne par défaut: ${selectedModel.name}. Les questions exactes restent locales; seules les analyses enverront un contexte court hors du navigateur.`
+      : 'IA en ligne par défaut. Les questions exactes restent locales; seules les analyses enverront un contexte court hors du navigateur.';
   }
 
   function syncSourceSpecificControls() {
@@ -1700,12 +1700,12 @@ export function createModelSelectionController({
         summaryEl.title = 'Configuration IA indisponible';
         summaryEl.classList.remove('experimental');
       } else if (modelConfig.provider === OPENROUTER_SOURCE_ID) {
-        summaryEl.textContent = `IA en ligne · ${modelConfig.name || 'par defaut'}`;
-        summaryEl.title = `${modelConfig.displayName || 'IA en ligne'} · service distant par defaut`;
+        summaryEl.textContent = `IA en ligne · ${modelConfig.name || 'par défaut'}`;
+        summaryEl.title = `${modelConfig.displayName || 'IA en ligne'} · service distant par défaut`;
         summaryEl.classList.toggle('experimental', modelConfig.status === 'experimental');
       } else {
         const summaryParts = [
-          modelConfig.name || 'Modele',
+          modelConfig.name || 'Modèle',
           modelConfig.selectedQuant?.name || modelConfig.selectedQuant?.id || null
         ];
 
@@ -1714,7 +1714,7 @@ export function createModelSelectionController({
         }
 
         summaryEl.textContent = summaryParts.filter(Boolean).join(' · ');
-        summaryEl.title = `${modelConfig.displayName || modelConfig.name || 'Modele'} · ${resolveThinkingModeFlag(modelConfig) ? 'raisonnement active' : 'mode standard'}`;
+        summaryEl.title = `${modelConfig.displayName || modelConfig.name || 'Modèle'} · ${resolveThinkingModeFlag(modelConfig) ? 'raisonnement activé' : 'mode standard'}`;
         summaryEl.classList.toggle('experimental', modelConfig.status === 'experimental');
       }
     }
@@ -1744,7 +1744,7 @@ export function createModelSelectionController({
     if (modelConfig.provider === OPENROUTER_SOURCE_ID) {
       modelNameEl.textContent = modelConfig.displayName || 'IA en ligne';
       sizeEl.textContent = buildOpenRouterPricingSummary(modelConfig);
-      notesEl.textContent = modelConfig.notes || 'Service distant par defaut.';
+      notesEl.textContent = modelConfig.notes || 'Service distant par défaut.';
       statusChip.textContent = modelConfig.status === 'experimental' ? 'expérimental' : 'stable';
       runtimeChip.textContent = 'service distant';
       thinkingChip.textContent = 'sortie finale';
@@ -1797,7 +1797,7 @@ export function createModelSelectionController({
           activeName.textContent = `${defaultModel.name} (${defaultQuant.name})`;
           badge?.classList.remove('experimental');
         } else {
-          activeName.textContent = 'Aucun modele';
+          activeName.textContent = 'Aucun modèle';
           badge?.classList.remove('experimental');
         }
       }
@@ -1884,7 +1884,7 @@ export function createModelSelectionController({
       modelSelect.innerHTML = '';
 
       const stableGroup = document.createElement('optgroup');
-      stableGroup.label = 'Modeles stables';
+      stableGroup.label = 'Modèles stables';
 
       modelsConfig.forEach(model => {
         const option = document.createElement('option');
@@ -1924,13 +1924,13 @@ export function createModelSelectionController({
 
     const pricingSummary = buildOpenRouterPricingSummary(modelConfig);
     const pricingNotice = modelConfig.priceStatus === 'free'
-      ? 'Modele gratuit selon le catalogue du service en ligne.'
+      ? 'Modèle gratuit selon le catalogue du service en ligne.'
       : modelConfig.priceStatus === 'variable'
-        ? 'Tarif variable selon le service en ligne. Verifiez bien le modele avant envoi.'
-        : `Modele payant: ${pricingSummary}.`;
+        ? 'Tarif variable selon le service en ligne. Vérifiez bien le modèle avant envoi.'
+        : `Modèle payant: ${pricingSummary}.`;
 
     const confirmed = globalThis.confirm?.(
-      `Activer l IA en ligne avec ${modelConfig.name} ?\n\n${pricingNotice}\nSeules les analyses enverront un contexte court vers le Worker Cloudflare.\nLes questions exactes restent deterministes dans l application.\nVotre cle API restera locale a cet appareil uniquement si vous choisissez de la memoriser.`
+      `Activer l'IA en ligne avec ${modelConfig.name} ?\n\n${pricingNotice}\nSeules les analyses enverront un contexte court vers le Worker Cloudflare.\nLes questions exactes restent déterministes dans l'application.\nVotre clé API restera locale à cet appareil uniquement si vous choisissez de la mémoriser.`
     );
 
     if (confirmed === false) {
@@ -2195,13 +2195,13 @@ export function createModelSelectionController({
       }
 
       if (!hasWebGPU()) {
-        addSystemMessage('WebGPU n\'est pas disponible sur cet appareil. Le chat IA reste desactive.');
+        addSystemMessage('WebGPU n\'est pas disponible sur cet appareil. Le chat IA reste désactivé.');
         return;
       }
 
       const modelConfig = getSelectedModelConfig();
       if (!modelConfig) {
-        addSystemMessage('Selectionnez un modele valide avant de lancer le chargement.');
+        addSystemMessage('Sélectionnez un modèle valide avant de lancer le chargement.');
         return;
       }
 

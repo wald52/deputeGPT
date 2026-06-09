@@ -117,7 +117,7 @@ export function createSearchPanelController({
 
         if (getDeputesData().length === 0) {
           clearResults();
-          setStatus('Chargement de la liste des deputes en cours...');
+          setStatus('Chargement de la liste des députés en cours...');
           return;
         }
 
@@ -188,7 +188,7 @@ export function createSearchPanelController({
         setResultsVisibility(true);
         setStatus(
           visibleResults.length < results.length
-            ? `${results.length} resultats trouves. Affichage limite aux ${visibleResults.length} premiers.`
+            ? `${results.length} résultats trouvés. Affichage limité aux ${visibleResults.length} premiers.`
             : `${results.length} résultat${results.length > 1 ? 's' : ''} disponible${results.length > 1 ? 's' : ''}.`
         );
       } catch (error) {

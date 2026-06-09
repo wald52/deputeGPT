@@ -749,7 +749,7 @@
         id="pwa-dismiss-btn"
         class="pwa-toolbar-dismiss"
         type="button"
-        aria-label="Fermer l infobulle d installation"
+        aria-label="Fermer l'infobulle d'installation"
       >
         &times;
       </button>
@@ -865,8 +865,8 @@
                   <div class="model-group-compact model-field-card">
                     <div class="model-field-label">
                       <label for="ai-source-select">Source IA</label>
-                      <button type="button" class="tooltip-container field-info" aria-label="Informations sur la source d inference" aria-describedby="source-tooltip">i
-                        <span id="source-tooltip" role="tooltip" class="tooltip-text tooltip-text-start">IA en ligne par defaut pour les analyses, modele local uniquement si vous l activez vous-meme.</span>
+                      <button type="button" class="tooltip-container field-info" aria-label="Informations sur la source d'inférence" aria-describedby="source-tooltip">i
+                        <span id="source-tooltip" role="tooltip" class="tooltip-text tooltip-text-start">IA en ligne par défaut pour les analyses, modèle local uniquement si vous l'activez vous-même.</span>
                       </button>
                     </div>
                     <select id="ai-source-select">
@@ -878,11 +878,11 @@
                     <div class="model-field-label">
                       <div id="online-status-label" class="model-field-title">Service IA en ligne</div>
                       <button type="button" class="tooltip-container field-info" aria-label="Informations sur le service IA en ligne" aria-describedby="online-service-tooltip">i
-                        <span id="online-service-tooltip" role="tooltip" class="tooltip-text tooltip-text-start">Les questions exactes restent deterministes. Seules les analyses envoient un contexte court vers le Worker Cloudflare, qui route ensuite vers plusieurs fournisseurs.</span>
+                        <span id="online-service-tooltip" role="tooltip" class="tooltip-text tooltip-text-start">Les questions exactes restent déterministes. Seules les analyses envoient un contexte court vers le Worker Cloudflare, qui route ensuite vers plusieurs fournisseurs.</span>
                       </button>
                     </div>
-                    <p class="model-field-hint">Le service en ligne est prioritaire. Si ses quotas sont epuises, l application vous proposera ensuite d activer l IA locale.</p>
-                    <div id="online-status" class="remote-provider-status" role="status" aria-live="polite" aria-labelledby="online-status-label">IA en ligne par defaut. Les analyses utilisent un contexte court hors du navigateur.</div>
+                    <p class="model-field-hint">Le service en ligne est prioritaire. Si ses quotas sont épuisés, l'application vous proposera ensuite d'activer l'IA locale.</p>
+                    <div id="online-status" class="remote-provider-status" role="status" aria-live="polite" aria-labelledby="online-status-label">IA en ligne par défaut. Les analyses utilisent un contexte court hors du navigateur.</div>
                   </div>
                   <div id="local-model-card" class="model-group-compact model-field-card">
                     <div class="model-field-label">
@@ -905,8 +905,8 @@
                   <div id="openrouter-model-card" class="model-group-compact model-field-card" hidden>
                     <div class="model-field-label">
                       <label for="openrouter-model-select">Modèle OpenRouter</label>
-                      <button type="button" class="tooltip-container field-info" aria-label="Informations sur le modele OpenRouter" aria-describedby="openrouter-model-tooltip">i
-                        <span id="openrouter-model-tooltip" role="tooltip" class="tooltip-text tooltip-text-end">Le catalogue est charge en direct depuis OpenRouter. Les modeles payants restent visibles pour un choix explicite.</span>
+                      <button type="button" class="tooltip-container field-info" aria-label="Informations sur le modèle OpenRouter" aria-describedby="openrouter-model-tooltip">i
+                        <span id="openrouter-model-tooltip" role="tooltip" class="tooltip-text tooltip-text-end">Le catalogue est chargé en direct depuis OpenRouter. Les modèles payants restent visibles pour un choix explicite.</span>
                       </button>
                     </div>
                     <div class="openrouter-picker-shell">
@@ -923,31 +923,31 @@
                         </button>
                         <div id="openrouter-model-popover" class="openrouter-model-popover" hidden>
                           <div class="openrouter-model-popover-top">
-                            <input id="openrouter-model-search" class="model-text-input" type="search" placeholder="Rechercher un modele ou un fournisseur" autocomplete="off" spellcheck="false" />
-                            <div id="openrouter-filter-group" class="openrouter-filter-group" role="tablist" aria-label="Filtrer les modeles OpenRouter">
+                            <input id="openrouter-model-search" class="model-text-input" type="search" placeholder="Rechercher un modèle ou un fournisseur" autocomplete="off" spellcheck="false" />
+                            <div id="openrouter-filter-group" class="openrouter-filter-group" role="tablist" aria-label="Filtrer les modèles OpenRouter">
                               <button type="button" class="openrouter-filter-chip active" data-openrouter-filter="all" aria-pressed="true">Tous</button>
                               <button type="button" class="openrouter-filter-chip" data-openrouter-filter="free" aria-pressed="false">Gratuits</button>
                               <button type="button" class="openrouter-filter-chip" data-openrouter-filter="paid" aria-pressed="false">Payants</button>
                             </div>
                           </div>
-                          <div id="openrouter-model-results" class="openrouter-model-results" role="listbox" aria-label="Liste des modeles OpenRouter" tabindex="-1"></div>
+                          <div id="openrouter-model-results" class="openrouter-model-results" role="listbox" aria-label="Liste des modèles OpenRouter" tabindex="-1"></div>
                         </div>
                       </div>
                       <select id="openrouter-model-select" hidden aria-hidden="true"><option value="">Chargement...</option></select>
-                      <p id="openrouter-model-picker-hint" class="model-field-hint">Selectionnez un modele exact pour eviter un routeur aleatoire quand vous cherchez plus de qualite ou un cout donne.</p>
+                      <p id="openrouter-model-picker-hint" class="model-field-hint">Sélectionnez un modèle exact pour éviter un routeur aléatoire quand vous cherchez plus de qualité ou un coût donné.</p>
                       <div id="openrouter-model-summary" class="openrouter-model-summary" hidden>
                         <div class="openrouter-model-summary-header">
                           <div class="openrouter-model-heading">
-                            <strong id="openrouter-selected-name">Modele OpenRouter</strong>
-                            <span id="openrouter-selected-id" class="openrouter-selected-id">Aucun modele selectionne</span>
+                            <strong id="openrouter-selected-name">Modèle OpenRouter</strong>
+                            <span id="openrouter-selected-id" class="openrouter-selected-id">Aucun modèle sélectionné</span>
                           </div>
                           <span id="openrouter-selected-price-badge" class="openrouter-price-badge">indisponible</span>
                         </div>
                         <p id="openrouter-selected-note" class="openrouter-model-note">Le catalogue OpenRouter est consulté en direct et n'envoie aucun prompt utilisateur pendant ce chargement.</p>
                         <div class="openrouter-model-summary-grid">
                           <div class="openrouter-summary-stat">
-                            <span>Cout</span>
-                            <strong id="openrouter-selected-pricing">A mesurer</strong>
+                            <span>Coût</span>
+                            <strong id="openrouter-selected-pricing">À mesurer</strong>
                           </div>
                           <div class="openrouter-summary-stat">
                             <span>Contexte</span>
@@ -964,15 +964,15 @@
                         <div id="openrouter-model-details" class="openrouter-model-details" hidden>
                           <div class="openrouter-parameter-grid">
                             <div class="openrouter-parameter-card">
-                              <span class="openrouter-parameter-title">Appliques</span>
+                              <span class="openrouter-parameter-title">Appliqués</span>
                               <div id="openrouter-params-applied" class="openrouter-parameter-list"></div>
                             </div>
                             <div class="openrouter-parameter-card">
-                              <span class="openrouter-parameter-title">Supportes mais inactifs</span>
+                              <span class="openrouter-parameter-title">Supportés mais inactifs</span>
                               <div id="openrouter-params-inactive" class="openrouter-parameter-list"></div>
                             </div>
                             <div class="openrouter-parameter-card">
-                              <span class="openrouter-parameter-title">Non supportes</span>
+                              <span class="openrouter-parameter-title">Non supportés</span>
                               <div id="openrouter-params-unsupported" class="openrouter-parameter-list"></div>
                             </div>
                           </div>
@@ -983,7 +983,7 @@
                   <div id="openrouter-api-card" class="model-group-compact model-field-card remote-api-card" hidden>
                     <div class="model-field-label">
                       <label for="openrouter-api-key">Clé API OpenRouter</label>
-                      <button type="button" class="tooltip-container field-info" aria-label="Informations sur la cle API OpenRouter" aria-describedby="openrouter-key-tooltip">i
+                      <button type="button" class="tooltip-container field-info" aria-label="Informations sur la clé API OpenRouter" aria-describedby="openrouter-key-tooltip">i
                         <span id="openrouter-key-tooltip" role="tooltip" class="tooltip-text tooltip-text-start">La clé est fournie par vous. Elle n'est jamais commise dans le dépôt et n'est mémorisée localement que si vous le demandez.</span>
                       </button>
                     </div>

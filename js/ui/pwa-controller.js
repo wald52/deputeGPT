@@ -90,7 +90,7 @@ export function createPwaController({
 
   function computeStatusText() {
     if (updateReady) {
-      return isApplyingUpdate ? 'Activation de la mise a jour...' : 'Mise a jour disponible.';
+      return isApplyingUpdate ? 'Activation de la mise à jour...' : 'Mise à jour disponible.';
     }
 
     if (isOffline) {
@@ -98,7 +98,7 @@ export function createPwaController({
     }
 
     if (isStandalone) {
-      return 'Application installee. Hors ligne partiel disponible.';
+      return 'Application installée. Hors ligne partiel disponible.';
     }
 
     if (installMode === 'prompt' || installMode === 'ios') {

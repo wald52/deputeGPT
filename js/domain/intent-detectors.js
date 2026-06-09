@@ -139,14 +139,14 @@ function matchesThemeKeywordInternal(searchText, searchTokens, keyword) {
 function buildImpactClarificationMessageInternal(normalizedQuestion, scope) {
   const normalizedSearchText = normalizeThemeSearchTextInternal(normalizedQuestion);
   if (normalizedSearchText.includes('pouvoir d achat')) {
-    return 'Je ne peux pas mesurer directement votre pouvoir d achat a partir des votes seuls. Je peux en revanche vous proposer une liste, un comptage ou une analyse thematique sur le pouvoir d achat.';
+    return "Je ne peux pas mesurer directement votre pouvoir d'achat à partir des votes seuls. Je peux en revanche vous proposer une liste, un comptage ou une analyse thématique sur le pouvoir d'achat.";
   }
 
   if (scope?.filters?.theme) {
-    return `Je ne peux pas mesurer directement cet impact a partir des votes seuls. Je peux en revanche vous proposer une liste, un comptage ou une analyse thematique sur le theme "${scope.filters.theme}".`;
+    return `Je ne peux pas mesurer directement cet impact à partir des votes seuls. Je peux en revanche vous proposer une liste, un comptage ou une analyse thématique sur le thème "${scope.filters.theme}".`;
   }
 
-  return 'Je ne peux pas mesurer directement cet impact a partir des votes seuls. Je peux en revanche vous proposer une liste, un comptage ou une analyse thematique sur ce theme.';
+  return 'Je ne peux pas mesurer directement cet impact à partir des votes seuls. Je peux en revanche vous proposer une liste, un comptage ou une analyse thématique sur ce thème.';
 }
 
 export function detectMarker(question, markers) {
@@ -527,7 +527,7 @@ export function detectUnsupportedQuestion(question) {
     return {
       reason: 'unsupported',
       signal: 'template_placeholder',
-      message: 'Je peux analyser les votes du depute selectionne, mais pas interpreter des gabarits ou repondre comme si j etais le depute.'
+      message: "Je peux analyser les votes du député sélectionné, mais pas interpréter des gabarits ou répondre comme si j'étais le député."
     };
   }
 
@@ -542,7 +542,7 @@ export function detectUnsupportedQuestion(question) {
     return {
       reason: 'unsupported',
       signal: 'direct_to_deputy',
-      message: 'Je peux decrire les votes enregistres du depute selectionne, mais pas repondre a sa place ni expliquer ses intentions personnelles.'
+      message: "Je peux décrire les votes enregistrés du député sélectionné, mais pas répondre à sa place ni expliquer ses intentions personnelles."
     };
   }
 
@@ -553,7 +553,7 @@ export function detectUnsupportedQuestion(question) {
     return {
       reason: 'too_broad',
       signal: 'global_comparison',
-      message: 'Je reponds sur le depute selectionne. Precisez ce depute ou posez une question sur ses votes.'
+      message: 'Je réponds sur le député sélectionné. Précisez ce député ou posez une question sur ses votes.'
     };
   }
 
@@ -568,7 +568,7 @@ export function detectUnsupportedQuestion(question) {
     return {
       reason: 'unsupported',
       signal: 'procedure_lookup',
-      message: 'Je peux analyser les votes du depute selectionne, mais pas reconstituer a moi seul le parcours procedural d un texte, des amendements ou du 49.3.'
+      message: "Je peux analyser les votes du député sélectionné, mais pas reconstituer à moi seul le parcours procédural d'un texte, des amendements ou du 49.3."
     };
   }
 
@@ -578,7 +578,7 @@ export function detectUnsupportedQuestion(question) {
     return {
       reason: 'unsupported',
       signal: 'external_or_missing_data',
-      message: 'Je peux analyser les votes du depute selectionne, pas recommander des sources externes ni reconstituer opinion publique, dons, discours ou activite reseaux sociaux.'
+      message: 'Je peux analyser les votes du député sélectionné, pas recommander des sources externes ni reconstituer opinion publique, dons, discours ou activité réseaux sociaux.'
     };
   }
 
@@ -590,7 +590,7 @@ export function detectUnsupportedQuestion(question) {
     return {
       reason: 'unsupported',
       signal: 'intent_or_justification',
-      message: 'Je peux decrire les votes enregistres, mais pas expliquer avec certitude les intentions, justifications personnelles ou votes futurs d un depute.'
+      message: "Je peux décrire les votes enregistrés, mais pas expliquer avec certitude les intentions, justifications personnelles ou votes futurs d'un député."
     };
   }
 
@@ -622,7 +622,7 @@ export function detectClarifyOnlyQuestion(question, scope) {
     return {
       reason: 'unsupported',
       signal: 'procedure_question',
-      message: 'Je peux analyser les votes du depute selectionne, mais pas expliquer a moi seul la procedure parlementaire ou constitutionnelle.'
+      message: 'Je peux analyser les votes du député sélectionné, mais pas expliquer à moi seul la procédure parlementaire ou constitutionnelle.'
     };
   }
 
@@ -637,7 +637,7 @@ export function detectClarifyOnlyQuestion(question, scope) {
     return {
       reason: 'unsupported',
       signal: 'collective_actor_lookup',
-      message: 'Je reponds sur le depute selectionne et ses votes enregistres, pas sur les autres deputes, les groupes ou leurs motivations collectives.'
+      message: 'Je réponds sur le député sélectionné et ses votes enregistrés, pas sur les autres députés, les groupes ou leurs motivations collectives.'
     };
   }
 
@@ -665,7 +665,7 @@ export function detectClarifyOnlyQuestion(question, scope) {
     return {
       reason: 'unsupported',
       signal: 'impact_inference',
-      message: 'Je peux decrire des votes enregistres, mais pas conclure de maniere certaine qu un vote renforce, affaiblit ou favorise un groupe sans texte cible explicite.'
+      message: "Je peux décrire des votes enregistrés, mais pas conclure de manière certaine qu'un vote renforce, affaiblit ou favorise un groupe sans texte ciblé explicite."
     };
   }
 
@@ -681,7 +681,7 @@ export function detectClarifyOnlyQuestion(question, scope) {
     return {
       reason: 'unsupported',
       signal: 'missing_public_data',
-      message: 'Je n ai pas ce niveau de detail dans les JSON publics charges. Je peux en revanche repondre sur les votes enregistres, le taux de participation global et l alignement global au groupe.'
+      message: "Je n'ai pas ce niveau de détail dans les JSON publics chargés. Je peux en revanche répondre sur les votes enregistrés, le taux de participation global et l'alignement global au groupe."
     };
   }
 
