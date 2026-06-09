@@ -809,9 +809,10 @@
             <label id="search-label" class="sr-only" for="search-input">Rechercher un député par nom, groupe ou circonscription</label>
             <p id="search-help" class="sr-only">Saisissez au moins deux caractères pour afficher jusqu'à dix résultats.</p>
             <input type="text" id="search-input" placeholder="Rechercher par nom, groupe, ou circonscription..."
-              autocomplete="off" aria-describedby="search-help search-status" aria-controls="search-results" />
+              autocomplete="off" role="combobox" aria-autocomplete="list" aria-expanded="false"
+              aria-describedby="search-help search-status" aria-controls="search-results" />
             <p id="search-status" class="sr-only" aria-live="polite"></p>
-            <ul id="search-results" class="search-results" aria-label="Résultats de recherche de députés" hidden></ul>
+            <ul id="search-results" class="search-results" role="listbox" aria-label="Résultats de recherche de députés" hidden></ul>
           </div>
 
           <figure id="hemicycle-container" aria-labelledby="hemicycle-caption">

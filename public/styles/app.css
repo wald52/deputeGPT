@@ -3150,6 +3150,12 @@ main {
   background: #edf4ff;
 }
 
+.search-result-button[aria-selected="true"] {
+  outline: 2px solid #2563eb;
+  outline-offset: -2px;
+  background: #edf4ff;
+}
+
 .search-result-empty {
   padding: 10px;
   list-style: none;
