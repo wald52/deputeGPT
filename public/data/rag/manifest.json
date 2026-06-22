@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-06-21T08:57:04Z",
+  "generatedAt": "2026-06-22T10:03:57Z",
   "documentType": "scrutin",
   "stats": {
     "totalDocuments": 7431,
@@ -46,8 +46,8 @@
       },
       "artifact": {
         "path": "semantic_index.json",
-        "bytes": 33498709,
-        "sha256": "1e9743e3865928aab2f25f539ae0dd269664fa1cf2aabeeb74c47714af54a004",
+        "bytes": 33498706,
+        "sha256": "3e8ac2405b5c9e46dd870b15ca4fd596a50266d762e061371a18962e10678aae",
         "quantization": "int8",
         "vectorDimension": 384,
         "valueScale": 127
@@ -77,8 +77,8 @@
       },
       "artifact": {
         "path": "semantic_multivector_index.json",
-        "bytes": 90796220,
-        "sha256": "6a06c79726c319ce5c164ff31e2c0b507ba0e2b0f0fd4eb611fa9556e31377e3",
+        "bytes": 90796219,
+        "sha256": "f53e4f598d5ad5faddef5ee8b75a4357accc3782e5c8017cdf7013140d738622",
         "quantization": "int8",
         "vectorDimension": 384,
         "valueScale": 127,
@@ -90,20 +90,20 @@
     "lexicalIndex": {
       "path": "lexical_index.json",
       "bytes": 7355696,
-      "sha256": "77a3b3f4dc5262c37d33222f6aff586689ed299e0574da57a6128c473fac05df"
+      "sha256": "d49deecf4c9f17f6cae8887b375dfa466b6b4c015511cb437da1ee03863f2834"
     },
     "semanticIndex": {
       "path": "semantic_index.json",
-      "bytes": 33498709,
-      "sha256": "1e9743e3865928aab2f25f539ae0dd269664fa1cf2aabeeb74c47714af54a004",
+      "bytes": 33498706,
+      "sha256": "3e8ac2405b5c9e46dd870b15ca4fd596a50266d762e061371a18962e10678aae",
       "quantization": "int8",
       "vectorDimension": 384,
       "valueScale": 127
     },
     "semanticMultivectorIndex": {
       "path": "semantic_multivector_index.json",
-      "bytes": 90796220,
-      "sha256": "6a06c79726c319ce5c164ff31e2c0b507ba0e2b0f0fd4eb611fa9556e31377e3",
+      "bytes": 90796219,
+      "sha256": "f53e4f598d5ad5faddef5ee8b75a4357accc3782e5c8017cdf7013140d738622",
       "quantization": "int8",
       "vectorDimension": 384,
       "valueScale": 127,
