@@ -139,5 +139,40 @@
   },
   "vote_theme.votes_revelateurs": {
     "expected_route_action": "deterministic"
+  },
+  "loi.critique_incitations": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis"
+  },
+  "loi.critique_sans_contexte": {
+    "expected_route_action": "clarify",
+    "clarify_reason": "needs_context",
+    "expected_intent_kind": "clarify"
+  },
+  "vote_theme.composite_query": {
+    "expected_route_action": "deterministic",
+    "expected_intent_kind": "list"
+  },
+  "impact_inference.theme_mode": {
+    "expected_route_action": "clarify",
+    "clarify_reason": "needs_mode",
+    "expected_intent_kind": "clarify"
+  },
+  "follow_up.elliptique_sans_contexte": {
+    "expected_route_action": "clarify",
+    "clarify_reason": "needs_context",
+    "expected_intent_kind": "clarify"
+  },
+  "follow_up.participation_directe": {
+    "expected_route_action": "deterministic",
+    "expected_intent_kind": "participation_rate"
+  },
+  "analyse_votes.sujets_intensifier": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis"
+  },
+  "analyse_votes.sujets_simple": {
+    "expected_route_action": "deterministic",
+    "expected_intent_kind": "subjects"
   }
 }

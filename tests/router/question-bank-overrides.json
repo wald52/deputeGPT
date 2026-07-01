@@ -907,5 +907,53 @@
     "expected_scope_filters": {
       "queryText": "loi Duplomb"
     }
+  },
+  "q0314": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "needs_mode"
+  },
+  "q0325": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "needs_mode"
+  },
+  "q0375": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "needs_mode"
+  },
+  "q1132": {
+    "expected_route_action": "clarify",
+    "expected_intent_kind": "clarify",
+    "clarify_reason": "needs_mode"
+  },
+  "q1321": {
+    "expected_scope_filters": {
+      "queryText": "loi Duplomb",
+      "theme": "ecologie"
+    }
+  },
+  "q1322": {
+    "expected_scope_filters": {
+      "queryText": "réforme des retraites",
+      "theme": "retraites"
+    }
+  },
+  "q1323": {
+    "expected_scope_filters": {
+      "theme": "ecologie",
+      "vote": "Pour"
+    }
+  },
+  "q1333": {
+    "expected_scope_filters": {
+      "theme": "ecologie"
+    }
+  },
+  "q1334": {
+    "expected_scope_filters": {
+      "theme": "sante"
+    }
   }
 }

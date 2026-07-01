@@ -73,7 +73,11 @@ The request flow for a user question is the heart of the system:
    `unsupportedReason`), and derives an external action: `deterministic`,
    `analysis_rag`, or `clarify`.
 2. **Intent** is classified in `js/domain/intent-classifier.js` /
-   `intent-detectors.js`. **Scope/follow-up references** (`ces votes`,
+   `intent-detectors.js` via scored candidates (each detector emits
+   `{kind, score, signal}`; contextual adjustments — analysis intensifiers,
+   elliptical follow-up inheritance from `session.lastPlan` — arbitrate, and
+   `intent.confidence` reflects the real margin, not first-match-wins).
+   **Scope/follow-up references** (`ces votes`,
    `ceux-ci`, `les derniers`) are resolved in `scope-resolver.js` /
    `clarification-resolution.js`, reusing session memory (`lastResultVoteIds`,
    `activeDeputeId`, `lastFilters`, etc. — see `js/core/state.js`).

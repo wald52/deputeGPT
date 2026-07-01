@@ -468,9 +468,12 @@ export function createChatController({
       try {
         const activePendingClarification = chatSessionState.pendingClarification || null;
         let clarificationAssistanceMetadata = null;
+        const canRunAnalysis = Boolean(appState.generator)
+          || (typeof getSelectedInferenceSource === 'function' && getSelectedInferenceSource() === 'online');
         let route = routeQuestion(question, chatSessionState, {
           preferResponseFirst: true,
-          hasActiveClarificationProvider: Boolean(appState.generator)
+          hasActiveClarificationProvider: Boolean(appState.generator),
+          canRunAnalysis
         });
         let effectiveQuestion = route.resolvedQuestion || question;
 
@@ -486,6 +489,7 @@ export function createChatController({
               assumptionText: assistantAttempt.resolution.assumptionText || clarificationAssistanceMetadata?.assumptionText || null,
               preferResponseFirst: true,
               hasActiveClarificationProvider: Boolean(appState.generator),
+              canRunAnalysis,
               skipPendingResolution: true
             });
             effectiveQuestion = route.resolvedQuestion || assistantAttempt.resolution.question || effectiveQuestion;

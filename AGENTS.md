@@ -287,6 +287,30 @@
   - `analysis_rag`
   - `clarify`
 
+### Classification d'intention a score
+- `classifyIntent` n'est plus un premier-motif-gagnant: chaque detecteur produit un
+  candidat `{kind, score, signal}`, des ajustements contextuels departagent, et
+  `intent.confidence` reflete la marge reelle entre les deux meilleurs candidats.
+- Les scores de base reproduisent l'ordre historique de priorite des detecteurs;
+  ne changer un score qu'avec la banque de questions au vert.
+- Un intensificateur (`vraiment`, `reellement`, `en realite`, `au fond`,
+  `incitations`...) penalise `subjects` et pousse vers `analysis` des qu'un ancrage
+  concret existe (theme, texte cible, suivi).
+- Sur un suivi elliptique (`et sur l'immigration ?`, `et en 2024 ?`), le routeur
+  herite du `questionType` du dernier plan (`session.lastPlan`) via
+  `scope.inheritedQuestionType`, seulement si la question n'apporte qu'un nouveau
+  filtre et ne porte aucun signal explicite.
+- Une question composite (texte cible + theme hors du texte) conserve les deux
+  filtres: le texte domine, le theme ne restreint que si l'intersection est non vide.
+- Les questions d'impact (`renforce`, `affaiblit`, `ameliore`...) avec un theme
+  detectable declenchent une clarification de mode (`needs_mode`), plus jamais un
+  simple `unsupported`; sans theme, elles restent `unsupported`.
+- `cette loi` est un marqueur de suivi: sans contexte, la question part en
+  `needs_context`.
+- Le mode response-first accepte `options.canRunAnalysis` (source `online`
+  configuree ou modele local charge) pour ne plus rabattre les questions
+  d'analyse vers `list` quand aucun generateur n'est encore charge.
+
 ### Memoire de session
 - La session navigateur doit memoriser:
   - `activeDeputeId`
@@ -308,6 +332,9 @@
 - RAG semantique local experimental en opt-in avec selection utilisateur `single-vector` / `multi-vector`.
 - Nettoyage des sorties pour supprimer les blocs de type `<think>`.
 - Planificateur de route dans `js/domain/router.js`.
+- Classification d'intention a score dans `js/domain/intent-classifier.js`
+  (candidats + confiance, intensificateurs d'analyse, heritage du type de
+  question sur suivi elliptique).
 - Reponses deterministes pour:
   - listes
   - comptages

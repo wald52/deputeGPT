@@ -14,6 +14,7 @@ export const FOLLOW_UP_MARKERS = [
   'ce vote',
   'ce scrutin',
   'ce texte',
+  'cette loi',
   'ceux affiches',
   'ceux affichés',
   'et',
