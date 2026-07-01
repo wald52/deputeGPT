@@ -32,7 +32,8 @@ FICHIER_SEMANTIC_INDEX = "./public/data/rag/semantic_index.json"
 FICHIER_SEMANTIC_MULTIVECTOR_INDEX = "./public/data/rag/semantic_multivector_index.json"
 FICHIER_LEGACY_SEARCH_INDEX = "./public/data/search_index.json"
 FICHIER_RAG_MANIFEST = "./public/data/rag/manifest.json"
-INDEX_SCHEMA_VERSION = 2
+FICHIER_DOSSIERS_INDEX = "./public/data/dossiers/index.json"
+INDEX_SCHEMA_VERSION = 3
 RAG_MANIFEST_SCHEMA_VERSION = 3
 SEMANTIC_INDEX_SCHEMA_VERSION = 2
 SEMANTIC_MULTIVECTOR_INDEX_SCHEMA_VERSION = 2
@@ -261,11 +262,57 @@ def build_semantic_document_text(vote_id: str, entry: Dict) -> str:
         entry.get("subject", ""),
         entry.get("summary", ""),
         entry.get("titre", ""),
+        entry.get("law_title", ""),
         entry.get("theme", "") or entry.get("category", ""),
         " ".join(entry.get("keywords", [])[:20]),
         f"scrutin {vote_id}"
     ]
     return "\n".join(part for part in parts if part).strip()
+
+
+def load_dossier_links() -> Dict:
+    """Charge le chainage scrutin -> dossier legislatif (degradation gracieuse si absent)."""
+    if not os.path.exists(FICHIER_DOSSIERS_INDEX):
+        return {}
+
+    try:
+        with open(FICHIER_DOSSIERS_INDEX, 'r', encoding='utf-8') as f:
+            payload = json.load(f)
+    except Exception:
+        print(f"⚠️ Index dossiers illisible ({FICHIER_DOSSIERS_INDEX}), enrichissement saute")
+        return {}
+
+    dossiers = payload.get("dossiers") or {}
+    links = {}
+    for numero, link in (payload.get("scrutins") or {}).items():
+        dossier_id = (link or {}).get("dossierId")
+        if not dossier_id:
+            continue
+        dossier = dossiers.get(dossier_id) or {}
+        links[str(numero)] = {
+            "dossier_id": dossier_id,
+            "law_title": clean_label(dossier.get("titre", ""))
+        }
+    return links
+
+
+def apply_dossier_enrichment(votes: Dict) -> int:
+    """Superpose law_title / dossier_id sur toutes les entrees (idempotent)."""
+    dossier_links = load_dossier_links()
+    enriched = 0
+    for numero, entry in votes.items():
+        link = dossier_links.get(str(numero)) or {}
+        dossier_id = link.get("dossier_id")
+        law_title = link.get("law_title") or ""
+        if entry.get("dossier_id") != dossier_id or entry.get("law_title", "") != law_title:
+            entry["dossier_id"] = dossier_id
+            entry["law_title"] = law_title
+            enriched += 1
+    if dossier_links:
+        print(f"🔗 Enrichissement dossiers: {enriched} entrees mises a jour ({len(dossier_links)} scrutins lies)")
+    else:
+        print("ℹ️ Aucun chainage dossiers disponible (public/data/dossiers/index.json absent)")
+    return enriched
 
 
 def quantize_normalized_embedding(vector: np.ndarray) -> List[int]:
@@ -418,6 +465,7 @@ def build_multivector_sections(vote_id: str, entry: Dict) -> List[Dict]:
             "slot": "title_keywords",
             "text": "\n".join(part for part in [
                 entry.get("titre", ""),
+                entry.get("law_title", ""),
                 keywords,
                 theme_label,
                 f"scrutin {vote_id}"
@@ -832,7 +880,10 @@ def process_scrutins_with_bge(use_bge: bool = True) -> Dict:
     
     print(f"✅ {new_count} nouveaux scrutins indexés")
     print(f"📊 Total: {len(votes)} scrutins dans l'index")
-    
+
+    # Superposer le chainage dossiers (law_title, dossier_id) sur toutes les entrees.
+    apply_dossier_enrichment(votes)
+
     # Convertir les sets en listes pour JSON
     inverted_index_json = {k: list(v) for k, v in inverted_index.items()}
     

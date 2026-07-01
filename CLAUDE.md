@@ -136,6 +136,17 @@ single commit. Key scripts: `process_votes.py`, `update_deputes_actifs.py`,
 `update_group_colors.py`. Failures open/refresh a single deduped `ci-failure`
 issue rather than alerting daily.
 
+`.github/workflows/dossier_analysis.yml` runs nightly at 02:30 (before the
+Global Update): `link_dossiers.py` links scrutins to legislative dossiers
+(`public/data/dossiers/index.json`), then `generate_dossier_fiches.py` calls
+an OpenAI-compatible LLM (default NVIDIA NIM, secret `NVIDIA_NIM_API_KEY`) to
+produce per-dossier "fiches d'analyse" (`public/data/dossiers/fiches/*.json`
++ `fiches_index.json`): stated objective, concrete mechanisms with citations,
+and an explicit incentive verdict (`incitations_alignees | incitations_mitigees
+| incitations_opposees | indetermine`) with an AI-generated disclaimer.
+Generation is incremental and rate-limited for free-tier quotas; the step is
+skipped cleanly when the secret is absent. Full law texts are never committed.
+
 Lexical index and RAG manifest are mandatory (build fails without them);
 semantic indexes degrade gracefully (kept from the prior day if HuggingFace is
 unavailable). **Large model weights are never committed** — rely on Hugging Face

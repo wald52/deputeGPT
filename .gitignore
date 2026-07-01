@@ -33,6 +33,11 @@ __pycache__/
 *.pyc
 test-results/.last-run.json
 
+# Donnees brutes telechargees par le pipeline (jamais commitees)
+Scrutins/
+Scrutins.json.zip
+DossiersLegislatifs/
+
 # Environnement
 .env
 .env.local

@@ -50,10 +50,12 @@
   - `public/data/deputes_actifs/v*.json`
   - `public/data/search_index.json`
   - `public/data/rag/**` sauf manifeste ou besoin explicite
+  - `public/data/dossiers/fiches/**` sauf un echantillon cible
   - `js/transformers.min.js`
   - `test-results/**`
   - `tmp/**`
   - `Scrutins/**` sauf tache pipeline donnees
+  - `DossiersLegislatifs/**` sauf tache pipeline donnees
 - Pour les donnees, preferer:
   - le schema implicite dans les repositories
   - les manifests
@@ -168,6 +170,11 @@
   - `scripts/process_votes.py`
 - Regeneration semantique:
   - `scripts/generate_semantic_index.py`
+- Chainage scrutins -> dossiers legislatifs:
+  - `scripts/link_dossiers.py`
+- Fiches d'analyse des lois (LLM en CI):
+  - `scripts/generate_dossier_fiches.py`
+  - `.github/workflows/dossier_analysis.yml`
 - Regressions routeur:
   - `scripts/run_router_regression.js`
 - Audit question bank:
@@ -267,7 +274,36 @@
   - `texte_loi`
   - `amendement`
   - `article`
-- Les textes de loi sont une extension future, pas un prerequis de v1.
+
+### Dossiers legislatifs et fiches de lois (implemente)
+- Chainage scrutin -> dossier legislatif publie dans
+  `public/data/dossiers/index.json` (genere par `scripts/link_dossiers.py`:
+  champ direct si present, sinon rapprochement de titres avec `method` et
+  `confidence`; overrides manuels dans `public/data/dossiers/overrides.json`).
+- Fiches d'analyse « second ordre » par dossier dans
+  `public/data/dossiers/fiches/{dossierId}.json` + index leger
+  `public/data/dossiers/fiches_index.json` (generes par
+  `scripts/generate_dossier_fiches.py` via un endpoint OpenAI-compatible,
+  par defaut NVIDIA NIM; secret GitHub `NVIDIA_NIM_API_KEY`, jamais de cle
+  dans le depot; workflow dedie `.github/workflows/dossier_analysis.yml`,
+  cron 02h30, avant le Global Update).
+- Chaque fiche contient: objectif affiche, mecanismes concrets sources
+  (article/citation), `verdictIncitations` avec enum stricte
+  `incitations_alignees | incitations_mitigees | incitations_opposees | indetermine`,
+  justification sourcee, points de vigilance, sources officielles, hash du
+  texte source et metadonnees modele.
+- Regle editoriale: tout contenu de fiche affiche a l'utilisateur doit porter
+  le disclaimer « analyse generee automatiquement par IA » et des liens vers
+  les sources officielles. En cas de doute, le verdict est `indetermine`.
+- Les textes de loi complets ne sont jamais commites: seuls les extraits
+  analysés transitent par la CI, les fiches restent de petits JSON.
+- L'index lexical RAG porte `law_title` et `dossier_id` par scrutin
+  (superposition idempotente dans `generate_semantic_index.py`, degradation
+  gracieuse si l'index dossiers est absent).
+- Generation incrementale: une fiche a jour (`analysisVersion` + `statut`
+  inchanges) n'est pas regeneree; debit limite pour les quotas gratuits
+  (`--rpm`, `--max-calls`, `--time-budget-min`), backfill via
+  `workflow_dispatch` avec `max_calls`.
 
 ## Routeur de questions retenu
 
@@ -391,8 +427,9 @@
 - Nettoyer les restes obsoletes non Markdown lies a WebLLM si plus rien ne les utilise.
 
 ### Plus tard
-- Ajouter les textes de loi associes aux votes dans le pipeline serveur.
-- Etendre le schema RAG pour lier `scrutin`, `texte_loi`, `amendement` et `article`.
+- Etendre le schema RAG pour lier finement `amendement` et `article` (les
+  liens `scrutin` -> `texte_loi` sont couverts par les dossiers/fiches).
+- Ajouter les liens Legifrance des lois promulguees dans les fiches.
 - Retirer du catalogue les modeles experimentaux qui ne sont pas convaincants apres tests.
 
 ## Commandes utiles
