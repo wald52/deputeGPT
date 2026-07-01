@@ -102,8 +102,17 @@ with `js/ai/fallback-model-catalog.js`). **No model downloads silently** —
 explicit consent and visible size are required; the last choice is remembered locally.
 
 **Data access** is via repositories under `js/data/` (`votes-repository.js`,
-`deputes-repository.js`, `groupes-repository.js`, `search-index-repository.js`) —
+`deputes-repository.js`, `groupes-repository.js`, `search-index-repository.js`,
+`dossiers-repository.js` for legislative dossiers + law-analysis fiches) —
 read these to learn the implicit data schema rather than the JSON blobs.
+
+**Law critique**: the `law_critique` intent (misleading-title / incentive
+questions targeting an explicit law) is answered deterministically:
+`dossiers-repository.js` resolves the dossier, loads its fiche, and the
+handler in `deterministic-responses.js` renders verdict + justification +
+mechanisms + AI disclaimer + sources, plus the MP's votes on that text.
+Analytical answers also inject up to 2 dominant fiches into the LLM context
+(22,000-char budget guard against the Worker's 24,000 limit).
 
 **State/storage:** `js/core/state.js` (session memory), `js/core/storage.js`
 (localStorage), chat history in `js/core/chat-history-persistence.js` /

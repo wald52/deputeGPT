@@ -417,6 +417,20 @@ export function detectAnalysisIntensifierRequest(question) {
   return /\b(vraiment|reellement|en realite|au fond|sincerement|veritablement|incitations?)\b/.test(normalizedSearchText);
 }
 
+export function detectLawCritiqueRequest(question, scope) {
+  // Critique d'un texte precis : exige un texte cible explicite pour rester deterministe.
+  if (!scope?.filters?.queryText) {
+    return false;
+  }
+
+  const normalizedSearchText = normalizeThemeSearchTextInternal(question);
+  const hasDirectCritiqueMarker = /\b(titre trompeur|trompeur|trompeuse|contre productif|contre productive|incitations?|effets? reels?|va a l encontre)\b/.test(normalizedSearchText);
+  const hasIntensifier = /\b(vraiment|reellement|en realite|au fond)\b/.test(normalizedSearchText);
+  const hasJudgementMarker = /\b(bonnes?|bons?|mauvais|mauvaises?|favorables?|defavorables?|utiles?|efficaces?|contre|correspond|conformes?)\b/.test(normalizedSearchText);
+
+  return hasDirectCritiqueMarker || (hasIntensifier && hasJudgementMarker);
+}
+
 export function detectThematicStanceRequest(question, scope) {
   if (!scope?.filters?.theme) {
     return false;

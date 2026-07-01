@@ -8,6 +8,7 @@ import {
   detectCountRequest,
   detectGroupAlignmentRequest,
   detectGroupDeviationRequest,
+  detectLawCritiqueRequest,
   detectListRequest,
   detectParticipationRateRequest,
   detectScrutinyDetailRequest,
@@ -120,6 +121,9 @@ export function classifyIntent(question, scope) {
   }
   if (isScrutinyDetailRequest) {
     addCandidate('scrutiny_detail', 8, 'scrutiny_detail');
+  }
+  if (detectLawCritiqueRequest(normalizedQuestion, scope)) {
+    addCandidate('law_critique', 8.2, 'law_critique');
   }
   if (isConcreteQueryLookupRequest && !isComparativeAnalysisRequest) {
     addCandidate('list', 7.6, 'query_lookup');

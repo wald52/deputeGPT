@@ -188,6 +188,11 @@ function buildRoutePlan(scope, intent) {
     return plan;
   }
 
+  if (intent.kind === 'law_critique') {
+    plan.candidateStrategy = 'law_critique_lookup';
+    return plan;
+  }
+
   if (scope?.source === 'last_result' || scope?.isFollowUp) {
     plan.candidateStrategy = 'last_result_subset';
     return plan;

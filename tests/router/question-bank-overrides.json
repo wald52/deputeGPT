@@ -928,6 +928,14 @@
     "expected_intent_kind": "clarify",
     "clarify_reason": "needs_mode"
   },
+  "q1315": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis"
+  },
+  "q1318": {
+    "expected_route_action": "analysis_rag",
+    "expected_intent_kind": "analysis"
+  },
   "q1321": {
     "expected_scope_filters": {
       "queryText": "loi Duplomb",

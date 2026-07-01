@@ -129,6 +129,8 @@
   - `js/data/groupes-repository.js`
 - Index lexical:
   - `js/data/search-index-repository.js`
+- Dossiers legislatifs et fiches de lois:
+  - `js/data/dossiers-repository.js`
 
 ### UI specialisee
 - Controleur principal du chat:
@@ -299,7 +301,13 @@
   analysés transitent par la CI, les fiches restent de petits JSON.
 - L'index lexical RAG porte `law_title` et `dossier_id` par scrutin
   (superposition idempotente dans `generate_semantic_index.py`, degradation
-  gracieuse si l'index dossiers est absent).
+  gracieuse si l'index dossiers est absent). MiniSearch indexe `law_title`
+  (boost 2.5) et stocke `dossier_id`.
+- Le contexte d'analyse LLM inclut jusqu'a 2 fiches de loi dominantes
+  (section `FICHES DE LOI` du prompt, `ANALYSIS_CONTEXT_FICHE_LIMIT`) avec une
+  garde de budget a 22 000 caracteres pour rester sous la limite du Worker
+  (24 000, question comprise). Les fiches sont retirees avant les votes en cas
+  de depassement.
 - Generation incrementale: une fiche a jour (`analysisVersion` + `statut`
   inchanges) n'est pas regeneree; debit limite pour les quotas gratuits
   (`--rpm`, `--max-calls`, `--time-budget-min`), backfill via
@@ -343,6 +351,13 @@
   simple `unsupported`; sans theme, elles restent `unsupported`.
 - `cette loi` est un marqueur de suivi: sans contexte, la question part en
   `needs_context`.
+- Intention `law_critique` (critique d'un texte precis: titre trompeur,
+  incitations, "vraiment bonne pour..."): exige un `queryText` explicite,
+  action `deterministic` avec `candidateStrategy: law_critique_lookup`.
+  Le handler resout le dossier via `js/data/dossiers-repository.js`, charge la
+  fiche, affiche verdict + justification + mecanismes + disclaimer + sources,
+  et liste les votes du depute sur le texte. Sans fiche: votes + message clair.
+  Sans dossier ni vote: clarification.
 - Le mode response-first accepte `options.canRunAnalysis` (source `online`
   configuree ou modele local charge) pour ne plus rabattre les questions
   d'analyse vers `list` quand aucun generateur n'est encore charge.

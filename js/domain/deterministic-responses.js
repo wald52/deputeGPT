@@ -1,5 +1,114 @@
 import { stripLeadingFrenchArticle } from './vote-title-display.js';
 
+const LAW_CRITIQUE_VERDICT_LABELS = {
+  incitations_alignees: '✅ Incitations alignées avec l\'objectif affiché',
+  incitations_mitigees: '⚖️ Incitations mitigées par rapport à l\'objectif affiché',
+  incitations_opposees: '⚠️ Incitations opposées à l\'objectif affiché',
+  indetermine: '❓ Indéterminé : le texte analysé ne permet pas de trancher'
+};
+
+function sortVotesByDateDescInternal(votes) {
+  return [...(votes || [])].sort((left, right) => String(right?.date || '').localeCompare(String(left?.date || '')));
+}
+
+async function buildLawCritiqueResponseInternal(question, route, depute, context, deps) {
+  const queryText = route.scope.filters.queryText || '';
+  const deputeLabel = `${depute.prenom} ${depute.nom}`;
+  const canLookupDossier = typeof deps.findDossierByQuery === 'function';
+  const canLoadFiche = typeof deps.loadDossierFiche === 'function';
+
+  const dossierMatch = canLookupDossier ? await deps.findDossierByQuery(queryText) : null;
+
+  // Votes du député sur ce texte : via les scrutins du dossier si résolu,
+  // sinon via le filtre lexical classique sur le texte cible.
+  let deputeVotesOnText = context.deputeQueryMatches || [];
+  if (dossierMatch?.dossier?.scrutinNumeros?.length) {
+    const dossierNumeros = new Set(dossierMatch.dossier.scrutinNumeros.map(String));
+    const votesOnDossier = (depute?.votes || []).filter(vote => dossierNumeros.has(String(vote.numero)));
+    if (votesOnDossier.length > 0) {
+      deputeVotesOnText = votesOnDossier;
+    }
+  }
+  deputeVotesOnText = sortVotesByDateDescInternal(deputeVotesOnText);
+
+  if (!dossierMatch && deputeVotesOnText.length === 0) {
+    return {
+      kind: 'clarify',
+      message: `Je n'ai pas identifié le texte de loi visé par « ${queryText} ». Précisez le titre exact du texte ou de la loi.`,
+      clarificationKind: null
+    };
+  }
+
+  const fiche = dossierMatch && canLoadFiche ? await deps.loadDossierFiche(dossierMatch.dossierId) : null;
+  const displayedVotes = deputeVotesOnText.slice(0, deps.defaultChatListLimit);
+  const messageParts = [];
+
+  if (fiche) {
+    const verdictLabel = LAW_CRITIQUE_VERDICT_LABELS[fiche.verdictIncitations] || LAW_CRITIQUE_VERDICT_LABELS.indetermine;
+    messageParts.push(`Fiche d'analyse : ${fiche.titre || dossierMatch.dossier.titre}`);
+    if (fiche.objectifAffiche) {
+      messageParts.push(`Objectif affiché : ${fiche.objectifAffiche}`);
+    }
+    messageParts.push(`Verdict : ${verdictLabel}`);
+    if (fiche.justificationVerdict) {
+      messageParts.push(`Justification : ${fiche.justificationVerdict}`);
+    }
+
+    const mecanismes = (fiche.mecanismesCles || []).slice(0, 3);
+    if (mecanismes.length > 0) {
+      messageParts.push(
+        'Mécanismes clés :\n' + mecanismes
+          .map(mecanisme => `- ${mecanisme.resume}${mecanisme.articleRef ? ` (${mecanisme.articleRef})` : ''}`)
+          .join('\n')
+      );
+    }
+  } else if (dossierMatch) {
+    messageParts.push(
+      `J'ai identifié le texte « ${dossierMatch.dossier.titre} », mais sa fiche d'analyse n'est pas encore disponible. ` +
+      'Je ne peux donc pas juger si ses incitations vont dans le sens de son objectif affiché.'
+    );
+  } else {
+    messageParts.push(
+      `Je n'ai pas relié « ${queryText} » à un dossier législatif précis : je ne peux pas juger son contenu, ` +
+      'mais voici les votes enregistrés correspondants.'
+    );
+  }
+
+  if (deputeVotesOnText.length > 0) {
+    messageParts.push(
+      `Votes de ${deputeLabel} sur ce texte : ${deputeVotesOnText.length} scrutin${deputeVotesOnText.length > 1 ? 's' : ''} (détail en références ci-dessous).`
+    );
+  } else {
+    messageParts.push(`${deputeLabel} n'a aucun vote enregistré sur ce texte.`);
+  }
+
+  if (fiche) {
+    const sourceLinks = [fiche.sources?.texteAn, fiche.sources?.dossierAn].filter(Boolean);
+    messageParts.push(
+      `⚠️ ${fiche.disclaimer || 'Analyse générée automatiquement par IA, à vérifier sur les sources officielles.'}` +
+      (sourceLinks.length ? `\nSources : ${sourceLinks.join(' | ')}` : '')
+    );
+  } else if (dossierMatch?.dossier?.anUrl) {
+    messageParts.push(`Source : ${dossierMatch.dossier.anUrl}`);
+  }
+
+  return {
+    kind: 'response',
+    message: messageParts.join('\n\n'),
+    voteIds: deputeVotesOnText.map(deps.getVoteId),
+    displayedVoteIds: displayedVotes.map(deps.getVoteId),
+    lawCritique: {
+      dossierId: dossierMatch?.dossierId || null,
+      dossierTitre: dossierMatch?.dossier?.titre || null,
+      matchConfidence: dossierMatch?.confidence || null,
+      verdictIncitations: fiche?.verdictIncitations || null,
+      hasFiche: Boolean(fiche),
+      sources: fiche?.sources || (dossierMatch?.dossier?.anUrl ? { dossierAn: dossierMatch.dossier.anUrl } : null),
+      disclaimer: fiche?.disclaimer || null
+    }
+  };
+}
+
 function buildClosedVoteResponseInternal(question, scope, depute, filteredVotes, context = {}, deps) {
   const { deputeQueryMatches = [], globalQueryMatches = [] } = context;
   const displayedVotes = filteredVotes.slice(0, scope.filters.limit || deps.defaultChatListLimit);
@@ -575,6 +684,13 @@ export function createDeterministicRouteExecutor(deps) {
         displayedVoteIds: [],
         ...baseResult
       };
+    }
+
+    if (route.intent.kind === 'law_critique') {
+      // Seule branche asynchrone : elle charge l'index dossiers et la fiche à la demande.
+      return buildLawCritiqueResponseInternal(question, route, depute, {
+        deputeQueryMatches: deputeQueryMatches.length > 0 ? deputeQueryMatches : filteredVotes
+      }, deps).then(result => (result.kind === 'clarify' ? result : { ...result, ...baseResult }));
     }
 
     if (isClosedVoteQuestion) {

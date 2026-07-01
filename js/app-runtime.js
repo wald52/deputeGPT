@@ -31,6 +31,7 @@ import {
 import { loadGroupesData as fetchGroupesData } from './data/groupes-repository.js';
 import { loadModelCatalog as fetchModelCatalog } from './data/model-catalog-repository.js';
 import { loadOpenRouterModels as fetchOpenRouterModels } from './data/openrouter-models-repository.js';
+import { createDossiersRepository } from './data/dossiers-repository.js';
 import { createSearchIndexRepository } from './data/search-index-repository.js';
 import { loadDeputeVotes } from './data/votes-repository.js';
 import {
@@ -135,6 +136,7 @@ const CHAT_QUICK_ACTIONS = [
 ];
 const ANALYSIS_CONTEXT_VOTE_LIMIT = 18;
 const ANALYSIS_CONTEXT_MIN_VOTES = 6;
+const ANALYSIS_CONTEXT_FICHE_LIMIT = 2;
 const ANALYSIS_SEARCH_RESULT_LIMIT = 80;
 const ANALYSIS_MAX_NEW_TOKENS = 220;
 const THEMATIC_STANCE_EXAMPLE_LIMIT = 4;
@@ -396,6 +398,11 @@ const searchIndexRepository = createSearchIndexRepository({
   buildVersionedUrl
 });
 
+const dossiersRepository = createDossiersRepository({
+  buildUrl,
+  buildVersionedUrl
+});
+
 const appDataController = createAppDataController({
   fetchModelCatalog,
   fallbackCatalog: FALLBACK_MODEL_CATALOG,
@@ -601,7 +608,9 @@ const executeDeterministicRoute = createDeterministicRouteExecutor({
   normalizeQuestion,
   resolveScopeVotes: resolveDeterministicScopeVotes,
   shouldClarifyLargeList,
-  thematicStanceExampleLimit: THEMATIC_STANCE_EXAMPLE_LIMIT
+  thematicStanceExampleLimit: THEMATIC_STANCE_EXAMPLE_LIMIT,
+  findDossierByQuery: queryText => dossiersRepository.findDossierByQuery(queryText),
+  loadDossierFiche: dossierId => dossiersRepository.loadFiche(dossierId)
 });
 
 function updateSessionFromResult(session, result) {
@@ -843,6 +852,9 @@ const chatController = createChatController({
   buildAnalysisContextVotes,
   buildDeterministicMessageMetadata: (result, intentKind = 'list') => chatScopeController.buildDeterministicMessageMetadata(result, intentKind),
   buildMessageReferencesFromVoteIds,
+  collectFichesForAnalysis: voteNumeros => dossiersRepository.collectFichesForVotes(voteNumeros, {
+    maxFiches: ANALYSIS_CONTEXT_FICHE_LIMIT
+  }),
   dedupeVotes,
   ensureOnlineAnalysisReady,
   ensureSearchIndexReady: () => appDataController.ensureSearchIndexReady(),

@@ -62,14 +62,14 @@ describe('classifyIntent - intensificateur d analyse', () => {
     expect(classify('Sur quoi vote-t-il vraiment ?').intent.kind).toBe('subjects');
   });
 
-  it('route les critiques de loi vers analysis', () => {
+  it('monte les critiques de loi ciblees au-dessus de la simple analyse', () => {
     const { intent } = classify('La loi sur le climat est-elle vraiment bonne pour le climat ?');
-    expect(intent.kind).toBe('analysis');
+    expect(intent.kind).toBe('law_critique');
   });
 
-  it('traite "incitations" comme un intensificateur', () => {
+  it('traite "incitations" sur une loi ciblee comme une critique de loi', () => {
     const { intent } = classify('Est-ce que les incitations de la loi energie vont dans le sens du climat ?');
-    expect(intent.kind).toBe('analysis');
+    expect(intent.kind).toBe('law_critique');
   });
 });
 
@@ -129,6 +129,28 @@ describe('classifyIntent - suivi elliptique', () => {
   it('repond au taux de participation meme sans contexte de suivi', () => {
     const { intent } = classify('Et son taux de participation ?');
     expect(intent.kind).toBe('participation_rate');
+  });
+});
+
+describe('classifyIntent - critique de loi (law_critique)', () => {
+  it('route une critique de loi ciblee vers law_critique', () => {
+    const { intent } = classify('La loi sur le climat est-elle vraiment bonne pour le climat ?');
+    expect(intent.kind).toBe('law_critique');
+  });
+
+  it('route une question sur les incitations d une loi vers law_critique', () => {
+    const { intent } = classify('Est-ce que les incitations de la loi énergie vont dans le sens du climat ?');
+    expect(intent.kind).toBe('law_critique');
+  });
+
+  it('garde la simple consultation de vote en list', () => {
+    const { intent } = classify('Comment a-t-il voté sur la loi Duplomb ?');
+    expect(intent.kind).toBe('list');
+  });
+
+  it('reste analysis sans texte cible explicite', () => {
+    const { intent } = classify("A-t-il voté des lois vraiment favorables à l'écologie ?");
+    expect(intent.kind).toBe('analysis');
   });
 });
 

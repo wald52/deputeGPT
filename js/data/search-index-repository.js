@@ -256,14 +256,16 @@ export function createSearchIndexRepository({
             subject: data.subject || '',
             summary: data.summary || '',
             date: data.date || '',
-            source_url: data.source_url || ''
+            source_url: data.source_url || '',
+            law_title: data.law_title || '',
+            dossier_id: data.dossier_id || ''
           }));
 
           state.miniSearch = new MiniSearchCtor({
-            fields: ['titre', 'subject', 'keywords', 'summary', 'theme', 'category'],
-            storeFields: ['numero', 'titre', 'subject', 'date', 'theme', 'category', 'summary', 'source_url'],
+            fields: ['titre', 'subject', 'keywords', 'summary', 'theme', 'category', 'law_title'],
+            storeFields: ['numero', 'titre', 'subject', 'date', 'theme', 'category', 'summary', 'source_url', 'law_title', 'dossier_id'],
             searchOptions: {
-              boost: { keywords: 3, titre: 2, subject: 2, summary: 1.2, theme: 1.5 },
+              boost: { keywords: 3, law_title: 2.5, titre: 2, subject: 2, summary: 1.2, theme: 1.5 },
               fuzzy: 0.2,
               prefix: true
             }

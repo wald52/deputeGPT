@@ -141,8 +141,8 @@
     "expected_route_action": "deterministic"
   },
   "loi.critique_incitations": {
-    "expected_route_action": "analysis_rag",
-    "expected_intent_kind": "analysis"
+    "expected_route_action": "deterministic",
+    "expected_intent_kind": "law_critique"
   },
   "loi.critique_sans_contexte": {
     "expected_route_action": "clarify",
