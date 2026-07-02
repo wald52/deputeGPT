@@ -34,7 +34,13 @@ from bs4 import BeautifulSoup
 ANALYSIS_VERSION = 1
 FICHE_SCHEMA_VERSION = 1
 
-API_BASE_URL = os.environ.get("ANALYSIS_API_BASE_URL", "https://integrate.api.nvidia.com/v1/chat/completions").rstrip("/")
+# call_llm ajoute lui-meme /chat/completions : on tolere une URL complete
+# (comme dans les exemples NVIDIA) en retirant ce suffixe s'il est present.
+API_BASE_URL = re.sub(
+    r"/chat/completions/?$",
+    "",
+    os.environ.get("ANALYSIS_API_BASE_URL", "https://integrate.api.nvidia.com/v1").rstrip("/"),
+).rstrip("/")
 API_MODEL = os.environ.get("ANALYSIS_API_MODEL", "minimaxai/minimax-m3")
 API_KEY = os.environ.get("ANALYSIS_API_KEY", "")
 API_PROVIDER_LABEL = os.environ.get("ANALYSIS_API_PROVIDER", "nvidia-nim")
@@ -45,7 +51,9 @@ FICHIER_FICHES_INDEX = "./public/data/dossiers/fiches_index.json"
 
 SOURCE_TEXT_MAX_CHARS = 15000
 LLM_MAX_TOKENS = 8192
-LLM_TEMPERATURE = 1.0
+# Extraction factuelle de JSON structure : temperature basse par defaut
+# (1.0 est le reglage « creatif » des exemples NVIDIA, inadapte ici).
+LLM_TEMPERATURE = float(os.environ.get("ANALYSIS_API_TEMPERATURE", "0.2"))
 HTTP_TIMEOUT_SECONDS = 60
 MAX_RETRIES = 5
 
@@ -89,7 +97,10 @@ def log(message: str) -> None:
     print(message, flush=True)
 
 
-def load_dossiers_index() -> dict:
+def load_dossiers_index():
+    """Retourne l'index des dossiers, ou None s'il n'a pas encore été généré."""
+    if not os.path.exists(FICHIER_INDEX_DOSSIERS):
+        return None
     with open(FICHIER_INDEX_DOSSIERS, "r", encoding="utf-8") as f:
         return json.load(f)
 
@@ -248,7 +259,9 @@ def call_llm(messages, limiter: RateLimiter, session: requests.Session) -> str:
 
 def parse_fiche_json(raw_answer: str):
     """Extrait et valide le JSON de la réponse LLM. Retourne dict ou None."""
-    text = raw_answer.strip()
+    # Les modèles raisonneurs (minimax-m3, deepseek-r1...) peuvent émettre un
+    # bloc de réflexion avant la réponse : on le retire avant d'extraire le JSON.
+    text = re.sub(r"<think>.*?</think>", "", raw_answer, flags=re.DOTALL).strip()
     start = text.find("{")
     end = text.rfind("}")
     if start < 0 or end <= start:
@@ -417,6 +430,11 @@ def main():
         return
 
     index = load_dossiers_index()
+    if index is None:
+        log(f"Index dossiers absent ({FICHIER_INDEX_DOSSIERS}) : lancez d'abord scripts/link_dossiers.py.")
+        rebuild_fiches_index()
+        return
+
     dossiers = index.get("dossiers") or {}
     if args.dossier:
         dossiers = {k: v for k, v in dossiers.items() if k == args.dossier}
