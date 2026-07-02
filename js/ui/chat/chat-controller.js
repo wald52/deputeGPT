@@ -728,6 +728,22 @@ export function createChatController({
           genOptions.enable_thinking = enableThinking;
         }
 
+        if (isRemoteModel) {
+          // Rendu progressif : la reponse en ligne est streamee dans le loader
+          // des le premier token, puis remplacee par le rendu final assaini.
+          const loaderContent = tempLoader.querySelector('.message-content');
+          genOptions.onToken = fullText => {
+            if (tempLoader._dotInterval) {
+              clearInterval(tempLoader._dotInterval);
+              tempLoader._dotInterval = null;
+            }
+            if (loaderContent) {
+              loaderContent.textContent = fullText;
+              messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            }
+          };
+        }
+
         const out = await appState.generator(analysisPrompt.messages, genOptions);
         const remoteMeta = out?.deputeGPTMeta || null;
         if (remoteMeta) {

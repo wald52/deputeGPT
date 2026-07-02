@@ -213,6 +213,15 @@
 - Le service `online` ne doit jamais prendre la main sur les listes, comptages, periodes ou filtres exacts.
 - Aucune cle API utilisateur n est requise pour le service `online` par defaut.
 - Seules les demandes d'analyse peuvent envoyer un contexte court hors du navigateur.
+- Le Worker supporte le streaming SSE (`body.stream: true` sur `/analysis`):
+  il pipe le flux de l'AI Gateway avec les metadonnees en en-tetes
+  `x-deputegpt-*`. Le front (`js/ai/online-runtime.js`) streame via
+  `options.onToken` et le chat affiche la reponse au fil des tokens
+  (sanitisation `answer-sanitizer` en fin de flux). Le chemin non-streame
+  reste inchange (retrocompatible).
+- Latence percue: prechauffage des index (lexical + dossiers) des la selection
+  d'un depute; contexte d'analyse reduit a 12 votes pour les analyses ciblees
+  (theme ou texte precis), 18 sinon.
 
 ### Chargement modele et UX
 - Aucun telechargement de modele ne doit etre silencieux.

@@ -38,6 +38,17 @@ AI_ROUTE_STEP_MAP = """
 """
 ```
 
+## Streaming
+
+`POST /analysis` accepte `"stream": true` dans le corps : le Worker demande
+alors un flux SSE a l'AI Gateway et le pipe tel quel au navigateur
+(`Content-Type: text/event-stream`). Les metadonnees (fournisseur, modele,
+route, nombre de bascules) sont exposees dans les en-tetes
+`x-deputegpt-provider`, `x-deputegpt-model`, `x-deputegpt-route` et
+`x-deputegpt-fallback-count`. Sans `stream`, la reponse JSON historique est
+inchangee. Si l'amont ne renvoie pas de SSE, le Worker retombe sur la reponse
+JSON classique.
+
 ## Notes
 
 - Le Worker suppose que la route dynamique `dynamic/deputegpt-analysis` existe deja dans AI Gateway.

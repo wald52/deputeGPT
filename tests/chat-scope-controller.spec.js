@@ -72,7 +72,7 @@ test('buildDeterministicMessageMetadata construit des inlineVoteItems serialisab
   expect(metadata.inlineVoteItems).toEqual([
     {
       voteId: '101',
-      lineText: '[2025-02-01] Pour - Amendement test [theme: sante]',
+      lineText: '[2025-02-01] Pour - Amendement test [thème: sante]',
       date: '2025-02-01',
       theme: 'sante',
       sourceUrl: 'https://www.assemblee-nationale.fr/dyn/17/scrutins/101',

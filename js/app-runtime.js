@@ -135,6 +135,9 @@ const CHAT_QUICK_ACTIONS = [
   { label: 'Thèmes principaux', question: 'Quels sont les thèmes principaux dans ces votes ?' }
 ];
 const ANALYSIS_CONTEXT_VOTE_LIMIT = 18;
+// Analyses ciblees (theme ou texte precis) : contexte plus court pour un
+// prefill plus rapide, les fiches de lois compensant en densite.
+const ANALYSIS_CONTEXT_TARGETED_VOTE_LIMIT = 12;
 const ANALYSIS_CONTEXT_MIN_VOTES = 6;
 const ANALYSIS_CONTEXT_FICHE_LIMIT = 2;
 const ANALYSIS_SEARCH_RESULT_LIMIT = 80;
@@ -618,13 +621,14 @@ function updateSessionFromResult(session, result) {
 }
 
 async function buildAnalysisContextVotes(route, question, deputeVotes) {
+  const isTargetedAnalysis = Boolean(route?.scope?.filters?.theme || route?.scope?.filters?.queryText);
   return computeAnalysisContextVotes(route, question, deputeVotes, {
     resolveScopeVotes: resolveDeterministicScopeVotes,
     applyScopeFilters: applyScopedFiltersWithLookups,
     dedupeVotes,
     rankVotesForAnalysis,
     contextMinVotes: ANALYSIS_CONTEXT_MIN_VOTES,
-    contextVoteLimit: ANALYSIS_CONTEXT_VOTE_LIMIT
+    contextVoteLimit: isTargetedAnalysis ? ANALYSIS_CONTEXT_TARGETED_VOTE_LIMIT : ANALYSIS_CONTEXT_VOTE_LIMIT
   });
 }
 
@@ -969,6 +973,11 @@ function syncChatAvailability() {
 }
 
 async function selectDepute(depute) {
+  // Prechauffage des index (lexical + dossiers/fiches) des la selection d'un
+  // depute : la premiere question analytique n'attend plus leur telechargement.
+  appDataController.ensureSearchIndexReady().catch(() => {});
+  dossiersRepository.ensureDossiersIndexReady().catch(() => {});
+  dossiersRepository.ensureFichesIndexReady().catch(() => {});
   return deputePanel.selectDepute(depute);
 }
 

@@ -91,7 +91,7 @@ The request flow for a user question is the heart of the system:
 `consent-modal.js`):
 - Local browser inference uses **transformers.js (stable channel, latest published release) + WebGPU** (MLC/WebLLM were fully removed).
 - `qwen3-runtime.js` — **stable** local chat (Qwen3 ONNX, `AutoTokenizer + Qwen3ForCausalLM`). This is the only local inference path (the experimental Qwen3.5 runtime was removed).
-- `online-runtime.js` — remote source via the **Cloudflare Worker** (default for analysis requests).
+- `online-runtime.js` — remote source via the **Cloudflare Worker** (default for analysis requests); supports SSE streaming (`options.onToken`, worker `body.stream: true`) with progressive rendering in the chat.
 - `semantic-rag-runtime.js` — opt-in local semantic reranking.
 - `answer-sanitizer.js` — strips `<think>` blocks; internal reasoning must never reach the UI.
 

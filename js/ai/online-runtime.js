@@ -130,6 +130,62 @@ function buildOnlineRequestBody(messages, options = {}, metadata = {}) {
   return body;
 }
 
+async function consumeAnalysisEventStream(response, onToken) {
+  const reader = response.body.getReader();
+  const decoder = new TextDecoder();
+  let buffered = '';
+  let fullText = '';
+
+  const handleDataLine = data => {
+    if (!data || data === '[DONE]') {
+      return;
+    }
+
+    let chunk = null;
+    try {
+      chunk = JSON.parse(data);
+    } catch (error) {
+      return;
+    }
+
+    const choice = Array.isArray(chunk?.choices) ? chunk.choices[0] : null;
+    const delta = choice?.delta?.content ?? choice?.message?.content ?? choice?.text ?? '';
+    if (typeof delta === 'string' && delta) {
+      fullText += delta;
+      try {
+        onToken(fullText, delta);
+      } catch (error) {
+        // Le rendu progressif ne doit jamais interrompre le flux.
+      }
+    }
+  };
+
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) {
+      break;
+    }
+
+    buffered += decoder.decode(value, { stream: true });
+    let newlineIndex = buffered.indexOf('\n');
+    while (newlineIndex >= 0) {
+      const line = buffered.slice(0, newlineIndex).trim();
+      buffered = buffered.slice(newlineIndex + 1);
+      if (line.startsWith('data:')) {
+        handleDataLine(line.slice(5).trim());
+      }
+      newlineIndex = buffered.indexOf('\n');
+    }
+  }
+
+  const trailingLine = buffered.trim();
+  if (trailingLine.startsWith('data:')) {
+    handleDataLine(trailingLine.slice(5).trim());
+  }
+
+  return fullText.trim();
+}
+
 async function parseOnlineError(response) {
   let payload = null;
 
@@ -364,16 +420,22 @@ export function createOnlineRuntime(
     }
 
     try {
+      const onToken = typeof options.onToken === 'function' ? options.onToken : null;
+      const requestBody = buildOnlineRequestBody(messages, options, {
+        source: 'deputegpt-web',
+        model_signature: modelConfig?.signature || null
+      });
+      if (onToken) {
+        requestBody.stream = true;
+      }
+
       const response = await fetchImpl(`${endpointBase}/analysis`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${sessionToken}`,
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(buildOnlineRequestBody(messages, options, {
-          source: 'deputegpt-web',
-          model_signature: modelConfig?.signature || null
-        }))
+        body: JSON.stringify(requestBody)
       });
 
       if (!response.ok) {
@@ -383,6 +445,38 @@ export function createOnlineRuntime(
         }
 
         throw await parseOnlineError(response);
+      }
+
+      const contentType = String(response.headers?.get?.('Content-Type') || '');
+      if (onToken && response.body && contentType.includes('text/event-stream')) {
+        const answer = await consumeAnalysisEventStream(response, onToken);
+        if (!answer) {
+          const emptyStreamError = new Error('Le service distant n a renvoye aucune reponse exploitable.');
+          emptyStreamError.code = 'REMOTE_EMPTY_ANSWER';
+          throw emptyStreamError;
+        }
+
+        circuitBreaker.recordSuccess();
+        const streamedMeta = {
+          answer,
+          provider: response.headers.get('x-deputegpt-provider') || 'unknown',
+          model: response.headers.get('x-deputegpt-model') || 'unknown',
+          route: response.headers.get('x-deputegpt-route') || null,
+          fallback_count: Number.parseInt(response.headers.get('x-deputegpt-fallback-count') || '0', 10) || 0,
+          error_code: null,
+          next_action: null,
+          streamed: true
+        };
+        return {
+          choices: [
+            {
+              message: {
+                content: answer
+              }
+            }
+          ],
+          deputeGPTMeta: streamedMeta
+        };
       }
 
       const payload = await response.json();

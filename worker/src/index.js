@@ -48,6 +48,7 @@ function buildCorsHeaders(origin, env) {
     'Access-Control-Allow-Origin': isAllowed ? origin : allowedOrigins[0] || '*',
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Authorization, Content-Type',
+    'Access-Control-Expose-Headers': 'x-deputegpt-provider, x-deputegpt-model, x-deputegpt-route, x-deputegpt-fallback-count',
     'Access-Control-Max-Age': '86400',
     Vary: 'Origin'
   };
@@ -290,7 +291,7 @@ function getRouteStepMeta(env, stepHeaderValue) {
   };
 }
 
-async function runGatewayAnalysis(messages, body, env) {
+async function runGatewayAnalysis(messages, body, env, { stream = false } = {}) {
   const gatewayUrl = `https://gateway.ai.cloudflare.com/v1/${env.AI_GATEWAY_ACCOUNT_ID}/${env.AI_GATEWAY_GATEWAY_ID}/compat/chat/completions`;
   const response = await fetch(gatewayUrl, {
     method: 'POST',
@@ -301,6 +302,7 @@ async function runGatewayAnalysis(messages, body, env) {
     body: JSON.stringify({
       model: env.AI_GATEWAY_ROUTE || 'dynamic/deputegpt-analysis',
       messages,
+      stream: stream === true,
       temperature: Number.isFinite(body.temperature) ? body.temperature : 0.2,
       top_p: Number.isFinite(body.top_p) ? body.top_p : 0.9,
       max_tokens: Math.min(
@@ -309,6 +311,17 @@ async function runGatewayAnalysis(messages, body, env) {
       )
     })
   });
+
+  const contentType = response.headers.get('Content-Type') || '';
+  if (stream && response.ok && response.body && contentType.includes('text/event-stream')) {
+    return {
+      ok: true,
+      streamBody: response.body,
+      provider: response.headers.get('cf-aig-provider') || null,
+      model: response.headers.get('cf-aig-model') || null,
+      step: response.headers.get('cf-aig-step') || '0'
+    };
+  }
 
   const responseText = await response.text();
   let payload = null;
@@ -443,13 +456,30 @@ async function handleAnalysisRequest(request, env, corsHeaders) {
   const messages = Array.isArray(body?.messages) ? body.messages : [];
   validateMessages(messages);
 
-  const upstreamResult = await runGatewayAnalysis(messages, body, env);
+  const wantsStream = body?.stream === true;
+  const upstreamResult = await runGatewayAnalysis(messages, body, env, { stream: wantsStream });
   if (!upstreamResult.ok) {
     return jsonResponse({
       error_code: upstreamResult.errorCode,
       message: upstreamResult.message,
       next_action: upstreamResult.errorCode === 'REMOTE_QUOTA_EXHAUSTED' ? 'activate_local' : 'retry'
     }, upstreamResult.status || 502, corsHeaders);
+  }
+
+  if (wantsStream && upstreamResult.streamBody) {
+    const { fallbackCount: streamFallbackCount, stepConfig: streamStepConfig } = getRouteStepMeta(env, upstreamResult.step);
+    return new Response(upstreamResult.streamBody, {
+      status: 200,
+      headers: {
+        ...corsHeaders,
+        'Content-Type': 'text/event-stream',
+        'Cache-Control': 'no-store',
+        'x-deputegpt-provider': upstreamResult.provider || streamStepConfig?.provider || 'unknown',
+        'x-deputegpt-model': upstreamResult.model || streamStepConfig?.model || 'unknown',
+        'x-deputegpt-route': env.AI_GATEWAY_ROUTE || 'dynamic/deputegpt-analysis',
+        'x-deputegpt-fallback-count': String(streamFallbackCount)
+      }
+    });
   }
 
   const answer = normalizeOnlineAnswer(upstreamResult.payload);
