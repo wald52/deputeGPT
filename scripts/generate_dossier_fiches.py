@@ -34,8 +34,8 @@ from bs4 import BeautifulSoup
 ANALYSIS_VERSION = 1
 FICHE_SCHEMA_VERSION = 1
 
-API_BASE_URL = os.environ.get("ANALYSIS_API_BASE_URL", "https://integrate.api.nvidia.com/v1").rstrip("/")
-API_MODEL = os.environ.get("ANALYSIS_API_MODEL", "meta/llama-3.3-70b-instruct")
+API_BASE_URL = os.environ.get("ANALYSIS_API_BASE_URL", "https://integrate.api.nvidia.com/v1/chat/completions").rstrip("/")
+API_MODEL = os.environ.get("ANALYSIS_API_MODEL", "minimaxai/minimax-m3")
 API_KEY = os.environ.get("ANALYSIS_API_KEY", "")
 API_PROVIDER_LABEL = os.environ.get("ANALYSIS_API_PROVIDER", "nvidia-nim")
 
@@ -44,8 +44,8 @@ DIR_FICHES = "./public/data/dossiers/fiches"
 FICHIER_FICHES_INDEX = "./public/data/dossiers/fiches_index.json"
 
 SOURCE_TEXT_MAX_CHARS = 15000
-LLM_MAX_TOKENS = 1200
-LLM_TEMPERATURE = 0.2
+LLM_MAX_TOKENS = 8192
+LLM_TEMPERATURE = 1.0
 HTTP_TIMEOUT_SECONDS = 60
 MAX_RETRIES = 5
 
