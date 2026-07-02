@@ -29,6 +29,9 @@ export const RAG_LEXICAL_INDEX_PATH = 'public/data/rag/lexical_index.json';
 export const RAG_SEMANTIC_INDEX_PATH = 'public/data/rag/semantic_index.json';
 export const RAG_SEMANTIC_MULTIVECTOR_INDEX_PATH = 'public/data/rag/semantic_multivector_index.json';
 export const LEGACY_SEARCH_INDEX_PATH = 'public/data/search_index.json';
+export const DOSSIERS_INDEX_PATH = 'public/data/dossiers/index.json';
+export const DOSSIERS_FICHES_INDEX_PATH = 'public/data/dossiers/fiches_index.json';
+export const DOSSIERS_FICHES_DIR = 'public/data/dossiers/fiches';
 
 export const DEFAULT_NON_THINKING_GENERATION = {
   temperature: 0.7,

@@ -1,0 +1,126 @@
+name: Dossier Analysis (Fiches de lois)
+
+on:
+  schedule:
+    # Avant le Global Update de 4h00 pour que la régénération RAG voie les fiches.
+    - cron: "30 2 * * *"
+  workflow_dispatch:
+    inputs:
+      max_calls:
+        description: "Plafond d'appels LLM pour ce run (backfill manuel)"
+        required: false
+        default: "150"
+      time_budget_min:
+        description: "Budget temps en minutes"
+        required: false
+        default: "25"
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: dossier-analysis
+  cancel-in-progress: false
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+jobs:
+  analyze-dossiers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Dependencies
+        run: pip install requests beautifulsoup4
+
+      # --- ETAPE 1 : CHAINAGE SCRUTINS -> DOSSIERS ---
+      - name: Link Scrutins to Dossiers
+        run: |
+          echo "🔗 Chaînage scrutins -> dossiers législatifs..."
+          python -u scripts/link_dossiers.py --stats
+
+      # --- ETAPE 2 : FICHES D'ANALYSE LLM ---
+      # Sautée proprement si le secret n'est pas configuré : le chaînage
+      # (index.json) reste publié et le front dégrade gracieusement.
+      - name: Generate Fiches (LLM)
+        env:
+          ANALYSIS_API_KEY: ${{ secrets.NVIDIA_NIM_API_KEY }}
+          ANALYSIS_API_BASE_URL: ${{ vars.ANALYSIS_API_BASE_URL }}
+          ANALYSIS_API_MODEL: ${{ vars.ANALYSIS_API_MODEL }}
+        run: |
+          if [ -z "$ANALYSIS_API_KEY" ]; then
+            echo "⚠️ Secret NVIDIA_NIM_API_KEY absent : génération des fiches sautée."
+          fi
+          python -u scripts/generate_dossier_fiches.py \
+            --max-calls "${{ github.event.inputs.max_calls || '150' }}" \
+            --time-budget-min "${{ github.event.inputs.time_budget_min || '25' }}"
+
+      # --- ETAPE 3 : COMMIT UNIQUE ---
+      - name: Commit & Push Changes (Main)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add public/data/dossiers
+
+          if git diff --cached --quiet; then
+            echo "Aucun changement sur les dossiers/fiches."
+          else
+            git commit -m "data: dossiers legislatifs + fiches d'analyse"
+            # Rejoue le push en cas de course avec un autre workflow.
+            for attempt in 1 2 3; do
+              git push origin HEAD:main && break
+              echo "Push refusé (tentative $attempt), rebase puis nouvel essai..."
+              git pull --rebase origin main
+            done
+          fi
+
+      # --- ETAPE 4 : ALERTE EN CAS D'ECHEC (issue dedupliquee, meme pattern que Global Update) ---
+      - name: Signaler l'echec (issue de suivi)
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const label = 'ci-failure';
+            const title = "⚠️ Analyse des dossiers (fiches de lois) en échec";
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const body = `L'analyse automatique des dossiers législatifs a échoué le ${new Date().toISOString()}.\n\n` +
+              `👉 Logs du run : ${runUrl}\n\n` +
+              `Cette issue se referme manuellement une fois le problème résolu.`;
+            const existing = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: label,
+            });
+            if (existing.data.length > 0) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.data[0].number,
+                body,
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: [label],
+              });
+            }

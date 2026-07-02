@@ -31,6 +31,7 @@ import {
 import { loadGroupesData as fetchGroupesData } from './data/groupes-repository.js';
 import { loadModelCatalog as fetchModelCatalog } from './data/model-catalog-repository.js';
 import { loadOpenRouterModels as fetchOpenRouterModels } from './data/openrouter-models-repository.js';
+import { createDossiersRepository } from './data/dossiers-repository.js';
 import { createSearchIndexRepository } from './data/search-index-repository.js';
 import { loadDeputeVotes } from './data/votes-repository.js';
 import {
@@ -134,7 +135,11 @@ const CHAT_QUICK_ACTIONS = [
   { label: 'Thèmes principaux', question: 'Quels sont les thèmes principaux dans ces votes ?' }
 ];
 const ANALYSIS_CONTEXT_VOTE_LIMIT = 18;
+// Analyses ciblees (theme ou texte precis) : contexte plus court pour un
+// prefill plus rapide, les fiches de lois compensant en densite.
+const ANALYSIS_CONTEXT_TARGETED_VOTE_LIMIT = 12;
 const ANALYSIS_CONTEXT_MIN_VOTES = 6;
+const ANALYSIS_CONTEXT_FICHE_LIMIT = 2;
 const ANALYSIS_SEARCH_RESULT_LIMIT = 80;
 const ANALYSIS_MAX_NEW_TOKENS = 220;
 const THEMATIC_STANCE_EXAMPLE_LIMIT = 4;
@@ -396,6 +401,11 @@ const searchIndexRepository = createSearchIndexRepository({
   buildVersionedUrl
 });
 
+const dossiersRepository = createDossiersRepository({
+  buildUrl,
+  buildVersionedUrl
+});
+
 const appDataController = createAppDataController({
   fetchModelCatalog,
   fallbackCatalog: FALLBACK_MODEL_CATALOG,
@@ -601,7 +611,9 @@ const executeDeterministicRoute = createDeterministicRouteExecutor({
   normalizeQuestion,
   resolveScopeVotes: resolveDeterministicScopeVotes,
   shouldClarifyLargeList,
-  thematicStanceExampleLimit: THEMATIC_STANCE_EXAMPLE_LIMIT
+  thematicStanceExampleLimit: THEMATIC_STANCE_EXAMPLE_LIMIT,
+  findDossierByQuery: queryText => dossiersRepository.findDossierByQuery(queryText),
+  loadDossierFiche: dossierId => dossiersRepository.loadFiche(dossierId)
 });
 
 function updateSessionFromResult(session, result) {
@@ -609,13 +621,14 @@ function updateSessionFromResult(session, result) {
 }
 
 async function buildAnalysisContextVotes(route, question, deputeVotes) {
+  const isTargetedAnalysis = Boolean(route?.scope?.filters?.theme || route?.scope?.filters?.queryText);
   return computeAnalysisContextVotes(route, question, deputeVotes, {
     resolveScopeVotes: resolveDeterministicScopeVotes,
     applyScopeFilters: applyScopedFiltersWithLookups,
     dedupeVotes,
     rankVotesForAnalysis,
     contextMinVotes: ANALYSIS_CONTEXT_MIN_VOTES,
-    contextVoteLimit: ANALYSIS_CONTEXT_VOTE_LIMIT
+    contextVoteLimit: isTargetedAnalysis ? ANALYSIS_CONTEXT_TARGETED_VOTE_LIMIT : ANALYSIS_CONTEXT_VOTE_LIMIT
   });
 }
 
@@ -843,6 +856,9 @@ const chatController = createChatController({
   buildAnalysisContextVotes,
   buildDeterministicMessageMetadata: (result, intentKind = 'list') => chatScopeController.buildDeterministicMessageMetadata(result, intentKind),
   buildMessageReferencesFromVoteIds,
+  collectFichesForAnalysis: voteNumeros => dossiersRepository.collectFichesForVotes(voteNumeros, {
+    maxFiches: ANALYSIS_CONTEXT_FICHE_LIMIT
+  }),
   dedupeVotes,
   ensureOnlineAnalysisReady,
   ensureSearchIndexReady: () => appDataController.ensureSearchIndexReady(),
@@ -957,6 +973,11 @@ function syncChatAvailability() {
 }
 
 async function selectDepute(depute) {
+  // Prechauffage des index (lexical + dossiers/fiches) des la selection d'un
+  // depute : la premiere question analytique n'attend plus leur telechargement.
+  appDataController.ensureSearchIndexReady().catch(() => {});
+  dossiersRepository.ensureDossiersIndexReady().catch(() => {});
+  dossiersRepository.ensureFichesIndexReady().catch(() => {});
   return deputePanel.selectDepute(depute);
 }
 

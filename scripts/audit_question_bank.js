@@ -444,7 +444,7 @@ async function auditManualScenarios(runtime) {
         scopeResolvedRoute.intent?.kind === 'subjects' &&
         scopeResolvedRoute.scope?.source === 'depute_all' &&
         scopeResolvedResult.kind === 'response' &&
-        /Themes principaux/u.test(scopeResolvedResult.message),
+        /Th[eè]mes principaux/u.test(scopeResolvedResult.message),
       details: {
         initial_action: scopeClarifyRoute.action,
         initial_clarification_kind: scopeClarifyRoute.clarificationKind || null,

@@ -412,6 +412,25 @@ export function detectAnalysisRequest(question) {
   return detectMarker(question, ANALYSIS_MARKERS);
 }
 
+export function detectAnalysisIntensifierRequest(question) {
+  const normalizedSearchText = normalizeThemeSearchTextInternal(question);
+  return /\b(vraiment|reellement|en realite|au fond|sincerement|veritablement|incitations?)\b/.test(normalizedSearchText);
+}
+
+export function detectLawCritiqueRequest(question, scope) {
+  // Critique d'un texte precis : exige un texte cible explicite pour rester deterministe.
+  if (!scope?.filters?.queryText) {
+    return false;
+  }
+
+  const normalizedSearchText = normalizeThemeSearchTextInternal(question);
+  const hasDirectCritiqueMarker = /\b(titre trompeur|trompeur|trompeuse|contre productif|contre productive|incitations?|effets? reels?|va a l encontre)\b/.test(normalizedSearchText);
+  const hasIntensifier = /\b(vraiment|reellement|en realite|au fond)\b/.test(normalizedSearchText);
+  const hasJudgementMarker = /\b(bonnes?|bons?|mauvais|mauvaises?|favorables?|defavorables?|utiles?|efficaces?|contre|correspond|conformes?)\b/.test(normalizedSearchText);
+
+  return hasDirectCritiqueMarker || (hasIntensifier && hasJudgementMarker);
+}
+
 export function detectThematicStanceRequest(question, scope) {
   if (!scope?.filters?.theme) {
     return false;
@@ -644,7 +663,7 @@ export function detectClarifyOnlyQuestion(question, scope) {
   if (
     !scope?.filters?.queryText &&
     (
-      /\b(renforce|affaiblit|ameliore)\b/.test(normalizedQuestion) ||
+      /\b(renforce|renforcent|affaiblit|affaiblissent|ameliore|ameliorent)\b/.test(normalizedQuestion) ||
       /\bapprouve\b/.test(normalizedQuestion) && /\bmaintien\b/.test(normalizedQuestion) ||
       /\bprononce\b/.test(normalizedQuestion) && /\ben faveur des?\s+maires ruraux\b/.test(normalizedQuestion)
     ) &&
@@ -653,7 +672,7 @@ export function detectClarifyOnlyQuestion(question, scope) {
       /\b(vie quotidienne|familles|libertes|maires ruraux)\b/.test(normalizedQuestion)
     )
   ) {
-    if (normalizeThemeSearchTextInternal(normalizedQuestion).includes('pouvoir d achat')) {
+    if (scope?.filters?.theme || normalizeThemeSearchTextInternal(normalizedQuestion).includes('pouvoir d achat')) {
       return {
         reason: 'needs_mode',
         signal: 'impact_inference_needs_mode',

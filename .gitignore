@@ -31,7 +31,12 @@ playwright-*.png
 tmp-codex-window*.png
 __pycache__/
 *.pyc
-test-results/.last-run.json
+test-results/
+
+# Donnees brutes telechargees par le pipeline (jamais commitees)
+Scrutins/
+Scrutins.json.zip
+DossiersLegislatifs/
 
 # Environnement
 .env

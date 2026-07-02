@@ -3,6 +3,7 @@ export function createScope() {
     source: 'depute_all',
     voteIds: null,
     isFollowUp: false,
+    inheritedQuestionType: null,
     filters: {
       theme: null,
       vote: null,

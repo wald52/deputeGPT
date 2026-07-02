@@ -86,7 +86,7 @@ test('le renderer affiche une liste inline sans bloc References et resynchronise
   await expect(page.locator('.message-content')).toContainText('Jean Dupont a 3 votes correspondants.');
   await expect(page.locator('.message-inline-vote-item').first()).toContainText('Pour - Amendement test');
   await expect(page.locator('.message-inline-vote-item').first()).toContainText('scrutin 101');
-  await expect(page.locator('.message-inline-vote-item').first()).toContainText('Theme: sante');
+  await expect(page.locator('.message-inline-vote-item').first()).toContainText('Thème: sante');
 
   const firstSourceButton = page.locator('.message-inline-vote-item').first().getByRole('button', { name: "Voir dans l'app" });
   const paginationButton = page.getByRole('button', { name: 'Afficher 1 de plus' });

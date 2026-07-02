@@ -287,9 +287,16 @@ export function applyScopeFilters(votes, scope, question, options = {}) {
 
   if (scope.filters.queryText) {
     filteredVotes = filterVotesByQuery(filteredVotes, scope.filters.queryText, options);
-  }
 
-  if (scope.filters.theme) {
+    if (scope.filters.theme) {
+      // Question composite (texte + theme) : le texte cible domine, le theme
+      // restreint seulement si l'intersection reste non vide.
+      const themedVotes = filterVotesByTheme(filteredVotes, scope.filters.theme, options);
+      if (themedVotes.length > 0) {
+        filteredVotes = themedVotes;
+      }
+    }
+  } else if (scope.filters.theme) {
     filteredVotes = filterVotesByTheme(filteredVotes, scope.filters.theme, options);
   }
 

@@ -73,7 +73,11 @@ The request flow for a user question is the heart of the system:
    `unsupportedReason`), and derives an external action: `deterministic`,
    `analysis_rag`, or `clarify`.
 2. **Intent** is classified in `js/domain/intent-classifier.js` /
-   `intent-detectors.js`. **Scope/follow-up references** (`ces votes`,
+   `intent-detectors.js` via scored candidates (each detector emits
+   `{kind, score, signal}`; contextual adjustments — analysis intensifiers,
+   elliptical follow-up inheritance from `session.lastPlan` — arbitrate, and
+   `intent.confidence` reflects the real margin, not first-match-wins).
+   **Scope/follow-up references** (`ces votes`,
    `ceux-ci`, `les derniers`) are resolved in `scope-resolver.js` /
    `clarification-resolution.js`, reusing session memory (`lastResultVoteIds`,
    `activeDeputeId`, `lastFilters`, etc. — see `js/core/state.js`).
@@ -87,7 +91,7 @@ The request flow for a user question is the heart of the system:
 `consent-modal.js`):
 - Local browser inference uses **transformers.js (stable channel, latest published release) + WebGPU** (MLC/WebLLM were fully removed).
 - `qwen3-runtime.js` — **stable** local chat (Qwen3 ONNX, `AutoTokenizer + Qwen3ForCausalLM`). This is the only local inference path (the experimental Qwen3.5 runtime was removed).
-- `online-runtime.js` — remote source via the **Cloudflare Worker** (default for analysis requests).
+- `online-runtime.js` — remote source via the **Cloudflare Worker** (default for analysis requests); supports SSE streaming (`options.onToken`, worker `body.stream: true`) with progressive rendering in the chat.
 - `semantic-rag-runtime.js` — opt-in local semantic reranking.
 - `answer-sanitizer.js` — strips `<think>` blocks; internal reasoning must never reach the UI.
 
@@ -98,8 +102,17 @@ with `js/ai/fallback-model-catalog.js`). **No model downloads silently** —
 explicit consent and visible size are required; the last choice is remembered locally.
 
 **Data access** is via repositories under `js/data/` (`votes-repository.js`,
-`deputes-repository.js`, `groupes-repository.js`, `search-index-repository.js`) —
+`deputes-repository.js`, `groupes-repository.js`, `search-index-repository.js`,
+`dossiers-repository.js` for legislative dossiers + law-analysis fiches) —
 read these to learn the implicit data schema rather than the JSON blobs.
+
+**Law critique**: the `law_critique` intent (misleading-title / incentive
+questions targeting an explicit law) is answered deterministically:
+`dossiers-repository.js` resolves the dossier, loads its fiche, and the
+handler in `deterministic-responses.js` renders verdict + justification +
+mechanisms + AI disclaimer + sources, plus the MP's votes on that text.
+Analytical answers also inject up to 2 dominant fiches into the LLM context
+(22,000-char budget guard against the Worker's 24,000 limit).
 
 **State/storage:** `js/core/state.js` (session memory), `js/core/storage.js`
 (localStorage), chat history in `js/core/chat-history-persistence.js` /
@@ -131,6 +144,17 @@ single commit. Key scripts: `process_votes.py`, `update_deputes_actifs.py`,
 `generate_semantic_index.py`, `scrap_places.py`, `update_hemicycle_svg.py`,
 `update_group_colors.py`. Failures open/refresh a single deduped `ci-failure`
 issue rather than alerting daily.
+
+`.github/workflows/dossier_analysis.yml` runs nightly at 02:30 (before the
+Global Update): `link_dossiers.py` links scrutins to legislative dossiers
+(`public/data/dossiers/index.json`), then `generate_dossier_fiches.py` calls
+an OpenAI-compatible LLM (default NVIDIA NIM, secret `NVIDIA_NIM_API_KEY`) to
+produce per-dossier "fiches d'analyse" (`public/data/dossiers/fiches/*.json`
++ `fiches_index.json`): stated objective, concrete mechanisms with citations,
+and an explicit incentive verdict (`incitations_alignees | incitations_mitigees
+| incitations_opposees | indetermine`) with an AI-generated disclaimer.
+Generation is incremental and rate-limited for free-tier quotas; the step is
+skipped cleanly when the secret is absent. Full law texts are never committed.
 
 Lexical index and RAG manifest are mandatory (build fails without them);
 semantic indexes degrade gracefully (kept from the prior day if HuggingFace is

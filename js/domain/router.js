@@ -25,6 +25,7 @@ function cloneScopeForResponseFirstInternal(scope) {
   clonedScope.source = scope.source || clonedScope.source;
   clonedScope.voteIds = Array.isArray(scope.voteIds) ? [...scope.voteIds] : null;
   clonedScope.isFollowUp = Boolean(scope.isFollowUp);
+  clonedScope.inheritedQuestionType = scope.inheritedQuestionType || null;
   clonedScope.filters = {
     ...clonedScope.filters,
     ...(scope.filters || {})
@@ -92,7 +93,7 @@ function resolveResponseFirstScopeInternal(scope, session, options = {}) {
 
 function chooseResponseFirstIntentKindInternal(question, scope, reason, options = {}) {
   const normalizedQuestion = normalizeQuestion(question).replace(/['’-]/gu, ' ').replace(/-/g, ' ');
-  const canUseAnalysis = Boolean(options.hasActiveClarificationProvider);
+  const canUseAnalysis = Boolean(options.canRunAnalysis ?? options.hasActiveClarificationProvider);
   const hasSubjectCue = /\b(?:sujets?|themes?|themes? principaux|portent|concernent|de quoi parlent)\b/u.test(normalizedQuestion);
   const hasAnalysisCue = /\b(?:analyse|synthese|resume|resumer|position|coherence|coherent|tendance|ligne|impact|revelent|revele)\b/u.test(normalizedQuestion);
 
@@ -184,6 +185,11 @@ function buildRoutePlan(scope, intent) {
 
   if (intent.kind === 'clarify') {
     plan.candidateStrategy = 'none';
+    return plan;
+  }
+
+  if (intent.kind === 'law_critique') {
+    plan.candidateStrategy = 'law_critique_lookup';
     return plan;
   }
 
@@ -291,7 +297,7 @@ function routeQuestionInternal(question, session, options = {}) {
     scopeDefaults.scopeWasDefaulted
     && options.preferResponseFirst
     && intent.kind === 'analysis'
-    && !options.hasActiveClarificationProvider
+    && !(options.canRunAnalysis ?? options.hasActiveClarificationProvider)
   ) {
     intent = createForcedIntentInternal(chooseResponseFirstIntentKindInternal(effectiveQuestion, scope, 'needs_mode', options));
     assumptionText = buildResponseFirstAssumptionInternal(scope, intent.kind, {

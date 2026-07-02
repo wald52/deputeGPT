@@ -12,6 +12,7 @@ export function createChatController({
   buildAnalysisContextVotes,
   buildDeterministicMessageMetadata,
   buildMessageReferencesFromVoteIds,
+  collectFichesForAnalysis,
   dedupeVotes,
   ensureOnlineAnalysisReady,
   ensureSearchIndexReady,
@@ -66,7 +67,46 @@ export function createChatController({
     return tempLoader;
   }
 
-  function buildAnalysisPromptContextInternal(contextVotes, currentDepute) {
+  // Budget total du prompt systeme : marge sous la limite du Worker en ligne
+  // (MAX_TOTAL_CONTENT_LENGTH = 24000 caracteres, question utilisateur comprise).
+  const ANALYSIS_PROMPT_CHAR_BUDGET = 22000;
+  const FICHE_FIELD_TRUNCATE = 400;
+
+  function buildFicheContextSectionInternal(fiches) {
+    if (!Array.isArray(fiches) || fiches.length === 0) {
+      return '';
+    }
+
+    const ficheBlocks = fiches
+      .filter(entry => entry?.fiche)
+      .map(({ fiche }) => {
+        const mecanismes = (fiche.mecanismesCles || [])
+          .slice(0, 3)
+          .map(mecanisme => `  - ${truncateAnalysisField(mecanisme.resume, FICHE_FIELD_TRUNCATE)}${mecanisme.articleRef ? ` (${mecanisme.articleRef})` : ''}`)
+          .join('\n');
+        const parts = [
+          `- loi : ${truncateAnalysisField(fiche.titre, FICHE_FIELD_TRUNCATE)}`,
+          `  objectif affiche : ${truncateAnalysisField(fiche.objectifAffiche, FICHE_FIELD_TRUNCATE)}`,
+          `  verdict incitations : ${fiche.verdictIncitations}`,
+          `  justification : ${truncateAnalysisField(fiche.justificationVerdict, FICHE_FIELD_TRUNCATE)}`
+        ];
+        if (mecanismes) {
+          parts.push(`  mecanismes :\n${mecanismes}`);
+        }
+        return parts.join('\n');
+      });
+
+    if (ficheBlocks.length === 0) {
+      return '';
+    }
+
+    return (
+      `\nFICHES DE LOI (analyses IA precalculees des textes votes, avec verdict sur l'alignement des incitations reelles avec l'objectif affiche) :\n` +
+      `${ficheBlocks.join('\n')}\n`
+    );
+  }
+
+  function buildAnalysisPromptContextInternal(contextVotes, currentDepute, fiches = []) {
     const uniqueVotes = dedupeVotes(contextVotes);
     const contextStr = uniqueVotes
       .map(vote => {
@@ -90,19 +130,33 @@ export function createChatController({
       })
       .join('\n');
 
-    const systemPrompt =
+    const buildSystemPrompt = ficheSection =>
       `Tu es un assistant expert en politique francaise. Tu analyses les votes des deputes a l'Assemblee Nationale.\n\n` +
       `CONTEXTE RETENU POUR ${currentDepute.prenom.toUpperCase()} ${currentDepute.nom.toUpperCase()} :\n` +
-      `${contextStr}\n\n` +
+      `${contextStr}\n` +
+      `${ficheSection}\n` +
       `INSTRUCTIONS IMPORTANTES :\n` +
       `- Reponds exclusivement en francais.\n` +
       `- Ne montre jamais ton raisonnement interne.\n` +
       `- Donne uniquement la reponse finale, sans balises ni preambule technique.\n` +
-      `- Utilise UNIQUEMENT les votes fournis ci-dessus.\n` +
+      `- Utilise UNIQUEMENT les votes fournis ci-dessus${ficheSection ? ' et les fiches de loi' : ''}.\n` +
+      `${ficheSection ? `- Quand la question porte sur l'effet reel d'une loi, appuie-toi sur le verdict incitations de la fiche et signale que cette analyse est generee par IA.\n` : ''}` +
       `- Si l'information n'est pas dans les votes, dis-le clairement.\n` +
       `- Vise une reponse courte, idealement 120 mots maximum.\n` +
       `- Cite 2 a 4 votes precis avec la date quand c'est utile.\n` +
       `- Reste factuel, synthetique et transparent sur tes limites.\n`;
+
+    let ficheSection = buildFicheContextSectionInternal(fiches);
+    let systemPrompt = buildSystemPrompt(ficheSection);
+
+    // Garde de budget : on retire les fiches plutot que de depasser la limite du Worker.
+    if (ficheSection && systemPrompt.length > ANALYSIS_PROMPT_CHAR_BUDGET) {
+      ficheSection = buildFicheContextSectionInternal(fiches.slice(0, 1));
+      systemPrompt = buildSystemPrompt(ficheSection);
+      if (systemPrompt.length > ANALYSIS_PROMPT_CHAR_BUDGET) {
+        systemPrompt = buildSystemPrompt('');
+      }
+    }
 
     return {
       systemPrompt,
@@ -468,9 +522,12 @@ export function createChatController({
       try {
         const activePendingClarification = chatSessionState.pendingClarification || null;
         let clarificationAssistanceMetadata = null;
+        const canRunAnalysis = Boolean(appState.generator)
+          || (typeof getSelectedInferenceSource === 'function' && getSelectedInferenceSource() === 'online');
         let route = routeQuestion(question, chatSessionState, {
           preferResponseFirst: true,
-          hasActiveClarificationProvider: Boolean(appState.generator)
+          hasActiveClarificationProvider: Boolean(appState.generator),
+          canRunAnalysis
         });
         let effectiveQuestion = route.resolvedQuestion || question;
 
@@ -486,6 +543,7 @@ export function createChatController({
               assumptionText: assistantAttempt.resolution.assumptionText || clarificationAssistanceMetadata?.assumptionText || null,
               preferResponseFirst: true,
               hasActiveClarificationProvider: Boolean(appState.generator),
+              canRunAnalysis,
               skipPendingResolution: true
             });
             effectiveQuestion = route.resolvedQuestion || assistantAttempt.resolution.question || effectiveQuestion;
@@ -526,7 +584,8 @@ export function createChatController({
         }
 
         if (route.action === 'deterministic') {
-          const result = executeDeterministicRoute(route, effectiveQuestion, appState.currentDepute);
+          // La branche law_critique du routeur deterministe est asynchrone (fiches).
+          const result = await executeDeterministicRoute(route, effectiveQuestion, appState.currentDepute);
           if (result.kind === 'clarify') {
             await setPendingClarificationInternal(
               activePendingClarification
@@ -560,7 +619,8 @@ export function createChatController({
             metadata: mergeClarificationAssistanceMetadataInternal(
               {
                 ...buildDeterministicMessageMetadata(result, route.intent.kind),
-                assumptionText: route.assumptionText || null
+                assumptionText: route.assumptionText || null,
+                lawCritique: result.lawCritique || null
               },
               clarificationAssistanceMetadata || {}
             )
@@ -636,7 +696,16 @@ export function createChatController({
         });
         await syncHistorySessionStateInternal();
 
-        const analysisPrompt = buildAnalysisPromptContextInternal(contextVotes, appState.currentDepute);
+        let analysisFiches = [];
+        if (typeof collectFichesForAnalysis === 'function') {
+          try {
+            analysisFiches = await collectFichesForAnalysis(contextVotes.map(getVoteId));
+          } catch (error) {
+            analysisFiches = [];
+          }
+        }
+
+        const analysisPrompt = buildAnalysisPromptContextInternal(contextVotes, appState.currentDepute, analysisFiches);
         analysisPrompt.messages[1].content = effectiveQuestion;
 
         const isRemoteModel = appState.activeModelConfig?.provider === 'online';
@@ -659,6 +728,22 @@ export function createChatController({
           genOptions.enable_thinking = enableThinking;
         }
 
+        if (isRemoteModel) {
+          // Rendu progressif : la reponse en ligne est streamee dans le loader
+          // des le premier token, puis remplacee par le rendu final assaini.
+          const loaderContent = tempLoader.querySelector('.message-content');
+          genOptions.onToken = fullText => {
+            if (tempLoader._dotInterval) {
+              clearInterval(tempLoader._dotInterval);
+              tempLoader._dotInterval = null;
+            }
+            if (loaderContent) {
+              loaderContent.textContent = fullText;
+              messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            }
+          };
+        }
+
         const out = await appState.generator(analysisPrompt.messages, genOptions);
         const remoteMeta = out?.deputeGPTMeta || null;
         if (remoteMeta) {
@@ -678,6 +763,11 @@ export function createChatController({
             references: buildMessageReferencesFromVoteIds(contextVotes.map(getVoteId), { maxItems: 6 }),
             filters: route.scope.filters,
             plan: route.plan || null,
+            lawFiches: analysisFiches.map(({ dossierId, fiche }) => ({
+              dossierId,
+              titre: fiche?.titre || null,
+              verdictIncitations: fiche?.verdictIncitations || null
+            })),
             modelUsed: remoteMeta?.model || appState.activeModelConfig?.displayName,
             providerUsed: remoteMeta?.provider || null,
             routeUsed: remoteMeta?.route || null,

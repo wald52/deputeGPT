@@ -71,7 +71,8 @@ export function resolveScope(question, session) {
   scope.filters.dateTo = dateRange.dateTo;
 
   if (scope.filters.queryText) {
-    scope.filters.theme = null;
+    // Garder le theme uniquement s'il est mentionne en dehors du texte cible extrait.
+    scope.filters.theme = detectTheme(stripQueryForDateParsing(question, scope.filters.queryText));
   }
 
   if (/\b(?:les?|ces?)\s+\d+\s+derniers?\s+mois\b/.test(normalizedQuestion)) {
@@ -100,6 +101,7 @@ export function resolveScope(question, session) {
 
   if (hasExplicitFollowUp) {
     scope.isFollowUp = true;
+    scope.inheritedQuestionType = session?.lastPlan?.questionType || null;
 
     if (!session.lastResultVoteIds?.length) {
       scope.needsClarification = true;
@@ -120,6 +122,7 @@ export function resolveScope(question, session) {
 
   if (hasImplicitFollowUp || hasContextualRecentReference) {
     scope.isFollowUp = true;
+    scope.inheritedQuestionType = session?.lastPlan?.questionType || null;
 
     if (!session?.lastResultVoteIds?.length) {
       scope.needsClarification = true;

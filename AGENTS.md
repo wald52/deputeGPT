@@ -50,10 +50,12 @@
   - `public/data/deputes_actifs/v*.json`
   - `public/data/search_index.json`
   - `public/data/rag/**` sauf manifeste ou besoin explicite
+  - `public/data/dossiers/fiches/**` sauf un echantillon cible
   - `js/transformers.min.js`
   - `test-results/**`
   - `tmp/**`
   - `Scrutins/**` sauf tache pipeline donnees
+  - `DossiersLegislatifs/**` sauf tache pipeline donnees
 - Pour les donnees, preferer:
   - le schema implicite dans les repositories
   - les manifests
@@ -127,6 +129,8 @@
   - `js/data/groupes-repository.js`
 - Index lexical:
   - `js/data/search-index-repository.js`
+- Dossiers legislatifs et fiches de lois:
+  - `js/data/dossiers-repository.js`
 
 ### UI specialisee
 - Controleur principal du chat:
@@ -168,6 +172,11 @@
   - `scripts/process_votes.py`
 - Regeneration semantique:
   - `scripts/generate_semantic_index.py`
+- Chainage scrutins -> dossiers legislatifs:
+  - `scripts/link_dossiers.py`
+- Fiches d'analyse des lois (LLM en CI):
+  - `scripts/generate_dossier_fiches.py`
+  - `.github/workflows/dossier_analysis.yml`
 - Regressions routeur:
   - `scripts/run_router_regression.js`
 - Audit question bank:
@@ -204,6 +213,15 @@
 - Le service `online` ne doit jamais prendre la main sur les listes, comptages, periodes ou filtres exacts.
 - Aucune cle API utilisateur n est requise pour le service `online` par defaut.
 - Seules les demandes d'analyse peuvent envoyer un contexte court hors du navigateur.
+- Le Worker supporte le streaming SSE (`body.stream: true` sur `/analysis`):
+  il pipe le flux de l'AI Gateway avec les metadonnees en en-tetes
+  `x-deputegpt-*`. Le front (`js/ai/online-runtime.js`) streame via
+  `options.onToken` et le chat affiche la reponse au fil des tokens
+  (sanitisation `answer-sanitizer` en fin de flux). Le chemin non-streame
+  reste inchange (retrocompatible).
+- Latence percue: prechauffage des index (lexical + dossiers) des la selection
+  d'un depute; contexte d'analyse reduit a 12 votes pour les analyses ciblees
+  (theme ou texte precis), 18 sinon.
 
 ### Chargement modele et UX
 - Aucun telechargement de modele ne doit etre silencieux.
@@ -267,7 +285,42 @@
   - `texte_loi`
   - `amendement`
   - `article`
-- Les textes de loi sont une extension future, pas un prerequis de v1.
+
+### Dossiers legislatifs et fiches de lois (implemente)
+- Chainage scrutin -> dossier legislatif publie dans
+  `public/data/dossiers/index.json` (genere par `scripts/link_dossiers.py`:
+  champ direct si present, sinon rapprochement de titres avec `method` et
+  `confidence`; overrides manuels dans `public/data/dossiers/overrides.json`).
+- Fiches d'analyse « second ordre » par dossier dans
+  `public/data/dossiers/fiches/{dossierId}.json` + index leger
+  `public/data/dossiers/fiches_index.json` (generes par
+  `scripts/generate_dossier_fiches.py` via un endpoint OpenAI-compatible,
+  par defaut NVIDIA NIM; secret GitHub `NVIDIA_NIM_API_KEY`, jamais de cle
+  dans le depot; workflow dedie `.github/workflows/dossier_analysis.yml`,
+  cron 02h30, avant le Global Update).
+- Chaque fiche contient: objectif affiche, mecanismes concrets sources
+  (article/citation), `verdictIncitations` avec enum stricte
+  `incitations_alignees | incitations_mitigees | incitations_opposees | indetermine`,
+  justification sourcee, points de vigilance, sources officielles, hash du
+  texte source et metadonnees modele.
+- Regle editoriale: tout contenu de fiche affiche a l'utilisateur doit porter
+  le disclaimer « analyse generee automatiquement par IA » et des liens vers
+  les sources officielles. En cas de doute, le verdict est `indetermine`.
+- Les textes de loi complets ne sont jamais commites: seuls les extraits
+  analysés transitent par la CI, les fiches restent de petits JSON.
+- L'index lexical RAG porte `law_title` et `dossier_id` par scrutin
+  (superposition idempotente dans `generate_semantic_index.py`, degradation
+  gracieuse si l'index dossiers est absent). MiniSearch indexe `law_title`
+  (boost 2.5) et stocke `dossier_id`.
+- Le contexte d'analyse LLM inclut jusqu'a 2 fiches de loi dominantes
+  (section `FICHES DE LOI` du prompt, `ANALYSIS_CONTEXT_FICHE_LIMIT`) avec une
+  garde de budget a 22 000 caracteres pour rester sous la limite du Worker
+  (24 000, question comprise). Les fiches sont retirees avant les votes en cas
+  de depassement.
+- Generation incrementale: une fiche a jour (`analysisVersion` + `statut`
+  inchanges) n'est pas regeneree; debit limite pour les quotas gratuits
+  (`--rpm`, `--max-calls`, `--time-budget-min`), backfill via
+  `workflow_dispatch` avec `max_calls`.
 
 ## Routeur de questions retenu
 
@@ -286,6 +339,37 @@
   - `deterministic`
   - `analysis_rag`
   - `clarify`
+
+### Classification d'intention a score
+- `classifyIntent` n'est plus un premier-motif-gagnant: chaque detecteur produit un
+  candidat `{kind, score, signal}`, des ajustements contextuels departagent, et
+  `intent.confidence` reflete la marge reelle entre les deux meilleurs candidats.
+- Les scores de base reproduisent l'ordre historique de priorite des detecteurs;
+  ne changer un score qu'avec la banque de questions au vert.
+- Un intensificateur (`vraiment`, `reellement`, `en realite`, `au fond`,
+  `incitations`...) penalise `subjects` et pousse vers `analysis` des qu'un ancrage
+  concret existe (theme, texte cible, suivi).
+- Sur un suivi elliptique (`et sur l'immigration ?`, `et en 2024 ?`), le routeur
+  herite du `questionType` du dernier plan (`session.lastPlan`) via
+  `scope.inheritedQuestionType`, seulement si la question n'apporte qu'un nouveau
+  filtre et ne porte aucun signal explicite.
+- Une question composite (texte cible + theme hors du texte) conserve les deux
+  filtres: le texte domine, le theme ne restreint que si l'intersection est non vide.
+- Les questions d'impact (`renforce`, `affaiblit`, `ameliore`...) avec un theme
+  detectable declenchent une clarification de mode (`needs_mode`), plus jamais un
+  simple `unsupported`; sans theme, elles restent `unsupported`.
+- `cette loi` est un marqueur de suivi: sans contexte, la question part en
+  `needs_context`.
+- Intention `law_critique` (critique d'un texte precis: titre trompeur,
+  incitations, "vraiment bonne pour..."): exige un `queryText` explicite,
+  action `deterministic` avec `candidateStrategy: law_critique_lookup`.
+  Le handler resout le dossier via `js/data/dossiers-repository.js`, charge la
+  fiche, affiche verdict + justification + mecanismes + disclaimer + sources,
+  et liste les votes du depute sur le texte. Sans fiche: votes + message clair.
+  Sans dossier ni vote: clarification.
+- Le mode response-first accepte `options.canRunAnalysis` (source `online`
+  configuree ou modele local charge) pour ne plus rabattre les questions
+  d'analyse vers `list` quand aucun generateur n'est encore charge.
 
 ### Memoire de session
 - La session navigateur doit memoriser:
@@ -308,6 +392,9 @@
 - RAG semantique local experimental en opt-in avec selection utilisateur `single-vector` / `multi-vector`.
 - Nettoyage des sorties pour supprimer les blocs de type `<think>`.
 - Planificateur de route dans `js/domain/router.js`.
+- Classification d'intention a score dans `js/domain/intent-classifier.js`
+  (candidats + confiance, intensificateurs d'analyse, heritage du type de
+  question sur suivi elliptique).
 - Reponses deterministes pour:
   - listes
   - comptages
@@ -364,8 +451,9 @@
 - Nettoyer les restes obsoletes non Markdown lies a WebLLM si plus rien ne les utilise.
 
 ### Plus tard
-- Ajouter les textes de loi associes aux votes dans le pipeline serveur.
-- Etendre le schema RAG pour lier `scrutin`, `texte_loi`, `amendement` et `article`.
+- Etendre le schema RAG pour lier finement `amendement` et `article` (les
+  liens `scrutin` -> `texte_loi` sont couverts par les dossiers/fiches).
+- Ajouter les liens Legifrance des lois promulguees dans les fiches.
 - Retirer du catalogue les modeles experimentaux qui ne sont pas convaincants apres tests.
 
 ## Commandes utiles
