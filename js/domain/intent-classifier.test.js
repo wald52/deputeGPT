@@ -154,6 +154,31 @@ describe('classifyIntent - critique de loi (law_critique)', () => {
   });
 });
 
+describe('classifyIntent - questions reelles de position thematique', () => {
+  it('route "pour l ecologie ?" vers thematic_stance', () => {
+    const { scope, intent } = classify("Est-ce que ce député est pour l'écologie ?");
+    expect(intent.kind).toBe('thematic_stance');
+    expect(scope.filters.theme).toBe('ecologie');
+  });
+
+  it('route "pour l euthanasie ?" vers thematic_stance (theme fin de vie)', () => {
+    const { scope, intent } = classify("Est-ce que ce député est pour l'euthanasie ?");
+    expect(intent.kind).toBe('thematic_stance');
+    expect(scope.filters.theme).toBe('fin de vie');
+  });
+
+  it('ne matche plus "climatisation" sur le theme climat (garde morphologique)', () => {
+    const { scope, intent } = classify('Est-ce que ce député est pour la climatisation ?');
+    expect(scope.filters.theme).toBeNull();
+    expect(intent.kind).toBe('clarify');
+  });
+
+  it('matche toujours "climatique" sur le theme ecologie', () => {
+    const { scope } = classify('Ses votes sur la politique climatique ?');
+    expect(scope.filters.theme).toBe('ecologie');
+  });
+});
+
 describe('classifyIntent - confiance', () => {
   it('expose une confiance reelle plutot que 1 constant', () => {
     const { intent } = classify('Quels sujets defend-il vraiment sur l ecologie ?');

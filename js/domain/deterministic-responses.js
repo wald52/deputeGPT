@@ -566,77 +566,170 @@ function formatVoteDistributionInternal(distribution) {
   return parts.join(', ');
 }
 
-function inferThematicStanceInternal(distribution) {
-  const decisiveVotes = distribution.Pour + distribution.Contre + distribution.Abstention;
 
-  if (decisiveVotes < 3) {
-    return {
-      conclusion: "Je n'ai pas assez de votes sur ce thème pour conclure sérieusement."
-    };
+// Ne jamais deduire une « position » d'un comptage pour/contre sur un bucket
+// thematique : la polarite des votes sur amendements est inconnaissable (voter
+// contre un amendement restrictif = soutenir la cause). La reponse s'appuie sur
+// les votes « ensemble du texte », croises avec les fiches de lois quand elles
+// existent, et presente le decompte global comme une repartition brute avertie.
+const STANCE_ENSEMBLE_DISPLAY_LIMIT = 6;
+const STANCE_FICHE_DISPLAY_LIMIT = 3;
+const STANCE_TERM_STOPWORDS = new Set([
+  'depute', 'deputee', 'deputes', 'cette', 'votre', 'notre', 'plutot', 'vraiment',
+  'reellement', 'favorable', 'defavorable', 'oppose', 'opposee', 'position',
+  'soutient', 'soutenu', 'soutenue', 'defend', 'defendu', 'votes', 'scrutins', 'textes'
+]);
+
+function classifyStanceVoteKindInternal(vote, deps) {
+  const normalizedTitle = deps.normalizeQuestion(vote?.titre || '').replace(/['’-]/gu, ' ');
+  if (/^l\s*ensemble\b/.test(normalizedTitle)) {
+    return 'ensemble';
   }
-
-  const supportShare = distribution.Pour / decisiveVotes;
-  const opposeShare = distribution.Contre / decisiveVotes;
-  const abstentionShare = distribution.Abstention / decisiveVotes;
-  const gap = Math.abs(distribution.Pour - distribution.Contre);
-
-  if (supportShare >= 0.6 && distribution.Pour >= distribution.Contre + 2) {
-    return {
-      conclusion: 'Cela suggère une position plutôt favorable sur ce thème.'
-    };
+  if (/\bamendement/.test(normalizedTitle)) {
+    return 'amendement';
   }
-
-  if (opposeShare >= 0.6 && distribution.Contre >= distribution.Pour + 2) {
-    return {
-      conclusion: 'Cela suggère une position plutôt opposée sur ce thème.'
-    };
-  }
-
-  if (abstentionShare >= 0.45 && gap <= 1) {
-    return {
-      conclusion: "La position paraît difficile à trancher, avec beaucoup d'abstentions."
-    };
-  }
-
-  if (gap <= 1) {
-    return {
-      conclusion: 'La position paraît partagée plutôt que nettement alignée.'
-    };
-  }
-
-  if (distribution.Pour > distribution.Contre) {
-    return {
-      conclusion: 'Cela suggère une position plutôt favorable, mais sans ligne totalement nette.'
-    };
-  }
-
-  return {
-    conclusion: 'Cela suggère une position plutôt réservée, mais sans ligne totalement nette.'
-  };
+  return 'autre';
 }
 
-function buildThematicStanceResponseInternal(filteredVotes, scope, depute, deps) {
-  const distribution = buildVoteDistributionInternal(filteredVotes);
-  const examples = filteredVotes.slice(0, deps.thematicStanceExampleLimit);
-  const themeLabel = scope.filters.theme || 'ce thème';
-  const stance = inferThematicStanceInternal(distribution);
-  const distributionText = formatVoteDistributionInternal(distribution);
+function extractStanceQueryTermsInternal(question, theme, deps) {
+  const themeKeywordWords = new Set();
+  (deps.themeKeywords?.[theme] || []).forEach(keyword => {
+    deps.normalizeQuestion(keyword)
+      .replace(/['’-]/gu, ' ')
+      .split(/[^a-z0-9]+/)
+      .forEach(word => {
+        if (word) {
+          themeKeywordWords.add(word);
+        }
+      });
+  });
 
-  let message = `${depute.prenom} ${depute.nom} a ${filteredVotes.length} vote${filteredVotes.length > 1 ? 's' : ''} retenu${filteredVotes.length > 1 ? 's' : ''} sur le thème "${themeLabel}". ${stance.conclusion}`;
+  return deps.normalizeQuestion(question)
+    .replace(/['’-]/gu, ' ')
+    .split(/[^a-z0-9]+/)
+    .filter(token => token.length >= 5 && !STANCE_TERM_STOPWORDS.has(token))
+    .filter(token => {
+      for (const word of themeKeywordWords) {
+        if (
+          token === word ||
+          (word.length >= 5 && token.startsWith(word)) ||
+          (token.length >= 5 && word.startsWith(token))
+        ) {
+          return false;
+        }
+      }
+      return true;
+    });
+}
 
-  if (distributionText) {
-    message += `\nRepère factuel : ${distributionText}.`;
+function filterVotesByStanceTermsInternal(votes, terms, deps) {
+  if (terms.length === 0) {
+    return { votes, applied: false, matched: false };
   }
 
-  message += '\nCette synthèse repose sur les scrutins classés dans ce thème, pas sur une évaluation générale de toutes ses prises de position.';
+  const matchedVotes = votes.filter(vote => {
+    const indexText = typeof deps.lookupVoteIndexText === 'function'
+      ? deps.lookupVoteIndexText(vote) || ''
+      : '';
+    const haystack = deps.normalizeQuestion(`${vote?.titre || ''} ${indexText}`);
+    return terms.some(term => haystack.includes(term));
+  });
 
-  if (examples.length > 0) {
-    return buildInlineListResponseInternal(`${message}\n\nExemples récents :`, examples, 'list', deps);
+  return matchedVotes.length > 0
+    ? { votes: matchedVotes, applied: true, matched: true }
+    : { votes, applied: true, matched: false };
+}
+
+async function buildThematicStanceResponseInternal(filteredVotes, scope, depute, question, deps) {
+  const themeLabel = scope.filters.theme || 'ce thème';
+  const deputeLabel = `${depute.prenom} ${depute.nom}`;
+  const terms = extractStanceQueryTermsInternal(question, scope.filters.theme, deps);
+  const termFilter = filterVotesByStanceTermsInternal(filteredVotes, terms, deps);
+  const scopedVotes = termFilter.votes;
+  const termsLabel = terms.map(term => `« ${term} »`).join(' ou ');
+
+  const ensembleVotes = [];
+  let amendementCount = 0;
+  scopedVotes.forEach(vote => {
+    const kind = classifyStanceVoteKindInternal(vote, deps);
+    if (kind === 'ensemble') {
+      ensembleVotes.push(vote);
+    } else if (kind === 'amendement') {
+      amendementCount += 1;
+    }
+  });
+  ensembleVotes.sort((left, right) => String(right?.date || '').localeCompare(String(left?.date || '')));
+
+  const displayedVotes = ensembleVotes.length > 0
+    ? ensembleVotes.slice(0, STANCE_ENSEMBLE_DISPLAY_LIMIT)
+    : scopedVotes.slice(0, deps.thematicStanceExampleLimit);
+  const distributionText = formatVoteDistributionInternal(buildVoteDistributionInternal(scopedVotes));
+
+  const messageParts = [];
+
+  if (termFilter.applied && termFilter.matched) {
+    messageParts.push(`Scrutins du thème "${themeLabel}" mentionnant ${termsLabel} : ${scopedVotes.length}.`);
+  } else if (termFilter.applied && !termFilter.matched) {
+    messageParts.push(`Aucun scrutin ne mentionne ${termsLabel} : je réponds sur le thème "${themeLabel}" dans son ensemble.`);
+  }
+
+  if (ensembleVotes.length > 0) {
+    messageParts.push(
+      `Les votes les plus significatifs de ${deputeLabel} sur ce sujet sont ceux sur l'ensemble des textes ` +
+      `(${ensembleVotes.length} scrutin${ensembleVotes.length > 1 ? 's' : ''}, détail ci-dessous).`
+    );
+
+    if (typeof deps.getFicheForVote === 'function') {
+      const ficheLines = [];
+      for (const vote of displayedVotes.slice(0, STANCE_FICHE_DISPLAY_LIMIT)) {
+        try {
+          const fiche = await deps.getFicheForVote(deps.getVoteId(vote));
+          if (fiche) {
+            const verdictLabel = LAW_CRITIQUE_VERDICT_LABELS[fiche.verdictIncitations] || LAW_CRITIQUE_VERDICT_LABELS.indetermine;
+            const objectif = String(fiche.objectifAffiche || '').slice(0, 180);
+            ficheLines.push(`- [${vote.date}] ${vote.vote} — ${fiche.titre}${objectif ? `\n  Objectif affiché : ${objectif}` : ''}\n  Fiche IA : ${verdictLabel}`);
+          }
+        } catch (error) {
+          // Fiche indisponible : non bloquant.
+        }
+      }
+
+      if (ficheLines.length > 0) {
+        messageParts.push(
+          `Lecture avec les fiches d'analyse (générées par IA, à vérifier sur les sources officielles) :\n${ficheLines.join('\n')}`
+        );
+      }
+    }
+  } else {
+    messageParts.push(
+      `${deputeLabel} n'a aucun vote sur l'ensemble d'un texte dans ce périmètre : ` +
+      `impossible d'en dégager une position fiable. Voici les votes les plus récents du thème.`
+    );
+  }
+
+  if (distributionText) {
+    let distributionLine = `Répartition brute des ${scopedVotes.length} votes du thème : ${distributionText}`;
+    if (amendementCount > 0) {
+      distributionLine += `, dont ${amendementCount} sur des amendements`;
+    }
+    messageParts.push(`${distributionLine}.`);
+  }
+
+  if (amendementCount > 0) {
+    messageParts.push(
+      '⚠️ Les votes sur amendements ne sont pas interprétables tels quels : voter contre un amendement ' +
+      'restrictif peut soutenir la cause, et inversement. Je ne déduis donc pas de « position » globale de ce décompte.'
+    );
+  }
+
+  const summaryText = messageParts.join('\n\n');
+  if (displayedVotes.length > 0) {
+    return buildInlineListResponseInternal(`${summaryText}\n\nDétail :`, displayedVotes, 'list', deps);
   }
 
   return {
     kind: 'response',
-    message,
+    message: summaryText,
     displayedVotes: []
   };
 }
@@ -743,11 +836,25 @@ export function createDeterministicRouteExecutor(deps) {
       };
     }
 
+    if (route.intent.kind === 'thematic_stance') {
+      // Branche asynchrone : croise les votes « ensemble » avec les fiches de lois.
+      return buildThematicStanceResponseInternal(filteredVotes, route.scope, depute, question, deps)
+        .then(responseBuilder => ({
+          kind: 'response',
+          message: responseBuilder.message,
+          voteIds: filteredVotes.map(deps.getVoteId),
+          displayedVoteIds: (responseBuilder.displayedVotes || []).map(deps.getVoteId),
+          summaryText: responseBuilder.summaryText || null,
+          referencePresentation: responseBuilder.referencePresentation || null,
+          inlineVoteMode: responseBuilder.inlineVoteMode || null,
+          ...baseResult,
+          limit: route.scope.filters.limit || deps.defaultChatListLimit
+        }));
+    }
+
     const responseBuilder = route.intent.kind === 'subjects'
       ? buildSubjectsResponseInternal(filteredVotes, route.scope, depute, question, deps)
-      : route.intent.kind === 'thematic_stance'
-        ? buildThematicStanceResponseInternal(filteredVotes, route.scope, depute, deps)
-        : buildListResponseInternal(filteredVotes, route.scope, depute, deps);
+      : buildListResponseInternal(filteredVotes, route.scope, depute, deps);
 
     if (responseBuilder.kind === 'clarify') {
       return {

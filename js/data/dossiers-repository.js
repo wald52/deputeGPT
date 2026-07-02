@@ -208,6 +208,17 @@ export function createDossiersRepository({
     }
   }
 
+  async function getFicheForVote(voteNumero) {
+    await ensureDossiersIndexReady();
+    if (!state.index) {
+      return null;
+    }
+    await ensureFichesIndexReady();
+
+    const dossierId = getDossierIdForVote(voteNumero);
+    return dossierId ? loadFiche(dossierId) : null;
+  }
+
   async function collectFichesForVotes(voteNumeros, { maxFiches = 2 } = {}) {
     await ensureDossiersIndexReady();
     if (!state.index) {
@@ -246,6 +257,7 @@ export function createDossiersRepository({
     findDossierByQuery,
     getDossier,
     getDossierIdForVote,
+    getFicheForVote,
     hasFiche,
     loadFiche
   };

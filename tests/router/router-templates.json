@@ -174,5 +174,14 @@
   "analyse_votes.sujets_simple": {
     "expected_route_action": "deterministic",
     "expected_intent_kind": "subjects"
+  },
+  "vote_theme.stance_directe": {
+    "expected_route_action": "deterministic",
+    "expected_intent_kind": "thematic_stance"
+  },
+  "stance.sujet_introuvable": {
+    "expected_route_action": "clarify",
+    "clarify_reason": "unsupported",
+    "expected_intent_kind": "clarify"
   }
 }

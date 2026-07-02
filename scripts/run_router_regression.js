@@ -2071,7 +2071,7 @@ async function executeStep(harness, step, session, depute, deputeVotes) {
 
   if (step.scopeAction) {
     route = harness.buildScopeActionRoute(step.scopeAction);
-    result = harness.executeDeterministicRoute(route, '', { ...depute, votes: deputeVotes });
+    result = await harness.executeDeterministicRoute(route, '', { ...depute, votes: deputeVotes });
     if (result.kind === 'response') {
       harness.updateSessionFromResult(session, {
         ...result,
@@ -2085,7 +2085,7 @@ async function executeStep(harness, step, session, depute, deputeVotes) {
   }
 
   if (route.action === 'deterministic' && !result) {
-    result = harness.executeDeterministicRoute(route, question, { ...depute, votes: deputeVotes });
+    result = await harness.executeDeterministicRoute(route, question, { ...depute, votes: deputeVotes });
     if (result.kind === 'response') {
       harness.updateSessionFromResult(session, {
         ...result,

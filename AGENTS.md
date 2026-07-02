@@ -406,6 +406,23 @@
 
 ### Reponses et UX
 - Reponse factuelle d'abord, LLM ensuite.
+- Famille « Est-il pour X ? » (`thematic_stance`) : ne JAMAIS deduire une
+  position d'un comptage pour/contre sur un bucket thematique. Les votes sur
+  amendements ont une polarite inconnaissable (voter contre un amendement
+  restrictif = soutenir la cause). La reponse s'appuie d'abord sur les votes
+  « ensemble du texte », nommes un par un, croises avec la fiche du dossier
+  quand elle existe (objectif affiche + verdict incitations, disclaimer IA).
+  Le decompte global reste une repartition brute assortie d'un avertissement
+  explicite sur les amendements.
+- Si la question contient un terme precis hors mots-cles du theme
+  (« isolation », « euthanasie »...), filtrer le bucket lexicalement par ce
+  terme quand cela laisse au moins un vote ; sinon le dire explicitement.
+- Le matching de mots-cles de theme utilise une garde morphologique (suffixes
+  s, e, es, x, aux, ique, iques) : « climatique » matche « climat »,
+  « climatisation » non. Pas de prefixe libre.
+- Question fermee sans theme ni texte reconnaissable : repondre « aucun theme
+  ni texte correspondant » avec suggestions, pas le menu generique
+  Liste/Nombre/Analyse (reserve aux suivis avec contexte).
 - Si un resultat est trop large, demander une precision au lieu de broder.
 - En analyse, citer des votes precis avec date.
 - Si l'information manque, le dire clairement.
