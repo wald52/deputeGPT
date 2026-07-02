@@ -12,6 +12,10 @@ productive quickly.
 
 Key working conventions inherited from `AGENTS.md`:
 - **Answer in French.** User-facing output, commit messages, and explanations are expected in French.
+- **Push everything directly to `main`.** No pull requests or long-lived
+  branches unless the user explicitly asks for one; a temporary working branch
+  may be used locally, but its content goes to `main` right away (tests green
+  first).
 - **Explore narrowly.** Search for a symbol/feature before opening files; prefer small specialized modules over the big entry points (`index.html`, `js/app-runtime.js` are last resorts). Use the `tache -> fichiers` routing matrix in `AGENTS.md` to jump straight to the right module.
 - **Do not read large data artifacts in full.** Avoid `public/data/votes/**`, `public/data/deputes_photos/**`, `public/data/search_index.json`, `public/data/rag/**` (except `manifest.json`), `js/transformers.min.js`, and `Scrutins/**`. Infer schemas from the repository modules, manifests, or a small sample.
 

@@ -485,3 +485,9 @@ python scripts/generate_semantic_index.py
 ## Note de maintenance
 - Si une regle change, mettre a jour ce fichier en premier.
 - Les anciens fichiers de documentation fusionnes ici ne doivent pas etre reintroduits comme source de verite parallele.
+
+## Workflow git
+- Tout travail valide (tests verts) est pousse DIRECTEMENT dans `main`.
+- Pas de pull request ni de branche longue duree, sauf demande explicite de
+  l'utilisateur. Une branche de travail temporaire peut servir localement,
+  mais son contenu part dans `main` dans la foulee.
