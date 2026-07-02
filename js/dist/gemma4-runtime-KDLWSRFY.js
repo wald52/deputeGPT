@@ -1,4 +1,4 @@
-import{b as h}from"./chunk-ZFBGN7BM.js";import"./chunk-MKRD2GBT.js";import"./chunk-I7AUKTXE.js";function f(n){let i=n.filter(t=>t?.role==="system").map(t=>t?.content).filter(t=>typeof t=="string"&&t.length>0);if(i.length===0)return n;let r=n.filter(t=>t?.role!=="system"),p=i.join(`
+import{b as h}from"./chunk-A7F2L3H3.js";import"./chunk-O2DQG2SP.js";import"./chunk-I7AUKTXE.js";function f(n){let i=n.filter(t=>t?.role==="system").map(t=>t?.content).filter(t=>typeof t=="string"&&t.length>0);if(i.length===0)return n;let r=n.filter(t=>t?.role!=="system"),p=i.join(`
 
 `),a=r.findIndex(t=>t?.role==="user");if(a===-1)return[{role:"user",content:p},...r];let o=r.slice(),s=o[a].content;return o[a]={...o[a],content:`${p}
 

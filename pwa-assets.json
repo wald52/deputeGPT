@@ -1,6 +1,6 @@
 {
-  "version": "ab8f3a522009",
-  "generatedAt": "2026-07-01T08:34:55.665Z",
+  "version": "e80278e2c9d7",
+  "generatedAt": "2026-07-02T07:54:53.499Z",
   "precache": [
     "./",
     "index.html",
@@ -16,16 +16,16 @@
     "public/icons/icon-maskable-512.png",
     "js/dist/app.js",
     "js/dist/chat-history-Z6YCWHTA.js",
+    "js/dist/chunk-A7F2L3H3.js",
     "js/dist/chunk-F7STOLHW.js",
     "js/dist/chunk-GO3HHZVQ.js",
     "js/dist/chunk-I7AUKTXE.js",
-    "js/dist/chunk-MKRD2GBT.js",
-    "js/dist/chunk-ZFBGN7BM.js",
-    "js/dist/gemma4-runtime-AFJZD55P.js",
-    "js/dist/online-runtime-TN3PTT3R.js",
+    "js/dist/chunk-O2DQG2SP.js",
+    "js/dist/gemma4-runtime-KDLWSRFY.js",
+    "js/dist/online-runtime-D5DJM4F5.js",
     "js/dist/pipeline-runtime-NJUQUB3U.js",
-    "js/dist/qwen3-runtime-PVRYNTVV.js",
-    "js/dist/qwen35-runtime-5VBV3OEI.js",
+    "js/dist/qwen3-runtime-JLXXW4CU.js",
+    "js/dist/qwen35-runtime-BXG6FILU.js",
     "js/dist/semantic-rag-runtime-YMY3Y2F2.js",
     "js/dist/transformers-runtime-O5NX5WY3.js",
     "js/dist/transformers.min-LGYMLAXP.js"
@@ -33,7 +33,7 @@
   "runtimeWarmup": [
     "public/data/model-catalog.json",
     "public/data/deputes_actifs/latest.json",
-    "boot-v2026-07-01.json",
+    "boot-v2026-07-02.json",
     "public/data/deputes_actifs/groupes.json"
   ]
 }
