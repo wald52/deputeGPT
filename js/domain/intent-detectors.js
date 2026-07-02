@@ -111,6 +111,10 @@ function extractThemeSearchTokensInternal(value) {
   );
 }
 
+// Flexions autorisees apres un mot-cle de theme : « climatique » matche
+// « climat », mais « climatisation » (suffixe libre) ne matche plus.
+const THEME_KEYWORD_ALLOWED_SUFFIXES = new Set(['s', 'e', 'es', 'x', 'aux', 'ique', 'iques']);
+
 function matchesThemeKeywordInternal(searchText, searchTokens, keyword) {
   const normalizedKeyword = normalizeThemeSearchTextInternal(keyword);
   if (!normalizedKeyword) {
@@ -127,7 +131,10 @@ function matchesThemeKeywordInternal(searchText, searchTokens, keyword) {
 
   if (normalizedKeyword.length >= 5) {
     for (const token of searchTokens) {
-      if (token.startsWith(normalizedKeyword)) {
+      if (
+        token.startsWith(normalizedKeyword) &&
+        THEME_KEYWORD_ALLOWED_SUFFIXES.has(token.slice(normalizedKeyword.length))
+      ) {
         return true;
       }
     }

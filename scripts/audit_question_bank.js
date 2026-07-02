@@ -188,7 +188,9 @@ async function buildRuntimeHelpers() {
     normalizeQuestion: voteNormalizerModule.normalizeQuestion,
     resolveScopeVotes: deterministicRouterModule.resolveScopeVotes,
     shouldClarifyLargeList: deterministicRouterModule.shouldClarifyLargeList,
-    thematicStanceExampleLimit: 4
+    thematicStanceExampleLimit: 4,
+    themeKeywords: routerConstantsModule.THEME_KEYWORDS,
+    lookupVoteIndexText
   });
 
   const buildAnalysisContextVotes = async (route, question, deputeVotes) => analysisContextModule.computeAnalysisContextVotes(route, question, deputeVotes, {
@@ -291,12 +293,12 @@ async function auditManualScenarios(runtime) {
 
   const largeListRoute = runtime.routeQuestion('Liste les votes de ce depute.', { activeDeputeId: runtime.depute.id });
   const largeListResult = largeListRoute.action === 'deterministic'
-    ? runtime.executeDeterministicRoute(largeListRoute, largeListRoute.resolvedQuestion || 'Liste les votes de ce depute.', runtime.depute)
+    ? await runtime.executeDeterministicRoute(largeListRoute, largeListRoute.resolvedQuestion || 'Liste les votes de ce depute.', runtime.depute)
     : { kind: 'route_error' };
 
   const boundedListRoute = runtime.routeQuestion('Liste les 5 derniers votes de ce depute.', { activeDeputeId: runtime.depute.id });
   const boundedListResult = boundedListRoute.action === 'deterministic'
-    ? runtime.executeDeterministicRoute(boundedListRoute, boundedListRoute.resolvedQuestion || 'Liste les 5 derniers votes de ce depute.', runtime.depute)
+    ? await runtime.executeDeterministicRoute(boundedListRoute, boundedListRoute.resolvedQuestion || 'Liste les 5 derniers votes de ce depute.', runtime.depute)
     : { kind: 'route_error' };
 
   const followUpSession = {
@@ -344,7 +346,7 @@ async function auditManualScenarios(runtime) {
   );
   const scopeResolvedRoute = runtime.routeQuestion('tous', scopeClarifySession);
   const scopeResolvedResult = scopeResolvedRoute.action === 'deterministic'
-    ? runtime.executeDeterministicRoute(scopeResolvedRoute, scopeResolvedRoute.resolvedQuestion || 'tous', runtime.depute)
+    ? await runtime.executeDeterministicRoute(scopeResolvedRoute, scopeResolvedRoute.resolvedQuestion || 'tous', runtime.depute)
     : { kind: 'route_error' };
 
   const modeClarifyQuestion = 'Et ces votes ?';
@@ -395,7 +397,7 @@ async function auditManualScenarios(runtime) {
     { preferResponseFirst: true, hasActiveClarificationProvider: false }
   );
   const responseFirstScopeResult = responseFirstScopeRoute.action === 'deterministic'
-    ? runtime.executeDeterministicRoute(responseFirstScopeRoute, responseFirstScopeRoute.resolvedQuestion || 'Quels sont les themes principaux dans ces votes ?', runtime.depute)
+    ? await runtime.executeDeterministicRoute(responseFirstScopeRoute, responseFirstScopeRoute.resolvedQuestion || 'Quels sont les themes principaux dans ces votes ?', runtime.depute)
     : { kind: 'route_error' };
 
   const responseFirstImpactRoute = runtime.routeQuestion(

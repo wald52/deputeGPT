@@ -6,6 +6,7 @@ import { resolveScope } from './scope-resolver.js';
 import { normalizeQuestion } from './vote-normalizer.js';
 
 const MODE_CLARIFICATION_MESSAGE = 'Voulez-vous une liste de votes, un comptage ou une analyse thematique ?';
+const NO_TOPIC_CLARIFICATION_MESSAGE = "Je n'ai trouvé ni thème ni texte de loi correspondant à votre question. Reformulez avec un thème (écologie, santé, budget, immigration…) ou le nom d'un texte précis.";
 
 function createForcedIntentInternal(kind, signal = 'response_first_default') {
   const intent = createIntent();
@@ -326,8 +327,18 @@ function routeQuestionInternal(question, session, options = {}) {
       return responseFirstRoute;
     }
 
+    // Question sans aucun signal exploitable (ni theme, ni texte, ni suivi) :
+    // message honnete plutot que le menu generique Liste/Nombre/Analyse.
+    const isNoTopicFallback = Array.isArray(intent.signals)
+      && intent.signals.includes('fallback_clarify')
+      && !scope.isFollowUp
+      && scope.source === 'depute_all';
     const clarifyMessage = scope.clarification
-      || (intent.reason === 'needs_context' ? 'De quel vote parlez-vous ?' : MODE_CLARIFICATION_MESSAGE);
+      || (intent.reason === 'needs_context'
+        ? 'De quel vote parlez-vous ?'
+        : isNoTopicFallback
+          ? NO_TOPIC_CLARIFICATION_MESSAGE
+          : MODE_CLARIFICATION_MESSAGE);
     const clarificationKind = intent.reason === 'needs_mode'
       ? 'mode'
       : scope.clarification

@@ -959,6 +959,21 @@
       "theme": "ecologie"
     }
   },
+  "q1336": {
+    "expected_scope_filters": {
+      "theme": "ecologie"
+    }
+  },
+  "q1337": {
+    "expected_scope_filters": {
+      "theme": "fin de vie"
+    }
+  },
+  "q1338": {
+    "expected_scope_filters": {
+      "theme": "logement"
+    }
+  },
   "q1334": {
     "expected_scope_filters": {
       "theme": "sante"

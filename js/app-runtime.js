@@ -612,8 +612,11 @@ const executeDeterministicRoute = createDeterministicRouteExecutor({
   resolveScopeVotes: resolveDeterministicScopeVotes,
   shouldClarifyLargeList,
   thematicStanceExampleLimit: THEMATIC_STANCE_EXAMPLE_LIMIT,
+  themeKeywords: THEME_KEYWORDS,
+  lookupVoteIndexText,
   findDossierByQuery: queryText => dossiersRepository.findDossierByQuery(queryText),
-  loadDossierFiche: dossierId => dossiersRepository.loadFiche(dossierId)
+  loadDossierFiche: dossierId => dossiersRepository.loadFiche(dossierId),
+  getFicheForVote: voteNumero => dossiersRepository.getFicheForVote(voteNumero)
 });
 
 function updateSessionFromResult(session, result) {
