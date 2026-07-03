@@ -34,16 +34,18 @@ from bs4 import BeautifulSoup
 ANALYSIS_VERSION = 1
 FICHE_SCHEMA_VERSION = 1
 
+# Les variables de workflow non definies arrivent en CHAINE VIDE (pas absentes) :
+# `or` applique le defaut dans les deux cas.
 # call_llm ajoute lui-meme /chat/completions : on tolere une URL complete
 # (comme dans les exemples NVIDIA) en retirant ce suffixe s'il est present.
 API_BASE_URL = re.sub(
     r"/chat/completions/?$",
     "",
-    os.environ.get("ANALYSIS_API_BASE_URL", "https://integrate.api.nvidia.com/v1").rstrip("/"),
+    (os.environ.get("ANALYSIS_API_BASE_URL") or "https://integrate.api.nvidia.com/v1").rstrip("/"),
 ).rstrip("/")
-API_MODEL = os.environ.get("ANALYSIS_API_MODEL", "minimaxai/minimax-m3")
+API_MODEL = os.environ.get("ANALYSIS_API_MODEL") or "minimaxai/minimax-m3"
 API_KEY = os.environ.get("ANALYSIS_API_KEY", "")
-API_PROVIDER_LABEL = os.environ.get("ANALYSIS_API_PROVIDER", "nvidia-nim")
+API_PROVIDER_LABEL = os.environ.get("ANALYSIS_API_PROVIDER") or "nvidia-nim"
 
 FICHIER_INDEX_DOSSIERS = "./public/data/dossiers/index.json"
 DIR_FICHES = "./public/data/dossiers/fiches"
@@ -53,7 +55,7 @@ SOURCE_TEXT_MAX_CHARS = 15000
 LLM_MAX_TOKENS = 8192
 # Extraction factuelle de JSON structure : temperature basse par defaut
 # (1.0 est le reglage « creatif » des exemples NVIDIA, inadapte ici).
-LLM_TEMPERATURE = float(os.environ.get("ANALYSIS_API_TEMPERATURE", "0.2"))
+LLM_TEMPERATURE = float(os.environ.get("ANALYSIS_API_TEMPERATURE") or "0.2")
 HTTP_TIMEOUT_SECONDS = 60
 MAX_RETRIES = 5
 
@@ -225,6 +227,9 @@ def call_llm(messages, limiter: RateLimiter, session: requests.Session) -> str:
         limiter.wait()
         try:
             response = session.post(url, json=payload, headers=headers, timeout=HTTP_TIMEOUT_SECONDS)
+        except (requests.exceptions.MissingSchema, requests.exceptions.InvalidURL) as error:
+            # Erreur de configuration, pas d'erreur reseau : inutile de reessayer.
+            raise AuthError(f"URL API invalide ({url}) : {error}")
         except requests.RequestException as error:
             if attempt == MAX_RETRIES:
                 raise
@@ -428,6 +433,10 @@ def main():
         log("ANALYSIS_API_KEY absent : rien à faire (configurer le secret pour activer les fiches).")
         rebuild_fiches_index()
         return
+
+    if not API_BASE_URL.startswith(("http://", "https://")):
+        log(f"❌ ANALYSIS_API_BASE_URL invalide : « {API_BASE_URL} » (une URL http(s) est attendue).")
+        sys.exit(1)
 
     index = load_dossiers_index()
     if index is None:

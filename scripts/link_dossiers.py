@@ -232,8 +232,14 @@ def build_dossier_record(payload: dict) -> dict:
     procedure = ((payload.get("procedureParlementaire") or {}).get("libelle")) or ""
     actes = collect_actes_metadata(payload)
 
+    # L'export de la legislature courante contient des dossiers herites de la
+    # precedente (uid DLR5L16N...) : l'URL AN doit porter LEUR legislature,
+    # sinon la page repond 503.
+    uid = str(payload.get("uid") or "").strip()
+    uid_legislature_match = re.search(r"L(\d+)N", uid)
+    dossier_legislature = uid_legislature_match.group(1) if uid_legislature_match else LEGISLATURE
     an_url = (
-        f"https://www.assemblee-nationale.fr/dyn/{LEGISLATURE}/dossiers/{titre_chemin}"
+        f"https://www.assemblee-nationale.fr/dyn/{dossier_legislature}/dossiers/{titre_chemin}"
         if titre_chemin
         else ""
     )
