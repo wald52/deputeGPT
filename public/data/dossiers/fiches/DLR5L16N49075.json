@@ -1,0 +1,42 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L16N49075",
+ "generatedAt": "2026-07-03T06:13:14Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi visant à renforcer les prérogatives des officiers de l’état civil et du ministère public pour lutter contre les mariages simulés ou arrangés",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/16/dossiers/DLR5L16N49075",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b1583_texte-adopte-commission",
+  "legifrance": null
+ },
+ "objectifAffiche": "Renforcer les prérogatives des officiers de l'état civil et du ministère public pour lutter contre les mariages simulés ou arrangés, en s'appuyant sur une proposition de loi adoptée par le Sénat.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles de loi : seul l'en-tête administratif du dossier (titre, identifiant, procédure, statut, sommaire et liens de navigation) est présent. Aucun mécanisme concret (obligation, sanction, seuil, dérogation) ne peut être identifié, ce qui rend impossible toute évaluation des incitations produites par le texte.",
+ "pointsDeVigilance": [
+  "Le contenu substantiel du texte (exposé des motifs et articles) est absent de l'extrait fourni",
+  "Le texte est tronqué à 15000 caractères mais, en réalité, seul le squelette HTML du dossier législatif a été transmis",
+  "Sans accès aux articles, il est impossible de vérifier si les prérogatives accordées sont effectives ou simplement déclaratives"
+ ],
+ "themes": [
+  "mariage",
+  "état civil",
+  "ministère public",
+  "lutte contre les mariages simulés",
+  "droit civil"
+ ],
+ "scrutinsCles": [
+  "7577",
+  "7578",
+  "7579",
+  "7580"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:1cead83c2ec0e5a8e8092633ba2190fdde507a663c1bb479312ab1d82f7ad442"
+}

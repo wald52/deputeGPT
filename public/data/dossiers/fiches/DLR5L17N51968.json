@@ -1,0 +1,40 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N51968",
+ "generatedAt": "2026-07-03T06:15:00Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Améliorer l'accès au logement des travailleurs des services publics",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/acces_logement_travailleurs_services_publics_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0316_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à améliorer l'accès au logement des travailleurs des services publics. L'objectif affiché, tel qu'indiqué par le titre et l'identifiant DLR5L17N51968, est de faciliter le logement pour les agents des services publics.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un contenu binaire PDF (flux d'octets bruts commençant par '%PDF-1.7') sans aucun texte extractible concernant l'exposé des motifs ou les articles de la loi. Aucun mécanisme concret (obligation, taxe, subvention, dérogation, seuil, sanction) ne peut être identifié à partir de ce contenu. Il est donc impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou dans le sens opposé.",
+ "pointsDeVigilance": [
+  "Le contenu fourni est un fichier PDF brut non décodé, ne contenant aucun texte lisible relatif au dispositif législatif",
+  "Aucun article, alinéa ou exposé des motifs n'a pu être extrait du document",
+  "L'analyse des mécanismes concrets est impossible sans accès au texte décodé de la proposition de loi"
+ ],
+ "themes": [
+  "logement",
+  "travailleurs des services publics",
+  "accès au logement"
+ ],
+ "scrutinsCles": [
+  "4960",
+  "4961",
+  "4962",
+  "7408"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:70c9ddde11a9d9873693214fea6afbb00f4e082e2e3608912d69a0927bc36b75"
+}

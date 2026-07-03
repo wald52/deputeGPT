@@ -1,0 +1,42 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N52924",
+ "generatedAt": "2026-07-03T06:25:17Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Mettre en place un programme de soutien à l’innovation thérapeutique contre les cancers, les maladies rares et les maladies orphelines de l’enfant",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/_mettre_en_place_programme_de_soutien_innovation_therapeutique_contre_cancers_maladies_rares_et_orphelines_enfant_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0285_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Mettre en place un programme de soutien à l'innovation thérapeutique contre les cancers, les maladies rares et les maladies orphelines de l'enfant (proposition de loi ordinaire, en cours d'examen).",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel n'a pas été extrait (flux binaires /FlateDecode non décodés, aucune phrase lisible de l'exposé des motifs ni d'article n'apparaît dans le champ fourni). En l'absence de tout mécanisme concret identifiable (obligation, taxe, subvention, seuil, sanction, dérogation), il est impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou dans le sens opposé.",
+ "pointsDeVigilance": [
+  "Le 'texte officiel' transmis est un PDF brut non décodé : aucun article ni exposé des motifs n'est lisible.",
+  "Seuls les métadonnées du dossier législatif (titre, identifiant, procédure, statut) sont exploitables.",
+  "Une nouvelle tentative d'extraction du texte (OCR ou conversion PDF→texte) est nécessaire avant toute analyse de second ordre."
+ ],
+ "themes": [
+  "santé",
+  "innovation thérapeutique",
+  "cancers",
+  "maladies rares",
+  "pédiatrie"
+ ],
+ "scrutinsCles": [
+  "6569",
+  "6570",
+  "6571",
+  "6572"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:95628a8115439976f2ce8ccf3325ba7b4fc0d439167b1b5eab6e389c6149f0fb"
+}

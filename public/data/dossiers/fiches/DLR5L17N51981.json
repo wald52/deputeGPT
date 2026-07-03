@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N51981",
+ "generatedAt": "2026-07-03T06:18:02Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Renforcer la solidarité envers les retraités pauvres",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/renforcer_solidarite_envers_retraites_pauvres_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0308_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est intitulé « Renforcer la solidarité envers les retraités pauvres » (proposition de loi ordinaire). L'objectif affiché est d'améliorer la situation des retraités pauvres via des mécanismes de solidarité, mais l'exposé des motifs et les articles ne sont pas exploitables dans le document fourni (contenu binaire PDF illisible).",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le document fourni est un PDF dont le contenu textuel (exposé des motifs et articles) n'a pas pu être extrait : seuls des flux binaires compressés (FlateDecode) et des métadonnées de structure d'objets PDF sont visibles, sans aucun article ni dispositif législatif lisible. Aucun mécanisme concret (obligation, taxe, subvention, seuil, sanction) ne peut être identifié dans le texte fourni, ce qui empêche toute analyse de l'alignement entre les incitations créées et l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué à 15000 caractères mais surtout illisible (PDF binaire non décodé)",
+  "Aucun article n'a pu être extrait ni cité",
+  "L'identifiant DLR5L17N51981 et le titre sont les seules informations exploitables",
+  "Analyse impossible sans accès au texte décodé des articles"
+ ],
+ "themes": [
+  "retraites",
+  "pauvreté",
+  "solidarité",
+  "protection sociale"
+ ],
+ "scrutinsCles": [
+  "7352",
+  "7353",
+  "7354"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:d6ef9bff88c6ef4c210bd019feda8793e05dbbeb40de447a2bd5b9d5efc7a4ed"
+}

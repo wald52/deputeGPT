@@ -1,0 +1,42 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N52635",
+ "generatedAt": "2026-07-03T06:32:22Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi relatif à la restitution de biens culturels provenant d’États qui, du fait d’une appropriation illicite, en ont été privés",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N52635",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0280_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le projet de loi vise à organiser la restitution de biens culturels provenant d'États qui en ont été privés du fait d'une appropriation illicite. Il s'agit d'un texte de restitution patrimoniale, fondé sur le principe de réparation de spoliations.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel n'a pas été extrait (seuls des flux binaires et des balises d'objets PDF sont visibles). Aucun article, aucune disposition concrète et aucune citation exploitable ne peuvent être identifiés dans le contenu transmis. En l'absence de mécanismes vérifiables tirés du texte, il est impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou s'en écartent.",
+ "pointsDeVigilance": [
+  "Le contenu transmis est un PDF brut non décodé, ne contenant aucun article lisible",
+  "L'exposé des motifs et les articles du projet de loi ne sont pas accessibles dans la chaîne fournie",
+  "Toute analyse de second ordre nécessiterait la version texte du projet de loi (exposé des motifs + articles)"
+ ],
+ "themes": [
+  "patrimoine culturel",
+  "restitution",
+  "biens culturels",
+  "spoliation",
+  "relations internationales"
+ ],
+ "scrutinsCles": [
+  "6177",
+  "6178",
+  "6179",
+  "6180"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:aec7555548e31e345270b115da1d3b20471b9bce94b084d1eb16a250eae7507e"
+}

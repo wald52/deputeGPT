@@ -1,0 +1,40 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L16N49868",
+ "generatedAt": "2026-07-03T06:29:42Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi de simplification de la vie économique",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/16/dossiers/DLR5L16N49868",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0273_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est identifié comme un 'Projet de loi de simplification de la vie économique' (procédure ordinaire, statut promulgue). L'objectif affiché, tel que suggéré par le titre, est de simplifier les démarches et contraintes administratives pesant sur les acteurs économiques.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le document fourni est un fichier PDF brut (contenant des flux binaires d'objets PDF, des streams compressés et des métadonnées techniques) et non le texte législatif lui-même. Aucun article, aucun exposé des motifs, aucune disposition concrète (obligation, taxe, subvention, seuil, sanction) n'est lisible dans le contenu transmis. Il est donc impossible d'identifier des mécanismes ou de vérifier s'ils vont dans le sens de l'objectif affiché de simplification.",
+ "pointsDeVigilance": [
+  "Le contenu transmis est un PDF binaire illisible (flux d'objets PDF), et non le texte extrait du projet de loi.",
+  "Aucun article ni exposé des motifs n'a pu être extrait ou cité.",
+  "Le titre et l'identifiant du dossier sont les seules informations exploitables."
+ ],
+ "themes": [
+  "simplification administrative",
+  "vie économique",
+  "texte illisible"
+ ],
+ "scrutinsCles": [
+  "2458",
+  "6182",
+  "6183",
+  "6184"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:54ee17311f5b4ad2bfbb7446310df397a4f0c3966d287a77a7d0016077615e78"
+}

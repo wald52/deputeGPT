@@ -1,0 +1,40 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N54227",
+ "generatedAt": "2026-07-03T06:22:56Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Protéger les enfants et lutter contre les violences en milieu scolaire",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/_proteger_enfants_et_lutter_contre_les_violences_en_milieu_scolaire_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0294_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire intitulée « Protéger les enfants et lutter contre les violences en milieu scolaire ». L'objectif affiché est de renforcer la protection des enfants et de lutter contre les violences en milieu scolaire.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel a été corrompu ou n'a pas été extrait (seuls des flux binaires et des balises PDF apparaissent). Aucun article, aucun mécanisme concret (obligation, taxe, subvention, seuil, sanction) et aucun passage de l'exposé des motifs ne peuvent être identifiés dans le contenu exploitable. Il est donc impossible de déterminer si les incitations créées par les mécanismes vont dans le sens de l'objectif affiché ou dans le sens opposé.",
+ "pointsDeVigilance": [
+  "Le contenu textuel du PDF n'a pas été extrait : le champ « TEXTE OFFICIEL » ne contient que des métadonnées et flux binaires PDF illisibles.",
+  "Aucun article ni aucun extrait de l'exposé des motifs n'est disponible pour analyse.",
+  "L'identifiant DLR5L17N54227 et le titre ne suffisent pas, à eux seuls, à caractériser les mécanismes du texte."
+ ],
+ "themes": [
+  "protection de l'enfance",
+  "violences scolaires",
+  "éducation"
+ ],
+ "scrutinsCles": [
+  "7255",
+  "7256",
+  "7257",
+  "7258"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:94aa9799e841b6d19b56e244593038c79d600d947fc6194895da289a187ecda4"
+}

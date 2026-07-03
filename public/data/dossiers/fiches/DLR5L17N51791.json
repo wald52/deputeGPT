@@ -1,0 +1,40 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N51791",
+ "generatedAt": "2026-07-03T06:23:43Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi portant pérennisation du contrat de professionnalisation expérimental",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N51791",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0293_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Pérenniser le contrat de professionnalisation expérimental (Proposition de loi ordinaire, statut : promulgué).",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est un fichier PDF dont le contenu textuel est illisible (flux binaires / caractères corrompus). Aucun article, aucune disposition, aucun mécanisme concret ne peut être extrait ni cité. Il est donc impossible de déterminer si les incitations créées par le texte vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le document transmis est un PDF binaire dont le contenu n'a pas été décodé en texte lisible.",
+  "Aucun article ni exposé des motifs n'a pu être extrait du fichier fourni.",
+  "L'analyse de second ordre (mécanismes concrets vs. objectif affiché) ne peut être conduite sans accès au contenu normatif."
+ ],
+ "themes": [
+  "travail",
+  "formation professionnelle",
+  "contrat de professionnalisation"
+ ],
+ "scrutinsCles": [
+  "7036",
+  "7037",
+  "7038",
+  "7039"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:e7c528e09bcadb185d425bfc7939d757cb4e0feafb35bc8efb42878fad784a61"
+}

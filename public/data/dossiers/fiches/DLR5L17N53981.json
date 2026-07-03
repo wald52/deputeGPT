@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53981",
+ "generatedAt": "2026-07-03T06:21:47Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi portant transposition de l’avenant n°3 du 25 février 2026 au protocole d’accord du 10 novembre 2023 relatif à l’assurance chômage",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N53981",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0296_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est un projet de loi ordinaire visant à transposer l'avenant n°3 du 25 février 2026 au protocole d'accord du 10 novembre 2023 relatif à l'assurance chômage. L'objectif affiché est donc d'intégrer dans la loi française les nouvelles règles négociées par les partenaires sociaux sur le régime d'assurance chômage.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel n'a pas été extrait (seuls des flux binaires compressés et des balises d'objets PDF sont visibles). Aucun article, aucune disposition concrète et aucune citation exploitable ne peuvent être identifiés dans le contenu transmis. Il est donc impossible de déterminer les mécanismes créés par le texte ni de vérifier s'ils s'alignent avec l'objectif affiché de transposition de l'avenant à l'assurance chômage.",
+ "pointsDeVigilance": [
+  "Le document fourni est un PDF brut non décodé : le texte législatif (exposé des motifs et articles) n'est pas accessible.",
+  "Sans accès au contenu des articles, toute analyse de second ordre sur les incitations serait purement spéculative.",
+  "Il conviendrait de fournir une version texte (TXT/HTML) ou un PDF correctement extrait pour permettre l'analyse."
+ ],
+ "themes": [
+  "assurance chômage",
+  "transposition",
+  "droit du travail",
+  "dialogue social"
+ ],
+ "scrutinsCles": [
+  "6900",
+  "6901",
+  "6902",
+  "7260"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:98a44b1fe33e3a821072f52cea9e41193247d53614b84a4eea7299a8bf7347e1"
+}

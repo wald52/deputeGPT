@@ -1,0 +1,42 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N54006",
+ "generatedAt": "2026-07-03T06:24:42Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Pour une montagne vivante et souveraine",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/montagne_vivante_souveraine_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/montagne_vivante_souveraine_17e",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi intitulée « Pour une montagne vivante et souveraine », déposée par Jean-Pierre Vigier et plusieurs collègues, visant selon son titre à favoriser la vitalité et la souveraineté des territoires de montagne. L'exposé des motifs et le contenu des articles ne sont pas fournis dans le dossier transmis.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le dossier législatif fourni ne contient ni l'exposé des motifs ni le texte des articles de la proposition de loi n° 2595. Seules les métadonnées procédurales (dépôt, commission saisie au fond, rapport, procédure accélérée) sont disponibles. Sans accès aux dispositions substantielles du texte, il est impossible d'identifier les obligations, taxes, subventions, dérogations, seuils ou sanctions créés, et donc de déterminer si les incitations réelles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le texte officiel des articles et l'exposé des motifs ne sont pas inclus dans la trame fournie (tronquée à 15000 caractères, mais ne couvrant que les informations procédurales du dossier législatif).",
+  "Le titre « Pour une montagne vivante et souveraine » est suffisamment large pour recouvrir des objectifs potentiellement contradictoires (développement économique vs. protection environnementale, autonomie locale vs. normes nationales).",
+  "La procédure accélérée a été engagée par le Gouvernement le 12 mai 2026, ce qui limite le temps d'examen parlementaire.",
+  "102 amendements déposés en commission à l'Assemblée nationale et 167 amendements sur le texte de la commission suggèrent des débats substantiels dont le contenu n'est pas accessible."
+ ],
+ "themes": [
+  "montagne",
+  "aménagement du territoire",
+  "développement local",
+  "souveraineté"
+ ],
+ "scrutinsCles": [
+  "6642",
+  "6643",
+  "6644",
+  "6645"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:ddd19d01e1944137ae9b6b6bd868557a793fc3f03f80d446a33e1cb1b193bdd3"
+}

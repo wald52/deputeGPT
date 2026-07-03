@@ -1,0 +1,37 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53942",
+ "generatedAt": "2026-07-03T06:12:28Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi organique relatif au renforcement des juridictions criminelles",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N53942",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2908_texte-adopte-commission",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est un projet de loi organique relatif au renforcement des juridictions criminelles, déposé le 10 juin 2026. L'objectif affiché n'est pas exposé dans le contenu fourni (ni exposé des motifs, ni articles).",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs, ni articles, ni aucun dispositif législatif. Il s'agit uniquement de la page de garde du dossier législatif (titre, identifiant, procédure, statut et liens de navigation). Aucun mécanisme concret ne peut être identifié, ce qui rend toute analyse des incitations impossible.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué et ne contient que les métadonnées du dossier législatif",
+  "Aucun article ni exposé des motifs n'est disponible pour analyse",
+  "Le titre mentionne 'renforcement des juridictions criminelles' mais sans contenu, l'interprétation est impossible"
+ ],
+ "themes": [
+  "justice",
+  "juridictions criminelles",
+  "procédure pénale"
+ ],
+ "scrutinsCles": [
+  "7895"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:39678ed6c9ea458297e1841e6f4f2168cf6b1aaeafa2181cff91c9217b7940cd"
+}

@@ -1,0 +1,42 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53159",
+ "generatedAt": "2026-07-03T06:21:02Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi visant à améliorer les moyens d'action de l'Agence de gestion et de recouvrement des avoirs saisis et confisqués et à faciliter l'exercice des missions d'expert judiciaire",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N53159",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0299_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "La proposition de loi vise à améliorer les moyens d'action de l'Agence de gestion et de recouvrement des avoirs saisis et confisqués (AGRASC) et à faciliter l'exercice des missions d'expert judiciaire. L'objectif affiché est de renforcer l'efficacité de la gestion des avoirs saisis et confisqués ainsi que les conditions d'exercice des experts judiciaires.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient pas le contenu législatif exploitable : il s'agit d'un fichier PDF dont le contenu textuel n'a pas été extrait (seuls des flux binaires PDF et des fragments illisibles sont présents). Aucun article, aucun mécanisme concret (obligation, taxe, subvention, dérogation, seuil, sanction) ne peut être identifié ni cité. Il est donc impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou dans le sens opposé.",
+ "pointsDeVigilance": [
+  "Le texte officiel fourni est illisible : il s'agit d'un PDF brut dont les flux de contenu n'ont pas été décodés en texte.",
+  "Aucun article ni exposé des motifs n'est effectivement accessible dans la chaîne de caractères transmise.",
+  "L'analyse de second ordre (alignement entre objectif affiché et mécanismes) ne peut être conduite sans le contenu normatif."
+ ],
+ "themes": [
+  "agrasc",
+  "avoirs saisis et confisqués",
+  "expert judiciaire",
+  "justice",
+  "recouvrement"
+ ],
+ "scrutinsCles": [
+  "7291",
+  "7292",
+  "7293",
+  "7294"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:ad64891d6964df4ac9d0248ffcce4faafbe8f0368eb4ab5e4861e74625005d8c"
+}

@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53284",
+ "generatedAt": "2026-07-03T06:15:23Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Renforcer la sécurité, la rétention administrative et la prévention des risques d’attentat",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/retention_admin_prevention_attentats_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0315_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Renforcer la sécurité, la rétention administrative et la prévention des risques d'attentat (titre de la proposition de loi ordinaire).",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est un fichier PDF dont le contenu textuel n'a pas été extrait (seuls des objets PDF bruts et des flux binaires compressés sont visibles). Aucun article, aucune disposition, aucun exposé des motifs lisible n'est accessible dans les 15 000 caractères fournis. Il est donc impossible d'identifier des mécanismes concrets (obligations, taxes, sanctions, dérogations, seuils) et, a fortiori, de déterminer si les incitations créées vont dans le sens de l'objectif affiché ou dans un sens opposé.",
+ "pointsDeVigilance": [
+  "Le document transmis est illisible : il s'agit d'un PDF dont les streams ne sont pas décodés en texte.",
+  "Aucun article ni exposé des motifs n'a pu être extrait pour analyse.",
+  "Le titre et l'identifiant du dossier (DLR5L17N53284) sont les seules informations exploitables."
+ ],
+ "themes": [
+  "sécurité",
+  "rétention administrative",
+  "prévention du terrorisme",
+  "attentat"
+ ],
+ "scrutinsCles": [
+  "7402",
+  "7403",
+  "7404",
+  "7405"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:280a044acfa1b8c2b7cc151b23dc081f078581035a35c87ac4ac3c5870b62b7f"
+}

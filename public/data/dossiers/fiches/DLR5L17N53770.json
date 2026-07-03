@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53770",
+ "generatedAt": "2026-07-03T06:34:54Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Simplifier la gestion de la commande publique par les acheteurs publics et les opérateurs économiques",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/simplifier_gestion_commande_publique_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0269_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à simplifier la gestion de la commande publique, tant pour les acheteurs publics que pour les opérateurs économiques. L'objectif affiché est donc la simplification administrative et procédurale des marchés publics.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel a été remplacé par des flux binaires (opérateurs PDF /FlateDecode) sans extraction de texte. Aucun article, aucun mécanisme, aucune disposition concrète (obligation, seuil, dérogation, sanction, taxe, subvention) ne peut être identifié dans le contenu fourni. Il est donc impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché de simplification ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le contenu transmis est un PDF brut non décodé (flux d'objets PDF illisibles), empêchant toute analyse des articles.",
+  "Seuls le titre du dossier et l'identifiant législatif (DLR5L17N53770) sont exploitables.",
+  "L'exposé des motifs et le corps des articles ne sont pas accessibles dans la chaîne fournie.",
+  "Une analyse fiable nécessiterait la version texte (HTML/TXT) du dossier législatif."
+ ],
+ "themes": [
+  "commande publique",
+  "marchés publics",
+  "simplification administrative"
+ ],
+ "scrutinsCles": [
+  "6128",
+  "6129",
+  "6130",
+  "6131"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:f3fc4e8961e2d0ec55bd9ca77aa0bddb90347c93cf30aa5affe55ab514861235"
+}

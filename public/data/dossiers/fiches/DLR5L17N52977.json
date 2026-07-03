@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N52977",
+ "generatedAt": "2026-07-03T06:17:34Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Nationalisation d'ArcelorMittal France",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/nationalisation_arcelormittal_2025",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0309_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire visant la nationalisation d'ArcelorMittal France. L'objectif affiché, tel qu'indiqué par le titre et le statut, est le transfert au secteur public des actifs sidérurgiques d'ArcelorMittal présents sur le territoire français.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des caractères binaires et des fragments de flux compressés sont visibles). Aucun article, aucune disposition, aucun mécanisme concret (transfert de propriété, indemnisation, modalité de transfert, gouvernance, financement, calendrier) ne peut être identifié dans le contenu exploitable. En l'absence de toute lecture possible des articles, il est impossible de déterminer si les incitations créées par le texte vont dans le sens de l'objectif affiché (nationalisation effective) ou s'en écartent (par exemple via des dérogations, des exceptions, des compensations déséquilibrées). Le verdict est donc indéterminé.",
+ "pointsDeVigilance": [
+  "Le document fourni est un PDF binaire non décodé : le texte législatif (exposé des motifs et articles) n'est pas accessible.",
+  "Sans accès aux articles, aucune analyse de second ordre (mécanismes, incitations, effets) n'est possible.",
+  "Il conviendrait de fournir une version texte (TXT/HTML/XML) du dossier législatif pour mener l'analyse."
+ ],
+ "themes": [
+  "nationalisation",
+  "sidérurgie",
+  "industrie",
+  "propriété publique"
+ ],
+ "scrutinsCles": [
+  "7377",
+  "7378",
+  "7379",
+  "7380"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:4ed8096a728b0cf6ddadcf7fa4a0f157fe7dd1a27dc45d2690f6bfbe3d45a804"
+}

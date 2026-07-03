@@ -1,0 +1,40 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L16N49263",
+ "generatedAt": "2026-07-03T06:21:35Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Reconnaître la responsabilité de l’État et indemniser les victimes du chlordécone",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/16/dossiers/responsabilite_indemnisation_chlordecone",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0297_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à reconnaître la responsabilité de l'État et à indemniser les victimes du chlordécone, un pesticide utilisé dans les Antilles françaises. Il s'agit d'établir un mécanisme de réparation pour les préjudices sanitaires et environnementaux liés à cette contamination.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des objets PDF, des flux binaires compressés et des métadonnées techniques apparaissent). Aucun article, aucune disposition, aucun mécanisme concret (obligation, taxe, subvention, seuil, sanction, fonds d'indemnisation, critères d'éligibilité, etc.) ne peut être identifié ni cité. En l'absence de tout contenu exploitable des articles de loi et de l'exposé des motifs, il est impossible de déterminer si les incitations créées par le texte vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le document fourni est un PDF brut non décodé : le texte législatif (exposé des motifs et articles) n'est pas accessible.",
+  "Aucune référence d'article ni citation exploitable n'a pu être extraite.",
+  "Le titre et l'identifiant DLR5L16N49263 suggèrent une proposition de loi sur le chlordécone, mais le contenu normatif reste inconnu.",
+  "Une nouvelle tentative d'extraction du texte (OCR ou conversion PDF→texte) serait nécessaire pour mener l'analyse."
+ ],
+ "themes": [
+  "santé publique",
+  "environnement",
+  "responsabilité de l'état",
+  "indemnisation des victimes",
+  "chlordécone"
+ ],
+ "scrutinsCles": [
+  "7261"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:1e0ac0360e593942c78253d3a6bda3f739028221232349124c0f6d968aa8ef4f"
+}

@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53530",
+ "generatedAt": "2026-07-03T06:14:39Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Relancer les investissements dans le secteur de l’hydroélectricité pour contribuer à la transition énergétique",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/relancer_investissements_secteur_hydroelectricite_contribuer_transition_energetique_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0317_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Relancer les investissements dans le secteur de l'hydroélectricité pour contribuer à la transition énergétique (proposition de loi ordinaire, statut : promulgué).",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un flux binaire PDF (caractères binaires et flux compressés non décodés) sans aucun contenu textuel exploitable. Aucun article, aucun mécanisme, aucune disposition concrète ne peut être identifié ou cité. L'exposé des motifs et les articles sont inaccessibles dans la version transmise, ce qui empêche toute analyse de second ordre sur l'alignement entre les incitations créées et l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le contenu transmis est un PDF brut non décodé (flux binaires /FlateDecode), rendant impossible l'extraction du texte législatif.",
+  "Aucun article, seuil, obligation, taxe, subvention ou sanction n'a pu être référencé.",
+  "Le titre et l'identifiant du dossier (DLR5L17N53530) sont les seules informations fiables ; le contenu normatif est indisponible."
+ ],
+ "themes": [
+  "hydroélectricité",
+  "transition énergétique",
+  "investissement",
+  "énergie renouvelable"
+ ],
+ "scrutinsCles": [
+  "5352",
+  "5353",
+  "5354",
+  "7409"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:252cef1d241646e64f27e3e9e1c0f0f910b1614f5ae2bb4b0d16bd0fcdbe700c"
+}

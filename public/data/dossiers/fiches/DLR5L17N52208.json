@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N52208",
+ "generatedAt": "2026-07-03T06:26:03Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Accélérer le développement du transport maritime à propulsion vélique",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/accelerer_developpement_transport_maritime_propulsion_velique_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0283_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à accélérer le développement du transport maritime à propulsion vélique (navigation utilisant la force du vent). L'objectif affiché, tel qu'indiqué par le titre et l'identifiant du dossier législatif, est de favoriser le déploiement de navires à propulsion vélique dans le transport maritime.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est un fichier PDF dont le contenu textuel n'a pas pu être extrait (le flux apparaît comme des données binaires compressées/encodées illisibles). Aucun article, aucune disposition concrète, aucun mécanisme (obligation, taxe, subvention, seuil, sanction) n'est visible dans le texte fourni. Il est donc impossible de déterminer si les incitations créées par les mécanismes vont dans le sens de l'objectif affiché ou dans le sens opposé.",
+ "pointsDeVigilance": [
+  "Le contenu textuel du PDF n'a pas pu être extrait (flux binaire illisible)",
+  "Aucun article ni mécanisme concret n'est identifiable dans le texte fourni",
+  "L'analyse repose uniquement sur le titre et l'identifiant du dossier législatif, qui ne constituent pas le contenu normatif du texte"
+ ],
+ "themes": [
+  "transport maritime",
+  "propulsion vélique",
+  "développement durable",
+  "navigation à voile"
+ ],
+ "scrutinsCles": [
+  "6538",
+  "6539",
+  "6540",
+  "6541"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:4a64a21b6855818d731db3b226c0ffb10e00275e6ef9ea53b779b674fb43e3eb"
+}

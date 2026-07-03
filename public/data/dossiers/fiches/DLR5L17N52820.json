@@ -1,0 +1,42 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N52820",
+ "generatedAt": "2026-07-03T06:26:13Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Condamner la dérive illibérale et autoritaire du gouvernement géorgien et réaffirmer notre soutien au destin européen de la Géorgie",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/condamner_derive_illiberale_autoritaire_gouvernement_georgien_reaffirmer_soutien_destin_europeen_Georgie",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0282_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une résolution parlementaire française visant à condamner la dérive illibérale et autoritaire du gouvernement géorgien et à réaffirmer le soutien de la France au destin européen de la Géorgie.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel n'a pas été extrait (seules des balises PDF techniques et des flux binaires sont visibles). Aucun article, aucun mécanisme concret (obligation, sanction, subvention, dérogation) et aucune citation exploitable ne peuvent être identifiés dans le contenu fourni. Il est donc impossible de déterminer si les mécanismes créés vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le document fourni est un PDF brut dont le texte n'a pas été décodé (flux binaires illisibles)",
+  "Aucun article ni exposé des motifs n'est lisible dans le contenu transmis",
+  "L'analyse des mécanismes concrets est impossible sans le texte intégral et lisible de la résolution"
+ ],
+ "themes": [
+  "géorgie",
+  "résolution parlementaire",
+  "démocratie",
+  "union européenne",
+  "condamnation politique"
+ ],
+ "scrutinsCles": [
+  "6522",
+  "6523",
+  "6524",
+  "6525"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:f7cf7021865ccc4f36489169c996cc4af60ea54920e728355830a51c31c2fca4"
+}

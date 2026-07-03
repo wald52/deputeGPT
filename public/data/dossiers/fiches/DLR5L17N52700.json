@@ -1,0 +1,38 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N52700",
+ "generatedAt": "2026-07-03T06:19:43Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Évaluer précisément le coût réel et sociétal de l’insécurité routière et son impact sur les finances publiques",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/_evaluer_precisement_cout_reel_et_societal_de_insecurite_routiere_et_son_impact_sur_finances_publiques_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0304_texte-adopte-seance",
+  "legifrance": null
+ },
+ "objectifAffiche": "Résolution visant à évaluer précisément le coût réel et sociétal de l'insécurité routière ainsi que son impact sur les finances publiques, adoptée par l'Assemblée nationale le 4 juin 2026.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles. Seul le titre et les métadonnées de la résolution sont accessibles, ce qui ne permet pas d'identifier les mécanismes concrets (obligations, demandes de rapports, saisines, etc.) créés par le texte. En l'absence du contenu normatif, il est impossible de déterminer si les incitations vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué et ne contient que l'en-tête et les liens de navigation, sans aucun article ni exposé des motifs.",
+  "Une résolution au sens de l'article 34-1 de la Constitution est un acte non contraignant (simple vœu ou demande d'évaluation), ce qui limite la portée normative de toute analyse.",
+  "L'objectif affiché est évaluatif (mesurer un coût) et non directement prescriptif, ce qui rend l'analyse des 'incitations' particulièrement sensible au contenu manquant."
+ ],
+ "themes": [
+  "sécurité routière",
+  "finances publiques",
+  "évaluation",
+  "résolution parlementaire"
+ ],
+ "scrutinsCles": [
+  "7349"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:5bea1f3a7917e3bf8c087e3cee12e2674dfc813cc5119a6f929c3380dc3c2fe2"
+}

@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N54218",
+ "generatedAt": "2026-07-03T06:14:13Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi constitutionnelle pour une Corse autonome au sein de la République",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/projet_loi_constitutionnelle_pour_Corse_autonome_au_sein_Republique",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0318_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est un projet de loi constitutionnelle visant à instituer une Corse autonome au sein de la République française. L'objectif affiché est de faire évoluer le statut constitutionnel de la Corse vers davantage d'autonomie, dans le cadre de la République.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel n'a pas été extrait (seuls des flux binaires PDF bruts sont visibles, sans aucun article, alinéa ou exposé des motifs déchiffrable). Aucun mécanisme concret (obligation, dérogation, transfert de compétence, création d'organe, etc.) ne peut être identifié ni cité. En l'absence totale de contenu normatif exploitable, il est impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le document fourni est un PDF binaire non décodé : aucun article ni exposé des motifs n'est lisible.",
+  "L'identifiant DLR5L17N54218 et le titre du dossier suggèrent un texte sur l'autonomie de la Corse, mais le contenu normatif réel n'est pas accessible.",
+  "Toute analyse de second ordre (alignement des incitations avec l'objectif) est impossible sans le texte des articles."
+ ],
+ "themes": [
+  "autonomie territoriale",
+  "corse",
+  "révision constitutionnelle",
+  "organisation de la république"
+ ],
+ "scrutinsCles": [
+  "7429",
+  "7430",
+  "7431",
+  "7454"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:ab726a4700ba66eb6ec40b96aeec88368dec2f70bb34476484a55ba8112f8998"
+}

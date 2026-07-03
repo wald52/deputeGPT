@@ -1,0 +1,42 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N54085",
+ "generatedAt": "2026-07-03T06:22:19Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi d’urgence pour la protection et la souveraineté agricoles",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/projet_loi_urgence_pour_protection_et_souverainete_agricoles",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0295_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est identifié comme un 'Projet de loi d'urgence pour la protection et la souveraineté agricoles'. L'objectif affiché, tel que suggéré par le titre, est de protéger l'agriculture française et d'assurer la souveraineté agricole nationale via une procédure d'urgence.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est un fichier PDF dont le contenu textuel n'a pas été extrait correctement : il ne contient que des métadonnées techniques PDF (flux binaires compressés, objets, références croisées) et aucun article de loi, aucun exposé des motifs, ni aucune disposition lisible. Sans accès au contenu normatif (articles, obligations, sanctions, dérogations), il est impossible d'identifier des mécanismes concrets et donc de déterminer si les incitations créées vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le contenu du PDF n'a pas été décodé : seuls les en-têtes et flux binaires sont visibles.",
+  "Aucun article, alinéa ou exposé des motifs n'est lisible dans la chaîne fournie.",
+  "Le titre et l'identifiant DLR5L17N54085 sont les seules informations exploitables.",
+  "Une analyse de second ordre nécessite la lecture du dispositif normatif, ici indisponible."
+ ],
+ "themes": [
+  "agriculture",
+  "souveraineté alimentaire",
+  "loi d'urgence",
+  "texte illisible"
+ ],
+ "scrutinsCles": [
+  "7206",
+  "7207",
+  "7208",
+  "7259"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:d45af4cadb96526255c1ac83e509f83dacea00fd4812bfab1e0250abb0725f25"
+}

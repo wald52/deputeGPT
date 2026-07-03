@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53418",
+ "generatedAt": "2026-07-03T06:20:30Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Protéger l’alimentation des Français et des Françaises des contaminations au cadmium",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/_proteger_alimentation_francais_et_francaises_des_contaminations_au_cadmium_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2430_texte-adopte-commission",
+  "legifrance": null
+ },
+ "objectifAffiche": "Proposition de loi ordinaire visant à protéger l'alimentation des Français et des Françaises des contaminations au cadmium, déposée par M. Benoît Biteau et plusieurs collègues.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni ne contient ni exposé des motifs ni articles : seul l'en-tête du dossier législatif (titre, identifiant, procédure, statut et sommaire de navigation) est disponible. Aucun mécanisme concret (obligation, seuil, sanction, dérogation) ne peut être identifié ni analysé.",
+ "pointsDeVigilance": [
+  "Le texte fourni est tronqué et ne contient pas le contenu substantiel de la proposition de loi (ni exposé des motifs, ni articles).",
+  "Impossible d'évaluer les incitations réelles sans accès au dispositif proposé.",
+  "Le statut 'en cours' indique que le texte peut encore évoluer (amendements, modifications en commission)."
+ ],
+ "themes": [
+  "sécurité alimentaire",
+  "contamination",
+  "cadmium",
+  "santé publique"
+ ],
+ "scrutinsCles": [
+  "7300",
+  "7301",
+  "7302",
+  "7303"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:8285f15ec6cff7679253bc2596925859267131d117df880d80c4be435328ae43"
+}

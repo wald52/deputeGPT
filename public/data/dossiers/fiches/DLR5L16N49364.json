@@ -1,0 +1,38 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L16N49364",
+ "generatedAt": "2026-07-03T06:13:37Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Réduire l’impact environnemental de l’industrie textile",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/16/dossiers/impact_environnemental_industrie_textile",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0321_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire intitulée « Réduire l'impact environnemental de l'industrie textile ». L'objectif affiché est de diminuer l'empreinte écologique du secteur textile français.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est un fichier PDF dont le contenu textuel n'a pas pu être extrait (le flux apparaît comme des données binaires compressées/illisibles). Aucun article, aucune disposition concrète, aucun mécanisme (obligation, taxe, seuil, sanction, dérogation) n'a pu être identifié dans le contenu exploitable. En l'absence de toute lecture des articles et de l'exposé des motifs, il est impossible de déterminer si les incitations créées par le texte vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le document fourni est un PDF binaire dont le texte n'a pas été extrait : seuls les en-têtes de métadonnées et des flux de données compressées sont visibles.",
+  "Aucun article ni exposé des motifs n'a pu être lu ; l'analyse de second ordre est donc impossible sur la base du texte transmis.",
+  "Il conviendrait de fournir une version texte (OCR ou copie du texte brut) du dossier législatif pour permettre une analyse des mécanismes."
+ ],
+ "themes": [
+  "industrie textile",
+  "environnement",
+  "texte illisible"
+ ],
+ "scrutinsCles": [
+  "7493",
+  "7494"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:7591f3bb857cf9cdddbebb5e59cd993dcdd166d3938232eb7a3c1fa4721e0bd0"
+}

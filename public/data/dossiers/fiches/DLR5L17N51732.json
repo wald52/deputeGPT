@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N51732",
+ "generatedAt": "2026-07-03T06:12:45Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi relative à l'organisation, à la gestion et au financement du sport professionnel",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N51732",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0322_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Proposition de loi ordinaire relative à l'organisation, à la gestion et au financement du sport professionnel (texte tronqué, exposé des motifs non lisible).",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est un fichier PDF binaire dont le contenu textuel n'a pas été extrait (flux d'octets illisibles, aucun article ni exposé des motifs déchiffrable). Sans accès au contenu normatif, il est impossible d'identifier des mécanismes concrets (obligations, taxes, dérogations, sanctions) ni de les confronter à un objectif affiché vérifiable.",
+ "pointsDeVigilance": [
+  "Le document transmis est un PDF brut dont le contenu textuel n'a pas été décodé (caractères binaires/illisibles).",
+  "Aucun article, alinéa ou exposé des motifs n'est exploitable.",
+  "L'identifiant DLR5L17N51732 et le titre suggèrent un texte sur le sport professionnel, mais sans contenu, aucune analyse de second ordre n'est possible."
+ ],
+ "themes": [
+  "sport professionnel",
+  "organisation",
+  "gestion",
+  "financement"
+ ],
+ "scrutinsCles": [
+  "7890",
+  "7891",
+  "7892",
+  "7893"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:db2751576da94228f7550caa2a2a8067647e8e16793330c7d8a2098dfa079e06"
+}

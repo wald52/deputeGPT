@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N51775",
+ "generatedAt": "2026-07-03T06:20:16Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Garantir l'interdiction de la vaisselle en plastique dans la restauration collective accueillant du jeune public et liée à la petite enfance",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/interdiction_vaisselle_plastique_17",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0301_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte vise à garantir l'interdiction de la vaisselle en plastique dans la restauration collective accueillant du jeune public et liée à la petite enfance, selon le titre du dossier législatif.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel a été corrompu ou mal extrait (caractères binaires, flux de données non décodables). Aucun article, aucune disposition concrète et aucune citation exploitable ne peuvent être identifiés dans le contenu fourni. Il est donc impossible de déterminer les mécanismes créés par le texte ni de vérifier si les incitations vont dans le sens de l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le contenu du texte officiel est inexploitable (PDF binaire non décodé)",
+  "Seul le titre et l'identifiant du dossier législatif sont exploitables",
+  "Aucun article ni exposé des motifs n'a pu être extrait pour analyse"
+ ],
+ "themes": [
+  "restauration collective",
+  "plastique",
+  "petite enfance",
+  "environnement"
+ ],
+ "scrutinsCles": [
+  "7310",
+  "7311",
+  "7312",
+  "7313"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:7ac3db6e1fe7f7ae70cf168326b314c9ced1c04104dd5feee8faf54bb1306a00"
+}

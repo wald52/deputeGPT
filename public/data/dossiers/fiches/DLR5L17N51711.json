@@ -1,0 +1,42 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N51711",
+ "generatedAt": "2026-07-03T06:35:44Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Renforcer la pénalisation de l’organisation de rave-parties",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/penalisation_rave_party_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0268_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Renforcer la pénalisation de l'organisation de rave-parties (proposition de loi ordinaire visant à aggraver les sanctions contre les organisateurs de ces rassemblements festifs non déclarés).",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel n'a pas été extrait (seuls des objets PDF bruts et des flux binaires compressés/non décodables sont visibles). Aucun article, aucune disposition, aucun mécanisme concret ne peut être identifié dans le contenu exploitable. En l'absence de texte lisible, il est impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le document fourni est un PDF binaire dont le flux de texte n'a pas été décodé : aucun article ni exposé des motifs n'est lisible.",
+  "Seuls le titre du dossier et l'identifiant législatif (DLR5L17N51711) sont exploitables.",
+  "Une analyse de second ordre sur les mécanismes concrets est impossible sans accès au texte normatif."
+ ],
+ "themes": [
+  "sécurité",
+  "ordre public",
+  "pénal",
+  "festivités",
+  "rave-parties"
+ ],
+ "scrutinsCles": [
+  "6121",
+  "6122",
+  "6123",
+  "6124"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:005a31cd4de54945044faec911764739d749fc9199a61a503f3159ef01ae2acb"
+}

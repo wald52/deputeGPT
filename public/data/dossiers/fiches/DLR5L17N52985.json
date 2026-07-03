@@ -1,0 +1,40 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N52985",
+ "generatedAt": "2026-07-03T06:26:59Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi relatif à la lutte contre les fraudes sociales et fiscales",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N52985",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0279_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est identifié comme un 'Projet de loi relatif à la lutte contre les fraudes sociales et fiscales' (DLR5L17N52985), promulgué. L'objectif affiché est donc de renforcer la lutte contre les fraudes sociales et fiscales.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des objets PDF, des flux binaires compressés et des métadonnées techniques sont visibles). Aucun article, aucun mécanisme, aucune disposition concrète ne peut être identifié ni cité. Il est donc impossible de déterminer si les incitations créées par les mécanismes vont dans le sens de l'objectif affiché ou dans le sens opposé.",
+ "pointsDeVigilance": [
+  "Le contenu textuel du PDF n'a pas été décodé : le bloc fourni contient uniquement des en-têtes et flux PDF (x��..., endstream, endobj) sans texte lisible.",
+  "Aucun article, alinéa ou citation exploitable n'a pu être extrait du document.",
+  "L'identifiant DLR5L17N52985 et le titre permettent d'identifier le texte, mais l'analyse de second ordre exige la lecture des articles, ce qui est impossible ici."
+ ],
+ "themes": [
+  "fraude sociale",
+  "fraude fiscale",
+  "lutte contre la fraude"
+ ],
+ "scrutinsCles": [
+  "6020",
+  "6021",
+  "6023",
+  "6319"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:a4d6484506e42a6cd59b918e18ce760e351ac1fcffbefb31fee66314f41093f7"
+}

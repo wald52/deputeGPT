@@ -1,0 +1,42 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N52230",
+ "generatedAt": "2026-07-03T06:27:32Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi visant à garantir le droit de visite des parlementaires et des bâtonniers dans les lieux de privation de liberté",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N52230",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0276_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Garantir le droit de visite des parlementaires et des bâtonniers dans les lieux de privation de liberté. Il s'agit d'une proposition de loi ordinaire visant à renforcer le contrôle démocratique et juridictionnel de ces lieux en assurant un accès effectif à ces autorités.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des flux binaires et des balises d'objets PDF sont visibles). Aucun article, aucun mécanisme, aucune disposition concrète ne peut être identifié dans le contenu transmis. Il est donc impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le contenu textuel du texte officiel n'a pas pu être extrait du PDF fourni",
+  "Aucun article ni mécanisme n'est lisible dans le document transmis",
+  "L'analyse des mécanismes concrets et de leur alignement avec l'objectif nécessite un texte exploitable"
+ ],
+ "themes": [
+  "droits des parlementaires",
+  "droits des bâtonniers",
+  "lieux de privation de liberté",
+  "contrôle démocratique",
+  "contrôle juridictionnel"
+ ],
+ "scrutinsCles": [
+  "5854",
+  "5855",
+  "5856",
+  "6285"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:e5ef4187cc4117cd101fb27236616d9006025126fe82891e46c21af30cf25379"
+}

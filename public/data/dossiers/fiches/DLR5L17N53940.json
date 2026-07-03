@@ -1,0 +1,48 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53940",
+ "generatedAt": "2026-07-03T06:11:08Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi sur la justice criminelle et le respect des victimes",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N53940",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2681_projet-loi",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le titre du texte indique un objectif de réforme de la justice criminelle et de renforcement du respect des victimes. L'exposé des motifs n'est pas fourni dans le texte transmis.",
+ "mecanismesCles": [
+  {
+   "resume": "Aucun mécanisme concret n'a pu être identifié : le texte fourni ne contient ni exposé des motifs, ni articles, ni dispositions analysables.",
+   "articleRef": null,
+   "citation": null
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte transmis se limite à la page de garde du dossier législatif (titre, identifiant, procédure, statut, liens de navigation). Aucun article, aucune disposition, aucun exposé des motifs n'est présent dans les 15000 caractères fournis. Il est donc impossible d'identifier des mécanismes concrets (obligations, taxes, sanctions, dérogations) et, a fortiori, de déterminer si les incitations créées vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le texte fourni est tronqué à un en-tête administratif sans contenu normatif.",
+  "L'exposé des motifs, nécessaire pour formuler l'objectif affiché, est absent.",
+  "Aucun article n'est disponible pour analyser les mécanismes.",
+  "Le statut 'en_cours' indique que le texte pourrait encore évoluer, ce qui renforce l'impossibilité d'une analyse figée."
+ ],
+ "themes": [
+  "justice",
+  "criminel",
+  "victimes",
+  "procédure législative"
+ ],
+ "scrutinsCles": [
+  "7929",
+  "7930",
+  "7931",
+  "7932"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:618b45919b7e378ecd3f2f7876040ebdf3e7183869724a3355b8a3a1020f1040"
+}

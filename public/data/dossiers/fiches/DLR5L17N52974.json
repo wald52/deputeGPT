@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N52974",
+ "generatedAt": "2026-07-03T06:16:14Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Réformer les bourses sur critères sociaux et lutter contre la précarité étudiante",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/reformer_bourses_criteres_sociaux_lutter_precarite_etudiante_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b1960_proposition-loi",
+  "legifrance": null
+ },
+ "objectifAffiche": "Réformer les bourses sur critères sociaux et lutter contre la précarité étudiante. Proposition de loi ordinaire n°1960 déposée le 14 octobre 2025, renvoyée en commission des affaires culturelles et de l'éducation.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles. Seuls figurent l'identifiant, le titre, la procédure et la commission de renvoi. Aucun mécanisme concret (obligation, seuil, montant, sanction, dérogation) ne peut être extrait du dossier, ce qui empêche toute analyse de l'alignement entre les incitations créées et l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Dossier législatif tronqué : absence totale de l'exposé des motifs et du dispositif",
+  "Impossible d'identifier les critères d'éligibilité, les barèmes ou les montants proposés",
+  "Statut 'en_cours' : le texte peut encore évoluer via amendements"
+ ],
+ "themes": [
+  "enseignement supérieur",
+  "bourses étudiantes",
+  "précarité étudiante",
+  "aides sociales"
+ ],
+ "scrutinsCles": [
+  "7394",
+  "7395",
+  "7396",
+  "7397"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:22c7f190b0ead2ad60157dfd7cbf8f215b996ac7f0b065b179fbec5f7731e04d"
+}

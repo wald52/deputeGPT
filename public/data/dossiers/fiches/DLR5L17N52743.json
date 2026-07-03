@@ -1,0 +1,42 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N52743",
+ "generatedAt": "2026-07-03T06:25:38Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Garantir l’information et la protection effective des victimes de violences sexuelles lors de la libération de leur agresseur",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/information_protection_victimes_violences_sexuelles_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0284_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte vise à garantir l'information et la protection effective des victimes de violences sexuelles lors de la libération de leur agresseur, en instaurant un droit à l'information des victimes sur la sortie de prison de leur agresseur.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est un fichier PDF dont le contenu textuel n'a pas pu être extrait (seuls des flux binaires et des métadonnées PDF sont visibles). Aucun article, aucune disposition ni aucun mécanisme concret ne peut être identifié dans le contenu exploitable fourni. Il est donc impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le contenu du PDF n'a pas été décodé : seuls les objets structuraux du PDF (streams compressés, métadonnées) sont visibles, sans texte lisible des articles de loi.",
+  "Aucun article, alinéa ou dispositif opérationnel n'est accessible dans les 15 000 caractères fournis.",
+  "L'exposé des motifs et le contenu normatif réel du texte ne peuvent pas être analysés."
+ ],
+ "themes": [
+  "violences sexuelles",
+  "droits des victimes",
+  "information des victimes",
+  "libération conditionnelle",
+  "procédure pénale"
+ ],
+ "scrutinsCles": [
+  "6560",
+  "6561",
+  "6562",
+  "6563"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:3103c37c13a2b370fa7d273876744f86a68b03b9db9d141d35928b5c141d6f65"
+}

@@ -1,0 +1,38 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N54196",
+ "generatedAt": "2026-07-03T06:18:46Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi relative aux résultats de la gestion et portant approbation des comptes de l'année 2025",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/resultats_gestion_approbation_comptes_2025",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0306_texte-adopte-seance",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est un projet de loi relatif aux résultats de la gestion et portant approbation des comptes de l'année 2025. Il s'agit d'un texte budgétaire classique de fin d'exercice, visant à constater les résultats financiers de l'État pour 2025 et à approuver formellement les comptes de cette année.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles : seule la page de sommaire du dossier législatif (T.A. n° 306) est accessible, avec des liens de navigation et des métadonnées (commission des finances, 17e législature). Aucun mécanisme concret (obligation, taxe, subvention, seuil, sanction) ne peut être identifié dans le contenu transmis, ce qui rend impossible toute évaluation des incitations produites par le texte.",
+ "pointsDeVigilance": [
+  "Le texte officiel a été tronqué à 15000 caractères mais, en réalité, seul l'en-tête et le sommaire du dossier législatif ont été fournis, sans aucun article ni exposé des motifs.",
+  "Le projet de loi a été rejeté par l'Assemblée nationale le 9 juin 2026 après engagement de la procédure accélérée, ce qui soulève la question de l'absence d'entrée en vigueur.",
+  "Sans accès au contenu normatif, aucune analyse de second ordre sur l'alignement entre objectifs affichés et mécanismes réels ne peut être conduite."
+ ],
+ "themes": [
+  "finances publiques",
+  "approbation des comptes",
+  "loi de règlement",
+  "gestion budgétaire"
+ ],
+ "scrutinsCles": [
+  "7350"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:99897edf4e95e3e7b165e0a491d975876da6090d07c86909e97d1b06d56796b7"
+}

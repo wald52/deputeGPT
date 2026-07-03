@@ -1,0 +1,40 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N54083",
+ "generatedAt": "2026-07-03T06:11:29Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi actualisant la programmation militaire pour les années 2024 à 2030 et portant diverses dispositions intéressant la défense",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/PJL_actualisation_loi_programmation_militaire_annees_2024_2030_diverses_dispositions_defense",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0325_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est un projet de loi actualisant la programmation militaire pour les années 2024 à 2030 et portant diverses dispositions intéressant la défense. L'objectif affiché, tel que suggéré par le titre, est de planifier et financer les moyens de la défense nationale sur la période 2024-2030.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des objets PDF et des flux binaires compressés sont visibles). Aucun article, aucun mécanisme, aucune disposition concrète ne peut être identifié dans le contenu exploitable. Il est donc impossible de déterminer si les incitations créées par les mécanismes vont dans le sens de l'objectif affiché ou dans un sens opposé.",
+ "pointsDeVigilance": [
+  "Le document fourni est un PDF binaire dont le texte n'a pas été extrait ; aucun article ni exposé des motifs n'est lisible.",
+  "Sans accès au contenu normatif du texte (articles, crédits budgétaires, seuils, sanctions), toute analyse de second ordre est impossible.",
+  "Il conviendrait de fournir une version texte (TXT ou HTML) du projet de loi pour permettre l'analyse."
+ ],
+ "themes": [
+  "défense",
+  "programmation militaire",
+  "budget"
+ ],
+ "scrutinsCles": [
+  "6734",
+  "6735",
+  "6736",
+  "7905"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:7715808f0fc5e515b454e2f701e39181a0786efcb4c0f1220f36483011992f5d"
+}

@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53600",
+ "generatedAt": "2026-07-03T06:15:52Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi portant habilitation de l’assemblée de Martinique à fixer elle-même des règles applicables sur son territoire en application de l’article 73 de la Constitution en matière d’énergie, d’eau et d’assainissement",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N53600",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0314_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le projet de loi vise à habiliter l'assemblée de Martinique à fixer elle-même, en application de l'article 73 de la Constitution, les règles applicables sur son territoire en matière d'énergie, d'eau et d'assainissement. Il s'agit d'un texte d'habilitation permettant l'adaptation normative locale dans ces trois domaines.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des flux binaires et des balises d'objets PDF sont visibles). Aucun article, aucune disposition concrète et aucun exposé des motifs ne peuvent être lus dans le contenu transmis. En l'absence de tout mécanisme identifiable (obligations, taxes, subventions, dérogations, seuils, sanctions), il est impossible de déterminer si les incitations créées par le texte vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le contenu textuel du PDF n'a pas été décodé : le dossier législatif transmis ne contient pas de texte exploitable.",
+  "Sans accès aux articles ni à l'exposé des motifs, aucune analyse de second ordre n'est possible.",
+  "Le titre seul indique une habilitation à adapter localement les règles en énergie, eau et assainissement, mais le contenu normatif réel reste inconnu."
+ ],
+ "themes": [
+  "collectivités territoriales",
+  "énergie",
+  "eau",
+  "assainissement",
+  "martinique"
+ ],
+ "scrutinsCles": [
+  "7399",
+  "7400",
+  "7401"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:5cdb2cde9beb0cc1736147b8fb91314c5632b6624ad2e8279e0a61057ddd01a0"
+}

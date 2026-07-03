@@ -1,0 +1,42 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N52781",
+ "generatedAt": "2026-07-03T06:12:10Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Assurer le droit de chaque enfant à disposer d’un avocat dans le cadre d’une mesure d’assistance éducative et de protection de l’enfance",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/_droit_avocat_mesure_assistance_educative_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0324_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Proposition de loi ordinaire visant à garantir le droit de chaque enfant à disposer d'un avocat dans le cadre d'une mesure d'assistance éducative et de protection de l'enfance.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel a été corrompu ou n'a pas été extrait (flux binaires non décodables, aucun article, aucun exposé des motifs, aucune citation exploitable). Sans accès au contenu normatif réel (articles, obligations, sanctions, dérogations), il est impossible d'identifier les mécanismes concrets créés par le texte ni de déterminer si les incitations qu'ils produisent s'alignent avec l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le document fourni est un PDF binaire dont le texte n'a pas été extrait ; aucun article ni exposé des motifs n'est lisible.",
+  "Seuls le titre du dossier législatif et l'identifiant sont exploitables.",
+  "Une analyse de second ordre requiert le contenu normatif : impossible à produire ici."
+ ],
+ "themes": [
+  "protection de l'enfance",
+  "assistance éducative",
+  "droits de l'enfant",
+  "aide juridique",
+  "avocat"
+ ],
+ "scrutinsCles": [
+  "4712",
+  "4713",
+  "4714",
+  "7904"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:b3406bd2216cbec3b3856bf5700ca9940b86cccbc85f21609babcf8c770932fc"
+}

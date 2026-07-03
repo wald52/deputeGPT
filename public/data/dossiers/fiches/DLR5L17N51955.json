@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N51955",
+ "generatedAt": "2026-07-03T06:19:59Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Mesures de justice en faveur de la revalorisation des pensions de retraites agricoles",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/justice_revalorisation_pensions_agricoles_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0302_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire intitulée « Mesures de justice en faveur de la revalorisation des pensions de retraites agricoles ». L'objectif affiché est d'améliorer le niveau des pensions de retraite des agriculteurs par des mesures de justice sociale.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des flux binaires PDF sont visibles). Aucun article, aucune disposition concrète, aucun mécanisme (obligation, seuil, montant, dérogation, sanction) ne peut être identifié dans le contenu exploitable. Il est donc impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le contenu textuel du PDF n'a pas été décodé : seuls les objets PDF (streams binaires) sont visibles",
+  "Aucun article ni aucune mesure concrète n'a pu être lu",
+  "L'analyse des mécanismes et du verdict est donc strictement impossible à partir du texte fourni"
+ ],
+ "themes": [
+  "retraites agricoles",
+  "revalorisation",
+  "justice sociale",
+  "agriculture"
+ ],
+ "scrutinsCles": [
+  "7321",
+  "7322",
+  "7323",
+  "7324"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:4d090ae7fa4cfb8e477572f5e11dca939153e25aa6508e3a07ef12ffd28d8116"
+}

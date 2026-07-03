@@ -1,0 +1,39 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53315",
+ "generatedAt": "2026-07-03T06:33:17Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi visant à instaurer une procédure simplifiée de recouvrement des créances commerciales incontestées",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N53315",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0271_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi visant à instaurer une procédure simplifiée de recouvrement des créances commerciales incontestées. L'objectif affiché est de faciliter et accélérer le recouvrement des créances commerciales non contestées entre entreprises.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des caractères binaires et des fragments de flux PDF apparaissent). Aucun article, aucune disposition concrète, aucun mécanisme (obligation, seuil, sanction, dérogation) ne peut être identifié dans le contenu exploitable. En l'absence de texte lisible, il est impossible de déterminer si les mécanismes créés vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le document fourni est un PDF brut non décodé : aucun article ni exposé des motifs n'est lisible.",
+  "L'identifiant DLR5L17N53315 et le titre suggèrent un texte sur le recouvrement simplifié de créances, mais le contenu normatif réel n'est pas accessible.",
+  "Toute analyse de second ordre (alignement des incitations) est impossible sans le texte des articles."
+ ],
+ "themes": [
+  "recouvrement de créances",
+  "droit commercial",
+  "procédure simplifiée",
+  "créances incontestées"
+ ],
+ "scrutinsCles": [
+  "6134",
+  "6135"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:b6dc32110704c8ef319cb36aa5ac31a289e8597c963167ca48660a6bc823bf6a"
+}
