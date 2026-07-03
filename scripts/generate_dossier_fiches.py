@@ -209,13 +209,37 @@ class AuthError(RuntimeError):
     pass
 
 
-def call_llm(messages, limiter: RateLimiter, session: requests.Session) -> str:
+class ClientRequestError(RuntimeError):
+    """Erreur 4xx de l'API : la requete est refusee, inutile de reessayer telle quelle."""
+
+    def __init__(self, status: int, body: str):
+        self.status = status
+        self.body = body
+        super().__init__(f"HTTP {status} : {body}")
+
+
+# Certains modeles servis par NIM refusent le role "system" (HTTP 400) :
+# la sonde de demarrage bascule alors ce drapeau et le prompt systeme est
+# fusionne dans le message utilisateur.
+SYSTEM_MERGE = False
+
+
+def build_llm_messages(system_prompt: str, user_content: str):
+    if SYSTEM_MERGE:
+        return [{"role": "user", "content": f"{system_prompt}\n\n---\n\n{user_content}"}]
+    return [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": user_content},
+    ]
+
+
+def call_llm(messages, limiter: RateLimiter, session: requests.Session, max_tokens: int = LLM_MAX_TOKENS) -> str:
     url = f"{API_BASE_URL}/chat/completions"
     payload = {
         "model": API_MODEL,
         "messages": messages,
         "temperature": LLM_TEMPERATURE,
-        "max_tokens": LLM_MAX_TOKENS,
+        "max_tokens": max_tokens,
         "stream": False,
     }
     headers = {
@@ -250,6 +274,12 @@ def call_llm(messages, limiter: RateLimiter, session: requests.Session) -> str:
             log(f"  ⚠️ HTTP {response.status_code}, nouvel essai dans {delay:.0f}s")
             time.sleep(delay)
             continue
+
+        if response.status_code >= 400:
+            # Le corps de la reponse contient la raison exacte (modele inconnu,
+            # parametre refuse, role system non supporte...) : on la remonte.
+            body_excerpt = re.sub(r"\s+", " ", str(response.text or "")).strip()[:300]
+            raise ClientRequestError(response.status_code, body_excerpt)
 
         response.raise_for_status()
         data = response.json()
@@ -323,10 +353,7 @@ def generate_fiche(dossier_id: str, dossier: dict, limiter: RateLimiter, session
         log("  ⚠️ Aucun texte source exploitable, dossier sauté.")
         return None, 0
 
-    messages = [
-        {"role": "system", "content": SYSTEM_PROMPT},
-        {"role": "user", "content": build_user_prompt(dossier_id, dossier, source_text)},
-    ]
+    messages = build_llm_messages(SYSTEM_PROMPT, build_user_prompt(dossier_id, dossier, source_text))
 
     calls_used = 0
     parsed = None
@@ -382,6 +409,37 @@ def write_fiche(fiche: dict) -> None:
     os.makedirs(DIR_FICHES, exist_ok=True)
     with open(fiche_path(fiche["dossierId"]), "w", encoding="utf-8") as f:
         json.dump(fiche, f, ensure_ascii=False, indent=1)
+
+
+def probe_llm_configuration(limiter: RateLimiter, session: requests.Session) -> None:
+    """Valide la configuration LLM par un appel minimal avant la boucle.
+
+    Echoue vite et clairement sur une erreur systemique (cle, modele, parametre)
+    au lieu de marteler tous les dossiers. Bascule automatiquement en mode
+    « system fusionne » si le modele refuse le role system.
+    """
+    global SYSTEM_MERGE
+
+    def run_probe():
+        return call_llm(
+            build_llm_messages("Tu réponds uniquement OK.", "Réponds uniquement OK."),
+            limiter,
+            session,
+            max_tokens=16,
+        )
+
+    try:
+        run_probe()
+        log(f"✅ Sonde LLM OK ({API_MODEL} @ {API_BASE_URL}).")
+        return
+    except ClientRequestError as error:
+        if error.status == 400 and not SYSTEM_MERGE and re.search(r"system", error.body, re.IGNORECASE):
+            log(f"⚠️ Le modèle semble refuser le rôle system ({error.body}) : bascule en message unique.")
+            SYSTEM_MERGE = True
+            run_probe()
+            log(f"✅ Sonde LLM OK en mode message unique ({API_MODEL}).")
+            return
+        raise
 
 
 def rebuild_fiches_index() -> dict:
@@ -473,10 +531,21 @@ def main():
 
     limiter = RateLimiter(args.rpm)
     session = requests.Session()
+
+    try:
+        probe_llm_configuration(limiter, session)
+    except (AuthError, ClientRequestError) as error:
+        log(f"❌ Sonde LLM en échec, configuration à corriger avant tout traitement : {error}")
+        sys.exit(1)
+    except Exception as error:
+        log(f"❌ Sonde LLM en échec ({error}).")
+        sys.exit(1)
+
     started_at = time.monotonic()
     calls_used = 0
     successes = 0
     failures = 0
+    consecutive_client_errors = 0
 
     for dossier_id, dossier in todo:
         if calls_used >= args.max_calls:
@@ -493,12 +562,21 @@ def main():
             if fiche:
                 write_fiche(fiche)
                 successes += 1
+                consecutive_client_errors = 0
                 log(f"  ✅ Fiche écrite (verdict : {fiche['verdictIncitations']})")
             else:
                 failures += 1
         except AuthError as error:
             log(f"❌ Erreur d'authentification : {error}")
             sys.exit(1)
+        except ClientRequestError as error:
+            failures += 1
+            consecutive_client_errors += 1
+            log(f"  ⚠️ Requête refusée par l'API : {error}")
+            if consecutive_client_errors >= 3:
+                log("❌ 3 refus consécutifs de l'API : problème de configuration probable, arrêt du run.")
+                rebuild_fiches_index()
+                sys.exit(1)
         except Exception as error:
             failures += 1
             log(f"  ⚠️ Échec non bloquant : {error}")
