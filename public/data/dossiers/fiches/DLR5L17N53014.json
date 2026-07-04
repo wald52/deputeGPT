@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53014",
+ "generatedAt": "2026-07-04T06:15:32Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Réaffirmer l’ambition climatique de la France au niveau européen",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/reaffirmer_ambition_climatique_France_europeen",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0234_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de résolution visant à réaffirmer l'ambition climatique de la France au niveau européen. Il s'agit d'un acte parlementaire non législatif par lequel l'Assemblée nationale exprime sa position sur la politique climatique européenne.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel n'a pas été extrait (seuls des objets PDF bruts et des flux binaires compressés sont visibles). Aucun article, aucune disposition concrète et aucune citation exploitable ne peuvent être identifiés dans le contenu fourni. Il est donc impossible de déterminer les mécanismes créés par le texte et, a fortiori, de vérifier si les incitations qu'ils produisent s'alignent avec l'objectif affiché de 'réaffirmer l'ambition climatique de la France au niveau européen'.",
+ "pointsDeVigilance": [
+  "Le document fourni est un PDF dont le texte n'a pas été décodé : le contenu lisible se limite à des métadonnées techniques PDF",
+  "Aucun article ni dispositif de la résolution n'est accessible dans la chaîne fournie",
+  "Une résolution parlementaire n'a en principe pas d'effet normatif direct (pas de création d'obligations, taxes ou sanctions), mais peut comporter des demandes adressées au Gouvernement ou aux institutions européennes",
+  "Sans accès au contenu réel, toute analyse de second ordre serait purement spéculative"
+ ],
+ "themes": [
+  "climat",
+  "europe",
+  "résolution parlementaire",
+  "ambition climatique"
+ ],
+ "scrutinsCles": [
+  "5314",
+  "5315",
+  "5316"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:267c8f4aa2980385f9a9fc39c986b7b454750b0f4a1f78d714c24168e6e2c5be"
+}

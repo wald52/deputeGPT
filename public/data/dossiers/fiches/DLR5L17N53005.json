@@ -1,0 +1,48 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53005",
+ "generatedAt": "2026-07-04T06:25:25Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Le traitement judiciaire des violences sexuelles incestueuses parentales commises contre les enfants et la situation des parents protecteurs, notamment des mères protectrices",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/traitement_judiciaire_violences_sexuelles_incestueuses_parentales_contre_enfants_situation_parents_protecteurs_meres_protectrices",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2363_texte-adopte-commission",
+  "legifrance": null
+ },
+ "objectifAffiche": "Proposition de résolution tendant à la création d'une commission d'enquête parlementaire sur le traitement judiciaire des violences sexuelles incestueuses parentales commises contre les enfants et sur la situation des parents protecteurs, notamment des mères protectrices.",
+ "mecanismesCles": [
+  {
+   "resume": "Création d'une commission d'enquête parlementaire (mécanisme unique de la proposition de résolution).",
+   "articleRef": null,
+   "citation": "proposition de résolution [...] tendant à la création d'une commission d'enquête sur le traitement judiciaire des violences sexuelles incestueuses parentales commises contre les enfants et la situation des parents protecteurs"
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est uniquement un en-tête administratif (titre, identifiant, procédure, statut, sommaire) et ne contient ni exposé des motifs ni articles détaillés décrivant la composition, la durée ou le périmètre précis de la commission d'enquête. Sans le contenu substantiel de la résolution, il est impossible de déterminer si les incitations créées par les mécanismes vont dans le sens de l'objectif affiché ou s'en écartent.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué et ne contient que les métadonnées et le sommaire, sans exposé des motifs ni articles.",
+  "Une proposition de résolution créant une commission d'enquête n'a pas d'effet normatif direct ; elle ne fait que déclencher une mission d'information parlementaire.",
+  "Le périmètre exact (mères protectrices, pères protecteurs, beaux-parents, etc.) et la durée prévue des travaux ne sont pas précisés dans l'extrait."
+ ],
+ "themes": [
+  "violences sexuelles",
+  "inceste",
+  "protection de l'enfance",
+  "parents protecteurs",
+  "commission d'enquête"
+ ],
+ "scrutinsCles": [
+  "5223",
+  "5224",
+  "5225",
+  "5226"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:9b3e8a5cf1b6ddfe88a4f92e465ce63f8b310732104342542ea9b599fccb01b1"
+}

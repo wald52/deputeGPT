@@ -1,0 +1,42 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53276",
+ "generatedAt": "2026-07-04T06:22:54Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Reconnaître les victimes de l'exposition aux essais nucléaires français et améliorer leur indemnisation",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/victimes_exposition_essais_nucleaires_ameliorer_indemnisation_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2852_proposition-loi",
+  "legifrance": null
+ },
+ "objectifAffiche": "La proposition de loi vise à reconnaître les victimes de l'exposition aux essais nucléaires français et à améliorer leur indemnisation. Il s'agit d'une proposition de loi ordinaire modifiée par le Sénat, examinée par la commission de la défense nationale et des forces armées.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles de loi. Seules les métadonnées du dossier législatif (numéro, procédure, commission saisie, date de dépôt) sont disponibles, ce qui ne permet pas d'identifier les mécanismes concrets créés par le texte ni d'évaluer si les incitations qu'ils produisent sont alignées avec l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué et ne contient que les informations de navigation et de sommaire du dossier législatif",
+  "Aucun article ni exposé des motifs n'est accessible dans le contenu fourni",
+  "Impossible d'analyser les seuils, critères d'éligibilité, montants d'indemnisation ou voies de recours sans le corps du texte"
+ ],
+ "themes": [
+  "nucléaire",
+  "indemnisation des victimes",
+  "essais nucléaires",
+  "défense",
+  "reconnaissance"
+ ],
+ "scrutinsCles": [
+  "5263",
+  "5264",
+  "5265",
+  "5266"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:1bb36cb22f4ff0c891df5954c5d802578e3315546dac5abc49d1e17eae389fbb"
+}

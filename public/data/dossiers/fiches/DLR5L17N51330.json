@@ -1,0 +1,39 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N51330",
+ "generatedAt": "2026-07-04T06:09:11Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Renforcer l’effectivité des droits voisins de la presse",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/effectivite_droits_voisins_presse",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2928_proposition-loi",
+  "legifrance": null
+ },
+ "objectifAffiche": "Renforcer l'effectivité des droits voisins des éditeurs et agences de presse. Il s'agit d'une proposition de loi ordinaire modifiée par le Sénat, déposée le 17 juin 2026, examinée par la commission des affaires culturelles et de l'éducation.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles de loi. Seules les métadonnées du dossier législatif (titre, numéro, date de dépôt, commission saisie) sont accessibles. Sans le contenu normatif, il est impossible d'identifier les obligations, sanctions, seuils ou dérogations créés par le texte, et donc impossible de déterminer si les mécanismes vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué et ne contient que l'en-tête du dossier législatif (sommaire, commission, formats disponibles)",
+  "Aucun article ni exposé des motifs n'est présent dans la extraction fournie",
+  "Le titre mentionne un renforcement des droits voisins de la presse, mais sans contenu normatif, l'analyse de second ordre est impossible"
+ ],
+ "themes": [
+  "propriete_intellectuelle",
+  "presse",
+  "droits_voisins",
+  "numerique"
+ ],
+ "scrutinsCles": [
+  "5830",
+  "5831"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:974b8f4047b51ddbd1ad98ec78d3b7bba3695ab74afdecab64af214629cb9c5d"
+}

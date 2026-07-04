@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53427",
+ "generatedAt": "2026-07-04T06:14:36Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Améliorer la protection des personnes ciblées par les réseaux de criminalité organisée",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/ameliorer_protection_personnes_ciblees_reseaux_criminalite_organisee_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2770_proposition-loi",
+  "legifrance": null
+ },
+ "objectifAffiche": "Proposition de loi ordinaire visant à améliorer la protection des personnes ciblées par les réseaux de criminalité organisée. Le texte a été adopté par l'Assemblée nationale et déposé le 11 mai 2026, renvoyé en commission des lois.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles. Seules les métadonnées du dossier législatif (titre, identifiant, procédure, statut, commission de renvoi) sont accessibles. Sans le contenu normatif (articles, dispositions concrètes), il est impossible d'identifier les mécanismes créés par la loi et donc de déterminer si les incitations qu'elle produit sont alignées avec son objectif affiché de protection des personnes ciblées par la criminalité organisée.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué et ne contient que les en-têtes et métadonnées du dossier législatif, sans aucun article ni exposé des motifs.",
+  "L'identifiant DLR5L17N53427 et le numéro 2770 ne permettent pas, à eux seuls, de reconstituer le contenu normatif.",
+  "Une analyse de second ordre des incitations réelles nécessiterait la lecture intégrale des dispositions."
+ ],
+ "themes": [
+  "criminalité organisée",
+  "protection des personnes",
+  "sécurité",
+  "procédure pénale"
+ ],
+ "scrutinsCles": [
+  "5355",
+  "5356",
+  "5357",
+  "5358"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:1a716d852cec4e45f6ae934a5e8581e9818c8b8c9e842ca857538186c89164a7"
+}

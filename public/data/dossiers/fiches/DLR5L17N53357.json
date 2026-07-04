@@ -1,0 +1,45 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53357",
+ "generatedAt": "2026-07-04T06:01:47Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi visant à étendre à toutes les communes la compensation financière prévue pour les communes de plus de 3 500 habitants pour l’exercice de l’ensemble des compétences du service public de la petite enfance",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N53357",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0291_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Étendre à toutes les communes (sans condition de seuil démographique) la compensation financière actuellement prévue pour les communes de plus de 3 500 habitants, au titre de l'exercice des compétences du service public de la petite enfance.",
+ "mecanismesCles": [
+  {
+   "resume": "Le texte officiel fourni est illisible (flux PDF binaire non décodé en texte), ce qui empêche l'identification précise des articles et de leurs mécanismes.",
+   "articleRef": null,
+   "citation": null
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le document transmis est un fichier PDF dont le contenu textuel n'a pas été extrait (flux d'octets bruts non décodables). L'exposé des motifs et les articles ne sont pas lisibles dans la chaîne fournie, comme l'atteste l'absence de tout passage textuel exploitable. Sans accès au contenu normatif effectif (articles, seuils, modalités de compensation), il est impossible de déterminer les mécanismes concrets créés ni de vérifier s'ils s'alignent avec l'objectif affiché d'extension de la compensation à toutes les communes.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué et inexploitable en l'état (PDF binaire non décodé).",
+  "Aucune citation d'article n'a pu être extraite pour sourcer les mécanismes.",
+  "L'analyse de second ordre (alignement des incitations) ne peut être conduite sans le contenu normatif."
+ ],
+ "themes": [
+  "petite enfance",
+  "compensation financière",
+  "communes",
+  "service public local"
+ ],
+ "scrutinsCles": [
+  "7003",
+  "7004"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:3b94ae5718131aa474bf149fdbbaea6bdaf465dfdff02231591a592abe17f554"
+}

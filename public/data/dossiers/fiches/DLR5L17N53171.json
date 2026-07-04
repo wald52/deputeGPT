@@ -1,0 +1,40 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53171",
+ "generatedAt": "2026-07-04T06:09:36Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Expérimentation pour l’instauration d’un enseignement d’éducation à l’alimentation à l’école",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/enseignement_education_alimentation_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0241_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à expérimenter l'instauration d'un enseignement d'éducation à l'alimentation à l'école. L'objectif affiché est de tester, sur un périmètre limité, un dispositif pédagogique dédié à l'alimentation dans le cadre scolaire.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel a été remplacé par des flux binaires (streams compressés) sans extraction des objets textuels. Aucun article, aucune disposition, aucun mécanisme concret (obligation, seuil, sanction, dérogation, financement) ne peut être identifié ni cité. En l'absence de contenu exploitable, il est impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le document fourni est un PDF brut dont les streams de contenu ne sont pas décodés : aucun article ni exposé des motifs n'est lisible.",
+  "Seuls les métadonnées du dossier législatif (titre, identifiant, procédure, statut) sont exploitables.",
+  "Toute analyse de second ordre sur les mécanismes est impossible sans extraction préalable du texte normatif."
+ ],
+ "themes": [
+  "éducation",
+  "alimentation",
+  "école",
+  "expérimentation"
+ ],
+ "scrutinsCles": [
+  "5433",
+  "5434",
+  "5435"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:f98b82f270049df0e72bba7dfbbcb42dbdf6a5538bf730cbb4f02c2eaa78e7b5"
+}

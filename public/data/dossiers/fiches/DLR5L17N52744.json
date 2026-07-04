@@ -1,0 +1,43 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N52744",
+ "generatedAt": "2026-07-04T06:23:04Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Garantir la gratuité des parkings des hôpitaux publics pour les patients, les visiteurs et les personnels sur leur temps de travail",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/gratuite_parkings_hopitaux_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0224_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Proposition de loi ordinaire visant à garantir la gratuité des parkings des hôpitaux publics pour les patients, les visiteurs et les personnels hospitaliers sur leur temps de travail.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel a été corrompu ou n'a pas été extrait (seuls des fragments binaires et des balises d'objets PDF apparaissent). Aucun article, aucune disposition concrète et aucune citation exploitable ne peuvent être identifiés dans le contenu transmis. Il est donc impossible de déterminer les mécanismes créés par le texte ni de vérifier s'ils s'alignent avec l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le contenu du texte officiel est inexploitable (PDF binaire non décodé)",
+  "Aucun article ni mécanisme n'a pu être extrait pour analyse",
+  "L'exposé des motifs n'est pas accessible dans le document fourni",
+  "Impossibilité de vérifier la conformité entre l'objectif affiché et les dispositions réelles"
+ ],
+ "themes": [
+  "santé",
+  "hôpitaux publics",
+  "stationnement",
+  "gratuité",
+  "personnel hospitalier"
+ ],
+ "scrutinsCles": [
+  "5251",
+  "5252",
+  "5253",
+  "5254"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:0f7801c02ec220539359d261f0cde9b166211215a2915faf0b374b89f5f895cf"
+}

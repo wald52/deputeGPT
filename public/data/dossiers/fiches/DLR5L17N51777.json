@@ -1,0 +1,40 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N51777",
+ "generatedAt": "2026-07-04T06:20:24Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Soutenir le Danemark et le Groenland et œuvrer en faveur d’une plus grande coopération en matière de défense",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/soutenir_danemark_groenland_oeuvrer_cooperation_defense",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0231_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une résolution parlementaire visant à soutenir le Danemark et le Groenland et à œuvrer en faveur d'une plus grande coopération en matière de défense. Il s'agit d'un texte de nature politique et diplomatique, sans valeur normative directe.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des objets PDF et des flux binaires compressés sont visibles). Aucun article, aucune disposition concrète, aucune obligation, taxe, subvention ou sanction ne peut être identifié dans le contenu exploitable. Sans accès au texte normatif réel (exposé des motifs et articles), il est impossible de déterminer les mécanismes créés par le texte et donc de juger si les incitations vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le contenu textuel du PDF n'a pas été décodé : le texte officiel est inexploitable en l'état",
+  "Une résolution parlementaire est par nature un acte non contraignant (déclaration politique), ce qui limite la portée des 'mécanismes' qu'elle peut créer",
+  "Sans lecture du texte, aucune analyse de second ordre (alignement des incitations) n'est possible"
+ ],
+ "themes": [
+  "défense",
+  "coopération internationale",
+  "diplomatie",
+  "groenland",
+  "danemark"
+ ],
+ "scrutinsCles": [
+  "5299",
+  "5300"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:fc8196f9ed71c4f3b4898b43d5332b2679fb8357359a2dda3e1fa5f5626bc60f"
+}

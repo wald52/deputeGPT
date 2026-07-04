@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53067",
+ "generatedAt": "2026-07-04T06:03:32Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Reconnaître une politique nationale d’adaptation au changement climatique et à adapter les mécanismes d’assurance",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/reconnaitre_politique_nationale_adaptation_changement_climatique_adapter_mecanismes_assurance_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0266_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à reconnaître une politique nationale d'adaptation au changement climatique et à adapter les mécanismes d'assurance. L'objectif affiché est de donner un cadre législatif à l'adaptation climatique et de modifier le régime assurantiel pour mieux couvrir les risques liés au changement climatique.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des flux binaires compressés et des balises d'objets PDF sont visibles, sans aucun article de loi, exposé des motifs ou disposition identifiable). Aucun mécanisme concret (obligation, taxe, subvention, seuil, sanction, dérogation) ne peut être identifié ni cité. En l'absence de tout contenu normatif exploitable, il est impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le document fourni est un PDF dont le flux de texte n'a pas été décodé : aucun article ni exposé des motifs n'est lisible.",
+  "L'identifiant DLR5L17N53067 et le titre suggèrent un texte connu (proposition reconnaissant une politique nationale d'adaptation), mais le contenu normatif réel n'est pas accessible dans la pièce jointe.",
+  "Toute analyse de second ordre sur les incitations est impossible sans le texte des articles."
+ ],
+ "themes": [
+  "changement climatique",
+  "adaptation",
+  "assurance",
+  "catastrophes naturelles"
+ ],
+ "scrutinsCles": [
+  "6066",
+  "6067",
+  "6068",
+  "6069"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:c69c887ed87c9a29eefefa19e9b2daa3633ff9a6b38b70f150af6282084cbdb8"
+}

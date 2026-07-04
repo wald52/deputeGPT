@@ -1,0 +1,48 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N51866",
+ "generatedAt": "2026-07-04T06:18:30Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Pour la préservation des principes démocratiques, des libertés publiques et de l’État de droit en Turquie",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/Turquie_etat_droit2",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0232_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de résolution visant à alerter sur la préservation des principes démocratiques, des libertés publiques et de l'État de droit en Turquie. Il s'agit d'un texte de nature politique et diplomatique, sans portée normative interne.",
+ "mecanismesCles": [
+  {
+   "resume": "Le document fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel (exposé des motifs et articles) n'a pas été extrait. Aucun mécanisme concret (obligation, taxe, subvention, sanction, seuil) ne peut être identifié.",
+   "articleRef": null,
+   "citation": null
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel transmis est un PDF dont le flux de contenu (stream) n'a pas été décodé en texte lisible : seules des séquences binaires et des balises d'objets PDF apparaissent. L'exposé des motifs et les articles de la résolution ne sont pas accessibles. Sans lecture du contenu normatif, il est impossible d'identifier des mécanismes concrets ni de comparer les incitations produites à l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le fichier fourni est un PDF non décodé : le texte législatif réel (visas, exposé des motifs, articles) n'est pas lisible.",
+  "Une résolution parlementaire n'a en principe pas de valeur normative contraignante ; elle exprime une position politique de l'assemblée.",
+  "Toute analyse de second ordre sur les incitations nécessite la lecture effective des articles, ce qui est ici impossible."
+ ],
+ "themes": [
+  "turquie",
+  "démocratie",
+  "libertés publiques",
+  "état de droit",
+  "résolution parlementaire"
+ ],
+ "scrutinsCles": [
+  "5304",
+  "5305",
+  "5306",
+  "5307"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:5693e5c25c86ceee8bf2bdc4660e439055e93b767786538d89b50ad035643099"
+}

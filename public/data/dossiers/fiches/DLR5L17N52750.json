@@ -1,0 +1,42 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N52750",
+ "generatedAt": "2026-07-04T06:04:22Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Simplifier le millefeuille territorial par la collectivité unique",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/simplifier_millefeuille_territorial_collectivite_unique_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0264_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire intitulée « Simplifier le millefeuille territorial par la collectivité unique ». L'objectif affiché est de simplifier l'organisation territoriale française en réduisant l'empilement des collectivités (le « millefeuille territorial ») par la création d'une collectivité unique.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des objets PDF et des flux binaires compressés sont visibles). Aucun article, aucun exposé des motifs, aucune disposition concrète (obligation, taxe, subvention, seuil, sanction, dérogation) ne peut être identifié dans le contenu exploitable. En l'absence de tout mécanisme verifiable dans le texte, il est impossible de determiner si les incitations creees par les articles vont dans le sens de l'objectif affiche ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le document transmis est un PDF dont le flux de texte n'a pas été décodé : le contenu législatif réel (exposé des motifs, articles) n'est pas accessible.",
+  "Aucun mécanisme concret (fusion de collectivités, transfert de compétences, calendrier, modalités de transition, financement) ne peut être cité.",
+  "Le titre seul évoque une « collectivité unique », mais sans lecture des articles, on ne sait pas si le texte crée réellement une fusion, une simple coordination, ou un mécanisme différent.",
+  "Une analyse fiable nécessiterait la version texte (OCR ou extraction) du PDF."
+ ],
+ "themes": [
+  "organisation territoriale",
+  "collectivites territoriales",
+  "simplification administrative",
+  "millefeuille territorial"
+ ],
+ "scrutinsCles": [
+  "6042",
+  "6043",
+  "6044",
+  "6045"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:b57d7dae2fe224dedde7de2a639102d6c4c08797290d7c2264b2472c5b1b33d2"
+}

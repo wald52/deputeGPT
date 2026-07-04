@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53329",
+ "generatedAt": "2026-07-04T06:13:30Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Empêcher la constitution de monopoles économiques dans les secteurs des médias",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/monopoles_economiques_medias_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2429_texte-adopte-commission",
+  "legifrance": null
+ },
+ "objectifAffiche": "La proposition de loi, déposée par Mme Sophie Taillé-Polian et plusieurs collègues, vise à empêcher la constitution de monopoles économiques dans les secteurs des médias.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles substantiels : seul l'en-tête du dossier législatif (titre, identifiant, procédure, statut, commission saisie) est présent. Aucun mécanisme concret (obligation, seuil, sanction, dérogation, taxe, subvention) n'est identifiable dans les éléments transmis, ce qui empêche toute analyse de l'alignement entre les incitations créées et l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué à 15 000 caractères mais, en pratique, seul le sommaire et les métadonnées du dossier ont été fournis.",
+  "Aucun article ni alinéa n'est consultable dans l'extrait : impossible de vérifier la portée réelle des dispositions.",
+  "Le statut 'en cours' indique que le texte peut encore évoluer (amendements non joints)."
+ ],
+ "themes": [
+  "médias",
+  "concentration",
+  "concurrence",
+  "monopole"
+ ],
+ "scrutinsCles": [
+  "5411",
+  "5412",
+  "5413",
+  "5414"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:628f3427c9284a3caf9de2c6c991ef6d3b343038043bee69c8296a036b3d3d00"
+}

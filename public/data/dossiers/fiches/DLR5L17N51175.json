@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N51175",
+ "generatedAt": "2026-07-04T06:08:15Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi visant à soutenir les collectivités territoriales dans la prévention et la gestion des inondations",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N51175",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0253_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "La proposition de loi vise à soutenir les collectivités territoriales dans la prévention et la gestion des inondations, en leur fournissant un cadre législatif pour mieux anticiper et faire face à ce risque naturel.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel n'a pas été extrait (seuls des objets PDF bruts et des flux binaires compressés sont visibles). Aucun article, aucune disposition concrète, aucune obligation, taxe, subvention ou sanction ne peut être identifié dans le contenu transmis. En l'absence de tout mécanisme extractible du texte, il est impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le contenu textuel du PDF n'a pas été décodé : le texte fourni contient uniquement des métadonnées et flux binaires PDF illisibles",
+  "Aucun article ni exposé des motifs n'est effectivement accessible dans la chaîne transmise",
+  "L'analyse des mécanismes concrets est donc impossible sans extraction préalable du texte"
+ ],
+ "themes": [
+  "inondations",
+  "collectivités territoriales",
+  "prévention des risques",
+  "gestion de crise"
+ ],
+ "scrutinsCles": [
+  "5841",
+  "5842",
+  "5843",
+  "5844"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:ea0d40c87fc048f11a967497449d2179c39bdcf3e10d741c59e2e379d7f66e25"
+}

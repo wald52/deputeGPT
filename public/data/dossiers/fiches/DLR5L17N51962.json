@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N51962",
+ "generatedAt": "2026-07-04T06:25:50Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Exercer l’accès à l’emploi, pérenniser et étendre progressivement l’expérimentation Territoires zéro chômeur longue durée comme solution de retour à l’emploi pour les personnes privées durablement d’emploi",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/acces_emploi_experimentation_tzcld_17",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2907_proposition-loi",
+  "legifrance": null
+ },
+ "objectifAffiche": "Pérenniser et étendre progressivement l'expérimentation « Territoires zéro chômeur longue durée » (TZCLD) comme solution de retour à l'emploi pour les personnes privées durablement d'emploi.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles. Seules les informations de présentation (titre, numéro, procédure, commission saisie) sont disponibles, ce qui est insuffisant pour identifier les mécanismes concrets (obligations, financements, critères d'éligibilité, sanctions) créés par la proposition de loi et pour évaluer si les incitations réelles correspondent à l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué et ne contient pas le contenu substantiel de la proposition de loi (exposé des motifs et articles).",
+  "Le statut « en cours » et la mention « modifiée par le Sénat » indiquent une navette parlementaire, mais sans le texte des articles, l'analyse des incitations est impossible.",
+  "La pérennisation d'une expérimentation implique généralement des engagements financiers et des critères d'évaluation dont la nature ne peut être déterminée ici."
+ ],
+ "themes": [
+  "emploi",
+  "chômage de longue durée",
+  "expérimentation territoriale",
+  "politique sociale"
+ ],
+ "scrutinsCles": [
+  "5219",
+  "5220",
+  "5221",
+  "5222"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:ed5a4dd8ea7a19896a8b40b60a8fb5b60d6e44e90251e03a25ca9c11b590fdec"
+}

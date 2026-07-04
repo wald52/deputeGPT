@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53426",
+ "generatedAt": "2026-07-04T06:04:04Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Accélérer la prévention cardio-neuro-vasculaire et anticiper un risque sanitaire et social majeur",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/accelerer_prevention_cardio_neuro_vasculaire_et_anticiper_risque_sanitaire_et_social_majeur_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2995_texte-adopte-commission",
+  "legifrance": null
+ },
+ "objectifAffiche": "Doter la France d'une stratégie nationale de lutte contre les maladies cardio-neuro-vasculaires, en accélérant la prévention cardio-neuro-vasculaire et en anticipant un risque sanitaire et social majeur.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni ne contient ni exposé des motifs ni articles. Seuls figurent l'intitulé de la proposition de loi, la mention de la commission mixte paritaire et la date de dépôt (1er juillet 2026). Aucun mécanisme concret (obligation, taxe, subvention, seuil, sanction) ne peut être identifié dans le document transmis, ce qui empêche toute analyse de l'alignement entre les incitations créées et l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le document est marqué 'Document non encore publié', expliquant l'absence de contenu normatif.",
+  "Le texte est tronqué à 15000 caractères mais, en réalité, aucun contenu substantiel n'a été transmis au-delà des métadonnées.",
+  "Sans accès aux articles, il est impossible de vérifier si des dérogations, exemptions ou contre-incitations s'opposeraient à l'objectif de prévention."
+ ],
+ "themes": [
+  "santé publique",
+  "prévention",
+  "maladies cardio-neuro-vasculaires",
+  "stratégie nationale"
+ ],
+ "scrutinsCles": [
+  "6058",
+  "6059",
+  "6060",
+  "6061"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:c108f1fe277a2269561f9b5f13c3c760db857273827229f8590571f8e624b890"
+}

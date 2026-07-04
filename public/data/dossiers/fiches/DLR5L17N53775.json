@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53775",
+ "generatedAt": "2026-07-04T06:03:15Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Encadrer les regroupements pédagogiques intercommunaux afin de garantir l’égalité d’accès à l’école en milieu rural",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/encadrer_regroupements_pedagogiques_intercommunaux_garantir_egalite_acces_ecole_rural_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0267_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à encadrer les regroupements pédagogiques intercommunaux (RPI) afin de garantir l'égalité d'accès à l'école en milieu rural.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est un fichier PDF dont le contenu textuel n'a pas pu être extrait (flux binaires illisibles). Aucun article, aucune disposition concrète et aucune citation exploitable ne peuvent être identifiés dans le contenu transmis. Il est donc impossible de déterminer les mécanismes créés par le texte ni de vérifier s'ils sont alignés avec l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le contenu du PDF n'a pas été décodé : seuls des flux binaires bruts sont visibles",
+  "Aucun article ni exposé des motifs lisible n'a pu être extrait",
+  "L'analyse des mécanismes concrets est impossible sans le texte intégral exploitable"
+ ],
+ "themes": [
+  "éducation",
+  "milieu rural",
+  "regroupements pédagogiques intercommunaux",
+  "égalité d'accès à l'école"
+ ],
+ "scrutinsCles": [
+  "6073",
+  "6074",
+  "6075",
+  "6076"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:33d1c84d6e3b5eb6dc79d61d0ca93536150ea02468e014ccc3026fa8ced2f512"
+}

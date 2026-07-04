@@ -1,0 +1,40 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N52746",
+ "generatedAt": "2026-07-04T06:24:36Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Moderniser la gestion du patrimoine immobilier de l'État",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/gestion_patrimoine_immobilier_etat_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b3004_texte-adopte-commission",
+  "legifrance": null
+ },
+ "objectifAffiche": "Moderniser la gestion du patrimoine immobilier de l'État, selon une proposition de loi ordinaire actuellement en cours d'examen via une commission mixte paritaire.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles : seul le sommaire et les métadonnées du dossier législatif (titre, numéro, procédure, commission saisie) ont été transmis. Aucun mécanisme concret (obligation, taxe, subvention, dérogation, seuil, sanction) ne peut être identifié, ce qui empêche toute analyse des incitations produites par le texte.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué et ne contient que les en-têtes administratifs, sans contenu normatif.",
+  "Impossible de vérifier l'alignement entre l'objectif affiché et les dispositions effectives sans accès aux articles.",
+  "Le statut 'en cours' et le passage en CMP indiquent que le texte peut encore évoluer avant adoption."
+ ],
+ "themes": [
+  "patrimoine immobilier de l'état",
+  "gestion domaniale",
+  "modernisation administrative"
+ ],
+ "scrutinsCles": [
+  "5237",
+  "5238",
+  "5239",
+  "5240"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:b830fd90b4631147b6fa378cab954aec8257e7b023821dae095ee2f842f95ada"
+}

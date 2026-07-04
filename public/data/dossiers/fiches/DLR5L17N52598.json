@@ -1,0 +1,47 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N52598",
+ "generatedAt": "2026-07-04T06:16:26Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Rejeter le projet d'accord sur les droits de douane et le commerce du 27 juillet 2025 entre l’Union européenne et les Etats-Unis",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/rejeter_accord_douane_commerce_UE_Etats_Unis",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0233_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une résolution parlementaire visant à rejeter le projet d'accord sur les droits de douane et le commerce du 27 juillet 2025 entre l'Union européenne et les États-Unis. Il s'agit d'un acte politique par lequel l'assemblée se prononce contre la ratification ou l'application de cet accord international.",
+ "mecanismesCles": [
+  {
+   "resume": "Le texte fourni est illisible : il s'agit d'un PDF dont le contenu textuel a été remplacé par des flux binaires (streams PDF compressés) sans extraction de texte exploitable. Aucun article, aucune disposition, aucun mécanisme normatif (obligation, taxe, seuil, sanction) ne peut être identifié.",
+   "articleRef": null,
+   "citation": null
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le document transmis ne contient pas de texte lisible : seuls des objets PDF bruts (obj, endobj, streams compressés) sont fournis, sans extraction des articles ni de l'exposé des motifs. Il est donc impossible d'identifier les mécanismes concrets créés par le texte, ni de vérifier si les incitations qu'ils produisent s'alignent avec l'objectif affiché de rejet de l'accord UE-USA du 27 juillet 2025. Le verdict est par conséquent indéterminé par défaut, conformément à la règle en cas de texte insuffisant.",
+ "pointsDeVigilance": [
+  "Le contenu du PDF n'a pas été extrait : les flux sont compressés et illisibles en l'état.",
+  "Aucune numérotation d'article ni aucun dispositif n'a pu être référencé.",
+  "Une analyse fiable nécessiterait la version texte (OCR ou extraction) du dossier législatif DLR5L17N52598."
+ ],
+ "themes": [
+  "commerce international",
+  "droits de douane",
+  "accord ue-usa",
+  "résolution parlementaire"
+ ],
+ "scrutinsCles": [
+  "5310",
+  "5311",
+  "5312",
+  "5313"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:d672794d97853206edc5df8da9aef6fa9ead9c4c9b2d34be8ac1b9822574a092"
+}

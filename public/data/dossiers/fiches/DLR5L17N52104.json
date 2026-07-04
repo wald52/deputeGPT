@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N52104",
+ "generatedAt": "2026-07-04T06:02:36Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi organique portant actualisation du corps électoral pour les élections au congrès et aux assemblées de province de la Nouvelle-Calédonie",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N52104",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0288_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Actualiser le corps électoral pour les élections au congrès et aux assemblées de province de la Nouvelle-Calédonie, en l'élargissant notamment aux personnes justifiant d'une durée de domicile suffisante sur le territoire.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des flux binaires et des balises PDF sont visibles). Aucun article, aucune disposition concrète et aucune citation exploitable ne peuvent être identifiés. En l'absence de contenu lisible, il est impossible de déterminer si les mécanismes créés vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le document fourni est un PDF non décodé : le texte législatif (exposé des motifs et articles) n'est pas accessible.",
+  "Toute analyse de second ordre est impossible sans accès au contenu normatif du texte.",
+  "Le titre seul indique une actualisation du corps électoral calédonien, mais ne permet pas d'identifier les critères d'éligibilité, les seuils de domiciliation, les dérogations ou les sanctions."
+ ],
+ "themes": [
+  "élections",
+  "nouvelle-calédonie",
+  "corps électoral",
+  "droit organique"
+ ],
+ "scrutinsCles": [
+  "6750",
+  "6751",
+  "6752",
+  "6753"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:eef60d31f8a83fbd1ec8b7cdd6ddd35e9f268503d5164bce6caad3699c15cc04"
+}

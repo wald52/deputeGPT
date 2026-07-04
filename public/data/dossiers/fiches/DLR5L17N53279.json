@@ -1,0 +1,39 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53279",
+ "generatedAt": "2026-07-04T06:24:09Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Mettre fin au devoir conjugal",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/_mettre_fin_au_devoir_conjugual_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2645_proposition-loi",
+  "legifrance": null
+ },
+ "objectifAffiche": "Proposition de loi ordinaire visant à mettre fin au devoir conjugal, déposée le 14 avril 2026 et modifiée par le Sénat. Le texte n'expose pas d'exposé des motifs ni d'articles dans l'extrait fourni.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles. Seul le titre et les métadonnées de la proposition de loi sont accessibles, ce qui ne permet pas d'identifier les mécanismes concrets (obligations, sanctions, dérogations) créés par le texte ni d'évaluer si les incitations vont dans le sens de l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué à 15000 caractères mais l'extrait réellement fourni ne contient aucun article ni exposé des motifs, uniquement le sommaire et les métadonnées du dossier législatif.",
+  "Impossible de vérifier la cohérence entre l'objectif affiché (mettre fin au devoir conjugal) et les mécanismes effectivement créés par les articles."
+ ],
+ "themes": [
+  "droit civil",
+  "droit de la famille",
+  "devoir conjugal",
+  "égalité"
+ ],
+ "scrutinsCles": [
+  "5241",
+  "5242",
+  "5243"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:5a59222e6255df77983e222ffc8179ac9b9b34097fc6fa069434c00cc70afaae"
+}

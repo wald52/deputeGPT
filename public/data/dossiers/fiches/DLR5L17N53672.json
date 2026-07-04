@@ -1,0 +1,39 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53672",
+ "generatedAt": "2026-07-04T06:07:26Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Renforcer l’enseignement à la défense nationale dans le cadre du parcours de citoyenneté",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/renforcer_enseignement_defense_nationale_dans_parcours_citoyennete_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0254_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Renforcer l'enseignement à la défense nationale dans le cadre du parcours de citoyenneté. Proposition de loi ordinaire visant à intégrer ou approfondir les contenus liés à la défense nationale au sein du parcours citoyen des jeunes.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est un fichier PDF dont le contenu textuel n'a pas pu être extrait (flux binaires illisibles, aucune chaîne de caractères correspondant à des articles de loi, à un exposé des motifs ou à des mécanismes n'est présente). Aucun article, aucune obligation, aucune sanction, aucun seuil ou dispositif concret ne peut être identifié dans le document transmis. En l'absence de tout contenu normatif exploitable, il est impossible de déterminer si les mécanismes créés vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le document fourni est un PDF dont le contenu textuel n'a pas été décodé (flux binaires bruts, pas de texte lisible)",
+  "Aucun article de loi ni exposé des motifs n'est accessible dans le texte transmis",
+  "L'analyse des mécanismes concrets est donc impossible à partir des seules informations fournies",
+  "Il conviendrait de fournir le texte de la proposition de loi dans un format textuel exploitable pour mener l'analyse"
+ ],
+ "themes": [
+  "défense nationale",
+  "parcours de citoyenneté",
+  "enseignement",
+  "éducation à la défense"
+ ],
+ "scrutinsCles": [
+  "5845"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:a1adaf276a93dd6c62264a020c5c485b4ccbd8b1a4afcbe397f673d38f9261cf"
+}

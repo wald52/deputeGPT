@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N51655",
+ "generatedAt": "2026-07-04T06:22:34Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "L’intérêt des enfants",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/interet_des_enfants_17",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0226_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire intitulée « L'intérêt des enfants » (DLR5L17N51655), dont l'objectif affiché est de protéger ou promouvoir l'intérêt des enfants. L'exposé des motifs et les articles ne sont pas déchiffrables à partir du contenu fourni (PDF binaire illisible).",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni est un PDF dont le contenu textuel (exposé des motifs et articles) n'est pas extractible : il s'agit d'un flux binaire compressé illisible. Aucun article, aucune disposition concrète (obligation, taxe, subvention, seuil, sanction) ne peut être identifié ni cité. En l'absence de contenu exploitable, il est impossible de déterminer si les mécanismes créés vont dans le sens de l'objectif affiché ou dans un sens opposé.",
+ "pointsDeVigilance": [
+  "Le document fourni est un PDF binaire dont le texte n'a pas été extrait (flux compressé non décodé)",
+  "Aucun article ni exposé des motifs n'est lisible dans le contenu transmis",
+  "Le titre seul (« L'intérêt des enfants ») ne permet pas d'identifier les mécanismes législatifs",
+  "L'identifiant DLR5L17N51655 ne suffit pas à reconstituer le contenu normatif"
+ ],
+ "themes": [
+  "droits de l'enfant",
+  "protection de l'enfance",
+  "intérêt supérieur de l'enfant"
+ ],
+ "scrutinsCles": [
+  "5280",
+  "5281",
+  "5282",
+  "5283"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:12f69707425398502d1f22e01b072d02b6e2609b78a47410c4e471000ccc83d2"
+}

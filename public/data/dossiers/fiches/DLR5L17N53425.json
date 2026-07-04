@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53425",
+ "generatedAt": "2026-07-04T06:14:07Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Protéger l'eau potable",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/_proteger_eau_portable_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2427_texte-adopte-commission",
+  "legifrance": null
+ },
+ "objectifAffiche": "Proposition de loi ordinaire déposée par Jean-Claude Raux et plusieurs collègues, visant à protéger l'eau potable. Le texte officiel fourni ne contient ni exposé des motifs ni articles, seule la page de sommaire du dossier législatif est accessible.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni se limite à la page de garde du dossier législatif (titre, identifiant, procédure, commission saisie, formats disponibles). Aucun article, aucune disposition, aucun exposé des motifs n'est présent dans les 15000 caractères transmis. Il est donc impossible d'identifier des mécanismes concrets (obligations, taxes, sanctions, dérogations) et, a fortiori, de déterminer si les incitations créées vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué et ne contient que les métadonnées du dossier législatif, sans contenu normatif.",
+  "L'exposé des motifs est absent, empêchant toute caractérisation précise de l'objectif affiché au-delà du titre.",
+  "Le numéro '2427-A0' correspond au texte de la commission, distinct du texte initial n°2308 ; les éventuelles modifications de la commission ne sont pas visibles.",
+  "La date de dépôt (4 février 2026) est postérieure à la date courante de la base, ce qui suggère un texte très récent dont l'analyse normative n'est pas possible sur la base des éléments fournis."
+ ],
+ "themes": [
+  "eau potable",
+  "environnement",
+  "protection de la ressource"
+ ],
+ "scrutinsCles": [
+  "5380",
+  "5381",
+  "5382",
+  "5383"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:b749a2b002bf8780dc4045d0862d3e81660c956476f21f2c3c987087f0b82173"
+}

@@ -1,0 +1,39 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53192",
+ "generatedAt": "2026-07-04T06:12:40Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Faciliter l’exercice en France des médecins diplômés au Royaume-Uni avant le Brexit",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/faciliter_exercice_france_medecins_diplomes_royaume_uni_avant_brexit_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0277_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Faciliter l'exercice en France des médecins diplômés au Royaume-Uni avant le Brexit. Il s'agit d'une proposition de loi ordinaire visant à lever les obstacles administratifs ou réglementaires empêchant ces praticiens de continuer à exercer sur le territoire français malgré la sortie du Royaume-Uni de l'Union européenne.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est un fichier PDF brut (flux binaires illisibles) dont le contenu textuel des articles et de l'exposé des motifs n'a pas pu être extrait. Aucun mécanisme concret (obligation, dérogation, seuil, sanction) ne peut être identifié ni cité à partir des éléments fournis. En l'absence d'articles déchiffrables, il est impossible de déterminer si les incitations créées vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le document transmis est un PDF dont le contenu textuel n'a pas été extrait (flux d'objets binaires non décodés)",
+  "Aucun article ni extrait de l'exposé des motifs n'est lisible dans le texte fourni",
+  "L'analyse des mécanismes concrets est donc impossible sans le texte intégral et décodé de la proposition de loi"
+ ],
+ "themes": [
+  "santé",
+  "exercice médical",
+  "brexit",
+  "reconnaissance des diplômes",
+  "professionnels de santé"
+ ],
+ "scrutinsCles": [
+  "5415"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:1ca74782c528838520e0e87d03dc4c8394ea361d45cb0e54acf3630826e1f2b1"
+}

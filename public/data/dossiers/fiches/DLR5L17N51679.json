@@ -1,0 +1,38 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N51679",
+ "generatedAt": "2026-07-04T06:21:19Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Sauvegarder et renforcer le financement en faveur de la lutte contre le virus de l'immunodéficience humaine",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/lutte_VIH_SIDA_UE",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0230_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une résolution visant à sauvegarder et renforcer le financement en faveur de la lutte contre le virus de l'immunodéficience humaine (VIH).",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est un fichier PDF dont le contenu textuel n'a pas pu être extrait (seuls des flux binaires et des balises d'objets PDF sont visibles). Aucun article, aucun mécanisme concret (obligation, taxe, subvention, seuil, sanction) et aucune disposition lisible ne peuvent être identifiés dans le contenu exploitable fourni.",
+ "pointsDeVigilance": [
+  "Le texte officiel transmis est illisible : il s'agit d'un PDF dont les flux de contenu ne contiennent pas de texte extractible exploitable.",
+  "Aucun article ni mécanisme n'a pu être référencé, ce qui empêche toute analyse de second ordre.",
+  "La nature exacte de la résolution (recommandations au Gouvernement, engagements parlementaires, etc.) ne peut être déterminée à partir du contenu fourni."
+ ],
+ "themes": [
+  "santé",
+  "vih",
+  "financement",
+  "résolution parlementaire"
+ ],
+ "scrutinsCles": [
+  "5298"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:29aabdc3d19a00b7a6e28fe69eb7e16fd3bb8b9a376a10ff9067439bc8fe3c15"
+}

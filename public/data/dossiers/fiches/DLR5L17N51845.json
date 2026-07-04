@@ -1,0 +1,39 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N51845",
+ "generatedAt": "2026-07-04T06:23:36Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Réparer les préjudices causés par la transplantation de mineurs de La Réunion en France hexagonale de 1962 à 1984",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/reparer_prejudices_transplantation_mineurs_la_reunion_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0223_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Réparer les préjudices causés par la transplantation de mineurs de La Réunion en France hexagonale entre 1962 et 1984. Proposition de loi ordinaire visant à reconnaître et indemniser les victimes de ces transferts forcés.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des flux binaires PDF compressés sont visibles). Aucun article, aucune disposition concrète et aucune citation exploitable ne peuvent être lus dans le document fourni. Il est donc impossible d'identifier les mécanismes créés par la loi ni de vérifier si les incitations qu'ils produisent s'alignent avec l'objectif affiché de réparation des préjudices liés aux transplantations de mineurs réunionnais.",
+ "pointsDeVigilance": [
+  "Le texte officiel transmis est illisible : il s'agit d'un PDF dont les flux de contenu ne sont pas décodés en texte exploitable",
+  "Aucun article ni mécanisme concret n'a pu être extrait du document",
+  "L'analyse de second ordre (alignement entre objectif affiché et incitations réelles) ne peut pas être conduite sans accès au contenu normatif"
+ ],
+ "themes": [
+  "réparation",
+  "transplantation de mineurs",
+  "la réunion",
+  "indemnisation",
+  "mémoire postcoloniale"
+ ],
+ "scrutinsCles": [
+  "5244"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:e9414aa0cecf0a1db6061cff92c48a62fe35b516232fe2b199f71060da46ab94"
+}

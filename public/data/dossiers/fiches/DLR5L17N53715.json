@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53715",
+ "generatedAt": "2026-07-04T06:08:42Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Renforcer la place des agriculteurs dans l’aménagement du territoire et à sécuriser l’exercice des activités agricoles face au changement climatique",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/_renforcer_la_place_des_agriculteurs_dans_amenagement_du_territoire_et_securiser_activites_agricoles_face_au_changement_climatique_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0252_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Renforcer la place des agriculteurs dans l'aménagement du territoire et sécuriser l'exercice des activités agricoles face au changement climatique.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel n'a pas été extrait (seuls des objets PDF bruts et des flux binaires compressés sont visibles). Aucun article, aucune disposition concrète et aucune citation exploitable ne peuvent être identifiés. En l'absence du contenu substantiel du texte, il est impossible de déterminer les mécanismes créés par les articles et donc de vérifier si les incitations vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le contenu textuel du PDF n'a pas été décodé ; le texte officiel est tronqué et inexploitable.",
+  "Aucun article ni mécanisme n'a pu être extrait pour analyse.",
+  "L'identifiant DLR5L17N53715 et le titre suggèrent un texte connu (proposition de loi relative à l'aménagement du territoire agricole), mais sans accès au contenu normatif, l'analyse de second ordre ne peut être conduite."
+ ],
+ "themes": [
+  "agriculture",
+  "amenagement du territoire",
+  "changement climatique",
+  "foncier"
+ ],
+ "scrutinsCles": [
+  "5836",
+  "5837",
+  "5838",
+  "5839"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:f0864547df194f664df02c58fc31049205ca572f8db9d2ed5b6d921eff271f9c"
+}

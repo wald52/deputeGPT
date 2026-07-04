@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N52100",
+ "generatedAt": "2026-07-04T06:22:18Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi relatif à l’organisation des jeux Olympiques et Paralympiques de 2030",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N52100",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0228_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est un projet de loi relatif à l'organisation des Jeux Olympiques et Paralympiques de 2030 en France. L'objectif affiché est de définir le cadre juridique, administratif et financier nécessaire à l'accueil et à l'organisation de cet événement sportif international sur le territoire français.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel a été corrompu ou mal extrait (caractères binaires, flux PDF non décodés, absence d'articles et d'exposé des motifs lisibles). Aucun article, aucune disposition concrète et aucune citation exploitable ne peuvent être identifiés dans le contenu transmis. En l'absence de mécanismes vérifiables tirés du texte, il est impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le contenu transmis est un PDF brut non décodé : aucun article ni exposé des motifs n'est lisible.",
+  "Toute analyse de second ordre (alignement des incitations avec l'objectif) est impossible sans texte exploitable.",
+  "Il conviendrait de fournir le texte du projet de loi dans un format texte (TXT/HTML) ou un PDF correctement extrait pour permettre l'analyse."
+ ],
+ "themes": [
+  "jeux olympiques",
+  "jeux paralympiques",
+  "organisation d'événements sportifs",
+  "texte illisible"
+ ],
+ "scrutinsCles": [
+  "4941",
+  "4963",
+  "5295",
+  "5296"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:a49439a3e14fc6ca0bbdff72ab86781709895cf3532b3ef871a335146ef58a02"
+}

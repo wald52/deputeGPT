@@ -1,0 +1,48 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N51713",
+ "generatedAt": "2026-07-04T06:10:10Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Extension de la possibilité de préemption de baux commerciaux dans les mairies aux sociétés civiles immobilières",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/extension-possibilite_preemption_baux_commerciaux_mairies_societes_civiles_immobilieres_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0240_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à étendre la possibilité de préemption de baux commerciaux dans les mairies aux sociétés civiles immobilières (SCI). L'objectif affiché est de permettre aux communes d'exercer leur droit de préemption sur les cessions de baux commerciaux également lorsque ces cessions interviennent au profit de SCI, afin de préserver le tissu commercial local.",
+ "mecanismesCles": [
+  {
+   "resume": "Le texte officiel fourni est illisible (PDF binaire non décodé), ne permettant pas d'identifier les articles ni les mécanismes concrets de la proposition de loi.",
+   "articleRef": null,
+   "citation": null
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le document transmis est un fichier PDF dont le contenu textuel n'a pas été extrait correctement (flux binaires illisibles). Aucun article, aucune disposition concrète et aucun mécanisme opérationnel (obligation, seuil, sanction, dérogation) ne peut être identifié dans le texte fourni. En application de la règle stricte imposée (s'appuyer uniquement sur le texte fourni), il est impossible de déterminer si les incitations créées par les mécanismes vont dans le sens de l'objectif affiché ou dans le sens opposé.",
+ "pointsDeVigilance": [
+  "Le contenu textuel du PDF n'a pas pu être extrait : le dossier législatif fourni ne contient pas de texte exploitable pour l'analyse.",
+  "Sans accès aux articles, il est impossible de vérifier si l'extension aux SCI comble réellement une lacune ou si elle crée des effets de contournement (par exemple, structuration de cessions via SCI pour échapper à la préemption, ou au contraire restriction excessive du marché).",
+  "Une analyse complémentaire avec le texte intégral décodé serait nécessaire pour formuler un verdict."
+ ],
+ "themes": [
+  "urbanisme commercial",
+  "préemption",
+  "baux commerciaux",
+  "sociétés civiles immobilières",
+  "communes"
+ ],
+ "scrutinsCles": [
+  "5429",
+  "5430",
+  "5431",
+  "5432"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:0bbdf6df1caec4a0d13c8dff47a627735789766430dbab72b0d62f1e251d794a"
+}

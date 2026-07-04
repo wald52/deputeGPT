@@ -1,0 +1,39 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N51580",
+ "generatedAt": "2026-07-04T06:21:35Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Libération des prisonniers arméniens détenus par l’Azerbaïdjan",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/liberation_prisonniers_armeniens_azerbaidjan",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b1015_proposition-resolution",
+  "legifrance": null
+ },
+ "objectifAffiche": "La proposition de résolution n°1015, déposée le 27 février 2025, vise à demander la libération des prisonniers arméniens détenus par l'Azerbaïdjan. Il s'agit d'un texte de nature diplomatique et symbolique, soumis à la procédure de résolution Article 34-1.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles. Seul le titre et l'identifiant de la proposition de résolution sont disponibles, ce qui ne permet pas d'identifier les mécanismes concrets (obligations, sanctions, demandes formelles) créés par le texte. Sans accès au contenu des articles ou à l'exposé des motifs, il est impossible de déterminer si les incitations réelles du texte vont dans le sens de l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué et ne contient que les métadonnées (titre, numéro, date de dépôt, procédure)",
+  "Aucun article ni exposé des motifs n'est disponible pour analyse",
+  "Une résolution Article 34-1 est un acte non contraignant par nature, ce qui limite la portée normative du texte"
+ ],
+ "themes": [
+  "affaires étrangères",
+  "droits humains",
+  "prisonniers",
+  "arménie",
+  "azerbaïdjan"
+ ],
+ "scrutinsCles": [
+  "5297"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:d13c8c20394135d2b73ef888304a3a2d64c901f31eade9f3eece5390d2b0b1ba"
+}

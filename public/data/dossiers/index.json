@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "legislature": "17",
- "generatedAt": "2026-07-03T06:10:40Z",
+ "generatedAt": "2026-07-04T06:00:33Z",
  "scrutins": {
   "1": {
    "dossierId": null,
@@ -38523,8 +38523,93 @@
    "method": "title_containment",
    "confidence": 0.95
   },
+  "7933": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7934": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7935": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7936": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7937": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7938": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7939": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
   "794": {
    "dossierId": "DLR5L17N50690",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7940": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7941": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7942": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7943": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7944": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7945": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7946": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7947": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7948": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7949": {
+   "dossierId": "DLR5L17N53940",
    "method": "title_containment",
    "confidence": 0.95
   },
@@ -38533,8 +38618,108 @@
    "method": "title_containment",
    "confidence": 0.95
   },
+  "7950": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7951": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7952": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7953": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7954": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7955": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7956": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7957": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7958": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7959": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
   "796": {
    "dossierId": "DLR5L17N50690",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7960": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7961": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7962": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7963": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7964": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7965": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7966": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7967": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7968": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7969": {
+   "dossierId": "DLR5L17N53940",
    "method": "title_containment",
    "confidence": 0.95
   },
@@ -38542,6 +38727,51 @@
    "dossierId": "DLR5L17N50690",
    "method": "title_containment",
    "confidence": 0.95
+  },
+  "7970": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7971": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7972": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7973": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7974": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7975": {
+   "dossierId": "DLR5L17N53942",
+   "method": "title_match",
+   "confidence": 0.6
+  },
+  "7976": {
+   "dossierId": "DLR5L17N53942",
+   "method": "title_match",
+   "confidence": 0.6
+  },
+  "7977": {
+   "dossierId": "DLR5L17N53942",
+   "method": "title_match",
+   "confidence": 0.6
+  },
+  "7978": {
+   "dossierId": "DLR5L17N53942",
+   "method": "title_match",
+   "confidence": 0.6
   },
   "798": {
    "dossierId": "DLR5L17N50690",
@@ -49251,6 +49481,7 @@
     "PRJLANR5L17BTC2765",
     "PRJLANR5L17TAP0295",
     "PRJLSNR5S479B0689",
+    "PRJLSNR5S479BTA0152",
     "PRJLSNR5S479BTC0763",
     "RAPPANR5L17B2765",
     "RAPPSNR5S479B0762"
@@ -50629,7 +50860,11 @@
    "refJo": null,
    "legifranceUrl": null,
    "scrutinNumeros": [
-    "7895"
+    "7895",
+    "7975",
+    "7976",
+    "7977",
+    "7978"
    ]
   },
   "DLR5L17N53940": {
@@ -50681,7 +50916,49 @@
     "7929",
     "7930",
     "7931",
-    "7932"
+    "7932",
+    "7933",
+    "7934",
+    "7935",
+    "7936",
+    "7937",
+    "7938",
+    "7939",
+    "7940",
+    "7941",
+    "7942",
+    "7943",
+    "7944",
+    "7945",
+    "7946",
+    "7947",
+    "7948",
+    "7949",
+    "7950",
+    "7951",
+    "7952",
+    "7953",
+    "7954",
+    "7955",
+    "7956",
+    "7957",
+    "7958",
+    "7959",
+    "7960",
+    "7961",
+    "7962",
+    "7963",
+    "7964",
+    "7965",
+    "7966",
+    "7967",
+    "7968",
+    "7969",
+    "7970",
+    "7971",
+    "7972",
+    "7973",
+    "7974"
    ]
   },
   "DLR5L17N51161": {
@@ -52494,14 +52771,14 @@
   "7894"
  ],
  "stats": {
-  "totalScrutins": 7932,
+  "totalScrutins": 7978,
   "totalDossiersLies": 224,
-  "matchRate": 0.8281,
+  "matchRate": 0.8291,
   "methods": {
    "override": 0,
    "field": 0,
-   "title_containment": 6033,
-   "title_match": 514,
+   "title_containment": 6075,
+   "title_match": 518,
    "none": 26,
    "unmatched": 1359
   }

@@ -1,0 +1,37 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N52984",
+ "generatedAt": "2026-07-04T06:05:57Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi constitutionnelle relatif à la Nouvelle-Calédonie",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N52984",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2529_projet-loi",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est un projet de loi constitutionnelle relatif à la Nouvelle-Calédonie, déposé le 25 février 2026 et adopté par le Sénat. Aucun exposé des motifs ni contenu substantiel des articles n'est fourni dans le document transmis.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs, ni articles, ni aucune disposition substantielle : seules des métadonnées de navigation (titre, numéro, procédure, commission saisie) sont présentes. En l'absence de tout mécanisme identifiable, il est impossible de déterminer si les incitations créées par le texte vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le contenu normatif du projet de loi (exposé des motifs et articles) est absent du document transmis",
+  "Le texte est tronqué à 15000 caractères mais ne contient en réalité que des éléments de structure du dossier législatif",
+  "Sans accès aux dispositions, aucune analyse de second ordre n'est possible"
+ ],
+ "themes": [
+  "nouvelle-calédonie",
+  "loi constitutionnelle",
+  "outre-mer"
+ ],
+ "scrutinsCles": [
+  "6022"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:72d91139a934f50b8f224c3155cc7aaa57c60306f438364f5c9de8e03d2ca022"
+}

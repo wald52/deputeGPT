@@ -1,0 +1,40 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N54144",
+ "generatedAt": "2026-07-04T06:01:21Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Pour la mobilisation de l’habitat existant en réponse à la crise du logement",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/mobilisation_habitant_existant_crise_logement_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0292_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire intitulée « Pour la mobilisation de l'habitat existant en réponse à la crise du logement ». L'objectif affiché est de mobiliser le parc de logements existants pour répondre à la crise du logement.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des objets PDF, des flux binaires compressés et des métadonnées techniques apparaissent). Aucun article, aucun mécanisme concret (obligation, taxe, subvention, seuil, sanction) et aucun extrait de l'exposé des motifs ne peut être identifié dans le contenu transmis. Il est donc impossible de déterminer si les incitations créées par les mécanismes vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le contenu transmis est un PDF binaire non décodé : aucun article ni exposé des motifs n'est lisible.",
+  "Seuls le titre de la proposition de loi et son identifiant sont exploitables.",
+  "Toute analyse de second ordre sur les mécanismes est impossible sans le texte décodé."
+ ],
+ "themes": [
+  "logement",
+  "habitat existant",
+  "crise du logement"
+ ],
+ "scrutinsCles": [
+  "7024",
+  "7025",
+  "7026",
+  "7027"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:1090a0da7b1dc54c9551c0ab07d729553edcd058a6ba5c54b147ec7fe26ff23d"
+}

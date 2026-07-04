@@ -1,0 +1,40 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53772",
+ "generatedAt": "2026-07-04T06:02:54Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Garantir le bénéfice des prestations familiales aux enfants placés",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/garantir_benefice_prestations_familiales_enfants_places_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2621_texte-adopte-commission",
+  "legifrance": null
+ },
+ "objectifAffiche": "Proposition de loi ordinaire visant à garantir le bénéfice des prestations familiales aux enfants placés, déposée par Mme Nathalie Colin-Oesterlé et plusieurs collègues (texte n° 2493), examinée par la commission des affaires sociales.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles : seuls figurent la page de garde, le sommaire, les liens de navigation et les métadonnées du dossier législatif (commission, formats, notice XML/JSON). Aucun mécanisme concret (obligation, allocation, dérogation, seuil, sanction) ne peut être extrait ni analysé.",
+ "pointsDeVigilance": [
+  "Le document transmis est une coquille vide : aucun article ni exposé des motifs n'est inclus.",
+  "Le texte est tronqué à 15 000 caractères mais, en l'état, la quasi-totalité de la chaîne est constituée de balises HTML et de liens.",
+  "Sans lecture des articles, il est impossible de vérifier si les incitations créées servent réellement l'objectif affiché."
+ ],
+ "themes": [
+  "prestations familiales",
+  "protection de l'enfance",
+  "enfants placés"
+ ],
+ "scrutinsCles": [
+  "6089",
+  "6090",
+  "6091",
+  "6092"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:e24d7089969e8abb85f5e2f94ef6e2557e6979fd4859a5fdc8b3889bc611d6df"
+}

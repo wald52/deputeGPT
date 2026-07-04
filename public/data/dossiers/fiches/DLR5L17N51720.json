@@ -1,0 +1,42 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N51720",
+ "generatedAt": "2026-07-04T06:11:45Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Améliorer la protection des commerçants grâce à l’usage d’outils numériques",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/protection_commercants_outils_numeriques_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0239_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à améliorer la protection des commerçants grâce à l'usage d'outils numériques. L'objectif affiché est donc de renforcer la sécurité et la protection des commerçants via des dispositifs numériques.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel a été corrompu ou mal extrait (flux binaires, objets PDF non décodés). Aucun article, aucune disposition concrète, aucune obligation, taxe, subvention ou sanction ne peut être identifié dans le contenu fourni. Il est donc impossible de déterminer les mécanismes créés par le texte et, a fortiori, de vérifier si les incitations réelles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le contenu du texte officiel est inexploitable (PDF binaire non décodé)",
+  "Aucun article ni mécanisme n'a pu être extrait du document fourni",
+  "L'exposé des motifs n'est pas accessible dans le texte transmis",
+  "Une analyse fiable nécessiterait la version textuelle (HTML/TXT) du dossier législatif"
+ ],
+ "themes": [
+  "protection des commerçants",
+  "outils numériques",
+  "sécurité",
+  "commerce"
+ ],
+ "scrutinsCles": [
+  "5424",
+  "5425",
+  "5426",
+  "5427"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:f26aa1c9e71502788b189ed77040e58b7b3e9470771996c46f5635b8bf87139d"
+}

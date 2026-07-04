@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N52767",
+ "generatedAt": "2026-07-04T06:02:16Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Abrogation du Code noir",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/abrogation_code_noir",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0290_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire intitulée « Abrogation du Code noir ». L'objectif affiché, tel qu'il peut être déduit du titre et de la nature du texte, est de procéder à l'abrogation du Code noir (l'édit royal de 1685 sur les esclaves des colonies).",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel a été tronqué ou mal extrait (caractères binaires, flux PDF non décodés). Aucun article, aucun exposé des motifs, aucune disposition concrète (obligation, taxe, subvention, sanction, seuil) ne peut être identifié dans le contenu fourni. Il est donc impossible de déterminer les mécanismes créés par le texte et, a fortiori, de vérifier si les incitations qu'ils produisent sont alignées avec l'objectif affiché d'abrogation du Code noir.",
+ "pointsDeVigilance": [
+  "Le contenu textuel du PDF est corrompu ou non décodé : aucune lecture des articles n'est possible.",
+  "Le titre seul (« Abrogation du Code noir ») ne permet pas de connaître la portée exacte (abrogation simple, abrogation avec dispositions de remplacement, mesures de mémoire, etc.).",
+  "Sans accès au texte réel, toute analyse de second ordre serait spéculative."
+ ],
+ "themes": [
+  "esclavage",
+  "mémoire",
+  "droit colonial",
+  "abrogation"
+ ],
+ "scrutinsCles": [
+  "6999",
+  "7000",
+  "7001",
+  "7002"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:100d423301c091ecf76928feb45b77766dc2ac4d2568ce3d6177c6f2f3cce0f7"
+}

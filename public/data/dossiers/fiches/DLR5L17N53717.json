@@ -1,0 +1,38 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53717",
+ "generatedAt": "2026-07-04T06:06:53Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Interdire les sucres ajoutés dans les aliments destinés aux nourrissons et aux enfants en bas âge",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/interdire_sucres_ajoutes_nourrissons_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0256_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à interdire les sucres ajoutés dans les aliments destinés aux nourrissons et aux enfants en bas âge, afin de protéger la santé infantile face aux risques liés à la consommation précoce de sucres.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel n'a pas été extrait (seules des balises PDF techniques et des flux binaires compressés sont visibles). Aucun article, aucune disposition concrète, aucune obligation, seuil ou sanction ne peut être identifié dans le contenu exploitable. Il est donc impossible de déterminer les mécanismes réels créés par le texte ni de vérifier s'ils s'alignent avec l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le contenu textuel du PDF n'a pas été décodé : le texte officiel est tronqué ou corrompu",
+  "Aucun article ni exposé des motifs lisible n'a pu être analysé",
+  "Impossible de vérifier la portée réelle de l'interdiction (définition des sucres ajoutés, catégories d'aliments visées, dérogations éventuelles, sanctions, date d'entrée en vigueur)"
+ ],
+ "themes": [
+  "santé publique",
+  "alimentation infantile",
+  "sucres ajoutés",
+  "nutrition"
+ ],
+ "scrutinsCles": [
+  "5847"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:159a5ea54b55fbe500db701af8a2b6a5bf55b3c14104319b87482f72bd64f258"
+}

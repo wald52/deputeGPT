@@ -1,0 +1,38 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53720",
+ "generatedAt": "2026-07-04T06:07:09Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Renforcer le contrôle, la gouvernance et la responsabilité financière des agences et opérateurs de l’État",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/controle_gouvernance_reponsabilite_financiere_agences_operateurs_Etat_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0255_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Renforcer le contrôle, la gouvernance et la responsabilité financière des agences et opérateurs de l'État (proposition de loi ordinaire).",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un flux binaire PDF (caractères de contrôle, flux d'objets compressés, fragments binaires) sans aucun contenu textuel exploitable. Aucun article, aucune disposition, aucun mécanisme concret ne peut être identifié ou cité. En l'absence de tout contenu normatif déchiffrable, il est impossible de déterminer si les incitations créées par le texte vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le document fourni est un PDF binaire non décodé : le contenu normatif (exposé des motifs, articles) n'est pas accessible.",
+  "Aucune référence d'article ni citation exploitable n'a pu être extraite.",
+  "Une nouvelle soumission du texte au format texte (TXT/HTML/XML Légifrance) est nécessaire pour mener l'analyse."
+ ],
+ "themes": [
+  "gouvernance",
+  "agences et opérateurs de l'état",
+  "responsabilité financière",
+  "contrôle"
+ ],
+ "scrutinsCles": [
+  "5846"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:a2199172dc640baed613255c6a6877a142c842cd1996fbf51cc2f2b6408d576d"
+}
