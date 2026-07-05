@@ -31,7 +31,8 @@ from datetime import datetime
 import requests
 from bs4 import BeautifulSoup
 
-ANALYSIS_VERSION = 1
+# v2 : invalide les fiches generees sur des PDF illisibles (runs des 04-05/07).
+ANALYSIS_VERSION = 2
 FICHE_SCHEMA_VERSION = 1
 
 # Les variables de workflow non definies arrivent en CHAINE VIDE (pas absentes) :
@@ -149,10 +150,54 @@ def focus_on_expose_des_motifs(text: str) -> str:
     return text
 
 
-def fetch_url(url: str, session: requests.Session):
-    response = session.get(url, timeout=HTTP_TIMEOUT_SECONDS, headers={"User-Agent": "deputeGPT-pipeline"})
+FETCH_HEADERS = {
+    "User-Agent": "deputeGPT-pipeline",
+    "Accept": "text/html,application/xhtml+xml,application/pdf;q=0.9,*/*;q=0.8",
+}
+PDF_MAX_PAGES = 60
+
+
+def extract_pdf_text(payload: bytes):
+    """Extrait le texte d'un PDF (les textes AN sont souvent servis en PDF)."""
+    try:
+        from io import BytesIO
+
+        from pypdf import PdfReader
+    except Exception as error:
+        log(f"  ⚠️ pypdf indisponible ({error}) : PDF ignoré.")
+        return None
+
+    try:
+        reader = PdfReader(BytesIO(payload))
+        pages = [page.extract_text() or "" for page in reader.pages[:PDF_MAX_PAGES]]
+        text = re.sub(r"\n{2,}", "\n", "\n".join(pages))
+        return text.strip()
+    except Exception as error:
+        log(f"  ⚠️ Extraction PDF impossible : {error}")
+        return None
+
+
+def is_mostly_readable(text: str) -> bool:
+    """Rejette le binaire déguisé en texte : jamais de bruit vers le LLM."""
+    if not text:
+        return False
+    sample = text[:4000]
+    printable = sum(1 for ch in sample if ch.isprintable() or ch in "\n\t")
+    letters = sum(1 for ch in sample if ch.isalpha() or ch.isspace())
+    return printable / len(sample) >= 0.9 and letters / len(sample) >= 0.55
+
+
+def fetch_document_text(url: str, session: requests.Session):
+    """Télécharge une URL AN et retourne son texte lisible (HTML ou PDF), ou None."""
+    response = session.get(url, timeout=HTTP_TIMEOUT_SECONDS, headers=FETCH_HEADERS)
     response.raise_for_status()
-    return response.text
+
+    content_type = (response.headers.get("Content-Type") or "").lower()
+    payload = response.content or b""
+    if "pdf" in content_type or payload[:5] == b"%PDF-":
+        return extract_pdf_text(payload)
+
+    return clean_page_text(response.text)
 
 
 def fetch_dossier_source_text(dossier: dict, session: requests.Session):
@@ -161,7 +206,9 @@ def fetch_dossier_source_text(dossier: dict, session: requests.Session):
     dossier_html = None
     if an_url:
         try:
-            dossier_html = fetch_url(an_url, session)
+            response = session.get(an_url, timeout=HTTP_TIMEOUT_SECONDS, headers=FETCH_HEADERS)
+            response.raise_for_status()
+            dossier_html = response.text
         except Exception as error:
             log(f"  ⚠️ Page dossier inaccessible ({an_url}) : {error}")
 
@@ -178,16 +225,18 @@ def fetch_dossier_source_text(dossier: dict, session: requests.Session):
 
     if texte_url:
         try:
-            texte_html = fetch_url(texte_url, session)
-            text = focus_on_expose_des_motifs(clean_page_text(texte_html))
-            if len(text) > 500:
-                return text[:SOURCE_TEXT_MAX_CHARS], texte_url
+            text = fetch_document_text(texte_url, session)
+            if text:
+                text = focus_on_expose_des_motifs(text)
+                if len(text) > 500 and is_mostly_readable(text):
+                    return text[:SOURCE_TEXT_MAX_CHARS], texte_url
+                log("  ⚠️ Texte du dossier illisible ou trop court, repli sur la page dossier.")
         except Exception as error:
             log(f"  ⚠️ Page texte inaccessible ({texte_url}) : {error}")
 
     if dossier_html:
         text = clean_page_text(dossier_html)
-        if len(text) > 500:
+        if len(text) > 500 and is_mostly_readable(text):
             return text[:SOURCE_TEXT_MAX_CHARS], an_url
 
     return None, None

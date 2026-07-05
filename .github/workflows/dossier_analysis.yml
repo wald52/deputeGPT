@@ -46,7 +46,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install Dependencies
-        run: pip install requests beautifulsoup4
+        run: pip install requests beautifulsoup4 pypdf
 
       # --- ETAPE 1 : CHAINAGE SCRUTINS -> DOSSIERS ---
       - name: Link Scrutins to Dossiers

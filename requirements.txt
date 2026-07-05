@@ -6,6 +6,9 @@
 requests>=2.31
 beautifulsoup4>=4.12
 
+# Extraction des textes de loi servis en PDF par assemblee-nationale.fr (fiches)
+pypdf>=4
+
 # Generation des artefacts RAG (index lexical + embeddings semantiques E5 / BGE-M3)
 numpy>=1.26
 FlagEmbedding>=1.2
