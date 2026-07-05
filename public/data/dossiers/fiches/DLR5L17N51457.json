@@ -1,0 +1,38 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N51457",
+ "generatedAt": "2026-07-05T06:34:28Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi relative à la protection sociale complémentaire des agents publics territoriaux",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N51457",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0193_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Proposition de loi relative à la protection sociale complémentaire des agents publics territoriaux. L'objectif affiché est d'améliorer la couverture sociale complémentaire (santé et prévoyance) des fonctionnaires territoriaux, en harmonisant les pratiques entre collectivités et en renforçant la participation employeur.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel n'a pas été extrait (seuls des objets PDF bruts et des flux binaires compressés sont visibles). Aucun article, aucun mécanisme concret (obligation, seuil, taux de cotisation, sanction, dérogation) et aucun extrait de l'exposé des motifs ne peut être identifié dans le contenu transmis. En l'absence de toute disposition lisible, il est impossible de déterminer si les incitations créées par les mécanismes vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le document fourni est un PDF brut non décodé : aucun article ni exposé des motifs n'est lisible.",
+  "Toute analyse de second ordre (alignement des incitations sur l'objectif) est impossible sans le texte normatif exploitable.",
+  "Il conviendrait de fournir une version texte (OCR ou extraction) de la proposition de loi pour mener l'analyse."
+ ],
+ "themes": [
+  "protection sociale complémentaire",
+  "fonction publique territoriale",
+  "prévoyance",
+  "complémentaire santé"
+ ],
+ "scrutinsCles": [
+  "4707"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:fbaf1135a5a4bf42fb4056d91c63e6ced13c6eb2f18573fa4f68234fc1241a38"
+}

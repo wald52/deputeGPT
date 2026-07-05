@@ -1,8 +1,21 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-07-04T06:25:50Z",
- "totalFiches": 80,
+ "generatedAt": "2026-07-05T06:50:57Z",
+ "totalFiches": 106,
  "fiches": {
+  "DLR5L16N46127": {
+   "titre": "Proposition de loi portant réparation des personnes condamnées pour homosexualité entre 1945 et 1982",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-05T06:31:03Z",
+   "themes": [
+    "mémoire",
+    "droits des personnes lgbt+",
+    "réparation",
+    "justice",
+    "réhabilitation"
+   ]
+  },
   "DLR5L16N49075": {
    "titre": "Proposition de loi visant à renforcer les prérogatives des officiers de l’état civil et du ministère public pour lutter contre les mariages simulés ou arrangés",
    "verdictIncitations": "indetermine",
@@ -29,6 +42,17 @@
     "chlordécone"
    ]
   },
+  "DLR5L16N49280": {
+   "titre": "Proposition de loi portant création d'un statut de l'élu local",
+   "verdictIncitations": "indetermine",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-05T06:39:24Z",
+   "themes": [
+    "statut de l'élu local",
+    "démocratie locale",
+    "collectivités territoriales"
+   ]
+  },
   "DLR5L16N49364": {
    "titre": "Réduire l’impact environnemental de l’industrie textile",
    "verdictIncitations": "indetermine",
@@ -49,6 +73,42 @@
     "simplification administrative",
     "vie économique",
     "texte illisible"
+   ]
+  },
+  "DLR5L17N51037": {
+   "titre": "Reconnaître une présomption de légitime défense pour les forces de l'ordre, dans l'exercice de leurs fonctions",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-05T06:26:55Z",
+   "themes": [
+    "sécurité intérieure",
+    "forces de l'ordre",
+    "légitime défense",
+    "droit pénal",
+    "responsabilité des agents publics"
+   ]
+  },
+  "DLR5L17N51079": {
+   "titre": "Projet de loi spéciale prévue par l’article 45 de la loi organique du 1er août 2001 relative aux lois de finances",
+   "verdictIncitations": "indetermine",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-05T06:29:22Z",
+   "themes": [
+    "finances publiques",
+    "loi de finances",
+    "texte illisible"
+   ]
+  },
+  "DLR5L17N51173": {
+   "titre": "Proposition de loi organique tendant à modifier le II de l’article 43 de la loi organique n° 2004-192 du 27 février 2004 portant statut d’autonomie de la Polynésie française",
+   "verdictIncitations": "indetermine",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-05T06:36:14Z",
+   "themes": [
+    "polynésie française",
+    "statut d'autonomie",
+    "loi organique",
+    "outre-mer"
    ]
   },
   "DLR5L17N51175": {
@@ -75,6 +135,31 @@
     "numerique"
    ]
   },
+  "DLR5L17N51351": {
+   "titre": "Proposition de loi visant à reconnaître le préjudice subi par les personnes condamnées sur le fondement de la législation pénalisant l’avortement, et par toutes les femmes, avant la loi n° 75-17 du 17 janvier 1975 relative à l’interruption volontaire de la grossesse",
+   "verdictIncitations": "indetermine",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-05T06:30:09Z",
+   "themes": [
+    "droits des femmes",
+    "avortement",
+    "ivg",
+    "réparation",
+    "mémoire"
+   ]
+  },
+  "DLR5L17N51457": {
+   "titre": "Proposition de loi relative à la protection sociale complémentaire des agents publics territoriaux",
+   "verdictIncitations": "indetermine",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-05T06:34:28Z",
+   "themes": [
+    "protection sociale complémentaire",
+    "fonction publique territoriale",
+    "prévoyance",
+    "complémentaire santé"
+   ]
+  },
   "DLR5L17N51580": {
    "titre": "Libération des prisonniers arméniens détenus par l’Azerbaïdjan",
    "verdictIncitations": "indetermine",
@@ -86,6 +171,31 @@
     "prisonniers",
     "arménie",
     "azerbaïdjan"
+   ]
+  },
+  "DLR5L17N51581": {
+   "titre": "Proposition de loi élargissant la possibilité pour les collectivités territoriales et leurs groupements d'avoir recours au modèle de la société portuaire pour l'exploitation de leurs ports",
+   "verdictIncitations": "indetermine",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-05T06:37:47Z",
+   "themes": [
+    "ports",
+    "collectivités territoriales",
+    "société portuaire",
+    "exploitation portuaire"
+   ]
+  },
+  "DLR5L17N51615": {
+   "titre": "Mise en œuvre du Protocole de l’Organisation Mondiale de la Santé pour « lutter contre le commerce illicite de tabac »",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-05T06:45:44Z",
+   "themes": [
+    "tabac",
+    "commerce illicite",
+    "oms",
+    "protocole international",
+    "résolution parlementaire"
    ]
   },
   "DLR5L17N51655": {
@@ -306,6 +416,31 @@
     "droit organique"
    ]
   },
+  "DLR5L17N52132": {
+   "titre": "Inscrire la mouvance des frères musulmans sur la liste européenne des organisations terroristes",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-05T06:28:07Z",
+   "themes": [
+    "terrorisme",
+    "listes européennes",
+    "frères musulmans",
+    "résolution européenne",
+    "affaires étrangères"
+   ]
+  },
+  "DLR5L17N52207": {
+   "titre": "Nationalisation d'ArcelorMittal France",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-05T06:41:42Z",
+   "themes": [
+    "nationalisation",
+    "sidérurgie",
+    "industrie",
+    "propriété publique"
+   ]
+  },
   "DLR5L17N52208": {
    "titre": "Accélérer le développement du transport maritime à propulsion vélique",
    "verdictIncitations": "indetermine",
@@ -329,6 +464,17 @@
     "lieux de privation de liberté",
     "contrôle démocratique",
     "contrôle juridictionnel"
+   ]
+  },
+  "DLR5L17N52428": {
+   "titre": "Projet de loi de finances pour 2026",
+   "verdictIncitations": "indetermine",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-05T06:28:56Z",
+   "themes": [
+    "loi de finances",
+    "budget de l'etat",
+    "document illisible"
    ]
   },
   "DLR5L17N52598": {
@@ -368,6 +514,19 @@
     "résolution parlementaire"
    ]
   },
+  "DLR5L17N52719": {
+   "titre": "Dénoncer les accords franco-algériens du 27 décembre 1968",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-05T06:50:57Z",
+   "themes": [
+    "relations bilatérales",
+    "accord franco-algérien 1968",
+    "immigration",
+    "résolution parlementaire",
+    "article 34-1"
+   ]
+  },
   "DLR5L17N52743": {
    "titre": "Garantir l’information et la protection effective des victimes de violences sexuelles lors de la libération de leur agresseur",
    "verdictIncitations": "indetermine",
@@ -405,6 +564,18 @@
     "modernisation administrative"
    ]
   },
+  "DLR5L17N52749": {
+   "titre": "Garantir un renouvellement automatique des titres de séjour de longue durée",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-05T06:33:02Z",
+   "themes": [
+    "droit des étrangers",
+    "titres de séjour",
+    "renouvellement automatique",
+    "immigration"
+   ]
+  },
   "DLR5L17N52750": {
    "titre": "Simplifier le millefeuille territorial par la collectivité unique",
    "verdictIncitations": "indetermine",
@@ -429,6 +600,18 @@
     "abrogation"
    ]
   },
+  "DLR5L17N52776": {
+   "titre": "Gratuité des parkings d'hôpitaux publics",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-05T06:47:08Z",
+   "themes": [
+    "santé",
+    "stationnement",
+    "hôpitaux publics",
+    "gratuité"
+   ]
+  },
   "DLR5L17N52781": {
    "titre": "Assurer le droit de chaque enfant à disposer d’un avocat dans le cadre d’une mesure d’assistance éducative et de protection de l’enfance",
    "verdictIncitations": "indetermine",
@@ -442,6 +625,29 @@
     "avocat"
    ]
   },
+  "DLR5L17N52787": {
+   "titre": "Rendre systématique l’information du consommateur sur l’origine des denrées alimentaires par le moyen de l’étiquetage",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-05T06:47:36Z",
+   "themes": [
+    "étiquetage",
+    "origine des denrées alimentaires",
+    "information du consommateur",
+    "transparence"
+   ]
+  },
+  "DLR5L17N52801": {
+   "titre": "Rétablissement du délit de séjour irrégulier",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-05T06:50:27Z",
+   "themes": [
+    "immigration",
+    "droit pénal",
+    "séjour irrégulier"
+   ]
+  },
   "DLR5L17N52820": {
    "titre": "Condamner la dérive illibérale et autoritaire du gouvernement géorgien et réaffirmer notre soutien au destin européen de la Géorgie",
    "verdictIncitations": "indetermine",
@@ -453,6 +659,17 @@
     "démocratie",
     "union européenne",
     "condamnation politique"
+   ]
+  },
+  "DLR5L17N52922": {
+   "titre": "Projet de loi de financement de la sécurité sociale pour 2026",
+   "verdictIncitations": "indetermine",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-05T06:31:32Z",
+   "themes": [
+    "financement de la sécurité sociale",
+    "texte illisible",
+    "analyse indéterminée"
    ]
   },
   "DLR5L17N52924": {
@@ -478,6 +695,18 @@
     "bourses étudiantes",
     "précarité étudiante",
     "aides sociales"
+   ]
+  },
+  "DLR5L17N52976": {
+   "titre": "L'établissement de l’égalité d’accès au service public postal en outre-mer",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-05T06:42:10Z",
+   "themes": [
+    "outre-mer",
+    "service public postal",
+    "égalité territoriale",
+    "aménagement du territoire"
    ]
   },
   "DLR5L17N52977": {
@@ -539,6 +768,42 @@
     "ambition climatique"
    ]
   },
+  "DLR5L17N53019": {
+   "titre": "Rendre plus lisible le fonctionnement de l'administration",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-05T06:27:14Z",
+   "themes": [
+    "administration",
+    "lisibilité",
+    "résolution parlementaire",
+    "article 34-1"
+   ]
+  },
+  "DLR5L17N53051": {
+   "titre": "Protéger les mineurs isolés et à lutter contre le sans-abrisme",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-05T06:33:59Z",
+   "themes": [
+    "protection de l'enfance",
+    "sans-abrisme",
+    "mineurs isolés",
+    "politique sociale"
+   ]
+  },
+  "DLR5L17N53058": {
+   "titre": "Prendre des mesures d’urgence contre la vie chère en outre-mer dans le secteur des services",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-05T06:32:22Z",
+   "themes": [
+    "outre-mer",
+    "vie chère",
+    "services",
+    "pouvoir d'achat"
+   ]
+  },
   "DLR5L17N53067": {
    "titre": "Reconnaître une politique nationale d’adaptation au changement climatique et à adapter les mécanismes d’assurance",
    "verdictIncitations": "indetermine",
@@ -549,6 +814,41 @@
     "adaptation",
     "assurance",
     "catastrophes naturelles"
+   ]
+  },
+  "DLR5L17N53069": {
+   "titre": "Retrouver la confiance et l’équilibre dans les rapports locatifs",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-05T06:33:23Z",
+   "themes": [
+    "rapports locatifs",
+    "logement",
+    "bail",
+    "équilibre bailleur-locataire"
+   ]
+  },
+  "DLR5L17N53073": {
+   "titre": "S’opposer à l’adoption de l’accord commercial entre l’Union européenne et le Mercosur",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-05T06:44:11Z",
+   "themes": [
+    "commerce international",
+    "accord ue-mercosur",
+    "résolution parlementaire",
+    "politique commerciale"
+   ]
+  },
+  "DLR5L17N53135": {
+   "titre": "Projet de loi de finances de fin de gestion pour 2025",
+   "verdictIncitations": "indetermine",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-05T06:41:01Z",
+   "themes": [
+    "finances publiques",
+    "loi de finances rectificative",
+    "budget de l'état"
    ]
   },
   "DLR5L17N53159": {
@@ -574,6 +874,17 @@
     "alimentation",
     "école",
     "expérimentation"
+   ]
+  },
+  "DLR5L17N53187": {
+   "titre": "Protéger les mineurs des risques auxquels les expose l’utilisation des réseaux sociaux",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-05T06:26:30Z",
+   "themes": [
+    "protection des mineurs",
+    "réseaux sociaux",
+    "numérique"
    ]
   },
   "DLR5L17N53192": {

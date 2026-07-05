@@ -1,0 +1,40 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N52719",
+ "generatedAt": "2026-07-05T06:50:57Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Dénoncer les accords franco-algériens du 27 décembre 1968",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/denoncer_accords_franco_algeriens_27_decembre_1968",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0177_texte-adopte-seance",
+  "legifrance": null
+ },
+ "objectifAffiche": "Résolution parlementaire visant à dénoncer les accords franco-algériens du 27 décembre 1968, adoptée par l'Assemblée nationale le 30 octobre 2025 (procédure de résolution Article 34-1).",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles substantiels : seuls figurent le titre, l'identifiant, la procédure et des liens de navigation. Aucun mécanisme concret (obligation, taxe, subvention, dérogation, seuil, sanction) n'est identifiable dans le contenu transmis, ce qui empêche toute analyse des incitations produites par le texte.",
+ "pointsDeVigilance": [
+  "Le contenu textuel de la résolution (exposé des motifs et articles) n'est pas présent dans l'extrait fourni",
+  "Une résolution Article 34-1 est un acte non législatif : elle exprime une position de l'Assemblée mais ne crée pas en principe de normes contraignantes",
+  "La dénonciation d'accords bilatéraux relève en droit international d'une décision du pouvoir exécutif (gouvernement), le rôle du Parlement étant ici d'adresser une injonction politique",
+  "Sans le contenu des visas et considérants, il est impossible de savoir si la résolution demande une dénonciation unilatérale, une renégociation, ou simplement un réexamen"
+ ],
+ "themes": [
+  "relations bilatérales",
+  "accord franco-algérien 1968",
+  "immigration",
+  "résolution parlementaire",
+  "article 34-1"
+ ],
+ "scrutinsCles": [
+  "3260"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:6e01c707414618fbb0ccd0de1804f5a4ea900618fee5e6199ce9b0d14344e7de"
+}

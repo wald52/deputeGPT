@@ -1,0 +1,49 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L16N46127",
+ "generatedAt": "2026-07-05T06:31:03Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi portant réparation des personnes condamnées pour homosexualité entre 1945 et 1982",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/16/dossiers/DLR5L16N46127",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2351_proposition-loi",
+  "legifrance": null
+ },
+ "objectifAffiche": "La proposition de loi vise à reconnaître, au nom de la Nation, les préjudices subis par les personnes condamnées pour homosexualité entre 1942 et 1982, et à réparer ces préjudices. Il s'agit d'un texte mémoriel et symbolique tendant à la réhabilitation de victimes d'une répression pénale fondée sur l'orientation sexuelle.",
+ "mecanismesCles": [
+  {
+   "resume": "Reconnaissance symbolique par la Nation des préjudices subis par les personnes condamnées pour homosexualité sur la période 1942-1982.",
+   "articleRef": null,
+   "citation": "Proposition de loi... portant reconnaissance par la Nation et réparation des préjudices subis par les personnes condamnées pour homosexualité entre 1942 et 1982"
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient que l'intitulé et les métadonnées de la proposition de loi (numéro, législature, commission saisie, date de dépôt, formats disponibles). Aucun article, aucun dispositif concret (montant d'indemnisation, critères d'éligibilité, commission d'instruction, modalités de réparation) et aucun exposé des motifs n'est reproduit dans le dossier transmis. Il est donc impossible d'identifier les mécanismes précis de réparation et, a fortiori, de déterminer si les incitations qu'ils créent sont alignées, mitigées ou opposées à l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué et ne contient ni les articles ni l'exposé des motifs : l'analyse des mécanismes concrets est impossible.",
+  "La période couverte (1942-1982) inclut des années antérieures à 1945, ce qui peut soulever des questions de champ d'application temporel et de compétence législative.",
+  "Le statut 'en_cours' et la mention 'modifiée par l'Assemblée nationale, en deuxième lecture' indiquent que le texte a déjà évolué : le contenu actuel des articles n'est pas connu.",
+  "La nature exacte de la 'réparation' (symbolique, indemnitaire, les deux) ne peut être déterminée à partir des éléments fournis."
+ ],
+ "themes": [
+  "mémoire",
+  "droits des personnes lgbt+",
+  "réparation",
+  "justice",
+  "réhabilitation"
+ ],
+ "scrutinsCles": [
+  "4833",
+  "4834",
+  "4835",
+  "4836"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:51c2dedfd095c9cfb2895127f85d9bc5dbfb27556c1bf020b155af5d329f22d2"
+}

@@ -1,0 +1,37 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N52801",
+ "generatedAt": "2026-07-05T06:50:27Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Rétablissement du délit de séjour irrégulier",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/retablissement_du_delit_de_sejour_irregulier_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b1839_proposition-loi",
+  "legifrance": null
+ },
+ "objectifAffiche": "Proposition de loi ordinaire visant à rétablir le délit de séjour irrégulier en droit français. Le texte est déposé le 16 septembre 2025 et renvoyé en commission des lois, mais l'exposé des motifs et les articles ne sont pas fournis dans le dossier.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni ne contient ni exposé des motifs, ni articles de loi : seuls le titre, le numéro, la date de dépôt et la commission de renvoi sont communiqués. Sans lecture des mécanismes concrets (obligation, sanction, seuil, dérogation), il est impossible de déterminer si les incitations créées vont dans le sens de l'objectif affiché ou s'y opposent. Le verdict est donc indéterminé par insuffisance de texte.",
+ "pointsDeVigilance": [
+  "Aucun article ni exposé des motifs n'est présent dans le document fourni",
+  "Le contenu substantiel de la proposition de loi (n° 1839) n'est pas accessible dans ce dossier tronqué",
+  "Le rétablissement d'un délit de séjour irrégulier soulève en général des questions de conformité avec le droit européen et les engagements internationaux de la France, mais cela ne peut être évalué sans le texte"
+ ],
+ "themes": [
+  "immigration",
+  "droit pénal",
+  "séjour irrégulier"
+ ],
+ "scrutinsCles": [
+  "3261"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:accbea256908073cda82ed316881e9a5ca8cffd104fc8520756dac49802b810c"
+}

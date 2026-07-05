@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N51079",
+ "generatedAt": "2026-07-05T06:29:22Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi spéciale prévue par l’article 45 de la loi organique du 1er août 2001 relative aux lois de finances",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/pjl_speciale_article45lolf_2025",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0020_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est un projet de loi spéciale prévue par l'article 45 de la loi organique du 1er août 2001 relative aux lois de finances. L'objectif affiché n'est pas lisible dans le contenu fourni (PDF binaire illisible).",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni est un fichier PDF dont le contenu textuel n'a pas été extrait (flux binaires illisibles). Aucun article, aucune disposition, aucun mécanisme concret ne peut être identifié dans le contenu fourni. Conformément aux règles strictes de l'analyse, il est impossible de déterminer les mécanismes créés par le texte ni de comparer les incitations réelles à un objectif affiché qui n'est pas non plus lisible.",
+ "pointsDeVigilance": [
+  "Le contenu du PDF est tronqué et illisible (flux binaires non décodés)",
+  "L'exposé des motifs n'est pas accessible dans le texte fourni",
+  "Aucun article n'a pu être extrait pour analyse",
+  "L'identifiant DLR5L17N51079 et la référence à l'article 45 de la LOLF suggèrent un texte de finances (loi spéciale), mais le contenu normatif reste inaccessible"
+ ],
+ "themes": [
+  "finances publiques",
+  "loi de finances",
+  "texte illisible"
+ ],
+ "scrutinsCles": [
+  "4944",
+  "4945",
+  "4946",
+  "4947"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:2444167d68440dcb5d4a28595e0f5cf4048c0ddfb99cd45486e0c1c8f550456f"
+}

@@ -1,0 +1,39 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53058",
+ "generatedAt": "2026-07-05T06:32:22Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Prendre des mesures d’urgence contre la vie chère en outre-mer dans le secteur des services",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/prendre_mesures_urgence_contre_vie_chere_outre_mer_secteur_services_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0198_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à prendre des mesures d'urgence contre la vie chère en outre-mer dans le secteur des services. L'objectif affiché est de lutter contre les prix élevés pratiqués dans les territoires ultramarins.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel a été corrompu ou mal extrait (caractères binaires, flux PDF non décodés). Aucun article, aucune disposition concrète, aucun mécanisme (obligation, taxe, subvention, seuil, sanction) ne peut être identifié dans le contenu fourni. Il est donc impossible de déterminer si les incitations créées par les mécanismes vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le contenu textuel du PDF est inexploitable (flux binaire non décodé)",
+  "Aucun article ni exposé des motifs lisible n'a pu être extrait",
+  "L'analyse des mécanismes concrets est impossible sans texte exploitable",
+  "Seul le titre et l'identifiant du dossier législatif sont exploitables"
+ ],
+ "themes": [
+  "outre-mer",
+  "vie chère",
+  "services",
+  "pouvoir d'achat"
+ ],
+ "scrutinsCles": [
+  "4755"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:4f6e39a884163a633f93e1209990b71c991e06d3028430c9a5e1ee5290b9d6fd"
+}

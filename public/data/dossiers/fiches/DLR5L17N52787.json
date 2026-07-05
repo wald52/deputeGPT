@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N52787",
+ "generatedAt": "2026-07-05T06:47:36Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Rendre systématique l’information du consommateur sur l’origine des denrées alimentaires par le moyen de l’étiquetage",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/rendre_systematique_information_consommateur_origine_denrees_alimentaires_moyen_etiquetage_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b1985_texte-adopte-commission",
+  "legifrance": null
+ },
+ "objectifAffiche": "Rendre systématique l'information du consommateur sur l'origine des denrées alimentaires via l'étiquetage, afin de garantir la transparence sur la provenance des produits alimentaires.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles de loi exploitables. Seules les métadonnées du dossier législatif (titre, identifiant, procédure, statut) sont disponibles, sans le contenu normatif permettant d'identifier les mécanismes concrets (obligations, sanctions, dérogations, seuils). En l'absence du corps du texte, il est impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué et ne contient que les métadonnées du dossier (titre, commission, date de dépôt), sans aucun article ni exposé des motifs.",
+  "Impossible d'évaluer les éventuelles dérogations, exemptions de produits ou sanctions prévues.",
+  "La portée réelle (types de denrées concernées, seuils, exceptions) ne peut être déterminée sans le contenu des articles."
+ ],
+ "themes": [
+  "étiquetage",
+  "origine des denrées alimentaires",
+  "information du consommateur",
+  "transparence"
+ ],
+ "scrutinsCles": [
+  "3270",
+  "3271",
+  "3272",
+  "3273"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:1c5349c60580a611949eff181e5d877a84cc41ebc4cbd9e374d8217a41235c85"
+}

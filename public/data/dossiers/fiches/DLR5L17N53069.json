@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53069",
+ "generatedAt": "2026-07-05T06:33:23Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Retrouver la confiance et l’équilibre dans les rapports locatifs",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/retrouver_confiance_equilibre_rapports_locatifs_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0196_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire intitulée « Retrouver la confiance et l'équilibre dans les rapports locatifs ». L'objectif affiché, tel qu'indiqué par le titre et la procédure, vise à restaurer la confiance entre bailleurs et locataires et à rééquilibrer les rapports locatifs en France.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des objets PDF techniques et des flux binaires compressés/non décodables sont visibles). Aucun article, aucune disposition, aucun mécanisme concret (obligation, taxe, subvention, seuil, sanction) ne peut être identifié ni cité. En l'absence de contenu exploitable, il est impossible de déterminer si les incitations créées par les mécanismes vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le contenu textuel du PDF n'a pas été décodé : le dossier législatif fourni ne contient pas le texte lisible de la proposition de loi.",
+  "Aucun article ni exposé des motifs n'a pu être extrait pour analyse.",
+  "Une nouvelle soumission avec un texte OCRisé ou en format texte brut est nécessaire pour mener l'analyse."
+ ],
+ "themes": [
+  "rapports locatifs",
+  "logement",
+  "bail",
+  "équilibre bailleur-locataire"
+ ],
+ "scrutinsCles": [
+  "4742",
+  "4743",
+  "4744",
+  "4745"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:4b6d8874d096e21205138f0f44194b3d92d1c8f1b16acb5ef6550c728afd9f05"
+}

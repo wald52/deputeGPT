@@ -1,0 +1,40 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N52922",
+ "generatedAt": "2026-07-05T06:31:32Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi de financement de la sécurité sociale pour 2026",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/PLFSS_2026",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0199_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est identifié comme un Projet de loi de financement de la sécurité sociale pour 2026 (PLFSS 2026), promulgue. Aucun objectif affiché ni exposé des motifs n'est lisible dans le contenu fourni.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le contenu fourni est un fichier PDF brut dont les flux de texte (streams) sont encodés/compressés et illisibles. Aucun article, aucune disposition, aucun mécanisme concret et aucun exposé des motifs n'a pu être extrait du document. Il est donc impossible de déterminer les incitations créées par le texte.",
+ "pointsDeVigilance": [
+  "Le document fourni est un PDF binaire dont les objets 'stream' contiennent des données compressées non décodées, rendant le texte intégralement illisible.",
+  "Seuls les métadonnées du dossier législatif (titre, identifiant, statut 'promulgue') sont exploitables.",
+  "Toute analyse de second ordre nécessiterait la version texte (TXT/HTML/XML) du PLFSS 2026."
+ ],
+ "themes": [
+  "financement de la sécurité sociale",
+  "texte illisible",
+  "analyse indéterminée"
+ ],
+ "scrutinsCles": [
+  "4695",
+  "4696",
+  "4757",
+  "4758"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:9959e35f1a7cf08ea5da5e4c767d7de08024b7280688f50efecd4b39896a7b4f"
+}

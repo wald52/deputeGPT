@@ -1,0 +1,44 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N51581",
+ "generatedAt": "2026-07-05T06:37:47Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi élargissant la possibilité pour les collectivités territoriales et leurs groupements d'avoir recours au modèle de la société portuaire pour l'exploitation de leurs ports",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N51581",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0189_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Élargir la possibilité pour les collectivités territoriales et leurs groupements d'avoir recours au modèle de la société portuaire pour l'exploitation de leurs ports.",
+ "mecanismesCles": [
+  {
+   "resume": "Le texte officiel fourni est illisible (contenu PDF binaire non décodé), empêchant l'identification des articles et mécanismes concrets.",
+   "articleRef": null,
+   "citation": null
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte transmis est un fichier PDF dont le contenu textuel n'a pas été extrait correctement (flux binaires illisibles). Aucun article, aucune disposition concrète (obligation, seuil, dérogation, sanction) ne peut être identifié dans le contenu fourni. Il est donc impossible de déterminer si les mécanismes créés vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le texte officiel est corrompu ou mal extrait : il s'agit d'un PDF binaire sans couche texte exploitable.",
+  "Aucun article ni exposé des motifs lisible n'a pu être analysé.",
+  "L'analyse de second ordre ne peut être conduite sans accès au contenu normatif réel."
+ ],
+ "themes": [
+  "ports",
+  "collectivités territoriales",
+  "société portuaire",
+  "exploitation portuaire"
+ ],
+ "scrutinsCles": [
+  "4697"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:622e5bbb53a2379e7e65e7d677627f884759179743c24efab5672549b9602516"
+}

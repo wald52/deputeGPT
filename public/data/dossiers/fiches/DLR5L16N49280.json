@@ -1,0 +1,40 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L16N49280",
+ "generatedAt": "2026-07-05T06:39:24Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi portant création d'un statut de l'élu local",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/16/dossiers/DLR5L16N49280",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0187_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à créer un statut de l'élu local. L'objectif affiché, tel qu'indiqué par le titre et la procédure, est d'établir un cadre statutaire pour les élus locaux français.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel a été corrompu ou n'a pas été extrait correctement (seuls des objets PDF bruts et des flux binaires compressés sont visibles). Aucun article, aucune disposition, aucun mécanisme concret ne peut être identifié dans le contenu exploitable. En l'absence de texte lisible, il est impossible de déterminer si les mécanismes créés vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le document fourni est un PDF dont le texte n'a pas été extrait (flux binaires non décodés)",
+  "Aucun article ni exposé des motifs n'est lisible dans le contenu transmis",
+  "L'analyse ne peut pas être menée à bien sans le texte intégral et lisible de la proposition de loi"
+ ],
+ "themes": [
+  "statut de l'élu local",
+  "démocratie locale",
+  "collectivités territoriales"
+ ],
+ "scrutinsCles": [
+  "4688",
+  "4689",
+  "4690",
+  "4691"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:01afcefb741f07d8c3ffb93bd91859fd1afe06b2e88d7e74333ba3206a32266f"
+}

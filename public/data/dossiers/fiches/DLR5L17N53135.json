@@ -1,0 +1,40 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53135",
+ "generatedAt": "2026-07-05T06:41:01Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi de finances de fin de gestion pour 2025",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/projet_de_loi_de_finances_de_fin_de_gestion_pour_2025",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0185_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est identifié comme un projet de loi de finances de fin de gestion pour 2025 (projet de loi de finances rectificative). L'objectif affiché typique d'un tel texte est d'ajuster en fin d'année les prévisions budgétaires de l'État, de corriger les ouvertures de crédits et de modifier certaines dispositions fiscales ou budgétaires pour assurer l'équilibre budgétaire de l'exercice en cours.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un contenu binaire PDF (flux d'octets bruts commençant par '%PDF-1.5' et contenant des streams compressés non décodés) sans aucun article, alinéa ou exposé des motifs extractible. Aucun mécanisme concret (obligation, taxe, subvention, seuil, sanction) ne peut être identifié ni cité. En l'absence de tout contenu textuel exploitable, il est impossible de déterminer si les incitations créées par le texte vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le document fourni est un PDF brut non décodé : les flux 'stream' entre 'endstream' contiennent des données compressées (probablement FlateDecode) qui n'ont pas été extraites en texte lisible.",
+  "Aucun article, aucune disposition, aucun exposé des motifs n'est accessible dans la chaîne fournie.",
+  "L'identification du texte (DLR5L17N53135, PLF de fin de gestion 2025) provient uniquement des métadonnées du dossier législatif, pas du contenu du texte."
+ ],
+ "themes": [
+  "finances publiques",
+  "loi de finances rectificative",
+  "budget de l'état"
+ ],
+ "scrutinsCles": [
+  "4439",
+  "4440",
+  "4441",
+  "4442"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:bc0483a5247974a1b052c9039655d3a000bf6d4509196872ff83d7a3f3e763a9"
+}

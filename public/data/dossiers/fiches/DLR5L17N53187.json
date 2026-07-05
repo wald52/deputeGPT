@@ -1,0 +1,40 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53187",
+ "generatedAt": "2026-07-05T06:26:30Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Protéger les mineurs des risques auxquels les expose l’utilisation des réseaux sociaux",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/proteger_mineurs_reseaux_sociaux_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2610_proposition-loi",
+  "legifrance": null
+ },
+ "objectifAffiche": "Proposition de loi ordinaire visant à protéger les mineurs des risques auxquels les expose l'utilisation des réseaux sociaux. Le texte a été déposé le 1er avril 2026 et modifié par le Sénat, examiné par la commission des affaires culturelles et de l'éducation.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles de loi. Seules les métadonnées du dossier législatif (titre, numéro, procédure, commission saisie) sont accessibles. Sans le contenu normatif du texte, il est impossible d'identifier les obligations, sanctions, seuils ou dérogations créés, et donc de déterminer si les mécanismes vont dans le sens de l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué et ne contient que les informations de présentation du dossier législatif",
+  "Aucun article ni exposé des motifs n'est disponible dans l'extrait fourni",
+  "Le statut 'en_cours' indique que le texte est encore en cours d'examen parlementaire"
+ ],
+ "themes": [
+  "protection des mineurs",
+  "réseaux sociaux",
+  "numérique"
+ ],
+ "scrutinsCles": [
+  "5189",
+  "5190",
+  "5191",
+  "5192"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:78cc7a791a4b731ed90f4b4a2ab6d9994f728d63c7007624640ed93a28c666c1"
+}

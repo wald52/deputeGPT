@@ -1,0 +1,48 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N52132",
+ "generatedAt": "2026-07-05T06:28:07Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Inscrire la mouvance des frères musulmans sur la liste européenne des organisations terroristes",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/inscrire_mouvance_freres_musulmans_listes_terroristes",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2344_texte-adopte-commission",
+  "legifrance": null
+ },
+ "objectifAffiche": "Inscrire la mouvance des Frères musulmans sur la liste européenne des organisations terroristes, via une proposition de résolution européenne demandant une telle inscription.",
+ "mecanismesCles": [
+  {
+   "resume": "Le texte est une proposition de résolution européenne (n°2318) examinée par la commission des affaires étrangères, dont le seul objet est d'inviter le Gouvernement français à soutenir l'inscription de la mouvance des Frères musulmans sur la liste européenne des organisations terroristes.",
+   "articleRef": null,
+   "citation": "proposition de résolution européenne de M. Éric Pauget et plusieurs de ses collègues visant à inscrire la mouvance des frères musulmans sur la liste européenne des organisations terroristes"
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le document fourni ne contient que les métadonnées du dossier législatif (titre, numéro, commission saisie, date de dépôt) et l'intitulé de la proposition de résolution. Aucun article, aucun dispositif concret (obligation, sanction, mécanisme de financement, dérogation) et aucun exposé des motifs n'est reproduit dans le texte transmis. Il est donc impossible d'identifier les incitations effectives créées par le texte et de les comparer à l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué et ne contient ni les articles ni l'exposé des motifs de la résolution.",
+  "Une résolution européenne n'a pas en elle-même d'effet normatif direct : elle se limite à une invitation adressée au Gouvernement ou aux institutions européennes.",
+  "La notion de « mouvance » est juridiquement floue et soulève des questions de définition et de proportionnalité qui ne peuvent être évaluées sans le contenu du texte."
+ ],
+ "themes": [
+  "terrorisme",
+  "listes européennes",
+  "frères musulmans",
+  "résolution européenne",
+  "affaires étrangères"
+ ],
+ "scrutinsCles": [
+  "5103",
+  "5104",
+  "5105",
+  "5106"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:6d036aef035e169b13df9dce2883edb59863375e1eb3327a0d65d9fe45c47112"
+}

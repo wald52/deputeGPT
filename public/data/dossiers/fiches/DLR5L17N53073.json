@@ -1,0 +1,44 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53073",
+ "generatedAt": "2026-07-05T06:44:11Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "S’opposer à l’adoption de l’accord commercial entre l’Union européenne et le Mercosur",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/opposition_accord_commercial_mercosur2",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0182_texte-adopte-seance",
+  "legifrance": null
+ },
+ "objectifAffiche": "Résolution invitant le Gouvernement français à s'opposer à l'adoption de l'accord commercial entre l'Union européenne et le Mercosur, signé le 27 novembre 2025.",
+ "mecanismesCles": [
+  {
+   "resume": "Résolution parlementaire sans valeur normative contraignante, invitant le Gouvernement à s'opposer à l'adoption de l'accord UE-Mercosur.",
+   "articleRef": null,
+   "citation": "Résolution, adoptée par l'Assemblée nationale, invitant le Gouvernement de la République française à s'opposer à l'adoption de l'accord commercial entre l'Union européenne et le Mercosur le 27 novembre 2025"
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est tronqué et ne contient que le sommaire et l'intitulé de la résolution, sans exposer les motifs ni les articles détaillés. Aucun mécanisme concret (obligation, sanction, dérogation, seuil) n'est identifiable dans le contenu transmis. Il est donc impossible de déterminer si les incitations réelles du texte vont dans le sens de l'opposition affichée à l'accord ou si elles produiraient des effets contraires.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué à 15000 caractères et seul le titre/sommaire est visible.",
+  "Une résolution au sens de l'article 34-1 de la Constitution n'a pas de force normative contraignante ; elle exprime une position politique.",
+  "Sans l'exposé des motifs, les arguments économiques, agricoles ou environnementaux soulevés restent inconnus."
+ ],
+ "themes": [
+  "commerce international",
+  "accord ue-mercosur",
+  "résolution parlementaire",
+  "politique commerciale"
+ ],
+ "scrutinsCles": [
+  "4244"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:6c8df7882011db979bdef15b9ca64feab16801b580dedffb878c7b5c80a581fe"
+}

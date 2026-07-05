@@ -1,0 +1,40 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N52428",
+ "generatedAt": "2026-07-05T06:28:56Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi de finances pour 2026",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/PLF_2026",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0227_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte fourni est identifié comme le 'Projet de loi de finances pour 2026' (DLR5L17N52428), mais aucun exposé des motifs ni contenu textuel exploitable n'est accessible : le document est un fichier PDF binaire illisible (flux d'octets compressés non décodables). L'objectif affiché ne peut donc pas être résumé à partir du texte fourni.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel transmis est un PDF dont le contenu est encodé sous forme de flux binaires (FlateDecode) non décodés en clair. Aucun article, aucune disposition, aucun mécanisme concret (obligation, taxe, subvention, seuil, sanction) n'est lisible dans les 15 000 caractères fournis. En application de la règle stricte ('appuie-toi UNIQUEMENT sur le texte fourni' et 'en cas de doute ou de texte insuffisant, verdict indetermine'), aucune analyse des incitations n'est possible.",
+ "pointsDeVigilance": [
+  "Le document transmis est un PDF brut (signature %PDF-1.5) avec des flux d'objets compressés non décodables, et non le texte législatif lui-même.",
+  "L'identifiant DLR5L17N52428 et le statut 'promulgue' sont les seules métadonnées exploitables.",
+  "Pour mener l'analyse de second ordre, il faudrait disposer de la version texte (exposé des motifs + articles) du projet de loi de finances pour 2026."
+ ],
+ "themes": [
+  "loi de finances",
+  "budget de l'etat",
+  "document illisible"
+ ],
+ "scrutinsCles": [
+  "5086",
+  "5087",
+  "5088",
+  "5089"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:b401460044c9ef1afb7f9e413e8239c8b7ce5760be27697009627865be5f9d46"
+}

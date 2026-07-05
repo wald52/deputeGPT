@@ -1,0 +1,43 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N51037",
+ "generatedAt": "2026-07-05T06:26:55Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Reconnaître une présomption de légitime défense pour les forces de l'ordre, dans l'exercice de leurs fonctions",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/presomption_legitime_defense_forces_ordre",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b0691_proposition-loi",
+  "legifrance": null
+ },
+ "objectifAffiche": "La proposition de loi n°691 vise à reconnaître une présomption de légitime défense pour les forces de l'ordre dans l'exercice de leurs fonctions. L'objectif affiché est de protéger juridiquement les agents des forces de l'ordre lorsqu'ils font usage de la force en situation opérationnelle.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles. Seul le titre et l'identifiant de la proposition de loi sont accessibles. Sans le contenu normatif (articles créant la présomption, conditions d'application, exceptions, sanctions éventuelles), il est impossible d'identifier les mécanismes concrets ni de déterminer si les incitations créées sont alignées avec l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué et ne contient aucun article ni exposé des motifs exploitable",
+  "La notion de 'présomption de légitime défense' inverse la charge de la preuve et peut soulever des questions constitutionnelles (présomption d'innocence, article 9 de la Déclaration des droits de l'homme)",
+  "Sans définition du champ d'application (forces de l'ordre concernées, types de missions, seuil de force), l'analyse des effets réels est impossible",
+  "Le statut 'en cours' indique que le texte peut encore être amendé"
+ ],
+ "themes": [
+  "sécurité intérieure",
+  "forces de l'ordre",
+  "légitime défense",
+  "droit pénal",
+  "responsabilité des agents publics"
+ ],
+ "scrutinsCles": [
+  "5150",
+  "5151",
+  "5152",
+  "5153"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:256dfd48205832e7e62d0deee120759dfe6ef7af2177b2aa1e36d0b591dfcaa0"
+}

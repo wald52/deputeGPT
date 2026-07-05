@@ -1,0 +1,38 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53019",
+ "generatedAt": "2026-07-05T06:27:14Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Rendre plus lisible le fonctionnement de l'administration",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/fonctionnement_administration_22",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2003_proposition-resolution",
+  "legifrance": null
+ },
+ "objectifAffiche": "Rendre plus lisible le fonctionnement de l'administration française, via une proposition de résolution déposée le 27 octobre 2025 dans le cadre de l'article 34-1 de la Constitution.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles : seule la fiche signalétique (titre, numéro, date de dépôt, procédure) est disponible. Aucun mécanisme concret (obligation, sanction, seuil, dérogation) ne peut être identifié, ce qui empêche toute évaluation des incitations produites par le texte.",
+ "pointsDeVigilance": [
+  "Le contenu substantiel de la proposition de résolution (exposé des motifs et articles) n'a pas été transmis dans le dossier fourni.",
+  "Une proposition de résolution au sens de l'article 34-1 est un outil non contraignant (simple invitation au Gouvernement ou expression de vœux), ce qui limite a priori la portée normative de ses mécanismes.",
+  "Le statut 'en_cours' indique que le texte n'est pas encore adopté, son effectivité reste donc hypothétique."
+ ],
+ "themes": [
+  "administration",
+  "lisibilité",
+  "résolution parlementaire",
+  "article 34-1"
+ ],
+ "scrutinsCles": [
+  "5107"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:4eecfbf110fc59ed5e217caf405c01a16fbb4f54766cd753cc672c98587c9aef"
+}

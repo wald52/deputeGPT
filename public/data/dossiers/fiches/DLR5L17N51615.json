@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N51615",
+ "generatedAt": "2026-07-05T06:45:44Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Mise en œuvre du Protocole de l’Organisation Mondiale de la Santé pour « lutter contre le commerce illicite de tabac »",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/lutte_commerce_tabac_ill_oms",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0181_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte vise à mettre en œuvre le Protocole de l'Organisation Mondiale de la Santé pour éliminer le commerce illicite de tabac. Il s'agit d'une résolution parlementaire (procédure de résolution) dont l'objectif affiché est la transposition/transposition interne de ce protocole international.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est un fichier PDF brut dont le contenu textuel n'a pas pu être extrait (uniquement des métadonnées PDF et des flux binaires compressés illisibles). Aucun article, aucune disposition concrète, aucune obligation, taxe, seuil ou sanction ne peut être identifié dans le contenu exploitable. En l'absence de mécanismes vérifiables tirés du texte, il est impossible de déterminer si les incitations créées vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le document fourni est un PDF dont le contenu textuel n'a pas été extrait correctement (flux binaires non décodés)",
+  "Aucun article ni exposé des motifs lisible n'est disponible pour analyse",
+  "La procédure 'Résolution' suggère un texte non législatif (simple autorisation de ratification), ce qui limite la portée normative",
+  "L'identifiant DLR5L17N51615 et le statut 'en_cours' ne permettent pas de compenser l'absence de contenu exploitable"
+ ],
+ "themes": [
+  "tabac",
+  "commerce illicite",
+  "oms",
+  "protocole international",
+  "résolution parlementaire"
+ ],
+ "scrutinsCles": [
+  "4242",
+  "4243"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:b2b58d30168ef172558e6549bf0572df32e422188f8fc6a94fc759d0f58122f9"
+}

@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N51351",
+ "generatedAt": "2026-07-05T06:30:09Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi visant à reconnaître le préjudice subi par les personnes condamnées sur le fondement de la législation pénalisant l’avortement, et par toutes les femmes, avant la loi n° 75-17 du 17 janvier 1975 relative à l’interruption volontaire de la grossesse",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N51351",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0205_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "La proposition de loi vise à reconnaître le préjudice subi par les personnes condamnées sur le fondement de la législation pénalisant l'avortement, ainsi que par toutes les femmes ayant recouru à l'interruption volontaire de grossesse avant la loi n° 75-17 du 17 janvier 1975. Il s'agit d'une loi de reconnaissance symbolique et mémorielle.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel n'a pas été extrait (seuls des objets PDF bruts et des flux binaires compressés sont visibles). Aucun article, aucune disposition concrète, aucun mécanisme (obligation, taxe, subvention, dérogation, seuil, sanction) ne peut être identifié dans le contenu exploitable. En l'absence d'articles déchiffrables, il est impossible de déterminer si les incitations créées par le texte vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le texte officiel fourni est un PDF binaire non décodé : aucun article ni exposé des motifs n'est lisible.",
+  "L'identifiant DLR5L17N51351 et le statut 'promulgue' suggèrent que le texte existe, mais son contenu n'est pas exploitable ici.",
+  "Toute analyse de second ordre est impossible sans accès au contenu normatif réel des articles."
+ ],
+ "themes": [
+  "droits des femmes",
+  "avortement",
+  "ivg",
+  "réparation",
+  "mémoire"
+ ],
+ "scrutinsCles": [
+  "4837",
+  "4838",
+  "4839"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:6cdb98bf183315645ce425c60b786ef6cbf8c9129484cf00d03126b13ad5b957"
+}

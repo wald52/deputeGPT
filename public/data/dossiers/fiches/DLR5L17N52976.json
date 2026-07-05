@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N52976",
+ "generatedAt": "2026-07-05T06:42:10Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "L'établissement de l’égalité d’accès au service public postal en outre-mer",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/egalite_service_public_outre_mer_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0183_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à établir l'égalité d'accès au service public postal dans les territoires d'outre-mer. L'objectif affiché est de garantir aux habitants des outre-mer un accès équivalent au service public postal à celui dont bénéficient les habitants de la France métropolitaine.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est un fichier PDF dont le contenu textuel n'a pas pu être extrait (le document apparaît sous forme de flux binaires et de streams compressés illisibles). Aucun article, aucune disposition concrète (obligation, taxe, subvention, seuil, sanction) et aucun exposé des motifs n'ont pu être identifiés dans le contenu exploitable. En l'absence de mécanismes vérifiables tirés du texte, il est impossible de déterminer si les incitations créées vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le contenu textuel du PDF n'a pas pu être décodé : seuls des objets PDF bruts et des streams compressés sont visibles.",
+  "Aucun article ni exposé des motifs n'est lisible dans la portion de texte fournie.",
+  "Le titre et l'identifiant du dossier suggèrent une loi d'égalité territoriale sur le service postal, mais le contenu normatif reste inaccessible."
+ ],
+ "themes": [
+  "outre-mer",
+  "service public postal",
+  "égalité territoriale",
+  "aménagement du territoire"
+ ],
+ "scrutinsCles": [
+  "4284",
+  "4285",
+  "4286",
+  "4287"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:c946e672d042846f7c912ac1fd1fbe51a2aa6925504439b11f06a1212afd9d77"
+}

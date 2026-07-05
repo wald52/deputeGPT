@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N53051",
+ "generatedAt": "2026-07-05T06:33:59Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Protéger les mineurs isolés et à lutter contre le sans-abrisme",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/proteger_mineurs_isoles_lutter_sans_abrisme_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0195_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à protéger les mineurs isolés et à lutter contre le sans-abrisme, comme l'indique son titre. L'exposé des motifs et les articles ne sont pas exploitables car le contenu fourni est un fichier PDF binaire illisible.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni est un fichier PDF dont le contenu est encodé en flux binaires compressés (streams x��...) et ne permet pas d'extraire ni l'exposé des motifs, ni les articles de la proposition de loi. Aucun mécanisme concret (obligation, taxe, subvention, dérogation, seuil, sanction) ne peut être identifié ni référencé à un article précis. En l'absence de tout contenu textuel exploitable, il est impossible de déterminer si les incitations créées par les mécanismes vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le document fourni est un PDF binaire illisible : aucun article, alinéa ou exposé des motifs n'a pu être extrait",
+  "Le titre mentionne deux objets distincts (protection des mineurs isolés ET lutte contre le sans-abrisme) qui pourraient relever de logiques différentes",
+  "Sans accès au contenu normatif, toute analyse des incitations serait purement spéculative"
+ ],
+ "themes": [
+  "protection de l'enfance",
+  "sans-abrisme",
+  "mineurs isolés",
+  "politique sociale"
+ ],
+ "scrutinsCles": [
+  "4720",
+  "4721",
+  "4722",
+  "4723"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:6ddd61bb20ec947a13dc1052fdddb2e25c22f607916e47cbe6d67bc598a9065e"
+}

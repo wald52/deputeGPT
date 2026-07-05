@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N52749",
+ "generatedAt": "2026-07-05T06:33:02Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Garantir un renouvellement automatique des titres de séjour de longue durée",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/renouvellement_automatique_titres_sejour_longue_duree_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0197_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à garantir le renouvellement automatique des titres de séjour de longue durée. L'objectif affiché est d'assurer la continuité du droit au séjour des ressortissants étrangers titulaires de titres de longue durée, sans qu'ils aient à accomplir de démarches répétitives.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel a été corrompu ou n'a pas été extrait (flux binaires 'x��...' sans texte décodable). Aucun article, aucune disposition concrète, aucune obligation, taxe, seuil ou sanction ne peut être identifié dans le contenu fourni. L'exposé des motifs et les articles du texte de loi ne sont pas accessibles. Il est donc impossible de déterminer si les mécanismes créés par les articles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le texte officiel fourni est un PDF dont le contenu textuel n'a pas été correctement extrait (flux binaires illisibles)",
+  "Aucun article ni mécanisme concret n'a pu être identifié dans le document fourni",
+  "L'analyse des incitations réelles ne peut être menée sans accès au contenu normatif du texte"
+ ],
+ "themes": [
+  "droit des étrangers",
+  "titres de séjour",
+  "renouvellement automatique",
+  "immigration"
+ ],
+ "scrutinsCles": [
+  "4751",
+  "4752",
+  "4753",
+  "4754"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:b3b5c87807669ecac5c7338ba4bd9992f0ebc7a5a3e03c69fc9eb5ccb554b902"
+}

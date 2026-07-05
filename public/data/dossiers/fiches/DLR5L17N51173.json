@@ -1,0 +1,42 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 1,
+ "dossierId": "DLR5L17N51173",
+ "generatedAt": "2026-07-05T06:36:14Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi organique tendant à modifier le II de l’article 43 de la loi organique n° 2004-192 du 27 février 2004 portant statut d’autonomie de la Polynésie française",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N51173",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0192_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi organique visant à modifier le II de l'article 43 de la loi organique n° 2004-192 du 27 février 2004 portant statut d'autonomie de la Polynésie française. Aucun exposé des motifs ni contenu substantiel n'est lisible dans le document fourni (PDF illisible/corrompu).",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un flux binaire PDF corrompu (caractères binaires, flux de stream non décodables) ne contenant aucun article, alinéa ou exposé des motifs exploitable. Sans contenu textuel lisible, il est impossible d'identifier les mécanismes concrets créés par le texte ni de les confronter à un objectif affiché vérifiable.",
+ "pointsDeVigilance": [
+  "Document source illisible (PDF binaire non décodé)",
+  "Aucun article ni exposé des motifs n'a pu être extrait",
+  "Le titre seul ne permet pas de déterminer le contenu normatif ni l'objectif réel",
+  "Analyse de second ordre impossible sans texte substantiel"
+ ],
+ "themes": [
+  "polynésie française",
+  "statut d'autonomie",
+  "loi organique",
+  "outre-mer"
+ ],
+ "scrutinsCles": [
+  "4703",
+  "4704",
+  "4705",
+  "4706"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:5152206a4bcd803de8fc196774e6f9eb47d99f1872ba9d5888bfea512a1d279f"
+}
