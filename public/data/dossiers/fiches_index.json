@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-07-05T06:50:57Z",
+ "generatedAt": "2026-07-05T23:30:08Z",
  "totalFiches": 106,
  "fiches": {
   "DLR5L16N46127": {
@@ -20,13 +20,13 @@
    "titre": "Proposition de loi visant à renforcer les prérogatives des officiers de l’état civil et du ministère public pour lutter contre les mariages simulés ou arrangés",
    "verdictIncitations": "indetermine",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:13:14Z",
+   "generatedAt": "2026-07-05T23:18:58Z",
    "themes": [
     "mariage",
     "état civil",
     "ministère public",
     "lutte contre les mariages simulés",
-    "droit civil"
+    "droit matrimonial"
    ]
   },
   "DLR5L16N49263": {
@@ -614,15 +614,15 @@
   },
   "DLR5L17N52781": {
    "titre": "Assurer le droit de chaque enfant à disposer d’un avocat dans le cadre d’une mesure d’assistance éducative et de protection de l’enfance",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:12:10Z",
+   "generatedAt": "2026-07-05T23:12:21Z",
    "themes": [
     "protection de l'enfance",
     "assistance éducative",
     "droits de l'enfant",
-    "aide juridique",
-    "avocat"
+    "aide juridictionnelle",
+    "accès à l'avocat"
    ]
   },
   "DLR5L17N52787": {
@@ -1157,23 +1157,23 @@
    "titre": "Projet de loi sur la justice criminelle et le respect des victimes",
    "verdictIncitations": "indetermine",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:11:08Z",
+   "generatedAt": "2026-07-05T23:02:35Z",
    "themes": [
-    "justice",
-    "criminel",
-    "victimes",
-    "procédure législative"
+    "justice criminelle",
+    "droits des victimes",
+    "procédure pénale"
    ]
   },
   "DLR5L17N53942": {
    "titre": "Projet de loi organique relatif au renforcement des juridictions criminelles",
    "verdictIncitations": "indetermine",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:12:28Z",
+   "generatedAt": "2026-07-05T23:01:42Z",
    "themes": [
     "justice",
     "juridictions criminelles",
-    "procédure pénale"
+    "droit pénal",
+    "organisation judiciaire"
    ]
   },
   "DLR5L17N53981": {

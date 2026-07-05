@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52781",
- "generatedAt": "2026-07-03T06:12:10Z",
+ "generatedAt": "2026-07-05T23:12:21Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,21 +15,48 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0324_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Proposition de loi ordinaire visant à garantir le droit de chaque enfant à disposer d'un avocat dans le cadre d'une mesure d'assistance éducative et de protection de l'enfance.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel a été corrompu ou n'a pas été extrait (flux binaires non décodables, aucun article, aucun exposé des motifs, aucune citation exploitable). Sans accès au contenu normatif réel (articles, obligations, sanctions, dérogations), il est impossible d'identifier les mécanismes concrets créés par le texte ni de déterminer si les incitations qu'ils produisent s'alignent avec l'objectif affiché.",
+ "objectifAffiche": "Proposition de loi ordinaire visant à garantir le droit de chaque enfant à être assisté d'un avocat dans le cadre des mesures d'assistance éducative et de protection de l'enfance.",
+ "mecanismesCles": [
+  {
+   "resume": "Modification de l'article 375-1 du code civil : tout mineur en matière d'assistance éducative est assisté d'un avocat, sans condition de discernement, dès l'ouverture de la procédure.",
+   "articleRef": "Article 1er bis",
+   "citation": "En matière d'assistance éducative, le mineur, sans condition de discernement, est assisté d'un avocat. Dès l'ouverture de la procédure, le juge des enfants demande au bâtonnier la désignation d'un avocat."
+  },
+  {
+   "resume": "Possibilité pour le mineur de choisir librement son avocat, et possibilité pour le juge de désigner un administrateur ad hoc.",
+   "articleRef": "Article 1er bis",
+   "citation": "Le mineur peut également choisir librement son avocat. Le juge peut désigner un administrateur ad hoc dans les conditions prévues au second alinéa de l'article 388-2."
+  },
+  {
+   "resume": "Prise en charge intégrale par l'État, au titre de l'aide juridictionnelle, de l'assistance par avocat du mineur en assistance éducative.",
+   "articleRef": "Article 1er bis (2°)",
+   "citation": "L'assistance du mineur par un avocat dans le cadre d'une procédure d'assistance éducative est, de droit, intégralement prise en charge par l'État au titre de l'aide juridictionnelle."
+  },
+  {
+   "resume": "Entrée en vigueur différée au 6 janvier 2027.",
+   "articleRef": "Article 2 bis",
+   "citation": "L'article 2 1er entre en vigueur le 6 janvier 2027."
+  },
+  {
+   "resume": "Compensation de la charge pour l'État par la création d'une taxe additionnelle à l'accise sur les tabacs.",
+   "articleRef": "Article 3",
+   "citation": "La charge pour l'État est compensée à due concurrence par la création d'une taxe additionnelle à l'accise sur les tabacs prévue au chapitre IV du titre Ier du livre III du code des impositions sur les biens et services."
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'article 1er bis crée un droit systématique à l'assistance d'un avocat pour tout mineur en assistance éducative, sans condition de discernement, ce qui correspond directement à l'objectif affiché de garantir ce droit. La prise en charge intégrale par l'État via l'aide juridictionnelle (art. 1er bis, 2°) lève l'obstacle financier pour les familles. La désignation dès l'ouverture de la procédure et la liberté de choix de l'avocat renforcent l'effectivité du droit. Le mécanisme de compensation par une taxe additionnelle sur les tabacs (art. 3) est neutre au regard de l'objectif de protection de l'enfance et ne contredit pas l'incitation principale.",
  "pointsDeVigilance": [
-  "Le document fourni est un PDF binaire dont le texte n'a pas été extrait ; aucun article ni exposé des motifs n'est lisible.",
-  "Seuls le titre du dossier législatif et l'identifiant sont exploitables.",
-  "Une analyse de second ordre requiert le contenu normatif : impossible à produire ici."
+  "L'entrée en vigueur est différée au 6 janvier 2027 (art. 2 bis), ce qui retarde l'effectivité du droit.",
+  "Le financement repose sur une taxe additionnelle sur les tabacs (art. 3), dont la pérennité et le rendement effectif ne sont pas garantis dans le texte.",
+  "Le texte ne précise pas les moyens alloués à la désignation d'avocats (barrage potentiel par le nombre d'avocats spécialisés disponibles).",
+  "L'article 1er initial a été supprimé, privant le texte de dispositions dont on ne connaît pas le contenu."
  ],
  "themes": [
   "protection de l'enfance",
   "assistance éducative",
   "droits de l'enfant",
-  "aide juridique",
-  "avocat"
+  "aide juridictionnelle",
+  "accès à l'avocat"
  ],
  "scrutinsCles": [
   "4712",
@@ -38,5 +65,5 @@
   "7904"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:b3406bd2216cbec3b3856bf5700ca9940b86cccbc85f21609babcf8c770932fc"
+ "sourceTextHash": "sha256:e026389c9438ca362fbd3e843d823079ff86bce13f54af5af389842624ac3b3e"
 }

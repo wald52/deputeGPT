@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53940",
- "generatedAt": "2026-07-03T06:11:08Z",
+ "generatedAt": "2026-07-05T23:02:35Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,33 +15,25 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2681_projet-loi",
   "legifrance": null
  },
- "objectifAffiche": "Le titre du texte indique un objectif de réforme de la justice criminelle et de renforcement du respect des victimes. L'exposé des motifs n'est pas fourni dans le texte transmis.",
- "mecanismesCles": [
-  {
-   "resume": "Aucun mécanisme concret n'a pu être identifié : le texte fourni ne contient ni exposé des motifs, ni articles, ni dispositions analysables.",
-   "articleRef": null,
-   "citation": null
-  }
- ],
+ "objectifAffiche": "Le texte est un projet de loi ordinaire n°2681, adopté par le Sénat après engagement de la procédure accélérée, déposé le 15 avril 2026, intitulé 'justice criminelle et le respect des victimes'. L'objectif affiché n'est pas explicité dans le contenu fourni (ni exposé des motifs, ni articles).",
+ "mecanismesCles": [],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte transmis se limite à la page de garde du dossier législatif (titre, identifiant, procédure, statut, liens de navigation). Aucun article, aucune disposition, aucun exposé des motifs n'est présent dans les 15000 caractères fournis. Il est donc impossible d'identifier des mécanismes concrets (obligations, taxes, sanctions, dérogations) et, a fortiori, de déterminer si les incitations créées vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs, ni articles de loi, ni aucun dispositif normatif. Seules des métadonnées de navigation (titre, identifiant, commission saisie, procédure) sont présentes. Sans contenu substantiel, il est impossible d'identifier des mécanismes concrets (obligations, sanctions, dérogations) et donc de déterminer si les incitations vont dans le sens de l'objectif affiché.",
  "pointsDeVigilance": [
-  "Le texte fourni est tronqué à un en-tête administratif sans contenu normatif.",
-  "L'exposé des motifs, nécessaire pour formuler l'objectif affiché, est absent.",
-  "Aucun article n'est disponible pour analyser les mécanismes.",
-  "Le statut 'en_cours' indique que le texte pourrait encore évoluer, ce qui renforce l'impossibilité d'une analyse figée."
+  "Le texte officiel transmis est tronqué à 15000 caractères mais ne contient en réalité que des éléments de structure du dossier législatif (sommaire, liens de navigation), sans aucun contenu normatif.",
+  "L'absence d'exposé des motifs et d'articles empêche toute analyse de second ordre sur la cohérence entre l'objectif affiché et les mécanismes créés.",
+  "Le titre évoque deux dimensions (justice criminelle et respect des victimes) qui peuvent impliquer des incitations contradictoires (renforcement répressif vs garanties procédurales), mais cela ne peut être vérifié sans le contenu."
  ],
  "themes": [
-  "justice",
-  "criminel",
-  "victimes",
-  "procédure législative"
+  "justice criminelle",
+  "droits des victimes",
+  "procédure pénale"
  ],
  "scrutinsCles": [
-  "7929",
-  "7930",
-  "7931",
-  "7932"
+  "7971",
+  "7972",
+  "7973",
+  "7974"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
  "sourceTextHash": "sha256:618b45919b7e378ecd3f2f7876040ebdf3e7183869724a3355b8a3a1020f1040"

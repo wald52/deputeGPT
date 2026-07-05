@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L16N49075",
- "generatedAt": "2026-07-03T06:13:14Z",
+ "generatedAt": "2026-07-05T23:18:58Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,21 +15,21 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b1583_texte-adopte-commission",
   "legifrance": null
  },
- "objectifAffiche": "Renforcer les prérogatives des officiers de l'état civil et du ministère public pour lutter contre les mariages simulés ou arrangés, en s'appuyant sur une proposition de loi adoptée par le Sénat.",
+ "objectifAffiche": "Renforcer les prérogatives des officiers de l'état civil et du ministère public afin de lutter contre les mariages simulés ou arrangés. Le texte vise à doter ces autorités d'outils juridiques supplémentaires pour détecter et empêcher les unions contractées sans intention matrimoniale réelle.",
  "mecanismesCles": [],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles de loi : seul l'en-tête administratif du dossier (titre, identifiant, procédure, statut, sommaire et liens de navigation) est présent. Aucun mécanisme concret (obligation, sanction, seuil, dérogation) ne peut être identifié, ce qui rend impossible toute évaluation des incitations produites par le texte.",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles. Seuls figurent des éléments de navigation (sommaire, liens vers PDF, HTML, amendements) et l'identification du texte (n° 1583-A0, commission des lois, 16 juin 2025). Aucun mécanisme concret ne peut être extrait, ce qui rend toute analyse de second ordre impossible.",
  "pointsDeVigilance": [
-  "Le contenu substantiel du texte (exposé des motifs et articles) est absent de l'extrait fourni",
-  "Le texte est tronqué à 15000 caractères mais, en réalité, seul le squelette HTML du dossier législatif a été transmis",
-  "Sans accès aux articles, il est impossible de vérifier si les prérogatives accordées sont effectives ou simplement déclaratives"
+  "Le texte officiel est tronqué et ne contient que les métadonnées et liens d'accès, sans contenu normatif exploitable.",
+  "L'absence d'articles empêche de vérifier si les prérogatives renforcées sont proportionnées et respectueuses des libertés fondamentales (droit au mariage, vie privée).",
+  "Impossible d'évaluer l'existence de garanties contre d'éventuels détournements (discriminations, contrôles ciblés sur certaines populations)."
  ],
  "themes": [
   "mariage",
   "état civil",
   "ministère public",
   "lutte contre les mariages simulés",
-  "droit civil"
+  "droit matrimonial"
  ],
  "scrutinsCles": [
   "7577",
