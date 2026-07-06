@@ -27,7 +27,7 @@ import re
 import sys
 import unicodedata
 import zipfile
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 import requests
 
@@ -520,7 +520,7 @@ def main():
     payload = {
         "schemaVersion": INDEX_SCHEMA_VERSION,
         "legislature": LEGISLATURE,
-        "generatedAt": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "scrutins": scrutin_links,
         "dossiers": linked_dossiers,
         "unmatched": sorted(unmatched, key=lambda n: int(n) if n.isdigit() else 0),

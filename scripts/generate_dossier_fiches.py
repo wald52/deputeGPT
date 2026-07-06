@@ -26,7 +26,7 @@ import random
 import re
 import sys
 import time
-from datetime import datetime
+from datetime import datetime, timezone
 
 import requests
 from bs4 import BeautifulSoup
@@ -58,7 +58,13 @@ LLM_MAX_TOKENS = 8192
 # (1.0 est le reglage « creatif » des exemples NVIDIA, inadapte ici).
 LLM_TEMPERATURE = float(os.environ.get("ANALYSIS_API_TEMPERATURE") or "0.2")
 HTTP_TIMEOUT_SECONDS = 60
+# Les modeles raisonneurs (minimax-m3...) reflechissent longuement avant de
+# repondre : un timeout de lecture large evite les « Read timed out » a repetition.
+LLM_READ_TIMEOUT_SECONDS = int(os.environ.get("ANALYSIS_API_TIMEOUT") or "180")
 MAX_RETRIES = 5
+# Un timeout gaspille du quota (NIM continue de generer cote serveur) : on
+# reessaie peu, un dossier lent ne doit pas bloquer plusieurs minutes.
+MAX_TIMEOUT_RETRIES = 2
 
 VERDICTS_VALIDES = (
     "incitations_alignees",
@@ -296,13 +302,24 @@ def call_llm(messages, limiter: RateLimiter, session: requests.Session, max_toke
         "Content-Type": "application/json",
     }
 
+    timeout_attempts = 0
     for attempt in range(1, MAX_RETRIES + 1):
         limiter.wait()
         try:
-            response = session.post(url, json=payload, headers=headers, timeout=HTTP_TIMEOUT_SECONDS)
+            # (connect, read) : lecture large pour laisser le modele raisonner.
+            response = session.post(
+                url, json=payload, headers=headers, timeout=(10, LLM_READ_TIMEOUT_SECONDS)
+            )
         except (requests.exceptions.MissingSchema, requests.exceptions.InvalidURL) as error:
             # Erreur de configuration, pas d'erreur reseau : inutile de reessayer.
             raise AuthError(f"URL API invalide ({url}) : {error}")
+        except requests.exceptions.ReadTimeout as error:
+            # Le modele met trop longtemps : on reessaie peu pour ne pas gaspiller le quota.
+            timeout_attempts += 1
+            if timeout_attempts >= MAX_TIMEOUT_RETRIES:
+                raise
+            log(f"  ⚠️ Réponse LLM trop lente (>{LLM_READ_TIMEOUT_SECONDS}s), nouvel essai.")
+            continue
         except requests.RequestException as error:
             if attempt == MAX_RETRIES:
                 raise
@@ -428,7 +445,7 @@ def generate_fiche(dossier_id: str, dossier: dict, limiter: RateLimiter, session
         "schemaVersion": FICHE_SCHEMA_VERSION,
         "analysisVersion": ANALYSIS_VERSION,
         "dossierId": dossier_id,
-        "generatedAt": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "model": {
             "provider": API_PROVIDER_LABEL,
             "id": API_MODEL,
@@ -516,7 +533,7 @@ def rebuild_fiches_index() -> dict:
 
     payload = {
         "schemaVersion": FICHE_SCHEMA_VERSION,
-        "generatedAt": datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "totalFiches": len(entries),
         "fiches": entries,
     }
