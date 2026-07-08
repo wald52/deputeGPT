@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N54085",
- "generatedAt": "2026-07-03T06:22:19Z",
+ "generatedAt": "2026-07-08T05:51:02Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -12,24 +12,25 @@
  "statut": "en_cours",
  "sources": {
   "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/projet_loi_urgence_pour_protection_et_souverainete_agricoles",
-  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0295_texte-adopte-provisoire",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/projet_loi_urgence_pour_protection_et_souverainete_agricoles",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est identifié comme un 'Projet de loi d'urgence pour la protection et la souveraineté agricoles'. L'objectif affiché, tel que suggéré par le titre, est de protéger l'agriculture française et d'assurer la souveraineté agricole nationale via une procédure d'urgence.",
+ "objectifAffiche": "Le texte est un projet de loi d'urgence intitulé 'pour la protection et la souveraineté agricoles', engagé via la procédure accélérée le 8 avril 2026. L'objectif affiché, tel qu'il ressort du titre et de la dénomination officielle, est de protéger le secteur agricole français et de renforcer la souveraineté agricole nationale.",
  "mecanismesCles": [],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est un fichier PDF dont le contenu textuel n'a pas été extrait correctement : il ne contient que des métadonnées techniques PDF (flux binaires compressés, objets, références croisées) et aucun article de loi, aucun exposé des motifs, ni aucune disposition lisible. Sans accès au contenu normatif (articles, obligations, sanctions, dérogations), il est impossible d'identifier des mécanismes concrets et donc de déterminer si les incitations créées vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "justificationVerdict": "Le document fourni est uniquement une page de navigation du dossier législatif de l'Assemblée nationale (DLR5L17N54085). Il retrace les étapes procédurales (dépôt, examen en commission, séance publique, CMP) et mentionne l'existence de rapports, d'amendements et d'une étude d'impact, mais ne contient ni l'exposé des motifs, ni le texte des articles du projet de loi. Aucun mécanisme concret (obligation, taxe, subvention, seuil, sanction) ne peut être identifié à partir des éléments fournis, ce qui rend impossible toute évaluation des incitations réellement créées par le texte.",
  "pointsDeVigilance": [
-  "Le contenu du PDF n'a pas été décodé : seuls les en-têtes et flux binaires sont visibles.",
-  "Aucun article, alinéa ou exposé des motifs n'est lisible dans la chaîne fournie.",
-  "Le titre et l'identifiant DLR5L17N54085 sont les seules informations exploitables.",
-  "Une analyse de second ordre nécessite la lecture du dispositif normatif, ici indisponible."
+  "Le texte officiel des articles n'est pas inclus dans le document fourni",
+  "L'exposé des motifs n'est pas reproduit",
+  "Seuls les éléments procéduraux (dates, commissions, numéros de texte) sont accessibles",
+  "L'étude d'impact et l'avis du Conseil d'Etat sont mentionnés mais non reproduits",
+  "Le titre mentionne 'urgence' et 'souveraineté' mais le contenu normatif reste inconnu"
  ],
  "themes": [
   "agriculture",
   "souveraineté alimentaire",
-  "loi d'urgence",
-  "texte illisible"
+  "procédure législative",
+  "urgence"
  ],
  "scrutinsCles": [
   "7206",
@@ -38,5 +39,5 @@
   "7259"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:d45af4cadb96526255c1ac83e509f83dacea00fd4812bfab1e0250abb0725f25"
+ "sourceTextHash": "sha256:441edbbb5ee0df6b0d2e44e8852d81302bb64b6ca3682c77e924b1957c62195e"
 }

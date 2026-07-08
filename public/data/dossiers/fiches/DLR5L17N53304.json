@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53304",
- "generatedAt": "2026-07-03T06:16:44Z",
+ "generatedAt": "2026-07-08T05:46:02Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,27 +15,20 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2415_proposition-loi",
   "legifrance": null
  },
- "objectifAffiche": "La proposition de loi vise à lever, dans les territoires d'outre-mer, l'interdiction de recherche, d'exploration et d'exploitation des hydrocarbures, telle qu'instituée par la loi du 30 décembre 2017 (loi Hulot).",
- "mecanismesCles": [
-  {
-   "resume": "Le texte proposé n'est pas reproduit dans le dossier législatif fourni : seuls figurent l'identifiant, la procédure, le statut et les métadonnées de la proposition de loi n°2415. Aucun article ni exposé des motifs n'est accessible dans les 15000 caractères transmis.",
-   "articleRef": null,
-   "citation": null
-  }
- ],
+ "objectifAffiche": "Lever dans les territoires d'outre-mer l'interdiction de recherche, d'exploration et d'exploitation des hydrocarbures, selon le titre de la proposition de loi.",
+ "mecanismesCles": [],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel fourni ne contient ni exposé des motifs, ni articles de la proposition de loi. Les seules informations disponibles sont des métadonnées (numéro, législature, commission saisie, date de dépôt). Sans accès au contenu normatif, il est impossible d'identifier les mécanismes concrets (droits accordés, dérogations, conditions, sanctions) et donc de déterminer si les incitations créées vont dans le sens de l'objectif affiché (lever l'interdiction) ou si elles en atténuent la portée.",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs, ni articles de loi. Seules des informations de procédure (numéro, date de dépôt, commission saisie) sont disponibles. Aucun mécanisme concret ne peut être identifié, ce qui empêche toute analyse des incitations réellement créées par le texte.",
  "pointsDeVigilance": [
-  "Le dossier législatif transmis est tronqué et ne contient pas le corps du texte ni l'exposé des motifs.",
-  "L'objectif affiché (lever l'interdiction) est par construction opposé à l'esprit de la loi du 30 décembre 2017 qui interdisait ces activités ; une analyse de second ordre nécessiterait de vérifier d'éventuelles conditions, limitations territoriales ou environnementales introduites par les articles.",
-  "Le statut 'en cours' indique un examen parlementaire non finalisé, susceptible d'amendements modifiant substantiellement les mécanismes."
+  "Le texte officiel est tronqué et ne contient pas le contenu normatif (exposé des motifs et articles)",
+  "Impossible de vérifier quels territoires d'outre-mer sont concernés ni les éventuelles conditions, dérogations ou délais encadrant la levée de l'interdiction",
+  "L'impact environnemental (émissions de CO2, écosystèmes marins) et les contreparties éventuelles (redevances, transition énergétique) ne peuvent être évalués sans le contenu du texte"
  ],
  "themes": [
-  "hydrocarbures",
   "outre-mer",
+  "hydrocarbures",
   "énergie",
-  "environnement",
-  "droit minier"
+  "environnement"
  ],
  "scrutinsCles": [
   "7383",

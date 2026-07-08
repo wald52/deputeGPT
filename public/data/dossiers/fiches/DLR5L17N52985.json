@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52985",
- "generatedAt": "2026-07-03T06:26:59Z",
+ "generatedAt": "2026-07-08T05:59:16Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,19 +15,52 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0279_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est identifié comme un 'Projet de loi relatif à la lutte contre les fraudes sociales et fiscales' (DLR5L17N52985), promulgué. L'objectif affiché est donc de renforcer la lutte contre les fraudes sociales et fiscales.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des objets PDF, des flux binaires compressés et des métadonnées techniques sont visibles). Aucun article, aucun mécanisme, aucune disposition concrète ne peut être identifié ni cité. Il est donc impossible de déterminer si les incitations créées par les mécanismes vont dans le sens de l'objectif affiché ou dans le sens opposé.",
+ "objectifAffiche": "Le projet de loi vise à renforcer la lutte contre les fraudes sociales et fiscales en améliorant la détection de ces fraudes, notamment par une meilleure mise en commun et exploitation des informations entre administrations (fiscales, douanes, sécurité sociale, départements).",
+ "mecanismesCles": [
+  {
+   "resume": "Autorisation de communication d'informations et documents recueillis lors d'enquêtes judiciaires par les agents des douanes et services fiscaux vers les agents chargés de missions de contrôle.",
+   "articleRef": "art. 1er",
+   "citation": "les agents des douanes et les agents des services fiscaux effectuant des enquêtes judiciaires [...] peuvent communiquer aux agents relevant des administrations des douanes et des finances publiques chargés d'une mission de contrôle toutes les informations et tous les documents"
+  },
+  {
+   "resume": "Vérification par les services instructeurs de prestations sociales que les coordonnées bancaires correspondent bien à un compte ouvert au nom du bénéficiaire, via consultation du fichier de l'article 1649 A du CGI.",
+   "articleRef": "art. 1er bis",
+   "citation": "peuvent s'assurer auprès de l'administration fiscale que les coordonnées bancaires communiquées correspondent à celles d'un compte ouvert au nom du bénéficiaire"
+  },
+  {
+   "resume": "Droit d'accès direct aux fichiers fiscaux (1649 A, 1649 ter, L. 107 B) pour les agents des organismes sociaux, des départements et des services consulaires, notamment pour prévenir la fraude au RSA.",
+   "articleRef": "art. 2",
+   "citation": "disposent d'un droit d'accès direct aux informations contenues dans les déclarations prévues à l'article 1649 ter du code général des impôts"
+  },
+  {
+   "resume": "Possibilité pour les agents départementaux habilités d'être assermentés et de dresser des procès-verbaux faisant foi jusqu'à preuve contraire pour les infractions relatives au RSA.",
+   "articleRef": "art. 2 bis AA",
+   "citation": "ces agents habilités peuvent constater par procès-verbal les infractions et les manquements au présent chapitre. « Les procès-verbaux dressés par ces agents habilités font foi jusqu'à preuve contraire. »"
+  },
+  {
+   "resume": "Transmission par l'administration fiscale à l'organisme unique du registre du commerce des informations sur les personnes exerçant une activité occulte, en vue de leur immatriculation ou radiation.",
+   "articleRef": "art. 3",
+   "citation": "L'administration fiscale transmet à l'organisme unique [...] les informations nécessaires à l'immatriculation [...] des personnes exerçant une activité occulte"
+  },
+  {
+   "resume": "Transmission par les organismes de sécurité sociale des informations sur les personnes exerçant un travail dissimulé en vue de leur immatriculation au registre du commerce.",
+   "articleRef": "art. 3 bis AA",
+   "citation": "transmettent à l'organisme unique [...] les informations strictement nécessaires à l'immatriculation [...] des personnes exerçant un travail dissimulé"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'ensemble des mécanismes créés va clairement dans le sens de l'objectif affiché de lutte contre les fraudes sociales et fiscales. L'article 1er favorise le partage d'informations entre services d'enquête et de contrôle. L'article 1er bis sécurise le versement des prestations sociales en vérifiant la concordance des coordonnées bancaires. L'article 2 élargit les droits d'accès aux fichiers fiscaux pour les agents sociaux et départementaux, notamment contre la fraude au RSA. Les articles 3 et 3 bis AA organisent la transmission d'informations sur les activités occultes et le travail dissimulé vers le registre du commerce. L'article 3 bis BB renforce les sanctions pénales contre l'exercice illégal de la profession d'expert-comptable. Tous ces dispositifs convergent vers une meilleure détection et répression des fraudes.",
  "pointsDeVigilance": [
-  "Le contenu textuel du PDF n'a pas été décodé : le bloc fourni contient uniquement des en-têtes et flux PDF (x��..., endstream, endobj) sans texte lisible.",
-  "Aucun article, alinéa ou citation exploitable n'a pu être extrait du document.",
-  "L'identifiant DLR5L17N52985 et le titre permettent d'identifier le texte, mais l'analyse de second ordre exige la lecture des articles, ce qui est impossible ici."
+  "L'élargissement considérable des droits d'accès aux fichiers fiscaux (1649 A, 1649 ter) à de multiples administrations et agents départementaux soulève des enjeux de protection des données personnelles, partiellement encadrés par des décrets en Conseil d'État après avis CNIL.",
+  "Le procès-verbal dressé par les agents départementaux assermentés 'fait foi jusqu'à preuve contraire', ce qui inverse la charge de la preuve au détriment de l'allocataire du RSA.",
+  "Les sanctions renforcées contre l'exercice illégal de la profession d'expert-comptable (art. 3 bis BB) relèvent davantage de la régulation professionnelle que de la lutte contre la fraude sociale ou fiscale au sens strict."
  ],
  "themes": [
-  "fraude sociale",
   "fraude fiscale",
-  "lutte contre la fraude"
+  "fraude sociale",
+  "partage d'informations",
+  "travail dissimulé",
+  "rsa"
  ],
  "scrutinsCles": [
   "6020",
@@ -36,5 +69,5 @@
   "6319"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:a4d6484506e42a6cd59b918e18ce760e351ac1fcffbefb31fee66314f41093f7"
+ "sourceTextHash": "sha256:85b5f4d7c3d87bdb42bc74a7a07312e117f4da34585580329dc8d01e7813f9cf"
 }

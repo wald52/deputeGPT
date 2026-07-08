@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52820",
- "generatedAt": "2026-07-03T06:26:13Z",
+ "generatedAt": "2026-07-08T05:58:17Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,21 +15,53 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0282_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une résolution parlementaire française visant à condamner la dérive illibérale et autoritaire du gouvernement géorgien et à réaffirmer le soutien de la France au destin européen de la Géorgie.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel n'a pas été extrait (seules des balises PDF techniques et des flux binaires sont visibles). Aucun article, aucun mécanisme concret (obligation, sanction, subvention, dérogation) et aucune citation exploitable ne peuvent être identifiés dans le contenu fourni. Il est donc impossible de déterminer si les mécanismes créés vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "Résolution européenne visant à condamner la dérive illibérale et autoritaire du gouvernement géorgien et à réaffirmer le soutien de la France au destin européen de la Géorgie, dans le contexte du recul démocratique constaté depuis les élections législatives d'octobre 2024.",
+ "mecanismesCles": [
+  {
+   "resume": "Affirmation solennelle d'attachement aux principes démocratiques, à l'état de droit et aux libertés fondamentales (CEDH, article 2 TUE).",
+   "articleRef": "art. 1",
+   "citation": "Affirme son attachement au respect des principes consacrés par la convention européenne de sauvegarde des droits de l'homme et des libertés fondamentales"
+  },
+  {
+   "resume": "Condamnation explicite de la dérive autoritaire, des atteintes aux droits fondamentaux et de l'usage disproportionné de la force contre les manifestants.",
+   "articleRef": "art. 4",
+   "citation": "Condamne la dérive autoritaire du gouvernement géorgien, les atteintes aux droits fondamentaux, les restrictions à la liberté d'expression et de manifestation et l'usage disproportionné de la force contre les manifestants pacifiques"
+  },
+  {
+   "resume": "Appel à une enquête internationale indépendante sur l'usage présumé de cyanure de bromobenzyle (substance prohibée) contre des manifestants.",
+   "articleRef": "art. 5-6",
+   "citation": "l'usage présumé par les forces de l'ordre géorgiennes de cyanure de bromobenzyle, substance prohibée par le droit international"
+  },
+  {
+   "resume": "Demande de maintien de l'interruption de fait du processus d'adhésion de la Géorgie à l'UE tant que les critères politiques ne sont pas respectés.",
+   "articleRef": "art. 7",
+   "citation": "Appelle les institutions européennes à maintenir l'interruption de fait du processus d'adhésion de la Géorgie à l'Union européenne tant que le respect des critères politiques [...] n'est pas effectif"
+  },
+  {
+   "resume": "Invitation du Gouvernement français à soutenir activement la société civile, les ONG, médias indépendants et universités géorgiennes.",
+   "articleRef": "art. 8",
+   "citation": "Invite le Gouvernement de la République française à soutenir activement les acteurs démocratiques en Géorgie, notamment les organisations non gouvernementales, les médias indépendants et les institutions universitaires"
+  },
+  {
+   "resume": "Demande de sanctions individuelles ciblées contre Bidzina Ivanishvili et ses proches, dans le sillage des sanctions américaines.",
+   "articleRef": "art. 11",
+   "citation": "Demande au Gouvernement de la République française de soutenir [...] l'adoption de sanctions individuelles ciblées contre les personnes mentionnées dans la résolution du Parlement européen du 13 février 2025 susvisée, notamment Bidzina Ivanishvili"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés par la résolution sont cohérents avec l'objectif affiché de condamnation de la dérive autoritaire et de soutien au destin européen de la Géorgie. L'article 4 condamne explicitement les atteintes aux droits fondamentaux, l'article 7 conditionne la reprise du processus d'adhésion au respect des critères politiques, et les articles 11 et 13 prévoient des sanctions ciblées et le retrait potentiel de la Légion d'honneur. L'article 8 prévoit un soutien actif aux acteurs démocratiques. Il s'agit d'une résolution (acte non législatif de l'Assemblée nationale) qui n'a pas d'effet normatif contraignant mais formule des invitations au Gouvernement et aux institutions européennes, dont les incitations vont dans le sens de l'objectif affiché.",
  "pointsDeVigilance": [
-  "Le document fourni est un PDF brut dont le texte n'a pas été décodé (flux binaires illisibles)",
-  "Aucun article ni exposé des motifs n'est lisible dans le contenu transmis",
-  "L'analyse des mécanismes concrets est impossible sans le texte intégral et lisible de la résolution"
+  "Le texte est une résolution européenne sans portée normative contraignante : les 'invites' au Gouvernement n'ont pas de caractère obligatoire.",
+  "Le texte est tronqué à 15000 caractères et l'article 16 semble incomplet (coupé en fin de document).",
+  "Aucune mesure budgétaire, fiscale ou réglementaire concrète n'est créée : la résolution se limite à des déclarations politiques et des invitations.",
+  "L'efficacité réelle dépend de la coordination européenne et de l'action effective du Gouvernement français, qui ne sont pas garanties par le texte."
  ],
  "themes": [
   "géorgie",
-  "résolution parlementaire",
-  "démocratie",
-  "union européenne",
-  "condamnation politique"
+  "état de droit",
+  "adhésion ue",
+  "droits fondamentaux",
+  "sanctions internationales"
  ],
  "scrutinsCles": [
   "6522",
@@ -38,5 +70,5 @@
   "6525"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:f7cf7021865ccc4f36489169c996cc4af60ea54920e728355830a51c31c2fca4"
+ "sourceTextHash": "sha256:7114b6be15394a4e45b0b413db2b2d73f5c15378d5bebc8e9022f52c80fcea0b"
 }

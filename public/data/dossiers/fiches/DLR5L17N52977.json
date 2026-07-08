@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52977",
- "generatedAt": "2026-07-03T06:17:34Z",
+ "generatedAt": "2026-07-08T05:46:29Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,44 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0309_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de loi ordinaire visant la nationalisation d'ArcelorMittal France. L'objectif affiché, tel qu'indiqué par le titre et le statut, est le transfert au secteur public des actifs sidérurgiques d'ArcelorMittal présents sur le territoire français.",
- "mecanismesCles": [],
+ "objectifAffiche": "Nationaliser la société ArcelorMittal France afin de préserver la souveraineté industrielle de la France.",
+ "mecanismesCles": [
+  {
+   "resume": "Transfert obligatoire de la propriété d'ArcelorMittal France à l'État par nationalisation.",
+   "articleRef": "art. 1er",
+   "citation": "La société ArcelorMittal France est nationalisée."
+  },
+  {
+   "resume": "Fixation d'un prix d'achat plafonné par une commission administrative, limité à la valeur réelle moyenne des actions entre le 1er octobre 2024 et le 30 septembre 2025.",
+   "articleRef": "art. 1er",
+   "citation": "Cette valeur ne peut excéder la valeur réelle moyenne des actions de la société entre le 1er octobre 2024 et le 30 septembre 2025."
+  },
+  {
+   "resume": "Composition de la commission d'évaluation : Cour des comptes, Banque de France, Conseil d'État, Cour de cassation, Commission des participations et des transferts, CESE.",
+   "articleRef": "art. 1er",
+   "citation": "Cette commission est composée d'un membre de la Cour des comptes, d'un représentant de la Banque de France, du président de la section des finances du Conseil d'État..."
+  },
+  {
+   "resume": "Financement de la nationalisation par la création d'une taxe additionnelle à l'accise sur les tabacs.",
+   "articleRef": "art. 3",
+   "citation": "La charge pour l'État est compensée à due concurrence par la création d'une taxe additionnelle à l'accise sur les tabacs prévue au chapitre IV du titre Ier du livre III du code des impositions sur les biens et services."
+  }
+ ],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des caractères binaires et des fragments de flux compressés sont visibles). Aucun article, aucune disposition, aucun mécanisme concret (transfert de propriété, indemnisation, modalité de transfert, gouvernance, financement, calendrier) ne peut être identifié dans le contenu exploitable. En l'absence de toute lecture possible des articles, il est impossible de déterminer si les incitations créées par le texte vont dans le sens de l'objectif affiché (nationalisation effective) ou s'en écartent (par exemple via des dérogations, des exceptions, des compensations déséquilibrées). Le verdict est donc indéterminé.",
+ "justificationVerdict": "Le texte crée effectivement le transfert de propriété d'ArcelorMittal France vers l'État (art. 1er), ce qui est cohérent avec l'objectif affiché de souveraineté industrielle. Toutefois, le texte ne contient aucune disposition opérationnelle sur la gestion industrielle future de l'entreprise, les investissements, les emplois ou la stratégie de production. L'absence d'articles 1er bis et 2 (supprimés) prive le texte de tout mécanisme concret de préservation industrielle. Le financement par une taxe sur les tabacs (art. 3) est neutre au regard de l'objectif industriel. Il est donc impossible de déterminer si les incitations réelles vont dans le sens de la souveraineté industrielle sans connaître le contenu des articles supprimés.",
  "pointsDeVigilance": [
-  "Le document fourni est un PDF binaire non décodé : le texte législatif (exposé des motifs et articles) n'est pas accessible.",
-  "Sans accès aux articles, aucune analyse de second ordre (mécanismes, incitations, effets) n'est possible.",
-  "Il conviendrait de fournir une version texte (TXT/HTML/XML) du dossier législatif pour mener l'analyse."
+  "Les articles 1er bis et 2 ont été supprimés, supprimant potentiellement des mécanismes clés de la nationalisation (modalités de gestion, gouvernance, cahier des charges industriel).",
+  "Le plafonnement du prix d'achat à la moyenne boursière 2024-2025 peut désavantager les actionnaires actuels et créer un contentieux, sans garantie que l'État acquière effectivement les actifs.",
+  "Le financement repose intégralement sur une taxe sur les tabacs, ce qui lie la souveraineté industrielle à la consommation de tabac.",
+  "Aucune disposition sur le maintien de l'emploi, la transition écologique de la sidérurgie ou les investissements futurs n'est visible dans le texte fourni.",
+  "Le renvoi à un décret en Conseil d'État pour les modalités d'application laisse une large place au pouvoir réglementaire."
  ],
  "themes": [
   "nationalisation",
   "sidérurgie",
-  "industrie",
-  "propriété publique"
+  "souveraineté industrielle",
+  "fiscalité",
+  "tabacs"
  ],
  "scrutinsCles": [
   "7377",
@@ -37,5 +61,5 @@
   "7380"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:4ed8096a728b0cf6ddadcf7fa4a0f157fe7dd1a27dc45d2690f6bfbe3d45a804"
+ "sourceTextHash": "sha256:dab4b235c64b24c6ff517a800b6e9b700c9453ddb304c3b774c924bb92697cd7"
 }

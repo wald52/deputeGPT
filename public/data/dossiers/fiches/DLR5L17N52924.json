@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52924",
- "generatedAt": "2026-07-03T06:25:17Z",
+ "generatedAt": "2026-07-08T05:56:05Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,21 +15,49 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0285_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Mettre en place un programme de soutien à l'innovation thérapeutique contre les cancers, les maladies rares et les maladies orphelines de l'enfant (proposition de loi ordinaire, en cours d'examen).",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel n'a pas été extrait (flux binaires /FlateDecode non décodés, aucune phrase lisible de l'exposé des motifs ni d'article n'apparaît dans le champ fourni). En l'absence de tout mécanisme concret identifiable (obligation, taxe, subvention, seuil, sanction, dérogation), il est impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou dans le sens opposé.",
+ "objectifAffiche": "Mettre en place un programme de soutien à l'innovation thérapeutique contre les cancers, les maladies rares et les maladies orphelines de l'enfant, via une contribution des entreprises pharmaceutiques exploitant des spécialités remboursables en France.",
+ "mecanismesCles": [
+  {
+   "resume": "Création d'une contribution spéciale due par les entreprises pharmaceutiques exploitant en France des spécialités remboursables ou agréées aux collectivités, destinée à financer le programme de soutien à l'innovation thérapeutique pédiatrique.",
+   "articleRef": "art. 1er",
+   "citation": "« Il est institué, aux fins de financer un programme de soutien à l'innovation thérapeutique contre les cancers et les maladies rares de l'enfant, une contribution versée par les entreprises assurant l'exploitation en France... »"
+  },
+  {
+   "resume": "Fixation du taux de la contribution à 0,10 % du chiffre d'affaires hors taxes réalisé en France (métropole + DOM) sur les médicaments remboursables, avec exonération explicite des médicaments orphelins désignés au titre du règlement (CE) n° 141/2000.",
+   "articleRef": "art. 2",
+   "citation": "« Le taux de la contribution mentionnée à l'article L. 245-6-1 du code de la sécurité sociale est fixé à 0,10 %. La contribution est assise sur le chiffre d'affaires hors taxes réalisé en France métropolitaine et dans les départements d'outre-mer... à l'exception des médicaments orphelins désignés comme tels en application du règlement (CE) n° 141/2000 »"
+  },
+  {
+   "resume": "Remise annuelle d'un rapport gouvernemental au Parlement sur l'affectation et l'utilisation du produit de la contribution ; modalités d'application renvoyées à un décret en Conseil d'État.",
+   "articleRef": "art. 2",
+   "citation": "« Chaque année, le Gouvernement remet au Parlement un rapport sur l'affectation et sur l'utilisation du produit de la contribution mentionnée à l'article L. 245-6-1 »"
+  },
+  {
+   "resume": "Demande de rapport sous six mois sur l'opportunité d'abaisser de 18 à 12 ans l'âge minimal d'accès aux essais cliniques en cancérologie, ainsi que sur la simplification des procédures d'essais cliniques.",
+   "articleRef": "art. 2 bis",
+   "citation": "« Ce rapport évalue l'opportunité d'abaisser l'âge minimal d'accès aux essais cliniques en cancérologie de dix-huit à douze ans, en garantissant la sécurité des mineurs. »"
+  },
+  {
+   "resume": "Compensation de la charge pour l'État par une taxe additionnelle à l'accise sur les tabacs (chap. IV du titre Ier du livre III du code des impositions sur les biens et services).",
+   "articleRef": "art. 3",
+   "citation": "« La charge pour l'État est compensée à due concurrence par la création d'une taxe additionnelle à l'accise sur les tabacs prévue au chapitre IV du titre Ier du livre III du code des impositions sur les biens et services. »"
+  }
+ ],
+ "verdictIncitations": "incitations_mitigees",
+ "justificationVerdict": "L'article 1er crée bien une contribution dédiée au financement de l'innovation thérapeutique pédiatrique, ce qui est cohérent avec l'objectif affiché. Toutefois, l'article 2 exonère explicitement les médicaments orphelins désignés au titre du règlement (CE) n° 141/2000 de l'assiette de la contribution, alors même que le titre de la loi vise les « maladies orphelines de l'enfant » : les entreprises exploitant précisément ces médicaments, pourtant cibles prioritaires du texte, n'y contribuent pas. Par ailleurs, l'article 2 bis ne crée aucune mesure contraignante mais se limite à demander un rapport sur l'âge d'accès aux essais cliniques, sans mécanisme opérationnel. Enfin, l'article 3 ne fait que renvoyer la compensation de la charge étatique à une taxe sur le tabac, sans lien direct avec l'innovation thérapeutique. L'architecture financière est donc en partie contradictoire avec l'ambition affichée.",
  "pointsDeVigilance": [
-  "Le 'texte officiel' transmis est un PDF brut non décodé : aucun article ni exposé des motifs n'est lisible.",
-  "Seuls les métadonnées du dossier législatif (titre, identifiant, procédure, statut) sont exploitables.",
-  "Une nouvelle tentative d'extraction du texte (OCR ou conversion PDF→texte) est nécessaire avant toute analyse de second ordre."
+  "Exonération des médicaments orphelins (règlement CE n° 141/2000) de l'assiette de la contribution, alors qu'ils sont au cœur de l'intitulé du texte",
+  "Aucun mécanisme concret d'affectation du produit de la contribution à des projets d'innovation n'est défini dans les articles (renvoi à décret)",
+  "L'article 2 bis est un simple rapport sans portée normative",
+  "L'article 3 compense la charge étatique par une taxe sur le tabac, ce qui n'a pas de lien direct avec l'objectif thérapeutique",
+  "Le texte tronqué ne permet pas de vérifier l'existence d'articles ultérieurs précisant les bénéficiaires, les critères d'éligibilité ou les sanctions"
  ],
  "themes": [
   "santé",
   "innovation thérapeutique",
-  "cancers",
+  "cancers pédiatriques",
   "maladies rares",
-  "pédiatrie"
+  "médicaments orphelins"
  ],
  "scrutinsCles": [
   "6569",
@@ -38,5 +66,5 @@
   "6572"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:95628a8115439976f2ce8ccf3325ba7b4fc0d439167b1b5eab6e389c6149f0fb"
+ "sourceTextHash": "sha256:20403c0347def623f03385c564a6ba9f4745b1b57a03e98ddf2147e0e83e525f"
 }

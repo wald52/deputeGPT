@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52974",
- "generatedAt": "2026-07-03T06:16:14Z",
+ "generatedAt": "2026-07-08T05:45:50Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,14 +15,14 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b1960_proposition-loi",
   "legifrance": null
  },
- "objectifAffiche": "Réformer les bourses sur critères sociaux et lutter contre la précarité étudiante. Proposition de loi ordinaire n°1960 déposée le 14 octobre 2025, renvoyée en commission des affaires culturelles et de l'éducation.",
+ "objectifAffiche": "Réformer les bourses sur critères sociaux et lutter contre la précarité étudiante, selon la proposition de loi n°1960 déposée le 14 octobre 2025.",
  "mecanismesCles": [],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles. Seuls figurent l'identifiant, le titre, la procédure et la commission de renvoi. Aucun mécanisme concret (obligation, seuil, montant, sanction, dérogation) ne peut être extrait du dossier, ce qui empêche toute analyse de l'alignement entre les incitations créées et l'objectif affiché.",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles de loi. Seuls figurent l'identifiant du dossier, le titre, la procédure et des liens de navigation vers le dossier législatif. Aucun mécanisme concret (obligation, seuil, montant, sanction, dérogation) ne peut être extrait du contenu transmis, ce qui rend impossible toute analyse des incitations effectivement créées par le texte.",
  "pointsDeVigilance": [
-  "Dossier législatif tronqué : absence totale de l'exposé des motifs et du dispositif",
-  "Impossible d'identifier les critères d'éligibilité, les barèmes ou les montants proposés",
-  "Statut 'en_cours' : le texte peut encore évoluer via amendements"
+  "Le contenu officiel est tronqué et ne contient pas le corps de la proposition (exposé des motifs et articles)",
+  "Impossible d'évaluer la cohérence entre l'objectif affiché et les dispositifs proposés sans accès au texte intégral",
+  "Le statut 'en cours' indique que le texte pourrait encore être amendé, ce qui affecte toute analyse définitive"
  ],
  "themes": [
   "enseignement supérieur",

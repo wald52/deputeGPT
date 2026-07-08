@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52104",
- "generatedAt": "2026-07-04T06:02:36Z",
+ "generatedAt": "2026-07-08T05:55:11Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,37 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0288_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Actualiser le corps électoral pour les élections au congrès et aux assemblées de province de la Nouvelle-Calédonie, en l'élargissant notamment aux personnes justifiant d'une durée de domicile suffisante sur le territoire.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des flux binaires et des balises PDF sont visibles). Aucun article, aucune disposition concrète et aucune citation exploitable ne peuvent être identifiés. En l'absence de contenu lisible, il est impossible de déterminer si les mécanismes créés vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "Actualiser le corps électoral pour les élections au congrès et aux assemblées de province de la Nouvelle-Calédonie en y intégrant les personnes nées en Nouvelle-Calédonie et inscrites sur la liste électorale générale à la date de l'élection.",
+ "mecanismesCles": [
+  {
+   "resume": "Ajout d'un nouveau critère d'inscription sur la liste électorale spéciale pour les élections au congrès et aux assemblées de province : être né en Nouvelle-Calédonie et inscrit sur la liste électorale générale à la date de l'élection.",
+   "articleRef": "art. 1er (1°)",
+   "citation": "« d) Être nés en Nouvelle-Calédonie et être inscrits sur la liste électorale générale à la date de l’élection au congrès et aux assemblées de province. »"
+  },
+  {
+   "resume": "Extension aux natifs de Nouvelle-Calédonie de la possibilité de participer à la révision de la liste électorale spéciale (consultation des électeurs prévue au III de l'article 189).",
+   "articleRef": "art. 1er (2°)",
+   "citation": "« À la première phrase du deuxième alinéa du III de l’article 189, après le mot : « personnes », sont insérés les mots : « mentionnées au d du I du même article 188 ainsi que des personnes ». »"
+  },
+  {
+   "resume": "Entrée en vigueur immédiate, le lendemain de la publication au Journal officiel.",
+   "articleRef": "art. 2",
+   "citation": "La présente loi organique entre en vigueur le lendemain de sa publication au Journal officiel de la République française."
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'objectif affiché est d'élargir le corps électoral aux natifs de Nouvelle-Calédonie. L'article 1er (1°) crée précisément ce nouveau critère d'éligibilité électorale en complétant le I de l'article 188 par un alinéa d) ciblant les personnes nées sur le territoire. L'article 1er (2°) étend en cohérence la procédure de révision de la liste à cette nouvelle catégorie. L'article 2 fixe une entrée en vigueur immédiate, ce qui rend l'élargissement effectif dès la publication. Les mécanismes créés vont donc directement dans le sens de l'objectif affiché d'actualisation du corps électoral.",
  "pointsDeVigilance": [
-  "Le document fourni est un PDF non décodé : le texte législatif (exposé des motifs et articles) n'est pas accessible.",
-  "Toute analyse de second ordre est impossible sans accès au contenu normatif du texte.",
-  "Le titre seul indique une actualisation du corps électoral calédonien, mais ne permet pas d'identifier les critères d'éligibilité, les seuils de domiciliation, les dérogations ou les sanctions."
+  "Le texte ne précise pas de période transitoire ni de conditions de durée minimale d'inscription sur la liste électorale générale, ce qui pourrait soulever des questions d'égalité avec les autres conditions prévues à l'article 188.",
+  "L'absence d'exposé des motifs dans le document fourni limite l'analyse des justifications politiques et juridiques sous-jacentes.",
+  "Le statut organique du texte implique un contrôle de conformité à la Constitution (notamment aux principes d'égalité et de sincérité électorale) qui n'est pas documenté ici."
  ],
  "themes": [
   "élections",
   "nouvelle-calédonie",
   "corps électoral",
-  "droit organique"
+  "droit de vote",
+  "loi organique"
  ],
  "scrutinsCles": [
   "6750",
@@ -37,5 +54,5 @@
   "6753"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:eef60d31f8a83fbd1ec8b7cdd6ddd35e9f268503d5164bce6caad3699c15cc04"
+ "sourceTextHash": "sha256:dd77140b6e4026e3f8f1c66af9ba4fb1cf897cb81df04f14c5a928e53ba9b2f6"
 }

@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N54373",
- "generatedAt": "2026-07-03T06:18:13Z",
+ "generatedAt": "2026-07-08T05:47:10Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,15 +15,20 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0307_texte-adopte-seance",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est un projet de loi portant approbation des comptes de la sécurité sociale de l'année 2025. Il s'agit d'un texte de nature comptable et budgétaire, visant à ratifier les dépenses et recettes effectives des régimes de sécurité sociale pour l'exercice 2025.",
- "mecanismesCles": [],
+ "objectifAffiche": "Le texte est un projet de loi d'approbation des comptes de la sécurité sociale pour l'année 2025. Il vise à entériner les résultats financiers (recettes, dépenses, solde) des régimes de sécurité sociale pour l'exercice 2025.",
+ "mecanismesCles": [
+  {
+   "resume": "Aucun mécanisme concret n'est identifiable dans le texte fourni : seul le titre et des métadonnées de navigation sont présents, sans exposé des motifs ni articles.",
+   "articleRef": null,
+   "citation": null
+  }
+ ],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs, ni articles, ni aucun dispositif législatif. Seul le titre et des métadonnées de procédure sont disponibles (T.A. n° 307, rejeté par l'Assemblée nationale le 9 juin 2026). Sans accès au contenu normatif du projet de loi, il est impossible d'identifier les mécanismes concrets créés et donc d'évaluer l'alignement entre les incitations et l'objectif affiché.",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles de loi : il se limite au titre du projet de loi et à des éléments de navigation (commission, formats, dossier législatif). Sans contenu normatif, il est impossible d'identifier des mécanismes concrets (obligations, taxes, dépenses, soldes) et donc de déterminer si les incitations sont alignées avec l'objectif affiché.",
  "pointsDeVigilance": [
-  "Le texte officiel a été tronqué à 15000 caractères mais ne contient en réalité aucun contenu normatif exploitable",
-  "Le projet de loi a été rejeté par l'Assemblée nationale après engagement de la procédure accélérée, ce qui signifie qu'il n'a pas abouti",
-  "Un projet de loi d'approbation des comptes de la sécurité sociale est par nature un texte de régularisation comptable, sans création de dispositifs nouveaux",
-  "L'absence d'articles et d'exposé des motifs empêche toute analyse de second ordre"
+  "Le texte officiel a été tronqué à 15000 caractères et seul le sommaire/header est visible, sans aucun article ni exposé des motifs.",
+  "Le projet de loi a été rejeté par l'Assemblée nationale le 9 juin 2026, ce qui signifie qu'il n'a pas produit d'effet normatif.",
+  "Une loi d'approbation des comptes est par nature rétrospective (constatation comptable) et non prospective (création d'incitations), ce qui limite la portée de l'analyse d'incitations."
  ],
  "themes": [
   "sécurité sociale",

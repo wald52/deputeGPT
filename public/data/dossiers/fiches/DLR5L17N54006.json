@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N54006",
- "generatedAt": "2026-07-03T06:24:42Z",
+ "generatedAt": "2026-07-08T05:55:32Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -12,24 +12,23 @@
  "statut": "en_cours",
  "sources": {
   "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/montagne_vivante_souveraine_17e",
-  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/montagne_vivante_souveraine_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b3019_proposition-loi",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de loi intitulée « Pour une montagne vivante et souveraine », déposée par Jean-Pierre Vigier et plusieurs collègues, visant selon son titre à favoriser la vitalité et la souveraineté des territoires de montagne. L'exposé des motifs et le contenu des articles ne sont pas fournis dans le dossier transmis.",
+ "objectifAffiche": "Le titre et l'intitulé indiquent une proposition de loi 'pour une montagne vivante et souveraine', visant apparemment à préserver la vitalité et l'autonomie des territoires de montagne. L'exposé des motifs n'est pas disponible dans le texte fourni.",
  "mecanismesCles": [],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le dossier législatif fourni ne contient ni l'exposé des motifs ni le texte des articles de la proposition de loi n° 2595. Seules les métadonnées procédurales (dépôt, commission saisie au fond, rapport, procédure accélérée) sont disponibles. Sans accès aux dispositions substantielles du texte, il est impossible d'identifier les obligations, taxes, subventions, dérogations, seuils ou sanctions créés, et donc de déterminer si les incitations réelles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs, ni articles, ni aucun dispositif législatif. Seul l'intitulé de la proposition de loi (n° 3019) et des métadonnées procédurales sont communiqués, avec la mention explicite 'Document non encore publié'. En l'absence de tout mécanisme concret (obligation, taxe, subvention, seuil, sanction), il est impossible de déterminer si les incitations créées par le texte vont dans le sens de l'objectif affiché ou s'y opposent.",
  "pointsDeVigilance": [
-  "Le texte officiel des articles et l'exposé des motifs ne sont pas inclus dans la trame fournie (tronquée à 15000 caractères, mais ne couvrant que les informations procédurales du dossier législatif).",
-  "Le titre « Pour une montagne vivante et souveraine » est suffisamment large pour recouvrir des objectifs potentiellement contradictoires (développement économique vs. protection environnementale, autonomie locale vs. normes nationales).",
-  "La procédure accélérée a été engagée par le Gouvernement le 12 mai 2026, ce qui limite le temps d'examen parlementaire.",
-  "102 amendements déposés en commission à l'Assemblée nationale et 167 amendements sur le texte de la commission suggèrent des débats substantiels dont le contenu n'est pas accessible."
+  "Le document officiel est marqué 'non encore publié' : aucun article ni exposé des motifs n'est disponible pour analyse.",
+  "L'intitulé 'montagne vivante et souveraine' est politiquement marqué et pourrait recouvrir des orientations très diverses (autonomie locale, protection environnementale, soutien économique, etc.) impossibles à vérifier sans le contenu.",
+  "Le texte a été modifié par le Sénat, ce qui implique des aller-retour parlementaires dont la teneur n'est pas accessible ici."
  ],
  "themes": [
   "montagne",
   "aménagement du territoire",
   "développement local",
-  "souveraineté"
+  "souveraineté territoriale"
  ],
  "scrutinsCles": [
   "6642",
@@ -38,5 +37,5 @@
   "6645"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:ddd19d01e1944137ae9b6b6bd868557a793fc3f03f80d446a33e1cb1b193bdd3"
+ "sourceTextHash": "sha256:2248291c25536ed4f10ac4119d446fe766b8f9bbf8b6bedc027a90ebbaafacb9"
 }

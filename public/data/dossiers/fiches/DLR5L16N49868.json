@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L16N49868",
- "generatedAt": "2026-07-03T06:29:42Z",
+ "generatedAt": "2026-07-08T06:02:10Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,19 +15,54 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0273_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est identifié comme un 'Projet de loi de simplification de la vie économique' (procédure ordinaire, statut promulgue). L'objectif affiché, tel que suggéré par le titre, est de simplifier les démarches et contraintes administratives pesant sur les acteurs économiques.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le document fourni est un fichier PDF brut (contenant des flux binaires d'objets PDF, des streams compressés et des métadonnées techniques) et non le texte législatif lui-même. Aucun article, aucun exposé des motifs, aucune disposition concrète (obligation, taxe, subvention, seuil, sanction) n'est lisible dans le contenu transmis. Il est donc impossible d'identifier des mécanismes ou de vérifier s'ils vont dans le sens de l'objectif affiché de simplification.",
+ "objectifAffiche": "Le projet de loi vise à simplifier la vie économique en allégeant les démarches administratives des entreprises et en simplifiant l'organisation de l'administration. Il procède par suppressions, abrogations et rationalisations de dispositions existantes jugées inutilement complexes.",
+ "mecanismesCles": [
+  {
+   "resume": "Abrogation de multiples commissions, instances consultatives et conseils (Haut Conseil, Observatoires, conseils régionaux économiques, etc.) dans divers codes (recherche, transports, fonction publique, action sociale, défense, éducation, rural, santé, urbanisme).",
+   "articleRef": "art. 1er",
+   "citation": "Le chapitre préliminaire du titre II est abrogé ; [...] L'article L. 2345-1 est abrogé ; [...] L'article L. 312-8 du code de l'éducation est abrogé"
+  },
+  {
+   "resume": "Limitation dans le temps des commissions et instances consultatives créées par voie législative, avec durée de 3 ans renouvelable par décret.",
+   "articleRef": "art. 1er bis",
+   "citation": "les commissions et les instances consultatives ou délibératives créées par voie législative [...] sont créées pour une durée de trois ans"
+  },
+  {
+   "resume": "Demande au Gouvernement d'un rapport sur les conseils ad hoc créés entre 2017-2023 et étude d'opportunité de fusionner plusieurs entités de planification (SGPE, SGPI, haut-commissariat au plan, France stratégie).",
+   "articleRef": "art. 1er (X)",
+   "citation": "le Gouvernement remet au Parlement un rapport sur les conseils ad hoc créés entre 2017 et 2023 [...] étudier l'opportunité d'une approche intégrée"
+  },
+  {
+   "resume": "Abrogation de nombreuses obligations d'affichage, d'agrément ou de déclaration dans le code du commerce (articles L. 310-1, L. 762-1 à L. 762-3, etc.) et le code de la consommation.",
+   "articleRef": "art. 2 (III et IV)",
+   "citation": "L'article L. 310-1 est abrogé ; [...] L'article L. 762-3 est abrogé ; [...] L'article L. 121-22 est ainsi modifié"
+  },
+  {
+   "resume": "Suppression de l'obligation d'agrément pour certains acteurs dans les domaines de l'environnement (déchets), de la route (centres de contrôle) et de la santé publique.",
+   "articleRef": "art. 2 (V et VI)",
+   "citation": "le mot : « agréé » est supprimé"
+  },
+  {
+   "resume": "Abrogation de l'article L. 3322-1 du code de la santé publique et modification des articles L. 3322-2 et L. 3351-1 relatifs à l'étiquetage et à la publicité des boissons alcooliques.",
+   "articleRef": "art. 2 (X)",
+   "citation": "L'article L. 3322-1 est abrogé ; [...] Le premier alinéa est supprimé"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte procède quasi exclusivement par suppressions, abrogations et allègements de contraintes existantes, ce qui correspond mécaniquement à l'objectif affiché de simplification. L'article 1er supprime ou rationalise de nombreuses instances administratives (commissions, conseils, observatoires) dans des domaines variés. L'article 1er bis instaure une durée limitée de 3 ans pour les commissions consultatives, mécanisme de rationalisation administrative. L'article 2 abroge des obligations d'affichage, d'agrément et de déclaration pesant sur les entreprises (art. L. 310-1 du code de commerce, agréments dans le code de l'environnement). Ces mécanismes vont dans le sens d'une réduction des charges administratives, cohérente avec l'objectif affiché.",
  "pointsDeVigilance": [
-  "Le contenu transmis est un PDF binaire illisible (flux d'objets PDF), et non le texte extrait du projet de loi.",
-  "Aucun article ni exposé des motifs n'a pu être extrait ou cité.",
-  "Le titre et l'identifiant du dossier sont les seules informations exploitables."
+  "Le texte est tronqué à 15000 caractères : de nombreux titres et articles (Titre III et au-delà) ne sont pas visibles, ce qui limite l'analyse complète.",
+  "Plusieurs dispositions importantes sont marquées '(Supprimé)', signe d'un contenu substantiellement réduit par amendements.",
+  "La suppression de l'agrément pour certains acteurs environnementaux (art. 2 V et VI) pourrait soulever des questions de contrôle public indépendamment de l'objectif de simplification.",
+  "L'abrogation de l'article L. 3322-1 (publicité des boissons alcooliques) et la modification de l'étiquetage peuvent avoir des incidences sanitaires qui dépassent le seul cadre de la simplification.",
+  "Le rapport demandé au Gouvernement (art. 1er X) sur la fusion d'entités de planification écologique n'est qu'une demande d'étude, sans effet direct."
  ],
  "themes": [
   "simplification administrative",
-  "vie économique",
-  "texte illisible"
+  "démarches des entreprises",
+  "organisation de l'état",
+  "commissions consultatives",
+  "allègement des normes"
  ],
  "scrutinsCles": [
   "2458",
@@ -36,5 +71,5 @@
   "6184"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:54ee17311f5b4ad2bfbb7446310df397a4f0c3966d287a77a7d0016077615e78"
+ "sourceTextHash": "sha256:a6a16a532e6345dc5bbf574ea1fdceedddb0e625038ba9b19c75937dcb690868"
 }

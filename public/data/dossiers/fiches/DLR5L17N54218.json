@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N54218",
- "generatedAt": "2026-07-03T06:14:13Z",
+ "generatedAt": "2026-07-08T05:41:43Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,54 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0318_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est un projet de loi constitutionnelle visant à instituer une Corse autonome au sein de la République française. L'objectif affiché est de faire évoluer le statut constitutionnel de la Corse vers davantage d'autonomie, dans le cadre de la République.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel n'a pas été extrait (seuls des flux binaires PDF bruts sont visibles, sans aucun article, alinéa ou exposé des motifs déchiffrable). Aucun mécanisme concret (obligation, dérogation, transfert de compétence, création d'organe, etc.) ne peut être identifié ni cité. En l'absence totale de contenu normatif exploitable, il est impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "Inscrire dans la Constitution un statut d'autonomie pour la Corse au sein de la République, tenant compte de ses spécificités insulaires, historiques, linguistiques et culturelles, en permettant des adaptations de normes et des habilitations à fixer des normes dans les matières relevant de ses compétences.",
+ "mecanismesCles": [
+  {
+   "resume": "Création d'un article 72-5 dans la Constitution dotant la Corse d'un statut d'autonomie reconnaissant ses spécificités (île méditerranéenne, relief montagneux, communauté insulaire, lien à la terre).",
+   "articleRef": "Article unique (art. 72-5, al. 1)",
+   "citation": "« La Corse est dotée d'un statut d'autonomie au sein de la République, qui tient compte de ses intérêts propres, liés à ses caractéristiques d'île méditerranéenne, au relief montagneux et à sa communauté insulaire, historique, linguistique, culturelle, ayant développé un lien singulier à la terre corse. »"
+  },
+  {
+   "resume": "Possibilité d'adaptations des lois et règlements justifiées par les spécificités du statut, avec habilitation de la Collectivité de Corse à décider de ces adaptations.",
+   "articleRef": "Article unique (art. 72-5, al. 2)",
+   "citation": "« Les lois et les règlements peuvent faire l'objet d'adaptations justifiées par les spécificités de ce statut. La Collectivité de Corse peut être habilitée à décider de l'adaptation de ces normes dans les matières, dans les conditions et sous les réserves prévues par la loi organique. »"
+  },
+  {
+   "resume": "Habilitation possible de la Collectivité de Corse à fixer elle-même les normes dans les matières relevant de ses compétences.",
+   "articleRef": "Article unique (art. 72-5, al. 3)",
+   "citation": "« La Collectivité de Corse peut également être habilitée à fixer les normes dans les matières où s'exercent ses compétences, dans les conditions et sous les réserves prévues par la loi organique. »"
+  },
+  {
+   "resume": "Liste de matières exclues des habilitations : nationalité, droits civiques, libertés publiques, état et capacité des personnes, justice, droit pénal, politique étrangère, défense, sécurité, monnaie, droit électoral.",
+   "articleRef": "Article unique (art. 72-5, al. 4)",
+   "citation": "« Les habilitations prévues aux deuxième et troisième alinéas ne peuvent porter sur la nationalité, les droits civiques, les garanties des libertés publiques, l'état et la capacité des personnes, l'organisation de la justice, le droit pénal, la procédure pénale, la politique étrangère, la défense, la sécurité et l'ordre publics, la monnaie, le crédit et les changes ainsi que le droit électoral. »"
+  },
+  {
+   "resume": "Contrôle par le Conseil d'État et le Conseil constitutionnel, et possibilité d'un principe de non-régression par rapport aux normes nationales sociales et environnementales.",
+   "articleRef": "Article unique (art. 72-5, al. 5)",
+   "citation": "« La loi organique détermine également le contrôle exercé par le Conseil d'État et le Conseil constitutionnel […] Elle peut également porter sur les modalités de mise en œuvre […] d'un principe de non-régression par rapport aux normes nationales sociales et environnementales en vigueur. »"
+  },
+  {
+   "resume": "Le Gouvernement peut adapter par ordonnances les dispositions législatives aux spécificités de la Corse, sauf exclusion expresse par la loi.",
+   "articleRef": "Article unique (art. 72-5, al. 7)",
+   "citation": "« Le Gouvernement peut, par ordonnances, dans les matières qui ne relèvent pas de la compétence de la Collectivité de Corse, adapter les dispositions de nature législative en vigueur aux spécificités de la collectivité… »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte crée un statut d'autonomie constitutionnelle pour la Corse en permettant des adaptations de normes et des habilitations à fixer des normes (art. 72-5, al. 2 et 3), ce qui va directement dans le sens de l'objectif affiché d'un statut d'autonomie. Les mécanismes prévoient toutefois des garde-fous importants : une liste de matières exclues (al. 4), un contrôle du Conseil d'État et du Conseil constitutionnel (al. 5), un principe de non-régression sociale et environnementale (al. 5), et le respect de l'égalité (al. 6). Ces limitations ne contredisent pas l'objectif mais l'encadrent. La consultation des électeurs corses (al. 8) renforce la légitimité démocratique du processus. L'ensemble des incitations est cohérent avec l'objectif d'une autonomie constitutionnelle maîtrisée.",
  "pointsDeVigilance": [
-  "Le document fourni est un PDF binaire non décodé : aucun article ni exposé des motifs n'est lisible.",
-  "L'identifiant DLR5L17N54218 et le titre du dossier suggèrent un texte sur l'autonomie de la Corse, mais le contenu normatif réel n'est pas accessible.",
-  "Toute analyse de second ordre (alignement des incitations avec l'objectif) est impossible sans le texte des articles."
+  "Le texte est très largement renvoyé à une loi organique future, dont le contenu déterminera l'étendue réelle de l'autonomie (matières, conditions, réserves).",
+  "Le périmètre exact des 'spécificités' justifiant les adaptations n'est pas défini dans le texte constitutionnel.",
+  "Le principe de non-régression sociale et environnementale est optionnel ('peut également porter'), ce qui laisse une marge d'appréciation à la loi organique.",
+  "La consultation des électeurs est prévue mais sans précision sur son caractère contraignant (référendum décisionnel ou simple consultation).",
+  "Le texte ne précise pas les compétences propres de la Collectivité de Corse, qui restent à définir par la loi organique."
  ],
  "themes": [
   "autonomie territoriale",
+  "collectivités territoriales",
   "corse",
   "révision constitutionnelle",
-  "organisation de la république"
+  "droit constitutionnel"
  ],
  "scrutinsCles": [
   "7429",
@@ -37,5 +71,5 @@
   "7454"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:ab726a4700ba66eb6ec40b96aeec88368dec2f70bb34476484a55ba8112f8998"
+ "sourceTextHash": "sha256:d8f341cecc78a3fe191dae97cdb42b8f256208b660437fe1892c770ba827e88c"
 }

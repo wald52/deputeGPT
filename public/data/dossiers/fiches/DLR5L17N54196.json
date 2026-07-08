@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N54196",
- "generatedAt": "2026-07-03T06:18:46Z",
+ "generatedAt": "2026-07-08T05:47:36Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,19 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0306_texte-adopte-seance",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est un projet de loi relatif aux résultats de la gestion et portant approbation des comptes de l'année 2025. Il s'agit d'un texte budgétaire classique de fin d'exercice, visant à constater les résultats financiers de l'État pour 2025 et à approuver formellement les comptes de cette année.",
+ "objectifAffiche": "Le texte est un projet de loi relatif aux résultats de la gestion et portant approbation des comptes de l'année 2025. Il s'agit d'un texte budgétaire classique de fin d'exercice, visant à arrêter les comptes définitifs de l'État pour 2025.",
  "mecanismesCles": [],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles : seule la page de sommaire du dossier législatif (T.A. n° 306) est accessible, avec des liens de navigation et des métadonnées (commission des finances, 17e législature). Aucun mécanisme concret (obligation, taxe, subvention, seuil, sanction) ne peut être identifié dans le contenu transmis, ce qui rend impossible toute évaluation des incitations produites par le texte.",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs, ni articles substantiels. Seules les informations de couverture (titre, identifiant, procédure, statut) sont disponibles, indiquant que le projet de loi a été rejeté par l'Assemblée nationale le 9 juin 2026 après engagement de la procédure accélérée. Aucun mécanisme concret (obligation, taxe, subvention, seuil, sanction) ne peut être identifié dans le contenu transmis, ce qui rend impossible toute analyse des incitations produites par le texte.",
  "pointsDeVigilance": [
-  "Le texte officiel a été tronqué à 15000 caractères mais, en réalité, seul l'en-tête et le sommaire du dossier législatif ont été fournis, sans aucun article ni exposé des motifs.",
-  "Le projet de loi a été rejeté par l'Assemblée nationale le 9 juin 2026 après engagement de la procédure accélérée, ce qui soulève la question de l'absence d'entrée en vigueur.",
-  "Sans accès au contenu normatif, aucune analyse de second ordre sur l'alignement entre objectifs affichés et mécanismes réels ne peut être conduite."
+  "Le texte officiel fourni est tronqué et ne contient que l'en-tête du dossier législatif, sans exposé des motifs ni articles.",
+  "Le projet de loi a été rejeté par l'Assemblée nationale, ce qui signifie que ses mécanismes, même s'ils avaient été lisibles, n'ont pas produit d'effet normatif.",
+  "L'analyse des incitations est impossible sans accès au contenu normatif du texte."
  ],
  "themes": [
   "finances publiques",
-  "approbation des comptes",
-  "loi de règlement",
-  "gestion budgétaire"
+  "comptabilité de l'état",
+  "loi de règlement"
  ],
  "scrutinsCles": [
   "7350"

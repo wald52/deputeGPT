@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N51791",
- "generatedAt": "2026-07-03T06:23:43Z",
+ "generatedAt": "2026-07-08T05:53:15Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,19 +15,38 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0293_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Pérenniser le contrat de professionnalisation expérimental (Proposition de loi ordinaire, statut : promulgué).",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est un fichier PDF dont le contenu textuel est illisible (flux binaires / caractères corrompus). Aucun article, aucune disposition, aucun mécanisme concret ne peut être extrait ni cité. Il est donc impossible de déterminer si les incitations créées par le texte vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "Pérenniser le contrat de professionnalisation expérimental en l'inscrivant dans le droit commun du code du travail, afin de sécuriser ce dispositif d'alternance et de formation professionnelle.",
+ "mecanismesCles": [
+  {
+   "resume": "Modification de l'article L. 6325-1 du code du travail pour permettre que l'action de professionnalisation vise non seulement une qualification professionnelle reconnue, mais aussi un ou plusieurs blocs de compétences de certification professionnelle mentionnés au dernier alinéa de l'article L. 6113-1.",
+   "articleRef": "Article unique, I, 1°",
+   "citation": "« ou un ou plusieurs blocs de compétences de certification professionnelle mentionnés au dernier alinéa de l'article L. 6113-1, selon des modalités définies par décret »"
+  },
+  {
+   "resume": "Modification de l'article L. 6325-3 du code du travail pour aligner la définition des objectifs de la période d'alternance sur cette nouvelle possibilité de ciblage par blocs de compétences.",
+   "articleRef": "Article unique, I, 2°",
+   "citation": "« ou un ou plusieurs blocs de compétences de certification professionnelle mentionnés au dernier alinéa de l'article L. 6113-1 »"
+  },
+  {
+   "resume": "Clause de compensation financière : les éventuelles conséquences financières pour l'État sont compensées par la création d'une taxe additionnelle à l'accise sur les tabacs.",
+   "articleRef": "Article unique, II",
+   "citation": "« compensées, à due concurrence, par la création d'une taxe additionnelle à l'accise sur les tabacs prévue au chapitre IV du titre Ier du livre III du code des impositions sur les biens et services »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte modifie directement les articles L. 6325-1 et L. 6325-3 du code du travail pour élargir les finalités du contrat de professionnalisation aux blocs de compétences, ce qui correspond à la pérennisation annoncée d'un dispositif expérimental. Les mécanismes créés (élargissement de l'objet du contrat à des blocs de compétences) vont dans le sens de l'objectif affiché de sécurisation et d'extension du dispositif. La clause de compensation (II) est neutre par rapport à l'objectif principal et n'en inverse pas la logique.",
  "pointsDeVigilance": [
-  "Le document transmis est un PDF binaire dont le contenu n'a pas été décodé en texte lisible.",
-  "Aucun article ni exposé des motifs n'a pu être extrait du fichier fourni.",
-  "L'analyse de second ordre (mécanismes concrets vs. objectif affiché) ne peut être conduite sans accès au contenu normatif."
+  "Le texte est très court (article unique) et ne contient pas d'exposé des motifs dans l'extrait fourni, ce qui limite la compréhension fine de l'intention initiale.",
+  "Les modalités concrètes d'application (notamment le décret prévu à l'article L. 6325-1) ne sont pas définies dans le texte.",
+  "La pérennisation d'un dispositif 'expérimental' suppose qu'une expérimentation préalable existait, mais le texte n'en précise ni la durée, ni le bilan, ni le fondement juridique initial.",
+  "Le financement par une taxe additionnelle sur les tabacs est sans lien direct avec la formation professionnelle, ce qui peut soulever des questions de cohérence budgétaire."
  ],
  "themes": [
-  "travail",
   "formation professionnelle",
-  "contrat de professionnalisation"
+  "alternance",
+  "contrat de professionnalisation",
+  "code du travail",
+  "blocs de compétences"
  ],
  "scrutinsCles": [
   "7036",
@@ -36,5 +55,5 @@
   "7039"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:e7c528e09bcadb185d425bfc7939d757cb4e0feafb35bc8efb42878fad784a61"
+ "sourceTextHash": "sha256:3baeaa54fa6410ea4fa84c4729a2198f32a239098e0bdd47ea4d8d1f120a4f7d"
 }

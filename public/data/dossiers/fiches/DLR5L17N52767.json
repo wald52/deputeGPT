@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52767",
- "generatedAt": "2026-07-04T06:02:16Z",
+ "generatedAt": "2026-07-08T05:54:46Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,39 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0290_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de loi ordinaire intitulée « Abrogation du Code noir ». L'objectif affiché, tel qu'il peut être déduit du titre et de la nature du texte, est de procéder à l'abrogation du Code noir (l'édit royal de 1685 sur les esclaves des colonies).",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel a été tronqué ou mal extrait (caractères binaires, flux PDF non décodés). Aucun article, aucun exposé des motifs, aucune disposition concrète (obligation, taxe, subvention, sanction, seuil) ne peut être identifié dans le contenu fourni. Il est donc impossible de déterminer les mécanismes créés par le texte et, a fortiori, de vérifier si les incitations qu'ils produisent sont alignées avec l'objectif affiché d'abrogation du Code noir.",
+ "objectifAffiche": "Abroger formellement le « code noir » (édit de mars 1685) et l'ensemble des dispositions prises pour son application, son adaptation ou son extension. Le texte vise également à reconnaître symboliquement le lien entre ces textes et le crime contre l'humanité que constituent la traite et l'esclavage, et à dresser un état des lieux du droit colonial encore en vigueur dans les outre-mer.",
+ "mecanismesCles": [
+  {
+   "resume": "Abrogation expresse du code noir de 1685 et de toutes les dispositions prises pour son application, adaptation ou extension à d'autres territoires.",
+   "articleRef": "art. 1er",
+   "citation": "Le « code noir » ou édit du Roy sur les esclaves des îles de l'Amérique de mars 1685 ainsi que l'ensemble des dispositions de toute nature prises pour son application, son adaptation ou son extension à d'autres territoires sont abrogés."
+  },
+  {
+   "resume": "Reconnaissance symbolique par la République du caractère indissociable des textes ayant institutionnalisé la réduction en esclavage avec le crime contre l'humanité de la traite et de l'esclavage.",
+   "articleRef": "art. 1er bis",
+   "citation": "La République française reconnaît que l'ensemble des textes qui ont institutionnalisé la réduction d'êtres humains à l'état de biens meubles et organisé leur déportation, leur exploitation ainsi que les violences exercées à leur encontre sont indissociables du crime contre l'humanité constitué par la traite et l'esclavage"
+  },
+  {
+   "resume": "Commande d'un rapport au Gouvernement sous un an sur les dispositions issues du droit colonial encore en vigueur dans les outre-mer, leurs conséquences économiques, sociales, culturelles, environnementales, ainsi que sur les discriminations, l'enseignement et les lieux de mémoire.",
+   "articleRef": "art. 2",
+   "citation": "Dans un délai d'un an à compter de la promulgation de la présente loi, le Gouvernement remet au Parlement un rapport dressant la liste des dispositions issues du droit colonial encore en vigueur dans les territoires d'outre-mer."
+  }
+ ],
+ "verdictIncitations": "incitations_mitigees",
+ "justificationVerdict": "L'article 1er procède à une abrogation formelle cohérente avec l'objectif affiché, mais celle-ci est largement symbolique puisque le code noir n'était déjà plus en vigueur de facto depuis l'abolition de l'esclavage (1848) et les indépendances. L'article 1er bis est purement déclaratif et sans portée normative nouvelle. L'article 2 ne crée aucune obligation contraignante : il se limite à demander un rapport, sans imposer de mesures correctives, de calendrier d'abrogation des textes coloniaux encore en vigueur, ni de sanctions. Ainsi, les mécanismes réellement contraignants sont très faibles au regard de l'ambition affichée de lutte contre les discriminations et de réparation mémorielle.",
  "pointsDeVigilance": [
-  "Le contenu textuel du PDF est corrompu ou non décodé : aucune lecture des articles n'est possible.",
-  "Le titre seul (« Abrogation du Code noir ») ne permet pas de connaître la portée exacte (abrogation simple, abrogation avec dispositions de remplacement, mesures de mémoire, etc.).",
-  "Sans accès au texte réel, toute analyse de second ordre serait spéculative."
+  "L'abrogation est essentiellement symbolique : le code noir n'était plus appliqué depuis plus d'un siècle et demi.",
+  "Aucun mécanisme n'est prévu pour abroger effectivement les 'dispositions de toute nature' encore en vigueur qui procéderaient du code noir.",
+  "Le rapport de l'article 2 n'est assorti d'aucune sanction en cas de non-remise ou de retard, ni d'obligation législative ultérieure.",
+  "Le texte ne crée aucune obligation concrète en matière d'enseignement, de lieux de mémoire ou de réparation pour les descendants.",
+  "Le périmètre exact des textes abrogés ('dispositions prises pour son application, son adaptation ou son extension') reste juridiquement flou et pourrait prêter à contestation."
  ],
  "themes": [
-  "esclavage",
   "mémoire",
-  "droit colonial",
-  "abrogation"
+  "esclavage",
+  "colonialisme",
+  "outre-mer",
+  "droit symbolique"
  ],
  "scrutinsCles": [
   "6999",
@@ -37,5 +56,5 @@
   "7002"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:100d423301c091ecf76928feb45b77766dc2ac4d2568ce3d6177c6f2f3cce0f7"
+ "sourceTextHash": "sha256:903d0e3af994b30f1f865b47771f9cef49cd3d9a35dd8501b56b45127f69fdfb"
 }

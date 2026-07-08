@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53159",
- "generatedAt": "2026-07-03T06:21:02Z",
+ "generatedAt": "2026-07-08T05:49:59Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,21 +15,53 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0299_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "La proposition de loi vise à améliorer les moyens d'action de l'Agence de gestion et de recouvrement des avoirs saisis et confisqués (AGRASC) et à faciliter l'exercice des missions d'expert judiciaire. L'objectif affiché est de renforcer l'efficacité de la gestion des avoirs saisis et confisqués ainsi que les conditions d'exercice des experts judiciaires.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni ne contient pas le contenu législatif exploitable : il s'agit d'un fichier PDF dont le contenu textuel n'a pas été extrait (seuls des flux binaires PDF et des fragments illisibles sont présents). Aucun article, aucun mécanisme concret (obligation, taxe, subvention, dérogation, seuil, sanction) ne peut être identifié ni cité. Il est donc impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou dans le sens opposé.",
+ "objectifAffiche": "La proposition de loi vise à améliorer les moyens d'action de l'Agence de gestion et de recouvrement des avoirs saisis et confisqués (AGRASC) et à faciliter l'exercice des missions d'expert judiciaire. Il s'agit d'un texte technique de procédure pénale destiné à fluidifier la gestion des biens saisis et confisqués, notamment les crypto-actifs, et à renforcer l'information des victimes.",
+ "mecanismesCles": [
+  {
+   "resume": "Notification obligatoire des décisions de rejet ou de restitution des biens saisis au requérant ou aux parties intéressées.",
+   "articleRef": "art. 1er",
+   "citation": "Cette décision est notifiée soit au requérant en cas de rejet de la demande, soit aux parties intéressées en cas de restitution."
+  },
+  {
+   "resume": "Information obligatoire de la victime par les officiers/agents de police judiciaire sur les biens susceptibles d'être confisqués et sur la possibilité d'être indemnisée sur le produit de la confiscation via l'article 706-164.",
+   "articleRef": "art. 1er bis",
+   "citation": "Les officiers et les agents mentionnés au premier alinéa du I du présent article interrogent la victime sur sa connaissance des biens mobiliers ou immobiliers susceptibles d'avoir été l'instrument de l'infraction motivant la plainte."
+  },
+  {
+   "resume": "Possibilité pour le procureur de la République d'ordonner la destruction des biens meubles saisis de faible valeur (max 1 500 euros par catégorie fixée par décret) lorsque leur conservation entraîne des frais disproportionnés, avec indemnisation du propriétaire en cas de classement sans suite, non-lieu, relaxe ou acquittement.",
+   "articleRef": "art. 2",
+   "citation": "le procureur de la République ordonne, sauf décision motivée contraire et sous réserve des droits des tiers, la destruction des biens meubles saisis dont la conservation n'est plus nécessaire à la manifestation de la vérité, s'il s'agit de biens de faible valeur économique"
+  },
+  {
+   "resume": "Extension des possibilités d'affectation des biens saisis : les services affectataires (administration pénitentiaire, douanes) peuvent remettre les biens à l'AGRASC en vue de leur aliénation s'ils ne répondent plus aux besoins du service.",
+   "articleRef": "art. 2 bis",
+   "citation": "La décision d'affectation indique que le bien peut être remis par le service affectataire à l'Agence de gestion et de recouvrement des avoirs saisis et confisqués en vue de son aliénation en cours d'affectation si ce bien ne répond plus aux attentes du service affectataire."
+  },
+  {
+   "resume": "Extension aux saisies réalisées à la demande d'autorités judiciaires étrangères des articles relatifs à la gestion des avoirs (99-2, 706-144, 706-146).",
+   "articleRef": "art. 2 ter",
+   "citation": "Les articles 99-2, 706-144 et 706-146 sont applicables à la gestion des saisies réalisées sur le territoire de la République à la demande des autorités judiciaires étrangères"
+  },
+  {
+   "resume": "Réduction des délais de contestation (de un mois à dix jours) et instauration de l'exécution provisoire des décisions de restitution ou de non-restitution, avec possibilité de suspension par le premier président de la cour d'appel.",
+   "articleRef": "art. 3",
+   "citation": "Au troisième alinéa de l'article 41-4, les mots : « d'un mois » sont remplacés par les mots : « de dix jours »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés vont clairement dans le sens de l'objectif affiché. L'article 1er bis renforce l'information des victimes sur la confiscation et l'indemnisation via l'article 706-164. L'article 2 bis élargit les circuits d'affectation et de remise des biens à l'AGRASC, renforçant ses moyens d'action. L'article 4 permet la vente avant jugement des crypto-actifs saisis via l'AGRASC, accélérant le recouvrement. L'article 3 fluidifie les procédures en réduisant les délais et en instaurant l'exécution provisoire. L'article 2 autorise la destruction des biens de faible valeur dont la conservation coûte trop cher, allégeant la charge de gestion. Tous ces mécanismes convergent vers une gestion plus efficace des avoirs saisis et confisqués.",
  "pointsDeVigilance": [
-  "Le texte officiel fourni est illisible : il s'agit d'un PDF brut dont les flux de contenu n'ont pas été décodés en texte.",
-  "Aucun article ni exposé des motifs n'est effectivement accessible dans la chaîne de caractères transmise.",
-  "L'analyse de second ordre (alignement entre objectif affiché et mécanismes) ne peut être conduite sans le contenu normatif."
+  "L'article 3 réduit les garanties des propriétaires en instaurant l'exécution provisoire des décisions de non-restitution et en raccourcissant le délai de contestation de un mois à dix jours.",
+  "L'article 2 autorise la destruction de biens saisis avant jugement, ce qui peut porter atteinte aux droits des propriétaires si la décision est ultérieurement annulée (l'indemnisation est prévue mais suppose une démarche du propriétaire).",
+  "L'article 4 permet la vente forcée de crypto-actifs avant tout jugement définitif, avec restitution du produit seulement si le propriétaire en fait la demande.",
+  "Le texte est tronqué à 15000 caractères et ne contient pas l'exposé des motifs ni la totalité des articles (notamment l'article 5 sur les experts judiciaires est incomplet), ce qui limite l'analyse de la seconde partie du titre."
  ],
  "themes": [
+  "procédure pénale",
+  "recouvrement d'avoirs",
   "agrasc",
-  "avoirs saisis et confisqués",
-  "expert judiciaire",
-  "justice",
-  "recouvrement"
+  "crypto-actifs",
+  "biens saisis"
  ],
  "scrutinsCles": [
   "7291",
@@ -38,5 +70,5 @@
   "7294"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:ad64891d6964df4ac9d0248ffcce4faafbe8f0368eb4ab5e4861e74625005d8c"
+ "sourceTextHash": "sha256:9465a0074920d82ab74f57d651f8106a8de5a3680898625ad6f362448d01823d"
 }

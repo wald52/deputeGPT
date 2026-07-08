@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N54227",
- "generatedAt": "2026-07-03T06:22:56Z",
+ "generatedAt": "2026-07-08T05:52:35Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,19 +15,54 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0294_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de loi ordinaire intitulée « Protéger les enfants et lutter contre les violences en milieu scolaire ». L'objectif affiché est de renforcer la protection des enfants et de lutter contre les violences en milieu scolaire.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel a été corrompu ou n'a pas été extrait (seuls des flux binaires et des balises PDF apparaissent). Aucun article, aucun mécanisme concret (obligation, taxe, subvention, seuil, sanction) et aucun passage de l'exposé des motifs ne peuvent être identifiés dans le contenu exploitable. Il est donc impossible de déterminer si les incitations créées par les mécanismes vont dans le sens de l'objectif affiché ou dans le sens opposé.",
+ "objectifAffiche": "Proposition de loi visant à protéger les enfants et à lutter contre les violences en milieu scolaire, par la reconnaissance des souffrances des victimes, la prévention, la détection et la sanction des violences, ainsi que le contrôle des établissements et des personnels.",
+ "mecanismesCles": [
+  {
+   "resume": "Condamnation symbolique par la Nation des violences en milieu scolaire et périscolaire, avec reconnaissance des responsabilités institutionnelles.",
+   "articleRef": "art. 1er",
+   "citation": "La Nation condamne avec la plus grande fermeté les violences physiques, psychologiques et sexuelles commises sur des enfants en milieu scolaire et périscolaire"
+  },
+  {
+   "resume": "Création d'une journée nationale d'hommage aux enfants victimes de violences, fixée au 19 novembre, avec cérémonie nationale et départementale.",
+   "articleRef": "art. 1er (II)",
+   "citation": "Il est institué une journée nationale d'hommage aux enfants victimes de violences physiques, psychologiques et sexuelles. Cette journée est fixée au 19 novembre."
+  },
+  {
+   "resume": "Demande d'un rapport au Parlement sous six mois sur l'opportunité et la faisabilité d'un fonds d'indemnisation des victimes.",
+   "articleRef": "art. 2 (VI)",
+   "citation": "le Gouvernement remet au Parlement un rapport évaluant l'opportunité et la faisabilité de la création d'un fonds d'indemnisation des victimes"
+  },
+  {
+   "resume": "Inscription dans le code de l'éducation du droit à une formation scolaire sans violence et sans harcèlement, avec interdiction des châtiments corporels et traitements humiliants.",
+   "articleRef": "art. 3 (art. L. 111-7)",
+   "citation": "Tout élève ou étudiant a droit à une formation scolaire sans violence morale ni physique et sans harcèlement. Tout recours aux violences physiques ou psychologiques, aux châtiments corporels ou à tout autre traitement humiliant ou dégradant à leur encontre est interdit."
+  },
+  {
+   "resume": "Obligation pour les établissements d'enseignement privés (sous contrat ou candidats au contrat) de justifier d'une formation initiale et continue de tous leurs personnels à la prévention et détection des violences, avec sanctions en cas de non-respect.",
+   "articleRef": "art. 4 (art. L. 442-3-1)",
+   "citation": "Les établissements d'enseignement privés justifient que l'ensemble des membres de leur personnel, quelles que soient leurs fonctions, bénéficient d'une formation initiale, avant leur prise de fonction, et continue à la prévention et à la détection de toutes les formes de violences contre les enfants"
+  },
+  {
+   "resume": "Mise en place obligatoire d'un dispositif anonymisé de libération de la parole écrite des élèves dans les écoles (dès le CP), collèges et lycées publics et privés sous contrat, dans un délai d'un an.",
+   "articleRef": "art. 4 bis A",
+   "citation": "un dispositif de libération de la parole anonymisé, par écrit, adapté à l'âge et au développement de l'enfant, est obligatoirement mis en place au sein de chaque école, à compter de la classe de cours préparatoire, ainsi que dans les collèges et les lycées publics et privés sous contrat."
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés convergent directement avec l'objectif affiché de protection des enfants et de lutte contre les violences scolaires. L'article 3 inscrit dans le code de l'éducation un droit opposable à une scolarité sans violence (citation: 'Tout élève ou étudiant a droit à une formation scolaire sans violence morale ni physique'). L'article 4 impose une obligation de formation continue de tous les personnels des établissements privés à la détection des violences, avec sanctions contractuelles en cas de manquement. L'article 4 bis A crée un dispositif obligatoire de recueil anonymisé de la parole des élèves, facilitant la révélation des faits. L'article 5 instaure un contrôle d'honorabilité systématique et triennal via les fichiers FIJAIS/FIJAIT pour toute personne intervenant auprès d'élèves, ainsi que des incapacités d'exercice pour les personnes condamnées. Ces dispositifs combinent prévention (formation), détection (parole des élèves, contrôle des fichiers) et sanction (incapacités, sanctions contractuelles), formant un arsenal cohérent avec l'objectif.",
  "pointsDeVigilance": [
-  "Le contenu textuel du PDF n'a pas été extrait : le champ « TEXTE OFFICIEL » ne contient que des métadonnées et flux binaires PDF illisibles.",
-  "Aucun article ni aucun extrait de l'exposé des motifs n'est disponible pour analyse.",
-  "L'identifiant DLR5L17N54227 et le titre ne suffisent pas, à eux seuls, à caractériser les mécanismes du texte."
+  "L'article 2 (fonds d'indemnisation) et le rapport sur les associations (art. 4 II) ne sont que des demandes de rapports, sans création effective : leur effectivité dépendra du contenu de ces rapports et de la suite législative.",
+  "Plusieurs articles initialement prévus (art. 2 I à V, art. 4 bis) ont été supprimés en commission, ce qui réduit la portée initiale du texte.",
+  "Le contrôle d'honorabilité (art. L. 401-5) exclut explicitement 'le personnel des établissements', ce qui crée une asymétrie : les intervenants extérieurs sont contrôlés mais pas le personnel interne par ce dispositif spécifique.",
+  "L'obligation de formation (art. L. 442-3-1) ne concerne explicitement que les établissements privés (sous contrat ou candidats), sans équivalent explicite pour les établissements publics dans les articles fournis.",
+  "Le texte est tronqué à 15000 caractères : les articles au-delà de l'art. L. 911-5-2 ne sont pas visibles, ce qui peut masquer d'autres mécanismes importants."
  ],
  "themes": [
-  "protection de l'enfance",
   "violences scolaires",
-  "éducation"
+  "protection de l'enfance",
+  "contrôle d'honorabilité",
+  "formation des personnels",
+  "droits des élèves"
  ],
  "scrutinsCles": [
   "7255",
@@ -36,5 +71,5 @@
   "7258"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:94aa9799e841b6d19b56e244593038c79d600d947fc6194895da289a187ecda4"
+ "sourceTextHash": "sha256:5eabfb61cd70c5ff962fe2b3e0b3a455df7c170bccbdf573ef0795faf21d9d10"
 }

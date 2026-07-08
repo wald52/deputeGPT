@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-07-07T07:01:16Z",
+ "generatedAt": "2026-07-08T06:04:08Z",
  "totalFiches": 106,
  "fiches": {
   "DLR5L16N46127": {
@@ -31,15 +31,15 @@
   },
   "DLR5L16N49263": {
    "titre": "Reconnaître la responsabilité de l’État et indemniser les victimes du chlordécone",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_mitigees",
    "statut": "promulgue",
-   "generatedAt": "2026-07-03T06:21:35Z",
+   "generatedAt": "2026-07-08T05:50:41Z",
    "themes": [
-    "santé publique",
-    "environnement",
     "responsabilité de l'état",
     "indemnisation des victimes",
-    "chlordécone"
+    "pollution au chlordécone",
+    "santé environnementale",
+    "outre-mer"
    ]
   },
   "DLR5L16N49280": {
@@ -55,24 +55,28 @@
   },
   "DLR5L16N49364": {
    "titre": "Réduire l’impact environnemental de l’industrie textile",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_mitigees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:13:37Z",
+   "generatedAt": "2026-07-08T05:40:47Z",
    "themes": [
-    "industrie textile",
-    "environnement",
-    "texte illisible"
+    "textile",
+    "fast fashion",
+    "mode ultra-express",
+    "économie circulaire",
+    "responsabilité élargie du producteur"
    ]
   },
   "DLR5L16N49868": {
    "titre": "Projet de loi de simplification de la vie économique",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "promulgue",
-   "generatedAt": "2026-07-03T06:29:42Z",
+   "generatedAt": "2026-07-08T06:02:10Z",
    "themes": [
     "simplification administrative",
-    "vie économique",
-    "texte illisible"
+    "démarches des entreprises",
+    "organisation de l'état",
+    "commissions consultatives",
+    "allègement des normes"
    ]
   },
   "DLR5L17N51037": {
@@ -261,26 +265,28 @@
   },
   "DLR5L17N51732": {
    "titre": "Proposition de loi relative à l'organisation, à la gestion et au financement du sport professionnel",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:12:45Z",
+   "generatedAt": "2026-07-08T05:39:14Z",
    "themes": [
     "sport professionnel",
-    "organisation",
-    "gestion",
-    "financement"
+    "gouvernance",
+    "fédérations sportives",
+    "ligues professionnelles",
+    "rémunération"
    ]
   },
   "DLR5L17N51775": {
    "titre": "Garantir l'interdiction de la vaisselle en plastique dans la restauration collective accueillant du jeune public et liée à la petite enfance",
    "verdictIncitations": "indetermine",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:20:16Z",
+   "generatedAt": "2026-07-08T05:49:00Z",
    "themes": [
-    "restauration collective",
     "plastique",
+    "restauration collective",
     "petite enfance",
-    "environnement"
+    "environnement",
+    "vaisaille jetable"
    ]
   },
   "DLR5L17N51777": {
@@ -298,13 +304,15 @@
   },
   "DLR5L17N51791": {
    "titre": "Proposition de loi portant pérennisation du contrat de professionnalisation expérimental",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "promulgue",
-   "generatedAt": "2026-07-03T06:23:43Z",
+   "generatedAt": "2026-07-08T05:53:15Z",
    "themes": [
-    "travail",
     "formation professionnelle",
-    "contrat de professionnalisation"
+    "alternance",
+    "contrat de professionnalisation",
+    "code du travail",
+    "blocs de compétences"
    ]
   },
   "DLR5L17N51845": {
@@ -335,14 +343,15 @@
   },
   "DLR5L17N51955": {
    "titre": "Mesures de justice en faveur de la revalorisation des pensions de retraites agricoles",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:19:59Z",
+   "generatedAt": "2026-07-08T05:48:27Z",
    "themes": [
     "retraites agricoles",
-    "revalorisation",
-    "justice sociale",
-    "agriculture"
+    "pensions",
+    "mutualité sociale agricole",
+    "non-salariés agricoles",
+    "écrêtement"
    ]
   },
   "DLR5L17N51962": {
@@ -370,14 +379,15 @@
   },
   "DLR5L17N51981": {
    "titre": "Renforcer la solidarité envers les retraités pauvres",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_opposees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:18:02Z",
+   "generatedAt": "2026-07-08T05:47:03Z",
    "themes": [
     "retraites",
-    "pauvreté",
+    "minimum vieillesse",
     "solidarité",
-    "protection sociale"
+    "fiscalité",
+    "tabac"
    ]
   },
   "DLR5L17N51987": {
@@ -406,14 +416,15 @@
   },
   "DLR5L17N52104": {
    "titre": "Proposition de loi organique portant actualisation du corps électoral pour les élections au congrès et aux assemblées de province de la Nouvelle-Calédonie",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "promulgue",
-   "generatedAt": "2026-07-04T06:02:36Z",
+   "generatedAt": "2026-07-08T05:55:11Z",
    "themes": [
     "élections",
     "nouvelle-calédonie",
     "corps électoral",
-    "droit organique"
+    "droit de vote",
+    "loi organique"
    ]
   },
   "DLR5L17N52132": {
@@ -443,27 +454,28 @@
   },
   "DLR5L17N52208": {
    "titre": "Accélérer le développement du transport maritime à propulsion vélique",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:26:03Z",
+   "generatedAt": "2026-07-08T05:57:40Z",
    "themes": [
     "transport maritime",
     "propulsion vélique",
-    "développement durable",
-    "navigation à voile"
+    "transition écologique",
+    "commande publique",
+    "avantages fiscaux"
    ]
   },
   "DLR5L17N52230": {
    "titre": "Proposition de loi visant à garantir le droit de visite des parlementaires et des bâtonniers dans les lieux de privation de liberté",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "promulgue",
-   "generatedAt": "2026-07-03T06:27:32Z",
+   "generatedAt": "2026-07-08T06:00:10Z",
    "themes": [
     "droits des parlementaires",
-    "droits des bâtonniers",
-    "lieux de privation de liberté",
-    "contrôle démocratique",
-    "contrôle juridictionnel"
+    "contrôle parlementaire",
+    "privation de liberté",
+    "droits de la défense",
+    "établissements de santé"
    ]
   },
   "DLR5L17N52428": {
@@ -491,22 +503,22 @@
   },
   "DLR5L17N52635": {
    "titre": "Projet de loi relatif à la restitution de biens culturels provenant d’États qui, du fait d’une appropriation illicite, en ont été privés",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "promulgue",
-   "generatedAt": "2026-07-03T06:32:22Z",
+   "generatedAt": "2026-07-08T06:04:08Z",
    "themes": [
     "patrimoine culturel",
     "restitution",
+    "domaine public",
     "biens culturels",
-    "spoliation",
-    "relations internationales"
+    "coopération internationale"
    ]
   },
   "DLR5L17N52700": {
    "titre": "Évaluer précisément le coût réel et sociétal de l’insécurité routière et son impact sur les finances publiques",
    "verdictIncitations": "indetermine",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:19:43Z",
+   "generatedAt": "2026-07-08T05:47:53Z",
    "themes": [
     "sécurité routière",
     "finances publiques",
@@ -529,15 +541,15 @@
   },
   "DLR5L17N52743": {
    "titre": "Garantir l’information et la protection effective des victimes de violences sexuelles lors de la libération de leur agresseur",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:25:38Z",
+   "generatedAt": "2026-07-08T05:56:57Z",
    "themes": [
     "violences sexuelles",
     "droits des victimes",
-    "information des victimes",
-    "libération conditionnelle",
-    "procédure pénale"
+    "procédure pénale",
+    "exécution des peines",
+    "protection des victimes"
    ]
   },
   "DLR5L17N52744": {
@@ -590,14 +602,15 @@
   },
   "DLR5L17N52767": {
    "titre": "Abrogation du Code noir",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_mitigees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-04T06:02:16Z",
+   "generatedAt": "2026-07-08T05:54:46Z",
    "themes": [
-    "esclavage",
     "mémoire",
-    "droit colonial",
-    "abrogation"
+    "esclavage",
+    "colonialisme",
+    "outre-mer",
+    "droit symbolique"
    ]
   },
   "DLR5L17N52776": {
@@ -650,15 +663,15 @@
   },
   "DLR5L17N52820": {
    "titre": "Condamner la dérive illibérale et autoritaire du gouvernement géorgien et réaffirmer notre soutien au destin européen de la Géorgie",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:26:13Z",
+   "generatedAt": "2026-07-08T05:58:17Z",
    "themes": [
     "géorgie",
-    "résolution parlementaire",
-    "démocratie",
-    "union européenne",
-    "condamnation politique"
+    "état de droit",
+    "adhésion ue",
+    "droits fondamentaux",
+    "sanctions internationales"
    ]
   },
   "DLR5L17N52922": {
@@ -674,22 +687,22 @@
   },
   "DLR5L17N52924": {
    "titre": "Mettre en place un programme de soutien à l’innovation thérapeutique contre les cancers, les maladies rares et les maladies orphelines de l’enfant",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_mitigees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:25:17Z",
+   "generatedAt": "2026-07-08T05:56:05Z",
    "themes": [
     "santé",
     "innovation thérapeutique",
-    "cancers",
+    "cancers pédiatriques",
     "maladies rares",
-    "pédiatrie"
+    "médicaments orphelins"
    ]
   },
   "DLR5L17N52974": {
    "titre": "Réformer les bourses sur critères sociaux et lutter contre la précarité étudiante",
    "verdictIncitations": "indetermine",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:16:14Z",
+   "generatedAt": "2026-07-08T05:45:50Z",
    "themes": [
     "enseignement supérieur",
     "bourses étudiantes",
@@ -713,12 +726,13 @@
    "titre": "Nationalisation d'ArcelorMittal France",
    "verdictIncitations": "indetermine",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:17:34Z",
+   "generatedAt": "2026-07-08T05:46:29Z",
    "themes": [
     "nationalisation",
     "sidérurgie",
-    "industrie",
-    "propriété publique"
+    "souveraineté industrielle",
+    "fiscalité",
+    "tabacs"
    ]
   },
   "DLR5L17N52984": {
@@ -734,13 +748,15 @@
   },
   "DLR5L17N52985": {
    "titre": "Projet de loi relatif à la lutte contre les fraudes sociales et fiscales",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "promulgue",
-   "generatedAt": "2026-07-03T06:26:59Z",
+   "generatedAt": "2026-07-08T05:59:16Z",
    "themes": [
-    "fraude sociale",
     "fraude fiscale",
-    "lutte contre la fraude"
+    "fraude sociale",
+    "partage d'informations",
+    "travail dissimulé",
+    "rsa"
    ]
   },
   "DLR5L17N53005": {
@@ -853,15 +869,15 @@
   },
   "DLR5L17N53159": {
    "titre": "Proposition de loi visant à améliorer les moyens d'action de l'Agence de gestion et de recouvrement des avoirs saisis et confisqués et à faciliter l'exercice des missions d'expert judiciaire",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:21:02Z",
+   "generatedAt": "2026-07-08T05:49:59Z",
    "themes": [
+    "procédure pénale",
+    "recouvrement d'avoirs",
     "agrasc",
-    "avoirs saisis et confisqués",
-    "expert judiciaire",
-    "justice",
-    "recouvrement"
+    "crypto-actifs",
+    "biens saisis"
    ]
   },
   "DLR5L17N53171": {
@@ -904,7 +920,7 @@
    "titre": "Projet de loi autorisant l’approbation de l’accord entre le Gouvernement de la République française et la Communauté des Caraïbes relatif à l’adhésion au protocole sur les privilèges et immunités de la Communauté des Caraïbes du 14 janvier 1985",
    "verdictIncitations": "indetermine",
    "statut": "promulgue",
-   "generatedAt": "2026-07-03T06:29:18Z",
+   "generatedAt": "2026-07-08T06:01:03Z",
    "themes": [
     "relations internationales",
     "caraïbes",
@@ -940,27 +956,27 @@
   },
   "DLR5L17N53284": {
    "titre": "Renforcer la sécurité, la rétention administrative et la prévention des risques d’attentat",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:15:23Z",
+   "generatedAt": "2026-07-08T05:44:48Z",
    "themes": [
-    "sécurité",
+    "sécurité intérieure",
+    "terrorisme",
     "rétention administrative",
-    "prévention du terrorisme",
-    "attentat"
+    "soins psychiatriques sous contrainte",
+    "mesures post-sentence"
    ]
   },
   "DLR5L17N53304": {
    "titre": "Proposition de loi visant à lever dans les territoires d’outre-mer l’interdiction de recherche, d’exploration et d’exploitation des hydrocarbures",
    "verdictIncitations": "indetermine",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:16:44Z",
+   "generatedAt": "2026-07-08T05:46:02Z",
    "themes": [
-    "hydrocarbures",
     "outre-mer",
+    "hydrocarbures",
     "énergie",
-    "environnement",
-    "droit minier"
+    "environnement"
    ]
   },
   "DLR5L17N53315": {
@@ -989,26 +1005,27 @@
   },
   "DLR5L17N53357": {
    "titre": "Proposition de loi visant à étendre à toutes les communes la compensation financière prévue pour les communes de plus de 3 500 habitants pour l’exercice de l’ensemble des compétences du service public de la petite enfance",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "promulgue",
-   "generatedAt": "2026-07-04T06:01:47Z",
+   "generatedAt": "2026-07-08T05:54:19Z",
    "themes": [
     "petite enfance",
     "compensation financière",
     "communes",
-    "service public local"
+    "intercommunalité",
+    "finances locales"
    ]
   },
   "DLR5L17N53418": {
    "titre": "Protéger l’alimentation des Français et des Françaises des contaminations au cadmium",
    "verdictIncitations": "indetermine",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:20:30Z",
+   "generatedAt": "2026-07-08T05:49:10Z",
    "themes": [
     "sécurité alimentaire",
-    "contamination",
-    "cadmium",
-    "santé publique"
+    "contamination au cadmium",
+    "santé publique",
+    "agriculture"
    ]
   },
   "DLR5L17N53425": {
@@ -1048,26 +1065,27 @@
   },
   "DLR5L17N53530": {
    "titre": "Relancer les investissements dans le secteur de l’hydroélectricité pour contribuer à la transition énergétique",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "promulgue",
-   "generatedAt": "2026-07-03T06:14:39Z",
+   "generatedAt": "2026-07-08T05:42:36Z",
    "themes": [
     "hydroélectricité",
     "transition énergétique",
+    "concessions",
     "investissement",
     "énergie renouvelable"
    ]
   },
   "DLR5L17N53600": {
    "titre": "Projet de loi portant habilitation de l’assemblée de Martinique à fixer elle-même des règles applicables sur son territoire en application de l’article 73 de la Constitution en matière d’énergie, d’eau et d’assainissement",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "promulgue",
-   "generatedAt": "2026-07-03T06:15:52Z",
+   "generatedAt": "2026-07-08T05:45:37Z",
    "themes": [
     "collectivités territoriales",
     "énergie",
-    "eau",
-    "assainissement",
+    "eau et assainissement",
+    "article 73 constitution",
     "martinique"
    ]
   },
@@ -1180,11 +1198,11 @@
    "titre": "Projet de loi portant transposition de l’avenant n°3 du 25 février 2026 au protocole d’accord du 10 novembre 2023 relatif à l’assurance chômage",
    "verdictIncitations": "indetermine",
    "statut": "promulgue",
-   "generatedAt": "2026-07-03T06:21:47Z",
+   "generatedAt": "2026-07-08T05:50:54Z",
    "themes": [
     "assurance chômage",
-    "transposition",
-    "droit du travail",
+    "code du travail",
+    "transposition d'accord",
     "dialogue social"
    ]
   },
@@ -1192,88 +1210,94 @@
    "titre": "Pour une montagne vivante et souveraine",
    "verdictIncitations": "indetermine",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:24:42Z",
+   "generatedAt": "2026-07-08T05:55:32Z",
    "themes": [
     "montagne",
     "aménagement du territoire",
     "développement local",
-    "souveraineté"
+    "souveraineté territoriale"
    ]
   },
   "DLR5L17N54083": {
    "titre": "Projet de loi actualisant la programmation militaire pour les années 2024 à 2030 et portant diverses dispositions intéressant la défense",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:11:29Z",
+   "generatedAt": "2026-07-08T05:38:30Z",
    "themes": [
     "défense",
     "programmation militaire",
-    "budget"
+    "budget de l'état",
+    "industrie de défense",
+    "souveraineté"
    ]
   },
   "DLR5L17N54085": {
    "titre": "Projet de loi d’urgence pour la protection et la souveraineté agricoles",
    "verdictIncitations": "indetermine",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:22:19Z",
+   "generatedAt": "2026-07-08T05:51:02Z",
    "themes": [
     "agriculture",
     "souveraineté alimentaire",
-    "loi d'urgence",
-    "texte illisible"
+    "procédure législative",
+    "urgence"
    ]
   },
   "DLR5L17N54144": {
    "titre": "Pour la mobilisation de l’habitat existant en réponse à la crise du logement",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-04T06:01:21Z",
+   "generatedAt": "2026-07-08T05:54:00Z",
    "themes": [
     "logement",
-    "habitat existant",
-    "crise du logement"
+    "rénovation énergétique",
+    "copropriété",
+    "incitations fiscales",
+    "outre-mer"
    ]
   },
   "DLR5L17N54196": {
    "titre": "Projet de loi relative aux résultats de la gestion et portant approbation des comptes de l'année 2025",
    "verdictIncitations": "indetermine",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:18:46Z",
+   "generatedAt": "2026-07-08T05:47:36Z",
    "themes": [
     "finances publiques",
-    "approbation des comptes",
-    "loi de règlement",
-    "gestion budgétaire"
+    "comptabilité de l'état",
+    "loi de règlement"
    ]
   },
   "DLR5L17N54218": {
    "titre": "Projet de loi constitutionnelle pour une Corse autonome au sein de la République",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:14:13Z",
+   "generatedAt": "2026-07-08T05:41:43Z",
    "themes": [
     "autonomie territoriale",
+    "collectivités territoriales",
     "corse",
     "révision constitutionnelle",
-    "organisation de la république"
+    "droit constitutionnel"
    ]
   },
   "DLR5L17N54227": {
    "titre": "Protéger les enfants et lutter contre les violences en milieu scolaire",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:22:56Z",
+   "generatedAt": "2026-07-08T05:52:35Z",
    "themes": [
-    "protection de l'enfance",
     "violences scolaires",
-    "éducation"
+    "protection de l'enfance",
+    "contrôle d'honorabilité",
+    "formation des personnels",
+    "droits des élèves"
    ]
   },
   "DLR5L17N54373": {
    "titre": "Projet de loi portant approbation des comptes de la sécurité sociale de l’année 2025",
    "verdictIncitations": "indetermine",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:18:13Z",
+   "generatedAt": "2026-07-08T05:47:10Z",
    "themes": [
     "sécurité sociale",
     "comptes publics",

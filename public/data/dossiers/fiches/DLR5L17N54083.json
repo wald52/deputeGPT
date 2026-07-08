@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N54083",
- "generatedAt": "2026-07-03T06:11:29Z",
+ "generatedAt": "2026-07-08T05:38:30Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,19 +15,53 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0325_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est un projet de loi actualisant la programmation militaire pour les années 2024 à 2030 et portant diverses dispositions intéressant la défense. L'objectif affiché, tel que suggéré par le titre, est de planifier et financer les moyens de la défense nationale sur la période 2024-2030.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des objets PDF et des flux binaires compressés sont visibles). Aucun article, aucun mécanisme, aucune disposition concrète ne peut être identifié dans le contenu exploitable. Il est donc impossible de déterminer si les incitations créées par les mécanismes vont dans le sens de l'objectif affiché ou dans un sens opposé.",
+ "objectifAffiche": "Actualiser la loi de programmation militaire (LPM) 2024-2030 pour adapter les moyens de la défense nationale à un contexte sécuritaire dégradé, en portant l'effort national de défense de 2 % du PIB en 2025 à 2,5 % minimum en 2030 (avec cible de 3,5 % à horizon 2035), et accélérer le réarmement par des dispositions économiques et industrielles.",
+ "mecanismesCles": [
+  {
+   "resume": "Approbation d'un rapport annexé fixant les orientations de politique de défense 2026-2030 et trajectoire budgétaire vers 2,5 % du PIB en 2030 (cible 3,5 % en 2035).",
+   "articleRef": "art. 1er",
+   "citation": "fixant l'objectif de porter l'effort national de défense de 2 % du produit intérieur brut en 2025 à 2,5 % au minimum en 2030, avec l'objectif d'atteindre 3,5 % à l'horizon 2035"
+  },
+  {
+   "resume": "Réservation d'un taux minimal de 10 % des crédits d'études amont aux PME et ETI de la base industrielle et technologique de défense.",
+   "articleRef": "art. 2",
+   "citation": "un taux minimal de 10 % des crédits destinés au financement des études amont leur est consacré"
+  },
+  {
+   "resume": "Inscription de 36 milliards d'euros de ressources nouvelles sur 2026-2030, portant le total de la LPM actualisée à 435,7 Md€ (au lieu de 413,3 Md€).",
+   "articleRef": "art. 3",
+   "citation": "qui intègrent 36 milliards d'euros de ressources nouvelles pour la période 2026-2030 à la suite de l'actualisation de la présente loi"
+  },
+  {
+   "resume": "Augmentation de la provision annuelle pour opérations extérieures et missions intérieures (passage de 800 M€ en 2024 à 1 450 M€ en 2026, puis 1 200 M€).",
+   "articleRef": "art. 4",
+   "citation": "Montant provisionné 800 750 1 450 1 200 1 200 1 200 1 200"
+  },
+  {
+   "resume": "Cible d'augmentation nette des effectifs du ministère de la défense : +800 ETP en 2026 jusqu'à +2 350 en 2030, pour atteindre 275 000 ETP en 2030.",
+   "articleRef": "art. 5",
+   "citation": "les effectifs du ministère de la défense s'élèveront à 268 400 équivalents temps plein en 2027 et à 275 000 équivalents temps plein en 2030"
+  },
+  {
+   "resume": "Cible de 1,5 % du PIB à horizon 2035 pour des dépenses de sécurité et de défense des valeurs démocratiques, incluant la lutte contre les ingérences étrangères et le renforcement de l'audiovisuel extérieur.",
+   "articleRef": "art. 9",
+   "citation": "la France vise à consacrer 1,5 % de son produit intérieur brut à l'horizon 2035 à des dépenses permettant de renforcer la sécurité et de préserver les valeurs démocratiques"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'ensemble des mécanismes budgétaires (36 Md€ de ressources nouvelles, trajectoire vers 2,5 % du PIB, provision OPEX/MINT renforcée, hausse des effectifs à 275 000 ETP) et industriels (quota PME/ETI de 10 %, stocks stratégiques obligatoires, sanctions doublées) convergent directement vers l'objectif affiché d'accélération du réarmement et de renforcement de la base industrielle de défense. L'article 1er lie explicitement la trajectoire budgétaire aux capacités industrielles nationales et chaînes souveraines, ce qui est cohérent avec les articles 2 et 11. Aucun mécanisme du texte ne vient contredire ou affaiblir l'objectif de montée en puissance militaire.",
  "pointsDeVigilance": [
-  "Le document fourni est un PDF binaire dont le texte n'a pas été extrait ; aucun article ni exposé des motifs n'est lisible.",
-  "Sans accès au contenu normatif du texte (articles, crédits budgétaires, seuils, sanctions), toute analyse de second ordre est impossible.",
-  "Il conviendrait de fournir une version texte (TXT ou HTML) du projet de loi pour permettre l'analyse."
+  "Le texte est tronqué à 15 000 caractères : les articles du Titre II (chapitres suivants sur l'accélération du réarmement) ne sont pas visibles et pourraient contenir des mécanismes non analysés.",
+  "La trajectoire vers 3,5 % du PIB en 2035 est mentionnée comme 'objectif' mais n'est pas juridiquement contraignante (seul le seuil de 2,5 % en 2030 l'est).",
+  "Le quota de 10 % pour les PME/ETI sur les seules études amont est modeste et ne garantit pas l'accès aux marchés d'armement principaux.",
+  "L'obligation de stocks stratégiques (art. 11) crée une charge nouvelle pour les opérateurs d'importance vitale dont la compensation économique n'est pas précisée dans le texte visible."
  ],
  "themes": [
   "défense",
   "programmation militaire",
-  "budget"
+  "budget de l'état",
+  "industrie de défense",
+  "souveraineté"
  ],
  "scrutinsCles": [
   "6734",
@@ -36,5 +70,5 @@
   "7905"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:7715808f0fc5e515b454e2f701e39181a0786efcb4c0f1220f36483011992f5d"
+ "sourceTextHash": "sha256:f9fdc4e9050f44c66205d626008a6e08d28345369c3706db5a89a04085b0e7b5"
 }

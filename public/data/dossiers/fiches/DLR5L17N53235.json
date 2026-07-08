@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53235",
- "generatedAt": "2026-07-03T06:29:18Z",
+ "generatedAt": "2026-07-08T06:01:03Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,20 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2414_projet-loi",
   "legifrance": null
  },
- "objectifAffiche": "Autoriser l'approbation de l'accord entre le Gouvernement de la République française et la Communauté des Caraïbes (CARICOM) relatif à l'adhésion de la France au protocole sur les privilèges et immunités de la Communauté des Caraïbes du 14 janvier 1985.",
+ "objectifAffiche": "Le projet de loi vise à autoriser l'approbation de l'accord entre le Gouvernement de la République française et la Communauté des Caraïbes (CARICOM) relatif à l'adhésion de la France au protocole sur les privilèges et immunités de la Communauté des Caraïbes du 14 janvier 1985. Il s'agit d'un projet de ratification d'un accord international.",
  "mecanismesCles": [
   {
-   "resume": "Le projet de loi autorise l'approbation d'un accord international par lequel la France adhère au protocole sur les privilèges et immunités de la CARICOM de 1985.",
+   "resume": "Autorisation parlementaire d'approuver l'accord d'adhésion au protocole sur les privilèges et immunités de la CARICOM du 14 janvier 1985.",
    "articleRef": "article unique",
    "citation": "Projet de loi autorisant l'approbation de l'accord entre le Gouvernement de la République française et la Communauté des Caraïbes relatif à l'adhésion au protocole sur les privilèges et immunités de la Communauté des Caraïbes du 14 janvier 1985"
   }
  ],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni ne contient que l'intitulé et les métadonnées du projet de loi (n° 2414, 17e législature, commission des affaires étrangères). Aucun article substantiel, aucun exposé des motifs et aucune disposition concrète ne sont reproduits dans le tronçon fourni. Il est donc impossible d'identifier les mécanismes précis (obligations, dérogations, immunités accordées ou reçues) et de déterminer si les incitations réelles correspondent à l'objectif affiché d'adhésion au protocole de 1985.",
+ "justificationVerdict": "Le texte fourni est un projet de loi de ratification (n° 2414) dont le contenu normatif se limite à autoriser l'approbation d'un accord international. Aucun mécanisme concret (obligation, taxe, subvention, seuil, sanction) n'est exposé dans le texte tronqué mis à disposition. L'exposé des motifs et les articles détaillés ne sont pas accessibles dans la version fournie, ce qui empêche toute analyse des incitations réelles produites par le texte.",
  "pointsDeVigilance": [
-  "Le texte officiel est tronqué et ne contient ni exposé des motifs ni articles détaillés.",
-  "L'absence du contenu du protocole de 1985 et de l'accord d'adhésion empêche toute analyse des privilèges et immunités effectivement consentis.",
-  "Un projet de loi de ratification est un acte d'autorisation parlementaire ; ses effets dépendent du contenu de l'accord international lui-même, non reproduit ici."
+  "Le texte fourni est tronqué et ne contient ni l'exposé des motifs détaillé ni le contenu de l'accord CARICOM ni les articles substantiels",
+  "Il s'agit d'un projet de simple autorisation de ratification, dont les effets concrets dépendront du contenu de l'accord international lui-même, non reproduit ici",
+  "L'impact réel sur les privilèges et immunités accordés à la CARICOM et ses agents ne peut être évalué sans le texte du protocole de 1985"
  ],
  "themes": [
   "relations internationales",

@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N51981",
- "generatedAt": "2026-07-03T06:18:02Z",
+ "generatedAt": "2026-07-08T05:47:03Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,21 +15,48 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0308_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est intitulé « Renforcer la solidarité envers les retraités pauvres » (proposition de loi ordinaire). L'objectif affiché est d'améliorer la situation des retraités pauvres via des mécanismes de solidarité, mais l'exposé des motifs et les articles ne sont pas exploitables dans le document fourni (contenu binaire PDF illisible).",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le document fourni est un PDF dont le contenu textuel (exposé des motifs et articles) n'a pas pu être extrait : seuls des flux binaires compressés (FlateDecode) et des métadonnées de structure d'objets PDF sont visibles, sans aucun article ni dispositif législatif lisible. Aucun mécanisme concret (obligation, taxe, subvention, seuil, sanction) ne peut être identifié dans le texte fourni, ce qui empêche toute analyse de l'alignement entre les incitations créées et l'objectif affiché.",
+ "objectifAffiche": "Renforcer la solidarité envers les retraités pauvres, via une proposition de loi ordinaire modifiant les règles du minimum vieillesse (allocation aux vieux travailleurs salariés - ASV - et allocation supplémentaire).",
+ "mecanismesCles": [
+  {
+   "resume": "Réduction forfaitaire de l'allocation (ASV) pour les bénéficiaires propriétaires occupants ou logés à titre gratuit, modulée selon la composition du foyer.",
+   "articleRef": "art. 1er, I, 1° A",
+   "citation": "« Lorsque le bénéficiaire de l’allocation jouit d’avantages en nature procurés soit par l’occupation d’un logement dont il est propriétaire, soit par l’occupation d’un logement à titre gratuit, la somme servie au titre de l’allocation est réduite d’un montant forfaitaire. »"
+  },
+  {
+   "resume": "Abrogation de la section 2 du chapitre V du titre Ier du livre VIII du code de la sécurité sociale, supprimant la récupération sur succession (article L. 815-13).",
+   "articleRef": "art. 1er, I, 1°",
+   "citation": "« 1° La section 2 est abrogée »"
+  },
+  {
+   "resume": "Droit d'option pour les assurés attributaires avant l'entrée en vigueur de la loi : maintien de l'ancienne allocation avec récupération sur succession, à exercer dans un délai de six mois.",
+   "articleRef": "art. 1er, I, 1° A (3e alinéa)",
+   "citation": "« À défaut d’avoir exercé l’option dans un délai de six mois à compter de la notification, l’assuré est réputé y avoir renoncé. »"
+  },
+  {
+   "resume": "Compensation de la perte de recettes pour les organismes de sécurité sociale par majoration de l'accise sur les tabacs.",
+   "articleRef": "art. 1er, IV",
+   "citation": "« La perte de recettes pour les organismes de sécurité sociale résultant du présent article est compensée à due concurrence par la majoration de l’accise sur les tabacs »"
+  },
+  {
+   "resume": "Suppression de la récupération sur succession à Saint-Pierre-et-Miquelon.",
+   "articleRef": "art. 1er, II",
+   "citation": "« la référence : « L. 815-13, » est supprimée »"
+  }
+ ],
+ "verdictIncitations": "incitations_opposees",
+ "justificationVerdict": "Le texte se présente comme un renforcement de la solidarité envers les retraités pauvres, mais l'article 1er crée une réduction forfaitaire de l'allocation pour les bénéficiaires propriétaires occupants ou logés gratuitement (art. 1er, I, 1° A), ce qui diminue le montant servi aux plus modestes. Par ailleurs, l'abrogation de la section 2 (art. 1er, I, 1°) supprime la récupération sur succession, mesure favorable aux héritiers mais neutre pour le retraité pauvre lui-même. Le mécanisme central — la réduction de l'allocation en cas de logement en propriété ou à titre gratuit — va directement à l'encontre de l'objectif affiché de solidarité, puisqu'il diminue les ressources des retraités pauvres concernés. Le financement par majoration de l'accise sur les tabacs (art. 1er, IV) fait supporter le coût par les fumeurs, population souvent modeste.",
  "pointsDeVigilance": [
-  "Le texte officiel est tronqué à 15000 caractères mais surtout illisible (PDF binaire non décodé)",
-  "Aucun article n'a pu être extrait ni cité",
-  "L'identifiant DLR5L17N51981 et le titre sont les seules informations exploitables",
-  "Analyse impossible sans accès au texte décodé des articles"
+  "La réduction forfaitaire vise précisément les retraités pauvres propriétaires de leur logement ou logés gratuitement, population cible du texte.",
+  "Le mécanisme de compensation par accise sur les tabacs est régressif socialement.",
+  "L'article 2 a été supprimé en séance, limitant la portée du texte.",
+  "Le texte ne crée aucune revalorisation du montant de l'allocation ni aucun nouveau droit pour les retraités pauvres."
  ],
  "themes": [
   "retraites",
-  "pauvreté",
+  "minimum vieillesse",
   "solidarité",
-  "protection sociale"
+  "fiscalité",
+  "tabac"
  ],
  "scrutinsCles": [
   "7352",
@@ -37,5 +64,5 @@
   "7354"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:d6ef9bff88c6ef4c210bd019feda8793e05dbbeb40de447a2bd5b9d5efc7a4ed"
+ "sourceTextHash": "sha256:e33d11a73a0b200269b2430f55f33b87ff912720e38fcb200354b1dc9878ae71"
 }

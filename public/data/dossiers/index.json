@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "legislature": "17",
- "generatedAt": "2026-07-07T06:30:47Z",
+ "generatedAt": "2026-07-08T05:37:58Z",
  "scrutins": {
   "1": {
    "dossierId": null,
@@ -38773,6 +38773,11 @@
    "method": "title_match",
    "confidence": 0.6
   },
+  "7979": {
+   "dossierId": null,
+   "method": "none",
+   "confidence": 1.0
+  },
   "798": {
    "dossierId": "DLR5L17N50690",
    "method": "title_containment",
@@ -46656,6 +46661,8 @@
    "anUrl": "https://www.assemblee-nationale.fr/dyn/17/dossiers/presomption_legitime_defense_forces_ordre",
    "texteRefs": [
     "PIONANR5L17B0691",
+    "PIONANR5L17BTA0328",
+    "PIONANR5L17TAP0328",
     "RAPPANR5L17B2342"
    ],
    "refJo": null,
@@ -49323,6 +49330,7 @@
    "anUrl": "https://www.assemblee-nationale.fr/dyn/17/dossiers/montagne_vivante_souveraine_17e",
    "texteRefs": [
     "PIONANR5L17B2595",
+    "PIONANR5L17B3019",
     "PIONANR5L17BTA0286",
     "PIONANR5L17BTC2755",
     "PIONANR5L17TAP0286",
@@ -50853,7 +50861,9 @@
    "anUrl": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N53942",
    "texteRefs": [
     "PRJLANR5L17B2682",
+    "PRJLANR5L17BTA0327",
     "PRJLANR5L17BTC2908",
+    "PRJLANR5L17TAP0327",
     "PRJLSNR5S479B0457",
     "PRJLSNR5S479BTA0091",
     "PRJLSNR5S479BTC0521",
@@ -50878,7 +50888,10 @@
    "anUrl": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N53940",
    "texteRefs": [
     "PRJLANR5L17B2681",
+    "PRJLANR5L17BTA0326",
+    "PRJLANR5L17TAP0326",
     "PRJLSNR5S479B0456",
+    "PRJLSNR5S479B0863",
     "PRJLSNR5S479BTA0090",
     "RAPPANR5L17B2904"
    ],
@@ -52774,7 +52787,7 @@
   "7894"
  ],
  "stats": {
-  "totalScrutins": 7978,
+  "totalScrutins": 7979,
   "totalDossiersLies": 224,
   "matchRate": 0.8291,
   "methods": {
@@ -52782,7 +52795,7 @@
    "field": 0,
    "title_containment": 6075,
    "title_match": 518,
-   "none": 26,
+   "none": 27,
    "unmatched": 1359
   }
  }

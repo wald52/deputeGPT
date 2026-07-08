@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L16N49263",
- "generatedAt": "2026-07-03T06:21:35Z",
+ "generatedAt": "2026-07-08T05:50:41Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,26 +15,58 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0297_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à reconnaître la responsabilité de l'État et à indemniser les victimes du chlordécone, un pesticide utilisé dans les Antilles françaises. Il s'agit d'établir un mécanisme de réparation pour les préjudices sanitaires et environnementaux liés à cette contamination.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des objets PDF, des flux binaires compressés et des métadonnées techniques apparaissent). Aucun article, aucune disposition, aucun mécanisme concret (obligation, taxe, subvention, seuil, sanction, fonds d'indemnisation, critères d'éligibilité, etc.) ne peut être identifié ni cité. En l'absence de tout contenu exploitable des articles de loi et de l'exposé des motifs, il est impossible de déterminer si les incitations créées par le texte vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "Reconnaître la responsabilité de l'État dans les préjudices sanitaires, moraux, écologiques et économiques liés à l'usage du chlordécone en Guadeloupe et Martinique, et indemniser les victimes de cette contamination.",
+ "mecanismesCles": [
+  {
+   "resume": "Reconnaissance formelle par l'État de sa responsabilité dans les préjudices liés au chlordécone et fixation d'objectifs de dépollution, recherche, sécurisation alimentaire et indemnisation des victimes.",
+   "articleRef": "art. 1er",
+   "citation": "L'État reconnaît sa part de responsabilité dans les préjudices sanitaires, morals, écologiques et économiques subis par les territoires de Guadeloupe et de Martinique"
+  },
+  {
+   "resume": "Évaluation confiée à l'Office parlementaire d'évaluation des choix scientifiques et technologiques, avec rapport au plus tard un an après promulgation puis tous les trois ans.",
+   "articleRef": "art. 1er (alinéa final)",
+   "citation": "Il confie l'évaluation de l'atteinte de ces objectifs à l'Office parlementaire d'évaluation des choix scientifiques et technologiques"
+  },
+  {
+   "resume": "Rapport gouvernemental sous un an sur l'opportunité d'étendre le fonds d'indemnisation des victimes de pesticides aux malades exposés au chlordécone.",
+   "articleRef": "art. 2",
+   "citation": "le Gouvernement remet au Parlement un rapport évaluant l'opportunité et la faisabilité d'une extension du bénéfice du fonds d'indemnisation des victimes de pesticides"
+  },
+  {
+   "resume": "Rapport gouvernemental sur la présence de chlordécone dans les sols nationaux, y compris hors Antilles (pommes de terre, La Réunion).",
+   "articleRef": "art. 3",
+   "citation": "le Gouvernement remet au Parlement un rapport établissant la présence ou l'absence de chlordécone et de ses métabolites dans les sols du territoire national"
+  },
+  {
+   "resume": "Élaboration d'une stratégie pluriannuelle dédiée par arrêté interministériel (outre-mer, santé, agriculture, environnement, recherche, pêche, éducation, travail).",
+   "articleRef": "art. 4",
+   "citation": "l'État élabore et met en œuvre une stratégie pluriannuelle dédiée"
+  },
+  {
+   "resume": "Compensation de la charge pour l'État par création d'une taxe additionnelle à l'accise sur les tabacs (le 1° ayant été supprimé).",
+   "articleRef": "art. 5",
+   "citation": "la création d'une taxe additionnelle à l'accise sur les tabacs prévue au chapitre IV du titre Ier du livre III du code des impositions sur les biens et services"
+  }
+ ],
+ "verdictIncitations": "incitations_mitigees",
+ "justificationVerdict": "L'article 1er affiche une reconnaissance de responsabilité et des objectifs ambitieux (dépollution, indemnisation, recherche), mais les articles opérationnels (2 et 3) ne prévoient que la remise de rapports gouvernementaux, sans créer de droit à indemnisation ni de mécanisme financier contraignant. L'article 5 ne compense la charge que par une taxe sur les tabacs, dont le rendement est sans rapport avec l'ampleur des préjudices. L'indemnisation effective des victimes reste donc conditionnée à de futurs rapports et arbitrages, ce qui affaiblit considérablement la portée incitative du texte au regard de l'objectif affiché.",
  "pointsDeVigilance": [
-  "Le document fourni est un PDF brut non décodé : le texte législatif (exposé des motifs et articles) n'est pas accessible.",
-  "Aucune référence d'article ni citation exploitable n'a pu être extraite.",
-  "Le titre et l'identifiant DLR5L16N49263 suggèrent une proposition de loi sur le chlordécone, mais le contenu normatif reste inconnu.",
-  "Une nouvelle tentative d'extraction du texte (OCR ou conversion PDF→texte) serait nécessaire pour mener l'analyse."
+  "Aucun fonds d'indemnisation spécifique n'est créé : l'extension du fonds pesticides existant n'est qu'envisagée dans un rapport (art. 2).",
+  "Aucun calendrier ni budget précis n'est fixé pour la dépollution des sols et eaux contaminés.",
+  "La stratégie pluriannuelle (art. 4) est renvoyée à un arrêté, donc au pouvoir réglementaire, sans indicateurs contraignants dans la loi.",
+  "Le financement repose sur une taxe sur les tabacs (art. 5), dont l'assiette est déconnectée des responsables historiques de la pollution.",
+  "Le texte ne crée pas de présomption de responsabilité ni de procédure administrative facilitée pour les victimes."
  ],
  "themes": [
-  "santé publique",
-  "environnement",
   "responsabilité de l'état",
   "indemnisation des victimes",
-  "chlordécone"
+  "pollution au chlordécone",
+  "santé environnementale",
+  "outre-mer"
  ],
  "scrutinsCles": [
   "7261"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:1e0ac0360e593942c78253d3a6bda3f739028221232349124c0f6d968aa8ef4f"
+ "sourceTextHash": "sha256:094d1e6f7843d8f7bbcc7390158f29c1ad7333b7ff07a19381f1ba34b8de1332"
 }

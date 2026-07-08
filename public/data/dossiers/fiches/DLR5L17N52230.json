@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52230",
- "generatedAt": "2026-07-03T06:27:32Z",
+ "generatedAt": "2026-07-08T06:00:10Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,21 +15,53 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0276_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Garantir le droit de visite des parlementaires et des bâtonniers dans les lieux de privation de liberté. Il s'agit d'une proposition de loi ordinaire visant à renforcer le contrôle démocratique et juridictionnel de ces lieux en assurant un accès effectif à ces autorités.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des flux binaires et des balises d'objets PDF sont visibles). Aucun article, aucun mécanisme, aucune disposition concrète ne peut être identifié dans le contenu transmis. Il est donc impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "La proposition de loi vise à garantir le droit de visite des parlementaires (députés, sénateurs, eurodéputés élus en France) et des bâtonniers dans les lieux de privation de liberté, en inscrivant ce droit dans le code de procédure pénale et en l'étendant aux établissements de santé psychiatriques.",
+ "mecanismesCles": [
+  {
+   "resume": "Autorisation permanente et à tout moment de visite pour les parlementaires, eurodéputés et bâtonniers (ou leur délégué) dans tout lieu de privation de liberté (procédure pénale ou administrative).",
+   "articleRef": "art. 1er (nouvel art. 719 CPP)",
+   "citation": "« Les députés, les sénateurs, les représentants au Parlement européen élus en France, les bâtonniers sur leur ressort ou leur délégué spécialement désigné au sein du conseil de l'ordre sont autorisés à visiter à tout moment les lieux où une personne est privée de liberté dans le cadre d'une procédure pénale ou administrative. »"
+  },
+  {
+   "resume": "Possibilité pour les parlementaires d'être accompagnés par des journalistes titulaires de la carte de presse, sous réserve de conditions fixées par décret en Conseil d'État.",
+   "articleRef": "art. 1er (nouvel art. 719, al. 2 CPP)",
+   "citation": "« peuvent être accompagnés par un ou plusieurs journalistes titulaires de la carte d'identité professionnelle mentionnée à l'article L. 7111-6 du code du travail, dans des conditions déterminées par décret en Conseil d'État »"
+  },
+  {
+   "resume": "Exclusion explicite de l'accompagnement par des journalistes dans les locaux de garde à vue, les locaux des juridictions (présentation à magistrat) et les établissements de santé psychiatriques.",
+   "articleRef": "art. 1er (nouvel art. 719, al. 2 CPP)",
+   "citation": "« Toutefois, les journalistes ne peuvent les accompagner ni dans les locaux de garde à vue, ni dans les locaux des juridictions judiciaires […] ni dans les établissements de santé mentionnés à l'article L. 3222-4-1 du code de la santé publique. »"
+  },
+  {
+   "resume": "Possibilité pour les parlementaires d'être accompagnés d'un collaborateur, fonctionnaire ou agent des assemblées ; pour les bâtonniers, d'un avocat du conseil de l'ordre.",
+   "articleRef": "art. 1er (nouvel art. 719, al. 3 CPP)",
+   "citation": "« peuvent être accompagnés d'un collaborateur parlementaire ou d'un fonctionnaire ou d'un agent des assemblées parlementaires. Les bâtonniers ou leur délégué […] peuvent être accompagnés d'un avocat »"
+  },
+  {
+   "resume": "Extension du droit de visite aux établissements de santé psychiatriques (L. 3222-4-1 CSP) aux bâtonniers, avec renvoi aux conditions de l'article 719 CPP.",
+   "articleRef": "art. 2",
+   "citation": "« les mots : « ainsi que les représentants au Parlement européen élus en France » sont remplacés par les mots : « , les représentants au Parlement européen élus en France, les bâtonniers sur leur ressort ou leur délégué spécialement désigné au sein du conseil de l'ordre »"
+  },
+  {
+   "resume": "Extension de l'applicabilité du nouveau dispositif en Nouvelle-Calédonie.",
+   "articleRef": "art. 1er (2°, art. 804 CPP)",
+   "citation": "« Le présent code est applicable, dans sa rédaction résultant de la loi n° du visant à garantir le droit de visite des parlementaires et des bâtonniers dans les lieux de privation de liberté, en Nouvelle-Calédonie… »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'article 1er crée un droit de visite « à tout moment » pour les parlementaires, eurodéputés et bâtonniers dans tous les lieux de privation de liberté, ce qui correspond directement à l'objectif affiché de « garantir » ce droit. L'article 2 étend expressément ce droit aux établissements de santé psychiatriques en y incluant les bâtonniers, renforçant ainsi la portée du texte. Les mécanismes d'accompagnement (journalistes, collaborateurs, avocats) accroissent la transparence et l'effectivité du contrôle, même si des restrictions sont prévues pour la garde à vue, les juridictions et les locaux psychiatriques. Les incitations créées vont donc clairement dans le sens de l'objectif affiché.",
  "pointsDeVigilance": [
-  "Le contenu textuel du texte officiel n'a pas pu être extrait du PDF fourni",
-  "Aucun article ni mécanisme n'est lisible dans le document transmis",
-  "L'analyse des mécanismes concrets et de leur alignement avec l'objectif nécessite un texte exploitable"
+  "Les conditions d'application concrètes (notamment pour l'accompagnement des journalistes et des collaborateurs) sont renvoyées à un décret en Conseil d'État, ce qui laisse une marge réglementaire susceptible de limiter l'effectivité du droit.",
+  "L'exclusion des journalistes en garde à vue, dans les locaux des juridictions et dans les établissements psychiatriques réduit la portée de la transparence médiatique, alors même que ces lieux concentrent des situations sensibles.",
+  "Le texte ne crée ni obligation nouvelle pour l'administration pénitentiaire ou hospitalière, ni sanction en cas de refus d'accès, ce qui pourrait limiter l'effectivité réelle du « droit » de visite.",
+  "L'article 1er bis a été supprimé, privant le texte de dispositions complémentaires dont la teneur n'est pas connue."
  ],
  "themes": [
   "droits des parlementaires",
-  "droits des bâtonniers",
-  "lieux de privation de liberté",
-  "contrôle démocratique",
-  "contrôle juridictionnel"
+  "contrôle parlementaire",
+  "privation de liberté",
+  "droits de la défense",
+  "établissements de santé"
  ],
  "scrutinsCles": [
   "5854",
@@ -38,5 +70,5 @@
   "6285"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:e5ef4187cc4117cd101fb27236616d9006025126fe82891e46c21af30cf25379"
+ "sourceTextHash": "sha256:3e92540c7038f3f27ab90bf3a755c4f12ae9209b681e9152ae2090222aff5dd9"
 }

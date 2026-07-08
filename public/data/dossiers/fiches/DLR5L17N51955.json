@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N51955",
- "generatedAt": "2026-07-03T06:19:59Z",
+ "generatedAt": "2026-07-08T05:48:27Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,54 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0302_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de loi ordinaire intitulée « Mesures de justice en faveur de la revalorisation des pensions de retraites agricoles ». L'objectif affiché est d'améliorer le niveau des pensions de retraite des agriculteurs par des mesures de justice sociale.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des flux binaires PDF sont visibles). Aucun article, aucune disposition concrète, aucun mécanisme (obligation, seuil, montant, dérogation, sanction) ne peut être identifié dans le contenu exploitable. Il est donc impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "La proposition de loi vise à instaurer des mesures de justice en faveur de la revalorisation des pensions de retraites agricoles, en supprimant les écrêtements, en élargissant l'accès au complément différentiel de points aux conjoints collaborateurs et aides familiaux, et en excluant la pension de réversion et la bonification pour enfants de l'assiette de calcul du seuil d'écrêtement.",
+ "mecanismesCles": [
+  {
+   "resume": "Suppression du V de l'article L. 732-63 du code rural, mettant fin à toute mesure d'écrêtement des pensions au titre de l'assurance vieillesse complémentaire obligatoire des non-salariés agricoles.",
+   "articleRef": "art. 1er",
+   "citation": "Le V de l'article L. 732-63 du code rural et de la pêche maritime est abrogé."
+  },
+  {
+   "resume": "Élargissement de l'accès au complément différentiel de points de retraite complémentaire obligatoire aux aides familiaux, conjoints participants aux travaux et collaborateurs d'exploitation ou d'entreprise agricole.",
+   "articleRef": "art. 3",
+   "citation": "« d'aide familial au sens du 2° de l'article L. 722-10, de conjoint participant aux travaux ou de collaborateur d'exploitation ou d'entreprise agricole au sens de l'article L. 321-5, »"
+  },
+  {
+   "resume": "Garantie de versement de la pension de vieillesse le mois suivant l'entrée en jouissance si la demande est déposée au moins trois mois avant, et garantie de versement de la pension de réversion trois mois après le dépôt de la demande.",
+   "articleRef": "art. 3 bis A",
+   "citation": "« Le versement le mois suivant la date d'entrée en jouissance d'une pension de vieillesse au titre du présent chapitre est garanti aux assurés dont la demande de liquidation a été déposée au moins trois mois civils avant la date d'entrée en jouissance de leur pension. »"
+  },
+  {
+   "resume": "Exclusion de la pension de réversion (droit dérivé) et de la bonification pour enfants de l'assiette de calcul du seuil d'écrêtement de la pension majorée de référence.",
+   "articleRef": "art. 4",
+   "citation": "Les mots : « et de droit dérivé » sont supprimés ; « La bonification pour enfants n'est pas prise en compte pour le calcul de ce plafond. »"
+  },
+  {
+   "resume": "Obligation pour la MSA d'informer sans délai le conjoint survivant ou divorcé des conditions d'obtention d'une pension de réversion.",
+   "articleRef": "art. 4 bis",
+   "citation": "« la caisse de la mutualité sociale agricole ou le régime complémentaire obligatoire d'assurance retraite des non-salariés agricoles informe sans délai son conjoint survivant ou divorcé des conditions dans lesquelles il peut prétendre au bénéfice d'une pension de réversion. »"
+  },
+  {
+   "resume": "Création d'une taxe additionnelle de 0,1 % à la taxe sur les transactions financières (article 235 ter ZD), dont le produit est affecté à la caisse centrale de la MSA.",
+   "articleRef": "art. 5",
+   "citation": "« Il est institué une taxe additionnelle à la taxe prévue à l'article 235 ter ZD. [...] Son taux est fixé à 0,1 %. Son produit est affecté à la caisse centrale de la mutualité sociale agricole mentionnée à l'article L. 723-11 du code rural et de la pêche maritime. »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés vont dans le sens de l'objectif affiché de revalorisation et de justice pour les retraites agricoles. L'article 1er supprime l'écrêtement des pensions complémentaires (art. 1er : « Le V de l'article L. 732-63 [...] est abrogé »), ce qui augmente directement les pensions servies. L'article 3 élargit l'accès au complément différentiel à des catégories jusqu'ici exclues (aides familiaux, conjoints collaborateurs). L'article 4 exclut la pension de réversion et la bonification pour enfants de l'assiette d'écrêtement, protégeant ainsi le niveau des pensions. L'article 5 crée une taxe additionnelle sur les transactions financières de 0,1 % affectée à la MSA pour financer ces mesures. L'ensemble de ces dispositifs est cohérent avec une logique de revalorisation des pensions agricoles les plus modestes.",
  "pointsDeVigilance": [
-  "Le contenu textuel du PDF n'a pas été décodé : seuls les objets PDF (streams binaires) sont visibles",
-  "Aucun article ni aucune mesure concrète n'a pu être lu",
-  "L'analyse des mécanismes et du verdict est donc strictement impossible à partir du texte fourni"
+  "Le financement repose sur une taxe additionnelle minime (0,1 %) sur les transactions financières, dont le rendement effectif n'est pas précisé dans le texte et pourrait s'avérer insuffisant face à la suppression de l'écrêtement.",
+  "La compensation par majoration de l'accise sur les tabacs (art. 7) est un mécanisme classique mais indirect, dont l'adéquation au coût réel des mesures n'est pas démontrée dans le texte.",
+  "Plusieurs articles (3 bis, 3 ter, 5 bis, 6 bis, 6 ter) ne sont que des demandes de rapports au Gouvernement, sans effet normatif direct sur la revalorisation.",
+  "L'article 2 a été supprimé en séance, ce qui réduit la portée initiale du texte.",
+  "Le texte ne précise pas de calendrier d'entrée en vigueur concret pour les revalorisations effectives, au-delà des garanties de délai de versement."
  ],
  "themes": [
   "retraites agricoles",
-  "revalorisation",
-  "justice sociale",
-  "agriculture"
+  "pensions",
+  "mutualité sociale agricole",
+  "non-salariés agricoles",
+  "écrêtement"
  ],
  "scrutinsCles": [
   "7321",
@@ -37,5 +71,5 @@
   "7324"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:4d090ae7fa4cfb8e477572f5e11dca939153e25aa6508e3a07ef12ffd28d8116"
+ "sourceTextHash": "sha256:992fd6a6569a131c966a95b5dbff827676f8cd547b9026e9736d5e0aff80e088"
 }

@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53530",
- "generatedAt": "2026-07-03T06:14:39Z",
+ "generatedAt": "2026-07-08T05:42:36Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,18 +15,51 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0317_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Relancer les investissements dans le secteur de l'hydroélectricité pour contribuer à la transition énergétique (proposition de loi ordinaire, statut : promulgué).",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un flux binaire PDF (caractères binaires et flux compressés non décodés) sans aucun contenu textuel exploitable. Aucun article, aucun mécanisme, aucune disposition concrète ne peut être identifié ou cité. L'exposé des motifs et les articles sont inaccessibles dans la version transmise, ce qui empêche toute analyse de second ordre sur l'alignement entre les incitations créées et l'objectif affiché.",
+ "objectifAffiche": "Relancer les investissements dans le secteur de l'hydroélectricité afin de contribuer à la transition énergétique, en réformant le régime des concessions hydrauliques de plus de 4 500 kW.",
+ "mecanismesCles": [
+  {
+   "resume": "Résiliation des contrats de concession d'énergie hydraulique en cours pour les ouvrages de puissance maximale brute supérieure à 4 500 kW, à l'exception de ceux liés à la navigation.",
+   "articleRef": "art. 1er",
+   "citation": "Les contrats de concession d'énergie hydraulique en vigueur à la date de promulgation de la présente loi [...] sont résiliés dans les conditions prévues par la présente loi."
+  },
+  {
+   "resume": "Attribution aux anciens concessionnaires d'un droit réel (jouissance, droit de construire des extensions) sur les ouvrages et installations, associé à un droit d'occupation domaniale, pour une durée de 70 ans.",
+   "articleRef": "art. 2 (I)",
+   "citation": "un droit réel portant sur les ouvrages et les installations hydrauliques [...] est attribué pour une durée de soixante-dix ans aux titulaires de ces contrats"
+  },
+  {
+   "resume": "Cession, hypothèque et transmission du droit réel strictement encadrées par l'accord ou l'approbation de l'État, avec consultation des collectivités concernées.",
+   "articleRef": "art. 2 (II)",
+   "citation": "Le droit réel peut être cédé, à la demande du titulaire et avec l'accord de l'État [...] Le droit réel ne peut être hypothéqué [...] qu'en vue de garantir des emprunts contractés par son titulaire pour financer la réalisation et l'amélioration des ouvrages"
+  },
+  {
+   "resume": "Acquisition par l'État des droits d'exploitation fondés en titre, pris en compte dans l'indemnité de résiliation.",
+   "articleRef": "art. 3",
+   "citation": "ces droits sont acquis par l'État [...] et ils sont pris en compte dans l'évaluation de l'indemnité de résiliation anticipée prévue à l'article 4."
+  },
+  {
+   "resume": "Évaluation par experts indépendants (avis CRE) de l'indemnité de résiliation anticipée et de la contrepartie financière des droits réels, avec avis conforme de la Commission des participations et des transferts.",
+   "articleRef": "art. 4",
+   "citation": "L'État désigne un ou plusieurs experts indépendants, sur avis conforme de la Commission de régulation de l'énergie, afin d'évaluer [...] l'indemnité de résiliation anticipée [...] La contrepartie financière des droits attribués"
+  },
+  {
+   "resume": "Sanctions financières en cas d'obstruction à la transmission des documents nécessaires à l'évaluation, plafonnées à 20 000 euros par mégawatt.",
+   "articleRef": "art. 4 (III)",
+   "citation": "Le montant de ces sanctions [...] ne peut excéder 20 000 euros par mégawatt."
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte vise explicitement à 'permettre la production d'énergie hydraulique et d'adapter celle-ci aux enjeux de la transition énergétique' (art. 2). Les mécanismes créés convergent vers cet objectif : la transformation de concessions précaires en droits réels de 70 ans (art. 2) offre une visibilité de long terme propre à favoriser l'investissement, tandis que la possibilité d'hypothéquer le droit réel 'pour financer la réalisation et l'amélioration des ouvrages' (art. 2-II-3°) facilite le financement. La cession autorisée 'lorsque la cession permet d'optimiser le fonctionnement des chaînes hydrauliques' (art. 2-II-2°) encourage la rationalisation industrielle. Toutefois, l'alignement est partiellement atténué par le plafonnement de l'indemnité au montant des clauses de résiliation existantes (art. 4-I-1°) et par le contrôle étatique étroit sur les cessions et transmissions, qui peuvent freiner la fluidité des investissements.",
  "pointsDeVigilance": [
-  "Le contenu transmis est un PDF brut non décodé (flux binaires /FlateDecode), rendant impossible l'extraction du texte législatif.",
-  "Aucun article, seuil, obligation, taxe, subvention ou sanction n'a pu être référencé.",
-  "Le titre et l'identifiant du dossier (DLR5L17N53530) sont les seules informations fiables ; le contenu normatif est indisponible."
+  "Le texte est tronqué à 15 000 caractères : les articles 5 (suite), 6 et suivants ainsi que l'exposé des motifs ne sont pas visibles, ce qui limite l'analyse des mécanismes de transition et des garanties finales.",
+  "L'indemnité de résiliation est plafonnée par les clauses contractuelles existantes (art. 4-I-1°), ce qui pourrait désavantager certains concessionnaires et créer des litiges.",
+  "Le contrôle étatique sur les cessions, hypothèques et changements de contrôle (art. 2-II) peut constituer un frein opérationnel à la mobilité du capital et à l'optimisation des chaînes hydrauliques.",
+  "L'extinction immédiate des droits fondés en titre (art. 3-II) sans indemnité spécifique hors plafond contractuel peut soulever des questions de sécurité juridique."
  ],
  "themes": [
   "hydroélectricité",
   "transition énergétique",
+  "concessions",
   "investissement",
   "énergie renouvelable"
  ],
@@ -37,5 +70,5 @@
   "7409"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:252cef1d241646e64f27e3e9e1c0f0f910b1614f5ae2bb4b0d16bd0fcdbe700c"
+ "sourceTextHash": "sha256:80a26e4c6b5158539d2eedb13ffcf50d77ea4acb39a7664c718afce8398bbbf2"
 }

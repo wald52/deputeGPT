@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N51775",
- "generatedAt": "2026-07-03T06:20:16Z",
+ "generatedAt": "2026-07-08T05:49:00Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,34 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0301_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte vise à garantir l'interdiction de la vaisselle en plastique dans la restauration collective accueillant du jeune public et liée à la petite enfance, selon le titre du dossier législatif.",
- "mecanismesCles": [],
+ "objectifAffiche": "La proposition de loi vise à garantir l'interdiction de la vaisselle en plastique dans la restauration collective accueillant du jeune public et liée à la petite enfance, en complétant le dispositif existant de l'article L. 541-15-10 du code de l'environnement.",
+ "mecanismesCles": [
+  {
+   "resume": "Modification du III de l'article L. 541-15-10 du code de l'environnement pour préciser explicitement que l'interdiction de la vaisselle en plastique inclut les gobelets, assiettes, récipients et couverts, dans deux alinéas distincts (sixième et avant-dernier).",
+   "articleRef": "art. 1er",
+   "citation": "« après le mot : \"plastique\", sont insérés les mots : \", y compris les gobelets, les assiettes, les récipients et les couverts\" »"
+  },
+  {
+   "resume": "L'article 2 a été supprimé lors de l'adoption en séance publique, sans contenu normatif résiduel.",
+   "articleRef": "art. 2",
+   "citation": "« Article 2 (Supprimé) »"
+  }
+ ],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel a été corrompu ou mal extrait (caractères binaires, flux de données non décodables). Aucun article, aucune disposition concrète et aucune citation exploitable ne peuvent être identifiés dans le contenu fourni. Il est donc impossible de déterminer les mécanismes créés par le texte ni de vérifier si les incitations vont dans le sens de l'objectif affiché.",
+ "justificationVerdict": "Le texte adopté ne contient que l'article 1er, qui insère une clarification rédactionnelle (liste explicite de gobelets, assiettes, récipients et couverts) dans deux alinéas du III de l'article L. 541-15-10 du code de l'environnement. L'exposé des motifs n'est pas fourni dans le texte transmis, et le contenu normatif de l'article L. 541-15-10 (notamment le champ des dérogations, les sanctions, les seuils, les exceptions pour certains types de plastique biosourcé ou compostable) n'est pas reproduit. Il est donc impossible de déterminer si l'ajout de cette liste explicite renforce réellement l'interdiction affichée, la laisse inchangée, ou si elle s'accompagne de dérogations non visibles dans le texte fourni. L'article 2 ayant été supprimé, on ne dispose d'aucun mécanisme complémentaire pour évaluer l'effet net.",
  "pointsDeVigilance": [
-  "Le contenu du texte officiel est inexploitable (PDF binaire non décodé)",
-  "Seul le titre et l'identifiant du dossier législatif sont exploitables",
-  "Aucun article ni exposé des motifs n'a pu être extrait pour analyse"
+  "L'exposé des motifs n'est pas inclus dans le document fourni, ce qui empêche de connaître la justification politique précise du texte.",
+  "Le contenu de l'article L. 541-15-10 du code de l'environnement n'est pas reproduit : on ne connaît ni le champ initial de l'interdiction, ni les éventuelles dérogations (ex. plastiques biosourcés, compostables, usages spécifiques).",
+  "L'article 2 a été supprimé sans indication de son contenu initial, ce qui pourrait masquer un mécanisme important (renforcement, dérogation, sanction).",
+  "Le texte est qualifié de « provisoire » et seule la « petite loi » publiée ultérieurement fait foi.",
+  "L'ajout d'une liste explicite (gobelets, assiettes, récipients, couverts) peut être purement interprétatif sans créer de nouvelle obligation matérielle."
  ],
  "themes": [
-  "restauration collective",
   "plastique",
+  "restauration collective",
   "petite enfance",
-  "environnement"
+  "environnement",
+  "vaisaille jetable"
  ],
  "scrutinsCles": [
   "7310",
@@ -37,5 +51,5 @@
   "7313"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:7ac3db6e1fe7f7ae70cf168326b314c9ced1c04104dd5feee8faf54bb1306a00"
+ "sourceTextHash": "sha256:f5547690fd20138a0f481ed4cf2c20b7392d1f05bc460a339a08406dccd77d92"
 }

@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53357",
- "generatedAt": "2026-07-04T06:01:47Z",
+ "generatedAt": "2026-07-08T05:54:19Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,31 +15,48 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0291_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Étendre à toutes les communes (sans condition de seuil démographique) la compensation financière actuellement prévue pour les communes de plus de 3 500 habitants, au titre de l'exercice des compétences du service public de la petite enfance.",
+ "objectifAffiche": "Étendre à toutes les communes (sans condition de seuil démographique) la compensation financière prévue pour les communes de plus de 3 500 habitants pour l'exercice des compétences du service public de la petite enfance.",
  "mecanismesCles": [
   {
-   "resume": "Le texte officiel fourni est illisible (flux PDF binaire non décodé en texte), ce qui empêche l'identification précise des articles et de leurs mécanismes.",
-   "articleRef": null,
-   "citation": null
+   "resume": "Modification du VI de l'article 17 de la loi n° 2023-1196 (loi plein emploi) : suppression du caractère « obligatoire » du transfert de compétences petite enfance, permettant aux communes de conserver l'exercice direct de ces compétences tout en bénéficiant de la compensation.",
+   "articleRef": "Article unique, I (1° et 3°)",
+   "citation": "Le mot : « obligatoire » est supprimé ; [...] « , si elle ne les a pas transférées à un établissement public de coopération intercommunale ou à un syndicat mixte »"
+  },
+  {
+   "resume": "Extension du bénéfice de la compensation aux EPCI et syndicats mixtes exerçant les compétences d'autorité organisatrice de la petite enfance.",
+   "articleRef": "Article unique, I bis (II)",
+   "citation": "« les établissements publics de coopération intercommunale ou les syndicats mixtes mentionnés » ; le mot : « obligatoires » est supprimé"
+  },
+  {
+   "resume": "Entrée en vigueur différée au 1er janvier 2027.",
+   "articleRef": "Article unique, I ter (III)",
+   "citation": "Le présent article entre en vigueur le 1er janvier 2027."
+  },
+  {
+   "resume": "Compensation des conséquences financières pour l'État par la création d'une taxe additionnelle à l'accise sur les tabacs.",
+   "articleRef": "Article unique, II (IV)",
+   "citation": "compensées, à due concurrence, par la création d'une taxe additionnelle à l'accise sur les tabacs prévue au chapitre IV du titre Ier du livre III du code des impositions sur les biens et services"
   }
  ],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le document transmis est un fichier PDF dont le contenu textuel n'a pas été extrait (flux d'octets bruts non décodables). L'exposé des motifs et les articles ne sont pas lisibles dans la chaîne fournie, comme l'atteste l'absence de tout passage textuel exploitable. Sans accès au contenu normatif effectif (articles, seuils, modalités de compensation), il est impossible de déterminer les mécanismes concrets créés ni de vérifier s'ils s'alignent avec l'objectif affiché d'extension de la compensation à toutes les communes.",
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte supprime la condition d'obligation du transfert de compétences (art. unique I, 1°) et étend la compensation financière aux communes n'ayant pas transféré leurs compétences petite enfance, ainsi qu'aux EPCI et syndicats mixtes (art. unique I bis). Ces mécanismes élargissent concrètement le périmètre des bénéficiaires de la compensation, ce qui va dans le sens de l'objectif affiché d'universalisation de la compensation. La mesure est gagée par une taxe additionnelle sur les tabacs (art. unique II), mécanisme neutre au regard de l'objectif petite enfance mais conforme à la pratique législative de compensation budgétaire.",
  "pointsDeVigilance": [
-  "Le texte officiel est tronqué et inexploitable en l'état (PDF binaire non décodé).",
-  "Aucune citation d'article n'a pu être extraite pour sourcer les mécanismes.",
-  "L'analyse de second ordre (alignement des incitations) ne peut être conduite sans le contenu normatif."
+  "Le texte ne précise ni le montant ni les modalités de calcul de la compensation étendue, ni les critères d'éligibilité des communes de moins de 3 500 habitants.",
+  "L'exposé des motifs n'est pas fourni dans le document, ce qui limite l'analyse de l'intention initiale.",
+  "Le financement par une taxe sur les tabacs crée un lien budgétaire indirect entre la politique de la petite enfance et la consommation de tabac, sans lien fonctionnel.",
+  "L'entrée en vigueur est repoussée au 1er janvier 2027, ce qui retarde l'effet concret de l'extension."
  ],
  "themes": [
   "petite enfance",
   "compensation financière",
   "communes",
-  "service public local"
+  "intercommunalité",
+  "finances locales"
  ],
  "scrutinsCles": [
   "7003",
   "7004"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:3b94ae5718131aa474bf149fdbbaea6bdaf465dfdff02231591a592abe17f554"
+ "sourceTextHash": "sha256:d1885fd2b9a5d04f13c5d8ce7fabde686a88b10ab9dcff022ee129582ab111f8"
 }

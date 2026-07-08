@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53418",
- "generatedAt": "2026-07-03T06:20:30Z",
+ "generatedAt": "2026-07-08T05:49:10Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,20 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2430_texte-adopte-commission",
   "legifrance": null
  },
- "objectifAffiche": "Proposition de loi ordinaire visant à protéger l'alimentation des Français et des Françaises des contaminations au cadmium, déposée par M. Benoît Biteau et plusieurs collègues.",
+ "objectifAffiche": "Proposition de loi ordinaire déposée par M. Benoît Biteau et plusieurs collègues, visant à protéger l'alimentation des Français et des Françaises des contaminations au cadmium.",
  "mecanismesCles": [],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel fourni ne contient ni exposé des motifs ni articles : seul l'en-tête du dossier législatif (titre, identifiant, procédure, statut et sommaire de navigation) est disponible. Aucun mécanisme concret (obligation, seuil, sanction, dérogation) ne peut être identifié ni analysé.",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles. Seuls figurent le titre, l'identifiant, la procédure, le statut et des métadonnées de navigation (commission, formats, notice XML/JSON). Aucun mécanisme concret (obligation, seuil, sanction, dérogation, taxe, subvention) ne peut être identifié, ce qui rend impossible toute évaluation des incitations réellement créées par le texte.",
  "pointsDeVigilance": [
-  "Le texte fourni est tronqué et ne contient pas le contenu substantiel de la proposition de loi (ni exposé des motifs, ni articles).",
-  "Impossible d'évaluer les incitations réelles sans accès au dispositif proposé.",
-  "Le statut 'en cours' indique que le texte peut encore évoluer (amendements, modifications en commission)."
+  "Le texte officiel est tronqué et ne contient que les métadonnées du dossier législatif, sans exposé des motifs ni articles.",
+  "Impossible de vérifier les mécanismes, seuils ou sanctions prévus pour lutter contre la contamination au cadmium dans l'alimentation.",
+  "Le statut 'en_cours' indique que le texte est au stade de la commission, sans adoption définitive."
  ],
  "themes": [
   "sécurité alimentaire",
-  "contamination",
-  "cadmium",
-  "santé publique"
+  "contamination au cadmium",
+  "santé publique",
+  "agriculture"
  ],
  "scrutinsCles": [
   "7300",

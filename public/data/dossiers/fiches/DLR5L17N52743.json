@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52743",
- "generatedAt": "2026-07-03T06:25:38Z",
+ "generatedAt": "2026-07-08T05:56:57Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,21 +15,54 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0284_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte vise à garantir l'information et la protection effective des victimes de violences sexuelles lors de la libération de leur agresseur, en instaurant un droit à l'information des victimes sur la sortie de prison de leur agresseur.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est un fichier PDF dont le contenu textuel n'a pas pu être extrait (seuls des flux binaires et des métadonnées PDF sont visibles). Aucun article, aucune disposition ni aucun mécanisme concret ne peut être identifié dans le contenu exploitable fourni. Il est donc impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "Garantir l'information et la protection effective des victimes de violences sexistes et sexuelles lors de la libération de leur agresseur, en renforçant leur droit à être informées des mesures d'exécution de peine et en améliorant leur accompagnement.",
+ "mecanismesCles": [
+  {
+   "resume": "Information obligatoire de la victime au moins un mois avant toute libération ou cessation, même temporaire, de la mesure privative de liberté de l'auteur, pour les infractions visées à l'article 706-47 CPP et 132-80 CP.",
+   "articleRef": "art. 1er",
+   "citation": "« Au plus tard un mois avant toute libération ou cessation, même temporaire, de la mesure privative de liberté [...] l'autorité judiciaire compétente en informe la victime ou la partie civile. »"
+  },
+  {
+   "resume": "Droit pour la victime de présenter des observations écrites (ou orales si délai non adapté) à la juridiction de l'application des peines avant toute décision de libération ou cessation.",
+   "articleRef": "art. 2 (art. 712-16-1-1 III CPP)",
+   "citation": "« la juridiction de l'application des peines informe la victime [...] qu'elle peut présenter ses observations par écrit dans un délai de quinze jours »"
+  },
+  {
+   "resume": "Assortissement automatique, sauf décision contraire motivée, de toute décision de cessation de mesure privative de liberté d'interdictions (contact, paraître, résider) au bénéfice de la victime, lorsque ces interdictions n'ont pas déjà été prononcées.",
+   "articleRef": "art. 2 (art. 712-16-1-1 IV CPP)",
+   "citation": "« sauf décision contraire spécialement motivée, la juridiction de l'application des peines assortit toute décision [...] D'une interdiction d'entrer en relation avec la victime [...] D'une interdiction de paraître [...] D'une interdiction de résider »"
+  },
+  {
+   "resume": "Possibilité pour la juridiction de saisir le procureur pour attribuer à la victime un dispositif de téléprotection (bracelet d'alerte) au regard de ses observations.",
+   "articleRef": "art. 2 bis (art. 712-16-1-2 CPP)",
+   "citation": "« La juridiction de l'application des peines peut [...] saisir le procureur de la République afin que soit attribué à cette victime un dispositif de téléprotection »"
+  },
+  {
+   "resume": "Information de la victime de la date de fin du suivi socio-judiciaire lorsque le condamné est soumis à des obligations d'abstention de contact ou de paraître.",
+   "articleRef": "art. 2 ter (art. 763-8-1 CPP)",
+   "citation": "« le juge de l'application des peines ou le service pénitentiaire d'insertion et de probation avise la victime [...] de la date de fin du suivi. »"
+  },
+  {
+   "resume": "Création d'un guichet unique départemental de suivi des victimes chargé d'accompagnement, d'orientation et de notification de remise en liberté au chef d'établissement scolaire (pour victimes mineures), à titre expérimental dans 2 à 10 départements pendant deux ans.",
+   "articleRef": "art. 3",
+   "citation": "« Il est institué dans chaque département un guichet unique de suivi des victimes [...] Le présent article est applicable à titre expérimental dans au moins deux départements et au plus dix départements »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'ensemble des mécanismes créés va dans le sens de l'objectif affiché : l'article 1er instaure une information systématique de la victime un mois avant toute libération ; l'article 2 lui ouvre un droit de présenter des observations et prévoit l'assortissement automatique d'interdictions protectrices (contact, paraître, résider) à toute décision de cessation de la mesure privative de liberté. L'article 2 bis permet en outre l'attribution d'un dispositif de téléprotection. L'article 3 crée un guichet unique d'accompagnement, même si son caractère expérimental (2 à 10 départements, 2 ans) en limite la portée. Le financement par une taxe sur les tabacs (art. 4) est neutre au regard de l'objectif. Aucun mécanisme n'affaiblit la protection des victimes ou ne va à l'encontre de l'objectif affiché.",
  "pointsDeVigilance": [
-  "Le contenu du PDF n'a pas été décodé : seuls les objets structuraux du PDF (streams compressés, métadonnées) sont visibles, sans texte lisible des articles de loi.",
-  "Aucun article, alinéa ou dispositif opérationnel n'est accessible dans les 15 000 caractères fournis.",
-  "L'exposé des motifs et le contenu normatif réel du texte ne peuvent pas être analysés."
+  "Le guichet unique de suivi des victimes (art. 3) n'est prévu qu'à titre expérimental dans 2 à 10 départements pendant 2 ans, ce qui limite fortement la portée concrète du dispositif.",
+  "L'assortissement automatique d'interdictions (art. 2 IV) peut être écarté par 'décision contraire spécialement motivée', ce qui laisse une marge d'appréciation à la juridiction.",
+  "Le dispositif ne s'applique pas en cas d'autorisation de sortie sous escorte (art. 712-16-1-1 dernier alinéa), créant une exception.",
+  "La clause d'opting-out (refus d'information par la victime) peut priver certaines victimes de la protection offerte par le texte.",
+  "Le financement par une taxe additionnelle sur les tabacs (art. 4) est une modalité de compensation budgétaire classique mais n'est pas directement liée à l'objectif du texte."
  ],
  "themes": [
   "violences sexuelles",
   "droits des victimes",
-  "information des victimes",
-  "libération conditionnelle",
-  "procédure pénale"
+  "procédure pénale",
+  "exécution des peines",
+  "protection des victimes"
  ],
  "scrutinsCles": [
   "6560",
@@ -38,5 +71,5 @@
   "6563"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:3103c37c13a2b370fa7d273876744f86a68b03b9db9d141d35928b5c141d6f65"
+ "sourceTextHash": "sha256:a2f5bf9fe745d0da99c234dbb031132e1b1e5d3797b58684a63a934e21446973"
 }

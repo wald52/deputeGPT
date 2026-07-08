@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53600",
- "generatedAt": "2026-07-03T06:15:52Z",
+ "generatedAt": "2026-07-08T05:45:37Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,47 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0314_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le projet de loi vise à habiliter l'assemblée de Martinique à fixer elle-même, en application de l'article 73 de la Constitution, les règles applicables sur son territoire en matière d'énergie, d'eau et d'assainissement. Il s'agit d'un texte d'habilitation permettant l'adaptation normative locale dans ces trois domaines.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des flux binaires et des balises d'objets PDF sont visibles). Aucun article, aucune disposition concrète et aucun exposé des motifs ne peuvent être lus dans le contenu transmis. En l'absence de tout mécanisme identifiable (obligations, taxes, subventions, dérogations, seuils, sanctions), il est impossible de déterminer si les incitations créées par le texte vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "Habiliter l'assemblée de Martinique, en application de l'article 73 de la Constitution, à fixer elle-même des règles spécifiques sur son territoire en matière d'énergie, d'eau et d'assainissement, jusqu'à son prochain renouvellement général.",
+ "mecanismesCles": [
+  {
+   "resume": "Habilitation de l'assemblée de Martinique à adopter des dispositions spécifiques en matière d'énergie (maîtrise de la demande, réglementation thermique, énergies renouvelables, mobilité durable), dans les limites de la délibération n° 23-569-1 du 21 décembre 2023.",
+   "articleRef": "art. 1er",
+   "citation": "l'assemblée de Martinique est habilitée [...] à adopter des dispositions spécifiques à la Martinique en matière d'énergie, notamment dans le domaine de la maîtrise de la demande en énergie, de la réglementation thermique des bâtiments, du développement des énergies renouvelables et de la mobilité durable"
+  },
+  {
+   "resume": "Exclusion du champ de l'habilitation des dispositions ayant un impact sur les charges de service public de l'énergie prises en compte dans le calcul de la péréquation tarifaire.",
+   "articleRef": "art. 1er",
+   "citation": "à l'exception des dispositions ayant un impact sur les charges de service public de l'énergie prises en compte dans le calcul de la péréquation tarifaire"
+  },
+  {
+   "resume": "Possibilité de prorogation de l'habilitation selon l'article L.O. 7411-7 du CGCT.",
+   "articleRef": "art. 1er",
+   "citation": "La présente habilitation peut être prorogée dans les conditions définies à l'article L.O. 7411-7 du code général des collectivités territoriales"
+  },
+  {
+   "resume": "Habilitation à créer et mettre en œuvre une autorité unique en matière d'eau et d'assainissement, exerçant les compétences des articles L. 2224-7 à L. 2224-8 du CGCT, selon la délibération n° 24-200-1 du 26 juillet 2024.",
+   "articleRef": "art. 2",
+   "citation": "à créer et à mettre en œuvre une autorité unique en matière d'eau et d'assainissement à laquelle sont conférées les compétences en matière d'eau et d'assainissement prévues aux articles L. 2224-7 à L. 2224-8 du même code"
+  },
+  {
+   "resume": "Possibilité de prorogation de l'habilitation relative à l'eau et l'assainissement selon l'article L.O. 7411-7 du CGCT.",
+   "articleRef": "art. 2",
+   "citation": "La présente habilitation peut être prorogée dans les conditions définies à l'article L.O. 7411-7 du code général des collectivités territoriales"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte crée une habilitation constitutionnelle (art. 73) permettant à l'assemblée de Martinique d'adapter localement la réglementation en énergie (art. 1er) et de regrouper les compétences eau/assainissement au sein d'une autorité unique (art. 2). Ces mécanismes transfèrent le pouvoir normatif vers la collectivité dans les domaines visés, ce qui est cohérent avec l'objectif affiché d'adaptation des règles aux spécificités territoriales. La restriction relative à la péréquation tarifaire (art. 1er) limite le champ mais ne contredit pas l'objectif : elle préserve la solidarité nationale sans empêcher l'adaptation locale. L'ensemble des incitations va donc dans le sens de l'objectif affiché.",
  "pointsDeVigilance": [
-  "Le contenu textuel du PDF n'a pas été décodé : le dossier législatif transmis ne contient pas de texte exploitable.",
-  "Sans accès aux articles ni à l'exposé des motifs, aucune analyse de second ordre n'est possible.",
-  "Le titre seul indique une habilitation à adapter localement les règles en énergie, eau et assainissement, mais le contenu normatif réel reste inconnu."
+  "L'habilitation est strictement encadrée par les délibérations n° 23-569-1 et n° 24-200-1, ce qui limite la marge d'adaptation future de l'assemblée de Martinique.",
+  "L'exclusion des dispositions impactant la péréquation tarifaire énergétique (art. 1er) peut restreindre significativement la portée de l'habilitation en matière d'énergie.",
+  "L'habilitation est limitée dans le temps (jusqu'au prochain renouvellement général de l'assemblée), avec prorogation possible mais non automatique.",
+  "Le texte ne crée pas directement d'obligations, taxes ou sanctions : il habilite seulement la collectivité à le faire, ce qui rend l'analyse des effets concrets dépendante des délibérations ultérieures."
  ],
  "themes": [
   "collectivités territoriales",
   "énergie",
-  "eau",
-  "assainissement",
+  "eau et assainissement",
+  "article 73 constitution",
   "martinique"
  ],
  "scrutinsCles": [
@@ -37,5 +64,5 @@
   "7401"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:5cdb2cde9beb0cc1736147b8fb91314c5632b6624ad2e8279e0a61057ddd01a0"
+ "sourceTextHash": "sha256:a8256a97636f22f9a3887c6726b5177a9ea3ce5e486ca53801e0226b5060a4b1"
 }

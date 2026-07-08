@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N54144",
- "generatedAt": "2026-07-04T06:01:21Z",
+ "generatedAt": "2026-07-08T05:54:00Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,19 +15,54 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0292_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de loi ordinaire intitulée « Pour la mobilisation de l'habitat existant en réponse à la crise du logement ». L'objectif affiché est de mobiliser le parc de logements existants pour répondre à la crise du logement.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des objets PDF, des flux binaires compressés et des métadonnées techniques apparaissent). Aucun article, aucun mécanisme concret (obligation, taxe, subvention, seuil, sanction) et aucun extrait de l'exposé des motifs ne peut être identifié dans le contenu transmis. Il est donc impossible de déterminer si les incitations créées par les mécanismes vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "Le texte est une proposition de loi visant à mobiliser l'habitat existant pour répondre à la crise du logement. Il s'appuie sur des incitations fiscales à la rénovation (dispositif Pinel/Denormandie), des assouplissements aux règles de copropriété pour faciliter les travaux et l'accès à l'emprunt collectif, ainsi que des mesures spécifiques pour les outre-mer et les copropriétés de montagne.",
+ "mecanismesCles": [
+  {
+   "resume": "Modification du régime fiscal du j du 1° du I de l'article 31 du CGI : suppression de la condition de travaux représentant au moins 20 % du prix d'acquisition pour bénéficier du dispositif de location, tout en maintenant l'exigence de saut de deux classes DPE (F/G) ou une classe (sinon).",
+   "articleRef": "art. 1er (I, 1°)",
+   "citation": "Pour les logements donnés en location à titre de résidence principale en France et ayant fait l'objet de travaux dont le montant représente au moins 20 % de leur prix d'acquisition et qui ont permis une amélioration de leur niveau de performance énergétique"
+  },
+  {
+   "resume": "Dérogation outre-mer : pour les DROM, l'amélioration d'une seule classe DPE suffit, quelle que soit la classe initiale.",
+   "articleRef": "art. 1er (I, 3° bis)",
+   "citation": "pour les logements situés dans les départements de Guadeloupe, de la Martinique, de Guyane, de La Réunion et de Mayotte, la condition relative à l'amélioration du niveau de performance énergétique est réputé satisfaite lorsque les travaux permettent une amélioration d'au moins une classe"
+  },
+  {
+   "resume": "Extension du dispositif aux locaux transformés en logements.",
+   "articleRef": "art. 1er (I, 4°)",
+   "citation": "ou aux locaux transformés en logements"
+  },
+  {
+   "resume": "Encadrement des groupements momentanés d'entreprises : mention obligatoire de l'absence de solidarité juridique entre cotraitants et des responsabilités de chacun.",
+   "articleRef": "art. 2 (II)",
+   "citation": "La mention expresse de l'absence de solidarité juridique des cotraitants envers le maître d'ouvrage"
+  },
+  {
+   "resume": "Garantie des emprunts souscrits par les syndicats de copropriétaires : possibilité de mécanismes de sûreté équivalents au cautionnement solidaire, garantie totale sans franchise ni délai de carence.",
+   "articleRef": "art. 3 (I, 1°)",
+   "citation": "L'organisme prêteur est garanti en totalité, sans franchise et sans délai de carence, par un cautionnement solidaire, par un autre mécanisme de sûreté présentant des garanties équivalentes"
+  },
+  {
+   "resume": "Allongement à 25 ans de la durée de remboursement des prêts collectifs pour les copropriétés de montagne ou à majorité de résidences secondaires, et possibilité de plan de rénovation pluriannuel.",
+   "articleRef": "art. 3 (I, 1° bis, art. 26-12-1)",
+   "citation": "la durée de remboursement du prêt collectif peut être étendue à vingt-cinq ans, par dérogation au droit commun"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés vont dans le sens de l'objectif affiché de mobilisation de l'habitat existant. L'article 1er élargit l'accès au dispositif fiscal locatif en supprimant la condition de 20 % de travaux et en l'ouvrant aux locaux transformés en logements, ce qui stimule la rénovation et la remise sur le marché. L'article 3 sécurise et facilite l'accès au crédit pour les copropriétés (garanties équivalentes, allongement à 25 ans en montagne), levant un frein connu aux travaux collectifs. L'article 3 bis simplifie l'installation de protections solaires, levier de performance énergétique. Les dérogations outre-mer (art. 1er 3° bis) adaptent le dispositif aux réalités locales. L'ensemble est cohérent avec l'objectif de relance de la rénovation du parc existant.",
  "pointsDeVigilance": [
-  "Le contenu transmis est un PDF binaire non décodé : aucun article ni exposé des motifs n'est lisible.",
-  "Seuls le titre de la proposition de loi et son identifiant sont exploitables.",
-  "Toute analyse de second ordre sur les mécanismes est impossible sans le texte décodé."
+  "L'exposé des motifs n'est pas fourni dans le texte tronqué, donc l'objectif affiché repose uniquement sur le titre.",
+  "Plusieurs articles mentionnent des 'rapports' au Parlement (art. 2 III, art. 3 ter) plutôt que des mesures normatives directement contraignantes.",
+  "La compensation par hausse de l'accise sur les tabacs (art. 1er II, 3 II, 4) crée un lien fiscal inhabituel entre logement et tabac, sans lien direct avec l'objectif affiché.",
+  "La suppression de la condition de 20 % de travaux (art. 1er) peut réduire l'incitation à des rénovations lourdes, au profit de travaux plus légers.",
+  "L'article 2 II encadre les groupements momentanés d'entreprises, ce qui pourrait indirectement freiner le recours à ce type de montage pour les travaux."
  ],
  "themes": [
   "logement",
-  "habitat existant",
-  "crise du logement"
+  "rénovation énergétique",
+  "copropriété",
+  "incitations fiscales",
+  "outre-mer"
  ],
  "scrutinsCles": [
   "7024",
@@ -36,5 +71,5 @@
   "7027"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:1090a0da7b1dc54c9551c0ab07d729553edcd058a6ba5c54b147ec7fe26ff23d"
+ "sourceTextHash": "sha256:5ea8fa27971d02bf09a07e17220e2fbc0a82618f0cb151014dae4387e0247437"
 }

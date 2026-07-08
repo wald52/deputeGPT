@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52700",
- "generatedAt": "2026-07-03T06:19:43Z",
+ "generatedAt": "2026-07-08T05:47:53Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,14 +15,20 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0304_texte-adopte-seance",
   "legifrance": null
  },
- "objectifAffiche": "Résolution visant à évaluer précisément le coût réel et sociétal de l'insécurité routière ainsi que son impact sur les finances publiques, adoptée par l'Assemblée nationale le 4 juin 2026.",
- "mecanismesCles": [],
+ "objectifAffiche": "Résolution adoptée par l'Assemblée nationale visant à évaluer précisément le coût réel et sociétal de l'insécurité routière et son impact sur les finances publiques (procédure de l'article 34-1 de la Constitution).",
+ "mecanismesCles": [
+  {
+   "resume": "Aucun mécanisme normatif identifiable : le texte fourni est uniquement une page de garde/sommaire de la résolution, sans exposé des motifs ni articles reproduits.",
+   "articleRef": null,
+   "citation": null
+  }
+ ],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles. Seul le titre et les métadonnées de la résolution sont accessibles, ce qui ne permet pas d'identifier les mécanismes concrets (obligations, demandes de rapports, saisines, etc.) créés par le texte. En l'absence du contenu normatif, il est impossible de déterminer si les incitations vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "justificationVerdict": "Le texte transmis ne contient ni exposé des motifs, ni dispositif articulé : seule la page d'en-tête (titre, identifiant, procédure, statut) est disponible. En l'absence de tout mécanisme concret (obligation, demande de rapport chiffré, création de commission d'évaluation, etc.), il est impossible de déterminer si les incitations produites par les articles vont dans le sens de l'objectif affiché ou s'y opposent.",
  "pointsDeVigilance": [
-  "Le texte officiel est tronqué et ne contient que l'en-tête et les liens de navigation, sans aucun article ni exposé des motifs.",
-  "Une résolution au sens de l'article 34-1 de la Constitution est un acte non contraignant (simple vœu ou demande d'évaluation), ce qui limite la portée normative de toute analyse.",
-  "L'objectif affiché est évaluatif (mesurer un coût) et non directement prescriptif, ce qui rend l'analyse des 'incitations' particulièrement sensible au contenu manquant."
+  "Le texte officiel est tronqué et ne livre que les métadonnées de la résolution (T.A. n° 304, 17e législature).",
+  "Une résolution au sens de l'article 34-1 de la Constitution est un acte non contraignant : elle peut formuler des vœux ou demander un rapport, mais ne crée pas en principe d'obligation juridique directe.",
+  "Sans accès au contenu des articles ou à l'exposé des motifs, toute analyse de second ordre sur les incitations réelles serait spéculative."
  ],
  "themes": [
   "sécurité routière",

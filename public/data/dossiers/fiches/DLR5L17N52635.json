@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52635",
- "generatedAt": "2026-07-03T06:32:22Z",
+ "generatedAt": "2026-07-08T06:04:08Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,21 +15,54 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0280_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le projet de loi vise à organiser la restitution de biens culturels provenant d'États qui en ont été privés du fait d'une appropriation illicite. Il s'agit d'un texte de restitution patrimoniale, fondé sur le principe de réparation de spoliations.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel n'a pas été extrait (seuls des flux binaires et des balises d'objets PDF sont visibles). Aucun article, aucune disposition concrète et aucune citation exploitable ne peuvent être identifiés dans le contenu transmis. En l'absence de mécanismes vérifiables tirés du texte, il est impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou s'en écartent.",
+ "objectifAffiche": "Le projet de loi vise à établir un cadre législatif pérenne permettant la restitution, par dérogation au principe d'inaliénabilité du domaine public, de biens culturels appartenant à des personnes publiques françaises à des États étrangers qui en ont été illicitement privés, afin de permettre la réappropriation par leur peuple d'éléments fondamentaux de leur patrimoine.",
+ "mecanismesCles": [
+  {
+   "resume": "Création d'une dérogation au principe d'inaliénabilité des biens du domaine public, permettant la sortie de biens culturels (à l'exception de certains biens relevant des 1° et 2° de l'article L. 2112-1 du CG3P) pour restitution à un État demandeur.",
+   "articleRef": "Art. L. 115-10 (art. 1er, I, 1°)",
+   "citation": "« Par dérogation au principe d'inaliénabilité des biens des personnes publiques qui relèvent du domaine public [...] la sortie du domaine public d'un bien culturel [...] peut être décidée dans les conditions définies à la présente section. »"
+  },
+  {
+   "resume": "Encadrement strict des biens éligibles : provenance du territoire de l'État demandeur, indices d'appropriation illicite (vol, pillage, cession sous contrainte) entre le 20 novembre 1815 et le 23 avril 1972, exclusion des biens couverts par un accord international préalable et des biens archéologiques issus de partages de fouilles.",
+   "articleRef": "Art. L. 115-11 (art. 1er, I, 1°)",
+   "citation": "« 2° Dont il est établi ou dont des indices sérieux, précis et concordants font présumer qu'il a fait l'objet [...] d'une appropriation par vol, par pillage ou par cession ou libéralité obtenues par contrainte ou violence »"
+  },
+  {
+   "resume": "Procédure d'examen par un comité scientifique constitué en concertation avec l'État demandeur, suivi d'un avis public et motivé de la commission nationale de restitution des biens culturels, puis sortie du domaine public prononcée par décret en Conseil d'État.",
+   "articleRef": "Art. L. 115-13 et L. 115-14 (art. 1er, I, 1°)",
+   "citation": "« La sortie du domaine public est prononcée par un décret en Conseil d'État. Lorsqu'il saisit le Conseil d'État, le Gouvernement lui transmet le rapport du comité [...] ainsi que l'avis de la commission »"
+  },
+  {
+   "resume": "Application aux biens issus de dons et legs, sauf clause contraire du donateur ; possibilité de procéder à la restitution malgré l'opposition du donateur ou de ses ayants droit en cas d'absence de réponse dans un délai de six mois.",
+   "articleRef": "Art. L. 115-16 (art. 1er, I, 1°)",
+   "citation": "« en l'absence de réponse de l'auteur de la libéralité ou de ses ayants droit à l'expiration d'un délai de six mois [...] il peut être procédé à la sortie du bien culturel du domaine public »"
+  },
+  {
+   "resume": "Création d'une commission nationale de restitution des biens culturels au sein du Haut Conseil des musées de France, composée notamment de parlementaires, représentants de l'État, collectivités, personnalités qualifiées, et présidée par un membre du Conseil d'État.",
+   "articleRef": "Art. L. 430-1-1 et L. 430-1-2 (art. 1er, I, 3°)",
+   "citation": "« Le Haut Conseil des musées de France a pour mission de conseiller les pouvoirs publics sur la restitution mentionnée à l'article L. 115-10. Il se réunit alors dans une formation spécialisée, dénommée commission nationale de restitution de biens culturels. »"
+  },
+  {
+   "resume": "Obligation d'information annuelle du Parlement : rapport gouvernemental listant les demandes, leur état d'avancement, les décisions de sortie du domaine public, les restitutions effectives et les demandes n'ayant pas abouti.",
+   "articleRef": "Art. 1er, III",
+   "citation": "« Chaque année, le Gouvernement remet au Parlement un rapport présentant : 1° Les demandes de restitution de biens culturels adressées par des États étrangers et l'état d'avancement de leur traitement »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'ensemble des mécanismes créés par le texte convergent directement vers l'objectif affiché de restitution des biens culturellement appropriés illicitement. L'article L. 115-10 institue la dérogation au principe d'inaliénabilité, qui est le levier juridique central nécessaire à toute restitution. L'article L. 115-11 définit précisément le périmètre des biens éligibles (appropriation illicite entre 1815 et 1972), ce qui opérationnalise la notion d'« appropriation illicite » mentionnée dans le titre. La procédure encadrée (comité scientifique, commission nationale, décret en Conseil d'État) garantit le caractère effectif et contrôlé des restitutions. Enfin, l'article 1er VI inscrivant la coopération culturelle renforcée et le rapport annuel au Parlement (III) inscrivent la démarche dans la durée et la transparence, en cohérence avec l'objectif de réappropriation patrimoniale par les peuples concernés.",
  "pointsDeVigilance": [
-  "Le contenu transmis est un PDF brut non décodé, ne contenant aucun article lisible",
-  "L'exposé des motifs et les articles du projet de loi ne sont pas accessibles dans la chaîne fournie",
-  "Toute analyse de second ordre nécessiterait la version texte du projet de loi (exposé des motifs + articles)"
+  "Le texte ne contient pas d'exposé des motifs dans l'extrait fourni, ce qui limite l'analyse de l'intention politique précise.",
+  "L'article L. 115-16 permet de passer outre l'opposition du donateur ou de ses ayants droit après six mois sans réponse, ce qui constitue une atteinte potentielle aux droits des donateurs et à la sécurité juridique des libéralités.",
+  "L'exclusion des biens couverts par un accord international préalable (art. L. 115-11, 3°) peut limiter fortement le champ des restitutions effectives.",
+  "La fourchette temporelle 1815-1972 exclut les appropriations illicites postérieures à 1972, ce qui pourrait sembler restrictif au regard de certaines situations contemporaines.",
+  "L'article 1er VI sur la coopération culturelle renforcée est programmatique (« favorise ») et non contraignant, donc à portée normative limitée."
  ],
  "themes": [
   "patrimoine culturel",
   "restitution",
+  "domaine public",
   "biens culturels",
-  "spoliation",
-  "relations internationales"
+  "coopération internationale"
  ],
  "scrutinsCles": [
   "6177",
@@ -38,5 +71,5 @@
   "6180"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:aec7555548e31e345270b115da1d3b20471b9bce94b084d1eb16a250eae7507e"
+ "sourceTextHash": "sha256:336b8fd93743c9eb32a2bbd1acb4b3b751f6b7f3afd2d75b2752a8fde5783e97"
 }
