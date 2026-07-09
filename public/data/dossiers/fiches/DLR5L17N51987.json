@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N51987",
- "generatedAt": "2026-07-03T06:34:17Z",
+ "generatedAt": "2026-07-09T06:50:33Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,26 +15,28 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2335_texte-adopte-commission",
   "legifrance": null
  },
- "objectifAffiche": "Permettre aux salariés de certains établissements et services de travailler le 1er mai, en dérogation au principe du repos obligatoire ce jour-là.",
+ "objectifAffiche": "Permettre aux salariés de certains établissements et services de travailler le 1er mai. Le texte est une proposition de loi ordinaire adoptée par le Sénat, examinée en commission des affaires sociales, visant à déroger au principe du repos du 1er mai pour des catégories spécifiques d'établissements et services.",
  "mecanismesCles": [
   {
-   "resume": "Le texte de la commission (n° 2335-A0) déposé le 13 janvier 2026 est référencé, mais ni l'exposé des motifs ni le contenu des articles ne sont fournis dans le texte transmis.",
+   "resume": "Le texte fourni ne contient ni exposé des motifs ni articles : seul l'en-tête du dossier législatif est disponible.",
    "articleRef": null,
    "citation": null
   }
  ],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni ne contient que les métadonnées du dossier législatif (titre, identifiant, procédure, statut, commission saisie, date de dépôt) et l'en-tête du document de la commission. Aucun article, aucun alinéa et aucun extrait de l'exposé des motifs n'est reproduit dans les 15 000 caractères transmis. Il est donc impossible d'identifier les mécanismes concrets (établissements concernés, contreparties, sanctions, dérogations) ni de vérifier si les incitations créées vont dans le sens de l'objectif affiché.",
+ "justificationVerdict": "Le texte officiel transmis est tronqué et ne comporte que les métadonnées du dossier (titre, identifiant, procédure, statut, commission saisie) ainsi que la mention du sommaire et des liens d'accès. Aucun article, aucune disposition concrète et aucun extrait de l'exposé des motifs ne sont reproduits dans le champ 'Texte officiel'. Il est donc impossible d'identifier les mécanismes précis (obligations, dérogations, contreparties, sanctions) créés par la proposition de loi, ni de vérifier si les incitations qu'ils produisent s'alignent avec l'objectif affiché de permettre le travail de certains salariés le 1er mai.",
  "pointsDeVigilance": [
-  "Le contenu substantiel du texte (exposé des motifs et articles) est absent de la transmission ; seule la fiche d'en-tête est disponible.",
-  "Le statut 'en_cours' et la date de dépôt (13 janvier 2026) indiquent que le texte peut encore évoluer avant adoption définitive.",
-  "La proposition est issue d'un texte déjà adopté par le Sénat (n° 1673), ce qui implique un risque d'écart entre la version sénatoriale et la version de la commission."
+  "Texte tronqué à 15000 caractères mais ne contenant en réalité que l'en-tête administratif, sans contenu normatif.",
+  "Impossible de connaître la liste des établissements et services concernés par la dérogation.",
+  "Impossible de savoir si des contreparties (majoration de salaire, repos compensateur, volontariat) sont prévues.",
+  "Le statut 'en_cours' indique que le texte peut encore évoluer ; toute analyse serait prématurée."
  ],
  "themes": [
-  "travail",
   "droit du travail",
   "jours fériés",
-  "1er mai"
+  "1er mai",
+  "dérogation",
+  "travail salarié"
  ],
  "scrutinsCles": [
   "6132",

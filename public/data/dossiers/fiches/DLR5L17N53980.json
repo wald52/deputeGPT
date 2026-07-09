@@ -1,0 +1,38 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N53980",
+ "generatedAt": "2026-07-09T06:30:29Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi visant à offrir des réponses immédiates aux phénomènes troublant l’ordre public, la sécurité et la tranquillité de nos concitoyens",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N53980",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2984_texte-adopte-commission",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le projet de loi vise à offrir des réponses immédiates aux phénomènes troublant l'ordre public, la sécurité et la tranquillité des concitoyens. Il s'agit d'un texte présenté en procédure accélérée, adopté par le Sénat puis examiné en commission à l'Assemblée nationale.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles : seul l'en-tête administratif du dossier législatif (titre, identifiant, procédure, statut, sommaire et liens de navigation) est transmis. Aucun mécanisme concret (obligation, sanction, seuil, dérogation, taxe, subvention) ne peut être identifié ni cité, ce qui empêche toute analyse de l'alignement entre les incitations créées et l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte officiel a été tronqué à 15000 caractères mais, en réalité, seul l'en-tête du document est présent ; aucun contenu normatif (exposé des motifs, articles) n'a été transmis.",
+  "Le titre seul, très large ('phénomènes troublant l'ordre public, la sécurité et la tranquillité'), ne permet pas de déduire les instruments juridiques utilisés.",
+  "La procédure accélérée et l'adoption préalable par le Sénat suggèrent un calendrier contraint, à vérifier au regard du contenu réel des articles."
+ ],
+ "themes": [
+  "ordre public",
+  "sécurité",
+  "tranquillité publique",
+  "procédure législative accélérée"
+ ],
+ "scrutinsCles": [
+  "7988"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:1a23ebcba94b7337dcec52fd4905e846f88d7bc1a7cf0ba7b2c0a08038defc1a"
+}

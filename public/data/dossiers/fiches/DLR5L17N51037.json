@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N51037",
- "generatedAt": "2026-07-05T06:26:55Z",
+ "generatedAt": "2026-07-09T06:35:56Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -12,32 +12,59 @@
  "statut": "en_cours",
  "sources": {
   "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/presomption_legitime_defense_forces_ordre",
-  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b0691_proposition-loi",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0328_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "La proposition de loi n°691 vise à reconnaître une présomption de légitime défense pour les forces de l'ordre dans l'exercice de leurs fonctions. L'objectif affiché est de protéger juridiquement les agents des forces de l'ordre lorsqu'ils font usage de la force en situation opérationnelle.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles. Seul le titre et l'identifiant de la proposition de loi sont accessibles. Sans le contenu normatif (articles créant la présomption, conditions d'application, exceptions, sanctions éventuelles), il est impossible d'identifier les mécanismes concrets ni de déterminer si les incitations créées sont alignées avec l'objectif affiché.",
+ "objectifAffiche": "La proposition de loi vise à reconnaître une présomption de légitime défense pour les forces de l'ordre (police nationale, gendarmerie nationale, et personnels pénitentiaires) dans l'exercice de leurs fonctions, en modifiant le code de la sécurité intérieure et le code pénitentiaire.",
+ "mecanismesCles": [
+  {
+   "resume": "Création d'un nouveau cas d'usage de l'arme (II de l'art. L. 435-1 CSI) : possibilité d'usage absolument nécessaire et strictement proportionné pour empêcher la réitération rapprochée de meurtres ou tentatives de meurtre, sur la base de raisons réelles et objectives.",
+   "articleRef": "Art. unique, II, 1° (nouvel art. L. 435-1 II CSI)",
+   "citation": "« Dans l'exercice de leurs fonctions, les agents de la police nationale et les militaires de la gendarmerie nationale peuvent faire un usage absolument nécessaire et strictement proportionné de leur arme dans le but exclusif d'empêcher la réitération, dans un temps rapproché, d'un ou de plusieurs meurtres ou tentatives de meurtre venant d'être commis »"
+  },
+  {
+   "resume": "Institution d'une présomption simple (réfragable) de conformité à l'article L. 435-1 : les agents sont présumés avoir agi dans l'un des cas autorisés, présomption renversable par tout élément de preuve contraire.",
+   "articleRef": "Art. unique, II, 1° (nouvel art. L. 435-1 III CSI)",
+   "citation": "« Lorsqu'ils font usage de leurs armes, les agents de la police nationale et les militaires de la gendarmerie nationale sont présumés avoir agi dans l'un des cas autorisés par le présent article conformément aux conditions d'absolue nécessité et de stricte proportionnalité. Cette présomption peut, à tout moment, être renversée par tout élément de preuve contraire. »"
+  },
+  {
+   "resume": "Abrogation du 5° de l'art. L. 435-1 CSI (ancienne disposition relative à l'usage de l'arme, non détaillée dans le texte fourni).",
+   "articleRef": "Art. unique, II, 1° b)",
+   "citation": "Le 5° est abrogé"
+  },
+  {
+   "resume": "Extension du dispositif aux personnels pénitentiaires par renvoi aux titres IV et V du livre V du CSI, sous réserve d'adaptations.",
+   "articleRef": "Art. unique, II, 2° et 3° (art. L. 445-1, L. 446-1, L. 447-1, L. 448-1 CSI)",
+   "citation": "« les dispositions du présent titre, sous réserve des adaptations suivantes »"
+  },
+  {
+   "resume": "Modification du code pénitentiaire pour rendre applicables les nouvelles dispositions aux personnels pénitentiaires (art. L. 227-1, L. 753-1, L. 763-1, L. 773-1).",
+   "articleRef": "Art. unique, III",
+   "citation": "« Le code pénitentiaire est ainsi modifié »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'objectif affiché est d'instaurer une présomption de légitime défense pour les forces de l'ordre. Le mécanisme central (nouvel art. L. 435-1 III CSI) crée précisément cette présomption : « les agents [...] sont présumés avoir agi dans l'un des cas autorisés ». Cette présomption est simple et réfragable (« peut, à tout moment, être renversée par tout élément de preuve contraire »), ce qui maintient l'équilibre avec le contrôle judiciaire. Le II du même article définit en parallèle un nouveau cas d'usage de l'arme strictement encadré par les conditions d'« absolue nécessité » et de « stricte proportionnalité ». Les incitations vont donc bien dans le sens de l'objectif affiché : protéger juridiquement les agents tout en cadrant l'usage de la force.",
  "pointsDeVigilance": [
-  "Le texte officiel est tronqué et ne contient aucun article ni exposé des motifs exploitable",
-  "La notion de 'présomption de légitime défense' inverse la charge de la preuve et peut soulever des questions constitutionnelles (présomption d'innocence, article 9 de la Déclaration des droits de l'homme)",
-  "Sans définition du champ d'application (forces de l'ordre concernées, types de missions, seuil de force), l'analyse des effets réels est impossible",
-  "Le statut 'en cours' indique que le texte peut encore être amendé"
+  "Le I initial de l'article unique a été supprimé en séance, ce qui réduit la portée initiale du texte sans que le contenu supprimé soit connu.",
+  "La présomption, bien que réfragable, inverse la charge de la preuve au détriment de la partie plaignante, ce qui pourrait rendre plus difficile la reconnaissance de fautes.",
+  "Le nouveau cas d'usage de l'arme (II) vise des situations post-attentat ou de risque de réitération immédiate, mais la notion de « raisons réelles et objectives » reste subjective.",
+  "Le texte ne précise pas les conséquences procédurales (renversement de la présomption, charge de la preuve, standards de preuve) qui seront déterminées par la jurisprudence.",
+  "L'extension aux personnels pénitentiaires (III) est renvoyée à des « adaptations » non détaillées dans le texte fourni."
  ],
  "themes": [
   "sécurité intérieure",
   "forces de l'ordre",
   "légitime défense",
-  "droit pénal",
-  "responsabilité des agents publics"
+  "usage de l'arme",
+  "police"
  ],
  "scrutinsCles": [
-  "5150",
-  "5151",
-  "5152",
-  "5153"
+  "7984",
+  "7985",
+  "7986",
+  "7987"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:256dfd48205832e7e62d0deee120759dfe6ef7af2177b2aa1e36d0b591dfcaa0"
+ "sourceTextHash": "sha256:a7dcaf1808c817c55072ce1afd27edded054f05eb94faabef2e6f148690698a6"
 }

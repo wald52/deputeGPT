@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-07-08T06:04:08Z",
- "totalFiches": 106,
+ "generatedAt": "2026-07-09T06:53:34Z",
+ "totalFiches": 107,
  "fiches": {
   "DLR5L16N46127": {
    "titre": "Proposition de loi portant réparation des personnes condamnées pour homosexualité entre 1945 et 1982",
@@ -81,15 +81,15 @@
   },
   "DLR5L17N51037": {
    "titre": "Reconnaître une présomption de légitime défense pour les forces de l'ordre, dans l'exercice de leurs fonctions",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-05T06:26:55Z",
+   "generatedAt": "2026-07-09T06:35:56Z",
    "themes": [
     "sécurité intérieure",
     "forces de l'ordre",
     "légitime défense",
-    "droit pénal",
-    "responsabilité des agents publics"
+    "usage de l'arme",
+    "police"
    ]
   },
   "DLR5L17N51079": {
@@ -394,12 +394,13 @@
    "titre": "Proposition de loi visant à permettre aux salariés de certains établissements et services de travailler le 1er mai",
    "verdictIncitations": "indetermine",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:34:17Z",
+   "generatedAt": "2026-07-09T06:50:33Z",
    "themes": [
-    "travail",
     "droit du travail",
     "jours fériés",
-    "1er mai"
+    "1er mai",
+    "dérogation",
+    "travail salarié"
    ]
   },
   "DLR5L17N52100": {
@@ -981,14 +982,15 @@
   },
   "DLR5L17N53315": {
    "titre": "Proposition de loi visant à instaurer une procédure simplifiée de recouvrement des créances commerciales incontestées",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "promulgue",
-   "generatedAt": "2026-07-03T06:33:17Z",
+   "generatedAt": "2026-07-09T06:49:56Z",
    "themes": [
     "recouvrement de créances",
     "droit commercial",
-    "procédure simplifiée",
-    "créances incontestées"
+    "procédure civile d'exécution",
+    "commissaire de justice",
+    "titre exécutoire"
    ]
   },
   "DLR5L17N53329": {
@@ -1139,13 +1141,15 @@
   },
   "DLR5L17N53770": {
    "titre": "Simplifier la gestion de la commande publique par les acheteurs publics et les opérateurs économiques",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-03T06:34:54Z",
+   "generatedAt": "2026-07-09T06:53:34Z",
    "themes": [
     "commande publique",
-    "marchés publics",
-    "simplification administrative"
+    "simplification administrative",
+    "pme",
+    "accords-cadres",
+    "exécution des marchés"
    ]
   },
   "DLR5L17N53772": {
@@ -1192,6 +1196,18 @@
     "juridictions criminelles",
     "droit pénal",
     "organisation judiciaire"
+   ]
+  },
+  "DLR5L17N53980": {
+   "titre": "Projet de loi visant à offrir des réponses immédiates aux phénomènes troublant l’ordre public, la sécurité et la tranquillité de nos concitoyens",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-09T06:30:29Z",
+   "themes": [
+    "ordre public",
+    "sécurité",
+    "tranquillité publique",
+    "procédure législative accélérée"
    ]
   },
   "DLR5L17N53981": {

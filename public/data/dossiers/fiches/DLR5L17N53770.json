@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53770",
- "generatedAt": "2026-07-03T06:34:54Z",
+ "generatedAt": "2026-07-09T06:53:34Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,53 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0269_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à simplifier la gestion de la commande publique, tant pour les acheteurs publics que pour les opérateurs économiques. L'objectif affiché est donc la simplification administrative et procédurale des marchés publics.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel a été remplacé par des flux binaires (opérateurs PDF /FlateDecode) sans extraction de texte. Aucun article, aucun mécanisme, aucune disposition concrète (obligation, seuil, dérogation, sanction, taxe, subvention) ne peut être identifié dans le contenu fourni. Il est donc impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché de simplification ou s'y opposent.",
+ "objectifAffiche": "Simplifier la gestion de la commande publique pour les acheteurs publics et les opérateurs économiques, via une proposition de loi ordinaire modifiant le code de la commande publique.",
+ "mecanismesCles": [
+  {
+   "resume": "Principe selon lequel un accord-cadre n'emporte pas exclusivité au bénéfice de ses titulaires, sauf stipulation contraire.",
+   "articleRef": "art. 1er (art. L. 2125-2)",
+   "citation": "Un accord-cadre n'emporte pas, par lui-même, exclusivité au bénéfice de ses titulaires, sauf stipulation contraire prévue par les documents contractuels."
+  },
+  {
+   "resume": "Possibilité pour l'acheteur de faire exécuter aux frais et risques du titulaire défaillant les prestations non réalisées, et de conclure un marché sans publicité ni mise en concurrence en cas de continuité du service public menacée (sous les seuils européens).",
+   "articleRef": "art. 1er bis (art. L. 2198-1)",
+   "citation": "En cas de défaillance du titulaire, l'acheteur peut, après mise en demeure restée sans effet, faire exécuter, aux frais et risques du titulaire, les prestations non réalisées."
+  },
+  {
+   "resume": "Avance minimale de 30 % pour les PME titulaires ou sous-traitantes, sans garantie à première demande, sauf exceptions (établissements de santé, EPA de l'État et collectivités dont les charges de fonctionnement sont inférieures à 60 M€).",
+   "articleRef": "art. 2 (art. L. 2191-2-1)",
+   "citation": "Lorsque le titulaire du marché public ou le sous-traitant admis au paiement direct est une petite ou une moyenne entreprise, le taux minimal de l'avance est fixé à 30 %"
+  },
+  {
+   "resume": "Obligation pour les centrales d'achat établies en France de déclarer leur activité au ministre chargé de l'économie et de publier un rapport annuel d'activité au-delà d'un seuil fixé par décret.",
+   "articleRef": "art. 3 (art. L. 2113-2-1)",
+   "citation": "Les centrales d'achat établies en France déclarent leur activité au ministre chargé de l'économie, qui rend publique leur liste."
+  },
+  {
+   "resume": "Rapport gouvernemental d'évaluation des effets de l'extension du taux minimal d'avance dans un délai de deux ans.",
+   "articleRef": "art. 3 bis",
+   "citation": "le Gouvernement remet au Parlement un rapport public évaluant les effets de l'extension du taux minimal d'avance"
+  },
+  {
+   "resume": "Compensation des charges par création/majoration d'une taxe additionnelle à l'accise sur les tabacs.",
+   "articleRef": "art. 4",
+   "citation": "La charge pour l'État est compensée à due concurrence par la création d'une taxe additionnelle à l'accise sur les tabacs"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés vont dans le sens de l'objectif affiché de simplification : l'article 1er clarifie le régime des accords-cadres en posant le principe de non-exclusivité, l'article 1er bis organise la gestion de la défaillance du titulaire et permet un marché de substitution simplifié sous les seuils européens, l'article 2 fluidifie la trésorerie des PME via une avance minimale de 30 % sans garantie, et l'article 3 instaure une transparence accrue sur les centrales d'achat. L'article 3 bis prévoit une évaluation a posteriori, cohérente avec une démarche de simplification pragmatique. L'ensemble des dispositifs vise à réduire les contraintes procédurales ou financières pour les acheteurs et opérateurs économiques.",
  "pointsDeVigilance": [
-  "Le contenu transmis est un PDF brut non décodé (flux d'objets PDF illisibles), empêchant toute analyse des articles.",
-  "Seuls le titre du dossier et l'identifiant législatif (DLR5L17N53770) sont exploitables.",
-  "L'exposé des motifs et le corps des articles ne sont pas accessibles dans la chaîne fournie.",
-  "Une analyse fiable nécessiterait la version texte (HTML/TXT) du dossier législatif."
+  "L'article 1er bis permet un marché sans publicité ni mise en concurrence en cas de continuité du service public : ce mécanisme déroge aux principes de la commande publique et pourrait, en pratique, réduire la concurrence si la notion de 'continuité du service public' est interprétée largement.",
+  "L'article 2 exclut de l'avance à 30 % les acheteurs dont les charges de fonctionnement sont inférieures à 60 M€, ce qui limite le bénéfice du dispositif aux plus gros acheteurs et peut créer une inégalité entre PME selon l'acheteur public concerné.",
+  "L'article 4 finance la réforme par une taxe additionnelle sur les tabacs, choix de financement sans lien direct avec la commande publique et dont l'effet redistributif pourrait être discuté.",
+  "L'absence d'exposé des motifs dans le texte fourni limite l'analyse de l'intention initiale du législateur."
  ],
  "themes": [
   "commande publique",
-  "marchés publics",
-  "simplification administrative"
+  "simplification administrative",
+  "pme",
+  "accords-cadres",
+  "exécution des marchés"
  ],
  "scrutinsCles": [
   "6128",
@@ -37,5 +70,5 @@
   "6131"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:f3fc4e8961e2d0ec55bd9ca77aa0bddb90347c93cf30aa5affe55ab514861235"
+ "sourceTextHash": "sha256:539d4187fb36aba5cdc292f54b5c91c2c198086cc7ca4466fe50e009bfa0059d"
 }

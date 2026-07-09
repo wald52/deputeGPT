@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53315",
- "generatedAt": "2026-07-03T06:33:17Z",
+ "generatedAt": "2026-07-09T06:49:56Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,25 +15,58 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0271_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de loi visant à instaurer une procédure simplifiée de recouvrement des créances commerciales incontestées. L'objectif affiché est de faciliter et accélérer le recouvrement des créances commerciales non contestées entre entreprises.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des caractères binaires et des fragments de flux PDF apparaissent). Aucun article, aucune disposition concrète, aucun mécanisme (obligation, seuil, sanction, dérogation) ne peut être identifié dans le contenu exploitable. En l'absence de texte lisible, il est impossible de déterminer si les mécanismes créés vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "Instaurer une procédure simplifiée de recouvrement des créances commerciales incontestées entre commerçants, via un commissaire de justice, afin de faciliter le paiement rapide des dettes certaines, liquides et exigibles.",
+ "mecanismesCles": [
+  {
+   "resume": "Création d'une procédure simplifiée de recouvrement des créances entre commerçants, mise en œuvre par un commissaire de justice à la demande du créancier, pour les créances certaines, liquides et exigibles.",
+   "articleRef": "art. 1 (art. L. 126-1)",
+   "citation": "« Pour le recouvrement d'une créance ayant fait l'objet d'une facturation entre commerçants, une procédure simplifiée peut être mise en œuvre par un commissaire de justice, à la demande du créancier »"
+  },
+  {
+   "resume": "Signification d'un commandement de payer par le commissaire de justice, avec description de l'obligation, des montants et délai d'un mois ; la contestation du débiteur dans ce délai met fin à la procédure.",
+   "articleRef": "art. 1 (art. L. 126-2)",
+   "citation": "« La contestation de la créance par le débiteur dans ce délai met fin à la procédure de recouvrement, sans préjudice des droits du créancier d'agir en justice. »"
+  },
+  {
+   "resume": "En l'absence de paiement ou de contestation, le commissaire de justice dresse un procès-verbal de non-contestation, rendu exécutoire par le greffier du tribunal de commerce après vérification de régularité.",
+   "articleRef": "art. 1 (art. L. 126-3 et L. 126-4)",
+   "citation": "« le commissaire de justice dresse un procès-verbal de non-contestation » ; « rendu exécutoire par le greffier de la juridiction compétente en matière commerciale, après vérification de la régularité de la procédure »"
+  },
+  {
+   "resume": "Le procès-verbal exécutoire doit être signifié au débiteur dans un délai de six mois, à défaut il est non avenu ; le débiteur peut s'opposer au procès-verbal.",
+   "articleRef": "art. 1 (art. L. 126-4)",
+   "citation": "« Il est non avenu s'il n'a pas été signifié dans un délai de six mois à compter de la date à laquelle il a été rendu exécutoire. » ; « Le débiteur peut s'opposer au procès-verbal revêtu de la formule exécutoire. »"
+  },
+  {
+   "resume": "Les frais de la procédure sont à la charge du débiteur.",
+   "articleRef": "art. 1 (art. L. 126-5)",
+   "citation": "« Les frais occasionnés par la mise en œuvre de la procédure définie au présent chapitre sont à la charge du débiteur. »"
+  },
+  {
+   "resume": "Exclusion des créances entre commerçants de la procédure de paiement direct de l'article L. 125-1 (réservée aux autres créances), et ajout du titre exécutoire de l'article L. 126-4 à la liste des titres exécutoires.",
+   "articleRef": "art. 2 et art. 3",
+   "citation": "« à l'exclusion des créances ayant fait l'objet d'une facturation entre commerçants » ; « Le titre délivré par le greffier du tribunal de commerce en application de l'article L. 126-4 lorsqu'il a force exécutoire. »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés vont clairement dans le sens de l'objectif affiché : la procédure permet au créancier d'obtenir rapidement un titre exécutoire (art. L. 126-4) sans passer par un juge, dès lors que la créance est certaine, liquide et exigible (art. L. 126-1). Le débiteur conserve néanmoins un droit de contestation dans le délai d'un mois (art. L. 126-2) et un droit d'opposition au procès-verbal exécutoire (art. L. 126-4), préservant ainsi l'équilibre procédural. Le contrôle de régularité par le greffier (art. L. 126-4) et la mise à la charge du débiteur des frais (art. L. 126-5) renforcent la crédibilité du dispositif. L'articulation avec l'article L. 125-1 (art. 3) exclut les créances commerciales du paiement direct pour les orienter vers cette nouvelle voie dédiée.",
  "pointsDeVigilance": [
-  "Le document fourni est un PDF brut non décodé : aucun article ni exposé des motifs n'est lisible.",
-  "L'identifiant DLR5L17N53315 et le titre suggèrent un texte sur le recouvrement simplifié de créances, mais le contenu normatif réel n'est pas accessible.",
-  "Toute analyse de second ordre (alignement des incitations) est impossible sans le texte des articles."
+  "Le texte ne contient pas d'exposé des motifs : l'objectif affiché est donc déduit uniquement du titre et des articles.",
+  "Le contrôle de régularité par le greffier est sommaire ('vérification de la régularité de la procédure') et ne constitue pas un contrôle au fond de la créance.",
+  "La mise à la charge du débiteur des frais (art. L. 126-5) pourrait dissuader la contestation de bonne foi, bien que le droit de contestation reste ouvert.",
+  "Les modalités d'application relèvent d'un décret en Conseil d'État (art. L. 126-6), dont le contenu pourrait moduler l'effectivité du dispositif."
  ],
  "themes": [
   "recouvrement de créances",
   "droit commercial",
-  "procédure simplifiée",
-  "créances incontestées"
+  "procédure civile d'exécution",
+  "commissaire de justice",
+  "titre exécutoire"
  ],
  "scrutinsCles": [
   "6134",
   "6135"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:b6dc32110704c8ef319cb36aa5ac31a289e8597c963167ca48660a6bc823bf6a"
+ "sourceTextHash": "sha256:1013a1ffe36e5c23ea6a8880e5548efbb12c36bfef50694e54ecf522a69a5108"
 }

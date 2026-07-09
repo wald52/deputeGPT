@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "legislature": "17",
- "generatedAt": "2026-07-08T05:37:58Z",
+ "generatedAt": "2026-07-09T06:28:22Z",
  "scrutins": {
   "1": {
    "dossierId": null,
@@ -38783,6 +38783,51 @@
    "method": "title_containment",
    "confidence": 0.95
   },
+  "7980": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7981": {
+   "dossierId": "DLR5L17N53942",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7982": {
+   "dossierId": "DLR5L17N51037",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7983": {
+   "dossierId": "DLR5L17N51037",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7984": {
+   "dossierId": "DLR5L17N51037",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7985": {
+   "dossierId": "DLR5L17N51037",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7986": {
+   "dossierId": "DLR5L17N51037",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7987": {
+   "dossierId": "DLR5L17N51037",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7988": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_match",
+   "confidence": 0.818
+  },
   "799": {
    "dossierId": "DLR5L17N50690",
    "method": "title_containment",
@@ -46663,6 +46708,7 @@
     "PIONANR5L17B0691",
     "PIONANR5L17BTA0328",
     "PIONANR5L17TAP0328",
+    "PIONSNR5S479B0866",
     "RAPPANR5L17B2342"
    ],
    "refJo": null,
@@ -46712,7 +46758,13 @@
     "5150",
     "5151",
     "5152",
-    "5153"
+    "5153",
+    "7982",
+    "7983",
+    "7984",
+    "7985",
+    "7986",
+    "7987"
    ]
   },
   "DLR5L17N53187": {
@@ -50765,12 +50817,14 @@
     "PIONANR5L17B1560",
     "PIONANR5L17BTA0322",
     "PIONANR5L17BTC2797",
+    "PIONANR5L17BTC3057",
     "PIONANR5L17TAP0322",
     "PIONSNR5S459B0456",
     "PIONSNR5S459BTA0137",
     "PIONSNR5S459BTC0670",
     "PIONSNR5S479B0807",
     "RAPPANR5L17B2797",
+    "RAPPANR5L17B3057",
     "RAPPSNR5S459B0669"
    ],
    "refJo": null,
@@ -50862,13 +50916,20 @@
    "texteRefs": [
     "PRJLANR5L17B2682",
     "PRJLANR5L17BTA0327",
+    "PRJLANR5L17BTA0330",
     "PRJLANR5L17BTC2908",
+    "PRJLANR5L17BTC3047",
     "PRJLANR5L17TAP0327",
+    "PRJLANR5L17TAP0330",
     "PRJLSNR5S479B0457",
+    "PRJLSNR5S479B0864",
     "PRJLSNR5S479BTA0091",
     "PRJLSNR5S479BTC0521",
+    "PRJLSNR5S479BTC0869",
     "RAPPANR5L17B2908",
-    "RAPPSNR5S479B0520"
+    "RAPPANR5L17B3047",
+    "RAPPSNR5S479B0520",
+    "RAPPSNR5S479B0868"
    ],
    "refJo": null,
    "legifranceUrl": null,
@@ -50877,7 +50938,8 @@
     "7975",
     "7976",
     "7977",
-    "7978"
+    "7978",
+    "7981"
    ]
   },
   "DLR5L17N53940": {
@@ -50889,11 +50951,15 @@
    "texteRefs": [
     "PRJLANR5L17B2681",
     "PRJLANR5L17BTA0326",
+    "PRJLANR5L17BTA0329",
+    "PRJLANR5L17BTC3046",
     "PRJLANR5L17TAP0326",
+    "PRJLANR5L17TAP0329",
     "PRJLSNR5S479B0456",
     "PRJLSNR5S479B0863",
     "PRJLSNR5S479BTA0090",
-    "RAPPANR5L17B2904"
+    "RAPPANR5L17B2904",
+    "RAPPANR5L17B3046"
    ],
    "refJo": null,
    "legifranceUrl": null,
@@ -50974,7 +51040,29 @@
     "7971",
     "7972",
     "7973",
-    "7974"
+    "7974",
+    "7980"
+   ]
+  },
+  "DLR5L17N53980": {
+   "titre": "Projet de loi visant à offrir des réponses immédiates aux phénomènes troublant l’ordre public, la sécurité et la tranquillité de nos concitoyens",
+   "titreChemin": "DLR5L17N53980",
+   "procedure": "Projet de loi ordinaire",
+   "statut": "en_cours",
+   "anUrl": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N53980",
+   "texteRefs": [
+    "PRJLANR5L17B2850",
+    "PRJLANR5L17BTC2984",
+    "PRJLSNR5S479B0472",
+    "PRJLSNR5S479BTA0118",
+    "PRJLSNR5S479BTC0602",
+    "RAPPANR5L17B2984",
+    "RAPPSNR5S479B0601"
+   ],
+   "refJo": null,
+   "legifranceUrl": null,
+   "scrutinNumeros": [
+    "7988"
    ]
   },
   "DLR5L17N51161": {
@@ -52787,14 +52875,14 @@
   "7894"
  ],
  "stats": {
-  "totalScrutins": 7979,
-  "totalDossiersLies": 224,
-  "matchRate": 0.8291,
+  "totalScrutins": 7988,
+  "totalDossiersLies": 225,
+  "matchRate": 0.8293,
   "methods": {
    "override": 0,
    "field": 0,
-   "title_containment": 6075,
-   "title_match": 518,
+   "title_containment": 6083,
+   "title_match": 519,
    "none": 27,
    "unmatched": 1359
   }
