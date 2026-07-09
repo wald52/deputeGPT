@@ -438,6 +438,26 @@ export function detectLawCritiqueRequest(question, scope) {
   return hasDirectCritiqueMarker || (hasIntensifier && hasJudgementMarker);
 }
 
+// Mots tolerables entre la copule « est » et le predicat thematique
+// (« est-il vraiment ecolo ? », « est plutot ecolo »).
+const STANCE_COPULA_FILLER_PATTERN = '(?:il|elle|vraiment|plutot|tres|assez|globalement|un|une)';
+
+function startsWithThemeKeywordInternal(text, theme) {
+  return (THEME_KEYWORDS[theme] || []).some(keyword => {
+    const normalizedKeyword = normalizeThemeSearchTextInternal(keyword);
+    if (!normalizedKeyword || !text.startsWith(normalizedKeyword)) {
+      return false;
+    }
+
+    const remainder = text.slice(normalizedKeyword.length);
+    if (remainder === '' || remainder.startsWith(' ')) {
+      return true;
+    }
+
+    return THEME_KEYWORD_ALLOWED_SUFFIXES.has(remainder.split(' ', 1)[0]);
+  });
+}
+
 export function detectThematicStanceRequest(question, scope) {
   if (!scope?.filters?.theme) {
     return false;
@@ -447,10 +467,25 @@ export function detectThematicStanceRequest(question, scope) {
     return false;
   }
 
-  return (
+  if (
     (/\best(?:\s+ce\s+que)?\b/.test(question) && /\b(pour|contre)\b/.test(question)) ||
     /\b(favorable|defavorable|oppose|opposee|plutot)\b/.test(question)
-  );
+  ) {
+    return true;
+  }
+
+  // Famille « est-il ecolo ? » : la copule « est » directement suivie du mot de
+  // theme est une question de posture, pas une liste ni une analyse libre.
+  const searchText = normalizeThemeSearchTextInternal(question);
+  const copulaPattern = new RegExp(`\\best(?:\\s+${STANCE_COPULA_FILLER_PATTERN})*\\s+`, 'g');
+  let copulaMatch;
+  while ((copulaMatch = copulaPattern.exec(searchText)) !== null) {
+    if (startsWithThemeKeywordInternal(searchText.slice(copulaMatch.index + copulaMatch[0].length), scope.filters.theme)) {
+      return true;
+    }
+  }
+
+  return false;
 }
 
 export function detectParticipationRateRequest(question) {

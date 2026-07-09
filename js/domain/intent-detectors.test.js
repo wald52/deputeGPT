@@ -103,6 +103,12 @@ describe('detectTheme', () => {
     expect(detectTheme('environnement et climat')).toBe('ecologie');
   });
 
+  it('detecte les formes familieres ecolo et ecologiste', () => {
+    expect(detectTheme('est-ce que ce depute est ecolo ?')).toBe('ecologie');
+    expect(detectTheme('est-elle écologiste ?')).toBe('ecologie');
+    expect(detectTheme('les ecolos')).toBe('ecologie');
+  });
+
   it('detecte immigration', () => {
     expect(detectTheme('politique immigration')).toBe('immigration');
   });
