@@ -11,6 +11,24 @@ const MAX_MESSAGE_COUNT = 8;
 const MAX_TOTAL_CONTENT_LENGTH = 24000;
 const MAX_COMPLETION_TOKENS = 512;
 
+const DEFAULT_OPENROUTER_BASE_URL = 'https://openrouter.ai/api/v1';
+const DEFAULT_RERANK_MODEL = 'nvidia/llama-nemotron-rerank-vl-1b-v2:free';
+const DEFAULT_EMBED_MODEL = 'nvidia/llama-nemotron-embed-vl-1b-v2:free';
+const DEFAULT_RERANK_LIMIT = 10;
+const DEFAULT_RERANK_WINDOW_SECONDS = 600;
+const DEFAULT_EMBED_LIMIT = 10;
+const DEFAULT_EMBED_WINDOW_SECONDS = 600;
+// Budget global partage /rerank + /embed-query : le tier gratuit OpenRouter est
+// limite par cle (50 req/jour), on echoue vite plutot que de gaspiller l'upstream.
+const DEFAULT_OPENROUTER_DAILY_LIMIT = 45;
+const OPENROUTER_DAILY_WINDOW_SECONDS = 86400;
+const DEFAULT_RERANK_UPSTREAM_TIMEOUT_MS = 6000;
+const MAX_RERANK_QUERY_LENGTH = 600;
+const MAX_RERANK_DOCUMENTS = 40;
+const MAX_RERANK_DOCUMENT_LENGTH = 500;
+const MAX_RERANK_TOTAL_LENGTH = 20000;
+const MAX_EMBED_INPUT_LENGTH = 800;
+
 function parseInteger(value, fallbackValue) {
   const parsed = Number.parseInt(String(value ?? ''), 10);
   return Number.isFinite(parsed) ? parsed : fallbackValue;
@@ -352,6 +370,294 @@ async function runGatewayAnalysis(messages, body, env, { stream = false } = {}) 
   };
 }
 
+function resolveRagCapabilities(env) {
+  const hasOpenRouterKey = Boolean(env.OPENROUTER_API_KEY);
+  return {
+    rerank: hasOpenRouterKey && env.RERANK_DISABLED !== 'true',
+    embed_query: hasOpenRouterKey && env.EMBED_DISABLED !== 'true'
+  };
+}
+
+async function authenticateSession(request, env, corsHeaders) {
+  const token = extractBearerToken(request);
+  if (!token) {
+    return {
+      ok: false,
+      response: jsonResponse({
+        error_code: 'SESSION_REQUIRED',
+        message: 'Session manquante.',
+        next_action: 'refresh_session'
+      }, 401, corsHeaders)
+    };
+  }
+
+  let sessionPayload;
+  try {
+    sessionPayload = await verifySessionToken(token, env.SESSION_SECRET);
+  } catch (error) {
+    return {
+      ok: false,
+      response: jsonResponse({
+        error_code: 'SESSION_INVALID',
+        message: error.message,
+        next_action: 'refresh_session'
+      }, 401, corsHeaders)
+    };
+  }
+
+  const origin = request.headers.get('Origin') || '';
+  if (sessionPayload.origin && origin && sessionPayload.origin !== origin) {
+    return {
+      ok: false,
+      response: jsonResponse({
+        error_code: 'SESSION_INVALID',
+        message: 'Session non valide pour cette origine.',
+        next_action: 'refresh_session'
+      }, 403, corsHeaders)
+    };
+  }
+
+  const clientIp = extractClientIp(request);
+  const userAgent = request.headers.get('User-Agent') || '';
+  if (sessionPayload.ip && sessionPayload.ip !== await sha256Base64Url(clientIp)) {
+    return {
+      ok: false,
+      response: jsonResponse({
+        error_code: 'SESSION_INVALID',
+        message: 'Session non valide pour cette adresse.',
+        next_action: 'refresh_session'
+      }, 403, corsHeaders)
+    };
+  }
+
+  if (sessionPayload.ua && sessionPayload.ua !== await sha256Base64Url(userAgent)) {
+    return {
+      ok: false,
+      response: jsonResponse({
+        error_code: 'SESSION_INVALID',
+        message: 'Session non valide pour cet appareil.',
+        next_action: 'refresh_session'
+      }, 403, corsHeaders)
+    };
+  }
+
+  return { ok: true, sessionPayload, clientIp };
+}
+
+async function applyOpenRouterGuards(env, clientIp, feature, corsHeaders) {
+  const perIpDefaults = feature === 'rerank'
+    ? { limit: DEFAULT_RERANK_LIMIT, window: DEFAULT_RERANK_WINDOW_SECONDS, limitVar: env.RERANK_MAX_REQUESTS, windowVar: env.RERANK_WINDOW_SECONDS }
+    : { limit: DEFAULT_EMBED_LIMIT, window: DEFAULT_EMBED_WINDOW_SECONDS, limitVar: env.EMBED_MAX_REQUESTS, windowVar: env.EMBED_WINDOW_SECONDS };
+
+  const perIpResult = await applyRateLimit(
+    env,
+    `${feature}:${clientIp}`,
+    parseInteger(perIpDefaults.limitVar, perIpDefaults.limit),
+    parseInteger(perIpDefaults.windowVar, perIpDefaults.window)
+  );
+
+  if (perIpResult.allowed === false) {
+    return jsonResponse({
+      error_code: 'RATE_LIMITED',
+      message: 'Trop de demandes pour cette session. Reessayez plus tard.',
+      next_action: 'fallback_local'
+    }, 429, corsHeaders);
+  }
+
+  const globalResult = await applyRateLimit(
+    env,
+    'openrouter:global',
+    parseInteger(env.OPENROUTER_DAILY_LIMIT, DEFAULT_OPENROUTER_DAILY_LIMIT),
+    OPENROUTER_DAILY_WINDOW_SECONDS
+  );
+
+  if (globalResult.allowed === false) {
+    return jsonResponse({
+      error_code: 'REMOTE_QUOTA_EXHAUSTED',
+      message: 'Le budget quotidien du service de reranking est epuise.',
+      next_action: 'fallback_local'
+    }, 429, corsHeaders);
+  }
+
+  return null;
+}
+
+function featureDisabledResponse(corsHeaders, label) {
+  return jsonResponse({
+    error_code: 'FEATURE_DISABLED',
+    message: `${label} n est pas configure.`,
+    next_action: 'fallback_local'
+  }, 503, corsHeaders);
+}
+
+async function callOpenRouter(env, path, body, timeoutMs) {
+  const baseUrl = (env.OPENROUTER_BASE_URL || DEFAULT_OPENROUTER_BASE_URL).replace(/\/+$/, '');
+  let response;
+  try {
+    response = await fetch(`${baseUrl}${path}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${env.OPENROUTER_API_KEY}`
+      },
+      body: JSON.stringify(body),
+      signal: AbortSignal.timeout(timeoutMs)
+    });
+  } catch (error) {
+    return { ok: false, status: 502, errorCode: 'REMOTE_UPSTREAM_ERROR', message: error?.message || 'Service distant injoignable.' };
+  }
+
+  let payload = null;
+  try {
+    payload = await response.json();
+  } catch (error) {
+    payload = null;
+  }
+
+  if (!response.ok) {
+    const isQuotaLikeFailure = response.status === 429 || response.status === 402;
+    return {
+      ok: false,
+      status: isQuotaLikeFailure ? 429 : 502,
+      errorCode: isQuotaLikeFailure ? 'REMOTE_QUOTA_EXHAUSTED' : 'REMOTE_UPSTREAM_ERROR',
+      message: payload?.error?.message || payload?.message || `HTTP ${response.status}`
+    };
+  }
+
+  return { ok: true, payload };
+}
+
+async function handleRerankRequest(request, env, corsHeaders) {
+  const auth = await authenticateSession(request, env, corsHeaders);
+  if (!auth.ok) {
+    return auth.response;
+  }
+
+  if (!resolveRagCapabilities(env).rerank) {
+    return featureDisabledResponse(corsHeaders, 'Le reranking distant');
+  }
+
+  const guardResponse = await applyOpenRouterGuards(env, auth.clientIp, 'rerank', corsHeaders);
+  if (guardResponse) {
+    return guardResponse;
+  }
+
+  const body = await parseJsonRequest(request);
+  const query = typeof body?.query === 'string' ? body.query.trim() : '';
+  const documents = Array.isArray(body?.documents) ? body.documents : [];
+
+  if (!query || query.length > MAX_RERANK_QUERY_LENGTH) {
+    throw new Error('Requete de reranking invalide.');
+  }
+
+  if (
+    documents.length === 0
+    || documents.length > MAX_RERANK_DOCUMENTS
+    || documents.some(doc => typeof doc !== 'string' || !doc.trim() || doc.length > MAX_RERANK_DOCUMENT_LENGTH)
+  ) {
+    throw new Error('Documents de reranking invalides.');
+  }
+
+  const totalLength = documents.reduce((sum, doc) => sum + doc.length, 0);
+  if (totalLength > MAX_RERANK_TOTAL_LENGTH) {
+    throw new Error('Documents de reranking trop volumineux.');
+  }
+
+  const topN = Math.min(
+    Math.max(1, Math.round(Number.isFinite(body?.top_n) ? body.top_n : documents.length)),
+    documents.length
+  );
+
+  const upstreamResult = await callOpenRouter(env, '/rerank', {
+    model: env.RERANK_MODEL || DEFAULT_RERANK_MODEL,
+    query,
+    documents,
+    top_n: topN
+  }, parseInteger(env.RERANK_UPSTREAM_TIMEOUT_MS, DEFAULT_RERANK_UPSTREAM_TIMEOUT_MS));
+
+  if (!upstreamResult.ok) {
+    return jsonResponse({
+      error_code: upstreamResult.errorCode,
+      message: upstreamResult.message,
+      next_action: 'fallback_local'
+    }, upstreamResult.status, corsHeaders);
+  }
+
+  const rawResults = Array.isArray(upstreamResult.payload?.results)
+    ? upstreamResult.payload.results
+    : Array.isArray(upstreamResult.payload?.data)
+      ? upstreamResult.payload.data
+      : [];
+  const results = rawResults
+    .map(entry => ({
+      index: Number.parseInt(String(entry?.index ?? ''), 10),
+      score: Number(entry?.relevance_score ?? entry?.score)
+    }))
+    .filter(entry => Number.isInteger(entry.index)
+      && entry.index >= 0
+      && entry.index < documents.length
+      && Number.isFinite(entry.score));
+
+  return jsonResponse({
+    results,
+    model: upstreamResult.payload?.model || env.RERANK_MODEL || DEFAULT_RERANK_MODEL,
+    error_code: null,
+    next_action: null
+  }, 200, corsHeaders);
+}
+
+async function handleEmbedQueryRequest(request, env, corsHeaders) {
+  const auth = await authenticateSession(request, env, corsHeaders);
+  if (!auth.ok) {
+    return auth.response;
+  }
+
+  if (!resolveRagCapabilities(env).embed_query) {
+    return featureDisabledResponse(corsHeaders, 'L embedding distant');
+  }
+
+  const guardResponse = await applyOpenRouterGuards(env, auth.clientIp, 'embed', corsHeaders);
+  if (guardResponse) {
+    return guardResponse;
+  }
+
+  const body = await parseJsonRequest(request);
+  const input = typeof body?.input === 'string' ? body.input.trim() : '';
+  if (!input || input.length > MAX_EMBED_INPUT_LENGTH) {
+    throw new Error('Texte a encoder invalide.');
+  }
+
+  const upstreamResult = await callOpenRouter(env, '/embeddings', {
+    model: env.EMBED_MODEL || DEFAULT_EMBED_MODEL,
+    input: [input]
+  }, parseInteger(env.RERANK_UPSTREAM_TIMEOUT_MS, DEFAULT_RERANK_UPSTREAM_TIMEOUT_MS));
+
+  if (!upstreamResult.ok) {
+    return jsonResponse({
+      error_code: upstreamResult.errorCode,
+      message: upstreamResult.message,
+      next_action: 'fallback_local'
+    }, upstreamResult.status, corsHeaders);
+  }
+
+  const embedding = upstreamResult.payload?.data?.[0]?.embedding;
+  if (!Array.isArray(embedding) || embedding.length === 0 || !embedding.every(Number.isFinite)) {
+    return jsonResponse({
+      error_code: 'REMOTE_EMPTY_ANSWER',
+      message: 'Le service distant n a renvoye aucun embedding exploitable.',
+      next_action: 'fallback_local'
+    }, 502, corsHeaders);
+  }
+
+  return jsonResponse({
+    embedding,
+    dimension: embedding.length,
+    model: upstreamResult.payload?.model || env.EMBED_MODEL || DEFAULT_EMBED_MODEL,
+    error_code: null,
+    next_action: null
+  }, 200, corsHeaders);
+}
+
 async function handleSessionRequest(request, env, corsHeaders) {
   const body = await parseJsonRequest(request);
   await validateTurnstileToken(body?.turnstile_token || null, request, env);
@@ -385,58 +691,18 @@ async function handleSessionRequest(request, env, corsHeaders) {
 
   return jsonResponse({
     session_token: sessionToken,
-    expires_at: new Date(payload.exp).toISOString()
+    expires_at: new Date(payload.exp).toISOString(),
+    capabilities: resolveRagCapabilities(env)
   }, 200, corsHeaders);
 }
 
 async function handleAnalysisRequest(request, env, corsHeaders) {
-  const token = extractBearerToken(request);
-  if (!token) {
-    return jsonResponse({
-      error_code: 'SESSION_REQUIRED',
-      message: 'Session manquante.',
-      next_action: 'refresh_session'
-    }, 401, corsHeaders);
+  const auth = await authenticateSession(request, env, corsHeaders);
+  if (!auth.ok) {
+    return auth.response;
   }
 
-  let sessionPayload;
-  try {
-    sessionPayload = await verifySessionToken(token, env.SESSION_SECRET);
-  } catch (error) {
-    return jsonResponse({
-      error_code: 'SESSION_INVALID',
-      message: error.message,
-      next_action: 'refresh_session'
-    }, 401, corsHeaders);
-  }
-
-  const origin = request.headers.get('Origin') || '';
-  if (sessionPayload.origin && origin && sessionPayload.origin !== origin) {
-    return jsonResponse({
-      error_code: 'SESSION_INVALID',
-      message: 'Session non valide pour cette origine.',
-      next_action: 'refresh_session'
-    }, 403, corsHeaders);
-  }
-
-  const clientIp = extractClientIp(request);
-  const userAgent = request.headers.get('User-Agent') || '';
-  if (sessionPayload.ip && sessionPayload.ip !== await sha256Base64Url(clientIp)) {
-    return jsonResponse({
-      error_code: 'SESSION_INVALID',
-      message: 'Session non valide pour cette adresse.',
-      next_action: 'refresh_session'
-    }, 403, corsHeaders);
-  }
-
-  if (sessionPayload.ua && sessionPayload.ua !== await sha256Base64Url(userAgent)) {
-    return jsonResponse({
-      error_code: 'SESSION_INVALID',
-      message: 'Session non valide pour cet appareil.',
-      next_action: 'refresh_session'
-    }, 403, corsHeaders);
-  }
-
+  const clientIp = auth.clientIp;
   const analysisLimitResult = await applyRateLimit(
     env,
     `analysis:${clientIp}`,
@@ -542,6 +808,14 @@ export default {
 
       if (request.method === 'POST' && url.pathname.endsWith('/analysis')) {
         return await handleAnalysisRequest(request, env, corsHeaders);
+      }
+
+      if (request.method === 'POST' && url.pathname.endsWith('/rerank')) {
+        return await handleRerankRequest(request, env, corsHeaders);
+      }
+
+      if (request.method === 'POST' && url.pathname.endsWith('/embed-query')) {
+        return await handleEmbedQueryRequest(request, env, corsHeaders);
       }
 
       return jsonResponse({
