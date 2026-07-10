@@ -167,6 +167,24 @@ describe('classifyIntent - questions reelles de position thematique', () => {
     expect(scope.filters.theme).toBe('fin de vie');
   });
 
+  it('route "est-ce que ce depute est ecolo ?" vers thematic_stance', () => {
+    const { scope, intent } = classify('est-ce que ce député est écolo ?');
+    expect(intent.kind).toBe('thematic_stance');
+    expect(scope.filters.theme).toBe('ecologie');
+  });
+
+  it('route "est-il ecolo ?" vers thematic_stance', () => {
+    const { scope, intent } = classify('Est-il écolo ?');
+    expect(intent.kind).toBe('thematic_stance');
+    expect(scope.filters.theme).toBe('ecologie');
+  });
+
+  it('ne bascule pas "a-t-il vote sur l ecologie ?" en thematic_stance', () => {
+    const { intent } = classify("Est-ce qu'il a voté sur l'écologie ?");
+    expect(intent.kind).not.toBe('thematic_stance');
+    expect(intent.kind).not.toBe('clarify');
+  });
+
   it('ne matche plus "climatisation" sur le theme climat (garde morphologique)', () => {
     const { scope, intent } = classify('Est-ce que ce député est pour la climatisation ?');
     expect(scope.filters.theme).toBeNull();

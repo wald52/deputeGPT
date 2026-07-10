@@ -1,8 +1,13 @@
 import { resolveStructuredPendingClarification } from '../../domain/clarification-resolution.js';
+import {
+  buildSemanticInterpreterPrompt,
+  resolveSemanticInterpretation
+} from '../../domain/semantic-interpreter.js';
 
 const CLARIFICATION_ASSISTANT_MAX_ATTEMPTS = 1;
 const CLARIFICATION_ASSISTANT_MIN_CONFIDENCE = 0.72;
 const CLARIFICATION_ASSISTANT_MAX_NEW_TOKENS = 180;
+const SEMANTIC_INTERPRETER_MAX_NEW_TOKENS = 360;
 
 export function createChatController({
   appState,
@@ -481,6 +486,311 @@ export function createChatController({
     }
   }
 
+  // Niveau 2 de la cascade de routage : le routeur deterministe n'a rien compris
+  // (fallback_clarify). Le LLM traduit la question libre en operations structurees
+  // (jamais en reponse), que resolveSemanticInterpretation valide strictement.
+  async function attemptSemanticInterpretationInternal(question) {
+    if (!appState.generator) {
+      const selectedInferenceSource = typeof getSelectedInferenceSource === 'function'
+        ? getSelectedInferenceSource()
+        : null;
+      if (selectedInferenceSource !== 'online' || typeof ensureOnlineAnalysisReady !== 'function') {
+        return null;
+      }
+
+      try {
+        await ensureOnlineAnalysisReady();
+      } catch (error) {
+        return null;
+      }
+    }
+
+    if (!appState.generator) {
+      return null;
+    }
+
+    const interpreterPrompt = buildSemanticInterpreterPrompt(question, {
+      deputeName: `${appState.currentDepute?.prenom || ''} ${appState.currentDepute?.nom || ''}`.trim(),
+      today: new Date().toISOString().slice(0, 10),
+      hasLastResult: Array.isArray(chatSessionState?.lastResultVoteIds) && chatSessionState.lastResultVoteIds.length > 0
+    });
+    const isRemoteModel = isRemoteProviderInternal();
+    const interpreterMetadata = {
+      assistantUsed: true,
+      assistantProvider: appState.activeModelConfig?.provider || 'local',
+      assistantModel: appState.activeModelConfig?.displayName || null
+    };
+
+    try {
+      const generationOptions = isRemoteModel
+        ? resolveGenerationOptions(
+          appState.activeModelConfig,
+          {
+            temperature: 0.1,
+            top_p: 0.1
+          },
+          { max_new_tokens: SEMANTIC_INTERPRETER_MAX_NEW_TOKENS }
+        )
+        : resolveGenerationOptions(
+          appState.activeModelConfig,
+          {
+            enable_thinking: false,
+            temperature: 0.1,
+            top_p: 0.1,
+            do_sample: false
+          },
+          { max_new_tokens: SEMANTIC_INTERPRETER_MAX_NEW_TOKENS }
+        );
+
+      if (!isRemoteModel) {
+        generationOptions.enable_thinking = false;
+      }
+
+      const out = await appState.generator(interpreterPrompt.messages, generationOptions);
+      const remoteMeta = out?.deputeGPTMeta || null;
+      if (remoteMeta) {
+        appState.lastOnlineResponseMeta = remoteMeta;
+        interpreterMetadata.assistantProvider = remoteMeta.provider || interpreterMetadata.assistantProvider;
+        interpreterMetadata.assistantModel = remoteMeta.model || interpreterMetadata.assistantModel;
+      }
+
+      const rawAnswer = sanitizeGeneratedAnswer(
+        extractAnswerFromOutput(out),
+        interpreterPrompt.systemPrompt,
+        interpreterPrompt.userMessage
+      );
+      const interpretation = resolveSemanticInterpretation(rawAnswer, chatSessionState, question);
+
+      return {
+        interpretation,
+        metadata: {
+          ...interpreterMetadata,
+          assumptionText: interpretation?.assumptionText || null
+        }
+      };
+    } catch (error) {
+      console.warn('Interprétation sémantique indisponible, retour au message de clarification.', error);
+      return {
+        interpretation: null,
+        metadata: interpreterMetadata
+      };
+    }
+  }
+
+  // Execution d'une route deja resolue (deterministic ou analysis_rag).
+  // Extraite du gestionnaire d'envoi pour pouvoir executer plusieurs
+  // sous-questions interpretees dans un meme tour.
+  async function executeResolvedRouteInternal({
+    route,
+    effectiveQuestion,
+    messagesDiv,
+    loader,
+    activePendingClarification,
+    clarificationAssistanceMetadata
+  }) {
+    const shouldPrimeSearchIndex = route.action === 'analysis_rag' || Boolean(route.scope?.filters?.queryText);
+
+    if (shouldPrimeSearchIndex) {
+      await ensureSearchIndexReady();
+    }
+
+    if (route.action === 'deterministic') {
+      // La branche law_critique du routeur deterministe est asynchrone (fiches).
+      const result = await executeDeterministicRoute(route, effectiveQuestion, appState.currentDepute);
+      if (result.kind === 'clarify') {
+        await setPendingClarificationInternal(
+          activePendingClarification
+            ? incrementPendingClarificationAttemptInternal(activePendingClarification, result.message, {
+              ...route,
+              clarificationKind: result.clarificationKind || route.clarificationKind || null,
+              message: result.message
+            })
+            : buildPendingClarificationInternal(result.clarificationKind, effectiveQuestion, result.message, route)
+        );
+        await renderAssistantMessage(messagesDiv, loader, result.message, {
+          method: 'clarify',
+          metadata: buildClarificationMetadataInternal({
+            ...route,
+            clarificationKind: result.clarificationKind || route.clarificationKind || null,
+            message: result.message
+          }, clarificationAssistanceMetadata || {})
+        });
+        return;
+      }
+
+      updateSessionFromResult(chatSessionState, {
+        ...result,
+        query: effectiveQuestion,
+        plan: route.plan || null
+      });
+      await syncHistorySessionStateInternal();
+
+      await renderAssistantMessage(messagesDiv, loader, result.message, {
+        method: 'deterministic',
+        metadata: mergeClarificationAssistanceMetadataInternal(
+          {
+            ...buildDeterministicMessageMetadata(result, route.intent.kind),
+            assumptionText: route.assumptionText || null,
+            lawCritique: result.lawCritique || null
+          },
+          clarificationAssistanceMetadata || {}
+        )
+      });
+      return;
+    }
+
+    if (!appState.generator) {
+      const selectedInferenceSource = typeof getSelectedInferenceSource === 'function'
+        ? getSelectedInferenceSource()
+        : 'online';
+
+      if (selectedInferenceSource === 'online' && typeof ensureOnlineAnalysisReady === 'function') {
+        try {
+          await ensureOnlineAnalysisReady();
+        } catch (error) {
+          if (loader._dotInterval) {
+            clearInterval(loader._dotInterval);
+          }
+          loader.remove();
+          const remoteSetupMessage = String(error?.message || '').trim()
+            || 'Le service IA en ligne est indisponible pour le moment.';
+          await addMessage('system', `Impossible d activer l IA en ligne : ${remoteSetupMessage}`, { method: 'system' });
+          return;
+        }
+      }
+    }
+
+    if (!appState.generator) {
+      const selectedInferenceSource = typeof getSelectedInferenceSource === 'function'
+        ? getSelectedInferenceSource()
+        : 'online';
+      const guidance = selectedInferenceSource === 'online'
+        ? 'Cette question demande une synthèse. Le service IA en ligne reste indisponible pour le moment. Vous pouvez continuer avec des listes, comptages, périodes ou thèmes précis, ou activer un modèle local dans les réglages avancés.'
+        : hasWebGPU()
+          ? "Cette question demande une synthèse. Chargez un modèle local via le bouton CHARGER pour lancer l'analyse. Sans modèle, vous pouvez me demander une liste, un comptage, une période ou un thème précis."
+          : 'Cette question demande une synthèse. Sur cet appareil, seules les questions exactes sans IA sont disponibles car WebGPU est absent.';
+      await renderAssistantMessage(messagesDiv, loader, guidance, {
+        method: 'clarify',
+        metadata: buildClarificationMetadataInternal({
+          clarificationKind: 'mode',
+          clarificationChoices: [
+            { label: 'Liste', question: 'liste' },
+            { label: 'Nombre', question: 'nombre' }
+          ]
+        }, {
+          assumptionText: route.assumptionText || null
+        })
+      });
+      return;
+    }
+
+    const contextVotes = await buildAnalysisContextVotes(route, effectiveQuestion, appState.currentDepute.votes);
+    if (contextVotes.length === 0) {
+      await renderAssistantMessage(messagesDiv, loader, 'Je ne trouve pas assez de votes pertinents pour produire une analyse fiable.', {
+        method: 'analysis_rag',
+        metadata: mergeClarificationAssistanceMetadataInternal({
+          method: 'analysis_rag',
+          assumptionText: route.assumptionText || null
+        }, clarificationAssistanceMetadata || {})
+      });
+      return;
+    }
+
+    updateSessionFromResult(chatSessionState, {
+      voteIds: contextVotes.map(getVoteId),
+      query: effectiveQuestion,
+      filters: route.scope.filters,
+      sort: route.scope.filters.sort,
+      scopeSource: route.scope.source,
+      limit: contextVotes.length,
+      plan: route.plan || null
+    });
+    await syncHistorySessionStateInternal();
+
+    let analysisFiches = [];
+    if (typeof collectFichesForAnalysis === 'function') {
+      try {
+        analysisFiches = await collectFichesForAnalysis(contextVotes.map(getVoteId));
+      } catch (error) {
+        analysisFiches = [];
+      }
+    }
+
+    const analysisPrompt = buildAnalysisPromptContextInternal(contextVotes, appState.currentDepute, analysisFiches);
+    analysisPrompt.messages[1].content = effectiveQuestion;
+
+    const isRemoteModel = appState.activeModelConfig?.provider === 'online';
+    const enableThinking = isRemoteModel
+      ? false
+      : resolveThinkingModeFlag(appState.activeModelConfig, isThinkingModeEnabled());
+    const genOptions = isRemoteModel
+      ? resolveGenerationOptions(
+        appState.activeModelConfig,
+        {},
+        { max_new_tokens: analysisMaxNewTokens }
+      )
+      : resolveGenerationOptions(
+        appState.activeModelConfig,
+        { enable_thinking: enableThinking },
+        { max_new_tokens: analysisMaxNewTokens }
+      );
+
+    if (!isRemoteModel) {
+      genOptions.enable_thinking = enableThinking;
+    }
+
+    if (isRemoteModel) {
+      // Rendu progressif : la reponse en ligne est streamee dans le loader
+      // des le premier token, puis remplacee par le rendu final assaini.
+      const loaderContent = loader.querySelector('.message-content');
+      genOptions.onToken = fullText => {
+        if (loader._dotInterval) {
+          clearInterval(loader._dotInterval);
+          loader._dotInterval = null;
+        }
+        if (loaderContent) {
+          loaderContent.textContent = fullText;
+          messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+      };
+    }
+
+    const out = await appState.generator(analysisPrompt.messages, genOptions);
+    const remoteMeta = out?.deputeGPTMeta || null;
+    if (remoteMeta) {
+      appState.lastOnlineResponseMeta = remoteMeta;
+    }
+    let answer = sanitizeGeneratedAnswer(extractAnswerFromOutput(out), analysisPrompt.systemPrompt, effectiveQuestion);
+
+    if (!answer) {
+      answer = "Desole, je n'ai pas pu produire une reponse finale exploitable. Veuillez reessayer.";
+    }
+
+    await renderAssistantMessage(messagesDiv, loader, answer, {
+      method: 'analysis_rag',
+      metadata: mergeClarificationAssistanceMetadataInternal({
+        method: 'analysis_rag',
+        voteIds: contextVotes.map(getVoteId),
+        references: buildMessageReferencesFromVoteIds(contextVotes.map(getVoteId), { maxItems: 6 }),
+        filters: route.scope.filters,
+        plan: route.plan || null,
+        lawFiches: analysisFiches.map(({ dossierId, fiche }) => ({
+          dossierId,
+          titre: fiche?.titre || null,
+          verdictIncitations: fiche?.verdictIncitations || null
+        })),
+        modelUsed: remoteMeta?.model || appState.activeModelConfig?.displayName,
+        providerUsed: remoteMeta?.provider || null,
+        routeUsed: remoteMeta?.route || null,
+        fallbackCount: Number.isFinite(remoteMeta?.fallback_count) ? remoteMeta.fallback_count : 0,
+        generationMode: isRemoteModel
+          ? 'en_ligne'
+          : resolveThinkingModeFlag(appState.activeModelConfig) ? 'thinking' : 'non-thinking',
+        assumptionText: route.assumptionText || null
+      }, clarificationAssistanceMetadata || {})
+    });
+  }
+
   function setupChat() {
     const sendBtn = document.getElementById('send-btn');
     const input = document.getElementById('user-input');
@@ -518,6 +828,7 @@ export function createChatController({
       input.disabled = true;
 
       const tempLoader = createChatLoadingMessageInternal(messagesDiv);
+      let activeLoader = tempLoader;
 
       try {
         const activePendingClarification = chatSessionState.pendingClarification || null;
@@ -552,7 +863,7 @@ export function createChatController({
               incrementPendingClarificationAttemptInternal(activePendingClarification, route.message, route)
               || activePendingClarification
             );
-            await renderAssistantMessage(messagesDiv, tempLoader, route.message, {
+            await renderAssistantMessage(messagesDiv, activeLoader, route.message, {
               method: 'clarify',
               metadata: buildClarificationMetadataInternal(route, clarificationAssistanceMetadata || {})
             });
@@ -560,19 +871,77 @@ export function createChatController({
           }
         }
 
-        const shouldPrimeSearchIndex = route.action === 'analysis_rag' || Boolean(route.scope?.filters?.queryText);
-
-        if (shouldPrimeSearchIndex) {
-          await ensureSearchIndexReady();
-        }
-
         if (route.action === 'clarify') {
+          // Cascade niveau 2 : question incomprise du routeur (aucun candidat).
+          // On tente une interpretation LLM -> plan structure valide -> execution
+          // deterministe. En cas d'echec, le message de clarification reste inchange.
+          const shouldAttemptInterpretation = !activePendingClarification
+            && Array.isArray(route.intent?.signals)
+            && route.intent.signals.includes('fallback_clarify');
+
+          if (shouldAttemptInterpretation) {
+            const interpretationAttempt = await attemptSemanticInterpretationInternal(effectiveQuestion);
+            const interpretation = interpretationAttempt?.interpretation || null;
+
+            if (interpretation?.subQuestions?.length) {
+              await setPendingClarificationInternal(null);
+
+              for (let index = 0; index < interpretation.subQuestions.length; index += 1) {
+                const subQuestion = interpretation.subQuestions[index];
+                if (index > 0) {
+                  activeLoader = createChatLoadingMessageInternal(messagesDiv);
+                }
+
+                // L'hypothese d'interpretation n'est affichee qu'avec la premiere reponse.
+                const subMetadata = index === 0
+                  ? interpretationAttempt.metadata
+                  : { ...interpretationAttempt.metadata, assumptionText: null };
+                const subRoute = routeQuestion(subQuestion.question, chatSessionState, {
+                  questionOverride: subQuestion.question,
+                  scopeOverride: subQuestion.scopeOverride,
+                  intentOverride: subQuestion.intentOverride,
+                  assumptionText: index === 0 ? interpretation.assumptionText : null,
+                  preferResponseFirst: true,
+                  hasActiveClarificationProvider: Boolean(appState.generator),
+                  canRunAnalysis,
+                  skipPendingResolution: true
+                });
+
+                if (subRoute.action === 'clarify') {
+                  // Garde defensive : un override valide ne produit pas de clarify.
+                  await renderAssistantMessage(messagesDiv, activeLoader, subRoute.message, {
+                    method: 'clarify',
+                    metadata: buildClarificationMetadataInternal(subRoute, subMetadata)
+                  });
+                  continue;
+                }
+
+                await executeResolvedRouteInternal({
+                  route: subRoute,
+                  effectiveQuestion: subRoute.resolvedQuestion || subQuestion.question,
+                  messagesDiv,
+                  loader: activeLoader,
+                  activePendingClarification: null,
+                  clarificationAssistanceMetadata: subMetadata
+                });
+              }
+              return;
+            }
+
+            if (interpretationAttempt?.metadata) {
+              clarificationAssistanceMetadata = mergeClarificationAssistanceMetadataInternal(
+                clarificationAssistanceMetadata || {},
+                interpretationAttempt.metadata
+              );
+            }
+          }
+
           await setPendingClarificationInternal(
             activePendingClarification
               ? incrementPendingClarificationAttemptInternal(activePendingClarification, route.message, route)
               : buildPendingClarificationInternal(route.clarificationKind, effectiveQuestion, route.message, route)
           );
-          await renderAssistantMessage(messagesDiv, tempLoader, route.message, {
+          await renderAssistantMessage(messagesDiv, activeLoader, route.message, {
             method: 'clarify',
             metadata: buildClarificationMetadataInternal(route, clarificationAssistanceMetadata || {})
           });
@@ -583,206 +952,19 @@ export function createChatController({
           await setPendingClarificationInternal(null);
         }
 
-        if (route.action === 'deterministic') {
-          // La branche law_critique du routeur deterministe est asynchrone (fiches).
-          const result = await executeDeterministicRoute(route, effectiveQuestion, appState.currentDepute);
-          if (result.kind === 'clarify') {
-            await setPendingClarificationInternal(
-              activePendingClarification
-                ? incrementPendingClarificationAttemptInternal(activePendingClarification, result.message, {
-                  ...route,
-                  clarificationKind: result.clarificationKind || route.clarificationKind || null,
-                  message: result.message
-                })
-                : buildPendingClarificationInternal(result.clarificationKind, effectiveQuestion, result.message, route)
-            );
-            await renderAssistantMessage(messagesDiv, tempLoader, result.message, {
-              method: 'clarify',
-              metadata: buildClarificationMetadataInternal({
-                ...route,
-                clarificationKind: result.clarificationKind || route.clarificationKind || null,
-                message: result.message
-              }, clarificationAssistanceMetadata || {})
-            });
-            return;
-          }
-
-          updateSessionFromResult(chatSessionState, {
-            ...result,
-            query: effectiveQuestion,
-            plan: route.plan || null
-          });
-          await syncHistorySessionStateInternal();
-
-          await renderAssistantMessage(messagesDiv, tempLoader, result.message, {
-            method: 'deterministic',
-            metadata: mergeClarificationAssistanceMetadataInternal(
-              {
-                ...buildDeterministicMessageMetadata(result, route.intent.kind),
-                assumptionText: route.assumptionText || null,
-                lawCritique: result.lawCritique || null
-              },
-              clarificationAssistanceMetadata || {}
-            )
-          });
-          return;
-        }
-
-        if (!appState.generator) {
-          const selectedInferenceSource = typeof getSelectedInferenceSource === 'function'
-            ? getSelectedInferenceSource()
-            : 'online';
-
-          if (selectedInferenceSource === 'online' && typeof ensureOnlineAnalysisReady === 'function') {
-            try {
-              await ensureOnlineAnalysisReady();
-            } catch (error) {
-              if (tempLoader._dotInterval) {
-                clearInterval(tempLoader._dotInterval);
-              }
-              tempLoader.remove();
-              const remoteSetupMessage = String(error?.message || '').trim()
-                || 'Le service IA en ligne est indisponible pour le moment.';
-              await addMessage('system', `Impossible d activer l IA en ligne : ${remoteSetupMessage}`, { method: 'system' });
-              return;
-            }
-          }
-        }
-
-        if (!appState.generator) {
-          const selectedInferenceSource = typeof getSelectedInferenceSource === 'function'
-            ? getSelectedInferenceSource()
-            : 'online';
-          const guidance = selectedInferenceSource === 'online'
-            ? 'Cette question demande une synthèse. Le service IA en ligne reste indisponible pour le moment. Vous pouvez continuer avec des listes, comptages, périodes ou thèmes précis, ou activer un modèle local dans les réglages avancés.'
-            : hasWebGPU()
-              ? "Cette question demande une synthèse. Chargez un modèle local via le bouton CHARGER pour lancer l'analyse. Sans modèle, vous pouvez me demander une liste, un comptage, une période ou un thème précis."
-              : 'Cette question demande une synthèse. Sur cet appareil, seules les questions exactes sans IA sont disponibles car WebGPU est absent.';
-          await renderAssistantMessage(messagesDiv, tempLoader, guidance, {
-            method: 'clarify',
-            metadata: buildClarificationMetadataInternal({
-              clarificationKind: 'mode',
-              clarificationChoices: [
-                { label: 'Liste', question: 'liste' },
-                { label: 'Nombre', question: 'nombre' }
-              ]
-            }, {
-              assumptionText: route.assumptionText || null
-            })
-          });
-          return;
-        }
-
-        const contextVotes = await buildAnalysisContextVotes(route, effectiveQuestion, appState.currentDepute.votes);
-        if (contextVotes.length === 0) {
-          await renderAssistantMessage(messagesDiv, tempLoader, 'Je ne trouve pas assez de votes pertinents pour produire une analyse fiable.', {
-            method: 'analysis_rag',
-            metadata: mergeClarificationAssistanceMetadataInternal({
-              method: 'analysis_rag',
-              assumptionText: route.assumptionText || null
-            }, clarificationAssistanceMetadata || {})
-          });
-          return;
-        }
-
-        updateSessionFromResult(chatSessionState, {
-          voteIds: contextVotes.map(getVoteId),
-          query: effectiveQuestion,
-          filters: route.scope.filters,
-          sort: route.scope.filters.sort,
-          scopeSource: route.scope.source,
-          limit: contextVotes.length,
-          plan: route.plan || null
-        });
-        await syncHistorySessionStateInternal();
-
-        let analysisFiches = [];
-        if (typeof collectFichesForAnalysis === 'function') {
-          try {
-            analysisFiches = await collectFichesForAnalysis(contextVotes.map(getVoteId));
-          } catch (error) {
-            analysisFiches = [];
-          }
-        }
-
-        const analysisPrompt = buildAnalysisPromptContextInternal(contextVotes, appState.currentDepute, analysisFiches);
-        analysisPrompt.messages[1].content = effectiveQuestion;
-
-        const isRemoteModel = appState.activeModelConfig?.provider === 'online';
-        const enableThinking = isRemoteModel
-          ? false
-          : resolveThinkingModeFlag(appState.activeModelConfig, isThinkingModeEnabled());
-        const genOptions = isRemoteModel
-          ? resolveGenerationOptions(
-            appState.activeModelConfig,
-            {},
-            { max_new_tokens: analysisMaxNewTokens }
-          )
-          : resolveGenerationOptions(
-            appState.activeModelConfig,
-            { enable_thinking: enableThinking },
-            { max_new_tokens: analysisMaxNewTokens }
-          );
-
-        if (!isRemoteModel) {
-          genOptions.enable_thinking = enableThinking;
-        }
-
-        if (isRemoteModel) {
-          // Rendu progressif : la reponse en ligne est streamee dans le loader
-          // des le premier token, puis remplacee par le rendu final assaini.
-          const loaderContent = tempLoader.querySelector('.message-content');
-          genOptions.onToken = fullText => {
-            if (tempLoader._dotInterval) {
-              clearInterval(tempLoader._dotInterval);
-              tempLoader._dotInterval = null;
-            }
-            if (loaderContent) {
-              loaderContent.textContent = fullText;
-              messagesDiv.scrollTop = messagesDiv.scrollHeight;
-            }
-          };
-        }
-
-        const out = await appState.generator(analysisPrompt.messages, genOptions);
-        const remoteMeta = out?.deputeGPTMeta || null;
-        if (remoteMeta) {
-          appState.lastOnlineResponseMeta = remoteMeta;
-        }
-        let answer = sanitizeGeneratedAnswer(extractAnswerFromOutput(out), analysisPrompt.systemPrompt, effectiveQuestion);
-
-        if (!answer) {
-          answer = "Desole, je n'ai pas pu produire une reponse finale exploitable. Veuillez reessayer.";
-        }
-
-        await renderAssistantMessage(messagesDiv, tempLoader, answer, {
-          method: 'analysis_rag',
-          metadata: mergeClarificationAssistanceMetadataInternal({
-            method: 'analysis_rag',
-            voteIds: contextVotes.map(getVoteId),
-            references: buildMessageReferencesFromVoteIds(contextVotes.map(getVoteId), { maxItems: 6 }),
-            filters: route.scope.filters,
-            plan: route.plan || null,
-            lawFiches: analysisFiches.map(({ dossierId, fiche }) => ({
-              dossierId,
-              titre: fiche?.titre || null,
-              verdictIncitations: fiche?.verdictIncitations || null
-            })),
-            modelUsed: remoteMeta?.model || appState.activeModelConfig?.displayName,
-            providerUsed: remoteMeta?.provider || null,
-            routeUsed: remoteMeta?.route || null,
-            fallbackCount: Number.isFinite(remoteMeta?.fallback_count) ? remoteMeta.fallback_count : 0,
-            generationMode: isRemoteModel
-              ? 'en_ligne'
-              : resolveThinkingModeFlag(appState.activeModelConfig) ? 'thinking' : 'non-thinking',
-            assumptionText: route.assumptionText || null
-          }, clarificationAssistanceMetadata || {})
+        await executeResolvedRouteInternal({
+          route,
+          effectiveQuestion,
+          messagesDiv,
+          loader: activeLoader,
+          activePendingClarification,
+          clarificationAssistanceMetadata
         });
       } catch (error) {
-        if (tempLoader._dotInterval) {
-          clearInterval(tempLoader._dotInterval);
+        if (activeLoader._dotInterval) {
+          clearInterval(activeLoader._dotInterval);
         }
-        tempLoader.remove();
+        activeLoader.remove();
 
         let errorMessage = "Une erreur s'est produite pendant la génération.";
         const rawErrorMessage = String(error?.message || '');

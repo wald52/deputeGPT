@@ -110,6 +110,8 @@
 - Classification / detection d'intention:
   - `js/domain/intent-classifier.js`
   - `js/domain/intent-detectors.js`
+- Interpretation semantique de repli (question incomprise -> plan structure):
+  - `js/domain/semantic-interpreter.js`
 - Scope et references de suivi (`ces votes`, `ceux-ci`, `les derniers`):
   - `js/domain/scope-resolver.js`
   - `js/domain/clarification-resolution.js`
@@ -370,6 +372,36 @@
 - Le mode response-first accepte `options.canRunAnalysis` (source `online`
   configuree ou modele local charge) pour ne plus rabattre les questions
   d'analyse vers `list` quand aucun generateur n'est encore charge.
+
+### Cascade d'interpretation semantique (niveau 2)
+- Le routage est une cascade a deux niveaux. Niveau 1: le routeur deterministe
+  (lexique + detecteurs), instantane, gratuit, hors-ligne. Niveau 2: quand le
+  niveau 1 ne produit AUCUN candidat (`fallback_clarify`, message « ni theme ni
+  texte de loi »), le LLM (`appState.generator`, online ou local) traduit la
+  question libre en operations structurees via
+  `js/domain/semantic-interpreter.js`.
+- Regle cardinale intacte: le LLM interprete ne repond JAMAIS lui-meme. Il ne
+  produit qu'un plan JSON (`operation`, `theme`, `texte_cible`, dates, `vote`,
+  `limite`, `porte_sur_dernier_resultat`, 3 sous-questions max) qui est valide
+  strictement cote navigateur (`resolveSemanticInterpretation`): operation dans
+  la liste blanche, theme dans `THEME_KEYWORDS` (sinon rejet, jamais de
+  devinette), dates plausibles, limites bornees, une seule operation `analyse`
+  par requete. Plan invalide ou confiance < 0.55 -> message de clarification
+  inchange.
+- Chaque sous-question validee est reinjectee dans `routeQuestion` via
+  `scopeOverride`/`intentOverride` (signal `semantic_interpreter`) puis executee
+  par les circuits deterministes existants (`executeResolvedRouteInternal` dans
+  `js/ui/chat/chat-controller.js`). Les requetes multi-questions produisent une
+  reponse par sous-question, dans l'ordre.
+- Transparence: l'hypothese du LLM est affichee avec la premiere reponse
+  (`assumptionText`, prefixe « Interprétation IA : ») et les metadonnees
+  d'assistance (`assistantUsed`, provider, modele) sont persistees dans
+  l'historique.
+- Le niveau 2 ne se declenche jamais sur les clarifications legitimes
+  (`needs_context`, `needs_mode`, familles hors perimetre detectees par
+  `detectUnsupportedQuestion`) ni quand une clarification est en attente.
+- Hors-ligne sans modele local: comportement du niveau 1 inchange (degradation
+  acceptable).
 
 ### Memoire de session
 - La session navigateur doit memoriser:

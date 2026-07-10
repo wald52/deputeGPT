@@ -89,6 +89,17 @@ The request flow for a user question is the heart of the system:
    `deterministic-router.js` / `deterministic-responses.js` — no LLM.
 4. **Analytical answers** build a short context via `analysis-context.js` /
    `analysis-ranking.js`, then call an AI runtime for synthesis only.
+5. **Semantic fallback (tier 2)**: when the deterministic router yields NO
+   candidate at all (`fallback_clarify`), the chat controller asks the LLM to
+   *translate* the free-form question into a structured plan
+   (`js/domain/semantic-interpreter.js`: whitelisted operations, themes
+   validated against `THEME_KEYWORDS`, up to 3 sub-questions, max 1 analysis).
+   The validated plan is re-injected through `routeQuestion`
+   (`scopeOverride`/`intentOverride`, signal `semantic_interpreter`) and
+   executed by the same deterministic circuits — the LLM never answers
+   directly; invalid plans fall back to the unchanged clarify message. The
+   interpreter's hypothesis is shown with the first answer
+   (`Interprétation IA : …`).
 
 **AI runtimes** (under `js/ai/`) are pluggable behind model loading
 (`model-loader.js`, `model-selection.js`, `model-ui-facade.js`,
