@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53775",
- "generatedAt": "2026-07-04T06:03:15Z",
+ "generatedAt": "2026-07-10T06:57:13Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,54 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0267_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à encadrer les regroupements pédagogiques intercommunaux (RPI) afin de garantir l'égalité d'accès à l'école en milieu rural.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est un fichier PDF dont le contenu textuel n'a pas pu être extrait (flux binaires illisibles). Aucun article, aucune disposition concrète et aucune citation exploitable ne peuvent être identifiés dans le contenu transmis. Il est donc impossible de déterminer les mécanismes créés par le texte ni de vérifier s'ils sont alignés avec l'objectif affiché.",
+ "objectifAffiche": "Encadrer les regroupements pédagogiques intercommunaux (RPI) afin de garantir l'égalité d'accès à l'école en milieu rural, en précisant leur régime juridique, les conditions de création, de retrait et de dissolution, ainsi que les règles d'inscription et de sectorisation scolaire.",
+ "mecanismesCles": [
+  {
+   "resume": "Définition législative des RPI comme structures de mutualisation entre communes pour la gestion des écoles publiques du premier degré, organisées par convention ou via un EPCI.",
+   "articleRef": "art. 1er (art. L. 212-9-1 du code de l'éducation)",
+   "citation": "Les regroupements pédagogiques intercommunaux sont des structures d'organisation scolaire permettant à plusieurs communes de s'associer, en mutualisant leurs moyens"
+  },
+  {
+   "resume": "Approbation de la convention constitutive par chaque conseil municipal, après avis de l'autorité académique et consultation des représentants de parents d'élèves, avec mention obligatoire de la durée, des charges, du transport scolaire et des conditions de retrait/dissolution.",
+   "articleRef": "art. 1er (art. L. 212-9-2)",
+   "citation": "la convention constitutive d'un regroupement pédagogique intercommunal est approuvée par délibération du conseil municipal de chaque commune membre"
+  },
+  {
+   "resume": "Conditions encadrant le retrait d'une commune : préavis de deux années scolaires, avis du conseil d'école, effet à la rentrée suivante.",
+   "articleRef": "art. 1er (art. L. 212-9-5)",
+   "citation": "sous réserve d'un préavis de deux années scolaires et après avis du conseil d'école"
+  },
+  {
+   "resume": "Conditions de dissolution du RPI : accord de tous les conseils municipaux, effet à la rentrée suivant la dernière délibération.",
+   "articleRef": "art. 1er (art. L. 212-9-6)",
+   "citation": "sous réserve de l'accord de tous les conseils municipaux intéressés"
+  },
+  {
+   "resume": "Modification de la sectorisation scolaire : la capacité d'accueil est appréciée au niveau du RPI, permettant l'inscription dans une école située hors du RPI de résidence.",
+   "articleRef": "art. 1er bis (modifiant L. 212-8 et L. 442-5-1)",
+   "citation": "si la capacité d'accueil des établissements scolaires appréciée au niveau du regroupement pédagogique intercommunal"
+  },
+  {
+   "resume": "Entrée en vigueur à la rentrée scolaire suivant la promulgation ; mise en conformité des conventions existantes dans un délai de deux ans.",
+   "articleRef": "art. 1er ter",
+   "citation": "Les conventions en cours à la date de promulgation de la présente loi sont mises en conformité [...] dans un délai de deux ans"
+  }
+ ],
+ "verdictIncitations": "incitations_mitigees",
+ "justificationVerdict": "Le texte crée un cadre juridique détaillé pour les RPI (articles L. 212-9-1 à L. 212-9-6) qui peut, en sécurisant les conventions et les conditions de retrait, favoriser la stabilité de l'offre scolaire rurale. Toutefois, plusieurs mécanismes vont dans un sens ambigu ou contraire à l'objectif affiché : la sectorisation appréciée « au niveau du regroupement pédagogique intercommunal » (art. 1er bis) peut restreindre le choix d'école des familles rurales, et l'autorisation d'inscription « hors du regroupement » reste une faculté, non un droit. Surtout, le texte ne comporte aucune mesure concrète de création ou de maintien de classes, et les deux seuls engagements opérationnels sont des rapports (art. 1er quater et quinquies), donc sans effet direct. Enfin, le financement par une taxe sur les tabacs (art. 2) n'a aucun lien avec l'objectif scolaire et ne garantit pas de moyens nouveaux pour les écoles rurales.",
  "pointsDeVigilance": [
-  "Le contenu du PDF n'a pas été décodé : seuls des flux binaires bruts sont visibles",
-  "Aucun article ni exposé des motifs lisible n'a pu être extrait",
-  "L'analyse des mécanismes concrets est impossible sans le texte intégral exploitable"
+  "Aucun mécanisme de création, de maintien ou de financement direct d'écoles ou de classes en milieu rural : le texte est purement organisationnel.",
+  "La sectorisation au niveau du RPI (art. 1er bis) peut limiter l'accès à l'école de proximité pour certaines communes membres.",
+  "Les deux rapports demandés (art. 1er quater et quinquies) n'ont pas de valeur normative et n'engagent pas le Gouvernement.",
+  "La compensation financière par taxe sur les tabacs (art. 2) est sans lien avec l'objectif éducatif et son rendement est aléatoire.",
+  "Le délai de deux ans pour mise en conformité des conventions existantes (art. 1er ter) crée une période d'incertitude pour les RPI en cours."
  ],
  "themes": [
   "éducation",
   "milieu rural",
-  "regroupements pédagogiques intercommunaux",
-  "égalité d'accès à l'école"
+  "collectivités territoriales",
+  "sectorisation scolaire",
+  "regroupements pédagogiques intercommunaux"
  ],
  "scrutinsCles": [
   "6073",
@@ -37,5 +71,5 @@
   "6076"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:33d1c84d6e3b5eb6dc79d61d0ca93536150ea02468e014ccc3026fa8ced2f512"
+ "sourceTextHash": "sha256:da921f43dada9747630feb1551a8d784529029994c554e5cd556da04d03076e8"
 }

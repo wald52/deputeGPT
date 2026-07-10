@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "legislature": "17",
- "generatedAt": "2026-07-09T06:28:22Z",
+ "generatedAt": "2026-07-10T06:27:19Z",
  "scrutins": {
   "1": {
    "dossierId": null,
@@ -38828,8 +38828,63 @@
    "method": "title_match",
    "confidence": 0.818
   },
+  "7989": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
   "799": {
    "dossierId": "DLR5L17N50690",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7990": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7991": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7992": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7993": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7994": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7995": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7996": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7997": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7998": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "7999": {
+   "dossierId": "DLR5L17N53980",
    "method": "title_containment",
    "confidence": 0.95
   },
@@ -38848,8 +38903,108 @@
    "method": "title_containment",
    "confidence": 0.95
   },
+  "8000": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8001": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8002": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8003": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8004": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8005": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8006": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8007": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8008": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8009": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
   "801": {
    "dossierId": "DLR5L17N50690",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8010": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8011": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8012": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8013": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8014": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8015": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8016": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8017": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8018": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8019": {
+   "dossierId": "DLR5L17N53980",
    "method": "title_containment",
    "confidence": 0.95
   },
@@ -38858,13 +39013,153 @@
    "method": "title_containment",
    "confidence": 0.95
   },
+  "8020": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8021": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8022": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8023": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8024": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8025": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8026": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8027": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8028": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8029": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
   "803": {
    "dossierId": "DLR5L17N50690",
    "method": "title_containment",
    "confidence": 0.95
   },
+  "8030": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8031": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8032": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8033": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8034": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8035": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8036": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8037": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8038": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8039": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
   "804": {
    "dossierId": "DLR5L17N50690",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8040": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8041": {
+   "dossierId": "DLR5L17N53942",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8042": {
+   "dossierId": "DLR5L17N53940",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8043": {
+   "dossierId": "DLR5L17N53942",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8044": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8045": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8046": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8047": {
+   "dossierId": "DLR5L17N53980",
    "method": "title_containment",
    "confidence": 0.95
   },
@@ -48276,6 +48571,7 @@
     "PIONANR5L17TAP0265",
     "PIONSNR5S479B0529",
     "PIONSNR5S479BTA0129",
+    "PIONSNR5S479BTA0159",
     "PIONSNR5S479BTC0698",
     "PIONSNR5S479BTC0818",
     "RAPPANR5L17B2616",
@@ -50779,7 +51075,7 @@
    "titre": "Réduire l’impact environnemental de l’industrie textile",
    "titreChemin": "impact_environnemental_industrie_textile",
    "procedure": "Proposition de loi ordinaire",
-   "statut": "en_cours",
+   "statut": "promulgue",
    "anUrl": "https://www.assemblee-nationale.fr/dyn/16/dossiers/impact_environnemental_industrie_textile",
    "texteRefs": [
     "PIONANR5L16B2129",
@@ -50823,9 +51119,11 @@
     "PIONSNR5S459BTA0137",
     "PIONSNR5S459BTC0670",
     "PIONSNR5S479B0807",
+    "PIONSNR5S479BTC0886",
     "RAPPANR5L17B2797",
     "RAPPANR5L17B3057",
-    "RAPPSNR5S459B0669"
+    "RAPPSNR5S459B0669",
+    "RAPPSNR5S479B0885"
    ],
    "refJo": null,
    "legifranceUrl": null,
@@ -50924,6 +51222,7 @@
     "PRJLSNR5S479B0457",
     "PRJLSNR5S479B0864",
     "PRJLSNR5S479BTA0091",
+    "PRJLSNR5S479BTA0161",
     "PRJLSNR5S479BTC0521",
     "PRJLSNR5S479BTC0869",
     "RAPPANR5L17B2908",
@@ -50939,7 +51238,9 @@
     "7976",
     "7977",
     "7978",
-    "7981"
+    "7981",
+    "8041",
+    "8043"
    ]
   },
   "DLR5L17N53940": {
@@ -50959,7 +51260,8 @@
     "PRJLSNR5S479B0863",
     "PRJLSNR5S479BTA0090",
     "RAPPANR5L17B2904",
-    "RAPPANR5L17B3046"
+    "RAPPANR5L17B3046",
+    "RAPPSNR5S479BTA0160"
    ],
    "refJo": null,
    "legifranceUrl": null,
@@ -51041,7 +51343,9 @@
     "7972",
     "7973",
     "7974",
-    "7980"
+    "7980",
+    "8040",
+    "8042"
    ]
   },
   "DLR5L17N53980": {
@@ -51062,7 +51366,62 @@
    "refJo": null,
    "legifranceUrl": null,
    "scrutinNumeros": [
-    "7988"
+    "7988",
+    "7989",
+    "7990",
+    "7991",
+    "7992",
+    "7993",
+    "7994",
+    "7995",
+    "7996",
+    "7997",
+    "7998",
+    "7999",
+    "8000",
+    "8001",
+    "8002",
+    "8003",
+    "8004",
+    "8005",
+    "8006",
+    "8007",
+    "8008",
+    "8009",
+    "8010",
+    "8011",
+    "8012",
+    "8013",
+    "8014",
+    "8015",
+    "8016",
+    "8017",
+    "8018",
+    "8019",
+    "8020",
+    "8021",
+    "8022",
+    "8023",
+    "8024",
+    "8025",
+    "8026",
+    "8027",
+    "8028",
+    "8029",
+    "8030",
+    "8031",
+    "8032",
+    "8033",
+    "8034",
+    "8035",
+    "8036",
+    "8037",
+    "8038",
+    "8039",
+    "8044",
+    "8045",
+    "8046",
+    "8047"
    ]
   },
   "DLR5L17N51161": {
@@ -52875,13 +53234,13 @@
   "7894"
  ],
  "stats": {
-  "totalScrutins": 7988,
+  "totalScrutins": 8047,
   "totalDossiersLies": 225,
-  "matchRate": 0.8293,
+  "matchRate": 0.8305,
   "methods": {
    "override": 0,
    "field": 0,
-   "title_containment": 6083,
+   "title_containment": 6142,
    "title_match": 519,
    "none": 27,
    "unmatched": 1359

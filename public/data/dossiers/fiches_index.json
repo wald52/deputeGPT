@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-07-09T06:53:34Z",
+ "generatedAt": "2026-07-10T06:57:13Z",
  "totalFiches": 107,
  "fiches": {
   "DLR5L16N46127": {
@@ -1156,23 +1156,25 @@
    "titre": "Garantir le bénéfice des prestations familiales aux enfants placés",
    "verdictIncitations": "indetermine",
    "statut": "en_cours",
-   "generatedAt": "2026-07-04T06:02:54Z",
+   "generatedAt": "2026-07-10T06:51:35Z",
    "themes": [
     "prestations familiales",
     "protection de l'enfance",
-    "enfants placés"
+    "enfants placés",
+    "politique familiale"
    ]
   },
   "DLR5L17N53775": {
    "titre": "Encadrer les regroupements pédagogiques intercommunaux afin de garantir l’égalité d’accès à l’école en milieu rural",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_mitigees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-04T06:03:15Z",
+   "generatedAt": "2026-07-10T06:57:13Z",
    "themes": [
     "éducation",
     "milieu rural",
-    "regroupements pédagogiques intercommunaux",
-    "égalité d'accès à l'école"
+    "collectivités territoriales",
+    "sectorisation scolaire",
+    "regroupements pédagogiques intercommunaux"
    ]
   },
   "DLR5L17N53940": {

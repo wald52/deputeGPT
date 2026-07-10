@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53772",
- "generatedAt": "2026-07-04T06:02:54Z",
+ "generatedAt": "2026-07-10T06:51:35Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -18,16 +18,17 @@
  "objectifAffiche": "Proposition de loi ordinaire visant à garantir le bénéfice des prestations familiales aux enfants placés, déposée par Mme Nathalie Colin-Oesterlé et plusieurs collègues (texte n° 2493), examinée par la commission des affaires sociales.",
  "mecanismesCles": [],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles : seuls figurent la page de garde, le sommaire, les liens de navigation et les métadonnées du dossier législatif (commission, formats, notice XML/JSON). Aucun mécanisme concret (obligation, allocation, dérogation, seuil, sanction) ne peut être extrait ni analysé.",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles : seul l'en-tête administratif du dossier législatif (titre, identifiant, procédure, statut, sommaire et liens de navigation) est accessible. Aucun mécanisme concret (obligation, allocation, seuil, dérogation, sanction) ne peut être identifié ni cité, ce qui empêche toute analyse des incitations produites par le texte.",
  "pointsDeVigilance": [
-  "Le document transmis est une coquille vide : aucun article ni exposé des motifs n'est inclus.",
-  "Le texte est tronqué à 15 000 caractères mais, en l'état, la quasi-totalité de la chaîne est constituée de balises HTML et de liens.",
-  "Sans lecture des articles, il est impossible de vérifier si les incitations créées servent réellement l'objectif affiché."
+  "Le texte officiel a été tronqué à 15 000 caractères et ne contient que les métadonnées du dossier, sans contenu normatif exploitable.",
+  "L'analyse des articles et de l'exposé des motifs est indispensable pour vérifier l'alignement entre l'objectif affiché et les mécanismes réellement créés.",
+  "Le statut 'en_cours' indique que le texte peut encore évoluer (amendements, navette parlementaire)."
  ],
  "themes": [
   "prestations familiales",
   "protection de l'enfance",
-  "enfants placés"
+  "enfants placés",
+  "politique familiale"
  ],
  "scrutinsCles": [
   "6089",
