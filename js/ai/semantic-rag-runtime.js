@@ -118,6 +118,7 @@ export function createSemanticRagRuntime({
   setStoredValue,
   storageKeys,
   addSystemMessage,
+  createRemoteQueryEncoder = null,
   logger = console
 }) {
   let loadPromise = null;
@@ -195,17 +196,22 @@ export function createSemanticRagRuntime({
 
     loadPromise = (async () => {
       const config = await getSemanticSearchConfig(requestedMode);
-      if (!config?.available || !config?.model?.browserModelId) {
+      const isRemoteQueryMode = config?.model?.queryMode === 'remote';
+      if (!config?.available || (!config?.model?.browserModelId && !isRemoteQueryMode)) {
         appState.semanticRagStatus = 'unavailable';
         addSystemMessage("Le RAG sémantique local sélectionné n'est pas encore disponible dans les artefacts publics.");
         return false;
       }
 
-      const webGPUStatus = await resolveWebGPUStatus();
-      if (!webGPUStatus.adapterAvailable) {
-        appState.semanticRagStatus = 'error';
-        addSystemMessage(getWebGPUBlockingMessage(webGPUStatus));
-        return false;
+      // Le mode a requete distante n'a besoin ni de WebGPU ni d'un telechargement
+      // de modele : la question est encodee par le Worker en ligne.
+      if (!isRemoteQueryMode) {
+        const webGPUStatus = await resolveWebGPUStatus();
+        if (!webGPUStatus.adapterAvailable) {
+          appState.semanticRagStatus = 'error';
+          addSystemMessage(getWebGPUBlockingMessage(webGPUStatus));
+          return false;
+        }
       }
 
       appState.semanticRagStatus = 'loading';
@@ -220,6 +226,7 @@ export function createSemanticRagRuntime({
 
       if (
         appState.semanticEncoder &&
+        appState.semanticModelConfig?.queryMode === config.model.queryMode &&
         appState.semanticModelConfig?.browserModelId === config.model.browserModelId &&
         appState.semanticModelConfig?.modeId === config.modeId
       ) {
@@ -228,20 +235,36 @@ export function createSemanticRagRuntime({
       }
 
       try {
-        const canReuseEncoder =
-          appState.semanticEncoder &&
-          appState.semanticModelConfig?.browserModelId === config.model.browserModelId;
-
-        if (!canReuseEncoder) {
+        if (isRemoteQueryMode) {
           await releaseSemanticRag();
-          await transformersRuntime.loadRuntime('stable');
-          appState.semanticEncoder = await transformersRuntime.state.pipeline(
-            config.model.task || 'feature-extraction',
-            config.model.browserModelId,
-            {
-              device: 'webgpu'
-            }
-          );
+          const remoteEncoder = typeof createRemoteQueryEncoder === 'function'
+            ? createRemoteQueryEncoder(config.model)
+            : null;
+
+          if (!remoteEncoder) {
+            appState.semanticRagStatus = 'unavailable';
+            addSystemMessage("Le service en ligne d'embedding n'est pas disponible ; le mode sémantique local reste utilisable.");
+            return false;
+          }
+
+          appState.semanticEncoder = remoteEncoder;
+        } else {
+          const canReuseEncoder =
+            appState.semanticEncoder &&
+            appState.semanticModelConfig?.queryMode !== 'remote' &&
+            appState.semanticModelConfig?.browserModelId === config.model.browserModelId;
+
+          if (!canReuseEncoder) {
+            await releaseSemanticRag();
+            await transformersRuntime.loadRuntime('stable');
+            appState.semanticEncoder = await transformersRuntime.state.pipeline(
+              config.model.task || 'feature-extraction',
+              config.model.browserModelId,
+              {
+                device: 'webgpu'
+              }
+            );
+          }
         }
 
         appState.semanticModelConfig = {

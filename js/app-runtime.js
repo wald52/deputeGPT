@@ -43,6 +43,8 @@ import { resolveGenerationOptions } from './ai/generation-options.js';
 import { createModelLoader } from './ai/model-loader.js';
 import { createModelUiFacade } from './ai/model-ui-facade.js';
 import { createModelSelectionController } from './ai/model-selection.js';
+import { createWorkerRagClient } from './ai/worker-rag-client.js';
+import { createRemoteQueryEncoder } from './ai/remote-query-encoder.js';
 import {
   createChatAvailabilityController,
   createChatComposer,
@@ -355,7 +357,11 @@ function createLazySemanticRagRuntimeController({
             getStoredValue,
             setStoredValue,
             storageKeys,
-            addSystemMessage
+            addSystemMessage,
+            // Mode a requete distante : la question est encodee par le Worker
+            // (workerRagClient est initialise au chargement du module, bien
+            // avant la premiere activation du RAG semantique).
+            createRemoteQueryEncoder: model => createRemoteQueryEncoder({ workerRagClient, model })
           });
           return runtimeInstance;
         });
@@ -551,6 +557,52 @@ const chatHistoryPersistence = createChatHistoryPersistence({
   getChatHistory: () => chatHistoryProvider.getChatHistory()
 });
 
+const workerRagClient = createWorkerRagClient({
+  getOnlineContext: () => (
+    appState.activeModelConfig?.provider === DEFAULT_INFERENCE_SOURCE
+    && appState.generator?.session
+      ? {
+        apiBaseUrl: appState.activeModelConfig.apiBaseUrl,
+        session: appState.generator.session
+      }
+      : null
+  )
+});
+
+function buildRerankDocumentText(vote) {
+  const parts = [
+    lookupVoteSubject(vote),
+    vote?.titre || '',
+    vote?.law_title || '',
+    lookupVoteThemeLabel(vote) || ''
+  ]
+    .map(part => String(part || '').trim())
+    .filter(Boolean);
+
+  return [...new Set(parts)].join(' — ').slice(0, 480) || `scrutin ${getVoteId(vote) || ''}`.trim();
+}
+
+async function buildRemoteRerankScores(question, votes) {
+  const voteIds = votes.map(getVoteId);
+  const documents = votes.map(buildRerankDocumentText);
+  const indexScores = await workerRagClient.rerank(question, documents, {
+    cacheKey: `${normalizeQuestion(question)}::${voteIds.join(',')}`
+  });
+
+  if (!(indexScores instanceof Map) || indexScores.size === 0) {
+    return null;
+  }
+
+  const scores = new Map();
+  indexScores.forEach((score, index) => {
+    const voteId = voteIds[index];
+    if (voteId !== undefined && voteId !== null && Number.isFinite(score)) {
+      scores.set(voteId, score);
+    }
+  });
+  return scores;
+}
+
 const analysisRankingHelpers = createAnalysisRankingHelpers({
   normalizeQuestion,
   analysisStopwords: ANALYSIS_STOPWORDS,
@@ -561,6 +613,8 @@ const analysisRankingHelpers = createAnalysisRankingHelpers({
   isSemanticRagEnabled: () => semanticRagRuntime.isEnabled(),
   isSemanticRagReady: () => semanticRagRuntime.isReady(),
   buildSemanticScores: (question, votes) => semanticRagRuntime.buildSemanticScores(question, votes, getVoteId),
+  isRemoteRerankAvailable: () => workerRagClient.isRerankAvailable(),
+  buildRemoteRerankScores,
   getVoteId,
   lookupVoteIndexText,
   lookupVoteSubject,
@@ -758,6 +812,16 @@ const modelUiFacade = createModelUiFacade({
   })
 });
 
+function prefetchOnlineSession() {
+  // Non bloquant : rend le jeton disponible pour le rerank distant des la
+  // premiere analyse sans jamais faire attendre le classement sur Turnstile.
+  try {
+    appState.generator?.session?.ensureSessionToken?.().catch(() => {});
+  } catch (error) {
+    // Le prechargement de session est un confort, jamais une condition.
+  }
+}
+
 async function ensureOnlineAnalysisReady() {
   const selectedSource = modelUiFacade.getSelectedInferenceSource();
   if (selectedSource !== DEFAULT_INFERENCE_SOURCE) {
@@ -765,6 +829,7 @@ async function ensureOnlineAnalysisReady() {
   }
 
   if (appState.generator && appState.activeModelConfig?.provider === DEFAULT_INFERENCE_SOURCE) {
+    prefetchOnlineSession();
     return true;
   }
 
@@ -774,6 +839,7 @@ async function ensureOnlineAnalysisReady() {
   }
 
   await modelUiFacade.initAI(modelConfig, { quiet: true });
+  prefetchOnlineSession();
   return true;
 }
 

@@ -4,6 +4,7 @@ import {
   RAG_MANIFEST_PATH,
   RAG_SEMANTIC_INDEX_PATH,
   RAG_SEMANTIC_MULTIVECTOR_INDEX_PATH,
+  RAG_SEMANTIC_REMOTE_INDEX_PATH,
 } from '../core/config.js';
 import { loadExternalScript } from '../core/external-script-loader.js';
 
@@ -37,9 +38,19 @@ function buildLegacySingleVectorMode(manifest = null) {
 }
 
 function getFallbackSemanticArtifactPath(modeId) {
-  return modeId === 'multi_vector'
-    ? RAG_SEMANTIC_MULTIVECTOR_INDEX_PATH
-    : RAG_SEMANTIC_INDEX_PATH;
+  if (modeId === 'multi_vector') {
+    return RAG_SEMANTIC_MULTIVECTOR_INDEX_PATH;
+  }
+
+  if (modeId === 'single_vector_remote') {
+    return RAG_SEMANTIC_REMOTE_INDEX_PATH;
+  }
+
+  return RAG_SEMANTIC_INDEX_PATH;
+}
+
+function isRemoteQueryModel(model) {
+  return model?.queryMode === 'remote' || model?.query_mode === 'remote';
 }
 
 export function createSearchIndexRepository({
@@ -177,7 +188,7 @@ export function createSearchIndexRepository({
     const artifact = resolvedMode.artifact || null;
     const model = resolvedMode.model || null;
 
-    if (!artifact?.path || !model?.browserModelId) {
+    if (!artifact?.path || (!model?.browserModelId && !isRemoteQueryModel(model))) {
       state.semanticArtifactInfos[requestedModeId] = {
         available: false,
         modeId,
@@ -372,7 +383,7 @@ export function createSearchIndexRepository({
     const modelDownloadMb = model?.estimatedDownloadMb ?? null;
 
     return {
-      available: Boolean(artifactInfo?.available && model?.browserModelId),
+      available: Boolean(artifactInfo?.available && (model?.browserModelId || isRemoteQueryModel(model))),
       modeId: artifactInfo?.modeId || normalizeSemanticModeId(mode),
       label: artifactInfo?.label || normalizeSemanticModeId(mode),
       strategy: artifactInfo?.strategy || 'single_vector',
@@ -385,6 +396,8 @@ export function createSearchIndexRepository({
         usage: model.usage || null,
         browserModelId: model.browserModelId || model.browser_model_id || null,
         pythonModelId: model.pythonModelId || model.python_model_id || null,
+        queryMode: isRemoteQueryModel(model) ? 'remote' : null,
+        remoteModelId: model.remoteModelId || model.remote_model_id || null,
         task: model.task || 'feature-extraction',
         queryPrefix: model.queryPrefix || model.query_prefix || null,
         documentPrefix: model.documentPrefix || model.document_prefix || null,

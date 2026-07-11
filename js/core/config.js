@@ -28,6 +28,7 @@ export const RAG_MANIFEST_PATH = 'public/data/rag/manifest.json';
 export const RAG_LEXICAL_INDEX_PATH = 'public/data/rag/lexical_index.json';
 export const RAG_SEMANTIC_INDEX_PATH = 'public/data/rag/semantic_index.json';
 export const RAG_SEMANTIC_MULTIVECTOR_INDEX_PATH = 'public/data/rag/semantic_multivector_index.json';
+export const RAG_SEMANTIC_REMOTE_INDEX_PATH = 'public/data/rag/semantic_index_remote.json';
 export const LEGACY_SEARCH_INDEX_PATH = 'public/data/search_index.json';
 export const DOSSIERS_INDEX_PATH = 'public/data/dossiers/index.json';
 export const DOSSIERS_FICHES_INDEX_PATH = 'public/data/dossiers/fiches_index.json';
