@@ -8,8 +8,11 @@ export function createAnalysisRankingHelpers({
   isSemanticRagEnabled,
   isSemanticRagReady,
   buildSemanticScores,
+  isRemoteRerankAvailable,
+  buildRemoteRerankScores,
   semanticCandidateLimit = 40,
   semanticScoreWeight = 18,
+  remoteRerankWeight = 30,
   getVoteId,
   lookupVoteIndexText,
   lookupVoteSubject,
@@ -98,24 +101,57 @@ export function createAnalysisRankingHelpers({
       return String(right.vote?.date || '').localeCompare(String(left.vote?.date || ''));
     });
 
+    const semanticCandidates = rankedCandidates
+      .slice(0, semanticCandidateLimit)
+      .map(entry => entry.vote);
+
+    // Rerank distant (cross-encoder) : remplace le score semantique local quand il
+    // repond ; tout echec retombe silencieusement sur le circuit local existant.
+    let remoteScoresApplied = false;
     if (
+      typeof isRemoteRerankAvailable === 'function' &&
+      isRemoteRerankAvailable() &&
+      typeof buildRemoteRerankScores === 'function' &&
+      semanticCandidates.length > 0
+    ) {
+      let remoteScores = null;
+      try {
+        remoteScores = await Promise.resolve(buildRemoteRerankScores(question, semanticCandidates));
+      } catch (error) {
+        remoteScores = null;
+      }
+
+      if (remoteScores instanceof Map && remoteScores.size > 0) {
+        scoredVotes.forEach(entry => {
+          const remoteScore = remoteScores.get(getVoteId(entry.vote));
+          if (Number.isFinite(remoteScore)) {
+            entry.score += remoteScore * remoteRerankWeight;
+          }
+        });
+        remoteScoresApplied = true;
+      }
+    }
+
+    if (
+      !remoteScoresApplied &&
       isSemanticRagEnabled?.() &&
       isSemanticRagReady?.() &&
       typeof buildSemanticScores === 'function' &&
-      rankedCandidates.length > 0
+      semanticCandidates.length > 0
     ) {
-      const semanticCandidates = rankedCandidates
-        .slice(0, semanticCandidateLimit)
-        .map(entry => entry.vote);
-      const semanticScores = await Promise.resolve(buildSemanticScores(question, semanticCandidates));
+      try {
+        const semanticScores = await Promise.resolve(buildSemanticScores(question, semanticCandidates));
 
-      if (semanticScores instanceof Map && semanticScores.size > 0) {
-        scoredVotes.forEach(entry => {
-          const semanticScore = semanticScores.get(getVoteId(entry.vote));
-          if (Number.isFinite(semanticScore)) {
-            entry.score += semanticScore * semanticScoreWeight;
-          }
-        });
+        if (semanticScores instanceof Map && semanticScores.size > 0) {
+          scoredVotes.forEach(entry => {
+            const semanticScore = semanticScores.get(getVoteId(entry.vote));
+            if (Number.isFinite(semanticScore)) {
+              entry.score += semanticScore * semanticScoreWeight;
+            }
+          });
+        }
+      } catch (error) {
+        // Le classement lexical reste valable sans le signal semantique.
       }
     }
 
