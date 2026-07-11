@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N51175",
- "generatedAt": "2026-07-04T06:08:15Z",
+ "generatedAt": "2026-07-11T05:35:52Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,53 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0253_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "La proposition de loi vise à soutenir les collectivités territoriales dans la prévention et la gestion des inondations, en leur fournissant un cadre législatif pour mieux anticiper et faire face à ce risque naturel.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel n'a pas été extrait (seuls des objets PDF bruts et des flux binaires compressés sont visibles). Aucun article, aucune disposition concrète, aucune obligation, taxe, subvention ou sanction ne peut être identifié dans le contenu transmis. En l'absence de tout mécanisme extractible du texte, il est impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "Soutenir les collectivités territoriales dans la prévention et la gestion des inondations, en facilitant notamment l'entretien des cours d'eau, l'élaboration de programmes d'actions de prévention des inondations (PAPI) et la mise en œuvre des plans de prévention des risques naturels prévisibles (PPRN).",
+ "mecanismesCles": [
+  {
+   "resume": "Modification de l'article L. 211-2 du code de l'environnement pour y intégrer explicitement les mesures d'entretien régulier des cours d'eau parmi les missions relevant de la compétence des collectivités territoriales (GEMAPI).",
+   "articleRef": "art. 1er",
+   "citation": "au I, après le mot : « territoriales », sont insérés les mots : « ainsi que les mesures d'entretien régulier des cours d'eau »"
+  },
+  {
+   "resume": "Création d'un nouvel article L. 563-3-1 permettant aux collectivités d'élaborer un programme d'actions de prévention des inondations (PAPI) selon un cahier des charges fixé par l'État, avec labellisation par l'État et délais d'instruction encadrés par arrêté ministériel.",
+   "articleRef": "art. 2 (3°)",
+   "citation": "Les collectivités territoriales ou leurs groupements peuvent élaborer un programme d'actions de prévention des inondations qui répond à un cahier des charges fixé par l'État."
+  },
+  {
+   "resume": "Dispense d'enquête publique pour certains travaux de restauration des fonctionnalités naturelles des milieux aquatiques dans la bande de 6 mètres ou hors de cette bande avec accord des propriétaires, sous réserve de non-expropriation, absence de participation financière et absence d'évaluation environnementale.",
+   "articleRef": "art. 1er ter (II B 4°)",
+   "citation": "Sont également dispensés d'enquête publique, sous réserve qu'ils n'entraînent aucune expropriation, que le maître d'ouvrage ne prévoie pas de demander une participation financière aux personnes intéressées et qu'ils ne soient pas soumis à évaluation environnementale"
+  },
+  {
+   "resume": "Possibilité de prise de possession anticipée d'immeubles par décret en Conseil d'État, à titre exceptionnel, lorsque des travaux d'un PAPI déclarés d'utilité publique sont retardés et que des risques sérieux pour la sécurité des personnes le justifient.",
+   "articleRef": "art. 2 bis B (I)",
+   "citation": "un décret pris sur avis conforme du Conseil d'État peut, à titre exceptionnel, en autoriser la prise de possession."
+  },
+  {
+   "resume": "Création d'une réserve d'ingénierie constituée d'agents publics territoriaux volontaires pour fournir un appui technique et administratif aux communes sinistrées ou particulièrement exposées aux inondations.",
+   "articleRef": "art. 3 (I, 1°)",
+   "citation": "Les collectivités territoriales et les établissements publics de coopération intercommunale peuvent instituer une réserve d'ingénierie, constituée d'agents publics territoriaux, destinée à fournir un appui technique et administratif aux communes sinistrées ou particulièrement exposées à une inondation."
+  },
+  {
+   "resume": "Possibilité pour le préfet de procéder à une consultation écrite des propriétaires (au lieu d'une enquête) en cas de modification d'un PPRN lorsque le petit nombre de propriétaires ou le caractère limité des surfaces le justifie, et possibilité de rectification d'erreurs matérielles par arrêté sans concertations.",
+   "articleRef": "art. 4 (3°)",
+   "citation": "le représentant de l'État dans le département peut procéder à la consultation écrite des propriétaires des parcelles concernées, par dérogation au premier alinéa du présent II."
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'ensemble des mécanismes créés vise à faciliter l'action des collectivités dans la prévention et la gestion des inondations. L'article 1er ter dispense d'enquête publique les travaux de restauration des milieux aquatiques (art. 1er ter II B 4°), l'article 2 crée un cadre de labellisation des PAPI par l'État (art. 2, 3°), l'article 2 bis B autorise une prise de possession anticipée pour accélérer les travaux urgents, et l'article 3 institue une réserve d'ingénierie pour appuyer les communes sinistrées. Ces dispositions convergent toutes vers l'objectif affiché de soutien aux collectivités, en allégeant les procédures administratives et en renforçant les moyens techniques disponibles.",
  "pointsDeVigilance": [
-  "Le contenu textuel du PDF n'a pas été décodé : le texte fourni contient uniquement des métadonnées et flux binaires PDF illisibles",
-  "Aucun article ni exposé des motifs n'est effectivement accessible dans la chaîne transmise",
-  "L'analyse des mécanismes concrets est donc impossible sans extraction préalable du texte"
+  "Plusieurs dispositions initialement prévues ont été supprimées au cours de la navette parlementaire (notamment les 1° b et 2° de l'article 1er, les 1° et 2° de l'article 2, le II de l'article 3), ce qui réduit la portée initiale du texte.",
+  "La dispense d'enquête publique pour les travaux de restauration des milieux aquatiques (art. 1er ter) pourrait soulever des interrogations sur la participation du public et la protection des propriétaires fonciers.",
+  "Le rapport du Gouvernement prévu à l'article 2 quater sur la simplification du cahier des charges des PAPI est renvoyé à un délai de deux ans après la promulgation, ce qui retarde d'éventuelles simplifications supplémentaires.",
+  "L'article 4 modifie substantiellement la procédure d'élaboration et de modification des PPRN (consultation écrite, rectification d'erreurs matérielles par arrêté), ce qui pourrait réduire la concertation locale."
  ],
  "themes": [
   "inondations",
   "collectivités territoriales",
   "prévention des risques",
-  "gestion de crise"
+  "gemapi",
+  "environnement"
  ],
  "scrutinsCles": [
   "5841",
@@ -37,5 +70,5 @@
   "5844"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:ea0d40c87fc048f11a967497449d2179c39bdcf3e10d741c59e2e379d7f66e25"
+ "sourceTextHash": "sha256:e1b95616892313bc92eb0b5590f246770cfc5545cbdf3afc64e122648a3c9ae9"
 }

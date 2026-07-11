@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N51720",
- "generatedAt": "2026-07-04T06:11:45Z",
+ "generatedAt": "2026-07-11T05:47:44Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,21 +15,54 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0239_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à améliorer la protection des commerçants grâce à l'usage d'outils numériques. L'objectif affiché est donc de renforcer la sécurité et la protection des commerçants via des dispositifs numériques.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel a été corrompu ou mal extrait (flux binaires, objets PDF non décodés). Aucun article, aucune disposition concrète, aucune obligation, taxe, subvention ou sanction ne peut être identifié dans le contenu fourni. Il est donc impossible de déterminer les mécanismes créés par le texte et, a fortiori, de vérifier si les incitations réelles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "La proposition de loi vise à encadrer l'utilisation par les commerçants d'outils d'analyse vidéo automatique pour lutter contre le vol. Il s'agit d'une expérimentation, jusqu'au 31 décembre 2027, autorisant des traitements algorithmiques sur les images de vidéoprotection dans les commerces de détail, grandes surfaces et centres commerciaux particulièrement exposés au vol et aux agressions.",
+ "mecanismesCles": [
+  {
+   "resume": "Expérimentation jusqu'au 31 décembre 2027 autorisant les traitements algorithmiques sur images de vidéoprotection dans certains commerces, uniquement pour détecter en temps réel des événements prédéterminés signalant un risque de vol.",
+   "articleRef": "II",
+   "citation": "À titre expérimental et jusqu'au 31 décembre 2027, à la seule fin de prévenir le vol, les images collectées au moyen de systèmes de vidéoprotection [...] peuvent faire l'objet de traitements algorithmiques."
+  },
+  {
+   "resume": "Interdiction explicite de la reconnaissance faciale, de tout traitement biométrique et de tout rapprochement avec d'autres traitements de données personnelles.",
+   "articleRef": "V",
+   "citation": "Les traitements [...] n'utilisent aucun système d'identification biométrique, ne traitent aucune donnée biométrique et ne mettent en œuvre aucune technique de reconnaissance faciale."
+  },
+  {
+   "resume": "Limitation fonctionnelle : le traitement ne produit qu'un signalement d'attention et ne peut fonder aucune décision individuelle ni acte de poursuite ; contrôle humain permanent.",
+   "articleRef": "V",
+   "citation": "Ils procèdent exclusivement à un signalement d'attention [...] Ils ne produisent aucun autre résultat et ne peuvent fonder, par eux-mêmes, aucune décision individuelle ni aucun acte de poursuite."
+  },
+  {
+   "resume": "Information préalable du public obligatoire par tout moyen approprié.",
+   "articleRef": "IV",
+   "citation": "Le public est préalablement informé, par tout moyen approprié, de l'emploi de traitements algorithmiques sur les images collectées au moyen de systèmes de vidéoprotection."
+  },
+  {
+   "resume": "Encadrement par décret après avis de la CNIL, définissant les événements détectables, les lieux éligibles, les conditions d'habilitation et de formation (incluant libertés publiques et éthique).",
+   "articleRef": "VI",
+   "citation": "Les modalités de recours aux traitements [...] sont définies par un décret pris après avis de la Commission nationale de l'informatique et des libertés."
+  },
+  {
+   "resume": "Exigences techniques : données d'apprentissage pertinentes et non biaisées, traçabilité des signalements, gestion des risques, possibilité d'interruption à tout instant, phase de test avec rapport de validation.",
+   "articleRef": "VII",
+   "citation": "Le traitement algorithmique doit satisfaire aux exigences suivantes [...] garanties [...] afin que les données d'apprentissage [...] soient pertinentes, adéquates et représentatives."
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'objectif affiché est de protéger les commerçants contre le vol via des outils algorithmiques, tout en encadrant ces usages. Les mécanismes créés vont dans ce sens : le II autorise explicitement les traitements algorithmiques à finalité de prévention du vol dans les commerces exposés. Simultanément, le V interdit la biométrie et la reconnaissance faciale, le IV impose l'information du public, le VI subordonne les modalités à un décret après avis CNIL, le VII exige des garanties techniques (données non biaisées, traçabilité, contrôle humain, interruption possible), le VIII conditionne l'usage à une AIPD et à une autorisation préfectorale motivée, et le XII prévoit une évaluation parlementaire. L'ensemble crée des incitations cohérentes avec l'objectif : permettre l'usage de l'analyse vidéo anti-vol tout en limitant les dérives potentielles.",
  "pointsDeVigilance": [
-  "Le contenu du texte officiel est inexploitable (PDF binaire non décodé)",
-  "Aucun article ni mécanisme n'a pu être extrait du document fourni",
-  "L'exposé des motifs n'est pas accessible dans le texte transmis",
-  "Une analyse fiable nécessiterait la version textuelle (HTML/TXT) du dossier législatif"
+  "Le texte ne crée aucune sanction spécifique en cas de non-respect des exigences du VII ou de dépassement du périmètre du II ; seul le contrôle CNIL est mentionné (XI).",
+  "L'efficacité réelle dépend du décret en Conseil d'État prévu au VI, dont le contenu n'est pas défini dans la loi.",
+  "L'expérimentation est limitée au 31 décembre 2027 sans mécanisme de prolongation ni de généralisation prévu dans le texte.",
+  "La notion d'événements 'prédéterminés' reste vague et sera précisée par décret, ce qui laisse une marge d'interprétation importante.",
+  "Le texte ne précise pas les conséquences d'un refus d'autorisation préfectorale ni les voies de recours effectives pour les commerçants."
  ],
  "themes": [
-  "protection des commerçants",
-  "outils numériques",
-  "sécurité",
-  "commerce"
+  "vidéoprotection",
+  "intelligence artificielle",
+  "protection des données",
+  "commerce",
+  "sécurité"
  ],
  "scrutinsCles": [
   "5424",
@@ -38,5 +71,5 @@
   "5427"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:f26aa1c9e71502788b189ed77040e58b7b3e9470771996c46f5635b8bf87139d"
+ "sourceTextHash": "sha256:18e39f7e426c8baa96c3991f3c1342bb6faf4ad3a7f3ae0efa84026aefcc7071"
 }

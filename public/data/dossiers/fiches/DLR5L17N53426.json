@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53426",
- "generatedAt": "2026-07-04T06:04:04Z",
+ "generatedAt": "2026-07-11T05:32:01Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -18,11 +18,11 @@
  "objectifAffiche": "Doter la France d'une stratégie nationale de lutte contre les maladies cardio-neuro-vasculaires, en accélérant la prévention cardio-neuro-vasculaire et en anticipant un risque sanitaire et social majeur.",
  "mecanismesCles": [],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel fourni ne contient ni exposé des motifs ni articles. Seuls figurent l'intitulé de la proposition de loi, la mention de la commission mixte paritaire et la date de dépôt (1er juillet 2026). Aucun mécanisme concret (obligation, taxe, subvention, seuil, sanction) ne peut être identifié dans le document transmis, ce qui empêche toute analyse de l'alignement entre les incitations créées et l'objectif affiché.",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles : seul l'en-tête du dossier législatif (titre, identifiant, procédure, statut, sommaire et liens de navigation) est transmis. Aucun mécanisme concret (obligation, taxe, subvention, seuil, sanction, dérogation) ne peut être identifié ni analysé. En l'absence du contenu normatif, il est impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou s'y opposent.",
  "pointsDeVigilance": [
-  "Le document est marqué 'Document non encore publié', expliquant l'absence de contenu normatif.",
-  "Le texte est tronqué à 15000 caractères mais, en réalité, aucun contenu substantiel n'a été transmis au-delà des métadonnées.",
-  "Sans accès aux articles, il est impossible de vérifier si des dérogations, exemptions ou contre-incitations s'opposeraient à l'objectif de prévention."
+  "Le texte officiel est tronqué à 15000 caractères mais, en pratique, seul l'en-tête administratif a été transmis : aucun article ni exposé des motifs n'est disponible.",
+  "Le statut 'en cours' et la mention 'commission mixte paritaire' indiquent que le texte pourrait encore évoluer ; l'analyse définitive devrait porter sur la version définitivement adoptée.",
+  "Sans contenu substantiel, toute conclusion sur l'alignement entre mécanismes et objectif serait purement spéculative."
  ],
  "themes": [
   "santé publique",
@@ -37,5 +37,5 @@
   "6061"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:c108f1fe277a2269561f9b5f13c3c760db857273827229f8590571f8e624b890"
+ "sourceTextHash": "sha256:a1f69e4e6f15368b708f1baf1c8870c4043f2680fbed8d9f11e639fcfb368b57"
 }

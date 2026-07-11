@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53717",
- "generatedAt": "2026-07-04T06:06:53Z",
+ "generatedAt": "2026-07-11T05:33:50Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,24 +15,53 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0256_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à interdire les sucres ajoutés dans les aliments destinés aux nourrissons et aux enfants en bas âge, afin de protéger la santé infantile face aux risques liés à la consommation précoce de sucres.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel n'a pas été extrait (seules des balises PDF techniques et des flux binaires compressés sont visibles). Aucun article, aucune disposition concrète, aucune obligation, seuil ou sanction ne peut être identifié dans le contenu exploitable. Il est donc impossible de déterminer les mécanismes réels créés par le texte ni de vérifier s'ils s'alignent avec l'objectif affiché.",
+ "objectifAffiche": "La proposition de loi vise à interdire les sucres ajoutés dans les préparations alimentaires non médicamenteuses spécifiquement destinées aux nourrissons (moins d'un an) et aux enfants en bas âge (un à trois ans), afin de protéger la santé nutritionnelle de cette population.",
+ "mecanismesCles": [
+  {
+   "resume": "Interdiction de fabriquer, importer, exporter, mettre sur le marché ou détenir en vue de la vente des préparations alimentaires non médicamenteuses contenant des sucres ajoutés destinées aux nourrissons et enfants en bas âge.",
+   "articleRef": "Article unique – Art. L. 3232-10-I",
+   "citation": "« Il est interdit de fabriquer, d'importer, d'exporter, de mettre sur le marché à titre gratuit ou onéreux et de détenir en vue de la vente ou de la distribution à titre gratuit des préparations alimentaires non médicamenteuses contenant des sucres ajoutés présentées comme spécifiquement destinées aux besoins des nourrissons et des enfants en bas âge. »"
+  },
+  {
+   "resume": "Définition des sucres ajoutés incluant monosaccharides, disaccharides, miel, sirops et jus de fruits concentrés ou reconstitués, à l'exclusion des sucres naturellement présents.",
+   "articleRef": "Article unique – Art. L. 3232-10-I (3°)",
+   "citation": "« “Sucres ajoutés”, l'ensemble des monosaccharides et des disaccharides ainsi que tous les ingrédients utilisés pour leurs propriétés édulcorantes, notamment le miel, les sirops ou les jus de fruits concentrés ou reconstitués »"
+  },
+  {
+   "resume": "Système de dérogation : un arrêté ministériel, pris après avis de l'ANSES, peut établir une liste de produits exemptés en fonction de leurs caractéristiques nutritionnelles, et fixe le type et le taux maximal de sucres autorisés.",
+   "articleRef": "Article unique – Art. L. 3232-10-I",
+   "citation": "« Ne sont pas soumises à cette interdiction les préparations alimentaires non médicamenteuses qui figurent sur une liste déterminée par un arrêté du ministre chargé de la santé, pris après avis de l'Agence nationale de sécurité sanitaire de l'alimentation, de l'environnement et du travail »"
+  },
+  {
+   "resume": "Sanction : amende de 30 000 €, pouvant être portée à 5 % du chiffre d'affaires hors taxes réalisé sur les ventes du produit en infraction.",
+   "articleRef": "Article unique – Art. L. 3232-10-I",
+   "citation": "« Tout manquement au présent article est passible de 30 000 € d'amende. Le montant de cette amende peut être porté à 5 % du chiffre d'affaires hors taxes réalisé sur les ventes de la préparation alimentaire pour laquelle le manquement a été constaté. »"
+  },
+  {
+   "resume": "Entrée en vigueur différée au 1er janvier 2028.",
+   "articleRef": "Article unique – II (nouveau)",
+   "citation": "« Le présent article entre en vigueur le 1er janvier 2028. »"
+  }
+ ],
+ "verdictIncitations": "incitations_mitigees",
+ "justificationVerdict": "L'objectif affiché est l'interdiction des sucres ajoutés dans les aliments pour nourrissons et jeunes enfants. Le mécanisme principal (art. L. 3232-10-I) crée bien une interdiction de fabrication, d'importation et de commercialisation, assortie de sanctions financières dissuasives (30 000 € ou 5 % du CA). Toutefois, l'incitation réelle est mitigée par l'existence d'une clause de dérogation large : un simple arrêté ministériel, après avis de l'ANSES, peut établir une liste de produits exemptés et fixer un « taux maximal de sucres » autorisés. Cette porte de sortie administrative pourrait significativement réduire la portée de l'interdiction. De plus, le texte ne vise que les produits « présentés comme spécifiquement destinés » à cette tranche d'âge, laissant potentiellement hors champ de nombreux produits effectivement consommés par elle. Enfin, l'entrée en vigueur est différée au 1er janvier 2028.",
  "pointsDeVigilance": [
-  "Le contenu textuel du PDF n'a pas été décodé : le texte officiel est tronqué ou corrompu",
-  "Aucun article ni exposé des motifs lisible n'a pu être analysé",
-  "Impossible de vérifier la portée réelle de l'interdiction (définition des sucres ajoutés, catégories d'aliments visées, dérogations éventuelles, sanctions, date d'entrée en vigueur)"
+  "La portée effective de l'interdiction dépendra largement du contenu de l'arrêté ministériel de dérogation, qui n'est pas défini dans le texte.",
+  "Le texte ne vise que les produits « présentés comme spécifiquement destinés » aux nourrissons et enfants en bas âge, ce qui exclut potentiellement les produits de consommation courante consommés par cette population.",
+  "L'entrée en vigueur est repoussée au 1er janvier 2028, laissant un délai significatif avant application.",
+  "Le paragraphe II de l'article L. 3232-10 a été supprimé sans que son contenu initial soit connu, ce qui pourrait retirer un mécanisme complémentaire.",
+  "Aucune disposition sur l'étiquetage, la reformulation ou l'accompagnement des industriels n'est prévue dans le texte."
  ],
  "themes": [
   "santé publique",
-  "alimentation infantile",
+  "nutrition infantile",
   "sucres ajoutés",
-  "nutrition"
+  "sécurité alimentaire",
+  "petite enfance"
  ],
  "scrutinsCles": [
   "5847"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:159a5ea54b55fbe500db701af8a2b6a5bf55b3c14104319b87482f72bd64f258"
+ "sourceTextHash": "sha256:c5934abd0994b871a24154373c443d2e2c2703499ffa05bbac51c34243772bf6"
 }

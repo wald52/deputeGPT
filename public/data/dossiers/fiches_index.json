@@ -1,6 +1,6 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-07-10T06:57:13Z",
+ "generatedAt": "2026-07-11T05:54:53Z",
  "totalFiches": 107,
  "fiches": {
   "DLR5L16N46127": {
@@ -55,15 +55,15 @@
   },
   "DLR5L16N49364": {
    "titre": "Réduire l’impact environnemental de l’industrie textile",
-   "verdictIncitations": "incitations_mitigees",
-   "statut": "en_cours",
-   "generatedAt": "2026-07-08T05:40:47Z",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-11T05:28:44Z",
    "themes": [
     "textile",
     "fast fashion",
-    "mode ultra-express",
     "économie circulaire",
-    "responsabilité élargie du producteur"
+    "responsabilité élargie des producteurs",
+    "publicité"
    ]
   },
   "DLR5L16N49868": {
@@ -117,26 +117,27 @@
   },
   "DLR5L17N51175": {
    "titre": "Proposition de loi visant à soutenir les collectivités territoriales dans la prévention et la gestion des inondations",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "promulgue",
-   "generatedAt": "2026-07-04T06:08:15Z",
+   "generatedAt": "2026-07-11T05:35:52Z",
    "themes": [
     "inondations",
     "collectivités territoriales",
     "prévention des risques",
-    "gestion de crise"
+    "gemapi",
+    "environnement"
    ]
   },
   "DLR5L17N51330": {
    "titre": "Renforcer l’effectivité des droits voisins de la presse",
    "verdictIncitations": "indetermine",
    "statut": "en_cours",
-   "generatedAt": "2026-07-04T06:09:11Z",
+   "generatedAt": "2026-07-11T05:40:53Z",
    "themes": [
-    "propriete_intellectuelle",
+    "droit d'auteur",
+    "droits voisins",
     "presse",
-    "droits_voisins",
-    "numerique"
+    "propriété intellectuelle"
    ]
   },
   "DLR5L17N51351": {
@@ -240,27 +241,28 @@
   },
   "DLR5L17N51713": {
    "titre": "Extension de la possibilité de préemption de baux commerciaux dans les mairies aux sociétés civiles immobilières",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-04T06:10:10Z",
+   "generatedAt": "2026-07-11T05:43:49Z",
    "themes": [
-    "urbanisme commercial",
+    "urbanisme",
+    "commerce",
     "préemption",
-    "baux commerciaux",
-    "sociétés civiles immobilières",
-    "communes"
+    "sci",
+    "collectivités territoriales"
    ]
   },
   "DLR5L17N51720": {
    "titre": "Améliorer la protection des commerçants grâce à l’usage d’outils numériques",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-04T06:11:45Z",
+   "generatedAt": "2026-07-11T05:47:44Z",
    "themes": [
-    "protection des commerçants",
-    "outils numériques",
-    "sécurité",
-    "commerce"
+    "vidéoprotection",
+    "intelligence artificielle",
+    "protection des données",
+    "commerce",
+    "sécurité"
    ]
   },
   "DLR5L17N51732": {
@@ -492,14 +494,15 @@
   },
   "DLR5L17N52598": {
    "titre": "Rejeter le projet d'accord sur les droits de douane et le commerce du 27 juillet 2025 entre l’Union européenne et les Etats-Unis",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-04T06:16:26Z",
+   "generatedAt": "2026-07-11T05:54:53Z",
    "themes": [
     "commerce international",
-    "droits de douane",
-    "accord ue-usa",
-    "résolution parlementaire"
+    "souveraineté nationale",
+    "transition énergétique",
+    "défense européenne",
+    "agriculture"
    ]
   },
   "DLR5L17N52635": {
@@ -591,14 +594,15 @@
   },
   "DLR5L17N52750": {
    "titre": "Simplifier le millefeuille territorial par la collectivité unique",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-04T06:04:22Z",
+   "generatedAt": "2026-07-11T05:32:44Z",
    "themes": [
     "organisation territoriale",
-    "collectivites territoriales",
-    "simplification administrative",
-    "millefeuille territorial"
+    "collectivités à statut particulier",
+    "alsace",
+    "grand est",
+    "fusion de collectivités"
    ]
   },
   "DLR5L17N52767": {
@@ -740,10 +744,10 @@
    "titre": "Projet de loi constitutionnelle relatif à la Nouvelle-Calédonie",
    "verdictIncitations": "indetermine",
    "statut": "en_cours",
-   "generatedAt": "2026-07-04T06:05:57Z",
+   "generatedAt": "2026-07-11T05:32:57Z",
    "themes": [
     "nouvelle-calédonie",
-    "loi constitutionnelle",
+    "droit constitutionnel",
     "outre-mer"
    ]
   },
@@ -775,14 +779,15 @@
   },
   "DLR5L17N53014": {
    "titre": "Réaffirmer l’ambition climatique de la France au niveau européen",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-04T06:15:32Z",
+   "generatedAt": "2026-07-11T05:52:10Z",
    "themes": [
     "climat",
-    "europe",
-    "résolution parlementaire",
-    "ambition climatique"
+    "neutralité carbone",
+    "gaz à effet de serre",
+    "énergies renouvelables",
+    "pacte vert européen"
    ]
   },
   "DLR5L17N53019": {
@@ -823,14 +828,15 @@
   },
   "DLR5L17N53067": {
    "titre": "Reconnaître une politique nationale d’adaptation au changement climatique et à adapter les mécanismes d’assurance",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-04T06:03:32Z",
+   "generatedAt": "2026-07-11T05:31:40Z",
    "themes": [
-    "changement climatique",
-    "adaptation",
-    "assurance",
-    "catastrophes naturelles"
+    "adaptation climatique",
+    "assurance catastrophes naturelles",
+    "résilience",
+    "urbanisme",
+    "trajectoire de réchauffement"
    ]
   },
   "DLR5L17N53069": {
@@ -883,14 +889,15 @@
   },
   "DLR5L17N53171": {
    "titre": "Expérimentation pour l’instauration d’un enseignement d’éducation à l’alimentation à l’école",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_mitigees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-04T06:09:36Z",
+   "generatedAt": "2026-07-11T05:41:54Z",
    "themes": [
     "éducation",
     "alimentation",
-    "école",
-    "expérimentation"
+    "santé publique",
+    "expérimentation",
+    "gaspillage alimentaire"
    ]
   },
   "DLR5L17N53187": {
@@ -906,15 +913,15 @@
   },
   "DLR5L17N53192": {
    "titre": "Faciliter l’exercice en France des médecins diplômés au Royaume-Uni avant le Brexit",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "promulgue",
-   "generatedAt": "2026-07-04T06:12:40Z",
+   "generatedAt": "2026-07-11T05:49:25Z",
    "themes": [
     "santé",
-    "exercice médical",
+    "formation médicale",
     "brexit",
     "reconnaissance des diplômes",
-    "professionnels de santé"
+    "exercice professionnel"
    ]
   },
   "DLR5L17N53235": {
@@ -997,12 +1004,13 @@
    "titre": "Empêcher la constitution de monopoles économiques dans les secteurs des médias",
    "verdictIncitations": "indetermine",
    "statut": "en_cours",
-   "generatedAt": "2026-07-04T06:13:30Z",
+   "generatedAt": "2026-07-11T05:50:09Z",
    "themes": [
     "médias",
-    "concentration",
-    "concurrence",
-    "monopole"
+    "concentration économique",
+    "monopoles",
+    "pluralisme",
+    "régulation économique"
    ]
   },
   "DLR5L17N53357": {
@@ -1034,18 +1042,18 @@
    "titre": "Protéger l'eau potable",
    "verdictIncitations": "indetermine",
    "statut": "en_cours",
-   "generatedAt": "2026-07-04T06:14:07Z",
+   "generatedAt": "2026-07-11T05:50:25Z",
    "themes": [
     "eau potable",
     "environnement",
-    "protection de la ressource"
+    "santé publique"
    ]
   },
   "DLR5L17N53426": {
    "titre": "Accélérer la prévention cardio-neuro-vasculaire et anticiper un risque sanitaire et social majeur",
    "verdictIncitations": "indetermine",
    "statut": "en_cours",
-   "generatedAt": "2026-07-04T06:04:04Z",
+   "generatedAt": "2026-07-11T05:32:01Z",
    "themes": [
     "santé publique",
     "prévention",
@@ -1057,12 +1065,11 @@
    "titre": "Améliorer la protection des personnes ciblées par les réseaux de criminalité organisée",
    "verdictIncitations": "indetermine",
    "statut": "en_cours",
-   "generatedAt": "2026-07-04T06:14:36Z",
+   "generatedAt": "2026-07-11T05:50:43Z",
    "themes": [
     "criminalité organisée",
     "protection des personnes",
-    "sécurité",
-    "procédure pénale"
+    "sécurité"
    ]
   },
   "DLR5L17N53530": {
@@ -1093,50 +1100,54 @@
   },
   "DLR5L17N53672": {
    "titre": "Renforcer l’enseignement à la défense nationale dans le cadre du parcours de citoyenneté",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_mitigees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-04T06:07:26Z",
+   "generatedAt": "2026-07-11T05:35:16Z",
    "themes": [
+    "éducation",
     "défense nationale",
-    "parcours de citoyenneté",
-    "enseignement",
-    "éducation à la défense"
+    "citoyenneté",
+    "parcours scolaire",
+    "financement"
    ]
   },
   "DLR5L17N53715": {
    "titre": "Renforcer la place des agriculteurs dans l’aménagement du territoire et à sécuriser l’exercice des activités agricoles face au changement climatique",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-04T06:08:42Z",
+   "generatedAt": "2026-07-11T05:40:28Z",
    "themes": [
     "agriculture",
-    "amenagement du territoire",
+    "aménagement du territoire",
+    "urbanisme",
     "changement climatique",
-    "foncier"
+    "signes de qualité"
    ]
   },
   "DLR5L17N53717": {
    "titre": "Interdire les sucres ajoutés dans les aliments destinés aux nourrissons et aux enfants en bas âge",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_mitigees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-04T06:06:53Z",
+   "generatedAt": "2026-07-11T05:33:50Z",
    "themes": [
     "santé publique",
-    "alimentation infantile",
+    "nutrition infantile",
     "sucres ajoutés",
-    "nutrition"
+    "sécurité alimentaire",
+    "petite enfance"
    ]
   },
   "DLR5L17N53720": {
    "titre": "Renforcer le contrôle, la gouvernance et la responsabilité financière des agences et opérateurs de l’État",
-   "verdictIncitations": "indetermine",
+   "verdictIncitations": "incitations_alignees",
    "statut": "en_cours",
-   "generatedAt": "2026-07-04T06:07:09Z",
+   "generatedAt": "2026-07-11T05:34:29Z",
    "themes": [
-    "gouvernance",
-    "agences et opérateurs de l'état",
-    "responsabilité financière",
-    "contrôle"
+    "gouvernance publique",
+    "opérateurs de l'état",
+    "transparence",
+    "performance",
+    "contrôle parlementaire"
    ]
   },
   "DLR5L17N53770": {

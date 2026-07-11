@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53720",
- "generatedAt": "2026-07-04T06:07:09Z",
+ "generatedAt": "2026-07-11T05:34:29Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,24 +15,58 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0255_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Renforcer le contrôle, la gouvernance et la responsabilité financière des agences et opérateurs de l'État (proposition de loi ordinaire).",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un flux binaire PDF (caractères de contrôle, flux d'objets compressés, fragments binaires) sans aucun contenu textuel exploitable. Aucun article, aucune disposition, aucun mécanisme concret ne peut être identifié ou cité. En l'absence de tout contenu normatif déchiffrable, il est impossible de déterminer si les incitations créées par le texte vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "Renforcer le contrôle, la gouvernance et la responsabilité financière des agences et opérateurs de l'État, en améliorant la transparence sur les rémunérations, en formalisant des contrats d'objectifs et de performance, et en renforçant le pouvoir de l'État sur les décisions des établissements publics.",
+ "mecanismesCles": [
+  {
+   "resume": "Remise annuelle aux commissions des finances d'un rapport listant les dix rémunérations brutes les plus élevées par opérateur de l'État (liste non nominative).",
+   "articleRef": "art. 1er",
+   "citation": "un rapport annuel qui présente, pour chaque opérateur de l'État, une liste non nominative des dix rémunérations brutes les plus élevées"
+  },
+  {
+   "resume": "Obligation pour chaque opérateur de conclure un contrat d'objectifs et de performance (COP) avec l'État, rendu public, définissant objectifs stratégiques, indicateurs vérifiables et modalités de suivi.",
+   "articleRef": "art. 2 (I et II)",
+   "citation": "Les opérateurs de l'État doivent conclure un contrat d'objectifs et de performance."
+  },
+  {
+   "resume": "Le COP doit prévoir une prévision pluriannuelle des moyens pour les opérateurs participant à une loi de programmation ou exposés à des difficultés de gestion.",
+   "articleRef": "art. 2 (II 4°)",
+   "citation": "Présente une prévision pluriannuelle des moyens des opérateurs de l'État participant à l'exécution d'une loi de programmation et de ceux exposés à des difficultés de gestion."
+  },
+  {
+   "resume": "Durée par défaut de cinq ans du COP, avec clause de réexamen obligatoire au plus tard à la troisième année donnant lieu à un bilan d'étape.",
+   "articleRef": "art. 2 (III)",
+   "citation": "Le contrat d'objectifs et de performance est conclu pour une durée par défaut de cinq ans. Il comporte une clause de réexamen au plus tard au terme de la troisième année"
+  },
+  {
+   "resume": "Publication annuelle par chaque opérateur d'un rapport public d'exécution du COP, transmis aux commissions des finances.",
+   "articleRef": "art. 2 (IV)",
+   "citation": "Chaque opérateur de l'État publie un rapport annuel qui présente l'état d'exécution du contrat d'objectifs et de performance"
+  },
+  {
+   "resume": "Droit d'opposition des représentants de l'État aux décisions du conseil d'administration des établissements publics nationaux et GIP mettant en cause la mission de service public ; pouvoir d'empêcher l'adoption d'une décision contraire à cette mission lorsqu'ils ne sont pas majoritaires.",
+   "articleRef": "art. 4 (I)",
+   "citation": "Les représentants de l'État disposent d'un droit d'opposition à l'encontre des décisions du conseil d'administration [...] lorsque ces décisions mettent en cause la mission de service public de l'organisme."
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés vont dans le sens de l'objectif affiché de renforcement du contrôle et de la gouvernance. L'article 1er instaure une transparence sur les plus hautes rémunérations via un rapport parlementaire. L'article 2 impose un contrat d'objectifs et de performance pluriannuel avec indicateurs vérifiables, clause de réexamen à trois ans et rapport public annuel, ce qui structure la responsabilité financière et opérationnelle. L'article 4 renforce le pouvoir de l'État tutelle via un droit d'opposition et un pouvoir d'empêchement sur les décisions des conseils d'administration, consolidant le contrôle. L'article 5 assure la neutralité budgétaire par une taxe compensatoire sur les tabacs. L'ensemble des incitations est cohérent avec l'objectif de responsabilisation des opérateurs.",
  "pointsDeVigilance": [
-  "Le document fourni est un PDF binaire non décodé : le contenu normatif (exposé des motifs, articles) n'est pas accessible.",
-  "Aucune référence d'article ni citation exploitable n'a pu être extraite.",
-  "Une nouvelle soumission du texte au format texte (TXT/HTML/XML Légifrance) est nécessaire pour mener l'analyse."
+  "L'article 3 a été supprimé en séance, ce qui peut laisser un angle mort dans le dispositif initial.",
+  "L'article 4 exclut explicitement les universités de son champ d'application, limitant la portée du renforcement du contrôle.",
+  "Le contenu précis du COP (sanctions en cas de non-atteinte des objectifs, conséquences du bilan d'étape) n'est pas détaillé dans le texte et relève du décret d'application (art. 2 V et art. 4 III).",
+  "La liste des rémunérations est 'non nominative', ce qui limite la portée de la transparence individuelle sur les plus hauts salaires.",
+  "Le financement repose sur une taxe additionnelle sur les tabacs, dont l'impact réel sur le budget de l'État dépend du rendement effectif de cette taxe."
  ],
  "themes": [
-  "gouvernance",
-  "agences et opérateurs de l'état",
-  "responsabilité financière",
-  "contrôle"
+  "gouvernance publique",
+  "opérateurs de l'état",
+  "transparence",
+  "performance",
+  "contrôle parlementaire"
  ],
  "scrutinsCles": [
   "5846"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:a2199172dc640baed613255c6a6877a142c842cd1996fbf51cc2f2b6408d576d"
+ "sourceTextHash": "sha256:547bcfd8b7633b502f29616d57b98149faa12326802b91e3e4e1813b0b4d7336"
 }

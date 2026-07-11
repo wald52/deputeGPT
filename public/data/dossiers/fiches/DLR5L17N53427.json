@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53427",
- "generatedAt": "2026-07-04T06:14:36Z",
+ "generatedAt": "2026-07-11T05:50:43Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,19 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2770_proposition-loi",
   "legifrance": null
  },
- "objectifAffiche": "Proposition de loi ordinaire visant à améliorer la protection des personnes ciblées par les réseaux de criminalité organisée. Le texte a été adopté par l'Assemblée nationale et déposé le 11 mai 2026, renvoyé en commission des lois.",
+ "objectifAffiche": "Proposition de loi ordinaire visant à améliorer la protection des personnes ciblées par les réseaux de criminalité organisée. Le texte a été déposé le 11 mai 2026 et adopté par l'Assemblée nationale, puis transmis à la commission des Lois.",
  "mecanismesCles": [],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles. Seules les métadonnées du dossier législatif (titre, identifiant, procédure, statut, commission de renvoi) sont accessibles. Sans le contenu normatif (articles, dispositions concrètes), il est impossible d'identifier les mécanismes créés par la loi et donc de déterminer si les incitations qu'elle produit sont alignées avec son objectif affiché de protection des personnes ciblées par la criminalité organisée.",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles : seule la page de garde du dossier législatif (titre, numéro, date de dépôt, commission saisie) est accessible. Aucun mécanisme concret (obligation, sanction, dérogation, seuil) ne peut être identifié, ce qui empêche toute évaluation des incitations produites par le texte.",
  "pointsDeVigilance": [
-  "Le texte officiel est tronqué et ne contient que les en-têtes et métadonnées du dossier législatif, sans aucun article ni exposé des motifs.",
-  "L'identifiant DLR5L17N53427 et le numéro 2770 ne permettent pas, à eux seuls, de reconstituer le contenu normatif.",
-  "Une analyse de second ordre des incitations réelles nécessiterait la lecture intégrale des dispositions."
+  "Le contenu substantiel de la proposition de loi (exposé des motifs, articles) n'est pas présent dans l'extrait fourni",
+  "L'analyse des incitations réelles nécessiterait la lecture intégrale du texte",
+  "Seuls les éléments bibliographiques (n° 2770, 17e législature, commission des Lois) sont exploitables"
  ],
  "themes": [
   "criminalité organisée",
   "protection des personnes",
-  "sécurité",
-  "procédure pénale"
+  "sécurité"
  ],
  "scrutinsCles": [
   "5355",

@@ -2,20 +2,20 @@
  "schemaVersion": 1,
  "analysisVersion": 2,
  "dossierId": "DLR5L16N49364",
- "generatedAt": "2026-07-08T05:40:47Z",
+ "generatedAt": "2026-07-11T05:28:44Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
   "baseUrl": "https://integrate.api.nvidia.com/v1"
  },
  "titre": "Réduire l’impact environnemental de l’industrie textile",
- "statut": "en_cours",
+ "statut": "promulgue",
  "sources": {
   "dossierAn": "https://www.assemblee-nationale.fr/dyn/16/dossiers/impact_environnemental_industrie_textile",
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0321_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Réduire l'impact environnemental de l'industrie textile en encadrant la « mode ultra-express » (fast fashion), via la définition de cette pratique, l'affichage d'informations environnementales, la modulation des éco-contributions et l'interdiction de certaines publicités.",
+ "objectifAffiche": "Réduire l'impact environnemental de l'industrie textile en encadrant la « mode ultra-express » (fast fashion), via la modulation des contributions des producteurs, l'information des consommateurs et l'encadrement de la publicité.",
  "mecanismesCles": [
   {
    "resume": "Définition juridique de la « mode ultra-express » ciblant les producteurs qui multiplient les références neuves et découragent la réparation, avec extension aux interfaces en ligne (marketplaces).",
@@ -23,46 +23,46 @@
    "citation": "Relèvent de la mode ultra-express les pratiques industrielles et commerciales des producteurs [...] qui ont pour conséquence la diminution de la durée d'usage ou de la durée de vie de produits"
   },
   {
-   "resume": "Obligation d'affichage sur les interfaces en ligne de messages de sensibilisation à la sobriété, au réemploi, à la réparation, au recyclage et à l'incidence environnementale et sociale des produits.",
-   "articleRef": "art. 1er, II",
+   "resume": "Affichage obligatoire sur les plateformes en ligne de messages de sensibilisation à la sobriété, au réemploi, à la réparation, au recyclage et à l'incidence environnementale et sociale des produits.",
+   "articleRef": "art. 1er (II du L. 541-9-1-1)",
    "citation": "affichent sur leur interface en ligne des messages encourageant à la sobriété, au réemploi, à la réparation, à la réutilisation et au recyclage des produits"
   },
   {
-   "resume": "Exclusion du dispositif pour les personnes établies dans un autre État membre de l'UE/EEE, sauf procédure de la directive e-commerce.",
-   "articleRef": "art. 1er, II bis",
-   "citation": "Le présent article ne s'applique pas aux personnes établies dans un autre État membre de l'Union européenne ou partie à l'accord sur l'Espace économique européen"
-  },
-  {
-   "resume": "Obligation d'indiquer les lieux de fabrication du produit textile vendu en ligne, dans une taille de caractères égale à celle du prix.",
-   "articleRef": "art. 1er bis AA (L. 541-9-1-2)",
-   "citation": "Les lieux de fabrication du produit [...] doivent être portés à la connaissance du consommateur de manière claire et lisible sur la plateforme numérique, en caractères d'une taille égale à celle de l'indication du prix"
-  },
-  {
-   "resume": "Suppression de la réduction d'impôt (article 238 bis du CGI) pour les versements des producteurs liés à la mode ultra-express.",
+   "resume": "Exclusion des versements des producteurs relevant de la mode ultra-express du bénéfice de la réduction d'impôt prévue au 2 de l'article 238 bis du CGI.",
    "articleRef": "art. 1er bis AB",
    "citation": "les versements [...] résultant de la mode ultra-express [...] n'ouvrent pas droit à la réduction d'impôt prévue au présent 2"
   },
   {
-   "resume": "Échange d'informations entre agents de la prévention des risques, douanes, DGCCRF et éco-organismes pour les contrôles, avec levée du secret professionnel.",
-   "articleRef": "art. 1er bis A",
-   "citation": "sont autorisés [...] à se communiquer [...] tous les renseignements et les documents [...] sans que l'article 11 du code de procédure pénale ou les dispositions relatives au secret professionnel fassent obstacle"
+   "resume": "Obligation d'indiquer clairement les lieux de fabrication du produit textile vendu en ligne, dans une taille de caractères égale à celle du prix.",
+   "articleRef": "art. 1er bis AA (L. 541-9-1-2)",
+   "citation": "Les lieux de fabrication du produit [...] vendu en ligne doivent être portés à la connaissance du consommateur de manière claire et lisible sur la plateforme numérique, en caractères d'une taille égale à celle de l'indication du prix"
+  },
+  {
+   "resume": "Modulation des contributions financières des producteurs textiles en fonction de l'étendue de la gamme, de la fréquence des offres et de l'incitation à la réparation, avec une pénalité croissante (de 0,25-12 € en 2026 jusqu'à 2-20 € par produit à partir de 2030).",
+   "articleRef": "art. 2 (II du L. 541-10-27)",
+   "citation": "les contributions financières [...] sont également modulées [...] en fonction de l'étendue de la gamme de produits ou de la fréquence des offres ainsi que de l'incitation à la réparation"
+  },
+  {
+   "resume": "Plafonnement de la prime ou pénalité à 50 % du prix de vente HT sur demande motivée du producteur, ce qui limite l'effet dissuasif maximal.",
+   "articleRef": "art. 2 (II du L. 541-10-27)",
+   "citation": "les éco-organismes sont tenus de limiter le montant de la prime ou de la pénalité à 50 % du prix de vente hors taxe de ces produits, nonobstant le montant des pénalités prévu aux 1° à 5°"
   }
  ],
- "verdictIncitations": "incitations_mitigees",
- "justificationVerdict": "Le texte crée plusieurs mécanismes structurellement alignés avec l'objectif : modulation des éco-contributions selon la fréquence des collections et l'incitation à la réparation (art. 2, I, 3°), pénalités financières croissantes par produit (art. 2, I, 3°), interdiction de la publicité pour la mode ultra-express (art. 3), affichage obligatoire des lieux de fabrication (art. 1er bis AA) et suppression de l'avantage fiscal pour les producteurs concernés (art. 1er bis AB). Toutefois, les incitations sont fortement mitigées par plusieurs dispositions : l'exclusion des personnes et fournisseurs de médias établis dans un autre État membre de l'UE/EEE (art. 1er II bis et art. 3 II), qui crée une asymétrie concurrentielle favorable aux acteurs extra-européens ; le plafonnement à 50 % du prix HT de la prime/pénalité (art. 2, I, 3°) qui en réduit la portée incitative ; et la possibilité de modulation positive des contributions « lorsque cela est possible » (art. 2, I, 1° a bis), formulation non contraignante. L'ensemble pousse dans la bonne direction mais avec une force affaiblie.",
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés convergent vers l'objectif affiché : la définition de la mode ultra-express (art. 1er) permet de cibler les pratiques nuisibles, la modulation des éco-contributions avec pénalités croissantes (art. 2, II) crée un signal prix dissuasif, l'interdiction de la publicité (art. 3) réduit l'incitation à la consommation, et l'obligation d'affichage des lieux de fabrication (art. 1er bis AA) renforce la transparence. L'exclusion de la réduction d'impôt (art. 1er bis AB) prive les acteurs de la fast fashion d'un avantage fiscal. Toutefois, le plafonnement à 50 % du prix HT (art. 2, II) et l'exclusion des vendeurs d'invendus et des plateformes non-producteurs atténuent la portée du dispositif, sans pour autant l'inverser.",
  "pointsDeVigilance": [
-  "Exclusion explicite des acteurs non-UE/EEE (art. 1er II bis, art. 3 II) : risque de contournement via des plateformes ou médias établis ailleurs en Europe, alors que la majorité de la fast fashion est extra-européenne.",
-  "Seuils et critères de définition de la « mode ultra-express » renvoyés à un décret en Conseil d'État (art. 1er, III) : l'efficacité dépend largement de la rédaction réglementaire non fournie.",
-  "Plafonnement de la pénalité à 50 % du prix HT (art. 2, I, 3°) : limite l'effet dissuasif sur les produits très bas prix, cœur du modèle ultra-express.",
-  "Collectes automatisées de données sur les plateformes nonobstant les CGU (art. 2, I, 3°, III) : soulève des questions de proportionnalité et de concurrence avec le droit de la propriété intellectuelle.",
-  "L'article 1er bis (initialement prévu) est supprimé : le périmètre effectif des obligations est plus restreint que la version initiale."
+  "Le plafonnement de la pénalité à 50 % du prix HT sur demande du producteur (art. 2) limite fortement le caractère dissuasif pour les produits très bon marché, cœur de la fast fashion.",
+  "L'exclusion des vendeurs d'invendus du champ de la mode ultra-express (art. 1er, al. 2) crée une faille potentielle pour écouler les stocks.",
+  "L'article 1er bis AB supprime un avantage fiscal mais ne crée pas de taxe nouvelle ; l'effet incitatif repose principalement sur la modulation des éco-contributions.",
+  "L'entrée en vigueur différée au 1er septembre 2026 (art. 2, III) reporte l'application des pénalités les plus structurantes.",
+  "Le texte est tronqué à 15 000 caractères : les articles 4 et suivants (sanctions, contrôles, dispositions finales) ne sont pas visibles, ce qui empêche d'évaluer l'effectivité globale."
  ],
  "themes": [
   "textile",
   "fast fashion",
-  "mode ultra-express",
   "économie circulaire",
-  "responsabilité élargie du producteur"
+  "responsabilité élargie des producteurs",
+  "publicité"
  ],
  "scrutinsCles": [
   "7493",

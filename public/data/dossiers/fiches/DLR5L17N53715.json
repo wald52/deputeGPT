@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53715",
- "generatedAt": "2026-07-04T06:08:42Z",
+ "generatedAt": "2026-07-11T05:40:28Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,39 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0252_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Renforcer la place des agriculteurs dans l'aménagement du territoire et sécuriser l'exercice des activités agricoles face au changement climatique.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel n'a pas été extrait (seuls des objets PDF bruts et des flux binaires compressés sont visibles). Aucun article, aucune disposition concrète et aucune citation exploitable ne peuvent être identifiés. En l'absence du contenu substantiel du texte, il est impossible de déterminer les mécanismes créés par les articles et donc de vérifier si les incitations vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "Renforcer la place des agriculteurs dans l'aménagement du territoire et sécuriser l'exercice des activités agricoles face au changement climatique, via une proposition de loi ordinaire.",
+ "mecanismesCles": [
+  {
+   "resume": "Intégration de l'organisme de défense et de gestion (ODG, lié aux signes de qualité) comme personne publique associée dans l'élaboration des documents d'urbanisme (SCOT, PLU).",
+   "articleRef": "art. 1er (2° et 3°)",
+   "citation": "« L'organisme de défense et de gestion mentionné à l'article L. 642-17 du même code. »"
+  },
+  {
+   "resume": "Obligation pour la chambre d'agriculture d'informer sans délai l'ODG lorsqu'un projet ou document d'urbanisme entraîne une réduction des surfaces affectées à des productions sous signe de qualité.",
+   "articleRef": "art. 1er bis",
+   "citation": "« Dès qu'elle a connaissance d'un projet ou d'un document d'aménagement ou d'urbanisme ayant pour conséquence une réduction des surfaces affectées à des productions bénéficiant d'un signe d'identification de la qualité et de l'origine, la chambre d'agriculture en informe sans délai l'organisme de défense et de gestion mentionné à l'article L. 642-17. »"
+  },
+  {
+   "resume": "Présomption de continuité d'une activité agricole dont les horaires sont modifiés de manière exceptionnelle et saisonnière en raison d'aléas climatiques, sécurisant ainsi son statut juridique.",
+   "articleRef": "art. 2",
+   "citation": "« Sont réputées s'être poursuivies dans les mêmes conditions les activités agricoles dont les horaires sont modifiés, de manière exceptionnelle et saisonnière, en raison d'aléas climatiques. »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les trois mécanismes convergent vers l'objectif affiché : l'article 1er renforce la place des agriculteurs (via les ODG) dans l'aménagement du territoire en leur donnant un siège dans l'élaboration des documents d'urbanisme. L'article 1er bis complète ce dispositif par une obligation d'information rapide en cas de réduction de surfaces sous signe de qualité, protégeant ainsi les productions agricoles territorialisées. L'article 2 sécurise juridiquement l'exercice de l'activité agricole face aux aléas climatiques en présumant la continuité de l'exploitation malgré des modifications saisonnières d'horaires. L'ensemble crée des incitations cohérentes avec le titre du texte.",
  "pointsDeVigilance": [
-  "Le contenu textuel du PDF n'a pas été décodé ; le texte officiel est tronqué et inexploitable.",
-  "Aucun article ni mécanisme n'a pu être extrait pour analyse.",
-  "L'identifiant DLR5L17N53715 et le titre suggèrent un texte connu (proposition de loi relative à l'aménagement du territoire agricole), mais sans accès au contenu normatif, l'analyse de second ordre ne peut être conduite."
+  "Le texte est très court (3 articles seulement) et ne contient pas d'exposé des motifs dans l'extrait fourni, ce qui limite l'analyse des intentions profondes.",
+  "L'article 1er (1°) a été supprimé en séance, privant le texte d'un mécanisme initialement prévu.",
+  "Les mécanismes restent essentiellement procéduraux (information, association) sans créer de contraintes fortes ni de sanctions en cas de non-respect.",
+  "Le périmètre est limité aux productions sous signe de qualité et de l'origine (SIQO), laissant de côté la majorité des exploitations agricoles.",
+  "Aucun mécanisme financier (subvention, taxe, indemnisation) n'est prévu pour accompagner l'adaptation au changement climatique."
  ],
  "themes": [
   "agriculture",
-  "amenagement du territoire",
+  "aménagement du territoire",
+  "urbanisme",
   "changement climatique",
-  "foncier"
+  "signes de qualité"
  ],
  "scrutinsCles": [
   "5836",
@@ -37,5 +56,5 @@
   "5839"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:f0864547df194f664df02c58fc31049205ca572f8db9d2ed5b6d921eff271f9c"
+ "sourceTextHash": "sha256:5a9bd7bba0bf1084ebe88bc4ae03dde6d0393432fab05aadc773077f1390853b"
 }

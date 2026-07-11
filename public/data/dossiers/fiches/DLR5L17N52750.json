@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52750",
- "generatedAt": "2026-07-04T06:04:22Z",
+ "generatedAt": "2026-07-11T05:32:44Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,21 +15,54 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0264_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de loi ordinaire intitulée « Simplifier le millefeuille territorial par la collectivité unique ». L'objectif affiché est de simplifier l'organisation territoriale française en réduisant l'empilement des collectivités (le « millefeuille territorial ») par la création d'une collectivité unique.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des objets PDF et des flux binaires compressés sont visibles). Aucun article, aucun exposé des motifs, aucune disposition concrète (obligation, taxe, subvention, seuil, sanction, dérogation) ne peut être identifié dans le contenu exploitable. En l'absence de tout mécanisme verifiable dans le texte, il est impossible de determiner si les incitations creees par les articles vont dans le sens de l'objectif affiche ou s'y opposent.",
+ "objectifAffiche": "La proposition de loi vise à faire sortir la Collectivité européenne d'Alsace de la région Grand Est, en transformant cette Collectivité européenne d'Alsace en une collectivité à statut particulier unique (l'« Alsace »), exerçant à la fois les compétences départementales, régionales et celles déjà dévolues à la CEA, dans le but affiché de simplifier le millefeuille territorial.",
+ "mecanismesCles": [
+  {
+   "resume": "Création d'une collectivité à statut particulier dénommée « Alsace », se substituant à la Collectivité européenne d'Alsace, dans les limites territoriales précédemment reconnues à cette dernière.",
+   "articleRef": "art. 2 (L. 4441-1)",
+   "citation": "L'Alsace constitue une collectivité à statut particulier, au sens de l'article 72 de la Constitution, dénommée « collectivité européenne d'Alsace », en lieu et place de la Collectivité européenne d'Alsace instituée par la loi n° 2019-816 du 2 août 2019"
+  },
+  {
+   "resume": "L'Alsace exerce de plein droit les compétences des départements, des régions et celles définies par la loi de 2019 sur la CEA.",
+   "articleRef": "art. 2 (L. 4442-1)",
+   "citation": "L'Alsace exerce de plein droit : 1° Les compétences que les lois attribuent aux départements ; 2° Les compétences que les lois attribuent aux régions ; 3° Les compétences définies par la loi n° 2019-816 du 2 août 2019"
+  },
+  {
+   "resume": "Substitution de l'Alsace à la région Grand Est dans ses biens, droits, obligations et financements pour l'exercice des compétences régionales, avec convention entre présidents ou décret en Conseil d'État en cas de désaccord.",
+   "articleRef": "art. 2 (IV)",
+   "citation": "l'Alsace instituée par la présente loi est substituée à la région Grand Est dans tous ses biens, droits, obligations et financements"
+  },
+  {
+   "resume": "Transfert gratuit des biens, droits et obligations, sans droit, indemnité ou taxe, et maintien des contrats et actes jusqu'au 31 décembre 2031.",
+   "articleRef": "art. 2 (III et IV)",
+   "citation": "Le transfert de ces biens, droits et obligations est réalisé à titre gratuit et ne donne lieu au paiement d'aucun droit, ni d'aucune indemnité ou taxe"
+  },
+  {
+   "resume": "Transfert de plein droit du personnel de la CEA vers la nouvelle Alsace et transfert des services de la région Grand Est par décret en Conseil d'État.",
+   "articleRef": "art. 2 (V et VI)",
+   "citation": "Le personnel de la Collectivité européenne d'Alsace [...] relève de plein droit de l'Alsace"
+  },
+  {
+   "resume": "Soumission du projet de collectivité à statut particulier à référendum local auprès des électeurs inscrits sur les listes électorales de la CEA.",
+   "articleRef": "art. 2 (VIII bis)",
+   "citation": "Le projet de collectivité territoriale à statut particulier prévu au présent article est soumis à référendum local aux électeurs inscrits sur les listes électorales de la collectivité européenne d'Alsace"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte fusionne effectivement la CEA et la portion alsacienne de la région Grand Est en une seule collectivité à statut particulier exerçant « de plein droit » les compétences départementales et régionales (art. 2, L. 4442-1), ce qui supprime un échelon territorial et va dans le sens de l'objectif de simplification du millefeuille. La substitution universelle dans les biens, droits, obligations, contrats et procédures (art. 2, III et IV) ainsi que le transfert de personnel (art. 2, V) organisent concrètement la fusion. Le mécanisme référendaire (art. 2, VIII bis) conditionne l'entrée en vigueur à l'accord des électeurs alsaciens, et la compensation financière par DGF et taxe additionnelle sur les tabacs (art. 3) neutralise l'impact budgétaire. L'ensemble des incitations créées par les articles va donc dans le sens de l'objectif affiché.",
  "pointsDeVigilance": [
-  "Le document transmis est un PDF dont le flux de texte n'a pas été décodé : le contenu législatif réel (exposé des motifs, articles) n'est pas accessible.",
-  "Aucun mécanisme concret (fusion de collectivités, transfert de compétences, calendrier, modalités de transition, financement) ne peut être cité.",
-  "Le titre seul évoque une « collectivité unique », mais sans lecture des articles, on ne sait pas si le texte crée réellement une fusion, une simple coordination, ou un mécanisme différent.",
-  "Une analyse fiable nécessiterait la version texte (OCR ou extraction) du PDF."
+  "L'article 1er a été supprimé, ce qui pourrait priver le texte de certaines dispositions initiales non visibles dans le tronquage.",
+  "La simplification est limitée au territoire alsacien : la région Grand Est persiste pour les autres territoires, ce qui ne supprime qu'un seul échelon et non l'ensemble du millefeuille.",
+  "Le transfert des biens régionaux repose sur une convention entre présidents, avec décret en Conseil d'État en cas de désaccord, ce qui laisse une incertitude sur le contenu effectif du transfert.",
+  "Le financement par une taxe additionnelle sur les tabacs (art. 3) crée une incitation fiscale nouvelle dont l'impact sur la consommation n'est pas évalué dans le texte.",
+  "Le maintien des actes et contrats jusqu'au 31 décembre 2031 (art. 2, III et IV) prolonge une période de complexité administrative transitoire."
  ],
  "themes": [
   "organisation territoriale",
-  "collectivites territoriales",
-  "simplification administrative",
-  "millefeuille territorial"
+  "collectivités à statut particulier",
+  "alsace",
+  "grand est",
+  "fusion de collectivités"
  ],
  "scrutinsCles": [
   "6042",
@@ -38,5 +71,5 @@
   "6045"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:b57d7dae2fe224dedde7de2a639102d6c4c08797290d7c2264b2472c5b1b33d2"
+ "sourceTextHash": "sha256:0a2d2ed4edc0268677c4b69389c57338761506f10f05d85014c2e3041f538efc"
 }

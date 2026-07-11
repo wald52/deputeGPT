@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53425",
- "generatedAt": "2026-07-04T06:14:07Z",
+ "generatedAt": "2026-07-11T05:50:25Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,19 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2427_texte-adopte-commission",
   "legifrance": null
  },
- "objectifAffiche": "Proposition de loi ordinaire déposée par Jean-Claude Raux et plusieurs collègues, visant à protéger l'eau potable. Le texte officiel fourni ne contient ni exposé des motifs ni articles, seule la page de sommaire du dossier législatif est accessible.",
+ "objectifAffiche": "Proposition de loi ordinaire déposée par Jean-Claude Raux et plusieurs collègues, visant à protéger l'eau potable. L'exposé des motifs et le contenu des articles ne sont pas fournis dans le texte transmis.",
  "mecanismesCles": [],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni se limite à la page de garde du dossier législatif (titre, identifiant, procédure, commission saisie, formats disponibles). Aucun article, aucune disposition, aucun exposé des motifs n'est présent dans les 15000 caractères transmis. Il est donc impossible d'identifier des mécanismes concrets (obligations, taxes, sanctions, dérogations) et, a fortiori, de déterminer si les incitations créées vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs, ni articles de loi exploitables : seuls figurent l'identifiant du dossier, la procédure, le titre et des métadonnées de navigation (commission, formats, notice XML/JSON). Sans le contenu normatif, il est impossible d'identifier des obligations, taxes, subventions, dérogations, seuils ou sanctions, et donc de déterminer si les incitations créées sont alignées, mitigées ou opposées à l'objectif affiché.",
  "pointsDeVigilance": [
-  "Le texte officiel est tronqué et ne contient que les métadonnées du dossier législatif, sans contenu normatif.",
-  "L'exposé des motifs est absent, empêchant toute caractérisation précise de l'objectif affiché au-delà du titre.",
-  "Le numéro '2427-A0' correspond au texte de la commission, distinct du texte initial n°2308 ; les éventuelles modifications de la commission ne sont pas visibles.",
-  "La date de dépôt (4 février 2026) est postérieure à la date courante de la base, ce qui suggère un texte très récent dont l'analyse normative n'est pas possible sur la base des éléments fournis."
+  "Le texte officiel est tronqué à 15000 caractères mais, en réalité, seul l'en-tête administratif et les liens de navigation ont été transmis.",
+  "Aucun article ni exposé des motifs n'est disponible pour analyse.",
+  "Le statut 'en_cours' indique que le texte peut encore évoluer (amendements, nouvelle lecture)."
  ],
  "themes": [
   "eau potable",
   "environnement",
-  "protection de la ressource"
+  "santé publique"
  ],
  "scrutinsCles": [
   "5380",

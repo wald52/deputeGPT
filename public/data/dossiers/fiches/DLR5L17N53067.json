@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53067",
- "generatedAt": "2026-07-04T06:03:32Z",
+ "generatedAt": "2026-07-11T05:31:40Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,54 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0266_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à reconnaître une politique nationale d'adaptation au changement climatique et à adapter les mécanismes d'assurance. L'objectif affiché est de donner un cadre législatif à l'adaptation climatique et de modifier le régime assurantiel pour mieux couvrir les risques liés au changement climatique.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des flux binaires compressés et des balises d'objets PDF sont visibles, sans aucun article de loi, exposé des motifs ou disposition identifiable). Aucun mécanisme concret (obligation, taxe, subvention, seuil, sanction, dérogation) ne peut être identifié ni cité. En l'absence de tout contenu normatif exploitable, il est impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "La proposition de loi vise à reconnaître une politique nationale d'adaptation au changement climatique et à adapter les mécanismes d'assurance. Elle instaure un cadre stratégique (plan national d'adaptation, trajectoire de réchauffement de référence) et réforme l'assurance contre les catastrophes naturelles pour favoriser la reconstruction résiliente.",
+ "mecanismesCles": [
+  {
+   "resume": "Création d'un Plan national d'adaptation au changement climatique (PNACC), révisé tous les cinq ans, fondé sur une trajectoire de réchauffement de référence définie par arrêté ministériel jusqu'à l'horizon 2100.",
+   "articleRef": "art. 1er (L. 229-4-1 et L. 229-4-2 du code de l'environnement)",
+   "citation": "« Le plan national d'adaptation au changement climatique définit [...] la stratégie de la Nation pour réduire ses vulnérabilités physiques, économiques et sociales à l'évolution du climat. »"
+  },
+  {
+   "resume": "Intégration de la trajectoire de réchauffement de référence dans les documents d'urbanisme (PLU), avec dispense pour les procédures déjà prescrites avant la promulgation.",
+   "articleRef": "art. 1er (II modifiant L. 151-4 du code de l'urbanisme)",
+   "citation": "« des prévisions économiques, démographiques et, sur le fondement de la trajectoire de réchauffement de référence [...] climatiques »"
+  },
+  {
+   "resume": "Possibilité pour l'assureur de verser une indemnité dépassant la valeur du bien, à condition qu'elle finance des travaux de réduction de la vulnérabilité ; interdiction de conditionner l'indemnité à une réparation à l'identique.",
+   "articleRef": "art. 2 (art. L. 121-1 du code des assurances)",
+   "citation": "« L'assureur ne peut conditionner le versement de l'indemnité à une réparation à l'identique de la chose assurée. »"
+  },
+  {
+   "resume": "Obligation de reconstruction ou réparation « résiliente » des biens sinistrés au titre d'une catastrophe naturelle, dans la limite de l'indemnité ; en cas de refus de l'assuré, majoration de la franchise y compris en cas de changement d'assureur.",
+   "articleRef": "art. 2 (art. L. 125-4-1 du code des assurances)",
+   "citation": "« En cas de refus de l'assuré de réaliser ces travaux, une augmentation de la franchise est appliquée pour l'indemnisation au titre des catastrophes naturelles du sinistre en question et des sinistres suivants, y compris en cas de changement d'assureur »"
+  },
+  {
+   "resume": "Possibilité pour les assureurs de fixer librement un taux de surprime cat nat supérieur au taux réglementaire, sous plafond, pour les résidences secondaires et les biens professionnels de plus de 20 M€ situés en zone exposée.",
+   "articleRef": "art. 3 (art. L. 125-2 du code des assurances)",
+   "citation": "« Les entreprises d'assurance peuvent fixer librement un taux de la prime ou de la cotisation additionnelle supérieur au taux mentionné [...] pour les résidences secondaires ; [...] les biens professionnels dont la valeur assurée dépasse vingt millions d'euros. »"
+  },
+  {
+   "resume": "Réexamen et revalorisation quinquennale du taux de la surprime cat nat.",
+   "articleRef": "art. 3 (1°)",
+   "citation": "« Il est réexaminé et, si nécessaire, revalorisé au 1er janvier tous les cinq ans »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés convergent vers l'objectif affiché d'adaptation au changement climatique. L'article 1er structure la stratégie nationale via un PNACC quinquennal adossé à une trajectoire de réchauffement de référence jusqu'en 2100, et l'ancre dans l'urbanisme (art. 1er II). L'article 2 oriente l'indemnisation cat nat vers la reconstruction résiliente : l'assureur peut dépasser la valeur du bien pour financer des travaux de réduction de la vulnérabilité (L. 121-1) et ne peut plus imposer une réparation à l'identique ; en cas de refus de l'assuré, la franchise est majorée (L. 125-4-1), ce qui incite à la résilience. L'article 3 permet une surprime ciblée sur les résidences secondaires et les biens professionnels > 20 M€ en zone exposée, internalisant le risque là où il est le plus élevé. L'ensemble crée donc des incitations cohérentes avec l'adaptation, sans mécanisme contradictoire identifié dans le texte.",
  "pointsDeVigilance": [
-  "Le document fourni est un PDF dont le flux de texte n'a pas été décodé : aucun article ni exposé des motifs n'est lisible.",
-  "L'identifiant DLR5L17N53067 et le titre suggèrent un texte connu (proposition reconnaissant une politique nationale d'adaptation), mais le contenu normatif réel n'est pas accessible dans la pièce jointe.",
-  "Toute analyse de second ordre sur les incitations est impossible sans le texte des articles."
+  "L'efficacité dépend largement de décrets en Conseil d'État non fournis (modalités de la trajectoire, critères de résilience, plafond de travaux obligatoires, conditions de la surprime libre).",
+  "Le financement par taxe additionnelle sur les tabacs (art. 4) est sans lien avec le risque climatique et peut poser une question d'équité fiscale.",
+  "L'entrée en vigueur différée de six mois (art. 2 III) laisse une fenêtre d'incertitude pour les sinistres en cours.",
+  "La dispense d'application aux PLU déjà prescrits (art. 1er III 1°) ralentit l'intégration de la trajectoire dans l'urbanisme local.",
+  "Le texte ne crée pas de mécanisme explicite d'aide aux assurés modestes pour financer les travaux de résilience rendus obligatoires."
  ],
  "themes": [
-  "changement climatique",
-  "adaptation",
-  "assurance",
-  "catastrophes naturelles"
+  "adaptation climatique",
+  "assurance catastrophes naturelles",
+  "résilience",
+  "urbanisme",
+  "trajectoire de réchauffement"
  ],
  "scrutinsCles": [
   "6066",
@@ -37,5 +71,5 @@
   "6069"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:c69c887ed87c9a29eefefa19e9b2daa3633ff9a6b38b70f150af6282084cbdb8"
+ "sourceTextHash": "sha256:74a8e539fbd0e5ae0004e5c9377fb80c61526166cdbfcef89d307e3629f00f57"
 }

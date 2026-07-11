@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53672",
- "generatedAt": "2026-07-04T06:07:26Z",
+ "generatedAt": "2026-07-11T05:35:16Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,25 +15,58 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0254_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Renforcer l'enseignement à la défense nationale dans le cadre du parcours de citoyenneté. Proposition de loi ordinaire visant à intégrer ou approfondir les contenus liés à la défense nationale au sein du parcours citoyen des jeunes.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est un fichier PDF dont le contenu textuel n'a pas pu être extrait (flux binaires illisibles, aucune chaîne de caractères correspondant à des articles de loi, à un exposé des motifs ou à des mécanismes n'est présente). Aucun article, aucune obligation, aucune sanction, aucun seuil ou dispositif concret ne peut être identifié dans le document transmis. En l'absence de tout contenu normatif exploitable, il est impossible de déterminer si les mécanismes créés vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "Renforcer l'enseignement à la défense nationale dans le cadre du parcours de citoyenneté, en complétant l'article L. 312-12 du code de l'éducation pour mieux structurer cet enseignement (intervenants, référentiel) et en l'inscrivant dans le code du service national.",
+ "mecanismesCles": [
+  {
+   "resume": "Compléter l'article L. 312-12 du code de l'éducation pour préciser que l'enseignement à la défense contribue à la formation civique et morale et à la compréhension des enjeux contemporains de défense, sécurité et résilience.",
+   "articleRef": "art. 1er (I, 1°)",
+   "citation": "« Cet enseignement contribue à la formation civique et morale des élèves et à la compréhension des enjeux contemporains de défense, de sécurité et de résilience nationale. »"
+  },
+  {
+   "resume": "Autoriser l'association d'intervenants issus des réserves opérationnelles ou citoyennes et des correspondants défense communaux, selon des conditions fixées conjointement par les ministres de l'Éducation et de la Défense.",
+   "articleRef": "art. 1er (I, 1°)",
+   "citation": "« Il peut associer des intervenants issus des réserves opérationnelles ou citoyennes et, le cas échéant, les correspondants défense désignés par les communes… »"
+  },
+  {
+   "resume": "Instaurer un référentiel de contenu arrêté par le ministre de l'Éducation nationale après consultation du Conseil supérieur des programmes.",
+   "articleRef": "art. 1er (I, 1°)",
+   "citation": "« Le contenu de cet enseignement fait l'objet d'un référentiel arrêté par le ministre chargé de l'éducation nationale après consultation du Conseil supérieur des programmes. »"
+  },
+  {
+   "resume": "Supprimer la mention de l'éducation dans l'article L. 114-1 du code du service national et en retirer les deux derniers alinéas (allégement/suppression de dispositions existantes).",
+   "articleRef": "art. 1er (II)",
+   "citation": "« Après le mot : « éducation », la fin du premier alinéa est supprimée ; 2° Les deux derniers alinéas sont supprimés. »"
+  },
+  {
+   "resume": "Inscrire la référence à l'article L. 312-12 dans les tableaux des articles L. 375-1, L. 376-1 et L. 377-1 du code de l'éducation (intégration au contrôle pédagogique).",
+   "articleRef": "art. 1er bis",
+   "citation": "« L. 312-12 Résultant de la loi n° … visant à renforcer l'enseignement à la défense nationale dans le cadre du parcours de citoyenneté »"
+  },
+  {
+   "resume": "Financement de la charge pour l'État par la création d'une taxe additionnelle à l'accise sur les tabacs (chapitre IV du titre Ier du livre III du code des impositions sur les biens et services).",
+   "articleRef": "art. 2",
+   "citation": "« La charge pour l'État est compensée à due concurrence par la création d'une taxe additionnelle à l'accise sur les tabacs… »"
+  }
+ ],
+ "verdictIncitations": "incitations_mitigees",
+ "justificationVerdict": "L'objectif affiché de renforcer l'enseignement à la défense est traduit par des mécanismes de structuration pédagogique (référentiel, intervenants des réserves, correspondants défense) qui vont effectivement dans ce sens (art. 1er, I, 1°). Toutefois, l'article 1er (II) supprime des dispositions existantes du code du service national relatives à l'éducation, ce qui peut affaiblir le volet « parcours de citoyenneté » annoncé dans le titre. Par ailleurs, le financement repose sur une taxe additionnelle sur les tabacs (art. 2), mécanisme sans lien direct avec la défense nationale et dont le rendement effectif n'est pas garanti pour couvrir la charge. L'absence de moyens humains, de calendrier de mise en œuvre ou de sanctions en cas de non-application tempère la portée concrète du renforcement affiché.",
  "pointsDeVigilance": [
-  "Le document fourni est un PDF dont le contenu textuel n'a pas été décodé (flux binaires bruts, pas de texte lisible)",
-  "Aucun article de loi ni exposé des motifs n'est accessible dans le texte transmis",
-  "L'analyse des mécanismes concrets est donc impossible à partir des seules informations fournies",
-  "Il conviendrait de fournir le texte de la proposition de loi dans un format textuel exploitable pour mener l'analyse"
+  "Suppression simultanée de dispositions du code du service national (art. 1er II) sans précision sur ce qui les remplace, pouvant créer un vide juridique.",
+  "Financement par taxe sur les tabacs (art. 2) : ressource volatile et décroissante, sans garantie d'adéquation au coût réel de l'enseignement.",
+  "Aucun mécanisme de sanction, d'évaluation ou de contrôle de l'application du référentiel n'est prévu.",
+  "Le recours aux intervenants des réserves est formulé de manière facultative (« peut associer »), ce qui limite la portée contraignante.",
+  "L'exposé des motifs n'est pas fourni dans le texte transmis, limitant l'analyse de l'intention."
  ],
  "themes": [
+  "éducation",
   "défense nationale",
-  "parcours de citoyenneté",
-  "enseignement",
-  "éducation à la défense"
+  "citoyenneté",
+  "parcours scolaire",
+  "financement"
  ],
  "scrutinsCles": [
   "5845"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:a1adaf276a93dd6c62264a020c5c485b4ccbd8b1a4afcbe397f673d38f9261cf"
+ "sourceTextHash": "sha256:91bc0d6a2fb9f3bdb643f63324863522f7d8426c9d72b2f61b14049e473fd95a"
 }

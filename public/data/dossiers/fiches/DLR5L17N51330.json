@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N51330",
- "generatedAt": "2026-07-04T06:09:11Z",
+ "generatedAt": "2026-07-11T05:40:53Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,20 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2928_proposition-loi",
   "legifrance": null
  },
- "objectifAffiche": "Renforcer l'effectivité des droits voisins des éditeurs et agences de presse. Il s'agit d'une proposition de loi ordinaire modifiée par le Sénat, déposée le 17 juin 2026, examinée par la commission des affaires culturelles et de l'éducation.",
+ "objectifAffiche": "Renforcer l'effectivité des droits voisins des éditeurs et agences de presse, c'est-à-dire leur capacité à faire valoir juridiquement et économiquement les droits dont ils disposent sur leurs contenus face aux réutilisations non autorisées.",
  "mecanismesCles": [],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles de loi. Seules les métadonnées du dossier législatif (titre, numéro, date de dépôt, commission saisie) sont accessibles. Sans le contenu normatif, il est impossible d'identifier les obligations, sanctions, seuils ou dérogations créés par le texte, et donc impossible de déterminer si les mécanismes vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs, ni articles de loi : seules des métadonnées de navigation (titre, identifiant, commission saisie, formats disponibles) sont présentes. Aucun mécanisme concret (obligation, sanction, seuil, dérogation, taxe, subvention) ne peut être extrait du dossier, ce qui empêche toute analyse de second ordre sur l'alignement entre les incitations créées et l'objectif affiché.",
  "pointsDeVigilance": [
-  "Le texte officiel est tronqué et ne contient que l'en-tête du dossier législatif (sommaire, commission, formats disponibles)",
-  "Aucun article ni exposé des motifs n'est présent dans la extraction fournie",
-  "Le titre mentionne un renforcement des droits voisins de la presse, mais sans contenu normatif, l'analyse de second ordre est impossible"
+  "Le texte officiel est tronqué à 15 000 caractères mais, en réalité, seul l'en-tête du dossier législatif est accessible ; aucun article ni exposé des motifs n'est reproduit.",
+  "La mention 'modifiée par le Sénat' indique une navette parlementaire, dont les apports ne sont pas visibles dans l'extrait.",
+  "Sans lecture des articles, il est impossible de distinguer une simple clarification procédurale d'une réforme de fond (nouveaux droits, nouvelles sanctions, nouveaux ayants droit)."
  ],
  "themes": [
-  "propriete_intellectuelle",
+  "droit d'auteur",
+  "droits voisins",
   "presse",
-  "droits_voisins",
-  "numerique"
+  "propriété intellectuelle"
  ],
  "scrutinsCles": [
   "5830",

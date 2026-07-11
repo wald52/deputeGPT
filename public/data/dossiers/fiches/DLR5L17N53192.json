@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53192",
- "generatedAt": "2026-07-04T06:12:40Z",
+ "generatedAt": "2026-07-11T05:49:25Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,25 +15,52 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0277_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Faciliter l'exercice en France des médecins diplômés au Royaume-Uni avant le Brexit. Il s'agit d'une proposition de loi ordinaire visant à lever les obstacles administratifs ou réglementaires empêchant ces praticiens de continuer à exercer sur le territoire français malgré la sortie du Royaume-Uni de l'Union européenne.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est un fichier PDF brut (flux binaires illisibles) dont le contenu textuel des articles et de l'exposé des motifs n'a pas pu être extrait. Aucun mécanisme concret (obligation, dérogation, seuil, sanction) ne peut être identifié ni cité à partir des éléments fournis. En l'absence d'articles déchiffrables, il est impossible de déterminer si les incitations créées vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "Faciliter l'exercice en France des médecins diplômés au Royaume-Uni ayant débuté leurs études avant le Brexit, en levant les obstacles administratifs liés à la sortie du Royaume-Uni de l'Union européenne.",
+ "mecanismesCles": [
+  {
+   "resume": "Ajout du Royaume-Uni à la liste des États dont les titres de formation sont reconnus pour l'exercice de la médecine en France (art. L. 4111-1).",
+   "articleRef": "1° de l'article unique",
+   "citation": "Au 2° de l'article L. 4111-1, après le mot : « européen, », sont insérés les mots : « du Royaume-Uni, »"
+  },
+  {
+   "resume": "Création d'un 3° à l'article L. 4131-1 permettant l'autorisation d'exercice aux titulaires de titres de formation délivrés par le Royaume-Uni, sous réserve d'une liste fixée par arrêté ministériel et d'une formation commencée avant le 31 décembre 2020.",
+   "articleRef": "2° de l'article unique",
+   "citation": "« 3° Soit les titres de formation de médecin délivrés par le Royaume-Uni, figurant sur une liste établie par arrêté des ministres chargés de l'enseignement supérieur et de la santé, qui sanctionnent une formation de base et de spécialité de médecin commencée avant le 31 décembre 2020 »"
+  },
+  {
+   "resume": "Restriction du bénéfice de la dispense d'épreuves de connaissance aux seuls diplômes britanniques dont la formation a débuté avant le 31 décembre 2020.",
+   "articleRef": "3° (b) de l'article unique",
+   "citation": "« Pour les diplômes délivrés par le Royaume-Uni, le premier alinéa du présent article ne s'applique que si la formation médicale a commencé avant le 31 décembre 2020. »"
+  },
+  {
+   "resume": "Limitation du dispositif aux ressortissants français, andorrans, de l'UE/EEE ou du Royaume-Uni.",
+   "articleRef": "2° de l'article unique",
+   "citation": "« Le présent 3° s'applique aux ressortissants de nationalité française, de citoyenneté andorrane, d'un État membre de l'Union européenne ou partie à l'accord sur l'Espace économique européen ou du Royaume-Uni. »"
+  },
+  {
+   "resume": "Mise à jour de références législatives dans les articles L. 4421-1 et L. 4431-1 pour y substituer la présente loi.",
+   "articleRef": "4° et 5° de l'article unique",
+   "citation": "« n° du facilitant l'exercice en France des médecins diplômés au Royaume-Uni ayant débuté leurs études avant le Brexit »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte crée un régime dérogatoire spécifique (art. unique, 2°) qui autorise l'exercice en France des médecins titulaires de diplômes britanniques, sous réserve d'une formation commencée avant le 31 décembre 2020. Cette reconnaissance, jusque-là bloquée par le Brexit, va directement dans le sens de l'objectif affiché de « faciliter l'exercice ». La restriction aux diplômes antérieurs au 31 décembre 2020 (3° b) limite la portée du dispositif mais reste cohérente avec l'objectif ciblé sur les médecins ayant « débuté leurs études avant le Brexit ». L'extension aux ressortissants britanniques eux-mêmes (2°, second alinéa) élargit le vivier de praticiens potentiels.",
  "pointsDeVigilance": [
-  "Le document transmis est un PDF dont le contenu textuel n'a pas été extrait (flux d'objets binaires non décodés)",
-  "Aucun article ni extrait de l'exposé des motifs n'est lisible dans le texte fourni",
-  "L'analyse des mécanismes concrets est donc impossible sans le texte intégral et décodé de la proposition de loi"
+  "L'effectivité du dispositif dépend de la publication de l'arrêté ministériel listant les titres de formation reconnus (art. unique, 2°), sans lequel le mécanisme reste inopérant.",
+  "La restriction aux formations commencées avant le 31 décembre 2020 exclut les médecins britanniques formés post-Brexit, ce qui pourrait devenir problématique à terme.",
+  "Le bénéfice est limité à certaines nationalités (français, andorrans, UE/EEE, Royaume-Uni), excluant d'autres ressortissants tiers potentiellement concernés.",
+  "Les articles 1er bis et 2 ont été supprimés, privant le texte de dispositions complémentaires qui figuraient dans la navette parlementaire."
  ],
  "themes": [
   "santé",
-  "exercice médical",
+  "formation médicale",
   "brexit",
   "reconnaissance des diplômes",
-  "professionnels de santé"
+  "exercice professionnel"
  ],
  "scrutinsCles": [
   "5415"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:1ca74782c528838520e0e87d03dc4c8394ea361d45cb0e54acf3630826e1f2b1"
+ "sourceTextHash": "sha256:40ee161d645946849c1e00ce589ac15d005a6b26dfbbd6014db764e06ce737d7"
 }
