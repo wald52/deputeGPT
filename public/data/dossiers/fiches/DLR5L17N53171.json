@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53171",
- "generatedAt": "2026-07-04T06:09:36Z",
+ "generatedAt": "2026-07-11T05:41:54Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,54 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0241_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à expérimenter l'instauration d'un enseignement d'éducation à l'alimentation à l'école. L'objectif affiché est de tester, sur un périmètre limité, un dispositif pédagogique dédié à l'alimentation dans le cadre scolaire.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel a été remplacé par des flux binaires (streams compressés) sans extraction des objets textuels. Aucun article, aucune disposition, aucun mécanisme concret (obligation, seuil, sanction, dérogation, financement) ne peut être identifié ni cité. En l'absence de contenu exploitable, il est impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "Instaurer, à titre expérimental pour trois ans, un enseignement obligatoire d'éducation à l'alimentation dans les établissements scolaires volontaires (primaire, collège, lycée), afin de promouvoir la santé, lutter contre le gaspillage alimentaire, réduire les inégalités sociales et territoriales et former des citoyens éclairés dans leurs choix de consommation.",
+ "mecanismesCles": [
+  {
+   "resume": "Expérimentation de trois ans dans les établissements volontaires des académies volontaires, identifiées conjointement par l'État et les collectivités compétentes.",
+   "articleRef": "art. 1er (I)",
+   "citation": "À titre expérimental, pour une durée de trois ans à compter de la promulgation de la présente loi, les établissements scolaires volontaires [...] mettent en œuvre une éducation à l'alimentation adaptée au niveau d'enseignement."
+  },
+  {
+   "resume": "À l'école primaire : enseignement structuré obligatoire intégré aux programmes, avec au moins trois séances par an sur le temps scolaire, mobilisant ateliers culinaires, éducation sensorielle, visites de producteurs locaux.",
+   "articleRef": "art. 1er (II)",
+   "citation": "cette éducation prend la forme d'un enseignement structuré obligatoire, intégré aux programmes existants [...] au moins trois séances par an réalisées sur le temps scolaire pour l'ensemble des élèves."
+  },
+  {
+   "resume": "Au collège : projet annuel obligatoire d'éducation à l'alimentation intégré au parcours éducatif de santé, inscrit au projet d'établissement.",
+   "articleRef": "art. 1er (III)",
+   "citation": "chaque établissement met en œuvre un projet annuel d'éducation à l'alimentation obligatoire, conçu en cohérence avec les trois axes du parcours éducatif de santé."
+  },
+  {
+   "resume": "Au lycée : module expérimental facultatif, associant les régions et l'enseignement supérieur.",
+   "articleRef": "art. 1er (IV)",
+   "citation": "Au lycée, l'éducation à l'alimentation prend la forme d'un module expérimental facultatif."
+  },
+  {
+   "resume": "Évaluations à 18 mois et au terme des 3 ans, avec rapports transmis au Parlement, portant sur les impacts éducatifs, sanitaires, sociaux, environnementaux et territoriaux.",
+   "articleRef": "art. 1er (VII)",
+   "citation": "L'expérimentation prévue au présent article fait l'objet d'une première évaluation dix-huit mois après sa mise en œuvre. Une seconde évaluation est réalisée au terme de la période de trois ans."
+  },
+  {
+   "resume": "Modification du code de l'éducation : ajout de l'éducation à l'alimentation parmi les missions de l'école (art. L. 121-1), création d'un article L. 121-6-1 définissant ses objectifs, et réécriture de l'article L. 312-17-3 sur le contenu des enseignements.",
+   "articleRef": "art. 3 (I)",
+   "citation": "« Art. L. 121-6-1. – L'éducation à l'alimentation contribue à la promotion de la santé, à la lutte contre le gaspillage alimentaire, à la réduction des inégalités sociales et territoriales [...] »"
+  }
+ ],
+ "verdictIncitations": "incitations_mitigees",
+ "justificationVerdict": "Les mécanismes créés (art. 1er) instaurent bien un enseignement obligatoire en primaire et un projet annuel obligatoire en collège, ce qui va dans le sens de l'objectif affiché. Toutefois, plusieurs éléments en atténuent fortement la portée : l'expérimentation est limitée aux « établissements scolaires volontaires » au sein d'« académies volontaires » (art. 1er I), ce qui exclut de fait la généralisation ; au lycée, le module est « facultatif » (art. 1er IV) ; l'article 2 a été supprimé, privant le texte d'un volet initialement envisagé. Par ailleurs, le financement repose sur une taxe additionnelle sur les tabacs (art. 4), mécanisme de compensation classique sans lien direct avec l'alimentation. L'absence de sanctions en cas de non-respect et le renvoi à un décret pour les modalités d'application (art. 1er VIII) renforcent le caractère incitatif plus que contraignant du dispositif.",
  "pointsDeVigilance": [
-  "Le document fourni est un PDF brut dont les streams de contenu ne sont pas décodés : aucun article ni exposé des motifs n'est lisible.",
-  "Seuls les métadonnées du dossier législatif (titre, identifiant, procédure, statut) sont exploitables.",
-  "Toute analyse de second ordre sur les mécanismes est impossible sans extraction préalable du texte normatif."
+  "Le caractère volontaire des établissements et des académies limite fortement la portée de l'obligation affichée.",
+  "L'article 2 a été supprimé, ce qui prive le texte d'un volet dont la teneur initiale n'est pas connue du document fourni.",
+  "Le module au lycée est explicitement facultatif, en décalage avec l'objectif d'un enseignement « obligatoire ».",
+  "Aucun mécanisme de sanction n'est prévu en cas de non-mise en œuvre par les établissements participants.",
+  "Le financement par taxe sur les tabacs est un mécanisme de compensation budgétaire neutre, sans levier direct sur les comportements alimentaires."
  ],
  "themes": [
   "éducation",
   "alimentation",
-  "école",
-  "expérimentation"
+  "santé publique",
+  "expérimentation",
+  "gaspillage alimentaire"
  ],
  "scrutinsCles": [
   "5433",
@@ -36,5 +70,5 @@
   "5435"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:f98b82f270049df0e72bba7dfbbcb42dbdf6a5538bf730cbb4f02c2eaa78e7b5"
+ "sourceTextHash": "sha256:e652a4e9f1f2ff3ef30d1996dc9cbb4a51ea9faec3122cfb5d5c06897dc700c1"
 }

@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52598",
- "generatedAt": "2026-07-04T06:16:26Z",
+ "generatedAt": "2026-07-11T05:54:53Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,26 +15,53 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0233_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une résolution parlementaire visant à rejeter le projet d'accord sur les droits de douane et le commerce du 27 juillet 2025 entre l'Union européenne et les États-Unis. Il s'agit d'un acte politique par lequel l'assemblée se prononce contre la ratification ou l'application de cet accord international.",
+ "objectifAffiche": "Résolution européenne visant à rejeter le projet d'accord sur les droits de douane et le commerce du 27 juillet 2025 (accord dit de Turnberry) entre l'Union européenne et les États-Unis, en invoquant des motifs de souveraineté nationale, de transparence démocratique, de compatibilité avec les engagements climatiques et de défense européenne.",
  "mecanismesCles": [
   {
-   "resume": "Le texte fourni est illisible : il s'agit d'un PDF dont le contenu textuel a été remplacé par des flux binaires (streams PDF compressés) sans extraction de texte exploitable. Aucun article, aucune disposition, aucun mécanisme normatif (obligation, taxe, seuil, sanction) ne peut être identifié.",
+   "resume": "Invitation au Gouvernement à réitérer son opposition au projet d'accord auprès de la Commission européenne et au Conseil",
+   "articleRef": "art. 1 et 2 du dispositif",
+   "citation": "À réitérer auprès de la Commission européenne son opposition au projet d'accord économique et commercial entre l'Union européenne et les États-Unis"
+  },
+  {
+   "resume": "Demande de faire valoir le caractère mixte de l'accord (compétences partagées), impliquant une ratification par les parlements nationaux",
+   "articleRef": "art. 3 et 5 du dispositif",
+   "citation": "À se rapprocher de la Commission européenne afin de faire valoir le caractère mixte du projet d'accord [...] À refuser toute mise en œuvre d'un accord [...] sans approbation préalable des parlements nationaux"
+  },
+  {
+   "resume": "Demande d'un vote à l'unanimité au Conseil puis au Parlement européen et ratification par l'ensemble des parlements nationaux",
+   "articleRef": "art. 4 du dispositif",
+   "citation": "À demander à la Commission européenne de soumettre le projet d'accord à un vote à l'unanimité des États membres au Conseil, puis à un vote au Parlement européen et à une ratification par l'ensemble des parlements des États membres"
+  },
+  {
+   "resume": "Saisine de la Cour de justice de l'Union européenne sur la compatibilité de l'accord avec les traités, et blocage de la ratification tant que la CJUE ne s'est pas prononcée",
+   "articleRef": "art. 6 du dispositif",
+   "citation": "À solliciter l'avis de la Cour de justice de l'Union européenne sur la compatibilité de ce projet d'accord [...] et à ne pas procéder à la ratification de cet accord tant que la Cour de justice de l'Union européenne ne s'est pas prononcée"
+  },
+  {
+   "resume": "Critique de l'engagement d'importer 750 milliards de dollars de produits énergétiques américains (principalement GNL), jugé contraire aux objectifs de neutralité carbone et d'autonomie stratégique",
    "articleRef": null,
-   "citation": null
+   "citation": "l'importation de 750 milliards de dollars de produits énergétiques américains, principalement du gaz naturel liquéfié, va à l'encontre des objectifs européens en matière de transition écologique et énergétique"
+  },
+  {
+   "resume": "Critique des 600 milliards de dollars d'investissements prévus aux États-Unis d'ici 2028, jugés incompatibles avec la réindustrialisation et la transition énergétique européennes",
+   "articleRef": null,
+   "citation": "les intentions d'investissements aux États-Unis à hauteur de 600 milliards de dollars d'ici à 2028 sont incompatibles avec l'ambition de réindustrialiser l'Europe"
   }
  ],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le document transmis ne contient pas de texte lisible : seuls des objets PDF bruts (obj, endobj, streams compressés) sont fournis, sans extraction des articles ni de l'exposé des motifs. Il est donc impossible d'identifier les mécanismes concrets créés par le texte, ni de vérifier si les incitations qu'ils produisent s'alignent avec l'objectif affiché de rejet de l'accord UE-USA du 27 juillet 2025. Le verdict est par conséquent indéterminé par défaut, conformément à la règle en cas de texte insuffisant.",
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Il s'agit d'une résolution européenne, c'est-à-dire d'un texte non normatif invitant le Gouvernement à une posture politique, et non d'un texte créant des obligations directes. Les mécanismes concrets (invitations à s'opposer, saisine de la CJUE, demande de ratification par les parlements nationaux) vont tous dans le sens de l'objectif affiché de rejet de l'accord de Turnberry. Les considérants critiquant l'importation de 750 milliards de dollars de GNL, les 600 milliards d'investissements aux États-Unis et l'augmentation des importations agricoles américaines servent directement la finalité de rejet affichée. La cohérence entre l'objectif et les mécanismes est donc totale.",
  "pointsDeVigilance": [
-  "Le contenu du PDF n'a pas été extrait : les flux sont compressés et illisibles en l'état.",
-  "Aucune numérotation d'article ni aucun dispositif n'a pu être référencé.",
-  "Une analyse fiable nécessiterait la version texte (OCR ou extraction) du dossier législatif DLR5L17N52598."
+  "Le texte est une résolution (article 88-4 de la Constitution), sans force normative contraignante : il ne crée pas d'obligations directes mais invite le Gouvernement à agir.",
+  "Le rejet repose largement sur des considérations politiques et stratégiques (souveraineté, transparence, dépendance énergétique) plus que sur une analyse économique chiffrée du contenu précis de l'accord.",
+  "Plusieurs considérants affirment l'incompatibilité de l'accord avec les engagements climatiques sans produire de démonstration chiffrée des émissions induites.",
+  "Le texte mentionne des 'intentions d'investissement' de 600 milliards de dollars et un engagement d'importation de 750 milliards, dont la nature juridique exacte (engagement contraignant ou déclaration politique) n'est pas précisée dans le texte fourni."
  ],
  "themes": [
   "commerce international",
-  "droits de douane",
-  "accord ue-usa",
-  "résolution parlementaire"
+  "souveraineté nationale",
+  "transition énergétique",
+  "défense européenne",
+  "agriculture"
  ],
  "scrutinsCles": [
   "5310",
@@ -43,5 +70,5 @@
   "5313"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:d672794d97853206edc5df8da9aef6fa9ead9c4c9b2d34be8ac1b9822574a092"
+ "sourceTextHash": "sha256:d9fcc12f6460d1e41b0071a95d3130c22ae38a2e9152269b69a9864778698c4a"
 }

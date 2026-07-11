@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53014",
- "generatedAt": "2026-07-04T06:15:32Z",
+ "generatedAt": "2026-07-11T05:52:10Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,21 +15,54 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0234_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de résolution visant à réaffirmer l'ambition climatique de la France au niveau européen. Il s'agit d'un acte parlementaire non législatif par lequel l'Assemblée nationale exprime sa position sur la politique climatique européenne.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel n'a pas été extrait (seuls des objets PDF bruts et des flux binaires compressés sont visibles). Aucun article, aucune disposition concrète et aucune citation exploitable ne peuvent être identifiés dans le contenu fourni. Il est donc impossible de déterminer les mécanismes créés par le texte et, a fortiori, de vérifier si les incitations qu'ils produisent s'alignent avec l'objectif affiché de 'réaffirmer l'ambition climatique de la France au niveau européen'.",
+ "objectifAffiche": "Réaffirmer l'ambition climatique de la France au niveau européen en invitant les institutions européennes à adopter un objectif de réduction nette d'au moins 90 % des émissions de gaz à effet de serre d'ici 2040 par rapport à 1990, et en demandant au Gouvernement français de soutenir cette ambition sans réserve.",
+ "mecanismesCles": [
+  {
+   "resume": "Résolution invitant la Commission, le Conseil et le Parlement européen à adopter rapidement l'objectif de réduction d'au moins 90 % des émissions GES d'ici 2040 lors de la négociation du 9 décembre 2025.",
+   "articleRef": "art. 1",
+   "citation": "Invite la Commission, le Conseil et le Parlement européen à aboutir à un accord ambitieux pour l'adoption rapide de l'objectif de réduction nette d'au moins 90 % des émissions de gaz à effet de serre d'ici à 2040"
+  },
+  {
+   "resume": "Invitation à fixer un objectif intermédiaire d'au moins 72,5 % de réduction des émissions d'ici 2035, cohérent avec la neutralité carbone en 2050.",
+   "articleRef": "art. 2",
+   "citation": "aboutir à un objectif pour 2035 d'au moins 72,5 % de réduction des émissions de gaz à effet de serre"
+  },
+  {
+   "resume": "Demande au Gouvernement de s'opposer à toute tentative d'affaiblissement de l'objectif de -90 % et de veiller à ce que les flexibilités (crédits carbone externes) ne compromettent pas les réductions domestiques.",
+   "articleRef": "art. 3 a) et b)",
+   "citation": "à s'opposer à toute nouvelle tentative d'affaiblissement de cet objectif [...] à veiller à ce que les flexibilités prévues par la Commission européenne [...] ne viennent pas compromettre l'ambition réelle des réductions domestiques"
+  },
+  {
+   "resume": "Demande de remise sans délai d'un plan social pour le climat, condition d'accès au fonds social pour le climat, pour accompagner ménages et petites entreprises face au SEQE-2.",
+   "articleRef": "art. 3 f)",
+   "citation": "À remettre sans délai à la Commission européenne un plan social pour le climat, condition indispensable à l'accès aux financements du fonds social pour le climat"
+  },
+  {
+   "resume": "Protection des politiques du pacte vert et du paquet « ajustement à l'objectif 55 », notamment la fin de la vente des véhicules thermiques en 2035.",
+   "articleRef": "art. 3 g)",
+   "citation": "à affirmer et à protéger sans faille [...] les politiques sectorielles du « pacte vert pour l'Europe » [...] en particulier la fin programmée de la vente des véhicules thermiques en 2035"
+  },
+  {
+   "resume": "Renforcement national de la stratégie nationale bas-carbone et du PNIEC : accélération des EnR, rénovation énergétique, décarbonation des transports, planification industrielle.",
+   "articleRef": "art. 3 j)",
+   "citation": "accélération du développement des énergies renouvelables, par un programme massif et socialement juste de rénovation énergétique des bâtiments, par la décarbonation des transports"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'ensemble des mécanismes de la résolution pousse dans le sens de l'objectif affiché : l'article 1 fixe l'objectif de -90 % d'émissions GES d'ici 2040, l'article 3 a) demande explicitement au Gouvernement de « s'opposer à toute nouvelle tentative d'affaiblissement » et l'article 3 b) encadre les flexibilités (crédits carbone) pour qu'elles ne compromettent pas les réductions domestiques. Les articles 3 g), j), k) et l) déclinent des mesures concrètes (protection du paquet 55, accélération des EnR, sobriété, sortie des fossiles) cohérentes avec la trajectoire de neutralité carbone. Toutefois, il s'agit d'une résolution (acte non contraignant fondé sur l'article 88-4 de la Constitution), ce qui limite la force prescriptive réelle des incitations.",
  "pointsDeVigilance": [
-  "Le document fourni est un PDF dont le texte n'a pas été décodé : le contenu lisible se limite à des métadonnées techniques PDF",
-  "Aucun article ni dispositif de la résolution n'est accessible dans la chaîne fournie",
-  "Une résolution parlementaire n'a en principe pas d'effet normatif direct (pas de création d'obligations, taxes ou sanctions), mais peut comporter des demandes adressées au Gouvernement ou aux institutions européennes",
-  "Sans accès au contenu réel, toute analyse de second ordre serait purement spéculative"
+  "Une résolution européenne n'a pas de valeur normative contraignante : elle se limite à exprimer une position politique de l'Assemblée nationale.",
+  "L'efficacité dépend entièrement de la position effectivement portée par le Gouvernement français dans les négociations interinstitutionnelles.",
+  "Le texte dénonce les « reculs et remises en cause » du pacte vert, ce qui suggère que l'ambition affichée n'est pas encore acquise au niveau européen.",
+  "La dépendance aux crédits carbone externes (art. 3 b) reste un point sensible : leur encadrement dépend de négociations ultérieures.",
+  "Le calendrier de remise du plan social pour le climat (art. 3 f) conditionne l'accès au fonds social, avec un risque de retard administratif."
  ],
  "themes": [
   "climat",
-  "europe",
-  "résolution parlementaire",
-  "ambition climatique"
+  "neutralité carbone",
+  "gaz à effet de serre",
+  "énergies renouvelables",
+  "pacte vert européen"
  ],
  "scrutinsCles": [
   "5314",
@@ -37,5 +70,5 @@
   "5316"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:267c8f4aa2980385f9a9fc39c986b7b454750b0f4a1f78d714c24168e6e2c5be"
+ "sourceTextHash": "sha256:10a7a5ae1d10195763cc5a5b5ee6a8713068c2be5e779b7a54d45ca8ec0f7b2d"
 }

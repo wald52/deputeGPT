@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N51713",
- "generatedAt": "2026-07-04T06:10:10Z",
+ "generatedAt": "2026-07-11T05:43:49Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,27 +15,53 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0240_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à étendre la possibilité de préemption de baux commerciaux dans les mairies aux sociétés civiles immobilières (SCI). L'objectif affiché est de permettre aux communes d'exercer leur droit de préemption sur les cessions de baux commerciaux également lorsque ces cessions interviennent au profit de SCI, afin de préserver le tissu commercial local.",
+ "objectifAffiche": "La proposition de loi vise à étendre et renforcer le droit de préemption commercial des communes, en complétant l'article L. 214-1 du code de l'urbanisme pour permettre la préemption non seulement sur les fonds commerciaux et artisanaux, mais aussi sur les cessions de titres de sociétés (notamment les SCI) détenant majoritairement un tel fonds.",
  "mecanismesCles": [
   {
-   "resume": "Le texte officiel fourni est illisible (PDF binaire non décodé), ne permettant pas d'identifier les articles ni les mécanismes concrets de la proposition de loi.",
-   "articleRef": null,
-   "citation": null
+   "resume": "Extension du droit de préemption à la cession de la majorité des titres d'une société dont l'actif est principalement composé d'un fonds de commerce ou artisanal, par dérogation à l'article L. 2253-1 du CGCT.",
+   "articleRef": "Article unique, I, 1°",
+   "citation": "le droit de préemption mentionné au premier alinéa du présent article est également applicable à la cession de la majorité des titres d'une société dont l'actif du patrimoine comprend principalement un fonds de commerce ou un fonds artisanal"
+  },
+  {
+   "resume": "Extension à toute cession conduisant un acquéreur à détenir la majorité des titres de la société (cumul de droits).",
+   "articleRef": "Article unique, I, 1°",
+   "citation": "Il s'applique également à toute cession conduisant un acquéreur à détenir la majorité des titres de cette société."
+  },
+  {
+   "resume": "Définition du fonds principal : le fonds dont la valeur vénale dépasse celle de chaque autre bien ou droit composant l'actif.",
+   "articleRef": "Article unique, I, 1°",
+   "citation": "Est considéré comme la composante principale de l'actif d'un patrimoine d'une société le fonds de commerce ou le fonds artisanal dont la valeur vénale dépasse celle de chaque autre bien ou droit qui le compose."
+  },
+  {
+   "resume": "Exclusion des cessions de titres entre parents et alliés jusqu'au quatrième degré inclus.",
+   "articleRef": "Article unique, I, 1°",
+   "citation": "Le premier alinéa ne s'applique pas aux titres d'une société constituée exclusivement entre parents et alliés jusqu'au quatrième degré inclus."
+  },
+  {
+   "resume": "Extension du champ de la déclaration préalable de cession (art. L. 214-2) aux cessions de titres sociaux, en plus des fonds et terrains.",
+   "articleRef": "Article unique, I, 2°",
+   "citation": "les mots : « ou le terrain » sont remplacés par les mots : « , le terrain ou les titres sociaux »."
+  },
+  {
+   "resume": "Entrée en vigueur différée : application aux cessions intervenant à l'expiration d'un délai de trois mois après la promulgation.",
+   "articleRef": "Article unique, II",
+   "citation": "Le 1° du I s'applique aux cessions intervenant à l'expiration d'un délai de trois mois à compter de la promulgation de la présente loi."
   }
  ],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le document transmis est un fichier PDF dont le contenu textuel n'a pas été extrait correctement (flux binaires illisibles). Aucun article, aucune disposition concrète et aucun mécanisme opérationnel (obligation, seuil, sanction, dérogation) ne peut être identifié dans le texte fourni. En application de la règle stricte imposée (s'appuyer uniquement sur le texte fourni), il est impossible de déterminer si les incitations créées par les mécanismes vont dans le sens de l'objectif affiché ou dans le sens opposé.",
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'objectif affiché est d'étendre et renforcer le droit de préemption commercial des communes. Les mécanismes créés vont directement dans ce sens : l'article unique, I, 1° étend explicitement la préemption à la cession de titres de sociétés (notamment SCI) détenant majoritairement un fonds commercial ou artisanal, comblant ainsi la faille que le titre du dossier législatif mentionne. L'extension à toute cession aboutissant à la détention majoritaire (I, 1°, al. 1) renforce encore le dispositif en évitant les montages fractionnés. L'extension de la déclaration préalable aux cessions de titres sociaux (I, 2°) donne aux communes l'information nécessaire pour exercer cette préemption. L'exclusion des cessions entre parents et alliés (I, 1°, al. 3) est une mesure de proportionnalité qui ne contredit pas l'objectif mais en limite la portée aux transactions véritablement 'commerciales'. L'ensemble des incitations est donc cohérent avec l'objectif affiché.",
  "pointsDeVigilance": [
-  "Le contenu textuel du PDF n'a pas pu être extrait : le dossier législatif fourni ne contient pas de texte exploitable pour l'analyse.",
-  "Sans accès aux articles, il est impossible de vérifier si l'extension aux SCI comble réellement une lacune ou si elle crée des effets de contournement (par exemple, structuration de cessions via SCI pour échapper à la préemption, ou au contraire restriction excessive du marché).",
-  "Une analyse complémentaire avec le texte intégral décodé serait nécessaire pour formuler un verdict."
+  "Le texte ne contient pas d'exposé des motifs dans l'extrait fourni, ce qui limite l'analyse de l'intention précise du législateur.",
+  "L'exclusion des cessions entre parents et alliés jusqu'au 4e degré (I, 1°, al. 3) pourrait réduire significativement le champ effectif du dispositif, notamment pour les SCI familiales.",
+  "Le texte ne précise pas les sanctions en cas de non-respect de la déclaration préalable ou de la préemption, ni les modalités d'évaluation de la 'valeur vénale' du fonds.",
+  "L'entrée en vigueur à trois mois (II) est courte et pourrait surprendre les propriétaires de titres de SCI détenant des fonds commerciaux."
  ],
  "themes": [
-  "urbanisme commercial",
+  "urbanisme",
+  "commerce",
   "préemption",
-  "baux commerciaux",
-  "sociétés civiles immobilières",
-  "communes"
+  "sci",
+  "collectivités territoriales"
  ],
  "scrutinsCles": [
   "5429",
@@ -44,5 +70,5 @@
   "5432"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:0bbdf6df1caec4a0d13c8dff47a627735789766430dbab72b0d62f1e251d794a"
+ "sourceTextHash": "sha256:a249d38adb9a151f2cf4beab37d9145bfb9dab18aff075ee3bb8cfb4e5987888"
 }

@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52984",
- "generatedAt": "2026-07-04T06:05:57Z",
+ "generatedAt": "2026-07-11T05:32:57Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,18 +15,18 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2529_projet-loi",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est un projet de loi constitutionnelle relatif à la Nouvelle-Calédonie, déposé le 25 février 2026 et adopté par le Sénat. Aucun exposé des motifs ni contenu substantiel des articles n'est fourni dans le document transmis.",
+ "objectifAffiche": "Le texte est un projet de loi constitutionnelle relatif à la Nouvelle-Calédonie, déposé le 25 février 2026 et soumis à la Commission des lois de l'Assemblée nationale. L'objectif affiché ne peut être déterminé précisément car ni l'exposé des motifs ni les articles du texte ne sont fournis dans le dossier.",
  "mecanismesCles": [],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs, ni articles, ni aucune disposition substantielle : seules des métadonnées de navigation (titre, numéro, procédure, commission saisie) sont présentes. En l'absence de tout mécanisme identifiable, il est impossible de déterminer si les incitations créées par le texte vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "justificationVerdict": "Aucun mécanisme concret ne peut être identifié : le texte fourni ne contient ni exposé des motifs, ni articles, ni dispositions. Il s'agit uniquement de la page de garde du dossier législatif (titre, identifiant, procédure, statut et liens de navigation). Sans contenu normatif, il est impossible d'évaluer si les incitations créées par le texte vont dans le sens de l'objectif affiché.",
  "pointsDeVigilance": [
-  "Le contenu normatif du projet de loi (exposé des motifs et articles) est absent du document transmis",
-  "Le texte est tronqué à 15000 caractères mais ne contient en réalité que des éléments de structure du dossier législatif",
-  "Sans accès aux dispositions, aucune analyse de second ordre n'est possible"
+  "Le texte fourni est tronqué et ne contient que les métadonnées du dossier législatif, sans aucun article ni exposé des motifs.",
+  "Le statut 'en_cours' indique que le texte est encore en cours d'examen, ce qui peut rendre l'analyse prématurée.",
+  "Un projet de loi constitutionnelle relatif à la Nouvelle-Calédonie peut toucher à des sujets sensibles (statut institutionnel, corps électoral, transferts de compétences) dont l'évaluation nécessiterait le contenu intégral."
  ],
  "themes": [
   "nouvelle-calédonie",
-  "loi constitutionnelle",
+  "droit constitutionnel",
   "outre-mer"
  ],
  "scrutinsCles": [
