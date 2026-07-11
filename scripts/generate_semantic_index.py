@@ -11,10 +11,12 @@ pour compatibilite temporaire avec les anciens chemins.
 import json
 import os
 import glob
+import random
 import re
 import hashlib
+import time
 from collections import defaultdict
-from typing import Dict, List, Sequence
+from typing import Dict, List, Sequence, Tuple
 import numpy as np
 import sys
 from datetime import datetime, timezone
@@ -56,6 +58,30 @@ SEMANTIC_MULTI_VECTOR_SLOT_WEIGHTS = {
     "subject_summary": 1.0,
     "title_keywords": 0.94,
 }
+
+# --- Embeddings distants (API OpenAI-compatible : OpenRouter par defaut, NIM...) ---
+# Cle absente => generation sautee proprement, artefact precedent conserve.
+# Le chemin e5 local ci-dessus reste genere chaque nuit : c'est la garantie de
+# non-dependance si le service distant cesse d'etre gratuit ou disparait.
+REMOTE_EMBEDDING_API_BASE_URL = os.environ.get("EMBEDDING_API_BASE_URL") or "https://openrouter.ai/api/v1"
+REMOTE_EMBEDDING_API_KEY = os.environ.get("EMBEDDING_API_KEY", "")
+REMOTE_EMBEDDING_MODEL = os.environ.get("EMBEDDING_API_MODEL") or "nvidia/llama-nemotron-embed-vl-1b-v2:free"
+REMOTE_EMBEDDING_MODEL_ID = "llama-nemotron-embed-vl-1b-v2"
+REMOTE_EMBEDDING_FAMILY = "nemotron"
+# Troncature Matryoshka : 512 composantes conservees sur 2048, puis re-normalisation L2.
+REMOTE_EMBEDDING_DIMENSION = 512
+REMOTE_EMBEDDING_SOURCE_DIMENSION = 2048
+REMOTE_EMBEDDING_BATCH_SIZE = 96
+# Semantique de prefixe non verifiee pour Nemotron : configurable, vide par defaut.
+# Les prefixes participent au contentHash, donc en changer re-embedde proprement tout.
+REMOTE_EMBEDDING_QUERY_PREFIX = os.environ.get("EMBEDDING_QUERY_PREFIX", "")
+REMOTE_EMBEDDING_DOCUMENT_PREFIX = os.environ.get("EMBEDDING_DOCUMENT_PREFIX", "")
+REMOTE_EMBEDDING_RPM = 15
+FICHIER_SEMANTIC_REMOTE_INDEX = "./public/data/rag/semantic_index_remote.json"
+SEMANTIC_REMOTE_INDEX_SCHEMA_VERSION = 1
+# Le mode n'est expose dans le manifest qu'a partir de cette couverture,
+# pour masquer un remplissage initial etale sur plusieurs nuits.
+REMOTE_COVERAGE_THRESHOLD = 0.98
 
 # Catégories thématiques pour classification
 CATEGORIES = {
@@ -240,11 +266,14 @@ def load_existing_index() -> Dict:
     return {"votes": {}, "inverted_index": {}, "lastUpdate": ""}
 
 
-def write_json(path: str, payload: Dict) -> None:
-    """Ecrit un JSON UTF-8 avec indentation."""
+def write_json(path: str, payload: Dict, compact: bool = False) -> None:
+    """Ecrit un JSON UTF-8 (indente par defaut, compact pour les gros artefacts)."""
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, 'w', encoding='utf-8') as f:
-        json.dump(payload, f, ensure_ascii=False, indent=2)
+        if compact:
+            json.dump(payload, f, ensure_ascii=False, separators=(',', ':'))
+        else:
+            json.dump(payload, f, ensure_ascii=False, indent=2)
 
 
 def compute_sha256(path: str) -> str:
@@ -429,6 +458,286 @@ def load_semantic_encoder(model_name: str = SEMANTIC_PYTHON_MODEL_ID):
         return None
 
 
+class RemoteEmbeddingError(Exception):
+    """Echec systemique de l'API d'embeddings distante."""
+
+
+class RemoteEmbeddingAuthError(RemoteEmbeddingError):
+    """Cle refusee (401/403) : inutile de reessayer."""
+
+
+class RemoteEmbeddingEncoder:
+    """Encodeur distant via une API OpenAI-compatible POST /embeddings.
+
+    Meme contrat de sortie que l'encodeur E5 local : matrice float32 de
+    vecteurs L2-normalises, apres troncature Matryoshka a la dimension cible.
+    """
+
+    MAX_RETRIES = 5
+
+    def __init__(
+        self,
+        base_url: str = REMOTE_EMBEDDING_API_BASE_URL,
+        api_key: str = REMOTE_EMBEDDING_API_KEY,
+        model: str = REMOTE_EMBEDDING_MODEL,
+        dimension: int = REMOTE_EMBEDDING_DIMENSION,
+        rpm: int = REMOTE_EMBEDDING_RPM,
+        timeout: int = 120,
+    ):
+        import requests
+
+        self.session = requests.Session()
+        self.base_url = base_url.rstrip("/")
+        self.api_key = api_key
+        self.model = model
+        self.dimension = dimension
+        self.min_interval = 60.0 / max(1, rpm)
+        self.timeout = timeout
+        self._last_call = 0.0
+        self.calls = 0
+
+    def _respect_rate_limit(self):
+        elapsed = time.monotonic() - self._last_call
+        if elapsed < self.min_interval:
+            time.sleep(self.min_interval - elapsed)
+        self._last_call = time.monotonic()
+
+    def embed_batch(self, texts: Sequence[str]) -> np.ndarray:
+        payload = {"model": self.model, "input": list(texts)}
+        last_error = "erreur inconnue"
+
+        for attempt in range(self.MAX_RETRIES):
+            self._respect_rate_limit()
+            try:
+                response = self.session.post(
+                    f"{self.base_url}/embeddings",
+                    json=payload,
+                    headers={"Authorization": f"Bearer {self.api_key}"},
+                    timeout=self.timeout,
+                )
+            except Exception as error:
+                last_error = f"reseau: {error}"
+                time.sleep(min(60, 2 ** attempt) + random.random())
+                continue
+
+            self.calls += 1
+
+            if response.status_code in (401, 403):
+                raise RemoteEmbeddingAuthError(f"HTTP {response.status_code}: cle API refusee")
+
+            if response.status_code == 429 or response.status_code >= 500:
+                last_error = f"HTTP {response.status_code}"
+                retry_after = response.headers.get("Retry-After", "")
+                delay = float(retry_after) if retry_after.isdigit() else min(60, 2 ** attempt) + random.random()
+                time.sleep(delay)
+                continue
+
+            if response.status_code >= 400:
+                raise RemoteEmbeddingError(f"HTTP {response.status_code}: {response.text[:200]}")
+
+            try:
+                data = response.json().get("data") or []
+            except Exception as error:
+                raise RemoteEmbeddingError(f"reponse JSON illisible: {error}")
+
+            if len(data) != len(texts):
+                raise RemoteEmbeddingError(
+                    f"reponse incomplete: {len(data)} embeddings pour {len(texts)} textes"
+                )
+
+            data.sort(key=lambda item: item.get("index", 0))
+            matrix = np.asarray([item.get("embedding") for item in data], dtype=np.float32)
+            if matrix.ndim != 2 or matrix.shape[0] != len(texts):
+                raise RemoteEmbeddingError("dimensions de reponse inattendues")
+
+            if matrix.shape[1] > self.dimension:
+                matrix = matrix[:, : self.dimension]
+            elif matrix.shape[1] < self.dimension:
+                raise RemoteEmbeddingError(
+                    f"dimension amont {matrix.shape[1]} < cible {self.dimension}"
+                )
+
+            norms = np.linalg.norm(matrix, axis=1, keepdims=True)
+            norms[norms == 0] = 1.0
+            return matrix / norms
+
+        raise RemoteEmbeddingError(f"tentatives epuisees ({last_error})")
+
+
+def compute_remote_content_hash(vote_id: str, entry: Dict) -> str:
+    """Empreinte du contenu embedde : texte + modele + dimension + prefixe.
+
+    Changer l'un de ces parametres invalide le cache et re-embedde proprement.
+    """
+    document_text = apply_semantic_prefix(
+        build_semantic_document_text(vote_id, entry),
+        REMOTE_EMBEDDING_DOCUMENT_PREFIX
+    )
+    fingerprint = "\x1f".join([
+        document_text,
+        REMOTE_EMBEDDING_MODEL,
+        str(REMOTE_EMBEDDING_DIMENSION),
+    ])
+    return hashlib.sha256(fingerprint.encode("utf-8")).hexdigest()[:16]
+
+
+def build_remote_semantic_model_descriptor() -> Dict:
+    """Descripteur du modele d'embeddings distant publie dans l'artefact."""
+    # Sans prefixe configure, ne PAS declarer asymmetric_retrieval : le front
+    # retomberait sur le prefixe e5 "query: " et desalignerait requete/documents.
+    remote_usage = SEMANTIC_MODEL_USAGE if REMOTE_EMBEDDING_QUERY_PREFIX else "retrieval"
+    return {
+        "id": REMOTE_EMBEDDING_MODEL_ID,
+        "family": REMOTE_EMBEDDING_FAMILY,
+        "usage": remote_usage,
+        "python_model_id": REMOTE_EMBEDDING_MODEL,
+        "pythonModelId": REMOTE_EMBEDDING_MODEL,
+        "browser_model_id": None,
+        "browserModelId": None,
+        "remote_model_id": REMOTE_EMBEDDING_MODEL,
+        "remoteModelId": REMOTE_EMBEDDING_MODEL,
+        "query_mode": "remote",
+        "queryMode": "remote",
+        "task": SEMANTIC_MODEL_TASK,
+        "queryPrefix": REMOTE_EMBEDDING_QUERY_PREFIX,
+        "documentPrefix": REMOTE_EMBEDDING_DOCUMENT_PREFIX,
+        "query_prefix": REMOTE_EMBEDDING_QUERY_PREFIX,
+        "document_prefix": REMOTE_EMBEDDING_DOCUMENT_PREFIX,
+        "pooling": "remote",
+        "normalize": True,
+        "dimension": REMOTE_EMBEDDING_DIMENSION,
+        "matryoshkaSourceDimension": REMOTE_EMBEDDING_SOURCE_DIMENSION,
+        "estimated_download_mb": 0,
+        "estimatedDownloadMb": 0,
+        "vector_scale": SEMANTIC_VECTOR_SCALE,
+        "vectorScale": SEMANTIC_VECTOR_SCALE,
+        "strategy": "single_vector"
+    }
+
+
+def load_previous_remote_index() -> Dict | None:
+    """Charge l'artefact distant precedent (il sert aussi de cache incremental)."""
+    if not os.path.exists(FICHIER_SEMANTIC_REMOTE_INDEX):
+        return None
+
+    try:
+        with open(FICHIER_SEMANTIC_REMOTE_INDEX, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception:
+        print(f"⚠️ Index semantique distant illisible ({FICHIER_SEMANTIC_REMOTE_INDEX}), cache ignore")
+        return None
+
+
+def generate_semantic_remote_index(
+    index: Dict,
+    max_calls: int = 40,
+    time_budget_min: float = 10.0,
+    dry_run: bool = False,
+) -> Tuple[Dict | None, bool]:
+    """Genere l'artefact d'embeddings distants de facon incrementale.
+
+    Retourne (payload, changed). payload=None signifie « conserver l'artefact
+    precedent tel quel » (cle absente, dry-run, ou rien a produire).
+    """
+    vote_items = sorted(
+        index.get("votes", {}).items(),
+        key=lambda item: int(item[0]) if str(item[0]).isdigit() else str(item[0])
+    )
+    if not vote_items:
+        return None, False
+
+    previous = load_previous_remote_index() or {}
+    previous_votes = previous.get("votes") or {}
+
+    votes = {}
+    pending = []
+    for vote_id, entry in vote_items:
+        content_hash = compute_remote_content_hash(vote_id, entry)
+        cached = previous_votes.get(vote_id)
+        if cached and cached.get("contentHash") == content_hash and cached.get("embedding"):
+            votes[vote_id] = {"embedding": cached["embedding"], "contentHash": content_hash}
+        else:
+            pending.append((vote_id, entry, content_hash))
+
+    removed_count = len(previous_votes) - sum(1 for vote_id, _ in vote_items if vote_id in previous_votes)
+    planned_batches = (len(pending) + REMOTE_EMBEDDING_BATCH_SIZE - 1) // REMOTE_EMBEDDING_BATCH_SIZE
+    print(
+        f"🌐 Index semantique distant: {len(votes)} en cache, {len(pending)} a embedder "
+        f"({planned_batches} lots de {REMOTE_EMBEDDING_BATCH_SIZE} max), {removed_count} retires"
+    )
+
+    if dry_run:
+        print("ℹ️ Dry-run distant: aucun appel reseau, aucune ecriture")
+        return None, False
+
+    if not REMOTE_EMBEDDING_API_KEY:
+        if pending:
+            print("ℹ️ EMBEDDING_API_KEY absente: generation distante sautee, artefact precedent conserve")
+        return None, False
+
+    embedded_count = 0
+    if pending:
+        encoder = RemoteEmbeddingEncoder()
+        deadline = time.monotonic() + time_budget_min * 60
+        print(f"🌐 Encodage distant via {encoder.base_url} ({encoder.model})...")
+
+        for start in range(0, len(pending), REMOTE_EMBEDDING_BATCH_SIZE):
+            if encoder.calls >= max_calls:
+                print(f"⏸️ Budget d'appels atteint ({max_calls}), reprise a la prochaine execution")
+                break
+            if time.monotonic() > deadline:
+                print(f"⏸️ Budget temps atteint ({time_budget_min} min), reprise a la prochaine execution")
+                break
+
+            batch = pending[start:start + REMOTE_EMBEDDING_BATCH_SIZE]
+            texts = [
+                apply_semantic_prefix(
+                    build_semantic_document_text(vote_id, entry),
+                    REMOTE_EMBEDDING_DOCUMENT_PREFIX
+                )
+                for vote_id, entry, _ in batch
+            ]
+
+            try:
+                matrix = encoder.embed_batch(texts)
+            except RemoteEmbeddingAuthError as error:
+                print(f"⚠️ Authentification distante refusee ({error}), generation interrompue")
+                break
+            except RemoteEmbeddingError as error:
+                print(f"⚠️ API d'embeddings distante en echec ({error}), reprise a la prochaine execution")
+                break
+
+            for (vote_id, _entry, content_hash), vector in zip(batch, matrix):
+                votes[vote_id] = {
+                    "embedding": quantize_normalized_embedding(vector),
+                    "contentHash": content_hash
+                }
+                embedded_count += 1
+
+            print(f"  Encodage distant {min(start + len(batch), len(pending))}/{len(pending)}")
+
+    if not votes:
+        return None, False
+
+    coverage = len(votes) / len(vote_items)
+    changed = embedded_count > 0 or removed_count > 0
+    payload = {
+        "schemaVersion": SEMANTIC_REMOTE_INDEX_SCHEMA_VERSION,
+        "generatedAt": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+        "model": build_remote_semantic_model_descriptor(),
+        "coverage": round(coverage, 4),
+        "stats": {
+            "embeddedDocuments": len(votes),
+            "totalDocuments": len(vote_items),
+            "newlyEmbedded": embedded_count
+        },
+        "votes": votes
+    }
+
+    print(f"🌐 Couverture distante: {len(votes)}/{len(vote_items)} ({coverage:.1%}), {embedded_count} nouveaux")
+    return payload, changed
+
+
 def encode_semantic_texts(model, texts: List[str], prefix: str = SEMANTIC_DOCUMENT_PREFIX) -> np.ndarray:
     """Encode une liste de textes en embeddings normalises."""
     prepared_texts = [apply_semantic_prefix(text, prefix) for text in texts]
@@ -510,21 +819,36 @@ def build_semantic_model_descriptor(model_id: str, python_model_id: str, dimensi
 def build_manifest_model_payload(model_payload: Dict | None, default_model_id: str, notes: str) -> Dict:
     """Construit la projection publique du modele semantique pour le manifest."""
     payload = model_payload or {}
-    return {
+    is_remote_query = payload.get("queryMode") == "remote" or payload.get("query_mode") == "remote"
+    projected = {
         "id": payload.get("id", default_model_id),
         "family": payload.get("family", SEMANTIC_MODEL_FAMILY),
         "usage": payload.get("usage", SEMANTIC_MODEL_USAGE),
         "pythonModelId": payload.get("pythonModelId") or payload.get("python_model_id", SEMANTIC_PYTHON_MODEL_ID),
-        "browserModelId": payload.get("browserModelId") or payload.get("browser_model_id", SEMANTIC_BROWSER_MODEL_ID),
+        # Un mode a requete distante n'a pas de modele navigateur : ne pas retomber
+        # sur le defaut e5 sinon un ancien front tenterait un telechargement inutile.
+        "browserModelId": None if is_remote_query
+        else payload.get("browserModelId") or payload.get("browser_model_id", SEMANTIC_BROWSER_MODEL_ID),
         "task": payload.get("task", SEMANTIC_MODEL_TASK),
-        "queryPrefix": payload.get("queryPrefix") or payload.get("query_prefix", SEMANTIC_QUERY_PREFIX),
-        "documentPrefix": payload.get("documentPrefix") or payload.get("document_prefix", SEMANTIC_DOCUMENT_PREFIX),
+        "queryPrefix": payload.get("queryPrefix") if is_remote_query
+        else payload.get("queryPrefix") or payload.get("query_prefix", SEMANTIC_QUERY_PREFIX),
+        "documentPrefix": payload.get("documentPrefix") if is_remote_query
+        else payload.get("documentPrefix") or payload.get("document_prefix", SEMANTIC_DOCUMENT_PREFIX),
         "pooling": payload.get("pooling", SEMANTIC_MODEL_POOLING),
         "normalize": payload.get("normalize", SEMANTIC_MODEL_NORMALIZE),
         "dimension": int(payload.get("dimension", SEMANTIC_MODEL_EXPECTED_DIMENSION)),
-        "estimatedDownloadMb": payload.get("estimatedDownloadMb") or payload.get("estimated_download_mb", SEMANTIC_MODEL_ESTIMATED_DOWNLOAD_MB),
+        "estimatedDownloadMb": (0 if is_remote_query
+                                else payload.get("estimatedDownloadMb")
+                                or payload.get("estimated_download_mb", SEMANTIC_MODEL_ESTIMATED_DOWNLOAD_MB)),
         "notes": notes
     }
+
+    # Cles additives des modes a requete distante (absentes des modes e5 locaux).
+    for extra_key in ("queryMode", "remoteModelId", "matryoshkaSourceDimension"):
+        if payload.get(extra_key) is not None:
+            projected[extra_key] = payload[extra_key]
+
+    return projected
 
 
 def generate_semantic_index(index: Dict, model=None, model_name: str = SEMANTIC_PYTHON_MODEL_ID) -> Dict | None:
@@ -638,6 +962,10 @@ def build_rag_manifest(index: Dict) -> Dict:
         except Exception:
             semantic_multivector_payload = None
 
+    semantic_remote_payload = load_previous_remote_index()
+    semantic_remote_size = os.path.getsize(FICHIER_SEMANTIC_REMOTE_INDEX) if os.path.exists(FICHIER_SEMANTIC_REMOTE_INDEX) else 0
+    semantic_remote_sha256 = compute_sha256(FICHIER_SEMANTIC_REMOTE_INDEX) if os.path.exists(FICHIER_SEMANTIC_REMOTE_INDEX) else ""
+
     semantic_artifact = None
     if semantic_payload:
         semantic_artifact = {
@@ -678,6 +1006,47 @@ def build_rag_manifest(index: Dict) -> Dict:
             "artifact": semantic_artifact
         }
 
+    semantic_remote_artifact = None
+    if semantic_remote_payload:
+        semantic_remote_artifact = {
+            "path": "semantic_index_remote.json",
+            "bytes": semantic_remote_size,
+            "sha256": semantic_remote_sha256,
+            "quantization": "int8",
+            "vectorDimension": semantic_remote_payload.get("model", {}).get("dimension"),
+            "valueScale": semantic_remote_payload.get("model", {}).get("vector_scale", SEMANTIC_VECTOR_SCALE),
+            "coverage": semantic_remote_payload.get("coverage")
+        }
+
+    single_vector_remote_mode = None
+    remote_coverage = float(semantic_remote_payload.get("coverage") or 0) if semantic_remote_payload else 0.0
+    if semantic_remote_payload and semantic_remote_artifact and remote_coverage >= REMOTE_COVERAGE_THRESHOLD:
+        single_vector_remote_mode = {
+            "id": "single_vector_remote",
+            "label": "Single-vector (service en ligne)",
+            "strategy": semantic_remote_payload.get("model", {}).get("strategy", "single_vector"),
+            "default": False,
+            "experimental": True,
+            "queryMode": "remote",
+            "notes": (
+                "Mode avance experimental. Embeddings Nemotron calcules cote serveur ; "
+                "la requete est encodee par le service en ligne, avec repli automatique "
+                "vers le mode local si le service est indisponible."
+            ),
+            "model": build_manifest_model_payload(
+                semantic_remote_payload.get("model"),
+                REMOTE_EMBEDDING_MODEL_ID,
+                "Mode experimental a requete distante : aucun telechargement navigateur, "
+                "la question est encodee par le Worker en ligne."
+            ),
+            "artifact": semantic_remote_artifact
+        }
+    elif semantic_remote_payload and remote_coverage < REMOTE_COVERAGE_THRESHOLD:
+        print(
+            f"ℹ️ Mode distant non expose dans le manifest: couverture {remote_coverage:.1%} "
+            f"< seuil {REMOTE_COVERAGE_THRESHOLD:.0%}"
+        )
+
     multi_vector_mode = None
     if semantic_multivector_payload and semantic_multivector_artifact:
         multi_vector_mode = {
@@ -710,7 +1079,8 @@ def build_rag_manifest(index: Dict) -> Dict:
         ),
         "semanticModes": {
             "single_vector": single_vector_mode,
-            "multi_vector": multi_vector_mode
+            "multi_vector": multi_vector_mode,
+            "single_vector_remote": single_vector_remote_mode
         },
         "artifacts": {
             "lexicalIndex": {
@@ -719,7 +1089,8 @@ def build_rag_manifest(index: Dict) -> Dict:
                 "sha256": lexical_sha256
             },
             "semanticIndex": semantic_artifact,
-            "semanticMultivectorIndex": semantic_multivector_artifact
+            "semanticMultivectorIndex": semantic_multivector_artifact,
+            "semanticRemoteIndex": semantic_remote_artifact
         }
     }
 
@@ -912,6 +1283,28 @@ def main():
         action='store_true',
         help="Ne pas ecrire le miroir legacy public/data/search_index.json"
     )
+    parser.add_argument(
+        '--no-remote-semantic',
+        action='store_true',
+        help="Desactiver l'index semantique distant (Nemotron via API)"
+    )
+    parser.add_argument(
+        '--remote-max-calls',
+        type=int,
+        default=40,
+        help="Budget d'appels API pour l'index distant par execution (defaut 40)"
+    )
+    parser.add_argument(
+        '--remote-time-budget-min',
+        type=float,
+        default=10.0,
+        help="Budget temps en minutes pour l'index distant (defaut 10)"
+    )
+    parser.add_argument(
+        '--remote-dry-run',
+        action='store_true',
+        help="Afficher le plan d'embeddings distants (cache/lots) sans appel reseau ni ecriture"
+    )
     args = parser.parse_args()
     
     # Vérifier que le dossier existe
@@ -954,6 +1347,27 @@ def main():
                 write_json(FICHIER_SEMANTIC_MULTIVECTOR_INDEX, semantic_multivector_index)
                 print(f"💾 Index semantique multi-vector sauvegarde dans {FICHIER_SEMANTIC_MULTIVECTOR_INDEX}")
 
+    # Index semantique distant (Nemotron via API OpenAI-compatible) : optionnel,
+    # incremental et strictement non bloquant. L'index e5 ci-dessus reste la
+    # reference locale ; ce second index n'est qu'une surcouche amelioree.
+    if args.no_remote_semantic:
+        print("ℹ️ Index semantique distant desactive pour cette execution")
+    else:
+        try:
+            remote_payload, remote_changed = generate_semantic_remote_index(
+                index,
+                max_calls=args.remote_max_calls,
+                time_budget_min=args.remote_time_budget_min,
+                dry_run=args.remote_dry_run,
+            )
+            if remote_payload is not None and remote_changed:
+                write_json(FICHIER_SEMANTIC_REMOTE_INDEX, remote_payload, compact=True)
+                print(f"💾 Index semantique distant sauvegarde dans {FICHIER_SEMANTIC_REMOTE_INDEX}")
+            elif remote_payload is not None:
+                print("ℹ️ Index semantique distant inchange (aucune reecriture, zero churn git)")
+        except Exception as error:
+            print(f"⚠️ Generation de l'index semantique distant echouee ({error}) : artefact precedent conserve")
+
     # Sauvegarder l'artefact RAG primaire puis le manifest public.
     write_json(FICHIER_LEXICAL_INDEX, index)
     write_json(FICHIER_RAG_MANIFEST, build_rag_manifest(index))
@@ -978,6 +1392,10 @@ def main():
     if semantic_multivector_index and os.path.exists(FICHIER_SEMANTIC_MULTIVECTOR_INDEX):
         semantic_multivector_size_kb = os.path.getsize(FICHIER_SEMANTIC_MULTIVECTOR_INDEX) / 1024
         print(f"📏 Taille index semantique multi-vector: {semantic_multivector_size_kb:.1f} Ko")
+
+    if os.path.exists(FICHIER_SEMANTIC_REMOTE_INDEX):
+        semantic_remote_size_kb = os.path.getsize(FICHIER_SEMANTIC_REMOTE_INDEX) / 1024
+        print(f"📏 Taille index semantique distant: {semantic_remote_size_kb:.1f} Ko")
 
     if os.path.exists(FICHIER_LEGACY_SEARCH_INDEX):
         legacy_size_kb = os.path.getsize(FICHIER_LEGACY_SEARCH_INDEX) / 1024

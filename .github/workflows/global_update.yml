@@ -5,6 +5,11 @@ on:
     # On lance tout à 4h00 du matin
     - cron: "0 4 * * *"
   workflow_dispatch:
+    inputs:
+      remote_max_calls:
+        description: "Budget d'appels API pour l'index d'embeddings distant (backfill manuel : monter à ~90)"
+        required: false
+        default: "40"
 
 permissions:
   contents: write
@@ -107,11 +112,21 @@ jobs:
 
       # --- ETAPE 2.9 : GÉNÉRATION ARTEFACTS RAG ---
       - name: Generate RAG Artifacts
+        env:
+          # Index d'embeddings distant (Nemotron) : optionnel. Sans le secret,
+          # la génération distante est sautée proprement et l'artefact précédent
+          # est conservé — aucune dépendance au service gratuit.
+          # Utiliser une clé DISTINCTE de celle du Worker Cloudflare pour ne pas
+          # partager le quota quotidien du tier gratuit OpenRouter.
+          EMBEDDING_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          EMBEDDING_API_BASE_URL: ${{ vars.EMBEDDING_API_BASE_URL }}
+          EMBEDDING_API_MODEL: ${{ vars.EMBEDDING_API_MODEL }}
         run: |
           echo "🧠 Génération des artefacts RAG..."
 
           # Génération des index lexicaux + sémantiques
-          python scripts/generate_semantic_index.py
+          python scripts/generate_semantic_index.py \
+            --remote-max-calls "${{ github.event.inputs.remote_max_calls || '40' }}"
 
           # Vérifications des artefacts publics et du manifest RAG.
           # L'index lexical et le manifest sont toujours régénérés localement :
@@ -138,6 +153,13 @@ jobs:
             echo "✅ Index sémantique multi-vector présent: $SIZE"
           else
             echo "⚠️ Index sémantique multi-vector absent (dégradation gracieuse, non bloquant)"
+          fi
+
+          if [ -f "public/data/rag/semantic_index_remote.json" ]; then
+            SIZE=$(du -h public/data/rag/semantic_index_remote.json | cut -f1)
+            echo "✅ Index sémantique distant présent: $SIZE"
+          else
+            echo "ℹ️ Index sémantique distant absent (optionnel, non bloquant)"
           fi
 
           if [ -f "public/data/rag/manifest.json" ]; then

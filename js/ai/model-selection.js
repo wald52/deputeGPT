@@ -1,6 +1,7 @@
 import {
   OPENROUTER_PARAMETER_KEYS
 } from './generation-options.js';
+import { getCachedCapabilities } from './online-session.js';
 
 const LOCAL_SOURCE_ID = 'local';
 const ONLINE_SOURCE_ID = 'online';
@@ -653,8 +654,14 @@ export function createModelSelectionController({
       return;
     }
 
-    helperEl.textContent = `Reranking ${modeLabel} après la recherche lexicale. Le mode sémantique utilise ${semanticModelDescriptor}.`;
-    sizeEl.textContent = `Téléchargement estimé: ${totalLabel} (index: ${artifactLabel})`;
+    const isRemoteQueryMode = config?.model?.queryMode === 'remote';
+
+    helperEl.textContent = isRemoteQueryMode
+      ? `Reranking ${modeLabel} après la recherche lexicale. La question est encodée par le service en ligne (${config?.model?.remoteModelId || semanticModelLabel}), sans téléchargement de modèle.`
+      : `Reranking ${modeLabel} après la recherche lexicale. Le mode sémantique utilise ${semanticModelDescriptor}.`;
+    sizeEl.textContent = isRemoteQueryMode
+      ? `Téléchargement estimé: ${artifactLabel} (index seul, aucun modèle local)`
+      : `Téléchargement estimé: ${totalLabel} (index: ${artifactLabel})`;
     toggle.disabled = false;
 
     if (runtimeStatus.status === 'loading') {
@@ -667,7 +674,8 @@ export function createModelSelectionController({
       return;
     }
 
-    if (!webGPUStatus.adapterAvailable) {
+    // Le mode a requete distante n'a pas besoin de WebGPU.
+    if (!isRemoteQueryMode && !webGPUStatus.adapterAvailable) {
       statusEl.textContent = buildSemanticWebGPUBlockedText(webGPUStatus);
       toggle.disabled = true;
       return;
@@ -693,16 +701,23 @@ export function createModelSelectionController({
       return false;
     }
 
-    const webGPUStatus = await resolveSemanticWebGPUStatus();
-    if (!webGPUStatus.adapterAvailable) {
-      addSystemMessage(buildSemanticWebGPUBlockedText(webGPUStatus));
-      setSemanticRagEnabled(false);
-      await updateSemanticRagSummary();
-      return false;
+    const isRemoteQueryMode = config.model?.queryMode === 'remote';
+
+    // Le mode a requete distante ne telecharge aucun modele et n'exige pas WebGPU.
+    if (!isRemoteQueryMode) {
+      const webGPUStatus = await resolveSemanticWebGPUStatus();
+      if (!webGPUStatus.adapterAvailable) {
+        addSystemMessage(buildSemanticWebGPUBlockedText(webGPUStatus));
+        setSemanticRagEnabled(false);
+        await updateSemanticRagSummary();
+        return false;
+      }
     }
 
     const confirmed = globalThis.confirm?.(
-      `Activer le mode ${config.label || config.modeId} du RAG sémantique local ?\n\nEncodeur dédié: ${config.model?.id || config.model?.browserModelId}\nUsage: ${config.model?.usage === 'asymmetric_retrieval' ? 'retrieval asymétrique multilingue' : 'recherche sémantique locale'}\nIndex sémantique: ${formatDownloadSize(config.artifact?.downloadMb ?? null)}\nTéléchargement total estimé: ${formatDownloadSize(config.totalEstimatedDownloadMb ?? null)}\n\nLe téléchargement n'est jamais lancé sans votre confirmation.`
+      isRemoteQueryMode
+        ? `Activer le mode ${config.label || config.modeId} du RAG sémantique ?\n\nModèle distant: ${config.model?.remoteModelId || config.model?.id}\nAucun téléchargement de modèle : chaque question analytique est envoyée au service en ligne pour être encodée.\nIndex sémantique à télécharger: ${formatDownloadSize(config.artifact?.downloadMb ?? null)}\n\nSi le service en ligne est indisponible, le classement local reprend automatiquement la main.`
+        : `Activer le mode ${config.label || config.modeId} du RAG sémantique local ?\n\nEncodeur dédié: ${config.model?.id || config.model?.browserModelId}\nUsage: ${config.model?.usage === 'asymmetric_retrieval' ? 'retrieval asymétrique multilingue' : 'recherche sémantique locale'}\nIndex sémantique: ${formatDownloadSize(config.artifact?.downloadMb ?? null)}\nTéléchargement total estimé: ${formatDownloadSize(config.totalEstimatedDownloadMb ?? null)}\n\nLe téléchargement n'est jamais lancé sans votre confirmation.`
     );
 
     if (confirmed === false) {
@@ -1631,7 +1646,10 @@ export function createModelSelectionController({
       const providerLabel = lastMeta?.provider && lastMeta?.model
         ? `Dernier service: ${lastMeta.provider} · ${lastMeta.model}.`
         : 'Service prêt.';
-      statusEl.textContent = `${providerLabel} Les questions exactes restent déterministes et seules les analyses envoient un contexte court hors du navigateur.`;
+      const rerankNotice = getCachedCapabilities()?.rerank === true
+        ? ' Le tri des votes candidats à une analyse peut aussi utiliser le service en ligne (repli local automatique).'
+        : '';
+      statusEl.textContent = `${providerLabel} Les questions exactes restent déterministes et seules les analyses envoient un contexte court hors du navigateur.${rerankNotice}`;
       return;
     }
 
