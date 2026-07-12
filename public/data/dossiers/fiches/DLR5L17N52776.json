@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52776",
- "generatedAt": "2026-07-05T06:47:08Z",
+ "generatedAt": "2026-07-12T16:54:52Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,22 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b1826_proposition-loi",
   "legifrance": null
  },
- "objectifAffiche": "Proposition de loi ordinaire visant à instaurer la gratuité des parkings des hôpitaux publics, déposée le 16 septembre 2025 et renvoyée à la commission des affaires sociales.",
+ "objectifAffiche": "Proposition de loi ordinaire visant à rendre gratuits les parkings des hôpitaux publics. L'objectif affiché, tel que déduit du titre, est de supprimer la charge financière du stationnement pour les usagers des hôpitaux publics.",
  "mecanismesCles": [],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles de loi : seuls figurent l'identification du texte (n° 1826, 17e législature), la date de dépôt, la commission de renvoi (affaires sociales) et des liens de navigation. Aucun mécanisme concret (obligation, seuil, sanction, dérogation, compensation financière) ne peut être identifié, ce qui empêche toute analyse de l'alignement entre les incitations créées et l'objectif affiché.",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs, ni articles. Seul le titre de la proposition de loi est disponible ('Proposition de loi relative à la gratuité des parkings d'hôpitaux publics'). Aucun mécanisme concret (obligation, compensation financière pour les hôpitaux, modalité de mise en œuvre, sanctions, dérogations) ne peut être identifié dans le texte transmis. Il est donc impossible de déterminer si les incitations réelles vont dans le sens de l'objectif affiché ou s'y opposent (par exemple si la gratuité n'était pas compensée, ce qui dégraderait le financement des hôpitaux).",
  "pointsDeVigilance": [
-  "Le dossier législatif est tronqué à 15000 caractères mais, en réalité, aucun contenu normatif (exposé des motifs, articles) n'est présent dans l'extrait fourni.",
-  "Sans lecture des articles, il est impossible de savoir qui est concerné (patients, visiteurs, personnels), quelles contreparties financières sont prévues pour les hôpitaux, et si des exceptions sont prévues.",
-  "L'impact réel sur le stationnement hospitalier et l'accessibilité aux soins ne peut être évalué."
+  "Aucun article ni exposé des motifs n'a été fourni dans le texte transmis",
+  "Le texte est tronqué à 15000 caractères mais ne contient en réalité que des métadonnées de navigation",
+  "Sans contenu substantiel, toute analyse des mécanismes est impossible",
+  "La question du financement de la gratuité (perte de recettes pour les hôpitaux) n'est pas documentée"
  ],
  "themes": [
   "santé",
-  "stationnement",
   "hôpitaux publics",
-  "gratuité"
+  "stationnement",
+  "gratuité",
+  "accès aux soins"
  ],
  "scrutinsCles": [
   "3274",

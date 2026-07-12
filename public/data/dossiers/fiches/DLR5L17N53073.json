@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53073",
- "generatedAt": "2026-07-05T06:44:11Z",
+ "generatedAt": "2026-07-12T16:54:24Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -18,17 +18,17 @@
  "objectifAffiche": "Résolution invitant le Gouvernement français à s'opposer à l'adoption de l'accord commercial entre l'Union européenne et le Mercosur, signé le 27 novembre 2025.",
  "mecanismesCles": [
   {
-   "resume": "Résolution parlementaire sans valeur normative contraignante, invitant le Gouvernement à s'opposer à l'adoption de l'accord UE-Mercosur.",
+   "resume": "Résolution simple invitant le Gouvernement à s'opposer à l'adoption de l'accord UE-Mercosur, sans créer d'obligation, de taxe, de subvention ni de sanction contraignante.",
    "articleRef": null,
    "citation": "Résolution, adoptée par l'Assemblée nationale, invitant le Gouvernement de la République française à s'opposer à l'adoption de l'accord commercial entre l'Union européenne et le Mercosur le 27 novembre 2025"
   }
  ],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est tronqué et ne contient que le sommaire et l'intitulé de la résolution, sans exposer les motifs ni les articles détaillés. Aucun mécanisme concret (obligation, sanction, dérogation, seuil) n'est identifiable dans le contenu transmis. Il est donc impossible de déterminer si les incitations réelles du texte vont dans le sens de l'opposition affichée à l'accord ou si elles produiraient des effets contraires.",
+ "justificationVerdict": "Le texte fourni est une simple résolution au sens de l'article 34-1 de la Constitution, qui se limite à inviter le Gouvernement à adopter une position politique. Aucun mécanisme concret (obligation, taxe, subvention, dérogation, seuil, sanction) n'est créé par les articles, dont le contenu normatif n'est pas reproduit dans le dossier législatif tronqué. Il est donc impossible d'évaluer si les incitations réelles vont dans le sens de l'opposition affichée à l'accord ou non.",
  "pointsDeVigilance": [
-  "Le texte officiel est tronqué à 15000 caractères et seul le titre/sommaire est visible.",
-  "Une résolution au sens de l'article 34-1 de la Constitution n'a pas de force normative contraignante ; elle exprime une position politique.",
-  "Sans l'exposé des motifs, les arguments économiques, agricoles ou environnementaux soulevés restent inconnus."
+  "Le contenu des articles de la résolution n'est pas accessible dans le texte fourni (tronqué à 15000 caractères, seul le sommaire est visible).",
+  "Une résolution de l'article 34-1 n'a pas de force contraignante à l'égard du Gouvernement.",
+  "L'analyse des motivations concrètes (environnement, agriculture, normes sanitaires, etc.) nécessiterait l'accès aux visas et à l'exposé des motifs."
  ],
  "themes": [
   "commerce international",

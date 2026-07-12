@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53051",
- "generatedAt": "2026-07-05T06:33:59Z",
+ "generatedAt": "2026-07-12T16:52:19Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,43 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0195_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à protéger les mineurs isolés et à lutter contre le sans-abrisme, comme l'indique son titre. L'exposé des motifs et les articles ne sont pas exploitables car le contenu fourni est un fichier PDF binaire illisible.",
- "mecanismesCles": [],
+ "objectifAffiche": "La proposition de loi vise à protéger les mineurs isolés (non accompagnés) et à lutter contre le sans-abrisme, selon son titre et son intitulé officiel.",
+ "mecanismesCles": [
+  {
+   "resume": "Suspension des effets de la décision de non-reconnaissance de minorité lorsqu'un recours judiciaire est engagé, avec maintien de l'accueil provisoire d'urgence durant la procédure.",
+   "articleRef": "art. 1er (II bis inséré dans L. 221-2-4 du CASF)",
+   "citation": "les effets de la décision mentionnée à l'avant-dernier alinéa du II du présent article sont suspendus jusqu'à l'intervention d'une décision juridictionnelle définitive. « Durant cette période, l'accueil provisoire d'urgence prévu au I est maintenu."
+  },
+  {
+   "resume": "Obligation de scolarisation du mineur pris en charge par l'aide sociale à l'enfance, conformément au code de l'éducation.",
+   "articleRef": "art. 1er bis",
+   "citation": "« Il procède à sa scolarisation en application des articles L. 111-1, L. 114-1, L. 122-1 et L. 131-1 du code de l'éducation."
+  },
+  {
+   "resume": "Interdiction des examens radiologiques osseux, dentaires et du développement pubertaire pour évaluer l'âge en cas de doute sur la minorité.",
+   "articleRef": "art. 1er ter (modifiant l'art. 388 du code civil)",
+   "citation": "« En cas de doute sur la minorité de l'intéressé, il ne peut être procédé à une évaluation de son âge à partir : « 1° D'un examen radiologique osseux ; « 2° D'un examen dentaire ; « 3° D'un examen du développement pubertaire des caractères sexuels primaires et secondaires."
+  },
+  {
+   "resume": "Compensation des charges pour l'État et les collectivités par une taxe additionnelle à l'accise sur les tabacs et une majoration de la dotation globale de fonctionnement.",
+   "articleRef": "art. 3",
+   "citation": "La charge pour l'État est compensée à due concurrence par la création d'une taxe additionnelle à l'accise sur les tabacs prévue au chapitre IV du titre Ier du livre III du code des impositions sur les biens et services."
+  }
+ ],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel fourni est un fichier PDF dont le contenu est encodé en flux binaires compressés (streams x��...) et ne permet pas d'extraire ni l'exposé des motifs, ni les articles de la proposition de loi. Aucun mécanisme concret (obligation, taxe, subvention, dérogation, seuil, sanction) ne peut être identifié ni référencé à un article précis. En l'absence de tout contenu textuel exploitable, il est impossible de déterminer si les incitations créées par les mécanismes vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "justificationVerdict": "Le texte ne contient aucune disposition relative à la lutte contre le sans-abrisme : l'article 2 a été supprimé et aucun autre article ne traite du logement, de l'hébergement ou du sans-abrisme. Les mécanismes concrets (art. 1er, 1er bis, 1er ter) portent uniquement sur la protection des mineurs isolés (maintien de l'accueil d'urgence pendant le recours, scolarisation, interdiction de certains examens d'âge). L'article 3 ne crée qu'un mécanisme de compensation financière par taxe sur le tabac, sans lien direct avec l'objectif affiché. L'absence de dispositions sur le second volet de l'objectif (sans-abrisme) rend le verdict indéterminé.",
  "pointsDeVigilance": [
-  "Le document fourni est un PDF binaire illisible : aucun article, alinéa ou exposé des motifs n'a pu être extrait",
-  "Le titre mentionne deux objets distincts (protection des mineurs isolés ET lutte contre le sans-abrisme) qui pourraient relever de logiques différentes",
-  "Sans accès au contenu normatif, toute analyse des incitations serait purement spéculative"
+  "L'article 2, initialement consacré au sans-abrisme, a été supprimé en séance : le second volet de l'intitulé de la loi n'est plus traité par le texte.",
+  "Le financement par une taxe additionnelle sur le tabac (art. 3) est un mécanisme de compensation classique ('à due concurrence') et non une mesure nouvelle de lutte contre le sans-abrisme.",
+  "L'interdiction des examens osseux/dentaires/pubertaires (art. 1er ter) peut rendre plus difficile la preuve de la minorité, avec un effet ambigu sur la protection effective des mineurs isolés.",
+  "Le texte est tronqué à 15000 caractères et marqué 'à titre provisoire' : des articles ou dispositions ultérieurs pourraient compléter l'analyse."
  ],
  "themes": [
   "protection de l'enfance",
+  "mineurs non accompagnés",
   "sans-abrisme",
-  "mineurs isolés",
-  "politique sociale"
+  "aide sociale à l'enfance",
+  "évaluation de l'âge"
  ],
  "scrutinsCles": [
   "4720",
@@ -37,5 +60,5 @@
   "4723"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:6ddd61bb20ec947a13dc1052fdddb2e25c22f607916e47cbe6d67bc598a9065e"
+ "sourceTextHash": "sha256:b99f6e6be2dd5b537090927c679b6f08d0b5499436fe59de452d7cc52047de3b"
 }

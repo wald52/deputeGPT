@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52976",
- "generatedAt": "2026-07-05T06:42:10Z",
+ "generatedAt": "2026-07-12T16:54:18Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,38 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0183_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à établir l'égalité d'accès au service public postal dans les territoires d'outre-mer. L'objectif affiché est de garantir aux habitants des outre-mer un accès équivalent au service public postal à celui dont bénéficient les habitants de la France métropolitaine.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est un fichier PDF dont le contenu textuel n'a pas pu être extrait (le document apparaît sous forme de flux binaires et de streams compressés illisibles). Aucun article, aucune disposition concrète (obligation, taxe, subvention, seuil, sanction) et aucun exposé des motifs n'ont pu être identifiés dans le contenu exploitable. En l'absence de mécanismes vérifiables tirés du texte, il est impossible de déterminer si les incitations créées vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "Établir l'égalité d'accès au service public postal entre les territoires d'outre-mer et la France métropolitaine, en unifiant le tarif des envois postaux sur l'ensemble du territoire national.",
+ "mecanismesCles": [
+  {
+   "resume": "Modification de l'article L. 1 du code des postes : remplacement du terme « métropolitain » par « national » et unification du tarif postal pour toutes les tranches de poids vers et depuis les collectivités de l'article 73, la Nouvelle-Calédonie, Saint-Pierre-et-Miquelon, Saint-Barthélemy, Saint-Martin, la Polynésie française, Wallis-et-Futuna et les TAAF.",
+   "articleRef": "art. 1er A",
+   "citation": "« Le tarif appliqué aux envois postaux à l'unité en provenance et à destination des collectivités régies par l'article 73 de la Constitution, de la Nouvelle-Calédonie, de Saint-Pierre-et-Miquelon, de Saint-Barthélemy, de Saint-Martin, de la Polynésie française, des îles Wallis et Futuna et des Terres australes et antarctiques françaises est celui en vigueur sur le territoire national, pour toutes les tranches de poids des envois. »"
+  },
+  {
+   "resume": "Création d'un article L. 1-1 inscrivant le tarif postal unique comme outil de cohésion sociale via la péréquation nationale des tarifs.",
+   "articleRef": "art. 1er B",
+   "citation": "« Le tarif postal unique sur l'ensemble du territoire national prévu au sixième alinéa de l'article L. 1 concourt à la cohésion sociale, par l'intermédiaire de la péréquation nationale des tarifs. »"
+  },
+  {
+   "resume": "Compensation de la charge pour l'État par la création d'une taxe additionnelle à l'accise sur les tabacs (chapitre IV du titre Ier du livre III du code des impositions sur les biens et services).",
+   "articleRef": "art. 2",
+   "citation": "« La charge pour l'État est compensée, à due concurrence, par la création d'une taxe additionnelle à l'accise sur les tabacs prévue au chapitre IV du titre Ier du livre III du code des impositions sur les biens et services. »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'article 1er A instaure explicitement un tarif postal unique applicable à toutes les tranches de poids entre la métropole et l'ensemble des outre-mer listés, ce qui réalise directement l'objectif affiché d'égalité d'accès. L'article 1er B ancre ce mécanisme dans la péréquation nationale, confirmant la logique redistributive. L'article 2 prévoit la compensation financière de la charge étatique par une taxe additionnelle sur les tabacs, mécanisme neutre vis-à-vis de l'objectif d'égalité postale. Aucun mécanisme du texte ne va à l'encontre de l'unification tarifaire affichée.",
  "pointsDeVigilance": [
-  "Le contenu textuel du PDF n'a pas pu être décodé : seuls des objets PDF bruts et des streams compressés sont visibles.",
-  "Aucun article ni exposé des motifs n'est lisible dans la portion de texte fournie.",
-  "Le titre et l'identifiant du dossier suggèrent une loi d'égalité territoriale sur le service postal, mais le contenu normatif reste inaccessible."
+  "Le texte ne précise pas le montant de la charge compensée ni l'impact effectif sur les finances de La Poste, ce qui pourrait conditionner la pérennité du tarif unique.",
+  "Le financement par une taxe sur les tabacs crée un lien de dépendance entre l'égalité postale outre-mer et les recettes fiscales sur le tabac, sans garantie de soutenabilité si la consommation de tabac diminue.",
+  "L'exposé des motifs n'est pas fourni dans le texte transmis, limitant l'analyse des intentions initiales.",
+  "Le 2° de l'article 1er A a été supprimé, ce qui pourrait réduire la portée initiale du dispositif."
  ],
  "themes": [
   "outre-mer",
   "service public postal",
   "égalité territoriale",
-  "aménagement du territoire"
+  "péréquation tarifaire",
+  "tarification postale"
  ],
  "scrutinsCles": [
   "4284",
@@ -37,5 +55,5 @@
   "4287"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:c946e672d042846f7c912ac1fd1fbe51a2aa6925504439b11f06a1212afd9d77"
+ "sourceTextHash": "sha256:e2191e829ee37099c665f6570ea6940ba4054e1304250a02d6a902b2383a16c3"
 }

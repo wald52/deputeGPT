@@ -1,0 +1,69 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51973",
+ "generatedAt": "2026-07-12T17:07:07Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Garantir un cadre fiscal stable, juste et lisible pour nos micro-entrepreneurs et nos petites entreprises",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/cadre_stable_petites_entreprises_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0126_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Proposition de loi ordinaire visant à garantir un cadre fiscal stable, juste et lisible pour les micro-entrepreneurs et les petites entreprises, en ajustant les seuils de franchise de TVA et les règles d'assujettissement.",
+ "mecanismesCles": [
+  {
+   "resume": "Relèvement des seuils de franchise en base de TVA pour les micro-entreprises : 85 000 € (CA total) et 37 500 € (prestations de services) sur l'année précédente, avec majoration de 10 % pour l'année en cours (93 500 € et 41 250 €).",
+   "articleRef": "art. 1, II, 1°",
+   "citation": "Année civile précédente 85 000 37 500 ; Année en cours 93 500 41 250"
+  },
+  {
+   "resume": "Création d'un régime de franchise spécifique (I bis) pour les avocats, avocats au Conseil d'État et à la Cour de cassation, auteurs d'œuvres de l'esprit et artistes-interprètes, avec des seuils distincts (50 000 € / 35 000 € sur l'année précédente, 55 000 € / 38 500 € sur l'année en cours).",
+   "articleRef": "art. 1, II, 2°",
+   "citation": "Les avocats, les avocats au Conseil d'État et à la Cour de cassation, les auteurs d'œuvres de l'esprit et les artistes-interprètes assujettis et établis en France bénéficient d'une franchise"
+  },
+  {
+   "resume": "Maintien de la franchise tant que les plafonds de l'année en cours ne sont pas dépassés : la franchise cesse uniquement à compter de la date de dépassement effectif.",
+   "articleRef": "art. 1, II, 3°",
+   "citation": "Lorsque l'un des plafonds de chiffre d'affaires prévus aux I ou I bis du présent article pour les opérations de l'année en cours est dépassé, la franchise cesse de s'appliquer pour les opérations intervenant à compter de la date de dépassement."
+  },
+  {
+   "resume": "Abrogation de la disposition de la loi de finances pour 2025 qui prévoyait un abaissement des seuils de franchise (entrée en vigueur initialement prévue au 1er janvier 2026), garantissant ainsi la stabilité des seuils.",
+   "articleRef": "art. 1, IV",
+   "citation": "Le 1° du I est abrogé ; à la fin du premier alinéa du II, les mots : « , à l'exception du 1° qui entre en vigueur le 1er janvier 2026 » sont supprimés."
+  },
+  {
+   "resume": "Application des nouvelles dispositions à compter du 1er mars 2025, avec compensation de la perte de recettes pour l'État par une taxe additionnelle à l'accise sur les tabacs.",
+   "articleRef": "art. 1, V et art. 2",
+   "citation": "Les I à III s'appliquent à compter du 1er mars 2025. La perte de recettes résultant du A du présent V pour l'État est compensée à due concurrence par la création d'une taxe additionnelle à l'accise sur les tabacs"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés vont clairement dans le sens de l'objectif affiché : relèvement des seuils de franchise de TVA (art. 1, II, 1°), création d'un régime spécifique favorable pour les professions libérales et créatrices (art. 1, II, 2°), sécurisation de la franchise en cas de dépassement ponctuel (art. 1, II, 3°) et abrogation de la baisse de seuils prévue par la loi de finances 2025 (art. 1, IV). L'ensemble procure un cadre fiscal plus stable (entrée en vigueur au 1er mars 2025, suppression de la clause de revoyure), plus lisible (tableaux harmonisés) et plus juste (traitement adapté à certaines professions). La compensation par l'accise sur les tabacs est neutre sur l'incitation aux micro-entrepreneurs.",
+ "pointsDeVigilance": [
+  "Le texte est tronqué : l'exposé des motifs n'est pas fourni, ce qui limite l'analyse de l'intention politique.",
+  "La compensation par une taxe sur les tabacs crée un lien fiscal entre deux politiques publiques distinctes, ce qui peut soulever des questions de cohérence budgétaire.",
+  "L'application rétroactive au 1er mars 2025 pour une loi promulguée postérieurement pose une question de sécurité juridique.",
+  "Le texte mentionne des commentaires d'amendements (n° 11 et 12) sans que leur contenu soit visible dans le tronçon fourni."
+ ],
+ "themes": [
+  "fiscalité",
+  "tva",
+  "micro-entreprises",
+  "franchise",
+  "petites entreprises"
+ ],
+ "scrutinsCles": [
+  "2211",
+  "2212",
+  "2213",
+  "2214"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:343658a82e963a848847443aede362cefeda879d75bddf122a1ac6f3874b4038"
+}

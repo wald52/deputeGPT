@@ -1,0 +1,65 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50627",
+ "generatedAt": "2026-07-12T17:08:21Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Lutter contre la pédocriminalité",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/lutter_contre_la_pedocriminalite",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0116_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Lutter contre la pédocriminalité en adaptant le droit pénal aux infractions commises via les réseaux de communications électroniques, notamment en ciblant les majeurs qui ciblent des personnes se présentant comme mineures, et en anticipant les risques liés à l'intelligence artificielle générative.",
+ "mecanismesCles": [
+  {
+   "resume": "Extension de l'article 227-22 du code pénal : les peines existantes s'appliquent au fait, pour un majeur, de favoriser ou tenter de favoriser la corruption d'une personne se présentant comme mineure via un réseau de communications électroniques.",
+   "articleRef": "art. 1er (1° a bis)",
+   "citation": "« Les mêmes peines sont applicables au fait pour un majeur, par un réseau de communications électroniques, de favoriser ou de tenter de favoriser la corruption d'une personne se présentant comme mineure. »"
+  },
+  {
+   "resume": "Extension de l'article 227-23-1 : les peines pour agissements similaires s'appliquent lorsqu'ils sont commis par un majeur, via un réseau électronique, à l'encontre d'une personne se présentant comme mineure.",
+   "articleRef": "art. 1er (3° a)",
+   "citation": "« Les mêmes peines sont applicables aux mêmes agissements commis par un majeur, par un réseau de communications électroniques, à l'encontre d'une personne se présentant comme mineure »"
+  },
+  {
+   "resume": "Modification des articles 227-22-1, 227-22-2 et 227-23-1 pour viser explicitement les infractions commises par réseau électronique contre une personne se présentant comme mineure (corrections rédactionnelles et extensions).",
+   "articleRef": "art. 1er (1° bis, 2°, 3° b)",
+   "citation": "« ou d'une personne se présentant comme tel lorsqu'ils sont commis par un réseau de communications électroniques »"
+  },
+  {
+   "resume": "Extension de l'application de la loi à la Nouvelle-Calédonie, en Polynésie française et dans les îles Wallis et Futuna.",
+   "articleRef": "art. 1er (4°)",
+   "citation": "« en Nouvelle-Calédonie, en Polynésie française et dans les îles Wallis et Futuna. »"
+  },
+  {
+   "resume": "Demande de rapport au Gouvernement sous six mois sur les risques liés à l'IA (génération, diffusion, utilisation de contenus pédopornographiques) et sur les moyens techniques, juridiques et humains pour prévenir et réprimer ces infractions.",
+   "articleRef": "art. 2",
+   "citation": "« Dans un délai de six mois à compter de la promulgation de la présente loi, le Gouvernement remet au Parlement un rapport évaluant les risques engendrés par l'usage de l'intelligence artificielle dans les infractions liées à la pédocriminalité »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés par l'article 1er étendent directement le champ des infractions pénales existantes (articles 227-22, 227-22-1, 227-22-2, 227-23-1 du code pénal) aux cas où un majeur agit via un réseau de communications électroniques contre une personne se présentant comme mineure, ce qui comble un vide juridique et renforce la répression de la pédocriminalité en ligne. L'extension territoriale (art. 1er 4°) assure la portée de la loi dans les collectivités du Pacifique. L'article 2, par la demande d'un rapport sur l'IA générative, prépare une réponse législative future. L'ensemble des dispositifs va dans le sens de l'objectif affiché de lutte contre la pédocriminalité, sans créer de mécanisme contradictoire.",
+ "pointsDeVigilance": [
+  "L'article 2 ne crée pas d'obligation contraignante : il s'agit d'une simple demande de rapport, sans mécanisme de sanction ni de calendrier législatif contraignant pour le Gouvernement.",
+  "Le texte ne crée ni nouvelle peine, ni nouvelle qualification pénale autonome : il se limite à étendre des infractions existantes à la modalité 'réseau électronique' et à la personne 'se présentant comme mineure'.",
+  "Aucune mesure concrète de prévention, de moyens pour les services d'enquête ou de coopération avec les plateformes n'est inscrite dans la loi (ces éléments sont renvoyés au futur rapport)."
+ ],
+ "themes": [
+  "pédocriminalité",
+  "droit pénal",
+  "cybercriminalité",
+  "intelligence artificielle",
+  "outre-mer"
+ ],
+ "scrutinsCles": [
+  "1725"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:cd11cf1e25a1950b9d4071512f913941d6e7ad746f665a7d78d3818767688ed3"
+}

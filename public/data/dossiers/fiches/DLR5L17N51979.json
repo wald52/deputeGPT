@@ -1,0 +1,75 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51979",
+ "generatedAt": "2026-07-12T17:03:54Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Accorder le versement des allocations familiales dès le premier enfant",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/accorder_versement_allocations_familiales_premier_enfant_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0135_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "La proposition de loi vise à étendre le versement des allocations familiales dès le premier enfant, contre deux actuellement, afin de soutenir les familles et de lutter contre la précarité familiale. Elle s'inscrit dans une réflexion plus large sur une réforme universelle des allocations familiales et sur l'adaptation des politiques familiales aux évolutions sociétales et aux enjeux de natalité.",
+ "mecanismesCles": [
+  {
+   "resume": "Modification de l'article L. 521-1 du code de la sécurité sociale : remplacement du mot « deuxième » par « premier », ouvrant droit aux allocations familiales dès le premier enfant.",
+   "articleRef": "Article 1er (I)",
+   "citation": "le mot : « deuxième » est remplacé par le mot : « premier »"
+  },
+  {
+   "resume": "Rapport annuel de la CNAF sur les conséquences de la mesure en matière de réduction de la précarité familiale.",
+   "articleRef": "Article 1er (II nouveau)",
+   "citation": "la Caisse nationale des allocations familiales rend compte des conséquences de l'attribution des allocations familiales dès le premier enfant sur la réduction de la précarité familiale"
+  },
+  {
+   "resume": "Rapport gouvernemental sous 6 mois sur une réforme plus globale (accès universel, financement via abrogation de la réduction de cotisations pour hauts salaires et réforme du quotient familial), tenant compte des outre-mer.",
+   "articleRef": "Article 1er bis",
+   "citation": "une abrogation de la réduction appliquée sur les cotisations d'allocations familiales pour les salaires les plus élevés et une réforme du quotient familial"
+  },
+  {
+   "resume": "Rapport gouvernemental sous 6 mois sur l'impact de la mesure pour les familles monoparentales (pouvoir d'achat).",
+   "articleRef": "Article 1er ter",
+   "citation": "rapport sur l'impact de l'attribution des allocations familiales dès le premier enfant sur la capacité financière et le pouvoir d'achat des familles monoparentales"
+  },
+  {
+   "resume": "Compensation de la charge pour les organismes de sécurité sociale par majoration de l'accise sur les tabacs (taxe sur le tabac).",
+   "articleRef": "Article 2 (I)",
+   "citation": "La charge pour les organismes de sécurité sociale est compensée à due concurrence par la majoration de l'accise sur les tabacs"
+  },
+  {
+   "resume": "Suppression des alinéas 2 à avant-dernier de l'article L. 137-16 et plafonnement à 2 SMIC annuels des exonérations de cotisations familiales (1° et 2° du II de l'article L. 242-1).",
+   "articleRef": "Article 2 (II nouveau)",
+   "citation": "dans la limite annuelle de deux fois le salaire minimum de croissance"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le mécanisme central (art. 1er I) étend bien le bénéfice des allocations familiales au premier enfant, ce qui correspond directement à l'objectif affiché de soutien aux familles et de lutte contre la précarité familiale. Le financement est assuré par une majoration de l'accise sur les tabacs (art. 2 I) et par un plafonnement des exonérations de cotisations familiales au-delà de 2 SMIC (art. 2 II), ce qui cible les hauts salaires et un produit de consommation nuisible, sans réduire le montant des prestations. Les rapports demandés (art. 1er bis et ter) prolongent la logique d'évaluation et d'universalisation. L'ensemble des incitations créées va donc dans le sens de l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte ne précise pas le montant ni les conditions de ressources applicables aux allocations versées dès le premier enfant : l'effet réel sur la précarité dépendra des paramètres réglementaires ultérieurs.",
+  "Le financement repose sur une hausse de l'accise sur les tabacs, dont l'assiette peut se réduire dans le temps (baisse du tabagisme), posant la question de la soutenabilité budgétaire à moyen terme.",
+  "Le plafonnement des exonérations à 2 SMIC (art. 2 II) constitue une hausse de cotisations pour les employeurs au-delà de ce seuil, avec des effets potentiels sur l'emploi et la compétitivité non évalués dans le texte.",
+  "Les rapports prévus (art. 1er bis et ter) sont non contraignants : ils n'engagent pas le Gouvernement à une réforme ultérieure.",
+  "Le texte est tronqué à 15000 caractères ; d'autres articles ou amendements (numérotés 5, 6, 8, 9, 10, 19, 22, 24, 36) ne sont pas visibles dans le document fourni."
+ ],
+ "themes": [
+  "politique familiale",
+  "allocations familiales",
+  "sécurité sociale",
+  "fiscalité",
+  "tabac"
+ ],
+ "scrutinsCles": [
+  "2269",
+  "2270",
+  "2271",
+  "2272"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:44877e8192b22a336042d9ecfcd4a9b41e2fa9516e1db29976e429120a236849"
+}

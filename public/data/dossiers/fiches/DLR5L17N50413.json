@@ -1,0 +1,56 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50413",
+ "generatedAt": "2026-07-12T17:08:39Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Créer une croix de la valeur des sapeurs-pompiers volontaires et professionnels",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/croix_valeur_sapeurs_pompiers_volontaires_professionnels",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0115_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Créer une nouvelle décoration officielle, la « croix de la valeur des sapeurs-pompiers volontaires et professionnels », destinée à récompenser la bravoure et l'engagement opérationnel exceptionnel des sapeurs-pompiers en intervention, y compris à titre posthume.",
+ "mecanismesCles": [
+  {
+   "resume": "Création d'une décoration nationale (croix de la valeur) pour récompenser la bravoure et l'engagement opérationnel exceptionnel des sapeurs-pompiers volontaires et professionnels, y compris à titre posthume.",
+   "articleRef": "art. 1er (I)",
+   "citation": "Est créée une croix de la valeur des sapeurs-pompiers volontaires et professionnels, destinée à récompenser, y compris à titre posthume, la bravoure et l'engagement opérationnel exceptionnel des sapeurs-pompiers en intervention."
+  },
+  {
+   "resume": "Renvoi à un arrêté du ministre de l'intérieur pour définir les règles, conditions d'attribution et de promotion, ainsi que le statut de la décoration.",
+   "articleRef": "art. 1er (II)",
+   "citation": "Les règles et les conditions d'attribution et de promotion de cette décoration ainsi que le statut de celle-ci sont définis par arrêté du ministre de l'intérieur."
+  },
+  {
+   "resume": "Compensation de la charge pour l'État par la création d'une taxe additionnelle à l'accise sur les tabacs (tabacs relevant du chapitre IV du titre Ier du livre III du code des impositions sur les biens et services).",
+   "articleRef": "art. 2",
+   "citation": "La charge pour l'État est compensée, à due concurrence, par la création d'une taxe additionnelle à l'accise sur les tabacs prévue au chapitre IV du titre Ier du livre III du code des imposations sur les biens et services."
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'article 1er crée directement la décoration visée par l'intitulé du texte, en précisant son objet (récompenser la bravoure et l'engagement opérationnel exceptionnel) et son champ (sapeurs-pompiers volontaires et professionnels, y compris à titre posthume), ce qui correspond exactement à l'objectif affiché. L'article 2 ne crée pas de mécanisme de désincitation : il se limite à assurer la neutralité budgétaire de la mesure en compensant la charge pour l'État par une taxe additionnelle sur les tabacs, conformément à la pratique législative de compensation. Aucun dispositif du texte n'entre en contradiction avec l'objectif de reconnaissance des sapeurs-pompiers.",
+ "pointsDeVigilance": [
+  "Les critères précis d'attribution (seuils de bravoure, définition de l'engagement exceptionnel, hiérarchie éventuelle avec d'autres décorations) sont entièrement renvoyés à un arrêté ministériel, donc non définis par la loi.",
+  "Le texte ne précise pas le contingentement, la fréquence d'attribution ni les modalités de port (uniforme, civile), ce qui laisse une large marge réglementaire.",
+  "Le financement repose sur une taxe additionnelle sur les tabacs, ce qui lie symboliquement et budgétairement la décoration à un produit dont la consommation est encadrée de manière restrictive.",
+  "Le texte ne crée aucune obligation nouvelle pour les employeurs publics ou privés de sapeurs-pompiers volontaires (autorisations d'absence, etc.)."
+ ],
+ "themes": [
+  "sapeurs-pompiers",
+  "décorations",
+  "reconnaissance",
+  "symbolique",
+  "financement"
+ ],
+ "scrutinsCles": [
+  "1724"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:c2399c90ee314c7eca21b997b1a2c51a212b183bd38fb42d46599f0505f2e7fc"
+}

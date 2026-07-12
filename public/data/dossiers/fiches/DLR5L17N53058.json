@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53058",
- "generatedAt": "2026-07-05T06:32:22Z",
+ "generatedAt": "2026-07-12T16:51:12Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,25 +15,58 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0198_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à prendre des mesures d'urgence contre la vie chère en outre-mer dans le secteur des services. L'objectif affiché est de lutter contre les prix élevés pratiqués dans les territoires ultramarins.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel a été corrompu ou mal extrait (caractères binaires, flux PDF non décodés). Aucun article, aucune disposition concrète, aucun mécanisme (obligation, taxe, subvention, seuil, sanction) ne peut être identifié dans le contenu fourni. Il est donc impossible de déterminer si les incitations créées par les mécanismes vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "Prendre des mesures d'urgence contre la vie chère en outre-mer dans le secteur des services, en encadrant les prix de certains services (postaux, aériens, bancaires) afin de les aligner sur les niveaux pratiqués en France hexagonale.",
+ "mecanismesCles": [
+  {
+   "resume": "Extension du périmètre du service postal universel à l'ensemble du territoire national (incluant l'outre-mer) pour les envois postaux de moins de 100 grammes.",
+   "articleRef": "art. 1er",
+   "citation": "« les mots : 'métropolitain lorsque ces envois sont d'un poids inférieur à 100 grammes' sont remplacés par le mot : 'national' »"
+  },
+  {
+   "resume": "Création de deux tarifs plafonds 'résident' pour les liaisons aériennes régulières vers l'outre-mer : un tarif général sous conditions de ressources et un tarif spécifique pour les bénéficiaires de l'aide à la continuité territoriale (reste à charge plafonné à 50 % du prix moyen).",
+   "articleRef": "art. 2",
+   "citation": "« deux tarifs plafonds 'résident' sont applicables aux titres de transport »"
+  },
+  {
+   "resume": "Prise en charge par l'Agence de l'outre-mer pour la mobilité de la différence entre le prix du billet et le tarif plafond, avec application automatique lors de la réservation.",
+   "articleRef": "art. 2",
+   "citation": "« la différence entre ce prix et le tarif plafond est prise en charge par l'Agence de l'outre-mer pour la mobilité »"
+  },
+  {
+   "resume": "Plafonnement des tarifs bancaires de base dans les outre-mer : interdiction pour les établissements de crédit de pratiquer des tarifs supérieurs à la moyenne hexagonale pour les mêmes services.",
+   "articleRef": "art. 3",
+   "citation": "« les établissements de crédit ne peuvent pratiquer des tarifs supérieurs à la moyenne des tarifs pratiqués en France hexagonale pour les mêmes services bancaires de base »"
+  },
+  {
+   "resume": "Contrôle par l'Autorité de contrôle prudentiel et injonction de remboursement aux clients des sommes indûment perçues.",
+   "articleRef": "art. 3",
+   "citation": "« enjoint systématiquement aux établissements de crédits de rembourser aux clients les sommes indûment perçues »"
+  },
+  {
+   "resume": "Rapport annuel de l'IEDOM transmis au Parlement détaillant les tarifs bancaires outre-mer vs hexagonaux, les manquements et sanctions.",
+   "articleRef": "art. 3 (3°)",
+   "citation": "« Ce rapport détaille également, par établissement de crédit, les tarifs bancaires pratiqués en France hexagonale et ceux pratiqués dans chaque territoire ultramarin »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés vont directement dans le sens de l'objectif affiché : plafonnement des tarifs aériens (art. 2), plafonnement des tarifs bancaires à la moyenne hexagonale (art. 3), et extension du service postal universel (art. 1er). L'article 3 instaure un mécanisme contraignant avec contrôle par l'ACPR et remboursement obligatoire des sommes indûment perçues, ce qui renforce l'effectivité. La compensation par une taxe sur les tabacs (art. 4) est neutre pour l'objectif mais crée un effet redistributif indirect. Les incitations sont donc alignées avec la lutte contre la vie chère en outre-mer.",
  "pointsDeVigilance": [
-  "Le contenu textuel du PDF est inexploitable (flux binaire non décodé)",
-  "Aucun article ni exposé des motifs lisible n'a pu être extrait",
-  "L'analyse des mécanismes concrets est impossible sans texte exploitable",
-  "Seul le titre et l'identifiant du dossier législatif sont exploitables"
+  "Le financement intégral par une taxe additionnelle sur les tabacs (art. 4) pourrait avoir des effets régressifs et indirects sur la santé publique, non mentionnés dans l'exposé des motifs.",
+  "L'article 3 bis ne crée qu'une obligation de rapport, sans mécanisme contraignant d'extension aux liaisons maritimes.",
+  "Le tarif plafond aérien 'général' est défini 'par voie réglementaire' (art. 2), laissant une marge d'appréciation importante au pouvoir exécutif.",
+  "Le texte ne contient pas d'exposé des motifs dans le document fourni, limitant l'analyse de la cohérence entre intention et mécanismes.",
+  "L'absence de sanctions explicites pour les compagnies aériennes ne respectant pas les tarifs plafonds (contrairement aux banques) crée une asymétrie de contrainte."
  ],
  "themes": [
-  "outre-mer",
   "vie chère",
-  "services",
-  "pouvoir d'achat"
+  "outre-mer",
+  "transports aériens",
+  "services bancaires",
+  "service postal universel"
  ],
  "scrutinsCles": [
   "4755"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:4f6e39a884163a633f93e1209990b71c991e06d3028430c9a5e1ee5290b9d6fd"
+ "sourceTextHash": "sha256:12e816d88dcf27cf51e268e24cf24e4fdc044894097df5e120e45c9e1fa2ec94"
 }

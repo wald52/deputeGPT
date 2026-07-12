@@ -1,0 +1,45 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51789",
+ "generatedAt": "2026-07-12T17:01:32Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi autorisant la ratification du Traité de coopération en matière de défense entre la République française et la République de Djibouti",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N51789",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b1450_projet-loi",
+  "legifrance": null
+ },
+ "objectifAffiche": "Autoriser la ratification du Traité de coopération en matière de défense entre la République française et la République de Djibouti, déposé le 22 mai 2025 et adopté par le Sénat après engagement de la procédure accélérée.",
+ "mecanismesCles": [
+  {
+   "resume": "Le texte est un projet de loi de ratification, dont l'unique effet est d'autoriser la ratification d'un traité bilatéral de défense avec Djibouti.",
+   "articleRef": null,
+   "citation": "Projet de loi autorisant la ratification du Traité de coopération en matière de défense entre la République française et la République de Djibouti"
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le dossier législatif fourni ne contient ni exposé des motifs ni articles substantiels : seul le titre et les métadonnées du projet de loi de ratification sont accessibles. Sans le contenu du traité ni les dispositions internes du projet de loi, il est impossible d'identifier les obligations concrètes, taxes, subventions ou dérogations créées, et donc de déterminer si les incitations vont dans le sens de l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué et ne contient ni exposé des motifs ni articles du projet de loi.",
+  "Le contenu du Traité bilatéral de défense avec Djibouti n'est pas reproduit dans le dossier fourni.",
+  "Un traité de défense peut comporter des clauses de stationnement de forces, d'immunité, d'aide militaire ou d'accès à des bases, dont l'analyse nécessiterait le texte intégral."
+ ],
+ "themes": [
+  "défense",
+  "relations internationales",
+  "djibouti",
+  "traités et conventions",
+  "ratification"
+ ],
+ "scrutinsCles": [
+  "2634"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:1f481d38826da6eea63ecbb1b2aca1b1a6a15b6cd8a21fd04f16016df172116a"
+}

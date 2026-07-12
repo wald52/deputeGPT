@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52100",
- "generatedAt": "2026-07-04T06:22:18Z",
+ "generatedAt": "2026-07-12T16:46:16Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,53 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0228_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est un projet de loi relatif à l'organisation des Jeux Olympiques et Paralympiques de 2030 en France. L'objectif affiché est de définir le cadre juridique, administratif et financier nécessaire à l'accueil et à l'organisation de cet événement sportif international sur le territoire français.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel a été corrompu ou mal extrait (caractères binaires, flux PDF non décodés, absence d'articles et d'exposé des motifs lisibles). Aucun article, aucune disposition concrète et aucune citation exploitable ne peuvent être identifiés dans le contenu transmis. En l'absence de mécanismes vérifiables tirés du texte, il est impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "Le projet de loi vise à organiser les Jeux Olympiques et Paralympiques d'hiver de 2030 dans les Alpes françaises en adaptant le droit français aux stipulations du contrat hôte signé avec le CIO, notamment en matière de protection des propriétés olympiques, de dérogations à la réglementation sur la publicité et l'affichage, et de dispositions relatives à l'éthique et à l'intégrité.",
+ "mecanismesCles": [
+  {
+   "resume": "Transfert temporaire des droits d'action du CNOSF vers le comité d'organisation des JOP 2030 pour les faits commis jusqu'au 31 décembre 2030, concernant la protection des propriétés olympiques.",
+   "articleRef": "art. 2",
+   "citation": "les droits et actions découlant des articles L. 141-5 et L. 141-7 du code du sport sont exercés par le comité d'organisation des jeux Olympiques et Paralympiques d'hiver des Alpes françaises 2030 pour son propre compte"
+  },
+  {
+   "resume": "Élargissement du périmètre des propriétés olympiques protégées (symboles, emblèmes, torche, drapeau, devise, logo, mascotte, slogan, affiches, médailles, pictogrammes, œuvres musicales ou audiovisuelles).",
+   "articleRef": "art. 2 bis",
+   "citation": "« 3° Le logo, la mascotte, le slogan, les affiches des jeux Olympiques, les médailles, les pictogrammes ainsi que, conformément à la charte olympique, toute œuvre musicale ou audiovisuelle »"
+  },
+  {
+   "resume": "Dérogations temporaires aux interdictions de publicité (monuments historiques, sites classés, périmètres protégés) dans un rayon de 500 mètres autour des sites olympiques, au profit des partenaires de marketing olympique.",
+   "articleRef": "art. 3 (III)",
+   "citation": "la publicité faite au profit des partenaires de marketing olympique [...] peut être autorisée dans un périmètre de 500 mètres autour de chaque site lié à l'organisation et au déroulement des jeux Olympiques"
+  },
+  {
+   "resume": "Autorisation de la publicité sur les véhicules terrestres le long du parcours du relais de la flamme, par dérogation à l'article L. 581-15 du code de l'environnement.",
+   "articleRef": "art. 3 (IV)",
+   "citation": "La publicité sur les véhicules terrestres est autorisée, par dérogation à l'article L. 581-15 du code de l'environnement."
+  },
+  {
+   "resume": "Publication obligatoire par le comité d'organisation d'une estimation de l'impact environnemental des JOP (bilan carbone, biodiversité, artificialisation, ressource en eau) dans un délai de deux ans après la promulgation, puis d'un bilan définitif dans les 18 mois suivant la clôture.",
+   "articleRef": "art. 3 bis",
+   "citation": "le comité d'organisation des jeux Olympiques et Paralympiques d'hiver des Alpes françaises 2030 publie une estimation de l'impact environnemental des jeux Olympiques et Paralympiques d'hiver de 2030"
+  },
+  {
+   "resume": "Publication avant le 31 décembre 2028 d'un plan d'actions pour réduire la production de déchets et l'utilisation du plastique à usage unique.",
+   "articleRef": "art. 3 ter",
+   "citation": "Le comité d'organisation des jeux Olympiques et Paralympiques d'hiver des Alpes françaises 2030 publie avant le 31 décembre 2028 un plan d'actions pour réduire la production de déchets et l'utilisation du plastique à usage unique"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés par le texte vont dans le sens de l'objectif affiché d'organisation des JOP 2030. L'article 2 et 2 bis renforcent la protection des propriétés olympiques conformément au contrat hôte. L'article 3 organise les dérogations nécessaires à la publicité olympique dans des périmètres et délais précisément définis (500 mètres autour des sites, période limitée jusqu'au 15e jour après la clôture des Jeux paralympiques). Les articles 3 bis et 3 ter imposent des obligations environnementales (bilan carbone, plan de réduction des déchets) cohérentes avec les engagements de durabilité des Jeux. L'article 5 sécurise le financement par les régions hôtes. L'ensemble de ces dispositifs concourt à la préparation opérationnelle des Jeux dans le cadre contractuel fixé avec le CIO.",
  "pointsDeVigilance": [
-  "Le contenu transmis est un PDF brut non décodé : aucun article ni exposé des motifs n'est lisible.",
-  "Toute analyse de second ordre (alignement des incitations avec l'objectif) est impossible sans texte exploitable.",
-  "Il conviendrait de fournir le texte du projet de loi dans un format texte (TXT/HTML) ou un PDF correctement extrait pour permettre l'analyse."
+  "Les dérogations à la publicité (art. 3) concernent des zones normalement protégées (monuments historiques, sites classés), ce qui pourrait soulever des tensions avec la préservation du patrimoine.",
+  "L'article 3 bis impose une 'estimation' de l'impact environnemental et non des obligations contraignantes de réduction : l'effectivité environnementale dépend de la volonté du comité d'organisation.",
+  "La garantie régionale de 75 millions d'euros chacune (art. 5) fait porter un risque financier public sur les régions en cas de déficit du comité d'organisation.",
+  "L'autorisation de publicité sur véhicules terrestres (art. 3 IV) constitue une dérogation notable au droit commun de l'affichage publicitaire."
  ],
  "themes": [
+  "sport",
   "jeux olympiques",
-  "jeux paralympiques",
-  "organisation d'événements sportifs",
-  "texte illisible"
+  "publicité",
+  "environnement",
+  "propriété intellectuelle"
  ],
  "scrutinsCles": [
   "4941",
@@ -37,5 +70,5 @@
   "5296"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:a49439a3e14fc6ca0bbdff72ab86781709895cf3532b3ef871a335146ef58a02"
+ "sourceTextHash": "sha256:f3cb5f11e3d8c3b6d2289bec1835def62ef4b24faa502bb179a8614734237c4c"
 }

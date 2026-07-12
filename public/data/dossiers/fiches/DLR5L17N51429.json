@@ -1,0 +1,75 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51429",
+ "generatedAt": "2026-07-12T16:59:00Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi visant à faciliter le maintien en rétention des personnes condamnées pour des faits d’une particulière gravité et présentant de forts risques de récidive",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N51429",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0163_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "La proposition de loi vise à faciliter le maintien en rétention administrative des personnes étrangères condamnées pour des faits d'une particulière gravité et présentant de forts risques de récidive, en modifiant le code de l'entrée et du séjour des étrangers et du droit d'asile (CESEDA).",
+ "mecanismesCles": [
+  {
+   "resume": "Élargissement de l'article L. 742-6 du CESEDA : la possibilité de prolongation de la rétention au-delà des durées de droit commun est étendue à l'étranger faisant l'objet d'une condamnation définitive pour une longue liste de crimes et délits graves (meurtre, viol, trafic de stupéfiants, proxénétisme, traite des êtres humains, vol aggravé, association de malfaiteurs, etc.) ou dont le comportement constitue une menace d'une particulière gravité pour l'ordre public.",
+   "articleRef": "art. 1er",
+   "citation": "« Le premier alinéa du présent article est également applicable à l'étranger : [...] Qui fait l'objet d'une décision d'éloignement et d'une condamnation définitive pour l'un des crimes ou des délits suivants [...] Dont le comportement constitue une menace d'une particulière gravité pour l'ordre public. »"
+  },
+  {
+   "resume": "Modification de l'article L. 743-22 : maintien en rétention de l'intéressé jusqu'à ce qu'il soit statué sur le fond en cas de peine d'interdiction du territoire, de condamnation définitive pour l'un des crimes ou délits mentionnés à l'article L. 742-6, d'expulsion, d'interdiction administrative du territoire ou de menace grave à l'ordre public.",
+   "articleRef": "art. 2",
+   "citation": "« l'intéressé est maintenu à la disposition de la justice jusqu'à ce qu'il soit statué sur le fond. »"
+  },
+  {
+   "resume": "Possibilité de procéder au relevé des empreintes digitales et à la prise de photographie sans le consentement de l'étranger en cas de refus caractérisé, sur autorisation du procureur de la République, en présence de l'avocat.",
+   "articleRef": "art. 2 bis",
+   "citation": "« l'officier de police judiciaire ou, sous le contrôle de celui-ci, l'agent de police judiciaire peut, sur autorisation du procureur de la République [...] procéder à cette opération sans le consentement de l'intéressé »"
+  },
+  {
+   "resume": "Élargissement des conditions de placement en rétention des demandeurs d'asile : possibilité de placement en rétention si l'assignation à résidence est jugée insuffisante au regard de la gravité et de l'actualité de la menace, et ajout de la condition d'absence de « garanties de représentation effectives suffisantes ».",
+   "articleRef": "art. 3 bis",
+   "citation": "« Si, au regard de la gravité et de l'actualité de la menace et sur la base d'une appréciation au cas par cas, cette mesure s'avère insuffisante, l'autorité administrative peut le placer en rétention. »"
+  },
+  {
+   "resume": "Modification des durées de rétention à l'article L. 761-8 : remplacement de « quarante-huit heures » par « quatre-vingt-seize heures », de « cinq jours » par « cent vingt heures », et de « vingt-huit jours » par « vingt-six jours » dans certains cas.",
+   "articleRef": "art. 6",
+   "citation": "« les mots : « quarante-huit heures » sont remplacés par les mots : « quatre-vingt-seize heures » ; [...] les mots : « vingt-huit jours » sont remplacés par les mots : « vingt-six jours »"
+  },
+  {
+   "resume": "Habilitation du Gouvernement à prendre par ordonnance les mesures d'application dans les collectivités de l'article 74 (sauf Saint-Pierre-et-Miquelon), en Nouvelle-Calédonie et dans les TAAF, dans un délai de trois mois.",
+   "articleRef": "art. 6 (II)",
+   "citation": "« le Gouvernement est habilité à prendre, par voie d'ordonnance, les mesures relevant de la compétence de l'État nécessaires à l'application [...] de la présente loi dans les collectivités qui relèvent de l'article 74 de la Constitution »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'objectif affiché est de faciliter le maintien en rétention des étrangers condamnés pour des faits graves ou présentant une menace pour l'ordre public. Les mécanismes créés vont clairement dans ce sens : l'article 1er élargit considérablement la liste des infractions (crimes contre l'humanité, meurtre, viol, trafic de stupéfiants, traite des êtres humains, proxénétisme, etc.) permettant la prolongation de la rétention au-delà du droit commun. L'article 2 permet le maintien à disposition de la justice jusqu'au jugement au fond. L'article 2 bis autorise le relevé d'empreintes sous contrainte. L'article 3 bis élargit les conditions de placement en rétention des demandeurs d'asile. L'article 6 modifie les seuils de durée de rétention. L'ensemble de ces dispositifs crée des incitations directement alignées avec l'objectif affiché de renforcer la rétention administrative.",
+ "pointsDeVigilance": [
+  "L'article 1er introduit une catégorie très large fondée sur le « comportement constituant une menace d'une particulière gravité pour l'ordre public », notion potentiellement vague et peu encadrée.",
+  "L'article 2 bis autorise un relevé d'empreintes sous contrainte physique, ce qui soulève des questions de proportionnalité et de respect des droits fondamentaux.",
+  "L'article 3 bis permet le placement en rétention de demandeurs d'asile sur la base d'une appréciation au cas par cas de la « gravité et de l'actualité de la menace », ce qui pourrait affecter l'accès à la procédure d'asile.",
+  "Le recours à l'ordonnance (article 6 II) pour l'application dans les outre-mer limite le contrôle parlementaire sur ces adaptations.",
+  "Plusieurs alinéas ont été supprimés en cours de navette (1° du art. 1er, 1° A à 1° F et 1° H de l'art. 6, art. 3 ter), ce qui traduit des arbitrages politiques dont le texte final ne porte pas trace."
+ ],
+ "themes": [
+  "droit des étrangers",
+  "rétention administrative",
+  "expulsion",
+  "sécurité publique",
+  "lutte contre la récidive"
+ ],
+ "scrutinsCles": [
+  "2897",
+  "2898",
+  "2899",
+  "2958"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:490bbf533e3a57bd4a2c1500227590ea9efba69d875c6b0a16591280bc1e3cee"
+}

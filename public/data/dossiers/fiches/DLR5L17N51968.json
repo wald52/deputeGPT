@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N51968",
- "generatedAt": "2026-07-03T06:15:00Z",
+ "generatedAt": "2026-07-12T16:44:28Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,19 +15,53 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0316_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à améliorer l'accès au logement des travailleurs des services publics. L'objectif affiché, tel qu'indiqué par le titre et l'identifiant DLR5L17N51968, est de faciliter le logement pour les agents des services publics.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un contenu binaire PDF (flux d'octets bruts commençant par '%PDF-1.7') sans aucun texte extractible concernant l'exposé des motifs ou les articles de la loi. Aucun mécanisme concret (obligation, taxe, subvention, dérogation, seuil, sanction) ne peut être identifié à partir de ce contenu. Il est donc impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou dans le sens opposé.",
+ "objectifAffiche": "La proposition de loi vise à améliorer l'accès au logement des travailleurs des services publics, en facilitant la mobilisation du parc social et du foncier public pour loger les agents publics et salariés de services publics (défense, sécurité, justice, santé, douanes, transports).",
+ "mecanismesCles": [
+  {
+   "resume": "Introduction d'une 'clause de fonction' dans les baux HLM : le maintien dans les lieux d'un agent public ou salarié de service public est conditionné à l'exercice de l'emploi, avec possibilité de résiliation par l'employeur (préavis ≥ 6 mois, délai supplémentaire d'1 an possible).",
+   "articleRef": "art. 1er",
+   "citation": "« Le droit au maintien dans les lieux d'un agent public civil ou militaire [...] peut être limité par une clause de fonction contenue dans le contrat de location. »"
+  },
+  {
+   "resume": "Extension de la clause de fonction aux logements des sociétés d'économie mixte (SEM) agréées.",
+   "articleRef": "art. 1er (art. L. 482-5)",
+   "citation": "« Le contrat de location d'un logement locatif social appartenant à une société d'économie mixte agréée [...] peut contenir la clause de fonction mentionnée à l'article L. 442-7. »"
+  },
+  {
+   "resume": "Relèvement de la décote maximale sur les ventes de biens immobiliers publics de 10 % à 50 %, et possibilité de bail emphytéotique, pour faciliter la cession de foncier public en faveur du logement.",
+   "articleRef": "art. 2",
+   "citation": "« Le taux : '10 %' est remplacé par le taux : '50 %' »"
+  },
+  {
+   "resume": "Identification nominative des logements réservés pour les services de défense, sécurité, justice, santé, douanes et transports publics dans les conventions de réservation.",
+   "articleRef": "art. 3",
+   "citation": "« les obligations de réservation dont bénéficient les services relevant de la défense nationale, de la sécurité intérieure ou de la justice [...] portent sur des logements identifiés dans les conventions de réservation. »"
+  },
+  {
+   "resume": "Possibilité de déroger aux règles de destination des PLU pour construire ou transformer des bâtiments d'habitation sur foncier public, à condition qu'au moins 50 % des logements soient réservés aux agents publics et salariés visés.",
+   "articleRef": "art. 4 (art. L. 152-6-11)",
+   "citation": "« La moitié au moins des locaux d'habitation ainsi créés est réservée au bénéfice des agents publics et salariés mentionnés au I de l'article L. 442-7 »"
+  },
+  {
+   "resume": "Possibilité pour les établissements publics de santé de valoriser leur patrimoine immobilier pour loger leur personnel, et de créer des filiales (y compris SEM) à cette fin.",
+   "articleRef": "art. 5 bis",
+   "citation": "« valoriser leur patrimoine immobilier aux fins de réaliser des logements pour leur personnel ou de financer la réalisation de ces logements »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'ensemble des mécanismes créés convergent vers l'objectif affiché : la clause de fonction (art. 1er) sécurise la rotation des logements sociaux au profit des agents publics en poste ; le relèvement de la décote à 50 % (art. 2) et la dérogation d'urbanisme (art. 4) mobilisent le foncier public pour produire du logement dédié ; l'identification des logements réservés (art. 3) garantit une affectation effective aux services publics prioritaires ; enfin, la valorisation du patrimoine immobilier des hôpitaux (art. 5 bis) ouvre une ressource foncière supplémentaire. Les incitations vont donc dans le sens d'une amélioration de l'accès au logement des travailleurs des services publics.",
  "pointsDeVigilance": [
-  "Le contenu fourni est un fichier PDF brut non décodé, ne contenant aucun texte lisible relatif au dispositif législatif",
-  "Aucun article, alinéa ou exposé des motifs n'a pu être extrait du document",
-  "L'analyse des mécanismes concrets est impossible sans accès au texte décodé de la proposition de loi"
+  "La clause de fonction crée une précarité résidentielle pour les agents publics concernés, qui peuvent perdre leur logement avec un préavis de 6 mois en cas de changement de poste ou de départ à la retraite.",
+  "L'obligation de réserver 'au moins 50 %' des logements dans le cadre de la dérogation d'urbanisme (art. 4) laisse une marge d'optimisation : les 50 % restants ne sont pas fléchés.",
+  "Plusieurs articles initialement prévus ont été supprimés en CMP (art. 2 bis, 3 bis, 6 et 7), ce qui réduit la portée initiale du texte.",
+  "Le texte ne crée pas de financement budgétaire direct ni de quota chiffré de logements à produire, reposant largement sur des outils incitatifs et réglementaires."
  ],
  "themes": [
-  "logement",
-  "travailleurs des services publics",
-  "accès au logement"
+  "logement social",
+  "agents publics",
+  "foncier public",
+  "urbanisme",
+  "santé"
  ],
  "scrutinsCles": [
   "4960",
@@ -36,5 +70,5 @@
   "7408"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:70c9ddde11a9d9873693214fea6afbb00f4e082e2e3608912d69a0927bc36b75"
+ "sourceTextHash": "sha256:744b3270ad3aa01418d267ee226a3a50169ed0deb00959698e1e85ac3557dfc5"
 }

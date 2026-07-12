@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53005",
- "generatedAt": "2026-07-04T06:25:25Z",
+ "generatedAt": "2026-07-12T16:48:10Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -18,24 +18,24 @@
  "objectifAffiche": "Proposition de résolution tendant à la création d'une commission d'enquête parlementaire sur le traitement judiciaire des violences sexuelles incestueuses parentales commises contre les enfants et sur la situation des parents protecteurs, notamment des mères protectrices.",
  "mecanismesCles": [
   {
-   "resume": "Création d'une commission d'enquête parlementaire (mécanisme unique de la proposition de résolution).",
+   "resume": "Création d'une commission d'enquête parlementaire (mécanisme de contrôle et d'information, sans effet normatif direct).",
    "articleRef": null,
-   "citation": "proposition de résolution [...] tendant à la création d'une commission d'enquête sur le traitement judiciaire des violences sexuelles incestueuses parentales commises contre les enfants et la situation des parents protecteurs"
+   "citation": "proposition de résolution [...] tendant à la création d'une commission d'enquête sur le traitement judiciaire des violences sexuelles incestueuses parentales commises contre les enfants et la situation des parents protecteurs, notamment des mères protectrices"
   }
  ],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est uniquement un en-tête administratif (titre, identifiant, procédure, statut, sommaire) et ne contient ni exposé des motifs ni articles détaillés décrivant la composition, la durée ou le périmètre précis de la commission d'enquête. Sans le contenu substantiel de la résolution, il est impossible de déterminer si les incitations créées par les mécanismes vont dans le sens de l'objectif affiché ou s'en écartent.",
+ "justificationVerdict": "Le texte fourni ne contient que l'introduction et le sommaire du dossier législatif (titre, identifiant, commission saisie, date de dépôt). Aucun article ni aucun dispositif concret n'est reproduit dans les 15000 caractères transmis. Il est donc impossible d'identifier les mécanismes précis que la commission d'enquête serait chargée d'investiguer, sa composition, sa durée ou son périmètre, et a fortiori de déterminer si les incitations qui en découlent s'alignent avec l'objectif affiché.",
  "pointsDeVigilance": [
-  "Le texte officiel est tronqué et ne contient que les métadonnées et le sommaire, sans exposé des motifs ni articles.",
-  "Une proposition de résolution créant une commission d'enquête n'a pas d'effet normatif direct ; elle ne fait que déclencher une mission d'information parlementaire.",
-  "Le périmètre exact (mères protectrices, pères protecteurs, beaux-parents, etc.) et la durée prévue des travaux ne sont pas précisés dans l'extrait."
+  "Le texte officiel est tronqué et ne contient que les métadonnées du dossier, sans exposé des motifs ni articles.",
+  "Une proposition de résolution créant une commission d'enquête n'a pas d'effet normatif direct : elle ne crée ni obligations, ni taxes, ni sanctions.",
+  "Le périmètre exact de l'enquête (champs d'investigation, durée, pouvoirs) n'est pas accessible dans le texte fourni."
  ],
  "themes": [
   "violences sexuelles",
   "inceste",
   "protection de l'enfance",
-  "parents protecteurs",
-  "commission d'enquête"
+  "justice",
+  "parents protecteurs"
  ],
  "scrutinsCles": [
   "5223",

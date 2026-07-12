@@ -1,0 +1,74 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51852",
+ "generatedAt": "2026-07-12T16:56:58Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Simplification du droit de l'urbanisme et du logement",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/simplification_droit_urbanisme_logement_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0172_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à simplifier le droit de l'urbanisme et du logement. Il s'agit d'un texte technique de simplification procédurale, sans exposé des motifs fourni dans l'extrait, dont l'objectif affiché transparaît dans le titre même : alléger et rationaliser les procédures applicables aux documents d'urbanisme (SCoT, PLU) et aux opérations de logement.",
+ "mecanismesCles": [
+  {
+   "resume": "Exonération d'évaluation environnementale pour les modifications de PLU portant sur la rectification d'une erreur matérielle ou la réduction d'une zone urbaine ou à urbaniser.",
+   "articleRef": "art. 1er (1° AA, modifiant L. 104-3)",
+   "citation": "« Ne sont pas soumises à une évaluation environnementale les procédures de modification d'un plan local d'urbanisme ayant pour seul objet : 1° La rectification d'une erreur matérielle ; 2° La réduction de la surface d'une zone urbaine ou à urbaniser. »"
+  },
+  {
+   "resume": "Unification des procédures de modification du SCoT : suppression de la distinction entre modification de droit commun et modification simplifiée, et remplacement de l'enquête publique par une simple mise à disposition du public ou une participation électronique.",
+   "articleRef": "art. 1er (1° A, 2° ter A, 2° ter modifiant L. 143-22, L. 143-34)",
+   "citation": "« Le président peut également, en substitution à cette mise à disposition, recourir à une procédure de participation du public au sens de l'article L. 123-19 du code de l'environnement ou à une enquête publique. »"
+  },
+  {
+   "resume": "Élargissement du champ de la modification (et non de la révision) du SCoT aux changements d'orientations soutenant les énergies renouvelables, l'hydrogène renouvelable/bas-carbone, le stockage d'électricité et les zones d'accélération EnR.",
+   "articleRef": "art. 1er (2° modifiant L. 143-32)",
+   "citation": "« Par dérogation à l'article L. 143-29, les changements des orientations du projet d'aménagement stratégique qui ont pour objet de soutenir le développement de la production d'énergie renouvelable [...] relèvent également de cette procédure de modification. »"
+  },
+  {
+   "resume": "Élargissement symétrique pour le PLU : la modification (procédure simplifiée) peut désormais porter sur les changements d'orientations du PADD visant les EnR, l'hydrogène, le stockage d'électricité, les zones d'accélération EnR, ainsi que sur la délimitation de secteurs de résidence principale.",
+   "articleRef": "art. 1er (6° modifiant L. 153-36)",
+   "citation": "« Par dérogation à l'article L. 153-31, font également l'objet de cette procédure de modification les changements des orientations du projet d'aménagement et de développement durables qui ont pour objet : 1° De soutenir le développement de la production d'énergie renouvelable [...] 2° De délimiter [...] les secteurs dans lesquels les constructions nouvelles de logements [...] sont à usage exclusif de résidence principale »"
+  },
+  {
+   "resume": "Suppression de la sous-section dédiée à la révision simplifiée du PLU (article L. 153-34 abrogé) et unification des procédures de modification du PLU.",
+   "articleRef": "art. 1er (5°, 6° ter A)",
+   "citation": "« 20° L'article L. 153-34 est abrogé ; [...] 24° Les divisions : « sous-section 1 : modification de droit commun » et « sous-section 2 : modification simplifiée » [...] sont supprimées »"
+  },
+  {
+   "resume": "Possibilité de recourir à la participation du public par voie électronique en substitution à l'enquête publique pour les PLU intercommunaux, avec consultation papier complémentaire en mairie.",
+   "articleRef": "art. 1er (3° quater modifiant L. 153-19)",
+   "citation": "« Le président de l'établissement public de coopération intercommunale ou le maire peut, par décision motivée, recourir, en substitution à l'enquête publique, à la participation du public par voie électronique prévue à l'article L. 123-19 du même code. »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte crée des mécanismes qui vont dans le sens de l'objectif affiché de simplification : il unifie les procédures de modification du SCoT et du PLU en supprimant la distinction entre modification de droit commun et modification simplifiée (art. 1er, 2° ter A et 6° ter A), allège la consultation du public en permettant la substitution de l'enquête publique par une mise à disposition ou une participation électronique (art. L. 143-22, L. 143-34, L. 153-19, L. 153-41), et exonère d'évaluation environnementale certaines modifications mineures de PLU (art. L. 104-3). L'élargissement du champ de la modification (vs révision) aux projets EnR et de logements en résidence principale (art. L. 143-32, L. 153-36) accélère également la procédure pour ces opérations, ce qui est cohérent avec l'objectif de simplification. Aucun mécanisme identifié ne crée d'incitation allant à l'encontre de cet objectif de simplification procédurale.",
+ "pointsDeVigilance": [
+  "L'allègement de la consultation du public (substitution de l'enquête publique par une participation électronique) peut réduire la participation citoyenne effective, même si une consultation papier en mairie est maintenue.",
+  "L'élargissement de la procédure de modification (plus simple) à des changements d'orientations du PADD/SCoT touchant aux EnR ou à la résidence principale peut limiter le débat public sur des sujets structurants.",
+  "L'exonération d'évaluation environnementale pour la réduction de zones urbères ou à urbaniser pourrait, dans certains cas, soustraire des projets à l'analyse de leurs impacts.",
+  "Le texte est tronqué à 15000 caractères : les articles au-delà de l'article 1er (et la suite de l'article 1er) ne sont pas visibles, ce qui limite l'analyse exhaustive."
+ ],
+ "themes": [
+  "urbanisme",
+  "logement",
+  "simplification administrative",
+  "énergies renouvelables",
+  "procédure"
+ ],
+ "scrutinsCles": [
+  "1715",
+  "1716",
+  "1717",
+  "3056"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:f6e5cad7b61425f93ad5aae8566ff1660a9578418af254cfe36fff1a6241f772"
+}

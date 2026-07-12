@@ -1,0 +1,68 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50450",
+ "generatedAt": "2026-07-12T16:55:59Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi organique visant à reporter le renouvellement général des membres du congrès et des assemblées de province de la Nouvelle-Calédonie",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N50450",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0006_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Reporter le renouvellement général des membres du congrès et des assemblées de province de la Nouvelle-Calédonie, initialement prévu au plus tard le 15 décembre 2024, à une date ultérieure fixée au plus tard le 30 novembre 2025.",
+ "mecanismesCles": [
+  {
+   "resume": "Dérogation à l'article 187 de la loi organique de 1999 : report de la date limite des prochaines élections du congrès et des assemblées de province du 15 décembre 2024 au 30 novembre 2025.",
+   "articleRef": "art. 1er",
+   "citation": "Par dérogation au premier alinéa de l'article 187 de la loi organique n° 99-209 du 19 mars 1999 relative à la Nouvelle-Calédonie, les prochaines élections [...] ont lieu au plus tard le 30 novembre 2025."
+  },
+  {
+   "resume": "Mise à jour de la liste électorale spéciale et du tableau annexe au plus tard dix jours avant la date du scrutin.",
+   "articleRef": "art. 1er",
+   "citation": "La liste électorale spéciale et le tableau annexe mentionnés à l'article 189 de la loi organique n° 99-209 du 19 mars 1999 précitée sont mis à jour au plus tard dix jours avant la date du scrutin."
+  },
+  {
+   "resume": "Fin des mandats en cours des membres du congrès et des assemblées de province le jour de la première réunion des nouvelles assemblées élues.",
+   "articleRef": "art. 1er",
+   "citation": "Les mandats en cours des membres du congrès et des assemblées de province prennent fin le jour de la première réunion des assemblées nouvellement élues."
+  },
+  {
+   "resume": "Prorogation des fonctions des membres des organes du congrès en cours jusqu'au jour de la première réunion du congrès nouvellement élu.",
+   "articleRef": "art. 2",
+   "citation": "Les fonctions des membres des organes du congrès en cours à la date de promulgation de la présente loi organique sont prorogées jusqu'au jour de la première réunion du congrès nouvellement élu."
+  },
+  {
+   "resume": "Entrée en vigueur le lendemain de la publication au Journal officiel.",
+   "articleRef": "art. 3",
+   "citation": "La présente loi organique entre en vigueur le lendemain de sa publication au Journal officiel de la République française."
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte est un texte de pure procédure électorale dont l'unique objet est de différer la date d'un scrutin. L'article 1er reporte explicitement la date limite des élections du 15 décembre 2024 au 30 novembre 2025, ce qui correspond exactement à l'objectif affiché. L'article 2 proroge les fonctions des organes en cours pour assurer la continuité institutionnelle jusqu'à la nouvelle élection, mécanisme cohérent avec un report. L'article 3 fixe l'entrée en vigueur immédiate. Aucun mécanisme du texte ne produit d'effet allant au-delà du report : il n'y a ni taxe, ni subvention, ni dérogation substantielle, ni sanction. Les incitations créées sont donc strictement alignées avec l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte ne fixe pas de date précise du scrutin mais seulement une date limite (30 novembre 2025), laissant une marge d'appréciation.",
+  "Le report prolonge d'environ un an le mandat des élus actuels, ce qui peut soulever des questions de légitimité démocratique.",
+  "Le texte ne précise pas les motifs du report (contexte politique calédonien post-2024 non détaillé dans le texte fourni)."
+ ],
+ "themes": [
+  "outre-mer",
+  "nouvelle-calédonie",
+  "élections",
+  "droit organique",
+  "report électoral"
+ ],
+ "scrutinsCles": [
+  "266",
+  "3060",
+  "3181",
+  "3182"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:c833f6a116f038875deaab1d2de4316e48e4bef2f9d4e55c4347d628756e8c51"
+}

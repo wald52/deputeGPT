@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N51679",
- "generatedAt": "2026-07-04T06:21:19Z",
+ "generatedAt": "2026-07-12T16:45:49Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,24 +15,57 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0230_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une résolution visant à sauvegarder et renforcer le financement en faveur de la lutte contre le virus de l'immunodéficience humaine (VIH).",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est un fichier PDF dont le contenu textuel n'a pas pu être extrait (seuls des flux binaires et des balises d'objets PDF sont visibles). Aucun article, aucun mécanisme concret (obligation, taxe, subvention, seuil, sanction) et aucune disposition lisible ne peuvent être identifiés dans le contenu exploitable fourni.",
+ "objectifAffiche": "Résolution européenne invitant le Gouvernement français et l'Union européenne à sauvegarder et renforcer le financement international de la lutte contre le VIH/sida, dans un contexte de retrait américain (sortie de l'OMS, gel du PEPFAR) et de diminution des contributions européennes, afin de maintenir l'objectif ONUSIDA de fin de l'épidémie d'ici 2030.",
+ "mecanismesCles": [
+  {
+   "resume": "Invitation au Gouvernement à renforcer le leadership français via des financements innovants et un rôle politique international accru",
+   "articleRef": "art. 1",
+   "citation": "Invite le Gouvernement à renforcer le leadership de la France dans la lutte mondiale contre le VIH/SIDA, en œuvrant pour le maintien de la mobilisation financière, notamment par le recours à des financements innovants"
+  },
+  {
+   "resume": "Appel à renforcer la mobilisation financière auprès des instances multilatérales, notamment le Fonds mondial de lutte contre le SIDA, la tuberculose et le paludisme (reconstitution automne 2025)",
+   "articleRef": "art. 3",
+   "citation": "Appelle le Gouvernement à œuvrer aux échelons national et européen pour un renforcement de la mobilisation financière auprès des instances multilatérales impliquées dans la lutte contre le virus de l'immunodéficience humaine, notamment le Fonds mondial"
+  },
+  {
+   "resume": "Protection de la coopération scientifique internationale face aux restrictions de l'administration Trump (données, chercheurs, collaborations)",
+   "articleRef": "art. 4",
+   "citation": "Invite le Gouvernement à réaffirmer [...] les principes et valeurs fondamentaux de la coopération scientifique internationale, en agissant pour protéger les données scientifiques, accueillir les chercheurs empêchés"
+  },
+  {
+   "resume": "Demande à l'UE de faire du financement de l'aide internationale VIH une priorité stratégique, avec financements innovants",
+   "articleRef": "art. 5",
+   "citation": "Invite l'Union européenne à faire du renforcement du financement de l'aide internationale pour la lutte contre le VIH/SIDA une priorité stratégique"
+  },
+  {
+   "resume": "Demande à la Commission européenne d'établir un plan d'action ambitieux incluant santé sexuelle, égalité d'accès aux soins et lutte contre les discriminations",
+   "articleRef": "art. 6",
+   "citation": "Invite la Commission européenne [...] à replacer la lutte contre le VIH/SIDA [...] comme des priorités stratégiques en établissant un plan d'action ambitieux"
+  },
+  {
+   "resume": "Appel aux présidences du Conseil de l'UE et au nouveau collège des commissaires à inscrire la lutte contre le VIH comme priorité majeure",
+   "articleRef": "art. 7",
+   "citation": "Appelle les présidences actuelles et futures du Conseil de l'Union européenne ainsi que le nouveau collège des commissaires européens à faire de la lutte contre le VIH/SIDA une priorité majeure"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte est une résolution européenne (article 88-4 de la Constitution), c'est-à-dire un acte non contraignant qui ne crée ni taxes, ni obligations, ni sanctions directes. Ses mécanismes consistent exclusivement en invitations et appels adressés au Gouvernement et à l'UE (articles 1 à 7), tous orientés vers le renforcement du financement, de la coopération scientifique et de la mobilisation multilatérale contre le VIH. Ces incitations vont explicitement dans le sens de l'objectif affiché : maintien de la mobilisation financière (art. 1 et 3), recours à des financements innovants (art. 1 et 5), protection des chercheurs et données (art. 4), et inscription de la lutte comme priorité stratégique européenne (art. 5, 6 et 7). Aucun mécanisme n'est orienté vers une réduction des moyens ou une contradiction avec l'objectif.",
  "pointsDeVigilance": [
-  "Le texte officiel transmis est illisible : il s'agit d'un PDF dont les flux de contenu ne contiennent pas de texte extractible exploitable.",
-  "Aucun article ni mécanisme n'a pu être référencé, ce qui empêche toute analyse de second ordre.",
-  "La nature exacte de la résolution (recommandations au Gouvernement, engagements parlementaires, etc.) ne peut être déterminée à partir du contenu fourni."
+  "Résolution non contraignante : aucune obligation juridique ni sanction, l'effet dépend de la volonté politique du Gouvernement et de l'UE",
+  "Aucun engagement chiffré de financement français ou européen n'est défini",
+  "Le texte dépend fortement de la reconstitution du Fonds mondial à l'automne 2025, dont les résultats ne sont pas garantis",
+  "Le constat d'une augmentation des nouvelles infections en Europe de l'Est, Asie centrale, Amérique latine, MENA montre que l'épidémie progresse dans plusieurs régions"
  ],
  "themes": [
-  "santé",
-  "vih",
-  "financement",
-  "résolution parlementaire"
+  "santé publique",
+  "vih/sida",
+  "aide internationale",
+  "union européenne",
+  "coopération scientifique"
  ],
  "scrutinsCles": [
   "5298"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:29aabdc3d19a00b7a6e28fe69eb7e16fd3bb8b9a376a10ff9067439bc8fe3c15"
+ "sourceTextHash": "sha256:3d74801817e21e2a798dc1203ab82f9a48b1360f333aecdc0538a5e026ac258d"
 }

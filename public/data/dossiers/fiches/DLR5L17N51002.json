@@ -1,0 +1,75 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51002",
+ "generatedAt": "2026-07-12T17:03:04Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Profession d'infirmier",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/profession_infirmier",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0140_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire intitulée « sur la profession d'infirmier ». L'exposé des motifs n'est pas fourni dans le document, mais le titre et les articles indiquent une volonté de redéfinir et d'élargir le cadre d'exercice de la profession infirmière (rôle propre, consultations, prescriptions, pratique avancée, spécialités).",
+ "mecanismesCles": [
+  {
+   "resume": "Élargissement du champ de compétence de l'infirmier : consultations infirmières, diagnostic infirmier, prescription de produits de santé et d'examens complémentaires, dont la liste est fixée par arrêté ministériel après avis de la HAS et de l'Académie de médecine.",
+   "articleRef": "art. 1er (nouvel art. L. 4311-1)",
+   "citation": "« Il effectue des consultations infirmières et pose un diagnostic infirmier. Il prescrit les produits de santé et les examens complémentaires nécessaires à l'exercice de sa profession. »"
+  },
+  {
+   "resume": "Suppression de l'exemption dont bénéficiaient les infirmiers au titre de l'article L. 4161-1 (régime des vaccinations), tout en prévoyant une exception pour les infirmiers effectuant des consultations infirmières ou prescrivant selon la liste prévue à l'article L. 4311-1.",
+   "articleRef": "art. 1er (1° modifiant L. 4161-1)",
+   "citation": "« Les mots : « ou aux infirmiers » sont supprimés »"
+  },
+  {
+   "resume": "Expérimentation pour 3 ans dans 5 départements (dont un outre-mer) autorisant les infirmiers à prendre en charge directement des patients pour des actes ne relevant pas de leur rôle propre, avec compte rendu au médecin traitant et inscription au dossier médical partagé.",
+   "articleRef": "art. 1er quater",
+   "citation": "« l'État peut autoriser les infirmiers à prendre en charge directement les patients pour des actes ne relevant pas de leur rôle propre »"
+  },
+  {
+   "resume": "Création d'une spécialité infirmière autonome pour les infirmiers de l'éducation nationale et de l'enseignement supérieur, sanctionnée par un diplôme de niveau 7, à rôle éducatif et préventif.",
+   "articleRef": "art. 1er quater A",
+   "citation": "« Les infirmières et infirmiers du corps de l'éducation nationale et de l'enseignement supérieur constituent une spécialité infirmière autonome pouvant être sanctionnée par un diplôme de niveau 7. »"
+  },
+  {
+   "resume": "Élargissement des lieux d'exercice en pratique avancée : services départementaux de PMI, équipes en établissement scolaire, assistance d'un médecin référent à l'ASE ou en établissement d'accueil du jeune enfant.",
+   "articleRef": "art. 2 (modifiant L. 4301-1)",
+   "citation": "« 2° bis Au sein de l'équipe pluridisciplinaire d'un service départemental de protection maternelle et infantile coordonnée par un médecin »"
+  },
+  {
+   "resume": "Dérogation permettant aux infirmiers anesthésistes, de bloc opératoire ou puériculteurs titulaires d'un diplôme de figure sur une liste ministérielle d'exercer en pratique avancée selon des modalités propres à leur spécialité.",
+   "articleRef": "art. 2 (I bis modifiant L. 4301-2)",
+   "citation": "« Par dérogation à l'article L. 4301-1 et au I du présent article, les infirmiers anesthésistes, de bloc opératoire ou puériculteurs […] peuvent exercer en pratique avancée »"
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "L'exposé des motifs n'est pas fourni dans le document, ce qui empêche de formellement identifier l'objectif affiché au-delà du titre. Les mécanismes créés (élargissement des compétences, consultations, prescriptions, pratique avancée, expérimentation, spécialité éducation nationale) vont dans le sens d'une valorisation et d'un élargissement du rôle infirmier, cohérents avec l'intitulé « sur la profession d'infirmier ». Toutefois, sans exposé des motifs, il est impossible de déterminer si ces mécanismes correspondent effectivement à l'objectif affiché ou si certains effets (par exemple la suppression de l'exemption vaccinale à l'art. 1er 1°) pourraient s'avérer contradictoires avec un objectif non explicité. Le verdict est donc indéterminé par manque d'exposé des motifs.",
+ "pointsDeVigilance": [
+  "L'exposé des motifs est absent du document fourni, ce qui limite l'analyse de second ordre.",
+  "La suppression de l'exemption des infirmiers à l'article L. 4161-1 (vaccinations) est partiellement compensée par une exception, mais son impact réel dépend des décrets d'application.",
+  "L'expérimentation de l'article 1er quater est limitée (5 départements, 3 ans) et son évaluation conditionne toute généralisation.",
+  "Plusieurs articles renvoient à des décrets en Conseil d'État ou arrêtés ministériels, dont le contenu déterminera largement la portée effective du texte.",
+  "La négociation sur la rémunération (art. 1er III) est annoncée mais non contraignante juridiquement."
+ ],
+ "themes": [
+  "santé",
+  "profession infirmière",
+  "pratique avancée",
+  "soins de premier recours",
+  "éducation nationale"
+ ],
+ "scrutinsCles": [
+  "942",
+  "943",
+  "944",
+  "2278"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:bdb70eb415ac775f9ef6ef2ad0f3c6dbc300cc91d5c88e65896027e09277572a"
+}

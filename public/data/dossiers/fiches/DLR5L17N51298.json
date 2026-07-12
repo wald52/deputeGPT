@@ -1,0 +1,48 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51298",
+ "generatedAt": "2026-07-12T16:56:15Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "La définition pénale du viol",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/definition_penale_viol_rin",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/definition_penale_viol_rin",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est un rapport d'information de la Délégation aux droits des femmes portant sur la définition pénale du viol. Il s'agit d'un document d'étude parlementaire, sans valeur normative, visant à examiner la qualification juridique du viol en droit français.",
+ "mecanismesCles": [
+  {
+   "resume": "Aucun mécanisme normatif : il s'agit d'un rapport d'information ('rapport d'information déposé par la délégation... sur la définition pénale du viol, n° 792'), sans article de loi ni disposition contraignante.",
+   "articleRef": null,
+   "citation": "Rapport d'information déposé par la délégation de l'Assemblée nationale aux droits des femmes et à l'égalité des chances entre les hommes et les femmes sur la définition pénale du viol, n° 792"
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est uniquement l'en-tête administratif d'un rapport d'information (n° 792, déposé le 21 janvier 2025) et ne contient ni exposé des motifs, ni articles, ni recommandations. Aucun mécanisme législatif concret (obligation, sanction, définition nouvelle) n'est présent dans l'extrait transmis, ce qui rend impossible l'évaluation des incitations produites par le texte.",
+ "pointsDeVigilance": [
+  "Le texte intégral du rapport (contenu substantiel, recommandations, éventuelles propositions de modification du code pénal) n'est pas fourni dans l'extrait.",
+  "Un rapport d'information n'a pas de portée normative : il ne crée ni ne modifie aucune incitation juridique par lui-même.",
+  "L'analyse de second ordre sur les 'incitations' ne peut s'appliquer qu'aux propositions éventuellement formulées dans le rapport, lesquelles ne sont pas accessibles ici."
+ ],
+ "themes": [
+  "droits des femmes",
+  "droit pénal",
+  "viol",
+  "qualification juridique",
+  "rapport parlementaire"
+ ],
+ "scrutinsCles": [
+  "1200",
+  "1201",
+  "1202",
+  "3061"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:4c730fee9461096f2372a951731172b6ab4758f9128b2d47d5e2ad32d46009cb"
+}

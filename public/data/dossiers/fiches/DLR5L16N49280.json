@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L16N49280",
- "generatedAt": "2026-07-05T06:39:24Z",
+ "generatedAt": "2026-07-12T16:53:33Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,19 +15,53 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0187_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à créer un statut de l'élu local. L'objectif affiché, tel qu'indiqué par le titre et la procédure, est d'établir un cadre statutaire pour les élus locaux français.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel a été corrompu ou n'a pas été extrait correctement (seuls des objets PDF bruts et des flux binaires compressés sont visibles). Aucun article, aucune disposition, aucun mécanisme concret ne peut être identifié dans le contenu exploitable. En l'absence de texte lisible, il est impossible de déterminer si les mécanismes créés vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "Créer un statut de l'élu local en améliorant le régime indemnitaire des élus locaux pour reconnaître leur engagement à sa juste valeur (Titre Ier). Le texte vise à revaloriser les indemnités des maires, adjoints, présidents et vice-présidents d'exécutifs locaux, ainsi qu'à mieux encadrer la transparence des indemnités perçues.",
+ "mecanismesCles": [
+  {
+   "resume": "Revalorisation du barème des indemnités des maires selon la strate démographique de la commune (de 28,1% pour les communes de moins de 500 habitants à 145% pour celles de 100 000 habitants et plus)",
+   "articleRef": "art. 1er",
+   "citation": "« Moins de 500 : 28,1 ; De 500 à 999 : 44,3 ; ... 100 000 et plus : 145 »"
+  },
+  {
+   "resume": "Revalorisation du barème des indemnités des adjoints municipaux selon la strate démographique (de 10,89% à 72,5%)",
+   "articleRef": "art. 3 (art. L. 2123-24)",
+   "citation": "« Moins de 500 : 10,89 ; ... Plus de 200 000 : 72,5 »"
+  },
+  {
+   "resume": "Possibilité pour l'organe délibérant de fixer une indemnité inférieure au montant maximal, à la demande du président (mécanisme de modulation à la baisse)",
+   "articleRef": "art. 3 (art. L. 5211-12)",
+   "citation": "« L'organe délibérant peut, par délibération, fixer une indemnité de fonction inférieure au montant prévu par ce décret en Conseil d'État, à la demande du président. »"
+  },
+  {
+   "resume": "Majoration possible de 40% de l'indemnité du président pour les EPCI de 100 000 habitants et plus, sous réserve du plafond global des indemnités des membres de l'organe délibérant",
+   "articleRef": "art. 3 (art. L. 5211-12)",
+   "citation": "« L'indemnité versée au président ... peut être majorée de 40% par rapport au montant fixé en application de la première phrase du premier alinéa »"
+  },
+  {
+   "resume": "Création d'une obligation pour les collectivités de Guyane et Martinique d'établir annuellement un état de l'ensemble des indemnités de toute nature perçues par les élus, communiqué avant l'examen du budget",
+   "articleRef": "art. 2 (art. L. 7125-24-1 et L. 7227-25-1)",
+   "citation": "« Chaque année, la collectivité territoriale de Guyane établit un état présentant l'ensemble des indemnités de toute nature, libellées en euros »"
+  },
+  {
+   "resume": "Extension de la transparence des indemnités aux mandats exercés dans d'autres collectivités territoriales (cumul d'indemnités)",
+   "articleRef": "art. 1er (2° à 5°)",
+   "citation": "« et, d'autre part, au titre de tout mandat exercé dans une autre collectivité territoriale »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le Titre Ier vise explicitement à « améliorer le régime indemnitaire des élus pour reconnaître leur engagement à sa juste valeur ». L'article 1er revoit à la hausse le barème des indemnités des maires (jusqu'à 145% de l'indice pour les grandes villes) et l'article 3 revalorise celui des adjoints (jusqu'à 72,5%). L'article 4 supprime un seuil démographique qui limitait l'indemnisation des présidents de syndicats. L'article 5 crée une majoration de durée d'assurance retraite valorisant l'engagement. Ces mécanismes convergent directement avec l'objectif affiché de reconnaissance financière de l'engagement des élus locaux. La transparence renforcée (art. 2) et la possibilité de modulation à la baisse (art. 3) constituent des contreparties de bonne gouvernance cohérentes avec l'objectif.",
  "pointsDeVigilance": [
-  "Le document fourni est un PDF dont le texte n'a pas été extrait (flux binaires non décodés)",
-  "Aucun article ni exposé des motifs n'est lisible dans le contenu transmis",
-  "L'analyse ne peut pas être menée à bien sans le texte intégral et lisible de la proposition de loi"
+  "Le texte est tronqué à 15000 caractères : les titres II et suivants (au-delà du Titre Ier) ne sont pas visibles, ce qui empêche d'évaluer la globalité du 'statut de l'élu local' (droits à la formation, protection fonctionnelle, reconversion, etc.)",
+  "L'article 5 (texte tronqué) crée une majoration de retraite mais on ne connaît pas le plafond total de trimestres ni les conditions précises de validation",
+  "La majoration de 40% pour les présidents d'EPCI de 100 000 habitants et plus (art. 3) crée une inégalité entre élus selon la taille de l'intercommunalité",
+  "Le mécanisme de modulation à la baisse 'à la demande du président' (art. 3) peut créer une pression politique implicite sur les exécutants"
  ],
  "themes": [
   "statut de l'élu local",
-  "démocratie locale",
-  "collectivités territoriales"
+  "indemnités des élus",
+  "collectivités territoriales",
+  "retraite des élus",
+  "transparence"
  ],
  "scrutinsCles": [
   "4688",
@@ -36,5 +70,5 @@
   "4691"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:01afcefb741f07d8c3ffb93bd91859fd1afe06b2e88d7e74333ba3206a32266f"
+ "sourceTextHash": "sha256:7ed2743240e8a513eb8634cbfb91e50336c960ac52d9b75102ac45fe110c9fa7"
 }

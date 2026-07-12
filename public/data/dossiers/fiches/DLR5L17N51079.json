@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N51079",
- "generatedAt": "2026-07-05T06:29:22Z",
+ "generatedAt": "2026-07-12T16:49:53Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,43 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0020_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est un projet de loi spéciale prévue par l'article 45 de la loi organique du 1er août 2001 relative aux lois de finances. L'objectif affiché n'est pas lisible dans le contenu fourni (PDF binaire illisible).",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel fourni est un fichier PDF dont le contenu textuel n'a pas été extrait (flux binaires illisibles). Aucun article, aucune disposition, aucun mécanisme concret ne peut être identifié dans le contenu fourni. Conformément aux règles strictes de l'analyse, il est impossible de déterminer les mécanismes créés par le texte ni de comparer les incitations réelles à un objectif affiché qui n'est pas non plus lisible.",
+ "objectifAffiche": "Le texte est un projet de loi spéciale prévue par l'article 45 de la loi organique du 1er août 2001 relative aux lois de finances. Il vise à autoriser provisoirement, jusqu'à l'entrée en vigueur de la loi de finances pour 2025 et de la loi de financement de la sécurité sociale pour 2025, la perception des ressources de l'État et les opérations de trésorerie nécessaires à la continuité de l'action publique.",
+ "mecanismesCles": [
+  {
+   "resume": "Autorisation provisoire de percevoir les ressources de l'État et les impositions affectées à des personnes morales autres que l'État, conformément aux lois et règlements en vigueur.",
+   "articleRef": "art. 1er",
+   "citation": "Jusqu'à l'entrée en vigueur de la loi de finances pour 2025, la perception des ressources de l'État et des impositions de toutes natures affectées à des personnes morales autres que l'État est autorisée conformément aux lois et règlements."
+  },
+  {
+   "resume": "Évaluation et répartition des prélèvements sur les recettes de l'État au profit des collectivités territoriales à hauteur de 45 057 825 520 €, détaillés par dotation (DGF, FCTVA, compensations de fiscalité locale, etc.).",
+   "articleRef": "art. 1er bis",
+   "citation": "les prélèvements opérés sur les recettes de l'État au profit des collectivités territoriales sont évalués à 45 057 825 520 €"
+  },
+  {
+   "resume": "Autorisation donnée au ministre chargé des finances de procéder en 2025 à des emprunts à long, moyen et court termes (en euros ou autres devises) et à toute opération de gestion de la dette ou de la trésorerie de l'État.",
+   "articleRef": "art. 2",
+   "citation": "le ministre chargé des finances est autorisé à procéder, en 2025, à des emprunts à long, moyen et court termes libellés en euros ou en autres devises"
+  },
+  {
+   "resume": "Habilitation de plusieurs organismes de sécurité sociale (ACOSS, CPRP, CANSSM, CNRACL) à recourir à des ressources non permanentes pour couvrir leurs besoins de trésorerie en 2025.",
+   "articleRef": "art. 3",
+   "citation": "l'Agence centrale des organismes de sécurité sociale, la caisse de prévoyance et de retraite du personnel ferroviaire, la Caisse autonome nationale de la sécurité sociale dans les mines et la Caisse nationale de retraites des agents des collectivités locales sont habilitées, en 2025, à recourir à des ressources non permanentes"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte est un projet de loi spéciale dont l'objectif affiché est d'assurer la continuité budgétaire et financière de l'État dans l'attente des lois de finances pour 2025. Les mécanismes créés vont directement dans ce sens : l'article 1er autorise la perception des ressources publiques, l'article 1er bis reconduit les prélèvements en faveur des collectivités territoriales selon les montants antérieurs, l'article 2 permet au ministre des finances de recourir à l'emprunt pour couvrir les charges de trésorerie, et l'article 3 habilite les organismes de sécurité sociale à mobiliser des ressources non permanentes. Ces dispositifs sont strictement conformes à l'objectif de maintien transitoire des flux financiers publics.",
  "pointsDeVigilance": [
-  "Le contenu du PDF est tronqué et illisible (flux binaires non décodés)",
-  "L'exposé des motifs n'est pas accessible dans le texte fourni",
-  "Aucun article n'a pu être extrait pour analyse",
-  "L'identifiant DLR5L17N51079 et la référence à l'article 45 de la LOLF suggèrent un texte de finances (loi spéciale), mais le contenu normatif reste inaccessible"
+  "Le texte est un dispositif transitoire d'attente, sans création de nouvelle politique publique ni de nouvelle fiscalité.",
+  "L'absence de loi de finances pour 2025 adoptée en temps utile traduit un contexte politique budgétaire tendu, ce qui rend ce type de loi spéciale récurrent.",
+  "Plusieurs lignes de prélèvement affichent un montant nul ou non renseigné (soutiens exceptionnels post-crise sanitaire), ce qui peut signaler des dispositifs caducs maintenus formellement dans le tableau.",
+  "L'autorisation d'emprunt en devises et la gestion de la dette sont larges et ne sont pas plafonnées dans le texte."
  ],
  "themes": [
   "finances publiques",
   "loi de finances",
-  "texte illisible"
+  "collectivités territoriales",
+  "trésorerie de l'état",
+  "sécurité sociale"
  ],
  "scrutinsCles": [
   "4944",
@@ -37,5 +60,5 @@
   "4947"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:2444167d68440dcb5d4a28595e0f5cf4048c0ddfb99cd45486e0c1c8f550456f"
+ "sourceTextHash": "sha256:afb7b50798e48a179c038d88066091c47a7eeb5f42815a02b18d89d0f9af86c1"
 }

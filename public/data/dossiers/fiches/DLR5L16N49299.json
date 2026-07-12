@@ -1,0 +1,72 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L16N49299",
+ "generatedAt": "2026-07-12T17:01:25Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Renforcer la sécurité des professionnels de santé",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/16/dossiers/renforcer_securite_professionnels_sante",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0151_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Renforcer la sécurité des professionnels de santé en aggravant les peines encourues pour les violences et outrages commis à leur encontre, en facilitant les dépôts de plainte et en étendant la protection fonctionnelle.",
+ "mecanismesCles": [
+  {
+   "resume": "Aggravation des peines pour violences (articles 222-8, 222-10, 222-12, 222-13 du code pénal) lorsque les faits sont commis sur des professionnels de santé ou dans les établissements de santé, centres, maisons de santé, cabinets libéraux, officines, laboratoires, etc.",
+   "articleRef": "art. 1er",
+   "citation": "« 11° bis Dans un établissement de santé, un centre de santé, une maison de santé, une maison de naissance, un cabinet d'exercice libéral d'une profession de santé, une officine de pharmacie, un laboratoire de biologie médicale, un établissement ou un service social ou médico-social »"
+  },
+  {
+   "resume": "Création d'une circonstance aggravante pour les violences (art. 222-28 CP) lorsqu'elles sont commises sur un professionnel de santé durant l'exercice de son activité.",
+   "articleRef": "art. 1er (3°)",
+   "citation": "« 3° bis Lorsqu'elle est commise sur un professionnel de santé durant l'exercice de son activité »"
+  },
+  {
+   "resume": "Aggravation du vol (art. 311-4 CP) lorsqu'il porte sur du matériel médical/paramédical ou est commis dans un établissement de santé ou au préjudice d'un professionnel de santé.",
+   "articleRef": "art. 1er (4°)",
+   "citation": "« médical ou paramédical ou lorsqu'il est commis dans un établissement de santé ou au préjudice d'un professionnel de santé à l'occasion de l'exercice ou en raison de ses fonctions »"
+  },
+  {
+   "resume": "Extension du délit d'outrage (art. 433-5 CP) aux professionnels de santé et au personnel des établissements de santé, sociaux et médico-sociaux.",
+   "articleRef": "art. 2",
+   "citation": "« à un professionnel de santé ou à un membre du personnel d'un établissement de santé, d'un centre de santé, d'une maison de santé »"
+  },
+  {
+   "resume": "Ajout des outrages aux manquements disciplinaires passibles de sanctions ordinales (code de la santé publique).",
+   "articleRef": "art. 3",
+   "citation": "« après le mot : 'menaces', sont insérés les mots : ', d'outrages' »"
+  },
+  {
+   "resume": "Possibilité pour le professionnel de santé libéral de déclarer son adresse professionnelle comme domicile pour les actes de procédure.",
+   "articleRef": "art. 4",
+   "citation": "« Le professionnel de santé régi par la quatrième partie du code de la santé publique peut, s'il exerce à titre libéral, également déclarer son adresse professionnelle »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'ensemble des mécanismes créés va dans le sens de l'objectif affiché de renforcement de la sécurité des professionnels de santé. L'article 1er crée ou aggrave des circonstances aggravantes pour les violences (222-28 CP) et le vol (311-4 CP) lorsqu'ils visent les professionnels de santé ou les établissements concernés. L'article 2 étend le délit d'outrage à ces mêmes professionnels. L'article 5 facilite le dépôt de plainte en autorisant l'employeur et les ordres professionnels à agir pour le compte de la victime. L'article 6 élargit la protection fonctionnelle. Aucun mécanisme ne va à l'encontre de l'objectif affiché ; au contraire, tous convergent vers une meilleure protection pénale, disciplinaire et procédurale des professionnels de santé.",
+ "pointsDeVigilance": [
+  "L'efficacité dissuasive dépendra de la mise en œuvre concrète par les parquets et de l'identification effective des auteurs.",
+  "Le mécanisme de plainte par l'employeur (art. 5) est subordonné au consentement écrit de la victime, ce qui peut en limiter la portée.",
+  "L'extension de la protection fonctionnelle aux personnes mises en cause (art. 6) est une mesure de protection juridique, distincte de la sécurité physique stricto sensu.",
+  "Plusieurs articles initialement prévus ont été supprimés en CMP (mention « Supprimé »), ce qui réduit l'ambition initiale du texte."
+ ],
+ "themes": [
+  "sécurité",
+  "professionnels de santé",
+  "violences",
+  "outrages",
+  "protection fonctionnelle"
+ ],
+ "scrutinsCles": [
+  "2684",
+  "2685"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:8b074da3cccf861f263e16cb28b3b0df5f71598b93b119b80cefa680d2d4e496"
+}

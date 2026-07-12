@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N51457",
- "generatedAt": "2026-07-05T06:34:28Z",
+ "generatedAt": "2026-07-12T16:52:36Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,24 +15,57 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0193_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Proposition de loi relative à la protection sociale complémentaire des agents publics territoriaux. L'objectif affiché est d'améliorer la couverture sociale complémentaire (santé et prévoyance) des fonctionnaires territoriaux, en harmonisant les pratiques entre collectivités et en renforçant la participation employeur.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel n'a pas été extrait (seuls des objets PDF bruts et des flux binaires compressés sont visibles). Aucun article, aucun mécanisme concret (obligation, seuil, taux de cotisation, sanction, dérogation) et aucun extrait de l'exposé des motifs ne peut être identifié dans le contenu transmis. En l'absence de toute disposition lisible, il est impossible de déterminer si les incitations créées par les mécanismes vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "Le texte est une proposition de loi relative à la protection sociale complémentaire des agents publics territoriaux. Il vise à modifier le cadre de la complémentaire santé et prévoyance (incapacité, invalidité, décès) des agents territoriaux, en renforçant le caractère obligatoire de la souscription et en organisant les garanties de solidarité.",
+ "mecanismesCles": [
+  {
+   "resume": "Distinction entre deux régimes de preuve de la solidarité : label (santé/maternité/accident) ou mise en concurrence (prévoyance : incapacité, invalidité, inaptitude, décès).",
+   "articleRef": "art. 1er",
+   "citation": "« II. – La mise en œuvre des dispositifs de solidarité pour les contrats destinés à couvrir les frais occasionnés par une maternité, une maladie ou un accident est attestée par la délivrance d'un label [...] III. – La mise en œuvre des dispositifs de solidarité pour les contrats destinés à couvrir les risques d'incapacité de travail, d'invalidité, d'inaptitude ou de décès est vérifiée dans le cadre de la procédure de mise en concurrence prévue à l'article L. 827-6. »"
+  },
+  {
+   "resume": "Obligation pour les agents territoriaux de souscrire les garanties minimales de prévoyance (incapacité, invalidité, inaptitude, décès) prévues par le contrat collectif, avec possibilités de dispense fixées par décret.",
+   "articleRef": "art. 2",
+   "citation": "« Par dérogation à l'article L. 827-2, la souscription par les agents territoriaux des garanties minimales mentionnées à l'article L. 827-11 destinées à couvrir les risques d'incapacité de travail, d'invalidité, d'inaptitude ou de décès que ce contrat collectif comporte est obligatoire. »"
+  },
+  {
+   "resume": "Plafonnement de la participation employeur : la contribution de la collectivité ne peut excéder la moitié de la cotisation individuelle ouvrant droit aux garanties minimales.",
+   "articleRef": "art. 3",
+   "citation": "« inférieure à la moitié du montant de la cotisation ou de la prime individuelle ouvrant droit au bénéfice des garanties minimales concernant ces risques prévues par le contrat collectif mentionné à l'article L. 827-6 »"
+  },
+  {
+   "resume": "Interdiction pour l'organisme assureur de refuser la prise en charge des suites d'états pathologiques survenus avant l'adhésion de l'agent.",
+   "articleRef": "art. 4",
+   "citation": "« l'organisme mentionné à l'article L. 827-5 dudit code ne peut refuser la prise en charge des suites d'états pathologiques survenus avant l'adhésion de l'agent. »"
+  },
+  {
+   "resume": "Régime transitoire pour les agents en congé maladie à la prise d'effet du contrat collectif : l'obligation n'est opposable qu'après 30 jours consécutifs de reprise, avec maintien de la participation employeur sur le contrat individuel.",
+   "articleRef": "art. 5",
+   "citation": "« l'obligation de souscription de ce contrat prévue à l'article L. 827-6 du même code ne lui est opposable que si l'agent territorial a repris l'exercice de ses fonctions pendant trente jours consécutifs au moins »"
+  },
+  {
+   "resume": "Entrée en vigueur différée : application des articles 1 à 3 au 1er janvier 2029 en l'absence de convention en cours, ou au terme de la convention en cours si celle-ci expire avant cette date.",
+   "articleRef": "art. 6",
+   "citation": "« les articles 1er à 3 sont applicables à la collectivité territoriale ou à l'établissement public concerné à compter du 1er janvier 2029. »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés vont dans le sens de l'objectif affiché de protection sociale complémentaire des agents territoriaux. L'article 2 rend obligatoire la souscription des garanties minimales de prévoyance, ce qui étend la couverture. L'article 4 interdit l'exclusion des états pathologiques préexistants, renforçant la protection effective des agents. L'article 5 protège les agents en congé maladie en différant l'obligation et en maintenant la participation employeur. L'article 3 plafonne la participation employeur à 50 % de la cotisation, ce qui structure la contribution publique sans la supprimer. L'ensemble de ces dispositifs concourt à renforcer la couverture sociale complémentaire des agents territoriaux.",
  "pointsDeVigilance": [
-  "Le document fourni est un PDF brut non décodé : aucun article ni exposé des motifs n'est lisible.",
-  "Toute analyse de second ordre (alignement des incitations sur l'objectif) est impossible sans le texte normatif exploitable.",
-  "Il conviendrait de fournir une version texte (OCR ou extraction) de la proposition de loi pour mener l'analyse."
+  "Le plafonnement de la participation employeur à 50 % (art. 3) limite le coût pour les collectivités mais peut aussi plafonner le niveau de protection effective selon le tarif du contrat.",
+  "L'entrée en vigueur est différée au 1er janvier 2029 (art. 6), ce qui retarde significativement l'application des nouvelles obligations.",
+  "La compensation financière par une taxe sur les tabacs (art. 7) crée un lien de financement inhabituel entre protection sociale des fonctionnaires et fiscalité sur le tabac, sans garantie d'adéquation entre rendement de la taxe et coût réel pour les collectivités.",
+  "Les dispenses d'adhésion obligatoire restent renvoyées à un décret en Conseil d'État (art. 2), laissant une marge d'incertitude sur le périmètre réel de l'obligation."
  ],
  "themes": [
-  "protection sociale complémentaire",
   "fonction publique territoriale",
+  "protection sociale complémentaire",
   "prévoyance",
-  "complémentaire santé"
+  "santé",
+  "collectivités territoriales"
  ],
  "scrutinsCles": [
   "4707"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:fbaf1135a5a4bf42fb4056d91c63e6ced13c6eb2f18573fa4f68234fc1241a38"
+ "sourceTextHash": "sha256:42a51c7da561ba962d4fe6c6e445fdc025f50ee072f9aba1b1d3b2df3ac6c1fa"
 }

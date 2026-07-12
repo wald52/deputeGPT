@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N51351",
- "generatedAt": "2026-07-05T06:30:09Z",
+ "generatedAt": "2026-07-12T16:50:07Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,21 +15,53 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0205_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "La proposition de loi vise à reconnaître le préjudice subi par les personnes condamnées sur le fondement de la législation pénalisant l'avortement, ainsi que par toutes les femmes ayant recouru à l'interruption volontaire de grossesse avant la loi n° 75-17 du 17 janvier 1975. Il s'agit d'une loi de reconnaissance symbolique et mémorielle.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel n'a pas été extrait (seuls des objets PDF bruts et des flux binaires compressés sont visibles). Aucun article, aucune disposition concrète, aucun mécanisme (obligation, taxe, subvention, dérogation, seuil, sanction) ne peut être identifié dans le contenu exploitable. En l'absence d'articles déchiffrables, il est impossible de déterminer si les incitations créées par le texte vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "La proposition de loi vise à reconnaître officiellement, au nom de la Nation, le préjudice subi par les personnes condamnées sous l'empire de l'ancienne législation réprimant l'avortement, ainsi que par toutes les femmes ayant avorté avant la loi Veil du 17 janvier 1975. Il s'agit d'un texte à vocation mémorielle et symbolique, accompagné de la création d'une commission chargée de recueillir et transmettre cette mémoire.",
+ "mecanismesCles": [
+  {
+   "resume": "Reconnaissance symbolique par la Nation des atteintes portées par l'ancienne législation anti-avortement à la santé, à l'autonomie reproductive, à l'égalité et à la vie privée des femmes.",
+   "articleRef": "art. 1er",
+   "citation": "La Nation reconnaît que l'application par l'État des dispositions législatives et réglementaires pénalisant le recours et l'accès à l'avortement [...] a constitué une atteinte à la protection de la santé des femmes, à l'autonomie sexuelle et reproductive, à l'égalité entre les femmes et les hommes, aux droits des femmes et au droit au respect de la vie privée."
+  },
+  {
+   "resume": "Reconnaissance des décès, souffrances physiques et morales causés par ces dispositions, tant pour les femmes concernées que pour leurs proches.",
+   "articleRef": "art. 1er",
+   "citation": "Elle reconnaît que ces dispositions ont conduit à de nombreux décès et ont été la source de souffrances physiques et morales pour les personnes concernées ainsi que pour leurs proches."
+  },
+  {
+   "resume": "Reconnaissance spécifique des souffrances et traumatismes subis par les personnes condamnées pour avoir pratiqué des avortements.",
+   "articleRef": "art. 1er",
+   "citation": "Elle reconnaît également que ces dispositions ont été source de souffrances et de traumatismes pour des personnes condamnées pour avoir pratiqué des avortements."
+  },
+  {
+   "resume": "Création d'une commission nationale indépendante auprès du Premier ministre, chargée de recueillir et transmettre la mémoire des atteintes aux droits subies par les femmes avant la loi de 1975.",
+   "articleRef": "art. 2, I",
+   "citation": "Il est institué, auprès du Premier ministre, une commission nationale indépendante de reconnaissance des souffrances et des traumatismes subis par des femmes ayant avorté et les personnes ayant pratiqué des avortements avant la loi n° 75-17 du 17 janvier 1975."
+  },
+  {
+   "resume": "Composition de la commission : un magistrat du Conseil d'État ou de la Cour de cassation, trois chercheurs en histoire de l'avortement/des femmes, trois professionnels de santé gynécologique et trois représentants associatifs.",
+   "articleRef": "art. 2, II",
+   "citation": "1° Un membre du Conseil d'État ou un magistrat de la Cour de cassation ; 2° Trois personnes désignées en raison de leurs travaux historiques ou de recherche [...] 3° Trois professionnels de santé [...] 4° Trois personnes désignées en raison de leur engagement dans le milieu associatif."
+  },
+  {
+   "resume": "Renvoi à un décret pour préciser le fonctionnement, les attributions, les garanties d'indépendance et les modalités d'audition des personnes concernées.",
+   "articleRef": "art. 2, III",
+   "citation": "Un décret précise le fonctionnement de la commission, ses attributions, les conditions de son indépendance dans l'exercice de ses missions ainsi que les conditions dans lesquelles les personnes concernées peuvent être entendues."
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte est exclusivement mémoriel et symbolique : il ne crée ni obligation contraignante, ni taxe, ni subvention, ni régime dérogatoire. L'article 1er procède à une reconnaissance formelle par la Nation des préjudices passés, ce qui correspond directement à l'intitulé et à l'exposé des motifs. L'article 2 institue une commission dont la mission — « contribuer au recueil et à la transmission de la mémoire » — est cohérente avec cet objectif de reconnaissance. Aucun mécanisme du texte n'oriente les incitations dans une direction opposée à l'objectif affiché.",
  "pointsDeVigilance": [
-  "Le texte officiel fourni est un PDF binaire non décodé : aucun article ni exposé des motifs n'est lisible.",
-  "L'identifiant DLR5L17N51351 et le statut 'promulgue' suggèrent que le texte existe, mais son contenu n'est pas exploitable ici.",
-  "Toute analyse de second ordre est impossible sans accès au contenu normatif réel des articles."
+  "Le texte ne prévoit aucune indemnisation, réparation financière ou mesure de réparation individuelle : la reconnaissance est purement symbolique.",
+  "Les modalités concrètes de fonctionnement de la commission (auditions, production d'archives, livrables) sont renvoyées à un décret, ce qui laisse une marge d'appréciation importante sur la portée réelle du dispositif.",
+  "Le texte ne crée pas de droit subjectif à indemnisation ni de voie de recours pour les victimes.",
+  "La portée normative est limitée : il s'agit d'un texte déclaratif sans effet juridique direct sur les personnes concernées."
  ],
  "themes": [
+  "mémoire",
   "droits des femmes",
   "avortement",
-  "ivg",
-  "réparation",
-  "mémoire"
+  "reconnaissance",
+  "commission"
  ],
  "scrutinsCles": [
   "4837",
@@ -37,5 +69,5 @@
   "4839"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:6cdb98bf183315645ce425c60b786ef6cbf8c9129484cf00d03126b13ad5b957"
+ "sourceTextHash": "sha256:8cbd86508460dda204392e98dc909394ba1172a104225fc0bd31457f5c4e4da2"
 }

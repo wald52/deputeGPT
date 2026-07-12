@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N51655",
- "generatedAt": "2026-07-04T06:22:34Z",
+ "generatedAt": "2026-07-12T16:46:40Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,54 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0226_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de loi ordinaire intitulée « L'intérêt des enfants » (DLR5L17N51655), dont l'objectif affiché est de protéger ou promouvoir l'intérêt des enfants. L'exposé des motifs et les articles ne sont pas déchiffrables à partir du contenu fourni (PDF binaire illisible).",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel fourni est un PDF dont le contenu textuel (exposé des motifs et articles) n'est pas extractible : il s'agit d'un flux binaire compressé illisible. Aucun article, aucune disposition concrète (obligation, taxe, subvention, seuil, sanction) ne peut être identifié ni cité. En l'absence de contenu exploitable, il est impossible de déterminer si les mécanismes créés vont dans le sens de l'objectif affiché ou dans un sens opposé.",
+ "objectifAffiche": "Proposition de loi relative à l'intérêt des enfants, visant à renforcer la protection et les droits des enfants confiés à l'aide sociale à l'enfance et placés dans des établissements ou auprès de tiers dignes de confiance, ainsi qu'à améliorer les procédures judiciaires en matière d'assistance éducative et de protection contre les violences.",
+ "mecanismesCles": [
+  {
+   "resume": "Renforcement du contrôle des établissements et services accueillant des enfants : contrôle au moins tous les trois ans (tous les deux ans pour les pouponnières), dont au moins 70% inopinés, avec conclusions écrites notifiées.",
+   "articleRef": "art. 1er",
+   "citation": "« Le taux de contrôles inopinés ne peut être strictement inférieur à 70 % du nombre total d'opérations de contrôle. »"
+  },
+  {
+   "resume": "Interdiction pour les établissements accueillant des mineurs ou majeurs de moins de 21 ans au titre de l'ASE d'être créés ou exploités par des personnes morales de droit privé à but lucratif ou des structures éphémères, avec entrée en vigueur trois ans après la promulgation.",
+   "articleRef": "art. 1er (VIII de l'art. L. 312-1 CASF)",
+   "citation": "« ne peuvent être créés ou exploités par des personnes morales de droit privé à but lucratif ou par des structures éphémères »"
+  },
+  {
+   "resume": "Compétence exclusive du juge des enfants pour statuer sur les modalités d'exercice de l'autorité parentale et le droit de visite/hébergement pendant toute la mesure d'assistance éducative, avec dessaisissement du JAF.",
+   "articleRef": "art. 3",
+   "citation": "« Lui seul statue sur les modalités d'exercice de l'autorité parentale et sur l'étendue du droit de visite et d'hébergement des parents des enfants bénéficiant d'une mesure d'assistance éducative. »"
+  },
+  {
+   "resume": "Possibilité pour le juge d'imposer un stage de responsabilité parentale aux parents ne respectant pas leurs obligations de façon répétée.",
+   "articleRef": "art. 3 bis",
+   "citation": "« le juge des enfants peut leur enjoindre de suivre un stage de responsabilité parentale. »"
+  },
+  {
+   "resume": "Création d'une ordonnance de protection provisoire de l'enfant par le procureur de la République en cas de mise en danger, avec délais contraints (72h pour décider, 8 jours pour saisir le juge, 15 jours pour statuer) et possibilité d'interdictions de paraître et d'attribution du logement familial.",
+   "articleRef": "art. 4 (art. 375-5 code civil)",
+   "citation": "« le procureur de la République se prononce dans un délai de soixante-douze heures. Il saisit ensuite, dans un délai de huit jours, le juge compétent »"
+  },
+  {
+   "resume": "Création d'un délit pénal sanctionnant le non-respect des interdictions de paraître et de contact prononcées par le juge : 3 ans d'emprisonnement et 45 000 € d'amende.",
+   "articleRef": "art. 4 (art. 227-4-4 code pénal)",
+   "citation": "« est puni de trois ans d'emprisonnement et de 45 000 € d'amende. »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés vont dans le sens de l'objectif affiché de protection de l'intérêt de l'enfant. L'article 1er renforce le contrôle des établissements (70% de contrôles inopinés minimum) et interdit les structures lucratives ou éphémères accueillant des mineurs de l'ASE, ce qui améliore la qualité de la prise en charge. L'article 3 unifie la compétence au profit du juge des enfants pour éviter les conflits de juridiction. L'article 4 crée une ordonnance de protection provisoire avec des délais contraints (72h, 8 jours, 15 jours) et un délit pénal spécifique (3 ans d'emprisonnement, 45 000€) pour mieux protéger les enfants en danger. Les articles 5 à 7 bis étendent les droits sociaux (santé, bourses, logement) aux enfants confiés à des tiers dignes de confiance, comblant un déficit de protection. Le financement par une taxe sur le tabac (art. 8) assure la compensation des charges nouvelles.",
  "pointsDeVigilance": [
-  "Le document fourni est un PDF binaire dont le texte n'a pas été extrait (flux compressé non décodé)",
-  "Aucun article ni exposé des motifs n'est lisible dans le contenu transmis",
-  "Le titre seul (« L'intérêt des enfants ») ne permet pas d'identifier les mécanismes législatifs",
-  "L'identifiant DLR5L17N51655 ne suffit pas à reconstituer le contenu normatif"
+  "L'interdiction des structures lucratives (art. 1er VIII) n'entre en vigueur que trois ans après la promulgation, laissant subsister le statu quo pendant cette période.",
+  "Le texte est tronqué à 15000 caractères : l'article 8 (financement) est incomplet et les articles suivants ne sont pas visibles.",
+  "L'exposé des motifs n'est pas fourni dans le texte, limitant l'analyse de l'intention initiale.",
+  "La taxe additionnelle sur les tabacs comme mode de compensation pourrait avoir des effets indirects non mesurables ici.",
+  "Le transfert de compétence du JAF vers le juge des enfants (art. 3) pourrait engendrer une charge supplémentaire pour les juridictions pour enfants."
  ],
  "themes": [
-  "droits de l'enfant",
   "protection de l'enfance",
-  "intérêt supérieur de l'enfant"
+  "aide sociale à l'enfance",
+  "assistance éducative",
+  "placements",
+  "droits des enfants"
  ],
  "scrutinsCles": [
   "5280",
@@ -37,5 +71,5 @@
   "5283"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:12f69707425398502d1f22e01b072d02b6e2609b78a47410c4e471000ccc83d2"
+ "sourceTextHash": "sha256:8ae7b860e2e7b71ec803bd804d5a8c494cd2bb356e9e21adf40dd2eb3595a813"
 }

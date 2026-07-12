@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52787",
- "generatedAt": "2026-07-05T06:47:36Z",
+ "generatedAt": "2026-07-12T16:55:11Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,27 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b1985_texte-adopte-commission",
   "legifrance": null
  },
- "objectifAffiche": "Rendre systématique l'information du consommateur sur l'origine des denrées alimentaires via l'étiquetage, afin de garantir la transparence sur la provenance des produits alimentaires.",
- "mecanismesCles": [],
+ "objectifAffiche": "Rendre systématique l'information du consommateur sur l'origine des denrées alimentaires via l'étiquetage, afin de renforcer la transparence sur la provenance des produits alimentaires.",
+ "mecanismesCles": [
+  {
+   "resume": "Le texte officiel fourni ne contient ni exposé des motifs ni articles ; seuls figurent la page de garde et les métadonnées du dossier législatif.",
+   "articleRef": null,
+   "citation": null
+  }
+ ],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles de loi exploitables. Seules les métadonnées du dossier législatif (titre, identifiant, procédure, statut) sont disponibles, sans le contenu normatif permettant d'identifier les mécanismes concrets (obligations, sanctions, dérogations, seuils). En l'absence du corps du texte, il est impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "justificationVerdict": "Le texte transmis est tronqué et ne comporte pas le contenu substantiel de la proposition de loi (ni exposé des motifs, ni articles). Aucun mécanisme concret (obligation d'étiquetage, seuil, sanction, dérogation) ne peut être identifié dans les éléments fournis, ce qui empêche toute évaluation des incitations réellement créées par le texte.",
  "pointsDeVigilance": [
-  "Le texte officiel est tronqué et ne contient que les métadonnées du dossier (titre, commission, date de dépôt), sans aucun article ni exposé des motifs.",
-  "Impossible d'évaluer les éventuelles dérogations, exemptions de produits ou sanctions prévues.",
-  "La portée réelle (types de denrées concernées, seuils, exceptions) ne peut être déterminée sans le contenu des articles."
+  "Le texte officiel est limité à la page de garde et aux métadonnées (n° 1985-A0, commission des affaires économiques, déposé le 22 octobre 2025) ; le contenu normatif est absent.",
+  "Sans accès aux articles, il est impossible de vérifier le périmètre (denrées concernées, exceptions, sanctions, modalités de contrôle).",
+  "L'objectif affiché de 'transparence sur l'origine' pourrait, selon les modalités, engendrer des coûts de mise en conformité ou des effets de substitution non vérifiables ici."
  ],
  "themes": [
   "étiquetage",
-  "origine des denrées alimentaires",
+  "origine des denrées",
   "information du consommateur",
-  "transparence"
+  "transparence",
+  "alimentation"
  ],
  "scrutinsCles": [
   "3270",

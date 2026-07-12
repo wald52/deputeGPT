@@ -1,0 +1,37 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L16N47697",
+ "generatedAt": "2026-07-12T17:00:43Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Réforme de l’audiovisuel public et souveraineté audiovisuelle",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/16/dossiers/DLR5L16N47697",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b1754_proposition-loi",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire n° 1754, adoptée avec modifications par le Sénat en deuxième lecture, relative à la réforme de l'audiovisuel public et à la souveraineté audiovisuelle. L'objectif affiché, tel qu'il ressort du titre, est de réformer l'audiovisuel public français et de renforcer la souveraineté audiovisuelle nationale.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles de loi. Seules les métadonnées du dossier législatif (titre, numéro, procédure, commission saisie) sont accessibles. Aucun mécanisme concret (obligation, taxe, subvention, dérogation, seuil, sanction) ne peut être identifié, ce qui rend impossible toute évaluation des incitations effectivement créées par le texte.",
+ "pointsDeVigilance": [
+  "Le contenu substantiel du texte (exposé des motifs et articles) n'a pas été fourni, seul l'en-tête du dossier législatif est disponible.",
+  "Le texte est tronqué à 15000 caractères mais, en réalité, aucun article ni motif n'a été transmis dans l'extrait.",
+  "Le statut 'en_cours' indique que le texte est encore en cours d'examen parlementaire, ce qui peut modifier son contenu final."
+ ],
+ "themes": [
+  "audiovisuel public",
+  "souveraineté audiovisuelle",
+  "réforme des médias"
+ ],
+ "scrutinsCles": [
+  "2873"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:a9b3eae9309c889ff263fc82cdd34f5f7b6506c4ebb6781bc2cac177c73d9b02"
+}

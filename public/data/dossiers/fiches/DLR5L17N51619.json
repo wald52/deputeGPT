@@ -1,0 +1,56 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51619",
+ "generatedAt": "2026-07-12T17:03:41Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Les dysfonctionnements obstruant l’accès à une justice adaptée aux besoins des justiciables ultramarins",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/acces_justice_ultramarins",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0136_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Créer une commission d'enquête parlementaire chargée d'étudier les dysfonctionnements qui entravent l'accès à une justice adaptée aux besoins des justiciables ultramarins et qui alimentent une crise de confiance envers les institutions judiciaires dans ces territoires.",
+ "mecanismesCles": [
+  {
+   "resume": "Création d'une commission d'enquête composée de trente membres, conformément aux articles 137 et suivants du Règlement de l'Assemblée nationale.",
+   "articleRef": "Article unique",
+   "citation": "est créée une commission d'enquête composée de trente membres"
+  },
+  {
+   "resume": "Mission d'étude des dysfonctionnements rendant difficile l'accès à la justice ultramarine et entretenant une crise de confiance.",
+   "articleRef": "Article unique",
+   "citation": "chargée d'étudier les dysfonctionnements rendant difficile l'accès à une justice adaptée aux besoins des justiciables ultramarins et entretenant une crise de confiance envers les institutions judiciaires"
+  },
+  {
+   "resume": "Champ d'investigation défini en sept axes : articulation droit coutumier/droit commun, tradition orale et multilinguisme, éloignement géographique, dématérialisation, attractivité des juridictions, frais de déplacement des avocats, crise de confiance.",
+   "articleRef": "Article unique (1° à 7°)",
+   "citation": "L'articulation entre règles coutumières et règles de droit commun ; La tradition orale et le multilinguisme ; L'éloignement géographique du juge ; La dématérialisation croissante ; L'attractivité des juridictions ultramarines ; Les frais de déplacement des avocats ; La crise de confiance dans la justice."
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte adopté est une résolution créant une commission d'enquête parlementaire. Il ne crée aucune obligation normative, taxe, subvention ou sanction : il se limite à instituer un organe d'étude doté d'un périmètre d'investigation (article unique, 1° à 7°). Aucune mesure concrète n'est imposée au Gouvernement ou aux juridictions. L'évaluation des incitations réelles par rapport à l'objectif affiché ne peut donc être tranchée sur la base du seul texte fourni, qui est par nature un outil de diagnostic et non de réforme.",
+ "pointsDeVigilance": [
+  "Le texte est une résolution parlementaire sans portée normative directe : aucune obligation, sanction ou budget n'est créé.",
+  "La commission d'enquête dispose d'un pouvoir d'investigation mais le texte ne précise ni calendrier, ni livrables contraignants.",
+  "Le périmètre inclut la 'dématérialisation croissante' comme facteur de difficulté, ce qui peut être lu comme un signal d'alerte sur la fracture numérique ultramarine.",
+  "Le texte ne mentionne pas explicitement les outre-mer au-delà du terme 'ultramarins' : aucune liste de territoires concernés n'est fournie."
+ ],
+ "themes": [
+  "justice",
+  "outre-mer",
+  "commission d'enquête",
+  "accès au droit",
+  "résolution parlementaire"
+ ],
+ "scrutinsCles": [
+  "2273"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:952f7bf2c7d7d04767ecc68a90b43c731ad89e390ab48d5e5b77c98e0ef26d96"
+}

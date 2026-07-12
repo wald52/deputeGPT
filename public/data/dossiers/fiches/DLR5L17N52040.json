@@ -1,0 +1,75 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N52040",
+ "generatedAt": "2026-07-12T16:57:18Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi portant transposition des accords nationaux interprofessionnels en faveur de l’emploi des salariés expérimentés et relatif à l’évolution du dialogue social",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N52040",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0171_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le projet de loi transpose des accords nationaux interprofessionnels en faveur de l'emploi des salariés expérimentés et fait évoluer le dialogue social. Il vise à renforcer la négociation collective sur l'emploi et le travail des salariés expérimentés (Titre I), à préparer la deuxième partie de carrière via l'entretien de parcours professionnel (Titre II), et à lever les freins au recrutement des demandeurs d'emploi seniors via un contrat expérimental de valorisation de l'expérience (Titre III).",
+ "mecanismesCles": [
+  {
+   "resume": "Inscription dans la négociation de branche d'un thème obligatoire sur l'emploi et le travail des salariés expérimentés, avec possibilité d'un plan d'action type pour les entreprises de moins de 300 salariés, applicable unilatéralement par l'employeur en cas d'échec de la négociation.",
+   "articleRef": "art. 1er",
+   "citation": "« 5° bis Sur l'emploi et le travail des salariés expérimentés, en considération de leur âge »"
+  },
+  {
+   "resume": "Obligation triennale de négociation dans les entreprises d'au moins 300 salariés sur l'emploi, le travail et l'amélioration des conditions de travail des salariés expérimentés, précédée d'un diagnostic.",
+   "articleRef": "art. 2 (art. L. 2242-22 nouveau)",
+   "citation": "« Dans les entreprises d'au moins trois cents salariés mentionnées à l'article L. 2242-2-1, l'employeur engage, tous les trois ans, une négociation sur l'emploi, le travail et l'amélioration des conditions de travail des salariés expérimentés »"
+  },
+  {
+   "resume": "Transformation de l'entretien professionnel en « entretien de parcours professionnel » tous les 4 ans (au lieu de 6 ans), avec un contenu élargi (compétences, parcours, formation, CPF, projets d'évolution) et un entretien spécifique dans les 2 ans précédant 60 ans sur les aménagements de fin de carrière.",
+   "articleRef": "art. 3 (art. L. 6315-1)",
+   "citation": "« Tout salarié restant employé dans la même entreprise bénéficie d'un entretien de parcours professionnel tous les quatre ans »"
+  },
+  {
+   "resume": "Entretien de parcours professionnel organisé dans les 2 mois suivant la visite médicale de mi-carrière, abordant l'adaptation du poste, la prévention de l'usure professionnelle et les besoins de formation.",
+   "articleRef": "art. 3 (art. L. 6315-1 IV)",
+   "citation": "« L'entretien de parcours professionnel mentionné au I est organisé dans un délai de deux mois à compter de la visite médicale de mi-carrière prévue à l'article L. 4624-2-2 »"
+  },
+  {
+   "resume": "Création expérimentale pour 5 ans d'un « contrat de valorisation de l'expérience » (CDI) réservé aux demandeurs d'emploi de 60 ans ou plus (ou 57 ans par accord de branche étendu), n'ayant pas droit à une retraite à taux plein.",
+   "articleRef": "art. 4",
+   "citation": "« peuvent être conclus des contrats, dits de valorisation de l'expérience, soumis aux dispositions régissant les contrats de travail à durée indéterminée »"
+  },
+  {
+   "resume": "Suppression de la négociation obligatoire existante sur « l'emploi des salariés âgés et la transmission des savoirs et des compétences » (art. L. 2242-21 6°), remplacée par le nouveau dispositif.",
+   "articleRef": "art. 2 (6°)",
+   "citation": "« les mots : « l'emploi des salariés âgés et la transmission des savoirs et des compétences, » [...] sont supprimés »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés vont dans le sens de l'objectif affiché : l'article 1er inscrit explicitement l'emploi des salariés expérimentés dans les négociations obligatoires de branche (5° bis), avec un plan d'action type applicable même en l'absence d'accord. L'article 2 crée une obligation triennale de négociation dans les entreprises de 300 salariés et plus, avec un diagnostic préalable et un contenu ciblé (recrutement, maintien, fin de carrière, transmission des savoirs). L'article 3 renforce l'accompagnement individuel via l'entretien de parcours professionnel tous les 4 ans et un entretien dédié avant 60 ans sur les aménagements de fin de carrière. L'article 4 crée un levier direct de recrutement des seniors via le contrat de valorisation de l'expérience. L'ensemble de ces dispositifs crée des incitations cohérentes avec l'objectif de favoriser l'emploi des salariés expérimentés.",
+ "pointsDeVigilance": [
+  "Le texte est tronqué à 15000 caractères : l'article 4 (contrat de valorisation de l'expérience) est incomplet, ce qui empêche de connaître les contreparties exactes (exonérations, aides, durée, conditions de rupture) qui détermineraient l'attractivité réelle du dispositif.",
+  "Le seuil de 300 salariés limite l'obligation de négociation aux grandes entreprises ; les PME ne sont couvertes que par le mécanisme subsidiaire du plan d'action type de branche.",
+  "Plusieurs alinéas ont été supprimés par la CMP (notamment les 5° et 6° de l'art. L. 2241-14-1 et le 4° initial de l'art. 1er), ce qui réduit le contenu obligatoire de la négociation.",
+  "L'entrée en vigueur différée au 1er octobre 2026 pour les accords existants (art. 3 II) retarde l'effet concret du nouveau dispositif.",
+  "Le contrat de valorisation de l'expérience est expérimental et limité à 5 ans, ce qui en fait un levier temporaire et non pérenne."
+ ],
+ "themes": [
+  "dialogue social",
+  "emploi des seniors",
+  "négociation collective",
+  "formation professionnelle",
+  "entretien professionnel"
+ ],
+ "scrutinsCles": [
+  "2933",
+  "2934",
+  "2935",
+  "3055"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:9475cb90c15c1e5e2a36d5001b781b0bbb6eced6093e0d118fe22a736dec55f6"
+}

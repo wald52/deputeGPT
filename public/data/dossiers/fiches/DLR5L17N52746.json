@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52746",
- "generatedAt": "2026-07-04T06:24:36Z",
+ "generatedAt": "2026-07-12T16:48:02Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,19 +15,19 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b3004_texte-adopte-commission",
   "legifrance": null
  },
- "objectifAffiche": "Moderniser la gestion du patrimoine immobilier de l'État, selon une proposition de loi ordinaire actuellement en cours d'examen via une commission mixte paritaire.",
+ "objectifAffiche": "Moderniser la gestion du patrimoine immobilier de l'État (titre de la proposition de loi). L'exposé des motifs n'est pas fourni dans le texte transmis.",
  "mecanismesCles": [],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles : seul le sommaire et les métadonnées du dossier législatif (titre, numéro, procédure, commission saisie) ont été transmis. Aucun mécanisme concret (obligation, taxe, subvention, dérogation, seuil, sanction) ne peut être identifié, ce qui empêche toute analyse des incitations produites par le texte.",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs, ni articles : seuls l'identifiant du dossier, le titre de la proposition de loi et des métadonnées de navigation sont transmis. Aucun mécanisme concret (obligation, taxe, subvention, dérogation, seuil, sanction) ne peut être identifié, ce qui empêche toute analyse des incitations produites par le texte.",
  "pointsDeVigilance": [
-  "Le texte officiel est tronqué et ne contient que les en-têtes administratifs, sans contenu normatif.",
-  "Impossible de vérifier l'alignement entre l'objectif affiché et les dispositions effectives sans accès aux articles.",
-  "Le statut 'en cours' et le passage en CMP indiquent que le texte peut encore évoluer avant adoption."
+  "Le texte officiel est tronqué à 15000 caractères mais, en pratique, seul l'en-tête du dossier législatif est présent : pas d'exposé des motifs, pas de corps d'articles.",
+  "Le statut 'en cours' et la mention 'commission mixte paritaire' indiquent que le texte est encore en discussion, ce qui peut modifier son contenu final.",
+  "Sans accès aux articles, il est impossible de vérifier si les mécanismes de modernisation (cession, regroupement, valorisation, etc.) sont réellement orientés vers l'intérêt général ou vers une logique de pur désengagement patrimonial."
  ],
  "themes": [
   "patrimoine immobilier de l'état",
   "gestion domaniale",
-  "modernisation administrative"
+  "modernisation de l'action publique"
  ],
  "scrutinsCles": [
   "5237",

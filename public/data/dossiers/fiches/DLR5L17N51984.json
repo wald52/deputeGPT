@@ -1,0 +1,72 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51984",
+ "generatedAt": "2026-07-12T16:58:02Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Département-Région de Mayotte",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N51984",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0165_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est un projet de loi organique 'relatif au Département-Région de Mayotte'. L'exposé des motifs n'est pas fourni dans le texte transmis, mais le titre et les modifications du CGCT indiquent une réorganisation statutaire visant à intégrer Mayotte dans le régime de collectivité unique (Département-Région), à l'instar de ce qui existe pour la Guyane et la Martinique.",
+ "mecanismesCles": [
+  {
+   "resume": "Modification de l'article L.O. 1114-1 pour substituer 'Département' par 'Département-Région' et exclure Mayotte du 3° (probablement régime électoral spécifique)",
+   "articleRef": "art. 1er (2°)",
+   "citation": "Au 2°, le mot : « Département » est remplacé par le mot : « Département-Région » ; b) Le 3° est complété par les mots : « autres que le Département-Région de Mayotte »"
+  },
+  {
+   "resume": "Suppression des mentions spécifiques à Mayotte dans les articles L.O. 3445-1 et L.O. 4435-1 relatifs aux conseils départemental et régional de la Guadeloupe/Mayotte",
+   "articleRef": "art. 1er (3° et 5°)",
+   "citation": "À l'article L.O. 3445-1, les mots : « , de Mayotte » sont supprimés ; À l'article L.O. 4435-1, les mots : « , de Mayotte » sont supprimés"
+  },
+  {
+   "resume": "Réservation au seul conseil départemental de Guadeloupe de la possibilité d'être habilité (Mayotte en est exclu)",
+   "articleRef": "art. 1er (4°)",
+   "citation": "« les conseils départementaux de la Guadeloupe et de Mayotte peuvent être habilités » sont remplacés par les mots : « le conseil départemental de la Guadeloupe peut être habilité »"
+  },
+  {
+   "resume": "Abrogation des articles L.O. 1711-2, L.O. 3511-1, L.O. 3511-3 et L.O. 4437-2 (dispositions propres à l'ancien statut de Mayotte)",
+   "articleRef": "art. 1er (7°)",
+   "citation": "Les articles L.O. 1711-2, L.O. 3511-1, L.O. 3511-3 et L.O. 4437-2 sont abrogés"
+  },
+  {
+   "resume": "Renumérotation du livre III en livre IV de la 7e partie et extension à Mayotte des intitulés et dispositions applicables à la Guyane et la Martinique (collectivité unique)",
+   "articleRef": "art. 1er (8°)",
+   "citation": "Le livre III de la septième partie devient le livre IV ; À l'intitulé du titre Ier, les mots : « et de Martinique » sont remplacés par les mots : « , de Martinique et de Mayotte »"
+  },
+  {
+   "resume": "Extension à Mayotte des articles L.O. 7311-1 et L.O. 7312-1 relatifs au régime de la collectivité unique",
+   "articleRef": "art. 1er (8° d et l)",
+   "citation": "À l'article L.O. 7311-1, les mots : « et de Martinique » sont remplacés par les mots : « , de Martinique et de Mayotte » ; À l'article L.O. 7312-1, les mots : « et de Martinique » sont remplacés par les mots : « , de Martinique et de Mayotte »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'ensemble des mécanismes de l'article 1er convergent vers l'objectif affiché de transformer Mayotte en Département-Région : les références à 'Mayotte' sont supprimées des régimes spécifiques (art. 1er 3°, 4°, 5°, 6°) tandis que les dispositions applicables aux collectivités uniques de Guyane et Martinique sont étendues à Mayotte (art. 1er 8° d, l). L'abrogation des articles propres à l'ancien statut (art. 1er 7°) et la renumérotation du livre en livre IV (art. 1er 8°) parachèvent l'unification statutaire. Aucun mécanisme ne crée d'incitation contraire à cet objectif d'alignement institutionnel.",
+ "pointsDeVigilance": [
+  "L'exposé des motifs n'est pas fourni dans le texte transmis, ce qui limite la vérification de l'objectif affiché au seul titre.",
+  "Le texte est tronqué à 15000 caractères ; les articles suivants (au-delà de l'article 1er) ne sont pas visibles et pourraient contenir des dispositions substantielles (électorales, compétences, calendrier de mise en œuvre).",
+  "Le statut organique implique des conséquences sur le mode de scrutin, les compétences et la gouvernance qui ne sont pas détaillées ici.",
+  "L'exclusion de Mayotte du 3° de l'article L.O. 1114-1 (art. 1er 2° b) suggère le maintien d'un régime électoral distinct, ce qui constitue une nuance par rapport à une harmonisation totale."
+ ],
+ "themes": [
+  "outre-mer",
+  "mayotte",
+  "collectivités territoriales",
+  "droit constitutionnel",
+  "statut organique"
+ ],
+ "scrutinsCles": [
+  "2875",
+  "2976"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:11e8a9a8eef9ee94ad4edb4e310ad60542ee18f05d71ffb26a8c3dcb1a2aa561"
+}

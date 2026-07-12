@@ -1,0 +1,75 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51985",
+ "generatedAt": "2026-07-12T16:58:34Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi de programmation pour la refondation de Mayotte",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N51985",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0164_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le projet de loi de programmation pour la refondation de Mayotte vise à planifier et financer la reconstruction et la refondation du territoire mahorais sur la période 2025-2031, à travers des investissements massifs dans les infrastructures (eau, santé, logement, transports, éducation) et un durcissement des conditions d'accès au séjour et de lutte contre l'immigration clandestine et l'habitat illégal.",
+ "mecanismesCles": [
+  {
+   "resume": "Programmation budgétaire pluriannuelle 2025-2031 détaillant les autorisations d'engagement par thème (eau/assainissement : 730 M€, santé : 407 M€, système judiciaire et carcéral : 430 M€, établissements scolaires : 400 M€, logement : 200 M€, aéroport piste longue : 1200 M€, etc.)",
+   "articleRef": "art. 1er bis AA",
+   "citation": "Les investissements prioritaires dans les infrastructures et les politiques publiques essentielles à Mayotte au cours de la période 2025-2031 sont présentés dans les tableaux du présent I."
+  },
+  {
+   "resume": "Création d'un comité de suivi placé auprès du Premier ministre, chargé du suivi et de l'évaluation de la loi, devant remettre un rapport public intermédiaire avant le 1er juillet 2028",
+   "articleRef": "art. 1er bis A",
+   "citation": "Un comité de suivi, placé auprès du Premier ministre, est chargé de veiller au suivi de la mise en œuvre et à l'évaluation de la présente loi et d'en rendre compte au Parlement."
+  },
+  {
+   "resume": "Concentration de l'autorité de l'État à Mayotte entre les mains du représentant de l'État jusqu'au 31 décembre 2030, qui dirige l'ensemble des services et établissements publics de l'État",
+   "articleRef": "art. 1er bis",
+   "citation": "Jusqu'au 31 décembre 2030, le représentant de l'État à Mayotte dirige l'action de l'ensemble des services et des établissements publics de l'État ayant un champ d'action territorial à Mayotte"
+  },
+  {
+   "resume": "Durcissement des conditions de séjour à Mayotte : allongement de l'ancienneté requise pour la régularisation (de 3 à 5 ans pour le regroupement familial, à 7 ans pour certaines cartes), suppression de plusieurs motifs de délivrance automatique, exigence de justificatifs nominatifs pour la contribution parentale",
+   "articleRef": "art. 2",
+   "citation": "les mots : 'en France et titulaire depuis au moins trois années' sont remplacés par les mots : 'régulièrement et de manière ininterrompue en France depuis au moins cinq années et titulaire'"
+  },
+  {
+   "resume": "Abrogation de l'article L. 441-8 du CESEDA (régime spécifique de Mayotte) avec entrée en vigueur différée au 1er janvier 2030",
+   "articleRef": "art. 2 bis A",
+   "citation": "L'article L. 441-8 du code de l'entrée et du séjour des étrangers et du droit d'asile est abrogé."
+  },
+  {
+   "resume": "Exclusion des logements édifiés sans droit ni titre ou relevant de l'habitat informel de la notion de logement normal pour le regroupement familial",
+   "articleRef": "art. 2 ter",
+   "citation": "ne peut être considéré comme normal un logement édifié ou occupé sans droit ni titre ou relevant de l'habitat informel"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés par le texte vont dans le sens de l'objectif affiché de 'refondation' de Mayotte. Le volet investissement (art. 1er bis AA) programme des moyens financiers massifs et cohérents avec une reconstruction post-cyclone (eau, santé, logement, aéroport, éducation). Le volet institutionnel (art. 1er bis A et 1er bis) renforce la coordination étatique et le suivi parlementaire. Le Titre II sur l'immigration clandestine et l'habitat illégal, à travers le durcissement des conditions de séjour (art. 2, 2 ter), la lutte contre les reconnaissances frauduleuses et les dispositifs d'éloignement (art. 7, 8), correspond explicitement à l'objectif affiché de 'lutter contre l'immigration clandestine et l'habitat illégal' énoncé dans l'intitulé du Titre II. Les deux volets (reconstruction matérielle et sécurisation migratoire) sont cohérents avec la logique de 'refondation' annoncée.",
+ "pointsDeVigilance": [
+  "Le texte est tronqué à 15000 caractères : les chapitres II (reconnaissances frauduleuses de paternité/maternité) et III (éloignement) ne sont que partiellement visibles, ce qui limite l'analyse exhaustive des mécanismes migratoires",
+  "L'article 9 (modification du code monétaire et financier) est coupé et son contenu exact n'est pas connu",
+  "Le décalage temporel entre l'entrée en vigueur de certaines mesures (1er juillet 2028, 1er janvier 2030) et l'urgence de la situation post-Chido peut soulever des questions de calendrier",
+  "La concentration des pouvoirs entre les mains du représentant de l'État jusqu'en 2030 (art. 1er bis) constitue une dérogation importante au droit commun administratif",
+  "L'absence de mécanisme contraignant de réévaluation des crédits en cas de non-exécution (les AE 'peuvent être réévalués' selon une formulation souple)"
+ ],
+ "themes": [
+  "outre-mer",
+  "mayotte",
+  "reconstruction",
+  "immigration",
+  "investissements publics"
+ ],
+ "scrutinsCles": [
+  "2871",
+  "2872",
+  "2874",
+  "2975"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:e444a28959c0687cd3747b5ba4090d9da5800343a6ca125326f40de472871e4f"
+}

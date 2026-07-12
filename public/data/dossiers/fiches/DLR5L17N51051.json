@@ -1,0 +1,74 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51051",
+ "generatedAt": "2026-07-12T17:02:44Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Étendre les compétences du Parquet européen aux infractions à l’environnement",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/parquet_europeen_environnement2",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0141_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Résolution européenne invitant à étendre les compétences du Parquet européen (EPPO) aux infractions graves à l'environnement, via la création d'un « Parquet vert européen », afin de lutter plus efficacement contre la criminalité environnementale transfrontalière (trafics de déchets, substances dangereuses, faune et flore protégées).",
+ "mecanismesCles": [
+  {
+   "resume": "Invitation à lutter plus activement contre la criminalité environnementale transfrontalière",
+   "articleRef": "point 1",
+   "citation": "Invite à lutter plus activement et collectivement contre les formes graves de criminalité environnementale revêtant une dimension transfrontière"
+  },
+  {
+   "resume": "Appel aux États membres à reconnaître la criminalité environnementale comme menace sérieuse",
+   "articleRef": "point 2",
+   "citation": "Appelle les États membres à reconnaître la criminalité environnementale comme une menace réelle et sérieuse nécessitant une réponse judiciaire efficace et coordonnée au niveau européen"
+  },
+  {
+   "resume": "Renforcement de la coopération entre États membres en matière de collecte et d'échange d'informations",
+   "articleRef": "point 3",
+   "citation": "Appelle à renforcer la coopération entre les États membres en matière de collecte et d'échange d'informations sur les affaires de criminalité environnementale"
+  },
+  {
+   "resume": "Création d'un « Parquet vert européen » par extension des compétences de l'EPPO sur le fondement de l'article 86 §4 TFUE",
+   "articleRef": "point 4",
+   "citation": "Souhaite la création d'un Parquet vert européen, moyennant l'extension des compétences du Parquet européen conformément au paragraphe 4 de l'article 86 du traité sur le fonctionnement de l'Union européenne"
+  },
+  {
+   "resume": "Spécialisation dans la lutte contre la criminalité environnementale grave et transnationale (trafics de déchets, substances dangereuses/réglementées/interdites, faune et flore protégées)",
+   "articleRef": "point 5",
+   "citation": "Propose de spécialiser celui-ci dans la lutte contre la criminalité environnementale grave et transnationale, y compris dans sa dimension économique et financière, notamment en ce qui concerne les trafics de déchets, les trafics de substances dangereuses, réglementées ou interdites ainsi que les trafics de faune et de flore protégées"
+  },
+  {
+   "resume": "Communication active sur les missions du Parquet européen auprès des citoyens",
+   "articleRef": "point 6",
+   "citation": "Insiste sur la nécessité de communiquer plus activement sur les missions du Parquet européen"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte est une résolution européenne (article 88-4 de la Constitution), c'est-à-dire un acte non normatif invitant le Gouvernement à porter une position politique au niveau européen. Les mécanismes créés sont exclusivement des invitations, appels et souhaits adressés aux institutions européennes et aux États membres (points 1 à 8). Le point 4 vise explicitement « la création d'un Parquet vert européen, moyennant l'extension des compétences du Parquet européen conformément au paragraphe 4 de l'article 86 du TFUE », et le point 5 spécialise cette compétence dans la lutte contre les trafics de déchets, substances dangereuses et espèces protégées. Ces incitations vont directement dans le sens de l'objectif affiché de lutte contre la criminalité environnementale transfrontalière. Aucun mécanisme du texte ne produit d'effet contraire à l'objectif.",
+ "pointsDeVigilance": [
+  "Le texte est une simple résolution au sens de l'article 88-4 de la Constitution : il n'a aucune force normative interne et ne crée ni obligations, ni taxes, ni sanctions.",
+  "L'extension des compétences de l'EPPO suppose une modification du règlement (UE) 2017/1939, ce qui requiert une proposition de la Commission et l'accord du Conseil (unanimité au titre de l'art. 86 §4 TFUE) — la résolution française ne peut que formuler un vœu politique.",
+  "Le point 7 étend implicitement le champ de la résolution au-delà de l'environnement (sanctions européennes, corruption, traite des êtres humains), ce qui peut diluer la portée environnementale du texte.",
+  "La demande d'augmentation du budget et des effectifs de l'EPPO (considérant) reste non chiffrée et non contraignante."
+ ],
+ "themes": [
+  "environnement",
+  "criminalité environnementale",
+  "parquet européen",
+  "coopération judiciaire européenne",
+  "résolution européenne"
+ ],
+ "scrutinsCles": [
+  "2279",
+  "2280",
+  "2281",
+  "2282"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:16157339a5d61c8c82143178d6edd3cef518da5db202f2ce77b1c265ff6b403a"
+}

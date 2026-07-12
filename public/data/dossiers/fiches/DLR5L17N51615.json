@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N51615",
- "generatedAt": "2026-07-05T06:45:44Z",
+ "generatedAt": "2026-07-12T16:54:38Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,27 +15,53 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0181_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte vise à mettre en œuvre le Protocole de l'Organisation Mondiale de la Santé pour éliminer le commerce illicite de tabac. Il s'agit d'une résolution parlementaire (procédure de résolution) dont l'objectif affiché est la transposition/transposition interne de ce protocole international.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est un fichier PDF brut dont le contenu textuel n'a pas pu être extrait (uniquement des métadonnées PDF et des flux binaires compressés illisibles). Aucun article, aucune disposition concrète, aucune obligation, taxe, seuil ou sanction ne peut être identifié dans le contenu exploitable. En l'absence de mécanismes vérifiables tirés du texte, il est impossible de déterminer si les incitations créées vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "Résolution européenne invitant le Gouvernement à œuvrer au niveau européen pour la mise en œuvre effective du Protocole de l'OMS visant à éliminer le commerce illicite de tabac, ratifié par la France en 2015 mais non appliqué. Le texte vise à renforcer la lutte contre le marché parallèle du tabac, considéré comme un obstacle aux politiques de santé publique.",
+ "mecanismesCles": [
+  {
+   "resume": "Invitation au Gouvernement à plaider au niveau européen pour l'application pleine et entière du protocole OMS, avec mise en place de quotas de livraison de tabac par pays fondés sur la consommation domestique.",
+   "articleRef": "1",
+   "citation": "Invite le Gouvernement à prendre l'initiative de plaider au niveau européen [...] pour l'application pleine et entière du protocole de l'Organisation mondiale de la santé afin que soient mis en place des quotas de livraison de tabac par pays, fondés sur la consommation domestique"
+  },
+  {
+   "resume": "Demande de réforme de la directive sur le régime général d'accise pour abaisser significativement les seuils au-delà desquels l'introduction de tabac est considérée comme commerciale (retour au seuil d'une cartouche en vigueur en France jusqu'en mars 2024).",
+   "articleRef": "2",
+   "citation": "abaissement significatif des seuils au-delà desquels l'introduction de tabac sur le territoire d'un État membre est considérée comme réalisée à des fins commerciales [...] notamment celui d'une cartouche s'agissant des cigarettes"
+  },
+  {
+   "resume": "Demande de non-renouvellement et de fin des accords juridiquement contraignants conclus avec les plus grands fabricants mondiaux de tabac.",
+   "articleRef": "3",
+   "citation": "Demande instamment à la Commission européenne de ne pas renouveler les accords juridiquement contraignants et exécutoires conclus avec les plus grands fabricants mondiaux de tabac et d'y mettre fin"
+  },
+  {
+   "resume": "Affirmation de la nécessité de renforcer les contrôles de la chaîne logistique par l'instauration d'un système de suivi et de traçabilité indépendant.",
+   "articleRef": "5",
+   "citation": "l'impérieuse nécessité de renforcer les contrôles de la chaîne logistique par l'instauration d'un système de suivi et de traçabilité indépendant"
+  },
+  {
+   "resume": "Appel à l'établissement d'un rapport annuel européen sur la consommation de cigarettes illicites (contrebande, faux, illicit whites), coordonné entre le ministère de la santé, la MILDECA et l'OFDT.",
+   "articleRef": "6",
+   "citation": "établir un rapport annuel sur la consommation de cigarettes illicites (contrebande, faux, illicit whites, etc.)"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés par la résolution sont cohérents avec l'objectif affiché de lutte contre le commerce illicite de tabac. L'article 1 vise à plafonner les livraisons par pays selon la consommation domestique, ce qui limite les flux parallèles. L'article 2 abaisse les seuils de tolérance aux achats transfrontaliers (retour à une cartouche), restreignant ainsi les achats dits 'personnels' qui alimentent le marché parallèle. L'article 3 rompt les accords avec les grands fabricants suspectés d'implication dans les circuits illicites. L'article 5 instaure une traçabilité indépendante de la chaîne logistique. L'article 6 améliore la transparence via un rapport annuel harmonisé. L'ensemble de ces dispositifs crée des incitations directement orientées vers la réduction du commerce illicite.",
  "pointsDeVigilance": [
-  "Le document fourni est un PDF dont le contenu textuel n'a pas été extrait correctement (flux binaires non décodés)",
-  "Aucun article ni exposé des motifs lisible n'est disponible pour analyse",
-  "La procédure 'Résolution' suggère un texte non législatif (simple autorisation de ratification), ce qui limite la portée normative",
-  "L'identifiant DLR5L17N51615 et le statut 'en_cours' ne permettent pas de compenser l'absence de contenu exploitable"
+  "Le texte est une résolution européenne sans valeur normative contraignante : il s'agit d'invitations et de demandes adressées au Gouvernement et à la Commission européenne, sans création d'obligations juridiques internes.",
+  "L'efficacité réelle dépendra de la transposition effective dans les directives européennes et de la ratification par les États membres encore réticents.",
+  "Le texte mentionne brièvement les produits de substitution (sachets de nicotine, billes aromatiques) dans les visas mais ne propose pas de mécanisme spécifique les concernant dans les articles opérationnels.",
+  "La mise en place de quotas fondés sur la consommation domestique (art. 1) pourrait, si mal calibrée, créer des tensions avec le principe de libre circulation des marchandises au sein du marché unique."
  ],
  "themes": [
+  "santé publique",
   "tabac",
   "commerce illicite",
-  "oms",
-  "protocole international",
-  "résolution parlementaire"
+  "fiscalité",
+  "accises"
  ],
  "scrutinsCles": [
   "4242",
   "4243"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:b2b58d30168ef172558e6549bf0572df32e422188f8fc6a94fc759d0f58122f9"
+ "sourceTextHash": "sha256:875cc2e4ece0f09930bfd5ea04d3ed1e2a302206ce3a64e748b6ebe5146d2d45"
 }

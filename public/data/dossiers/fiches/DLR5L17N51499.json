@@ -1,0 +1,73 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51499",
+ "generatedAt": "2026-07-12T17:06:07Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Reconnaissance de la Nation envers les rapatriés d’Indochine et réparation des préjudices subis par ceux-ci et leurs familles du fait de l'indignité de leurs conditions d'accueil et de vie dans certaines structures sur le territoire français",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/reconnaissance_nation_rapatries_indochine_17",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0129_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Reconnaître la responsabilité de la Nation envers les rapatriés d'Indochine (militaires, formations supplétives, agents publics, civils et familles) ayant subi des conditions d'accueil et de vie indignes sur le territoire français, et réparer les préjudices durables subis.",
+ "mecanismesCles": [
+  {
+   "resume": "Reconnaissance symbolique de la responsabilité de la Nation pour l'indignité des conditions d'accueil dans les structures d'hébergement des rapatriés d'Indochine et de leurs familles.",
+   "articleRef": "art. 1er",
+   "citation": "Elle reconnaît sa responsabilité du fait de l'indignité des conditions d'accueil et de vie sur son territoire de ces populations"
+  },
+  {
+   "resume": "Création d'une journée nationale d'hommage fixée au 8 juin et institution de lieux de mémoire, notamment à Noyant-d'Allier et Sainte-Livrade-sur-Lot.",
+   "articleRef": "art. 2",
+   "citation": "Est instituée une journée nationale d'hommage aux morts pour la France en Indochine... Cette journée est fixée au 8 juin."
+  },
+  {
+   "resume": "Réparation financière sous forme d'une somme forfaitaire tenant compte de la durée du séjour, couvrant les préjudices de toute nature, pour les personnes ayant séjourné entre le 22 juillet 1954 et le 31 décembre 1975 dans les structures listées par décret.",
+   "articleRef": "art. 3",
+   "citation": "La réparation prend la forme d'une somme forfaitaire tenant compte de la durée du séjour dans ces structures, versée dans des conditions et selon un barème déterminés par décret."
+  },
+  {
+   "resume": "Compétence donnée à l'ONACVG pour instruire et statuer sur les demandes de réparation.",
+   "articleRef": "art. 4",
+   "citation": "« 3° ter D'instruire et de statuer sur les demandes de réparation déposées au titre de l'article 3... »"
+  },
+  {
+   "resume": "Exonération d'impôt sur le revenu de la somme forfaitaire versée au titre de la réparation.",
+   "articleRef": "art. 5",
+   "citation": "« d bis. La somme forfaitaire valant réparation prévue à l'article 3... »"
+  },
+  {
+   "resume": "Exonération de la contribution sociale généralisée (CSG) et prélèvements sociaux sur la somme forfaitaire.",
+   "articleRef": "art. 6",
+   "citation": "« 7° La somme forfaitaire valant réparation prévue à l'article 3... »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés vont directement dans le sens de l'objectif affiché : l'article 1er pose la reconnaissance symbolique de la responsabilité de la Nation, l'article 2 institue une journée d'hommage et des lieux de mémoire, et l'article 3 crée un dispositif concret de réparation financière forfaitaire pour les victimes. Les articles 5 et 6 renforcent l'effectivité de la réparation en exonérant la somme de l'impôt sur le revenu et des prélèvements sociaux, ce qui maximise le montant net perçu par les bénéficiaires. L'article 4 confie l'instruction à l'ONACVG, acteur légitime pour les victimes de guerre. L'article 7, en finançant la mesure par une taxe sur les tabacs, ne crée pas d'incitation contradictoire avec l'objectif de reconnaissance et de réparation.",
+ "pointsDeVigilance": [
+  "Le barème, la liste des structures éligibles et les modalités concrètes de la réparation sont renvoyés à un décret, ce qui laisse une marge d'appréciation importante sur l'effectivité réelle du dispositif.",
+  "Le périmètre temporel (22 juillet 1954 – 31 décembre 1975) et la définition des structures éligibles conditionnent fortement le nombre de bénéficiaires effectifs.",
+  "Le financement par une taxe additionnelle sur les tabacs crée un lien de financement inhabituel entre la réparation d'un préjudice historique et la consommation de tabac, sans lien direct avec les bénéficiaires.",
+  "Les I et II de l'article 4 ont été supprimés, ce qui peut limiter la portée initiale du texte en matière d'organisation de la réparation."
+ ],
+ "themes": [
+  "reconnaissance",
+  "rapatriés d'indochine",
+  "réparation",
+  "mémoire",
+  "victimes de guerre"
+ ],
+ "scrutinsCles": [
+  "2218",
+  "2219",
+  "2220"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:34cfad88f0ec7cede7ab2b8820548c201f0c4965e61e339cdc289892a42df324"
+}

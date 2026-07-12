@@ -1,0 +1,75 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51132",
+ "generatedAt": "2026-07-12T17:05:09Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Permettre aux salariés de participer aux collectes de sang, de plaquettes ou de plasma sur leur temps de travail",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/participation_salaries_collectes_sang_plaquettes_plasma_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0132_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Permettre aux salariés (et agents publics) de participer aux collectes de sang, de plaquettes ou de plasma sur leur temps de travail, en instaurant une autorisation d'absence rémunérée afin de faciliter et de sensibiliser au don.",
+ "mecanismesCles": [
+  {
+   "resume": "Création d'une autorisation d'absence pour participer à une collecte de sang, plaquettes ou plasma, limitée à huit absences par an, dans le site de collecte le plus proche du travail ou du domicile.",
+   "articleRef": "art. 1er (nouvel art. L. 1211-4-1 I du CSP)",
+   "citation": "Les salariés et les agents publics bénéficient d'une autorisation d'absence pour participer à une collecte de sang, de plaquettes ou de plasma dans le site de collecte le plus proche de leur lieu de travail ou de leur domicile, dans la limite de huit absences par an."
+  },
+  {
+   "resume": "Information de l'employeur au moins trois jours ouvrés avant, avec possibilité pour l'employeur de s'opposer pour des motifs d'organisation ou de continuité du service/activité économique.",
+   "articleRef": "art. 1er (nouvel art. L. 1211-4-1 I du CSP)",
+   "citation": "L'employeur peut s'y opposer pour des motifs tenant à l'organisation et à la continuité du service ou de l'activité économique, qui sont notifiés au salarié ou à l'agent public."
+  },
+  {
+   "resume": "Justification limitée à la carte de donneur ou à une attestation de l'EFS ; interdiction pour l'employeur d'exiger un autre justificatif.",
+   "articleRef": "art. 1er (nouvel art. L. 1211-4-1 I du CSP)",
+   "citation": "L'employeur ne peut exiger la présentation d'un autre justificatif que la carte de donneur ou une attestation établie par l'Établissement français du sang."
+  },
+  {
+   "resume": "Maintien de la rémunération pendant l'absence, sans constituer un paiement au sens de l'article L. 1211-4, à condition que la durée n'excède pas le temps nécessaire au déplacement, aux prélèvements et opérations associées.",
+   "articleRef": "art. 1er (nouvel art. L. 1211-4-1 II du CSP)",
+   "citation": "La rémunération versée par l'employeur au donneur au titre de l'exercice de son activité professionnelle est maintenue pendant l'absence du salarié ou de l'agent public, sans constituer un paiement au sens de l'article L. 1211-4"
+  },
+  {
+   "resume": "Obligation pour les employeurs d'informer les salariés et agents publics des autorisations d'absence dont ils peuvent bénéficier pour participer à des collectes.",
+   "articleRef": "art. 1er bis (modifiant L. 1222-1, 2° du CSP)",
+   "citation": "notamment en informant les salariés et les agents publics des autorisations d'absence dont ils peuvent bénéficier pour participer à des collectes"
+  },
+  {
+   "resume": "Demande de rapport au Parlement, dans un délai de deux ans après la promulgation, sur l'effet des autorisations d'absence sur la sensibilisation au don et la fréquentation des lieux de collecte.",
+   "articleRef": "art. 2",
+   "citation": "le Gouvernement remet au Parlement un rapport sur l'effet des autorisations d'absence accordées en application de l'article L. 1211-4-1 du code de la santé publique sur la sensibilisation des citoyens au don du sang et sur la fréquentation des lieux de collecte de sang."
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés vont directement dans le sens de l'objectif affiché : l'article 1er instaure un droit à autorisation d'absence (jusqu'à huit par an) et le maintien de la rémunération (art. L. 1211-4-1 II), ce qui lève la principale barrière économique au don sur le temps de travail. L'article 1er bis impose aux employeurs d'informer les salariés de ce droit, renforçant l'effectivité du dispositif. La limitation du justificatif à la carte de donneur ou à l'attestation de l'EFS (art. 1er) réduit les frictions administratives. La demande de rapport (art. 2) permettra d'évaluer l'impact sur la fréquentation des collectes. Seul tempérament : la possibilité d'opposition de l'employeur pour des motifs d'organisation (art. 1er) peut limiter l'exercice du droit, mais reste proportionnée et n'inverse pas la logique incitative.",
+ "pointsDeVigilance": [
+  "Le pouvoir d'opposition de l'employeur « pour des motifs tenant à l'organisation et à la continuité du service ou de l'activité économique » n'est pas encadré par des critères précis et pourrait, en pratique, restreindre fortement l'exercice du droit.",
+  "Le texte ne prévoit ni sanction en cas de refus abusif de l'employeur, ni mécanisme de recours pour le salarié.",
+  "Le plafond de huit absences par an et la condition de durée (temps de déplacement + prélèvement) pourraient, dans certains cas, s'avérer insuffisants ou inadaptés selon les configurations de trajet.",
+  "L'obligation d'information des salariés (art. 1er bis) repose sur l'employeur sans sanction associée en cas de non-respect.",
+  "Le rapport prévu à l'article 2 est non contraignant et n'inclut pas explicitement d'indicateurs chiffrés ni de seuil d'évaluation."
+ ],
+ "themes": [
+  "santé publique",
+  "don du sang",
+  "droit du travail",
+  "autorisation d'absence",
+  "agents publics"
+ ],
+ "scrutinsCles": [
+  "2253",
+  "2254",
+  "2255",
+  "2256"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:fa2f8889c4311849eb18cc3802d294922d4fab1c7d260305dffc50ab5e01c1b7"
+}

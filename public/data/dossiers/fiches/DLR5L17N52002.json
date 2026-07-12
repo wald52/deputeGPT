@@ -1,0 +1,71 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N52002",
+ "generatedAt": "2026-07-12T17:00:06Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi portant création de l’établissement public du commerce et de l’industrie de la collectivité de Corse",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N52002",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0157_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte vise à créer un établissement public du commerce et de l'industrie de Corse (EPIC de Corse), se substituant à la chambre de commerce et d'industrie de Corse, pour exercer les missions consulaires économiques (représentation, appui aux entreprises, formation, délivrance de cartes professionnelles) sous la tutelle de la collectivité de Corse.",
+ "mecanismesCles": [
+  {
+   "resume": "Création d'un établissement public de la collectivité de Corse, par dérogation à l'article L. 710-1 du code de commerce, exerçant les missions traditionnellement dévolues aux CCI (intérêt général, appui aux entreprises, international, formation, sûreté portuaire/aéroportuaire, expertise, délivrance de cartes professionnelles).",
+   "articleRef": "art. 1er (art. L. 4424-42 du CGCT)",
+   "citation": "« Par dérogation à l'article L. 710-1 du code de commerce, l'établissement public du commerce et de l'industrie de Corse est un établissement public de la collectivité de Corse. »"
+  },
+  {
+   "resume": "Présidence du conseil d'administration assurée par le président du conseil exécutif de Corse (ou un conseiller exécutif désigné), avec une majorité de membres issus de l'Assemblée de Corse et du conseil exécutif.",
+   "articleRef": "art. 1er (art. L. 4424-42 III)",
+   "citation": "« Le conseil d'administration de l'établissement public est présidé par le président du conseil exécutif de la collectivité de Corse ou par un conseiller exécutif désigné par celui-ci. »"
+  },
+  {
+   "resume": "Ressources de l'EPIC : impositions affectées par la loi, revenus d'activités, dividendes de participations, subventions/dons/legs. Obligation de comptabilité analytique pour justifier l'usage des ressources publiques au regard du droit de la concurrence.",
+   "articleRef": "art. 1er (art. L. 4424-43)",
+   "citation": "« L'établissement public tient une comptabilité analytique mise à la disposition de la collectivité de Corse afin de justifier que les ressources publiques ont été employées dans le respect des règles de concurrence nationales et européennes. »"
+  },
+  {
+   "resume": "Recrutement du personnel selon le code du travail (droit privé), avec un comité social et économique unique pour l'ensemble du personnel (privé et public).",
+   "articleRef": "art. 1er (art. L. 4424-44)",
+   "citation": "« L'établissement public du commerce et de l'industrie de Corse recrute son personnel dans les conditions prévues par le code du travail. »"
+  },
+  {
+   "resume": "Transfert à titre gratuit, sans impôts ni taxes, des biens, droits et obligations de la CCI de Corse vers le nouvel EPIC au 1er janvier 2026.",
+   "articleRef": "art. 4 I",
+   "citation": "« Les biens, les droits et les obligations de la chambre de commerce et d'industrie de Corse sont transférés à l'établissement public. Ce transfert est réalisé à titre gratuit et ne donne lieu au paiement d'aucun impôt, droit ou taxe »"
+  },
+  {
+   "resume": "Transfert du personnel de la CCI vers l'EPIC ; maintien des contrats pour les salariés de droit privé ; option pour les agents publics entre maintien du statut ou bascule vers un contrat de droit privé reprenant les éléments essentiels du statut.",
+   "articleRef": "art. 4 III",
+   "citation": "« Les agents de droit public [...] peuvent opter soit pour le maintien de leurs conditions de statut et d'emploi antérieurs, soit pour un contrat régi par le code du travail. »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés convergent avec l'objectif affiché de doter la Corse d'un établissement public unique exerçant les missions consulaires économiques. L'article 1er (art. L. 4424-42) définit précisément les missions (appui aux entreprises, international, formation, sûreté portuaire/aéroportuaire, expertise), en cohérence avec le titre du texte. L'article 4 organise la substitution à la CCI de Corse par transfert gratuit des biens, droits et personnel, ce qui réalise effectivement la création annoncée. La présidence par le président du conseil exécutif et la majorité de membres politiques au conseil d'administration traduisent la volonté d'ancrer l'établissement dans la collectivité de Corse, conformément à l'objectif. Les dispositions transitoires (maintien des instances, prolongation des accords jusqu'en 2029) sécurisent la continuité de service.",
+ "pointsDeVigilance": [
+  "La présidence de l'EPIC par le président du conseil exécutif et la majorité de représentants politiques au conseil d'administration marquent une rupture avec le modèle consulaire classique (gouvernance par les élus professionnels), ce qui pourrait soulever des questions d'indépendance et de conformité au droit de la concurrence (l'art. L. 4424-43 impose d'ailleurs une comptabilité analytique à cet égard).",
+  "Le personnel est recruté sous droit privé (art. L. 4424-44), ce qui constitue un changement de statut pour les agents publics de la CCI, avec option mais sans garantie de maintien du statut.",
+  "La dérogation à l'article L. 710-1 du code de commerce crée un statut sui generis dont l'articulation avec le réseau national des CCI n'est pas détaillée dans le texte.",
+  "Les modalités d'application sont renvoyées à un décret en Conseil d'État (art. L. 4424-45 et art. 4 VI), laissant une part significative d'incertitude sur le fonctionnement concret."
+ ],
+ "themes": [
+  "collectivités territoriales",
+  "corse",
+  "chambres consulaires",
+  "commerce et industrie",
+  "établissement public"
+ ],
+ "scrutinsCles": [
+  "2900"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:584ebd7d198b186431a45c4f284a75b3ec7981717bf5fb9897b67ff65447758b"
+}

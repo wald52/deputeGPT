@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N51173",
- "generatedAt": "2026-07-05T06:36:14Z",
+ "generatedAt": "2026-07-12T16:52:50Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,21 +15,43 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0192_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de loi organique visant à modifier le II de l'article 43 de la loi organique n° 2004-192 du 27 février 2004 portant statut d'autonomie de la Polynésie française. Aucun exposé des motifs ni contenu substantiel n'est lisible dans le document fourni (PDF illisible/corrompu).",
- "mecanismesCles": [],
+ "objectifAffiche": "Modifier le II de l'article 43 de la loi organique n° 2004-192 du 27 février 2004 portant statut d'autonomie de la Polynésie française. Le texte ne contient pas d'exposé des motifs, mais l'article unique vise à aménager les conditions d'intervention des communes et EPCI en Polynésie française dans certaines matières relevant de la compétence de la collectivité.",
+ "mecanismesCles": [
+  {
+   "resume": "Suppression de la référence aux 'lois du pays' comme cadre des interventions communales/EPCI dans les matières des 1° à 8° du II de l'article 43.",
+   "articleRef": "Article unique, 1°",
+   "citation": "« Dans les conditions définies par les actes prévus à l'article 140 dénommés \"lois du pays\" et la réglementation édictée par la Polynésie française, » sont supprimés"
+  },
+  {
+   "resume": "Le conseil municipal ou l'organe délibérant de l'EPCI détermine par délibération les actions qu'il entend mener dans les matières des 1° à 8°, dans le respect de la réglementation polynésienne, après un délai minimum de six mois.",
+   "articleRef": "Article unique, 2° (premier alinéa de remplacement)",
+   "citation": "« Le conseil municipal ou l'organe délibérant de l'établissement public de coopération intercommunale compétent détermine par délibération les actions qu'il entend mener dans les matières énumérées aux 1° à 8° du présent II, dans le respect de la réglementation édictée par la Polynésie française et au terme d'un délai qui ne peut être inférieur à six mois »"
+  },
+  {
+   "resume": "Transmission obligatoire de la délibération au président de la Polynésie française, au président de l'assemblée de la Polynésie française et au haut-commissaire de la République.",
+   "articleRef": "Article unique, 2° (premier alinéa de remplacement)",
+   "citation": "« Cette délibération est transmise au président de la Polynésie française, au président de l'assemblée de la Polynésie française et au haut-commissaire de la République. »"
+  },
+  {
+   "resume": "Au terme du délai fixé, la commune ou l'EPCI peut engager les actions prévues ; les modalités d'intervention respective et les moyens sont précisés par convention.",
+   "articleRef": "Article unique, 2° (second alinéa de remplacement)",
+   "citation": "« Au terme du délai mentionné dans cette délibération, la commune ou l'établissement public de coopération intercommunale peut engager les actions qu'elle prévoit. Les modalités d'interventions respectives de la commune ou de l'établissement public de coopération intercommunale et de la collectivité de Polynésie française ainsi que les moyens mis à leur disposition sont, le cas échéant, précisés par convention. »"
+  }
+ ],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un flux binaire PDF corrompu (caractères binaires, flux de stream non décodables) ne contenant aucun article, alinéa ou exposé des motifs exploitable. Sans contenu textuel lisible, il est impossible d'identifier les mécanismes concrets créés par le texte ni de les confronter à un objectif affiché vérifiable.",
+ "justificationVerdict": "Le texte fourni ne comporte pas d'exposé des motifs permettant d'identifier un objectif affiché explicite au-delà de la simple modification statutaire. Les mécanismes créés (suppression de la référence aux 'lois du pays', instauration d'une délibération communale/EPCI avec délai minimum de six mois, transmission aux autorités polynésiennes et à l'État, possibilité de convention) constituent un aménagement procédural de la répartition des compétences entre communes/EPCI et Polynésie française. Sans exposé des motifs, il est impossible de déterminer si ces incitations vont dans le sens d'un renforcement de l'autonomie communale, d'une recentralisation au profit de la Polynésie française, ou d'un équilibre entre les deux.",
  "pointsDeVigilance": [
-  "Document source illisible (PDF binaire non décodé)",
-  "Aucun article ni exposé des motifs n'a pu être extrait",
-  "Le titre seul ne permet pas de déterminer le contenu normatif ni l'objectif réel",
-  "Analyse de second ordre impossible sans texte substantiel"
+  "Absence totale d'exposé des motifs dans le texte fourni, rendant l'analyse de l'intention législative impossible.",
+  "Le texte est très court (article unique) et ne contient ni sanctions, ni taxes, ni subventions.",
+  "La suppression de la référence aux 'lois du pays' pourrait modifier substantiellement la hiérarchie des normes applicables aux interventions communales en Polynésie française.",
+  "Le délai minimum de six mois avant engagement des actions constitue une contrainte procédurale nouvelle dont l'effet (facilitateur ou bloquant) dépend du contexte non fourni."
  ],
  "themes": [
-  "polynésie française",
-  "statut d'autonomie",
-  "loi organique",
-  "outre-mer"
+  "statut de la polynésie française",
+  "collectivités d'outre-mer",
+  "répartition des compétences",
+  "communes",
+  "établissements publics de coopération intercommunale"
  ],
  "scrutinsCles": [
   "4703",
@@ -38,5 +60,5 @@
   "4706"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:5152206a4bcd803de8fc196774e6f9eb47d99f1872ba9d5888bfea512a1d279f"
+ "sourceTextHash": "sha256:5da49db87aa385d4dc94318ef040682749fe54cdc70f50f666f307711b4d8749"
 }

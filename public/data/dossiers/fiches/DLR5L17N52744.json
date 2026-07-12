@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52744",
- "generatedAt": "2026-07-04T06:23:04Z",
+ "generatedAt": "2026-07-12T16:47:31Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,22 +15,54 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0224_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Proposition de loi ordinaire visant à garantir la gratuité des parkings des hôpitaux publics pour les patients, les visiteurs et les personnels hospitaliers sur leur temps de travail.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel a été corrompu ou n'a pas été extrait (seuls des fragments binaires et des balises d'objets PDF apparaissent). Aucun article, aucune disposition concrète et aucune citation exploitable ne peuvent être identifiés dans le contenu transmis. Il est donc impossible de déterminer les mécanismes créés par le texte ni de vérifier s'ils s'alignent avec l'objectif affiché.",
+ "objectifAffiche": "Garantir la gratuité des parkings des hôpitaux publics pour les patients, leurs visiteurs et les personnels hospitaliers sur leur temps de travail, en instaurant un principe de gratuité encadré par des tarifs plafonds et en organisant la mise en conformité des établissements, y compris ceux ayant délégué la gestion de leurs parcs.",
+ "mecanismesCles": [
+  {
+   "resume": "Gratuité du stationnement pour le personnel hospitalier sur ses emplacements réservés, pendant son temps de service, quel que soit son statut.",
+   "articleRef": "art. 1er (art. L. 1112-3-1, dernier alinéa)",
+   "citation": "« L'accès au stationnement de l'établissement public de santé est gratuit pour l'ensemble du personnel hospitalier, le temps de son service, sur les emplacements qui lui sont réservés, quels que soient son statut et sa fonction. »"
+  },
+  {
+   "resume": "Gratuité totale pour les patients pendant toute la durée de leur prise en charge médicale.",
+   "articleRef": "art. 1er (art. L. 1112-3-1, 2e alinéa)",
+   "citation": "« Les patients bénéficient de la gratuité du stationnement pendant toute la durée de leur prise en charge médicale au sein de l'établissement. »"
+  },
+  {
+   "resume": "Gratuité pour les proches aidants, représentants légaux et personnes se substituant au transport sanitaire pendant la prise en charge du patient.",
+   "articleRef": "art. 1er (art. L. 1112-3-1, 3e alinéa)",
+   "citation": "« Les proches aidants mentionnés à l'article L. 113-1-3 du code de l'action sociale et des familles [...] bénéficient de la gratuité du stationnement pendant toute la durée de la prise en charge médicale du patient. »"
+  },
+  {
+   "resume": "Pour les visiteurs : au moins 2 heures gratuites par jour, puis tarif plafonné à 15 €/jour et 100 €/mois pour un abonnement.",
+   "articleRef": "art. 1er (art. L. 1112-3-1, 4e alinéa)",
+   "citation": "« Les visiteurs des patients hospitalisés bénéficient d'au moins deux heures de stationnement gratuit par jour. Au delà de cette durée, le prix de la journée ne peut excéder quinze euros par jour et le prix d'un abonnement mensuel ne peut excéder cent euros par mois. »"
+  },
+  {
+   "resume": "Période transitoire de 2 ans pendant laquelle les établissements peuvent déroger à la loi, sous peine de réduction graduelle et proportionnée de leur financement.",
+   "articleRef": "art. 2, I",
+   "citation": "« Les établissements publics de santé peuvent déroger à l'article L. 1112-3-1 du code de la santé publique pendant une durée maximale de deux ans à compter de la promulgation de la présente loi. Au terme de cette durée, leur financement est réduit, de manière graduée et proportionnée [...] »"
+  },
+  {
+   "resume": "Financement compensatoire pour les établissements subissant une charge ou perte de recettes liée à la mise en conformité, selon modalités fixées par décret.",
+   "articleRef": "art. 2, II",
+   "citation": "« Les établissements publics de santé pour lesquels la mise en conformité à l'article L. 1112-3-1 [...] entraîne une charge ou une perte de recettes perçoivent un financement compensatoire, selon des modalités définies annuellement par décret. »"
+  }
+ ],
+ "verdictIncitations": "incitations_mitigees",
+ "justificationVerdict": "L'article 1er crée bien la gratuité pour les patients, les proches aidants et le personnel, et plafonne les tarifs visiteurs, ce qui va dans le sens de l'objectif affiché. Toutefois, plusieurs mécanismes en atténuent fortement la portée : l'article 2, I autorise une dérogation pouvant aller jusqu'à deux ans après la promulgation, et l'article 2, III impose la renégociation des DSP existantes « sans indemnité », ce qui peut décourager la mise en conformité rapide ou fragiliser l'équilibre économique des délégataires. Surtout, l'article 3, II demande explicitement au Gouvernement d'évaluer « le coût et l'opportunité de la gratuité totale de ces parcs » et « le coût de la résiliation de l'ensemble des contrats de concession en cours », ce qui ouvre la possibilité d'un revirement. Enfin, le financement compensatoire (art. 2, II) est renvoyé à un décret, sans garantie de niveau, et la compensation par l'accise sur les tabacs (art. 4) crée un effet de santé publique contradictoire avec l'esprit du texte. Les incitations sont donc partiellement alignées mais significativement mitigées.",
  "pointsDeVigilance": [
-  "Le contenu du texte officiel est inexploitable (PDF binaire non décodé)",
-  "Aucun article ni mécanisme n'a pu être extrait pour analyse",
-  "L'exposé des motifs n'est pas accessible dans le document fourni",
-  "Impossibilité de vérifier la conformité entre l'objectif affiché et les dispositions réelles"
+  "Dérogation possible pendant 2 ans (art. 2, I) : la gratuité n'est pas immédiatement effective.",
+  "Renégociation des DSP sans indemnité (art. 2, III) : risque de contentieux et de transfert de coût sur les établissements.",
+  "Financement compensatoire renvoyé à un décret annuel (art. 2, II) : niveau non garanti.",
+  "Rapport gouvernemental (art. 3, II) susceptible de remettre en cause la gratuité totale ou de proposer l'internalisation.",
+  "Compensation financière par majoration de l'accise sur le tabac (art. 4) : incohérence avec les objectifs de santé publique."
  ],
  "themes": [
   "santé",
-  "hôpitaux publics",
   "stationnement",
+  "hôpitaux publics",
   "gratuité",
-  "personnel hospitalier"
+  "délégation de service public"
  ],
  "scrutinsCles": [
   "5251",
@@ -39,5 +71,5 @@
   "5254"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:0f7801c02ec220539359d261f0cde9b166211215a2915faf0b374b89f5f895cf"
+ "sourceTextHash": "sha256:e4a474e769a434529aba844b62b8facd38ef76ae99ecd14bd0ee5c97d63cb4ba"
 }

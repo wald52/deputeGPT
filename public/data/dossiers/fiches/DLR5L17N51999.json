@@ -1,0 +1,44 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51999",
+ "generatedAt": "2026-07-12T17:04:42Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Abroger la loi n° 2023-270 du 14 avril 2023 de financement rectificative de la sécurité sociale pour 2023 dite réforme des retraites",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/abroger_reforme_retraites17",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0133_texte-adopte-seance",
+  "legifrance": null
+ },
+ "objectifAffiche": "La résolution, adoptée par l'Assemblée nationale le 5 juin 2025, vise à abroger la loi n° 2023-270 du 14 avril 2023 de financement rectificative de la sécurité sociale pour 2023, dite « réforme des retraites ».",
+ "mecanismesCles": [
+  {
+   "resume": "Abrogation pure et simple de la loi n° 2023-270 du 14 avril 2023 de financement rectificative de la sécurité sociale pour 2023 (réforme des retraites).",
+   "articleRef": null,
+   "citation": "Résolution, adoptée par l'Assemblée nationale, visant à abroger la loi n° 2023-270 du 14 avril 2023 de financement rectificative de la sécurité sociale pour 2023 dite \"réforme des retraites\""
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est une résolution dont le contenu normatif se limite à l'annonce de son objet (abroger la loi retraite de 2023). Aucun article opérationnel, mécanisme financier, seuil, dérogation ou sanction n'est exposé dans le tronçon fourni. Sans accès aux considérants, visas ou articles substantiels de la résolution, il est impossible de déterminer si les incitations réelles vont dans le sens de l'objectif affiché (retour à l'état antérieur à la réforme) ou si des effets indirects (par exemple sur l'équilibre financier de la sécurité sociale) produiraient des incitations opposées.",
+ "pointsDeVigilance": [
+  "Le texte officiel fourni est tronqué et ne contient ni exposé des motifs ni articles : l'analyse des mécanismes concrets est impossible.",
+  "Une abrogation totale d'une loi de financement rectificative de la sécurité sociale peut avoir des incidences budgétaires et sur les droits à retraite non détaillées ici.",
+  "La procédure est une résolution au titre de l'article 34-1 de la Constitution, qui n'a pas de valeur législative contraignante : son effectivité réelle dépendra de suites parlementaires."
+ ],
+ "themes": [
+  "retraites",
+  "sécurité sociale",
+  "abrogation",
+  "résolution parlementaire"
+ ],
+ "scrutinsCles": [
+  "2257"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:b152f18aaadfb619a50e21b7950c3321df97702fcbea02b5224135b0bde63b71"
+}

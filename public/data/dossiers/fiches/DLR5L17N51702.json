@@ -1,0 +1,39 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51702",
+ "generatedAt": "2026-07-12T17:07:13Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi relative à la raison impérative d'intérêt public majeur de la liaison autoroutière entre Castres et Toulouse",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N51702",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b1646_texte-adopte-commission",
+  "legifrance": null
+ },
+ "objectifAffiche": "La proposition de loi vise à reconnaître une raison impérative d'intérêt public majeur (RIIPM) à la liaison autoroutière entre Castres et Toulouse, afin de permettre la réalisation de ce projet d'infrastructure routière.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles : seule la page de garde du dossier législatif (titre, identifiant, procédure, statut, commission saisie) est accessible. Aucun mécanisme concret (obligation, dérogation, seuil, sanction) ne peut être extrait du contenu transmis. Le verdict est donc indéterminé par insuffisance de texte.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué à 15000 caractères mais, en pratique, seul l'en-tête du document (sommaire, liens de navigation, métadonnées) a été transmis ; aucun article ni exposé des motifs n'est présent.",
+  "Une RIIPM est une qualification juridique qui, en droit français et européen, conditionne notamment la possibilité de déroger à l'interdiction de destruction d'espèces protégées ou d'habitats ; reconnaître une telle raison à un projet autoroutier peut avoir des incidences environnementales significatives qui mériteraient un examen détaillé des articles.",
+  "Le statut 'en cours' et la mention d'une commission mixte paritaire indiquent que le texte a fait l'objet de navettes parlementaires, mais le contenu des dispositions adoptées n'est pas disponible ici."
+ ],
+ "themes": [
+  "infrastructures routières",
+  "autoroute",
+  "aménagement du territoire",
+  "raison impérative d'intérêt public majeur",
+  "environnement"
+ ],
+ "scrutinsCles": [
+  "2208"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:e6d6193adc01dbfc83bf5366d85b2ed465005b645abf01f6bc0a1006f598bfb1"
+}

@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52801",
- "generatedAt": "2026-07-05T06:50:27Z",
+ "generatedAt": "2026-07-12T16:55:26Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,19 +15,26 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b1839_proposition-loi",
   "legifrance": null
  },
- "objectifAffiche": "Proposition de loi ordinaire visant à rétablir le délit de séjour irrégulier en droit français. Le texte est déposé le 16 septembre 2025 et renvoyé en commission des lois, mais l'exposé des motifs et les articles ne sont pas fournis dans le dossier.",
- "mecanismesCles": [],
+ "objectifAffiche": "Proposition de loi ordinaire visant au rétablissement du délit de séjour irrégulier, déposée le 16 septembre 2025. L'objectif affiché est de réintroduire dans le droit français une incrimination pénale spécifique à l'encontre des personnes en situation de séjour irrégulier sur le territoire national.",
+ "mecanismesCles": [
+  {
+   "resume": "Aucun article ni dispositif concret n'est reproduit dans le texte fourni : seul le titre, l'identifiant, la procédure et la date de dépôt sont disponibles.",
+   "articleRef": null,
+   "citation": null
+  }
+ ],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel fourni ne contient ni exposé des motifs, ni articles de loi : seuls le titre, le numéro, la date de dépôt et la commission de renvoi sont communiqués. Sans lecture des mécanismes concrets (obligation, sanction, seuil, dérogation), il est impossible de déterminer si les incitations créées vont dans le sens de l'objectif affiché ou s'y opposent. Le verdict est donc indéterminé par insuffisance de texte.",
+ "justificationVerdict": "Le texte fourni est strictement limité à l'en-tête de la proposition de loi (titre, n°, législature, date de dépôt, commission saisie, liens vers les formats PDF/HTML/XML). Aucun exposé des motifs ni aucun article n'est reproduit, ce qui empêche d'identifier les mécanismes concrets (sanctions, exceptions, seuils, dérogations) créés par le texte et donc de déterminer si les incitations réellement produites s'alignent, se mitigent ou s'opposent à l'objectif affiché de rétablissement du délit de séjour irrégulier.",
  "pointsDeVigilance": [
-  "Aucun article ni exposé des motifs n'est présent dans le document fourni",
-  "Le contenu substantiel de la proposition de loi (n° 1839) n'est pas accessible dans ce dossier tronqué",
-  "Le rétablissement d'un délit de séjour irrégulier soulève en général des questions de conformité avec le droit européen et les engagements internationaux de la France, mais cela ne peut être évalué sans le texte"
+  "Le contenu substantiel de la proposition de loi (exposé des motifs et articles) n'est pas présent dans le document transmis.",
+  "Sans lecture des articles, il est impossible de vérifier la portée exacte du délit rétabli (personnes visées, sanctions encourues, exceptions, articulation avec le droit au séjour, l'asile ou le droit pénal général).",
+  "Le rétablissement d'un délit de séjour irrégulier soulève en principe des questions de conformité avec le droit européen et international (directive retour, CESEDA, principes de proportionnalité) qui ne peuvent être évaluées ici faute de texte."
  ],
  "themes": [
   "immigration",
   "droit pénal",
-  "séjour irrégulier"
+  "séjour irrégulier",
+  "proposition de loi"
  ],
  "scrutinsCles": [
   "3261"

@@ -1,0 +1,38 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51982",
+ "generatedAt": "2026-07-12T17:03:25Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Plusieurs mesures de justice pour limiter les frais bancaires",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/plusieurs_mesures_justice_limiter_frais_bancaires_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b1476_texte-adopte-commission",
+  "legifrance": null
+ },
+ "objectifAffiche": "Proposition de loi ordinaire déposée par M. Yannick Monnet et plusieurs collègues, visant à instaurer plusieurs mesures de justice pour limiter les frais bancaires.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles. Seuls figurent la page de garde et les métadonnées du dossier législatif (titre, identifiant, procédure, statut, commission saisie). Sans le contenu normatif de la proposition, il est impossible d'identifier les mécanismes concrets (obligations, plafonds, dérogations, sanctions) et donc de déterminer si les incitations créées vont dans le sens de l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué et ne contient que les informations de présentation (sommaire, commission, formats disponibles).",
+  "Aucun article ni exposé des motifs n'est accessible dans l'extrait fourni.",
+  "Le statut 'en_cours' indique que le texte peut encore évoluer (amendements non visibles ici)."
+ ],
+ "themes": [
+  "frais bancaires",
+  "justice sociale",
+  "banque",
+  "protection des consommateurs"
+ ],
+ "scrutinsCles": [
+  "2275"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:c9a9b8acce8a56c8a52632fc3afdf445a1efcb4189b2ef09944d4427b0d3ba01"
+}

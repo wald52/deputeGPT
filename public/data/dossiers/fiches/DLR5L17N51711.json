@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N51711",
- "generatedAt": "2026-07-03T06:35:44Z",
+ "generatedAt": "2026-07-12T16:44:44Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,21 +15,54 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0268_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Renforcer la pénalisation de l'organisation de rave-parties (proposition de loi ordinaire visant à aggraver les sanctions contre les organisateurs de ces rassemblements festifs non déclarés).",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel n'a pas été extrait (seuls des objets PDF bruts et des flux binaires compressés/non décodables sont visibles). Aucun article, aucune disposition, aucun mécanisme concret ne peut être identifié dans le contenu exploitable. En l'absence de texte lisible, il est impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "Renforcer la pénalisation de l'organisation de rave-parties non déclarées ou interdites, en créant de nouvelles incriminations dans le code de la sécurité intérieure.",
+ "mecanismesCles": [
+  {
+   "resume": "Création d'un délit punissant de 6 mois d'emprisonnement et 30 000 € d'amende toute personne contribuant directement ou indirectement à la préparation, mise en place ou bon déroulement d'un rassemblement festif non déclaré ou interdit.",
+   "articleRef": "art. 1 (L. 211-15-1 I)",
+   "citation": "Est puni de six mois d'emprisonnement et de 30 000 euros d'amende le fait de contribuer de manière directe ou indirecte à la préparation, à la mise en place ou au bon déroulement d'un rassemblement mentionné à l'article L. 211-5 sans déclaration préalable"
+  },
+  {
+   "resume": "Présomption simple de connaissance du caractère illicite du rassemblement pour toute personne contribuant à son installation et sa mise en place.",
+   "articleRef": "art. 1 (L. 211-15-1 I, al. 3)",
+   "citation": "Toute personne contribuant à l'installation et à la mise en place du rassemblement mentionné au premier alinéa du présent article est présumée avoir connaissance du caractère illicite dudit rassemblement."
+  },
+  {
+   "resume": "Confiscation obligatoire du matériel saisi, sous réserve des droits du propriétaire de bonne foi, avec possibilité de dispense par décision motivée.",
+   "articleRef": "art. 1 (L. 211-15-1 I, al. 2)",
+   "citation": "La juridiction prononce la confiscation du matériel saisi, sous réserve des droits du propriétaire de bonne foi."
+  },
+  {
+   "resume": "Exonération pour les intervenants en réduction des risques (code santé publique) et pour ceux installant un lieu de repos/convivialité ou un camion de restauration.",
+   "articleRef": "art. 1 (L. 211-15-1 I, al. 4)",
+   "citation": "Ne peuvent être regardées comme contribuant [...] les personnes physiques ou morales intervenant exclusivement dans le cadre des actions de réduction des risques [...] ni les personnes contribuant à installer un lieu de repos et de convivialité sur le terrain occupé ou à mettre en place un camion de restauration."
+  },
+  {
+   "resume": "Contravention de 5e classe (1 500 €) pour la simple participation à un rassemblement non déclaré ou interdit.",
+   "articleRef": "art. 1 (L. 211-15-1 II)",
+   "citation": "Est puni de l'amende prévue pour les contraventions de la cinquième classe le fait de participer à un rassemblement mentionné à l'article L. 211-5 organisé sans déclaration préalable"
+  },
+  {
+   "resume": "Responsabilité pénale des personnes morales encourant la confiscation du matériel utilisé ou produit de l'infraction.",
+   "articleRef": "art. 1 (L. 211-15-2)",
+   "citation": "Les personnes morales déclarées responsables pénalement [...] encourent [...] la peine de confiscation de la chose qui a servi ou était destinée à commettre l'infraction"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'article 1er crée un délit d'organisation (6 mois, 30 000 €) et une contravention de participation (5e classe), accompagnés d'une confiscation du matériel et d'une présomption de connaissance du caractère illicite. Ces mécanismes accroissent directement le coût pénal et financier de l'organisation ou de la participation à une rave-party non déclarée, ce qui correspond à l'objectif affiché de 'renforcer la pénalisation'. Les exonérations prévues (réduction des risques, lieu de repos, restauration) limitent les effets collatéraux sur les acteurs humanitaires sans vider le dispositif de sa substance. L'article 2 abaisse ou précise le seuil à 250 participants, cohérent avec la volonté de mieux cibler les rassemblements visés.",
  "pointsDeVigilance": [
-  "Le document fourni est un PDF binaire dont le flux de texte n'a pas été décodé : aucun article ni exposé des motifs n'est lisible.",
-  "Seuls le titre du dossier et l'identifiant législatif (DLR5L17N51711) sont exploitables.",
-  "Une analyse de second ordre sur les mécanismes concrets est impossible sans accès au texte normatif."
+  "La notion de 'contribution directe ou indirecte' est très large et pourrait englober des prestataires techniques (son, électricité, location de matériel) sans lien avec l'intention illicite.",
+  "La présomption de connaissance du caractère illicite inverse la charge de la preuve sur l'organisateur technique, ce qui peut poser une question de proportionnalité au regard de la présomption d'innocence.",
+  "La confiscation est la règle et l'exception, ce qui peut frapper des propriétaires de bonne foi (loueurs de matériel).",
+  "Le seuil de 250 participants fixé à l'article 2 modifie le champ de l'article L. 211-5 : son impact réel dépend du texte antérieur, non reproduit ici.",
+  "L'article 3 a été supprimé, privant le texte d'un mécanisme dont on ne connaît pas la portée."
  ],
  "themes": [
-  "sécurité",
+  "sécurité intérieure",
   "ordre public",
-  "pénal",
-  "festivités",
-  "rave-parties"
+  "rassemblements festifs",
+  "droit pénal",
+  "teknival"
  ],
  "scrutinsCles": [
   "6121",
@@ -38,5 +71,5 @@
   "6124"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:005a31cd4de54945044faec911764739d749fc9199a61a503f3159ef01ae2acb"
+ "sourceTextHash": "sha256:270fd2faca780f4147bb4e57aedcbde550177c68ad50f44b0704c54c20b7459a"
 }

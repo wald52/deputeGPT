@@ -1,0 +1,45 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N52037",
+ "generatedAt": "2026-07-12T17:07:24Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Élever Alfred Dreyfus au grade de général de brigade",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/dreyfus_general_bridage_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0124_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "La proposition de loi vise à élever à titre posthume Alfred Dreyfus au grade de général de brigade, reconnaissant ainsi symboliquement la réhabilitation de cet officier injustement condamné lors de l'affaire Dreyfus.",
+ "mecanismesCles": [
+  {
+   "resume": "Élévation posthume d'Alfred Dreyfus au grade de général de brigade par la Nation française.",
+   "articleRef": "Article unique",
+   "citation": "La Nation française élève, à titre posthume, Alfred Dreyfus au grade de général de brigade."
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte est constitué d'un article unique qui dispose explicitement que « La Nation française élève, à titre posthume, Alfred Dreyfus au grade de général de brigade ». L'objectif affiché du texte (titre et contenu) et le mécanisme créé par l'article unique sont strictement identiques : il s'agit d'une mesure symbolique et honorifique de reconnaissance posthume. Aucun mécanisme contradictoire n'est introduit, le texte ne créant ni obligation, ni taxe, ni subvention, ni dérogation, ni sanction. L'incitation est donc parfaitement alignée avec l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte est un acte essentiellement symbolique et mémoriel, sans portée normative directe sur d'autres dispositifs législatifs.",
+  "Aucune disposition n'est prévue concernant d'éventuels ayants droit, pensions militaires rétroactives ou autres effets pécuniaires.",
+  "Le texte est très court (article unique) et ne contient pas d'exposé des motifs dans le document fourni, ce qui limite l'analyse des motivations."
+ ],
+ "themes": [
+  "reconnaissance",
+  "mémoire",
+  "affaire dreyfus",
+  "armée",
+  "réhabilitation"
+ ],
+ "scrutinsCles": [
+  "2207"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:690f5079a7ad9ca050bf8b9ae4bedf2dc2cd8dfd2785278ce62d32991de7775a"
+}

@@ -1,0 +1,73 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L16N48739",
+ "generatedAt": "2026-07-12T17:06:28Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Création d'un homicide routier et visant à lutter contre la violence routière",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/16/dossiers/homicide_lutte_violence",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0128_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Créer une qualification pénale spécifique d'« homicide routier » et de « blessures routières » dans le code pénal, afin de renforcer la lutte contre la violence routière par une répression accrue des comportements dangereux au volant.",
+ "mecanismesCles": [
+  {
+   "resume": "Création d'un nouveau chapitre « Des homicides et blessures routiers » dans le code pénal, remplaçant les qualifications existantes par des délits spécifiques.",
+   "articleRef": "art. 1er",
+   "citation": "Après le chapitre Ier bis du titre II du livre II, il est inséré un chapitre Ier ter ainsi rédigé : « CHAPITRE IER TER Des homicides et blessures routiers"
+  },
+  {
+   "resume": "L'homicide routier est puni de 7 ans d'emprisonnement et 100 000 € d'amende, porté à 10 ans et 150 000 € en cas de cumul de deux circonstances aggravantes ou plus.",
+   "articleRef": "art. 1er (art. 221-18 nouveau)",
+   "citation": "constitue un homicide routier puni de sept ans d'emprisonnement et de 100 000 euros d'amende [...] Les peines sont portées à dix ans d'emprisonnement et 150 000 euros d'amende lorsque l'homicide routier a été commis avec deux ou plus des circonstances mentionnées aux 1° à 9°"
+  },
+  {
+   "resume": "Définition de 9 circonstances aggravantes : violation délibérée d'obligation de prudence, ivresse, stupéfiants, substances psychoactives, absence/perte de permis, excès de vitesse ≥ 30 km/h, délit de fuite, usage du téléphone au volant, refus d'obtempérer, conduite sans assurance.",
+   "articleRef": "art. 1er (art. 221-18, 1° à 9°)",
+   "citation": "1° Le conducteur a commis une violation manifestement délibérée d'une obligation particulière de prudence [...] 2° Le conducteur se trouvait en état d'ivresse manifeste [...] 5° Le conducteur a commis un dépassement de la vitesse maximale autorisée égal ou supérieur à 30 kilomètres à l'heure"
+  },
+  {
+   "resume": "Création de deux qualifications de blessures routières selon la durée de l'ITT : > 3 mois (5 ans / 75 000 €, porté à 7 ans / 100 000 €) et ≤ 3 mois (3 ans / 45 000 €, porté à 5 ans / 75 000 €), avec les mêmes circonstances aggravantes.",
+   "articleRef": "art. 1er (art. 221-19 et 221-20 nouveaux)",
+   "citation": "constitue des blessures routières ayant entraîné une incapacité totale de travail supérieure à trois mois punies de cinq ans d'emprisonnement et de 75 000 euros d'amende"
+  },
+  {
+   "resume": "Peines complémentaires obligatoires : annulation du permis de 5 à 10 ans (de plein droit pour homicide et blessures > 3 mois), confiscation du véhicule, interdiction de conduire un véhicule non équipé d'un éthylotest anti-démarrage.",
+   "articleRef": "art. 1er (art. 221-21 nouveau)",
+   "citation": "Toute condamnation pour les délits prévus aux articles 221-18 et 221-19 donne lieu de plein droit à l'annulation du permis de conduire, avec l'interdiction de solliciter un nouveau permis pendant une durée comprise entre cinq et dix ans"
+  },
+  {
+   "resume": "Amélioration de l'information de la partie civile en cas d'appel sur l'action publique uniquement, avec droit à traduction et possibilité d'être entendue comme témoin.",
+   "articleRef": "art. 1er bis A",
+   "citation": "En l'absence d'appel sur l'action civile, la partie civile est avisée par le parquet de la déclaration d'appel portant sur l'action publique"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte crée une nouvelle incrimination spécifique d'« homicide routier » punie de 7 ans d'emprisonnement et 100 000 € d'amende (art. 221-18), avec des circonstances aggravantes ciblant précisément les comportements à risque (alcool, stupéfiants, vitesse ≥ 30 km/h, téléphone, fuite, défaut de permis). Les peines sont alourdies en cas de cumul (10 ans / 150 000 €). Des peines complémentaires obligatoires sont prévues, notamment l'annulation automatique du permis de 5 à 10 ans (art. 221-21) et la confiscation du véhicule. L'ensemble de ces mécanismes accroît la sévérité de la réponse pénale contre les comportements dangereux au volant, ce qui est cohérent avec l'objectif affiché de lutte contre la violence routière.",
+ "pointsDeVigilance": [
+  "Le texte ne contient pas d'exposé des motifs dans l'extrait fourni, limitant l'analyse de l'intention initiale.",
+  "L'efficacité dissuasive de l'alourdissement des peines n'est pas démontrée par le texte lui-même (question empirique).",
+  "Le seuil de vitesse retenu (≥ 30 km/h) est plus bas que dans certaines législations comparées, ce qui élargit considérablement le champ de l'incrimination.",
+  "La suppression des anciennes qualifications (art. 221-6-1, 222-19-1, 222-20-1) sans détail de leur contenu dans l'extrait empêche de mesurer l'évolution réelle de la sévérité.",
+  "Le mécanisme d'« interdiction de conduire un véhicule non équipé d'un éthylotest anti-démarrage » (art. 221-21, 5°) suppose un coût pour le condamné et une filière d'installation, dont l'accessibilité pratique n'est pas précisée."
+ ],
+ "themes": [
+  "sécurité routière",
+  "droit pénal",
+  "circulation routière",
+  "responsabilité pénale",
+  "alcool au volant"
+ ],
+ "scrutinsCles": [
+  "2216",
+  "2217"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:b3f6a53a41c08ee92998b179154b38fd1915475e792b08ce8b7987e87778ca4f"
+}

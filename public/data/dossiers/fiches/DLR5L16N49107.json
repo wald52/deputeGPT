@@ -1,0 +1,38 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L16N49107",
+ "generatedAt": "2026-07-12T17:06:47Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Faciliter la transformation des bureaux en logements",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/16/dossiers/transformation_bureaux_logements",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b1443_texte-adopte-commission",
+  "legifrance": null
+ },
+ "objectifAffiche": "Faciliter la transformation des bâtiments à destination autre qu'habitation (notamment les bureaux) en logements, via une proposition de loi ordinaire.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles : seul l'en-tête du dossier législatif est accessible ('Texte de la commission, n° 1443-A0', 'Document non encore publié'). Aucun mécanisme concret (obligation, taxe, dérogation, seuil, sanction) ne peut être identifié, ce qui empêche toute analyse des incitations réellement créées par le texte.",
+ "pointsDeVigilance": [
+  "Le document officiel est marqué 'non encore publié' : le contenu des articles est indisponible.",
+  "Le texte est tronqué à 15000 caractères mais, en pratique, aucun article ni exposé des motifs n'a été transmis.",
+  "L'analyse ne peut donc pas vérifier si les mécanismes facilitent réellement la transformation de bureaux en logements."
+ ],
+ "themes": [
+  "logement",
+  "urbanisme",
+  "transformation de bureaux",
+  "immobilier"
+ ],
+ "scrutinsCles": [
+  "2215"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:e95f9554f4f44c821ec6aa55a068d8c6cbad659d84665d6d38285ffaa36d9812"
+}

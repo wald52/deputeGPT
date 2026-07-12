@@ -1,0 +1,75 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51115",
+ "generatedAt": "2026-07-12T17:04:21Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi expérimentant l’encadrement des loyers et améliorant l’habitat dans les outre-mer",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N51115",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0134_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Expérimenter l'encadrement des loyers dans les outre-mer (collectivités de l'article 73) et améliorer l'habitat dans ces territoires, via un dispositif dérogatoire temporaire et la mise en place de comités référentiels construction.",
+ "mecanismesCles": [
+  {
+   "resume": "Expérimentation pour 5 ans d'un dispositif d'encadrement des loyers dans les collectivités de l'article 73, selon les conditions de l'article 140 de la loi ELAN.",
+   "articleRef": "art. 1er (I-A)",
+   "citation": "À titre expérimental, pour une durée de cinq ans à compter de la promulgation de la présente loi, un dispositif d'encadrement des loyers peut être mis en place"
+  },
+  {
+   "resume": "Dérogation : délai de transmission de la proposition porté à deux ans (au lieu du délai de droit commun).",
+   "articleRef": "art. 1er (I-B)",
+   "citation": "Par dérogation au deuxième alinéa du I du même article 140, dans ces collectivités, la proposition du demandeur est transmise dans un délai de deux ans"
+  },
+  {
+   "resume": "Interdiction du complément de loyer pour les logements non décents.",
+   "articleRef": "art. 1er (I-C)",
+   "citation": "aucun complément de loyer ne peut être appliqué lorsque le logement n'est pas décent"
+  },
+  {
+   "resume": "Rapport d'évaluation du Gouvernement au Parlement six mois avant le terme de l'expérimentation.",
+   "articleRef": "art. 1er (II)",
+   "citation": "Au plus tard six mois avant son terme, le Gouvernement remet au Parlement un rapport d'évaluation"
+  },
+  {
+   "resume": "Création de « comités référentiels construction » dans les collectivités de l'article 73 et à Saint-Martin, compétents pour contribuer à la mise en œuvre de l'exemption au règlement UE 2024/3110 sur les produits de construction.",
+   "articleRef": "art. 2 (3 bis)",
+   "citation": "Le représentant de l'État dans le bassin géographique met en place des « comités référentiels construction »"
+  },
+  {
+   "resume": "Éligibilité des comités aux financements publics et possibilité de coopérer avec instances nationales/internationales et collectivités ultramarines hors article 349 TFUE.",
+   "articleRef": "art. 2 (3 bis)",
+   "citation": "Les comités sont éligibles aux financements publics et peuvent mener des travaux avec les instances nationales ou internationales"
+  }
+ ],
+ "verdictIncitations": "incitations_mitigees",
+ "justificationVerdict": "L'article 1er crée bien un mécanisme d'encadrement des loyers (objectif affiché), mais uniquement à titre expérimental et facultatif (« peut être mis en place »), ce qui limite fortement la portée contraignante. Surtout, l'article 1er (I-B) prévoit une dérogation qui assouplit le dispositif en allongeant le délai de transmission à deux ans, et l'article 1er (I-C) interdit le complément de loyer pour les logements non décents, ce qui peut décourager l'offre locative privée. Par ailleurs, l'amélioration de l'habitat (deuxième volet affiché) ne repose que sur des comités référentiels construction consultatifs, sans obligation de résultat. Le financement par une taxe sur le tabac (art. 3-4) n'a aucun lien avec le logement et fait porter la charge sur les fumeurs. L'alignement avec l'objectif est donc partiel et affaibli par la nature expérimentale, facultative et dérogatoire des mécanismes.",
+ "pointsDeVigilance": [
+  "Le dispositif d'encadrement est facultatif ('peut être mis en place'), non obligatoire.",
+  "La dérogation allongeant le délai à deux ans affaiblit la portée temporelle de l'encadrement.",
+  "L'interdiction du complément de loyer pour logements non décents peut réduire l'incitation à rénover pour les bailleurs.",
+  "Le volet 'amélioration de l'habitat' repose sur des comités consultatifs sans levier coercitif identifié dans le texte.",
+  "Le financement par taxe sur le tabac est sans lien avec l'objectif logement et crée un effet de bord fiscal."
+ ],
+ "themes": [
+  "logement",
+  "outre-mer",
+  "encadrement des loyers",
+  "habitat",
+  "construction"
+ ],
+ "scrutinsCles": [
+  "2259",
+  "2260",
+  "2261",
+  "2262"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:f71206448740b365b5a246c008111aaf1c8ab1acd617f524555ae10409f2e83d"
+}

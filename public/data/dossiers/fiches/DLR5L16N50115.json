@@ -1,0 +1,45 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L16N50115",
+ "generatedAt": "2026-07-12T16:56:38Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi autorisant la ratification de la convention n°155 sur la sécurité et la santé des travailleurs, 1981",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/16/dossiers/DLR5L16N50115",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b0969_projet-loi",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est un projet de loi autorisant la ratification de la convention n°155 de l'OIT sur la sécurité et la santé des travailleurs (1981). L'objectif affiché est de permettre à la France de ratifier cette convention internationale afin de renforcer le cadre normatif en matière de santé et sécurité au travail.",
+ "mecanismesCles": [
+  {
+   "resume": "Le projet de loi autorise la ratification de la convention n°155 de l'OIT sur la sécurité et la santé des travailleurs, 1981.",
+   "articleRef": "article 1er (implicite, texte de ratification)",
+   "citation": "Projet de loi autorisant la ratification de la convention n° 155 sur la sécurité et la santé des travailleurs, 1981"
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est tronqué à 15000 caractères mais ne contient in fine que les métadonnées du dossier législatif (titre, numéro, procédure, commission saisie, formats disponibles). Aucun article ni exposé des motifs substantiel n'est présent dans l'extrait transmis. Il est donc impossible d'identifier les mécanismes concrets créés par les articles et d'évaluer si les incitations réelles vont dans le sens de l'objectif affiché. Le verdict ne peut être déterminé sur la base du seul texte fourni.",
+ "pointsDeVigilance": [
+  "Le texte officiel fourni ne contient pas le contenu normatif du projet de loi (ni exposé des motifs, ni articles substantiels), seulement les métadonnées du dossier législatif.",
+  "Une loi d'autorisation de ratification ne crée pas directement d'obligations internes : elle habilite le Président à ratifier un traité, dont les effets dépendent ensuite de la transposition ou de l'application directe.",
+  "Sans accès au contenu de la convention n°155 ni aux articles du projet de loi, l'analyse des incitations réelles est impossible."
+ ],
+ "themes": [
+  "travail",
+  "santé et sécurité au travail",
+  "droit international",
+  "ratification de traité",
+  "normes oit"
+ ],
+ "scrutinsCles": [
+  "3057"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:526645eed4f496f1526848318cea69b664b7efca1c3ba5075e5c3834e9fb96da"
+}

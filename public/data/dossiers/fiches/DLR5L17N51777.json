@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N51777",
- "generatedAt": "2026-07-04T06:20:24Z",
+ "generatedAt": "2026-07-12T16:45:29Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,26 +15,57 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0231_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une résolution parlementaire visant à soutenir le Danemark et le Groenland et à œuvrer en faveur d'une plus grande coopération en matière de défense. Il s'agit d'un texte de nature politique et diplomatique, sans valeur normative directe.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des objets PDF et des flux binaires compressés sont visibles). Aucun article, aucune disposition concrète, aucune obligation, taxe, subvention ou sanction ne peut être identifié dans le contenu exploitable. Sans accès au texte normatif réel (exposé des motifs et articles), il est impossible de déterminer les mécanismes créés par le texte et donc de juger si les incitations vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "Résolution européenne visant à exprimer la solidarité de la France avec le Danemark et le Groenland face aux menaces américaines sur la souveraineté groenlandaise, et à œuvrer pour une coopération renforcée en matière de défense et de sécurité arctique au sein de l'Union européenne.",
+ "mecanismesCles": [
+  {
+   "resume": "Condamnation formelle des propos du président des États-Unis remettant en cause la souveraineté danoise sur le Groenland et menaçant d'annexion par la force.",
+   "articleRef": "art. 1",
+   "citation": "Condamne fermement les propos du président des États-Unis qui remettent en cause la souveraineté danoise sur le Groenland… Ceux-ci contreviennent aux règles du droit international"
+  },
+  {
+   "resume": "Expression de solidarité avec les autorités danoises et groenlandaises face à la menace directe.",
+   "articleRef": "art. 2",
+   "citation": "Exprime son entière solidarité avec les autorités danoises et groenlandaises pour la défense du droit international et de la souveraineté des États"
+  },
+  {
+   "resume": "Invitation au Gouvernement à renforcer la sécurité et la redondance du réseau internet au Groenland et à aider à sortir de la dépendance aux réseaux sociaux américains.",
+   "articleRef": "art. 9",
+   "citation": "renforcer la sécurité et la redondance du réseau internet au Groenland et à aider sa population à sortir de la dépendance aux réseaux sociaux promus par les États-Unis"
+  },
+  {
+   "resume": "Invitation à exprimer officiellement la disponibilité pour la mise en place d'une présence militaire européenne au Groenland.",
+   "articleRef": "art. 10",
+   "citation": "le Gouvernement français exprime officiellement sa disponibilité pour la mise en place d'une présence militaire européenne au Groenland"
+  },
+  {
+   "resume": "Appel à une réponse européenne unifiée contre la coercition, via la PSDC ou l'instrument anti-coercition de l'UE.",
+   "articleRef": "art. 11",
+   "citation": "préparer une réponse européenne unifiée et coordonnée contre toute forme de coercition, par la mobilisation des outils de la politique de sécurité et de défense commune (PSDC) ou par le recours à l'instrument anti-coercition"
+  },
+  {
+   "resume": "Défense au sein de l'UE de la construction d'un bataillon arctique européen opérationnel.",
+   "articleRef": "art. 16",
+   "citation": "la construction d'un bataillon arctique européen opérationnel en lien étroit avec la coopération de défense nordique"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes de la résolution sont exclusivement des invitations adressées au Gouvernement et des expressions de position politique (solidarité, condamnation, soutien). L'article 1 condamne les menaces américaines sur la souveraineté groenlandaise, l'article 2 exprime la solidarité avec le Danemark et le Groenland, et les articles 9 à 18 invitent à des actions concrètes (présence militaire européenne, bataillon arctique, sécurisation des réseaux, soutien économique via l'instrument européen) qui vont toutes dans le sens de l'objectif affiché de soutien au Danemark/Groenland et de renforcement de la coopération de défense européenne. Aucune disposition ne crée d'incitation contradictoire avec l'objectif affiché.",
  "pointsDeVigilance": [
-  "Le contenu textuel du PDF n'a pas été décodé : le texte officiel est inexploitable en l'état",
-  "Une résolution parlementaire est par nature un acte non contraignant (déclaration politique), ce qui limite la portée des 'mécanismes' qu'elle peut créer",
-  "Sans lecture du texte, aucune analyse de second ordre (alignement des incitations) n'est possible"
+  "Il s'agit d'une résolution européenne au sens de l'article 88-4 de la Constitution : elle n'a pas de valeur normative contraignante et se limite à des invitations et expressions de position.",
+  "Le texte ne crée aucune obligation juridique, taxe, subvention ou sanction ; son effectivité dépend de la suite donnée par le Gouvernement et les institutions européennes.",
+  "La résolution s'inscrit dans un contexte géopolitique très sensible (menaces américaines sur le Groenland) et reflète une posture politique forte, mais sans portée législative directe."
  ],
  "themes": [
-  "défense",
-  "coopération internationale",
-  "diplomatie",
+  "défense européenne",
+  "arctique",
   "groenland",
-  "danemark"
+  "souveraineté",
+  "sécurité collective"
  ],
  "scrutinsCles": [
   "5299",
   "5300"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:fc8196f9ed71c4f3b4898b43d5332b2679fb8357359a2dda3e1fa5f5626bc60f"
+ "sourceTextHash": "sha256:d225b46a538bc1d713e046d438f092231c3d6876f5044712dd1502a9e45eba8a"
 }

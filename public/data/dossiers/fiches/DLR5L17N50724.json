@@ -1,0 +1,72 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50724",
+ "generatedAt": "2026-07-12T17:00:36Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi relative à la lutte contre l'antisémitisme dans l'enseignement supérieur",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N50724",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0156_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "La proposition de loi vise à lutter contre l'antisémitisme dans l'enseignement supérieur en renforçant la formation, la prévention, la détection, le signalement et la sanction des faits d'antisémitisme, de racisme, de discrimination, de violence et de haine au sein des établissements d'enseignement supérieur.",
+ "mecanismesCles": [
+  {
+   "resume": "Obligation pour les établissements d'enseignement supérieur d'assurer une formation à la lutte contre l'antisémitisme, le racisme, les discriminations, les violences et la haine.",
+   "articleRef": "art. 1er",
+   "citation": "« Les établissements d'enseignement supérieur assurent une formation à la lutte contre l'antisémitisme, le racisme, les discriminations, les violences et la haine. »"
+  },
+  {
+   "resume": "Création obligatoire d'une mission « égalité et diversité » dans chaque EPSCP, chargée notamment de la lutte contre l'antisémitisme, avec un référent qualifié exclusivement dédié à la prévention, détection et traitement des faits d'antisémitisme et de racisme.",
+   "articleRef": "art. 2 (art. L. 719-10)",
+   "citation": "« Les établissements publics à caractère scientifique, culturel et professionnel créent en leur sein une mission “égalité et diversité” chargée [...] de la lutte contre l'antisémitisme, le racisme, les discriminations, les violences et la haine. »"
+  },
+  {
+   "resume": "Mise en place d'un dispositif de signalement garantissant l'anonymat des victimes et témoins, avec obligation pour tout membre du personnel de signaler sans délai tout fait d'antisémitisme ou de racisme ayant un lien avec la vie universitaire.",
+   "articleRef": "art. 2 (art. L. 719-11)",
+   "citation": "« Tout membre du personnel ayant connaissance d'un fait d'antisémitisme, de racisme, de discrimination, de violence ou de haine survenu dans ou en dehors de l'établissement et ayant un lien avec la vie universitaire le signale sans délai [...] »"
+  },
+  {
+   "resume": "Obligation pour le président ou directeur d'établissement de faire procéder au retrait des affichages, inscriptions et emblèmes à caractère antisémite, raciste ou discriminatoire manifestement visibles.",
+   "articleRef": "art. 2 (art. L. 719-11)",
+   "citation": "« Le président ou le directeur de l'établissement fait procéder dans les meilleurs délais au retrait des affichages, inscriptions, emblèmes et installations à caractère antisémite, raciste ou discriminatoire [...] »"
+  },
+  {
+   "resume": "Transmission annuelle au Parlement d'un bilan quantitatif et qualitatif des signalements de faits d'antisémitisme et de racisme.",
+   "articleRef": "art. 2 (art. L. 719-11)",
+   "citation": "« Chaque année, le Gouvernement transmet au Parlement le bilan quantitatif et qualitatif des signalements de faits d'antisémitisme et de racisme recueillis [...] »"
+  },
+  {
+   "resume": "Extension de l'obligation de formation à la lutte contre l'antisémitisme aux établissements d'enseignement supérieur privés d'intérêt général (EESPIG).",
+   "articleRef": "art. 2 (art. L. 732-4)",
+   "citation": "« La section 4 du chapitre IX du titre Ier du présent livre est applicable aux établissements d'enseignement supérieur privés d'intérêt général. »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'ensemble des mécanismes créés par le texte convergent directement vers l'objectif affiché de lutte contre l'antisémitisme dans l'enseignement supérieur. L'article 1er instaure une obligation de formation explicite incluant l'antisémitisme. L'article 2 crée une mission dédiée avec un référent qualifié et un dispositif de signalement anonyme, tout en prévoyant un bilan parlementaire annuel, ce qui renforce la redevabilité. L'article 3 élargit le champ de la sanction disciplinaire aux faits commis hors établissement lorsqu'ils ont un lien avec la vie universitaire et permet des mesures conservatoires d'interdiction d'accès. L'extension aux EESPIG et à l'outre-mer assure une portée large. Aucun mécanisme ne crée d'incitation contraire à l'objectif affiché.",
+ "pointsDeVigilance": [
+  "L'efficacité dépend largement des décrets en Conseil d'État prévus (art. L. 719-11-2, art. L. 811-5-1, art. L. 811-6) qui détermineront les modalités concrètes.",
+  "L'obligation de moyens humains et financiers pour la mission « égalité et diversité » n'est pas chiffrée (art. L. 719-10).",
+  "L'élargissement disciplinaire aux faits commis hors établissement avec un « lien suffisant » pourrait soulever des questions de proportionnalité et de définition jurisprudentielle.",
+  "Le texte ne crée pas de sanctions pénales nouvelles ni de budget dédié, ce qui limite la portée coercitive."
+ ],
+ "themes": [
+  "antisémitisme",
+  "enseignement supérieur",
+  "lutte contre les discriminations",
+  "procédure disciplinaire",
+  "formation"
+ ],
+ "scrutinsCles": [
+  "2879",
+  "2880"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:a5114e434cfa8c24994514ec42e96b88ebde2f76fa5442410f91ee2b37a91fce"
+}

@@ -1,0 +1,40 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51900",
+ "generatedAt": "2026-07-12T17:03:33Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "La reconnaissance, le remboursement et la réparation par la France de la « double dette » d’Haïti",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/reconnaissance_remboursement_reparation_double_dette_haiti",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0137_texte-adopte-seance",
+  "legifrance": null
+ },
+ "objectifAffiche": "Résolution adoptée par l'Assemblée nationale le 5 juin 2025 visant à la reconnaissance, au remboursement et à la réparation par la France de la « double dette » d'Haïti. Le texte s'inscrit dans une procédure de résolution Article 34-1.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni est tronqué à 15 000 caractères et ne contient que les éléments de présentation (titre, sommaire, liens vers le dossier législatif, formats PDF/HTML/XML/JSON). Aucun article, aucun exposé des motifs et aucun dispositif normatif n'est présent dans l'extrait transmis. Il est donc impossible d'identifier les mécanismes concrets (obligations, remboursements, réparations) créés par la résolution et, a fortiori, de déterminer si ces mécanismes vont dans le sens de l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte fourni est uniquement une page de garde et un sommaire ; le contenu normatif (exposé des motifs, articles, dispositif) est absent.",
+  "Une résolution Article 34-1 n'a pas de force normative contraignante : elle exprime une position de l'Assemblée mais ne crée pas d'obligation juridique directe.",
+  "La notion de « double dette » (dette de l'indépendance + dette coloniale/réparations) mériterait d'être explicitée dans le texte pour évaluer la portée réelle de la résolution.",
+  "Sans dispositif, on ne peut savoir si la résolution prévoit des mécanismes financiers, symboliques ou simplement déclaratifs."
+ ],
+ "themes": [
+  "mémoire coloniale",
+  "réparations",
+  "dette",
+  "haïti",
+  "relations franco-haïtiennes"
+ ],
+ "scrutinsCles": [
+  "2274"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:28394e6ec1c1bd112c5a086693a5434ad75c82fc37d4b4c451120a53886547af"
+}

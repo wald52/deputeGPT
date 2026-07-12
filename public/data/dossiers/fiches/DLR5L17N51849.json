@@ -1,0 +1,75 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51849",
+ "generatedAt": "2026-07-12T17:08:55Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Lutter contre la mortalité infantile",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/lutter_contre_mortalite_infantile_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0114_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Lutter contre la mortalité infantile en France, par une proposition de loi ordinaire adoptée en première lecture à l'Assemblée nationale le 15 mai 2025.",
+ "mecanismesCles": [
+  {
+   "resume": "Modification du code de la santé publique pour permettre la tenue d'un registre national des naissances et l'accès aux certificats de santé de l'enfant à des fins de traitement de données.",
+   "articleRef": "art. 1er",
+   "citation": "« 7° À la tenue d'un registre national des naissances. »"
+  },
+  {
+   "resume": "Moratoire de trois ans sur le retrait des autorisations d'activité d'obstétrique, sauf danger pour la sécurité des patients.",
+   "articleRef": "art. 2, I",
+   "citation": "« aucune autorisation relative à une activité d'obstétrique ne peut être retirée ou remise en cause, sauf en cas de danger pour la sécurité des patients. »"
+  },
+  {
+   "resume": "État des lieux par les ARS des maternités réalisant moins de 1000 accouchements/an, suivi d'un rapport gouvernemental sous deux ans sur les moyens humains et financiers, notamment pour les maternités sous 300 accouchements/an.",
+   "articleRef": "art. 2, II et III",
+   "citation": "« Les agences régionales de santé procèdent à un état des lieux des établissements de santé exerçant une activité d'obstétrique et pratiquant moins de mille accouchements par an »"
+  },
+  {
+   "resume": "Obligation de formation continue aux gestes d'urgence obstétrique et au transfert périnatal pour les établissements de gynécologie-obstétrique et les sages-femmes libérales, incluant une sensibilisation aux perturbateurs endocriniens.",
+   "articleRef": "art. 3",
+   "citation": "« garantissent une formation continue aux gestes d'urgence obstétrique ainsi qu'aux bonnes pratiques en matière de transfert périnatal »"
+  },
+  {
+   "resume": "Rapport gouvernemental sous six mois sur la mortalité infantile dans les outre-mer, comparée à l'hexagone, avec analyse des causes et recommandations.",
+   "articleRef": "art. 3 bis",
+   "citation": "« un rapport détaillé sur la mortalité infantile dans les départements, les régions et les collectivités territoriales d'outre-mer, comparée à celle de l'hexagone. »"
+  },
+  {
+   "resume": "Financement par majoration de l'accise sur les tabacs (taxe additionnelle pour l'État, majoration pour la sécurité sociale).",
+   "articleRef": "art. 4",
+   "citation": "« compensée à due concurrence par la création d'une taxe additionnelle à l'accise sur les tabacs »"
+  }
+ ],
+ "verdictIncitations": "incitations_mitigees",
+ "justificationVerdict": "Le texte crée des outils de connaissance (registre national des naissances, états des lieux ARS, rapports sur les outre-mer) et une obligation de formation continue qui vont dans le sens de l'objectif affiché. Toutefois, l'article 2 instaure un moratoire de trois ans sur le retrait des autorisations d'obstétrique, ce qui fige le statu quo et peut empêcher la restructuration de petites maternités potentiellement à risque, sans imposer dans le même temps de normes contraignantes. De plus, les principaux leviers (révision des décrets périnatalité, ratios d'encadrement, moyens financiers) sont renvoyés à de simples rapports gouvernementaux, sans création d'obligations directes. Le financement par une taxe sur le tabac (art. 4) est sans lien direct avec la mortalité infantile et ne crée pas d'incitation ciblée.",
+ "pointsDeVigilance": [
+  "Le moratoire sur les retraits d'autorisations (art. 2, I) peut maintenir des maternités sous-seuils sans garantir l'amélioration de leur qualité.",
+  "Les mesures structurantes (ratios d'encadrement, révision des décrets périnatalité) sont renvoyées à des rapports, donc non contraignantes.",
+  "Le financement par accise sur le tabac (art. 4) crée une dépendance à une ressource non dédiée et sans lien direct avec la périnatalité.",
+  "Plusieurs dispositions initialement prévues ont été supprimées en séance (art. 1er B, art. 2 I A, art. 3 II), affaiblissant la portée du texte.",
+  "Aucun mécanisme direct de prévention, de suivi des enfants à risque ou d'accompagnement des familles n'est créé."
+ ],
+ "themes": [
+  "santé publique",
+  "périnatalité",
+  "mortalité infantile",
+  "maternités",
+  "outre-mer"
+ ],
+ "scrutinsCles": [
+  "1720",
+  "1721",
+  "1722",
+  "1723"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:5ea3cd096639f6578bde98bcb7dfbb1e4d118afe112c0f4bb93ec55465c43847"
+}

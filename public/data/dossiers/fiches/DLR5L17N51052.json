@@ -1,0 +1,75 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51052",
+ "generatedAt": "2026-07-12T17:05:39Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi relative au droit de vote par correspondance des personnes détenues",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N51052",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0131_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "La proposition de loi vise à modifier le code électoral pour faciliter l'exercice du droit de vote par correspondance des personnes détenues, en adaptant les modalités d'inscription et de rattachement à un bureau ou secteur de vote.",
+ "mecanismesCles": [
+  {
+   "resume": "Modification de l'article L. 12-1 du code électoral : ajout des 'descendants' parmi les motifs d'inscription/d'inscription d'office (2° du II) et précision que la règle de rattachement à la commune (et non au secteur) s'applique lorsque la République forme une circonscription unique ou pour les opérations référendaires.",
+   "articleRef": "Article unique, I, 1°",
+   "citation": "Le 2° du II est complété par les mots : « ou descendants » ; au début [du III], sont ajoutés les mots : « Lorsque la République forme une circonscription unique ou pour les opérations référendaires, » ; les mots : « ou au secteur » sont supprimés"
+  },
+  {
+   "resume": "Suppression de la mention 'ou au secteur' à l'article L. 79, supprimant la possibilité de rattachement à un secteur pour les personnes détenues.",
+   "articleRef": "Article unique, I, 2°",
+   "citation": "Au dernier alinéa de l'article L. 79, les mots : « ou au secteur » sont supprimés"
+  },
+  {
+   "resume": "Mise à jour d'une référence à la loi du 13 juin 2024 dans l'article L. 388, remplacée par la référence à la présente loi.",
+   "articleRef": "Article unique, I, 3°",
+   "citation": "la référence : « n° 2024-536 du 13 juin 2024 renforçant l'ordonnance de protection et créant l'ordonnance provisoire de protection immédiate » est remplacée par la référence : « n° du relative au droit de vote par correspondance des personnes détenues »"
+  },
+  {
+   "resume": "Entrée en vigueur différée : application à compter du premier renouvellement général des conseils municipaux suivant la publication.",
+   "articleRef": "Article unique, II",
+   "citation": "Le I est applicable à compter du premier renouvellement général des conseils municipaux suivant la publication de la présente loi."
+  },
+  {
+   "resume": "Compensation financière par création d'une taxe additionnelle à l'accise sur les tabacs.",
+   "articleRef": "Article unique, III",
+   "citation": "Les éventuelles conséquences financières pour l'État résultant du I sont compensées, à due concurrence, par la création d'une taxe additionnelle à l'accise sur les tabacs"
+  },
+  {
+   "resume": "Articles 2 à 6 (nouveaux) supprimés en séance publique, privant le texte de dispositions additionnelles initialement prévues.",
+   "articleRef": "Articles 2 à 6",
+   "citation": "(Supprimés)"
+  }
+ ],
+ "verdictIncitations": "incitations_mitigees",
+ "justificationVerdict": "Le texte ne crée pas de mécanisme concret d'ouverture du vote par correspondance aux personnes détenues : il se limite à des ajustements rédactionnels du code électoral (ajout du mot 'descendants', suppression de la mention 'ou au secteur', mise à jour d'une référence). L'objectif affiché d'élargir le droit de vote par correspondance des détenus n'est pas traduit par une création de droit nouveau dans les articles conservés. Par ailleurs, la suppression des articles 2 à 6 (nouveaux) prive le texte de dispositions substantielles qui auraient pu concrétiser l'objectif. Le financement par une taxe additionnelle sur les tabacs (art. unique III) est sans lien direct avec l'objectif affiché et constitue un mécanisme de compensation classique.",
+ "pointsDeVigilance": [
+  "Le texte définitif ne contient qu'un article unique à portée essentiellement rédactionnelle, sans création d'un véritable droit de vote par correspondance pour les détenus.",
+  "Les articles 2 à 6, initialement nouveaux, ont été supprimés sans que le contenu de ces dispositions ne soit connu du texte fourni.",
+  "L'entrée en vigueur est renvoyée au prochain renouvellement municipal, ce qui retarde considérablement la portée concrète du texte.",
+  "Le financement par taxe sur les tabacs est indirect et sans rapport avec la matière électorale.",
+  "Le texte est qualifié de 'provisoire' et seule la 'petite loi' ultérieure fait foi."
+ ],
+ "themes": [
+  "droit de vote",
+  "personnes détenues",
+  "code électoral",
+  "vote par correspondance",
+  "compensation financière"
+ ],
+ "scrutinsCles": [
+  "2241",
+  "2242",
+  "2243",
+  "2244"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:a14551b88d1043af63528e934094527bcff5caa2ae87c45faf84fc8ce19a5405"
+}

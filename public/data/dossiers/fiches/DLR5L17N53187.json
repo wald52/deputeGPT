@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53187",
- "generatedAt": "2026-07-05T06:26:30Z",
+ "generatedAt": "2026-07-12T16:48:24Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,14 +15,14 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2610_proposition-loi",
   "legifrance": null
  },
- "objectifAffiche": "Proposition de loi ordinaire visant à protéger les mineurs des risques auxquels les expose l'utilisation des réseaux sociaux. Le texte a été déposé le 1er avril 2026 et modifié par le Sénat, examiné par la commission des affaires culturelles et de l'éducation.",
+ "objectifAffiche": "Proposition de loi ordinaire visant à protéger les mineurs des risques auxquels les expose l'utilisation des réseaux sociaux. Le texte a été déposé le 1er avril 2026 et modifié par le Sénat.",
  "mecanismesCles": [],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles de loi. Seules les métadonnées du dossier législatif (titre, numéro, procédure, commission saisie) sont accessibles. Sans le contenu normatif du texte, il est impossible d'identifier les obligations, sanctions, seuils ou dérogations créés, et donc de déterminer si les mécanismes vont dans le sens de l'objectif affiché.",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles. Seules des informations de procédure (numéro, date de dépôt, commission saisie) sont présentes. Sans le contenu normatif du texte, il est impossible d'identifier les mécanismes concrets créés par la loi et donc de déterminer si les incitations qu'elle produit sont alignées avec son objectif affiché de protection des mineurs sur les réseaux sociaux.",
  "pointsDeVigilance": [
-  "Le texte officiel est tronqué et ne contient que les informations de présentation du dossier législatif",
-  "Aucun article ni exposé des motifs n'est disponible dans l'extrait fourni",
-  "Le statut 'en_cours' indique que le texte est encore en cours d'examen parlementaire"
+  "Le texte officiel est tronqué et ne contient que les métadonnées de procédure (titre, numéro, date, commission), sans aucun article ni exposé des motifs.",
+  "L'intitulé mentionne une modification par le Sénat, mais le contenu de cette modification n'est pas accessible dans le document fourni.",
+  "Impossible d'évaluer la portée réelle (obligations, sanctions, dérogations) sans le dispositif législatif."
  ],
  "themes": [
   "protection des mineurs",

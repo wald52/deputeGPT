@@ -1,0 +1,42 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51672",
+ "generatedAt": "2026-07-12T17:08:03Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Soins palliatifs et d’accompagnement",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/soins_palliatifs_et_accompagnement_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2457_texte-adopte-commission",
+  "legifrance": null
+ },
+ "objectifAffiche": "Proposition de loi ordinaire visant à garantir l'égal accès de tous à l'accompagnement et aux soins palliatifs. Le texte est issu des travaux de la commission des affaires sociales, après modification par le Sénat.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles : seul le sommaire du dossier législatif et l'intitulé sont disponibles. Aucun mécanisme concret (obligation, seuil, sanction, financement, dérogation) ne peut être identifié dans les 15000 caractères transmis, qui se limitent à des métadonnées de navigation. L'analyse des incitations effectivement créées par le texte est donc impossible sur la base de ce seul extrait.",
+ "pointsDeVigilance": [
+  "Le document transmis est un sommaire/troncature ne contenant pas le corps du texte (ni exposé des motifs, ni articles numérotés).",
+  "Sans accès aux articles, il est impossible de vérifier si les mécanismes créés servent réellement l'objectif d'égal accès aux soins palliatifs.",
+  "Le texte a été modifié par le Sénat puis retravaillé en commission : la version finale promulguée pourrait différer sensiblement de l'intention initiale."
+ ],
+ "themes": [
+  "santé",
+  "soins palliatifs",
+  "fin de vie",
+  "accès aux soins",
+  "équité"
+ ],
+ "scrutinsCles": [
+  "1769",
+  "1770",
+  "1771",
+  "1772"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:dfce6d28ffa88fa6dbcd196cda2fc90480134c9dc44cd3eb659a12fc9a6b4deb"
+}

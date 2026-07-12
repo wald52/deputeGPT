@@ -1,0 +1,74 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50692",
+ "generatedAt": "2026-07-12T16:57:42Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Réformer le mode d'élection des membres du Conseil de Paris et des conseils municipaux de Lyon et Marseille",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/reformer_mode_election_membres_Conseil_Paris",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0166_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Réformer le mode d'élection des membres du Conseil de Paris et des conseils municipaux de Lyon et Marseille, en modifiant les règles du code électoral relatives aux scrutins dans ces trois communes à statut particulier.",
+ "mecanismesCles": [
+  {
+   "resume": "Création d'un scrutin distinct pour les conseillers d'arrondissement, séparé de l'élection du conseil de Paris ou du conseil municipal.",
+   "articleRef": "art. 1er (modifiant art. L. 271)",
+   "citation": "« par deux scrutins distincts »"
+  },
+  {
+   "resume": "Attribution d'un quart des sièges à la liste majoritaire (arrondi à l'entier supérieur) pour l'élection du conseil de Paris ou du conseil municipal.",
+   "articleRef": "art. 1er (nouvel art. L. 272-4-1)",
+   "citation": "« le nombre de sièges attribués à la liste qui a recueilli la majorité absolue des suffrages exprimés au premier tour ou à la liste qui a obtenu le plus de voix au second tour est égal au quart du nombre des sièges à pourvoir »"
+  },
+  {
+   "resume": "Autorisation pour un candidat de figurer à la fois sur la liste pour le conseil municipal et sur la liste pour le conseil d'arrondissement.",
+   "articleRef": "art. 1er (art. L. 272-3)",
+   "citation": "« Un candidat peut figurer à la fois sur une liste pour l'élection au conseil de Paris ou au conseil municipal de Lyon ou de Marseille et sur une liste pour l'élection au conseil d'arrondissement ou de secteur de cette même commune. »"
+  },
+  {
+   "resume": "Abrogation des articles L. 272-5 et L. 272-6 du code électoral.",
+   "articleRef": "art. 1er (5°)",
+   "citation": "« Les articles L. 272-5 et L. 272-6 sont abrogés. »"
+  },
+  {
+   "resume": "Suppression de l'élection des conseillers d'arrondissement au scrutin de liste proportionnel de secteur, en supprimant les références aux secteurs et conseillers d'arrondissement dans les articles L. 273-5, L. 273-7, L. 273-8 et L. 273-10.",
+   "articleRef": "art. 2",
+   "citation": "« les mots : « ou conseiller d'arrondissement » sont supprimés »"
+  },
+  {
+   "resume": "Augmentation du nombre de conseillers de Paris de 101 à 111.",
+   "articleRef": "art. 3",
+   "citation": "« le nombre : « 101 » est remplacé par le nombre : « 111 » »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte vise explicitement à réformer le mode d'élection des conseils de Paris, Lyon et Marseille, et les mécanismes créés vont dans ce sens. L'article 1er instaure deux scrutins distincts (conseil municipal et conseillers d'arrondissement), modifie la répartition des sièges avec un quart attribué à la liste majoritaire (art. L. 272-4-1), et autorise le cumul de candidature entre les deux scrutins. L'article 2 supprime les modalités d'élection proportionnelle de secteur pour les conseillers d'arrondissement. L'article 3 augmente le nombre de conseillers de Paris de 101 à 111. L'article 4 redéfinit les secteurs électoraux. L'article 5 renforce le rôle du maire d'arrondissement en lui permettant d'assister au conseil municipal. L'article 8 crée une conférence des maires. L'ensemble de ces mécanismes concourt à la réforme annoncée du mode d'élection et de la gouvernance de ces trois communes.",
+ "pointsDeVigilance": [
+  "L'exposé des motifs n'est pas fourni dans le texte, limitant la compréhension de l'intention politique précise.",
+  "Le texte ne contient pas de mécanisme de sanction ou de seuil explicite au-delà du quart des sièges pour la liste majoritaire.",
+  "L'article 7 prévoit un simple rapport gouvernemental sans obligation de transfert effectif de compétences.",
+  "La suppression des articles L. 272-5 et L. 272-6 sans connaître leur contenu exact rend l'analyse incomplète."
+ ],
+ "themes": [
+  "élections municipales",
+  "code électoral",
+  "paris",
+  "lyon",
+  "marseille"
+ ],
+ "scrutinsCles": [
+  "2952",
+  "2953",
+  "2954",
+  "3018"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:622364a98e9090cafbe388017114655ee2e1771d2c181615cd7b5af8fa1d4860"
+}

@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52719",
- "generatedAt": "2026-07-05T06:50:57Z",
+ "generatedAt": "2026-07-12T16:55:37Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,22 +15,21 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0177_texte-adopte-seance",
   "legifrance": null
  },
- "objectifAffiche": "Résolution parlementaire visant à dénoncer les accords franco-algériens du 27 décembre 1968, adoptée par l'Assemblée nationale le 30 octobre 2025 (procédure de résolution Article 34-1).",
+ "objectifAffiche": "Résolution parlementaire visant à dénoncer les accords franco-algériens du 27 décembre 1968. Le texte fourni ne contient ni exposé des motifs ni articles détaillés, ne permettant pas de préciser davantage l'objectif affiché.",
  "mecanismesCles": [],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles substantiels : seuls figurent le titre, l'identifiant, la procédure et des liens de navigation. Aucun mécanisme concret (obligation, taxe, subvention, dérogation, seuil, sanction) n'est identifiable dans le contenu transmis, ce qui empêche toute analyse des incitations produites par le texte.",
+ "justificationVerdict": "Le texte fourni est tronqué et ne contient que des éléments de navigation et d'identification du dossier législatif (titre, identifiant, procédure, statut, sommaire). Aucun article, aucun dispositif concret et aucun exposé des motifs n'est présent dans l'extrait, ce qui rend impossible l'identification des mécanismes créés par la résolution et donc l'évaluation de l'alignement entre les incitations et l'objectif affiché.",
  "pointsDeVigilance": [
-  "Le contenu textuel de la résolution (exposé des motifs et articles) n'est pas présent dans l'extrait fourni",
-  "Une résolution Article 34-1 est un acte non législatif : elle exprime une position de l'Assemblée mais ne crée pas en principe de normes contraignantes",
-  "La dénonciation d'accords bilatéraux relève en droit international d'une décision du pouvoir exécutif (gouvernement), le rôle du Parlement étant ici d'adresser une injonction politique",
-  "Sans le contenu des visas et considérants, il est impossible de savoir si la résolution demande une dénonciation unilatérale, une renégociation, ou simplement un réexamen"
+  "Le texte officiel est manifestement tronqué : seuls les métadonnées du dossier législatif et le sommaire sont accessibles.",
+  "Aucun article de la résolution n'est reproduit dans l'extrait fourni.",
+  "L'exposé des motifs est absent, empêchant toute caractérisation précise de l'objectif affiché.",
+  "Une résolution au sens de l'article 34-1 de la Constitution n'a pas de valeur normative contraignante ; son effet dépend de la suite gouvernementale."
  ],
  "themes": [
   "relations bilatérales",
-  "accord franco-algérien 1968",
+  "accord international",
   "immigration",
-  "résolution parlementaire",
-  "article 34-1"
+  "algérie"
  ],
  "scrutinsCles": [
   "3260"

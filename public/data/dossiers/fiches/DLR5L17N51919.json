@@ -1,0 +1,44 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51919",
+ "generatedAt": "2026-07-12T17:03:19Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi relatif aux résultats de la gestion et portant approbation des comptes de l'année 2024",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/Projetdeloirelatifauxresultatsdelagestionetportantapprobationdescomptesdelannee2024",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0138_texte-adopte-seance",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le projet de loi vise à approuver les comptes de l'année 2024 et à constater les résultats de la gestion budgétaire et financière de l'État pour cet exercice (loi de règlement).",
+ "mecanismesCles": [
+  {
+   "resume": "Le texte est un projet de loi de règlement qui constate les résultats de la gestion 2024 et approuve les comptes de cette année, rejeté par l'Assemblée nationale le 10 juin 2025.",
+   "articleRef": null,
+   "citation": "Projet de loi relative aux résultats de la gestion et portant approbation des comptes, rejeté par l'Assemblée nationale après engagement de la procédure accélérée, de l'année 2024 le 10 juin 2025, T.A. n° 138"
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles : seule la page de sommaire du dossier législatif est accessible, sans le contenu normatif du projet de loi. Il est donc impossible d'identifier les mécanismes concrets (constatation du déficit/excédent, approbation des comptes, éventuelles dispositions correctives) et de vérifier s'ils sont cohérents avec l'objectif affiché d'approbation des comptes 2024.",
+ "pointsDeVigilance": [
+  "Le texte intégral (exposé des motifs et articles) n'a pas été fourni, seule la fiche sommaire du dossier est disponible.",
+  "Le projet de loi a été rejeté par l'Assemblée nationale le 10 juin 2025, ce qui interrompt son parcours législatif.",
+  "Une loi de règlement est par nature rétrospective et n'a pas vocation à créer des incitations prospectives ; l'analyse d'alignement est donc conceptuellement limitée."
+ ],
+ "themes": [
+  "finances publiques",
+  "loi de règlement",
+  "approbation des comptes",
+  "gestion budgétaire"
+ ],
+ "scrutinsCles": [
+  "2276"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:704969077e9c4d1dd67349e9ff5370e98d8e14926625b7d2bc946952c6d56b95"
+}

@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52428",
- "generatedAt": "2026-07-05T06:28:56Z",
+ "generatedAt": "2026-07-12T16:49:38Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,19 +15,49 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0227_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte fourni est identifié comme le 'Projet de loi de finances pour 2026' (DLR5L17N52428), mais aucun exposé des motifs ni contenu textuel exploitable n'est accessible : le document est un fichier PDF binaire illisible (flux d'octets compressés non décodables). L'objectif affiché ne peut donc pas être résumé à partir du texte fourni.",
- "mecanismesCles": [],
+ "objectifAffiche": "Le texte est un projet de loi de finances pour 2026 (PLF 2026) présenté comme définitif après CMP et lecture définitive. L'objectif affiché, tel qu'il ressort de l'article liminaire, est de fixer les prévisions macroéconomiques et budgétaires pour 2026 (solde, dette, dépenses, prélèvements obligatoires) et d'autoriser la perception des ressources de l'État, dans le cadre de la trajectoire de la LPFP 2023-2027.",
+ "mecanismesCles": [
+  {
+   "resume": "Article liminaire : tableau de prévisions macroéconomiques pour 2026 avec un solde effectif à -5,0 % du PIB, une dette à 118,2 % du PIB, un taux de prélèvements obligatoires à 43,9 % et une dépense publique en volume en hausse de 0,8 %.",
+   "articleRef": "Article liminaire",
+   "citation": "Solde effectif (1 + 2 + 3) ......................................  -5,8 -5,4 -5,0 -2,7 ; Dette au sens de Maastricht ..................................  113,2 115,9 118,2 109,6"
+  },
+  {
+   "resume": "Article 1er : autorisation de percevoir les impôts et ressources de l'État en 2026 et fixation du champ d'application temporel (IR 2026, IS pour les exercices clos après publication, autres dispositions dès le lendemain).",
+   "articleRef": "art. 1er",
+   "citation": "La perception des ressources de l'État et des impositions de toutes natures affectées à des personnes morales autres que l'État est autorisée pendant l'année 2026"
+  },
+  {
+   "resume": "Article 2 : modification de l'article 224 du CGI (contribution sur les hauts revenus) avec prise en compte des revenus du couple sur trois ans en cas de changement de situation familiale, exclusion du quotient de l'article 163-0 A, et extension aux contribuables transférant leur domicile à l'étranger ou depuis l'étranger.",
+   "articleRef": "art. 2",
+   "citation": "En cas de modification de la situation de famille du contribuable au cours de l'année d'imposition ou des trois années précédentes, les revenus nets sur le fondement desquels il a été soumis à l'impôt sur le revenu au titre de chacune de ces années sont ceux : a) Du couple passible de la contribution..."
+  },
+  {
+   "resume": "Article 2 (II) : instauration d'un acompte de 95 % de la contribution sur les hauts revenus entre le 1er et le 15 décembre, avec pénalité de 20 % en cas de défaut/retard ou si l'acompte versé est inférieur de plus de 20 % au montant attendu.",
+   "articleRef": "art. 2 (II modifiant art. 10 LF 2025)",
+   "citation": "La contribution mentionnée au I de l'article 224 du code général des impôts donne lieu au versement d'un acompte entre le 1er et le 15 décembre de l'année d'imposition. [...] une pénalité prenant la forme d'une majoration de 20 % s'applique"
+  },
+  {
+   "resume": "Article 2 (II-2°-a) : clause de temporisation - la contribution exceptionnelle et son acompte ne s'appliquent que jusqu'à l'année où le déficit du budget général devient inférieur à 3 % du PIB.",
+   "articleRef": "art. 2 (II-2°-a)",
+   "citation": "jusqu'à l'imposition des revenus de l'année au titre de laquelle le projet de loi [...] constate un déficit du budget général inférieur à 3 % du produit intérieur brut"
+  }
+ ],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel transmis est un PDF dont le contenu est encodé sous forme de flux binaires (FlateDecode) non décodés en clair. Aucun article, aucune disposition, aucun mécanisme concret (obligation, taxe, subvention, seuil, sanction) n'est lisible dans les 15 000 caractères fournis. En application de la règle stricte ('appuie-toi UNIQUEMENT sur le texte fourni' et 'en cas de doute ou de texte insuffisant, verdict indetermine'), aucune analyse des incitations n'est possible.",
+ "justificationVerdict": "Le texte fourni est tronqué à 15 000 caractères et ne contient que l'article liminaire et le début de la première partie (articles 1er et 2). L'article liminaire affiche une trajectoire de déficit à -5,0 % du PIB en 2026, en dégradation par rapport à 2025 (-5,4) et très éloignée de la cible LPFP (-2,7), ce qui suggère une incitation à la consolidation limitée. L'article 2 durcit la contribution sur les hauts revenus (acompte, pénalité, extension aux expatriations fiscales), ce qui va dans le sens d'un rendement accru. Toutefois, l'absence de la majorité des articles (dépenses, missions budgétaires, niches fiscales, autres recettes) empêche de déterminer si l'ensemble des mécanismes concourt effectivement à l'équilibre financier affiché. Le verdict ne peut donc être tranché.",
  "pointsDeVigilance": [
-  "Le document transmis est un PDF brut (signature %PDF-1.5) avec des flux d'objets compressés non décodables, et non le texte législatif lui-même.",
-  "L'identifiant DLR5L17N52428 et le statut 'promulgue' sont les seules métadonnées exploitables.",
-  "Pour mener l'analyse de second ordre, il faudrait disposer de la version texte (exposé des motifs + articles) du projet de loi de finances pour 2026."
+  "Écart majeur entre le solde effectif prévu pour 2026 (-5,0 % du PIB) et la cible LPFP 2023-2027 (-2,7 %), signalant un dérapage par rapport à la trajectoire pluriannuelle.",
+  "Hausse continue de la dette Maastricht (113,2 → 118,2 % du PIB entre 2024 et 2026).",
+  "Changement de base comptable INSEE (base 2020) qui affecte la comparabilité des ratios et gonfle artificiellement les dépenses et recettes.",
+  "Clause de sortie de la contribution hauts revenus conditionnée à un déficit inférieur à 3 % du PIB, dont le seuil n'est pas atteint dans les prévisions 2026.",
+  "Texte tronqué : les dispositions relatives aux dépenses, aux niches fiscales et aux recettes hors contribution hauts revenus ne sont pas visibles."
  ],
  "themes": [
-  "loi de finances",
-  "budget de l'etat",
-  "document illisible"
+  "finances publiques",
+  "fiscalité",
+  "contribution hauts revenus",
+  "dette publique",
+  "déficit budgétaire"
  ],
  "scrutinsCles": [
   "5086",
@@ -36,5 +66,5 @@
   "5089"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:b401460044c9ef1afb7f9e413e8239c8b7ce5760be27697009627865be5f9d46"
+ "sourceTextHash": "sha256:0065eb0a0a22648e6d057ccd552798778059a9b86b4b383399c588cf07bcd853"
 }

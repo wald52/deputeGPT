@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53069",
- "generatedAt": "2026-07-05T06:33:23Z",
+ "generatedAt": "2026-07-12T16:52:05Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,53 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0196_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de loi ordinaire intitulée « Retrouver la confiance et l'équilibre dans les rapports locatifs ». L'objectif affiché, tel qu'indiqué par le titre et la procédure, vise à restaurer la confiance entre bailleurs et locataires et à rééquilibrer les rapports locatifs en France.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des objets PDF techniques et des flux binaires compressés/non décodables sont visibles). Aucun article, aucune disposition, aucun mécanisme concret (obligation, taxe, subvention, seuil, sanction) ne peut être identifié ni cité. En l'absence de contenu exploitable, il est impossible de déterminer si les incitations créées par les mécanismes vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "La proposition de loi vise à 'retrouver la confiance et l'équilibre dans les rapports locatifs' en réformant le dispositif d'encadrement des loyers (sortie du caractère expérimental, élargissement des communes éligibles, plafonnement du complément de loyer) et en renforçant les droits des locataires face aux congés pour vente ou reprise.",
+ "mecanismesCles": [
+  {
+   "resume": "Sortie du caractère expérimental de l'encadrement des loyers et élargissement à toutes les communes en zone tendue ou présentant un déséquilibre offre/demande, avec possibilité d'extension aux communes limitrophes.",
+   "articleRef": "art. 1er (I)",
+   "citation": "« Dans les communes classées dans les zones géographiques mentionnées au I de l'article 232 du code général des impôts ou dans les communes qui présentent un déséquilibre entre l'offre et la demande de logements entraînant des difficultés sérieuses d'accès au logement »"
+  },
+  {
+   "resume": "Plafonnement du complément de loyer à 20 % du loyer de référence majoré et obligation de mentionner son montant dans les annonces.",
+   "articleRef": "art. 1er (B, 2° a)",
+   "citation": "« Le complément de loyer ne peut excéder 20 % du montant du loyer de référence majoré. »"
+  },
+  {
+   "resume": "Réduction des motifs justifiant un complément de loyer : exclusion des logements de moins de 14 m² et restriction aux défauts de la pièce principale.",
+   "articleRef": "art. 1er (B, 2° a bis)",
+   "citation": "« une surface habitable égale ou inférieure à 14 mètres carrés »"
+  },
+  {
+   "resume": "Possibilité pour le préfet de mettre en demeure le bailleur de mettre le bail en conformité et de restituer les loyers trop perçus, même sans requalification judiciaire.",
+   "articleRef": "art. 1er (B, 2° d)",
+   "citation": "« il peut mettre en demeure le bailleur, dans un délai de deux mois, d'une part, de mettre le contrat en conformité avec le présent article et, d'autre part, de procéder à la restitution des éventuels loyers trop perçus, même en l'absence de requalification du bail par le juge. »"
+  },
+  {
+   "resume": "Doublement des sanctions administratives en cas de non-respect : amende portée de 5 000 € à 10 000 € (personnes physiques) et de 15 000 € à 30 000 € (personnes morales), produit versé aux communes délégataires.",
+   "articleRef": "art. 1er (C) et art. 1er bis",
+   "citation": "« Le montant : '5 000 €' est remplacé par le montant : '10 000 €' ; Le montant : '15 000 €' est remplacé par le montant : '30 000 €'. »"
+  },
+  {
+   "resume": "Plafonnement du loyer de référence majoré à +10 % du loyer de référence dans les secteurs où le loyer médian dépasse de 10 % celui de l'agglomération.",
+   "articleRef": "art. 1er ter",
+   "citation": "« le loyer de référence majoré est au plus supérieur de 10 % au loyer de référence. »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'ensemble des mécanismes créés va dans le sens de l'objectif affiché de 'confiance et équilibre' entre bailleurs et locataires. L'article 1er généralise l'encadrement des loyers (sortie de l'expérimentation) tout en l'assouplissant via l'avis conforme du conseil municipal, ce qui restaure une prérogative locale. Le plafonnement du complément de loyer à 20 % (art. 1er B) et l'exclusion des petites surfaces (art. 1er B a bis) protègent les locataires contre les dépassements. Le doublement des sanctions (art. 1er C et 1er bis) renforce le caractère dissuasif du dispositif. L'article 2 renforce la protection des locataires face aux congés pour vente/reprise en instaurant un droit de preuve a posteriori. L'article 2 bis empêche la revalorisation annuelle du complément de loyer, limitant la dérive inflationniste. Les incitations convergent donc vers un meilleur équilibre du rapport locatif.",
  "pointsDeVigilance": [
-  "Le contenu textuel du PDF n'a pas été décodé : le dossier législatif fourni ne contient pas le texte lisible de la proposition de loi.",
-  "Aucun article ni exposé des motifs n'a pu être extrait pour analyse.",
-  "Une nouvelle soumission avec un texte OCRisé ou en format texte brut est nécessaire pour mener l'analyse."
+  "L'élargissement de l'encadrement à toutes les communes en zone tendue (art. 1er I) pourrait décourager l'investissement locatif dans certaines zones, avec un risque d'effet inverse sur l'offre.",
+  "Le transfert du produit des amendes aux communes (art. 1er C) crée un intérêt financier municipal à verbaliser, ce qui pourrait modifier l'équilibre bailleur/collectivité.",
+  "La compensation par une taxe sur les tabacs (art. 3) est un mécanisme de financement indirect sans lien avec le logement, ce qui peut interroger la cohérence fiscale.",
+  "Le texte est tronqué à 15 000 caractères : les articles suivants (au-delà de l'art. 3) ne sont pas visibles et pourraient contenir des mécanismes contradictoires."
  ],
  "themes": [
-  "rapports locatifs",
   "logement",
-  "bail",
-  "équilibre bailleur-locataire"
+  "encadrement des loyers",
+  "rapports locatifs",
+  "bail d'habitation",
+  "complément de loyer"
  ],
  "scrutinsCles": [
   "4742",
@@ -37,5 +70,5 @@
   "4745"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:4b6d8874d096e21205138f0f44194b3d92d1c8f1b16acb5ef6550c728afd9f05"
+ "sourceTextHash": "sha256:69c3cd50f673e0a1bd13184b10fc0c2260523ba194c29875eebe7f3bbc6be0ca"
 }

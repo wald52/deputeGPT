@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53019",
- "generatedAt": "2026-07-05T06:27:14Z",
+ "generatedAt": "2026-07-12T16:48:30Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,20 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2003_proposition-resolution",
   "legifrance": null
  },
- "objectifAffiche": "Rendre plus lisible le fonctionnement de l'administration française, via une proposition de résolution déposée le 27 octobre 2025 dans le cadre de l'article 34-1 de la Constitution.",
+ "objectifAffiche": "La proposition de résolution n°2003, déposée le 27 octobre 2025, vise à rendre plus lisible le fonctionnement de l'administration française. Il s'agit d'un texte procédural relevant de l'article 34-1 de la Constitution, c'est-à-dire une résolution parlementaire sans valeur normative directe.",
  "mecanismesCles": [],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles : seule la fiche signalétique (titre, numéro, date de dépôt, procédure) est disponible. Aucun mécanisme concret (obligation, sanction, seuil, dérogation) ne peut être identifié, ce qui empêche toute évaluation des incitations produites par le texte.",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles. Seuls apparaissent le titre de la proposition, sa numérotation, la législature, la date de dépôt et des liens de navigation vers d'autres formats (PDF, HTML, XML, JSON). Aucun mécanisme concret (obligation, taxe, subvention, dérogation, seuil, sanction) ne peut être identifié dans le contenu transmis. En l'absence de dispositions analysables, il est impossible de déterminer si les incitations créées par le texte vont dans le sens de l'objectif affiché de lisibilité administrative ou dans un sens opposé.",
  "pointsDeVigilance": [
-  "Le contenu substantiel de la proposition de résolution (exposé des motifs et articles) n'a pas été transmis dans le dossier fourni.",
-  "Une proposition de résolution au sens de l'article 34-1 est un outil non contraignant (simple invitation au Gouvernement ou expression de vœux), ce qui limite a priori la portée normative de ses mécanismes.",
-  "Le statut 'en_cours' indique que le texte n'est pas encore adopté, son effectivité reste donc hypothétique."
+  "Le contenu substantiel du texte (exposé des motifs et articles) n'a pas été transmis : seuls les métadonnées de la proposition sont disponibles.",
+  "Une résolution au sens de l'article 34-1 de la Constitution n'a pas de portée normative directe : elle peut formuler des vœux ou des recommandations mais ne crée pas, en principe, d'obligations juridiques contraignantes.",
+  "Sans lecture des articles, toute évaluation de cohérence entre l'objectif affiché et les mécanismes réels est impossible."
  ],
  "themes": [
-  "administration",
-  "lisibilité",
+  "lisibilité administrative",
   "résolution parlementaire",
-  "article 34-1"
+  "article 34-1",
+  "fonctionnement de l'administration"
  ],
  "scrutinsCles": [
   "5107"

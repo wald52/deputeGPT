@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52922",
- "generatedAt": "2026-07-05T06:31:32Z",
+ "generatedAt": "2026-07-12T16:50:55Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,19 +15,53 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0199_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est identifié comme un Projet de loi de financement de la sécurité sociale pour 2026 (PLFSS 2026), promulgue. Aucun objectif affiché ni exposé des motifs n'est lisible dans le contenu fourni.",
- "mecanismesCles": [],
+ "objectifAffiche": "Le texte est un projet de loi de financement de la sécurité sociale (PLFSS) pour 2026, dont l'objectif affiché, à travers son article liminaire, est de présenter les prévisions de dépenses, de recettes et de solde des administrations de sécurité sociale pour 2025 et 2026, en visant un retour à l'équilibre (solde de 0,1 point de PIB en 2026 contre -0,3 en 2025).",
+ "mecanismesCles": [
+  {
+   "resume": "Rectification des prévisions de recettes, dépenses et soldes par branche pour 2025, avec un déficit toutes branches de -23,5 Md€",
+   "articleRef": "art. 1er",
+   "citation": "Toutes branches (hors transferts entre branches) .... 642,3 665,8 -23,5"
+  },
+  {
+   "resume": "Maintien de l'ONDAM 2025 inchangé avec rectification des sous-objectifs (soins de ville, établissements de santé, personnes âgées, handicapées)",
+   "articleRef": "art. 2",
+   "citation": "L'objectif national de dépenses d'assurance maladie de l'ensemble des régimes obligatoires de base au titre de l'année 2025 demeure inchangé."
+  },
+  {
+   "resume": "Compensation d'une perte de recettes par création d'une taxe additionnelle à l'accise sur les tabacs",
+   "articleRef": "art. 3 bis",
+   "citation": "La perte de recettes pour les organismes de sécurité sociale résultant du I est compensée, à due concurrence, par la création d'une taxe additionnelle à l'accise sur les tabacs"
+  },
+  {
+   "resume": "Communication aux tribunaux des créances dues par les cotisants dépassant un plafond, et modification des procédures de recouvrement (sûretés, garanties)",
+   "articleRef": "art. 4",
+   "citation": "communiquent au président du tribunal de commerce ou au président du tribunal judiciaire compétent, sans que s'y oppose le secret professionnel, le montant des créances dues par un cotisant dépassant un plafond."
+  },
+  {
+   "resume": "Possibilité pour les organismes de recouvrement de réaliser des corrections sur les données déclarées en cas d'anomalie",
+   "articleRef": "art. 5 (4 bis A)",
+   "citation": "les organismes mentionnés aux articles L. 213-1 et L. 752-4 peuvent réaliser les corrections requises dans des conditions et selon des modalités prévues par décret en Conseil d'État."
+  },
+  {
+   "resume": "Validation par la DGFiP des inscriptions au registre national des entreprises pour certaines entreprises sans salarié affilié en France",
+   "articleRef": "art. 6 (4 bis B)",
+   "citation": "Les inscriptions d'informations et les dépôts de pièces au registre national des entreprises [...] sont validés, pour les entreprises mentionnées au 6° de l'article L. 123-36, par la direction générale des finances publiques"
+  }
+ ],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le contenu fourni est un fichier PDF brut dont les flux de texte (streams) sont encodés/compressés et illisibles. Aucun article, aucune disposition, aucun mécanisme concret et aucun exposé des motifs n'a pu être extrait du document. Il est donc impossible de déterminer les incitations créées par le texte.",
+ "justificationVerdict": "Le texte fourni est tronqué à 15000 caractères et ne contient que les articles 1 à 8 (début), ce qui ne permet pas d'appréhender l'ensemble des mécanismes de recettes et de dépenses du PLFSS pour 2026. Les mécanismes visibles concernent principalement des ajustements techniques de recouvrement (art. 4, 5, 6), des reports de calendriers d'expérimentation (art. 7) et une réorganisation du régime des artistes-auteurs (art. 8). L'article liminaire affiche un retour à l'équilibre en 2026 (+0,1 pt PIB), mais les mécanismes concrets du texte tronqué ne permettent pas de vérifier si les incitations réelles (hausses de cotisations, taxes nouvelles, économies) y concourent effectivement.",
  "pointsDeVigilance": [
-  "Le document fourni est un PDF binaire dont les objets 'stream' contiennent des données compressées non décodées, rendant le texte intégralement illisible.",
-  "Seuls les métadonnées du dossier législatif (titre, identifiant, statut 'promulgue') sont exploitables.",
-  "Toute analyse de second ordre nécessiterait la version texte (TXT/HTML/XML) du PLFSS 2026."
+  "Le texte est tronqué à 15000 caractères : les articles relatifs aux principales mesures de recettes (taxes, cotisations) et de dépenses (économies, plafonds) ne sont pas visibles",
+  "L'article 3 est supprimé, ce qui peut signaler le retrait d'une mesure initialement prévue",
+  "La taxe additionnelle sur les tabacs (art. 3 bis) sert uniquement de compensation à une perte de recettes, sans dimension de santé publique explicite",
+  "Le report de l'expérimentation à 2027 (art. 7) peut retarder des modernisations du recouvrement"
  ],
  "themes": [
   "financement de la sécurité sociale",
-  "texte illisible",
-  "analyse indéterminée"
+  "recouvrement des cotisations",
+  "équilibre financier",
+  "régime des artistes-auteurs",
+  "procédures collectives"
  ],
  "scrutinsCles": [
   "4695",
@@ -36,5 +70,5 @@
   "4758"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:9959e35f1a7cf08ea5da5e4c767d7de08024b7280688f50efecd4b39896a7b4f"
+ "sourceTextHash": "sha256:2d50cc0e60242b6aa417276a14a0c6610308cdfbaeda2ff7784325fabc020a15"
 }

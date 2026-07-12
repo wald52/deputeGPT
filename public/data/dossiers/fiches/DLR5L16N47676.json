@@ -1,0 +1,66 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L16N47676",
+ "generatedAt": "2026-07-12T17:01:57Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Mettre en place un registre national des cancers",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/16/dossiers/DLR5L16N47676",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0147_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Mettre en place un registre national des cancers en France. Il s'agit d'une proposition de loi ordinaire visant à créer une infrastructure centralisée de données sur les cancers, gérée par l'Institut national du cancer (INCa), pour améliorer la connaissance épidémiologique et la lutte contre cette maladie.",
+ "mecanismesCles": [
+  {
+   "resume": "Création d'un article L. 1415-2-1 dans le code de la santé publique instituant un registre national des cancers centralisant les données populationnelles sur l'épidémiologie et les soins en cancérologie.",
+   "articleRef": "art. unique, 2°",
+   "citation": "« Le registre national des cancers mentionné à l'article L. 1415-2, dont l'Institut national du cancer est le responsable du traitement des données, centralise les données populationnelles relatives à l'épidémiologie et aux soins dans le domaine de la cancérologie. »"
+  },
+  {
+   "resume": "Définition des finalités du registre : amélioration de la prévention, du dépistage, du diagnostic et de la prise en charge des patients, ainsi que constitution d'une base de données pour la recherche.",
+   "articleRef": "art. L. 1415-2-1 (al. 2)",
+   "citation": "« La collecte et le traitement de ces données ont pour objet d'améliorer la prévention, le dépistage et le diagnostic des cancers ainsi que la prise en charge des patients et de constituer une base de données aux fins de recherche. »"
+  },
+  {
+   "resume": "L'INCa est désigné comme responsable du traitement des données à caractère personnel, avec mise à disposition des données aux organismes publics/privés pour recherches et à Santé publique France.",
+   "articleRef": "art. L. 1415-2-1 (al. 3)",
+   "citation": "« L'Institut national du cancer collecte et traite à ces fins les données à caractère personnel strictement nécessaires à la réalisation de ses missions. Il les met à la disposition des organismes publics ou privés pour la réalisation de recherches, d'études ou d'évaluations dans le domaine de la cancérologie... »"
+  },
+  {
+   "resume": "Renvoi à un décret en Conseil d'État, après avis de la CNIL, pour préciser les conditions d'application, le rôle des entités labellisées et les modalités d'appariement avec d'autres jeux de données.",
+   "articleRef": "art. L. 1415-2-1 (al. 4)",
+   "citation": "« Un décret en Conseil d'État, pris après avis motivé et publié de la Commission nationale de l'informatique et des libertés, détermine les conditions d'application du présent article. »"
+  },
+  {
+   "resume": "Modification de l'article L. 1415-2 pour intégrer le registre national des cancers dans les missions de l'INCa, ajouter la notion de 'labellisation' et étendre les compétences au 'développement et hébergement de systèmes d'information'.",
+   "articleRef": "art. unique, 1°",
+   "citation": "« et développement et hébergement de systèmes d'information »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés vont directement dans le sens de l'objectif affiché. L'article L. 1415-2-1 institue explicitement un registre national des cancers (art. unique, 2°) et lui assigne des finalités explicitement alignées avec l'objectif : « améliorer la prévention, le dépistage et le diagnostic des cancers ainsi que la prise en charge des patients » (al. 2). La désignation de l'INCa comme responsable du traitement et la mise à disposition des données aux chercheurs et à Santé publique France (al. 3) créent les incitations concrètes à la production de connaissances épidémiologiques. Aucun mécanisme du texte n'oriente les effets dans une direction opposée à l'objectif ; le renvoi au décret en Conseil d'État (al. 4) précise simplement les modalités sans contredire la finalité.",
+ "pointsDeVigilance": [
+  "Le texte ne contient pas d'exposé des motifs dans l'extrait fourni, ce qui limite l'analyse de l'intention politique précise.",
+  "Les garanties concrètes sur la protection des données personnelles (durée de conservation, droits des patients, finalités de recherche autorisées) sont renvoyées à un décret en Conseil d'État ultérieur, ce qui laisse une marge d'appréciation importante.",
+  "L'absence de sanctions spécifiques en cas de mésusage des données dans le texte législatif lui-même.",
+  "Le texte ne précise pas si la collecte sera exhaustive ou basée sur un échantillon, ni les sources de données mobilisées (établissements de santé, assurance maladie, etc.)."
+ ],
+ "themes": [
+  "santé publique",
+  "cancérologie",
+  "données de santé",
+  "épidémiologie",
+  "recherche médicale"
+ ],
+ "scrutinsCles": [
+  "2633"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:572218c6988eb5b40c1eee51cb2e72a2a1ffe1ef3dfbabf430048a9b66bb2336"
+}

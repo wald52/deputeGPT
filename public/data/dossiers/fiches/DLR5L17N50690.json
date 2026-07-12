@@ -1,0 +1,75 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50690",
+ "generatedAt": "2026-07-12T17:09:25Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Restaurer l'autorité de la justice à l'égard des mineurs délinquants et de leurs parents",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/restaurer_autorite_justice_mineurs_delinquants_et_parents",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0111_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Proposition de loi ordinaire visant à renforcer l'autorité de la justice à l'égard des mineurs délinquants et de leurs parents, en aggravant la responsabilité parentale, en accélérant les procédures de jugement et en durcissant le régime des mesures de sûreté applicables aux mineurs.",
+ "mecanismesCles": [
+  {
+   "resume": "Aggravation de la peine encourue par les parents en cas de soustraction d'un mineur ayant conduit à la commission d'un crime ou de plusieurs délits ayant donné lieu à une condamnation définitive : 3 ans d'emprisonnement et 45 000 € d'amende.",
+   "articleRef": "art. 1er (art. 227-17 CP)",
+   "citation": "« Lorsque cette soustraction a directement conduit à la commission, par le mineur, d'au moins un crime ou de plusieurs délits ayant donné lieu à une condamnation définitive, elle est punie de trois ans d'emprisonnement et de 45 000 euros d'amende. »"
+  },
+  {
+   "resume": "Obligation pour les parents de déférer aux convocations du juge des enfants, sous peine d'amende civile.",
+   "articleRef": "art. 2 (art. 375-1 CC)",
+   "citation": "« Les parents sont tenus de déférer aux convocations aux audiences et aux auditions du juge des enfants. Le juge des enfants peut condamner à l'amende civile prévue par le code de procédure civile ceux qui, sans motif légitime, n'y ont pas déféré. »"
+  },
+  {
+   "resume": "Doublement du montant de l'amende civile sanctionnant le défaut de déférer aux convocations du juge des enfants (de 3 750 € à 7 500 €).",
+   "articleRef": "art. 2 (I bis, art. L. 311-5 CJPM)",
+   "citation": "« Au deuxième alinéa, le montant : '3 750 euros' est remplacé par le montant : '7 500 euros' »"
+  },
+  {
+   "resume": "Responsabilité civile de plein droit des parents du fait de leurs enfants mineurs, sauf lorsque le mineur a été confié à un tiers par décision administrative ou judiciaire.",
+   "articleRef": "art. 3 (art. 1242 CC)",
+   "citation": "« Les parents [...] sont, de plein droit, [...] sauf lorsque que ceux-ci ont été confiés à un tiers par une décision administrative ou judiciaire »"
+  },
+  {
+   "resume": "Possibilité pour l'assureur ayant indemnisé un dommage sur le fondement de la responsabilité parentale d'exiger du parent condamné pour soustraction (art. 227-17 CP) une participation à l'indemnisation plafonnée à 7 500 €.",
+   "articleRef": "art. 3 (art. L. 121-2 C. ass.)",
+   "citation": "« l'assureur peut exiger de ce parent le versement d'une participation à l'indemnisation du dommage ne pouvant excéder 7 500 euros »"
+  },
+  {
+   "resume": "Création d'une procédure d'audience unique en comparution immédiate pour les mineurs de plus de 16 ans récidivistes encourant au moins 3 ans d'emprisonnement, avec renonciation au délai de 10 jours.",
+   "articleRef": "art. 4 (art. L. 423-5-1 CJPM)",
+   "citation": "« le mineur âgé d'au moins seize ans peut faire l'objet d'une procédure d'audience unique en comparution immédiate [...] s'il [...] Encourt une peine supérieure ou égale à trois ans d'emprisonnement »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'ensemble des mécanismes créés va dans le sens de l'objectif affiché de renforcement de l'autorité judiciaire. L'article 1er aggrave la responsabilité pénale des parents en cas de soustraction ayant conduit à des infractions (3 ans et 45 000 €). L'article 2 crée une obligation parentale de déférer aux convocations du juge des enfants, sanctionnée par une amende civile doublée (de 3 750 € à 7 500 €). L'article 3 institue une responsabilité civile parentale de plein droit et un mécanisme de récupération auprès de l'assureur plafonné à 7 500 €. L'article 4 et l'article 4 bis A accélèrent la réponse judiciaire par la comparution immédiate et abaissent les seuils. L'article 4 bis durcit les mesures de sûreté (ARSE dès 13 ans, prolongation de placement après la majorité). L'article 5 supprime l'atténuation de peine pour les mineurs de plus de 16 ans en récidive. Tous ces dispositifs convergent vers une réponse plus rapide et plus ferme à l'égard des mineurs délinquants et de leurs parents.",
+ "pointsDeVigilance": [
+  "L'article 5 supprime l'atténuation automatique des peines pour les mineurs de plus de 16 ans en récidive, ce qui constitue un recul significatif du principe de spécialisation de la justice des mineurs, tempéré toutefois par la possibilité pour le tribunal d'en décider autrement par décision motivée.",
+  "L'ARSE dès 13 ans (art. 4 bis) et la prolongation du placement après la majorité sans consentement (art. 4 bis) constituent des mesures attentatoires à la liberté individuelle particulièrement lourdes pour des mineurs.",
+  "La procédure d'audience unique en comparution immédiate (art. 4) repose sur le consentement du mineur à renoncer au délai de 10 jours, ce qui préserve un minimum de garanties procédurales.",
+  "Le mécanisme de récupération de l'assureur contre le parent condamné (art. 3) est plafonné à 7 500 €, ce qui en limite la portée dissuasive.",
+  "L'exposé des motifs n'est pas fourni dans le texte tronqué, ce qui limite l'analyse de la cohérence entre l'intention politique et les mécanismes adoptés."
+ ],
+ "themes": [
+  "justice des mineurs",
+  "responsabilité parentale",
+  "comparution immédiate",
+  "mesures de sûreté",
+  "récidive"
+ ],
+ "scrutinsCles": [
+  "804",
+  "805",
+  "1623",
+  "1624"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:e32ebc0322fd675c2150976924cbe876aa913f5bdb59cc162731753ae5e9fcfe"
+}

@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N51866",
- "generatedAt": "2026-07-04T06:18:30Z",
+ "generatedAt": "2026-07-12T16:45:06Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,27 +15,54 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0232_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de résolution visant à alerter sur la préservation des principes démocratiques, des libertés publiques et de l'État de droit en Turquie. Il s'agit d'un texte de nature politique et diplomatique, sans portée normative interne.",
+ "objectifAffiche": "Résolution européenne de l'Assemblée nationale française appelant à la préservation des principes démocratiques, des libertés publiques et de l'État de droit en Turquie, dans un contexte de détérioration depuis 2018 et d'arrestations massives depuis 2024-2025.",
  "mecanismesCles": [
   {
-   "resume": "Le document fourni est illisible : il s'agit d'un fichier PDF brut dont le contenu textuel (exposé des motifs et articles) n'a pas été extrait. Aucun mécanisme concret (obligation, taxe, subvention, sanction, seuil) ne peut être identifié.",
-   "articleRef": null,
-   "citation": null
+   "resume": "Déplore la dégradation des droits fondamentaux et l'affaiblissement du cadre démocratique et de l'État de droit en Turquie.",
+   "articleRef": "art. 1",
+   "citation": "Déplore la dégradation persistante de la situation des droits fondamentaux en Turquie"
+  },
+  {
+   "resume": "Déplore les atteintes aux libertés académiques, dont le licenciement de plus de 5 800 universitaires.",
+   "articleRef": "art. 2",
+   "citation": "le licenciement pour des raisons arbitraires et politiques de plus de 5 800 universitaires"
+  },
+  {
+   "resume": "Exprime sa préoccupation face à l'instrumentalisation de l'appareil judiciaire et l'usage abusif d'inculpations.",
+   "articleRef": "art. 3",
+   "citation": "une instrumentalisation récurrente de l'appareil judiciaire, notamment par un usage abusif de chefs d'inculpation liés à la corruption ou au terrorisme"
+  },
+  {
+   "resume": "Regrette les mesures arbitraires contre les professionnels de l'information (censure, arrestations de journalistes).",
+   "articleRef": "art. 4",
+   "citation": "la censure, les restrictions à la diffusion et l'arrestation de journalistes"
+  },
+  {
+   "resume": "Regrette la détention du maire d'Istanbul Ekrem İmamoğlu et de responsables de l'opposition.",
+   "articleRef": "art. 5",
+   "citation": "Regrette la détention du maire d'Istanbul, M. Ekrem İmamoğlu, élu au suffrage universel"
+  },
+  {
+   "resume": "Regrette le retrait de la Turquie de la convention d'Istanbul sur les violences faites aux femmes.",
+   "articleRef": "art. 6",
+   "citation": "Regrette le retrait de la Turquie, en juillet 2021, de la convention du Conseil de l'Europe sur la prévention et la lutte contre la violence à l'égard des femmes"
   }
  ],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel transmis est un PDF dont le flux de contenu (stream) n'a pas été décodé en texte lisible : seules des séquences binaires et des balises d'objets PDF apparaissent. L'exposé des motifs et les articles de la résolution ne sont pas accessibles. Sans lecture du contenu normatif, il est impossible d'identifier des mécanismes concrets ni de comparer les incitations produites à l'objectif affiché.",
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Il s'agit d'une résolution européenne, acte non législatif par nature, qui ne crée pas d'obligations juridiques contraignantes mais exprime une position politique. Les mécanismes consistent exclusivement en des prises de position ('déplore', 'regrette', 'exprime sa préoccupation', 'appelle', 'invite') qui vont dans le sens de l'objectif affiché : la préservation des principes démocratiques, des libertés publiques et de l'État de droit en Turquie. Les articles 1 à 8 dénoncent des atteintes concrètes (droits fondamentaux, libertés académiques, instrumentalisation judiciaire, arrestations de journalistes et d'élus, retrait de la convention d'Istanbul) et les articles 9 à 12 formulent des appels aux institutions européennes et au Conseil de l'Europe pour agir diplomatiquement. L'ensemble est cohérent avec l'objectif affiché.",
  "pointsDeVigilance": [
-  "Le fichier fourni est un PDF non décodé : le texte législatif réel (visas, exposé des motifs, articles) n'est pas lisible.",
-  "Une résolution parlementaire n'a en principe pas de valeur normative contraignante ; elle exprime une position politique de l'assemblée.",
-  "Toute analyse de second ordre sur les incitations nécessite la lecture effective des articles, ce qui est ici impossible."
+  "Résolution non contraignante : aucun mécanisme coercitif, aucune sanction, aucune mesure budgétaire contraignante n'est créé.",
+  "L'efficacité dépend entièrement de la réponse des institutions européennes et du Conseil de l'Europe, qui ne sont que 'invitées'.",
+  "Le texte mentionne explicitement le 'soutien à la population kurde' (art. 12), ce qui dépasse le seul cadre démocratique turc et introduit une dimension géopolitique.",
+  "Le texte évoque le 'rôle déstabilisateur de la Turquie en Syrie' et la 'menace pour le peuple kurde', mêlant enjeux internes et externes.",
+  "Plusieurs amendements (n° 1 à 11) ont été intégrés, suggérant des modifications en cours d'examen dont l'impact exact n'est pas détaillé dans le texte tronqué."
  ],
  "themes": [
+  "droits de l'homme",
   "turquie",
-  "démocratie",
-  "libertés publiques",
   "état de droit",
-  "résolution parlementaire"
+  "démocratie",
+  "résolution européenne"
  ],
  "scrutinsCles": [
   "5304",
@@ -44,5 +71,5 @@
   "5307"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:5693e5c25c86ceee8bf2bdc4660e439055e93b767786538d89b50ad035643099"
+ "sourceTextHash": "sha256:a0f004561bb19fbaa7ae4619f96cbe69a3b210626b44e6d80ba2202a7450f945"
 }

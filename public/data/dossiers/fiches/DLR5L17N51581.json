@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N51581",
- "generatedAt": "2026-07-05T06:37:47Z",
+ "generatedAt": "2026-07-12T16:53:04Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -18,27 +18,44 @@
  "objectifAffiche": "Élargir la possibilité pour les collectivités territoriales et leurs groupements d'avoir recours au modèle de la société portuaire pour l'exploitation de leurs ports.",
  "mecanismesCles": [
   {
-   "resume": "Le texte officiel fourni est illisible (contenu PDF binaire non décodé), empêchant l'identification des articles et mécanismes concrets.",
-   "articleRef": null,
-   "citation": null
+   "resume": "Modification de l'article 35 de la loi du 5 janvier 2006 : les collectivités peuvent désormais 'créer' des sociétés 'portuaires' (et non plus seulement y participer), et la restriction aux ports visés au I de l'article 30 de la loi de 2004 est supprimée.",
+   "articleRef": "Article unique, I, 1° (a et b)",
+   "citation": "Après le mot : « peuvent », sont insérés les mots : « créer et » et, après le mot : « sociétés », il est inséré le mot : « portuaires » ; Les mots : « visés au I de l'article 30 de la loi n° 2004-809 du 13 août 2004 » sont supprimés"
+  },
+  {
+   "resume": "Possibilité pour les chambres de commerce et d'industrie (CCI) situées dans le ressort géographique des ports exploités de participer au capital de la société portuaire.",
+   "articleRef": "Article unique, I, 1° (c)",
+   "citation": "Les chambres de commerce et d'industrie dans le ressort géographique desquelles les ports exploités se situent peuvent participer au capital de la société portuaire."
+  },
+  {
+   "resume": "Facilitation de la cession ou de l'apport de la concession à la société portuaire lorsque son capital initial est détenu entièrement par des personnes publiques.",
+   "articleRef": "Article unique, I, 2°",
+   "citation": "la collectivité territoriale ou le groupement de collectivités territoriales compétent peut convenir, en accord avec le concessionnaire d'un port, de la cession ou de l'apport de la concession à la société portuaire si son capital initial est détenu entièrement par des personnes publiques."
+  },
+  {
+   "resume": "Abrogation du III de l'article 35 (dispositions antérieurement applicables) et ajustements rédactionnels du IV concernant le transfert des contrats de travail.",
+   "articleRef": "Article unique, I, 3° et 4°",
+   "citation": "Le III est abrogé ; L'article L. 1224-1 du code du travail est applicable aux contrats…"
   }
  ],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte transmis est un fichier PDF dont le contenu textuel n'a pas été extrait correctement (flux binaires illisibles). Aucun article, aucune disposition concrète (obligation, seuil, dérogation, sanction) ne peut être identifié dans le contenu fourni. Il est donc impossible de déterminer si les mécanismes créés vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte modifie l'article 35 de la loi de 2006 pour élargir concrètement le recours au modèle de société portuaire : les collectivités peuvent désormais 'créer' (et non seulement participer à) de telles sociétés, et la limitation antérieure aux seuls ports 'visés au I de l'article 30 de la loi de 2004' est supprimée, ce qui étend le périmètre des ports éligibles. L'ouverture du capital aux CCI du ressort géographique et la facilitation de la cession/apport de concession lorsque le capital est 100 % public renforcent l'attractivité du dispositif. Ces mécanismes convergent directement avec l'objectif affiché d'élargir le recours à la société portuaire.",
  "pointsDeVigilance": [
-  "Le texte officiel est corrompu ou mal extrait : il s'agit d'un PDF binaire sans couche texte exploitable.",
-  "Aucun article ni exposé des motifs lisible n'a pu être analysé.",
-  "L'analyse de second ordre ne peut être conduite sans accès au contenu normatif réel."
+  "Le texte ne contient pas d'exposé des motifs dans l'extrait fourni, ce qui limite l'analyse des intentions détaillées.",
+  "L'abrogation du III de l'article 35 pourrait supprimer des garanties ou contreparties antérieures dont l'effet n'est pas mesurable sans le texte antérieur.",
+  "La condition de capital 'entièrement détenu par des personnes publiques' pour la cession de concession peut restreindre certaines configurations mixtes.",
+  "Les II et III de l'article unique ont été supprimés, privant potentiellement le texte de dispositions complémentaires."
  ],
  "themes": [
   "ports",
   "collectivités territoriales",
   "société portuaire",
-  "exploitation portuaire"
+  "concession",
+  "chambres de commerce"
  ],
  "scrutinsCles": [
   "4697"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:622e5bbb53a2379e7e65e7d677627f884759179743c24efab5672549b9602516"
+ "sourceTextHash": "sha256:afcf003df08dc2d2fbd2f2a89dc525e9a9570c3d8ed72eb6e96692dec364bfb8"
 }

@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53135",
- "generatedAt": "2026-07-05T06:41:01Z",
+ "generatedAt": "2026-07-12T16:53:58Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,19 +15,54 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0185_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est identifié comme un projet de loi de finances de fin de gestion pour 2025 (projet de loi de finances rectificative). L'objectif affiché typique d'un tel texte est d'ajuster en fin d'année les prévisions budgétaires de l'État, de corriger les ouvertures de crédits et de modifier certaines dispositions fiscales ou budgétaires pour assurer l'équilibre budgétaire de l'exercice en cours.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est illisible : il s'agit d'un contenu binaire PDF (flux d'octets bruts commençant par '%PDF-1.5' et contenant des streams compressés non décodés) sans aucun article, alinéa ou exposé des motifs extractible. Aucun mécanisme concret (obligation, taxe, subvention, seuil, sanction) ne peut être identifié ni cité. En l'absence de tout contenu textuel exploitable, il est impossible de déterminer si les incitations créées par le texte vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "Le texte est un projet de loi de finances de fin de gestion (rectificative) pour 2025, présenté comme un ajustement budgétaire de fin d'année. L'article liminaire affiche une prévision de déficit effectif des administrations publiques de -3,7 points de PIB pour 2025 (contre -5,4 dans la LPFP), avec une dette Maastricht à 116,0 % du PIB et un taux de prélèvements obligatoires à 43,6 %.",
+ "mecanismesCles": [
+  {
+   "resume": "Modification d'un montant dans l'article 46 de la loi de finances pour 2006 (de 3 949 162 945 € à 3 959 580 513 €), vraisemblablement lié à une ressource affectée.",
+   "articleRef": "art. 1er",
+   "citation": "À la fin de la deuxième phrase du 2° du 1 du VI de l'article 46 de la loi n° 2005-1719 du 30 décembre 2005 de finances pour 2006, le montant : « 3 949 162 945 euros » est remplacé par le montant : « 3 959 580 513 euros »."
+  },
+  {
+   "resume": "Révision à la hausse de plafonds ou montants dans l'article 125 de la LFI 2025 (de 176 283 341 € à 188 000 000 € et de 143 100 000 € à 149 000 000 €).",
+   "articleRef": "art. 2",
+   "citation": "le montant : « 176 283 341 » est remplacé par le montant : « 188 000 000 »"
+  },
+  {
+   "resume": "Modification de la répartition régionale de crédits (article 112 de la LFI 2023), avec compensation de la perte de recettes par une taxe additionnelle à l'accise sur les tabacs.",
+   "articleRef": "art. 3",
+   "citation": "La perte de recettes pour l'État résultant du I est compensée, à due concurrence, par la création d'une taxe additionnelle à l'accise sur les tabacs"
+  },
+  {
+   "resume": "Ajustement des ressources et charges de l'État pour 2025 : solde général positif de +5 932 M€ (budget général +9 051 M€), avec déficit à financer de 131,6 Md€ et émission de dette MLT de 300 Md€.",
+   "articleRef": "art. 4",
+   "citation": "Solde général .............................................. +5 932 ; Déficit à financer ......................................................... 131,6"
+  },
+  {
+   "resume": "Ouvertures de crédits supplémentaires (AE 3 040 M€, CP 3 193 M€) et annulations massives (AE 9 813 M€, CP 10 274 M€) sur le budget général, soit une annulation nette d'environ 7 Md€.",
+   "articleRef": "art. 5",
+   "citation": "Il est annulé pour 2025, au titre du budget général, des autorisations d'engagement et des crédits de paiement s'élevant respectivement aux montants de 9 812 561 722 € et de 10 273 859 506 €"
+  },
+  {
+   "resume": "Annulations de crédits sur les budgets annexes (AE 4,9 M€, CP 15,4 M€).",
+   "articleRef": "art. 6",
+   "citation": "Il est annulé pour 2025, au titre des budgets annexes, des autorisations d'engagement et des crédits de paiement s'élevant respectivement aux montants de 4 874 463 € et de 15 436 927 €"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte est un collectif budgétaire de fin de gestion qui ajuste les prévisions macroéconomiques (article liminaire) et procède à des ouvertures et annulations de crédits pour boucler l'exercice 2025. Les mécanismes vont dans le sens d'une maîtrise des dépenses : l'article 5 annule environ 10,3 Md€ de CP tout en ouvrant 3,2 Md€ supplémentaires (annulation nette ~7 Md€), et l'article 4 fixe un déficit à financer de 131,6 Md€ gagé par 300 Md€ d'émission de dette. La légère hausse du plafond d'emplois (art. 8, +323 ETPT) reste marginale. La compensation par une taxe sur les tabacs (art. 3) préserve la neutralité budgétaire. L'ensemble est cohérent avec l'objectif affiché de gestion de fin d'année dans le cadre de la trajectoire LPFP.",
  "pointsDeVigilance": [
-  "Le document fourni est un PDF brut non décodé : les flux 'stream' entre 'endstream' contiennent des données compressées (probablement FlateDecode) qui n'ont pas été extraites en texte lisible.",
-  "Aucun article, aucune disposition, aucun exposé des motifs n'est accessible dans la chaîne fournie.",
-  "L'identification du texte (DLR5L17N53135, PLF de fin de gestion 2025) provient uniquement des métadonnées du dossier législatif, pas du contenu du texte."
+  "Le texte est tronqué à 15 000 caractères : les états annexés A, B, C, D (répartitions par mission) ne sont pas visibles, ce qui empêche de connaître la ventilation fine des annulations et ouvertures de crédits.",
+  "La dette au sens de Maastricht est prévue à 116,0 % du PIB pour 2025, en hausse par rapport à 2024 (113,2 %), ce qui traduit une trajectoire d'endettement croissante malgré les annulations.",
+  "Le déficit effectif prévu (-3,7 pts de PIB) reste très supérieur à l'objectif LPFP (-3,3), indiquant un dérapage par rapport à la programmation.",
+  "La hausse ciblée de certains plafonds d'emplois (lignes 70-71 passant de 743 à 870, soit +17 %) mériterait d'être explicitée.",
+  "Le mécanisme de compensation par taxe sur les tabacs (art. 3) crée un lien de dépendance entre recettes régionales et fiscalité sur le tabac."
  ],
  "themes": [
   "finances publiques",
-  "loi de finances rectificative",
-  "budget de l'état"
+  "budget de l'état",
+  "collectif budgétaire",
+  "dette publique",
+  "déficit public"
  ],
  "scrutinsCles": [
   "4439",
@@ -36,5 +71,5 @@
   "4442"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:bc0483a5247974a1b052c9039655d3a000bf6d4509196872ff83d7a3f3e763a9"
+ "sourceTextHash": "sha256:330d83b1c4c5224f5e2450016fbff3356b3c95e97d0d6ad9c63394820b8c2e44"
 }

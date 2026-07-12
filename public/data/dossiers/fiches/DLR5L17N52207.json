@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52207",
- "generatedAt": "2026-07-05T06:41:42Z",
+ "generatedAt": "2026-07-12T16:54:05Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,21 +15,23 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b1501_proposition-loi",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de loi ordinaire n°1501 déposée le 4 juin 2025, intitulée « Proposition de loi visant à la nationalisation d'ArcelorMittal France ». L'objectif affiché est donc la nationalisation des actifs d'ArcelorMittal en France.",
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire n° 1501, déposée le 4 juin 2025 à l'Assemblée nationale, visant à la nationalisation d'ArcelorMittal France. Aucun exposé des motifs ni contenu substantiel des articles n'est fourni dans le dossier législatif transmis.",
  "mecanismesCles": [],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs, ni articles de loi. Seuls figurent la page de garde et les métadonnées de la proposition (titre, numéro, date de dépôt, commission saisie). Aucun mécanisme concret (transfert de propriété, indemnisation, financement, structure de reprise, statut du personnel) n'est référencé, ce qui empêche toute analyse des incitations réellement créées par le texte.",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs, ni articles, ni aucune disposition opérationnelle. Seul le titre de la proposition de loi ('visant à la nationalisation d'ArcelorMittal France') et des métadonnées procédurales (commission des finances, n° 1501, 17e législature) sont disponibles. Sans accès au contenu normatif (transfert de propriété, financement, modalités d'indemnisation, périmètre des actifs concernés, gouvernance), il est impossible d'identifier les mécanismes concrets créés et donc de déterminer si les incitations réelles s'alignent avec l'objectif affiché de nationalisation.",
  "pointsDeVigilance": [
-  "Aucun article ni dispositif opérationnel n'est accessible dans le texte fourni",
-  "L'exposé des motifs est absent de l'extrait transmis",
-  "Le coût, le périmètre exact des actifs visés et les modalités d'indemnisation de l'actionnaire actuel ne sont pas précisés",
-  "Le statut juridique de l'entité de reprise (EPIC, société nationale, etc.) n'est pas déterminable"
+  "Dossier législatif tronqué : absence totale de l'exposé des motifs et du corps des articles",
+  "Impossible de connaître le périmètre de la nationalisation (uniquement les actifs français ?哪些 sites ? quelle holding ?)",
+  "Impossible de connaître le mode de financement (emprunt, budget général, titres)",
+  "Impossible de connaître les modalités d'indemnisation de l'actionnaire ArcelorMittal et leur conformité au droit de propriété",
+  "Impossible de connaître la gouvernance prévue pour l'entité nationalisée"
  ],
  "themes": [
   "nationalisation",
   "sidérurgie",
   "industrie",
-  "propriété publique"
+  "propriété publique",
+  "arcelormittal"
  ],
  "scrutinsCles": [
   "4435",

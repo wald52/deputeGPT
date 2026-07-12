@@ -1,0 +1,47 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51362",
+ "generatedAt": "2026-07-12T17:02:04Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi autorisant la ratification de la résolution LP.3(4) portant amendement de l’article 6 du Protocole de Londres de 1996 à la Convention de 1972 sur la prévention de la pollution des mers résultant de l’immersion de déchets et autres matières",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N51362",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0145_texte-adopte-seance",
+  "legifrance": null
+ },
+ "objectifAffiche": "Autoriser la ratification de la résolution LP.3(4) portant amendement de l'article 6 du Protocole de Londres de 1996 à la Convention de 1972, dans le but de renforcer la prévention de la pollution des mers résultant de l'immersion de déchets et autres matières.",
+ "mecanismesCles": [
+  {
+   "resume": "Le projet de loi autorise la ratification d'une résolution internationale modifiant l'article 6 du Protocole de Londres de 1996, sans créer de mécanisme normatif interne nouveau (pas de taxe, obligation, seuil ou sanction dans le texte fourni).",
+   "articleRef": null,
+   "citation": "Projet de loi autorisant la ratification de la résolution LP.3(4) portant amendement de l'article 6 du Protocole de Londres de 1996 à la Convention de 1972 sur la prévention de la pollution des mers résultant de l'immersion de déchets et autres matières"
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est un projet de loi de ratification qui ne contient ni exposé des motifs, ni articles substantiels décrivant le contenu de la résolution LP.3(4) ni les obligations concrètes qu'elle introduit. Sans accès au contenu normatif de l'amendement de l'article 6 du Protocole de Londres, il est impossible de déterminer si les mécanismes réellement créés par cette ratification vont dans le sens de l'objectif affiché de prévention de la pollution marine ou s'ils en atténuent la portée.",
+ "pointsDeVigilance": [
+  "Le texte officiel fourni est tronqué et ne contient ni l'exposé des motifs ni le contenu de la résolution LP.3(4) ni le détail de l'amendement de l'article 6 du Protocole de Londres.",
+  "Un projet de loi de ratification n'a pas d'effet direct en droit interne : il autorise simplement le Président à ratifier un traité international.",
+  "L'analyse de l'impact réel dépend du contenu de la résolution LP.3(4) qui n'est pas reproduit dans le dossier fourni."
+ ],
+ "themes": [
+  "droit maritime",
+  "pollution marine",
+  "immersion de déchets",
+  "traités internationaux",
+  "ratification"
+ ],
+ "scrutinsCles": [
+  "1333",
+  "2459",
+  "2460"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:2ec4ef2ce79a6b25669866bb2128878126f5485f48c2fd1cf3b0762f3d8eaff8"
+}

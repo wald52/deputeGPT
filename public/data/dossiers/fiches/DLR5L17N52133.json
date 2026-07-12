@@ -1,0 +1,38 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N52133",
+ "generatedAt": "2026-07-12T17:03:10Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Approbation des comptes de la sécurité sociale de l'année 2024",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/approbation_comptes_securite_sociale_2024",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0139_texte-adopte-seance",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est un projet de loi ordinaire portant approbation des comptes de la sécurité sociale de l'année 2024. Il vise à valider et arrêter définitivement les comptes financiers des régimes de sécurité sociale pour l'exercice 2024.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs, ni articles substantiels. Seul le sommaire et les métadonnées du dossier législatif (titre, commission saisie, identifiant, statut 'rejeté par l'Assemblée nationale') sont accessibles. Sans le contenu normatif (articles approuvant les comptes, tableaux d'équilibre, montants), il est impossible d'identifier les mécanismes concrets ni de vérifier si les incitations correspondent à l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte officiel a été tronqué à 15000 caractères et seul le sommaire est visible, sans aucun article ni exposé des motifs.",
+  "Le projet de loi a été rejeté par l'Assemblée nationale le 10 juin 2025 après procédure accélérée, ce qui interrompt son parcours législatif.",
+  "Une loi d'approbation des comptes est par nature rétrospective et certificative ; elle ne crée pas en principe d'obligations nouvelles mais constate des flux passés."
+ ],
+ "themes": [
+  "sécurité sociale",
+  "comptes publics",
+  "approbation budgétaire",
+  "finances sociales"
+ ],
+ "scrutinsCles": [
+  "2277"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:3d8d04e8c8ab1f08bc67b006060deea0f0f0ceeed840e39d4fb60c66ed718fe7"
+}

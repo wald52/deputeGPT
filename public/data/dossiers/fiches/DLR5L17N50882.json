@@ -1,0 +1,60 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50882",
+ "generatedAt": "2026-07-12T16:59:35Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi relative à la restitution d'un bien culturel à la République de Côte d'Ivoire",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N50882",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0160_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Restituer un bien culturel spécifique, le tambour parleur Djidji Ayokwè, à la République de Côte d'Ivoire, en dérogation au principe d'inaliénabilité des collections publiques françaises.",
+ "mecanismesCles": [
+  {
+   "resume": "Dérogation au principe d'inaliénabilité des collections publiques (art. L. 451-5 du code du patrimoine) pour permettre la sortie du tambour Djidji Ayokwè des collections nationales du musée du quai Branly-Jacques Chirac.",
+   "articleRef": "Article unique",
+   "citation": "Par dérogation au principe d'inaliénabilité des collections publiques françaises inscrit à l'article L. 451-5 du code du patrimoine"
+  },
+  {
+   "resume": "Sortie du bien des collections nationales à compter de l'entrée en vigueur de la loi.",
+   "articleRef": "Article unique",
+   "citation": "le tambour parleur dit Djidji Ayokwè conservé dans les collections nationales placées sous la garde du musée du quai Branly-Jacques Chirac [...] cesse de faire partie de ces collections"
+  },
+  {
+   "resume": "Obligation pour l'autorité administrative de transférer le bien à la Côte d'Ivoire dans un délai d'un an.",
+   "articleRef": "Article unique",
+   "citation": "L'autorité administrative dispose, à compter de la même date, d'un délai d'un an pour transférer ce bien à la République de Côte d'Ivoire"
+  },
+  {
+   "resume": "Identification précise du bien par son numéro d'inventaire (71.1930.5.1) en annexe.",
+   "articleRef": "Annexe à l'article unique",
+   "citation": "Numéro d'inventaire du musée du quai Branly-Jacques Chirac : 71.1930.5.1. – Tambour « parleur » de la communauté Atchan"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte crée une dérogation ciblée au principe d'inaliénabilité (article unique) afin de permettre la sortie du tambour Djidji Ayokwè des collections nationales. Il impose à l'autorité administrative un transfert effectif vers la Côte d'Ivoire dans un délai d'un an. L'annexe identifie précisément le bien concerné (inventaire 71.1930.5.1). L'ensemble des mécanismes converge directement vers l'objectif affiché de restitution du bien culturel à la République de Côte d'Ivoire.",
+ "pointsDeVigilance": [
+  "Le texte ne précise pas les modalités concrètes du transfert (transport, conservation, conditions de restitution).",
+  "Aucune sanction n'est prévue en cas de non-respect du délai d'un an par l'autorité administrative.",
+  "La portée est strictement limitée à un seul bien identifié, sans mécanisme générique pour d'autres restitutions."
+ ],
+ "themes": [
+  "patrimoine culturel",
+  "restitution",
+  "relations internationales",
+  "musées",
+  "colonialisme"
+ ],
+ "scrutinsCles": [
+  "2936"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:394a756e5d44ca32ae6236e5cfb2b30053211c8fe4ca080026d5a729ce4b4237"
+}

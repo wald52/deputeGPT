@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N53279",
- "generatedAt": "2026-07-04T06:24:09Z",
+ "generatedAt": "2026-07-12T16:47:56Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,18 +15,19 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2645_proposition-loi",
   "legifrance": null
  },
- "objectifAffiche": "Proposition de loi ordinaire visant à mettre fin au devoir conjugal, déposée le 14 avril 2026 et modifiée par le Sénat. Le texte n'expose pas d'exposé des motifs ni d'articles dans l'extrait fourni.",
+ "objectifAffiche": "Proposition de loi ordinaire visant à mettre fin au devoir conjugal, déposée le 14 avril 2026 et modifiée par le Sénat. Le texte n'expose pas explicitement les motifs dans l'extrait fourni, mais l'objectif affiché par le titre est la suppression du devoir conjugal en droit français.",
  "mecanismesCles": [],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles. Seul le titre et les métadonnées de la proposition de loi sont accessibles, ce qui ne permet pas d'identifier les mécanismes concrets (obligations, sanctions, dérogations) créés par le texte ni d'évaluer si les incitations vont dans le sens de l'objectif affiché.",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs, ni articles de loi. Seul le titre, l'identifiant, la procédure et des liens de navigation vers le dossier législatif sont présents. Sans accès au contenu normatif (articles modifiant le code civil, sanctions éventuelles, dérogions), il est impossible d'identifier les mécanismes concrets créés par le texte et donc de déterminer si les incitations réelles correspondent à l'objectif affiché.",
  "pointsDeVigilance": [
-  "Le texte officiel est tronqué à 15000 caractères mais l'extrait réellement fourni ne contient aucun article ni exposé des motifs, uniquement le sommaire et les métadonnées du dossier législatif.",
-  "Impossible de vérifier la cohérence entre l'objectif affiché (mettre fin au devoir conjugal) et les mécanismes effectivement créés par les articles."
+  "Le texte officiel est tronqué et ne contient pas l'exposé des motifs ni les articles de la proposition de loi",
+  "Seuls les métadonnées du dossier législatif (titre, n°, commission saisie, liens) sont accessibles",
+  "Impossible d'évaluer la portée normative réelle (modification du code civil, abrogation, etc.) sans le contenu des articles"
  ],
  "themes": [
   "droit civil",
-  "droit de la famille",
   "devoir conjugal",
+  "droit de la famille",
   "égalité"
  ],
  "scrutinsCles": [

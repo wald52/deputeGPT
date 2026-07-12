@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N51845",
- "generatedAt": "2026-07-04T06:23:36Z",
+ "generatedAt": "2026-07-12T16:47:51Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,25 +15,58 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0223_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Réparer les préjudices causés par la transplantation de mineurs de La Réunion en France hexagonale entre 1962 et 1984. Proposition de loi ordinaire visant à reconnaître et indemniser les victimes de ces transferts forcés.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni est un fichier PDF brut dont le contenu textuel n'a pas été extrait (seuls des flux binaires PDF compressés sont visibles). Aucun article, aucune disposition concrète et aucune citation exploitable ne peuvent être lus dans le document fourni. Il est donc impossible d'identifier les mécanismes créés par la loi ni de vérifier si les incitations qu'ils produisent s'alignent avec l'objectif affiché de réparation des préjudices liés aux transplantations de mineurs réunionnais.",
+ "objectifAffiche": "Réparer les préjudices causés par la transplantation de mineurs de La Réunion vers la France hexagonale entre 1962 et 1984. Le texte vise à reconnaître cette politique migratoire comme un préjudice, à en préserver la mémoire et à indemniser les victimes ou leurs descendants.",
+ "mecanismesCles": [
+  {
+   "resume": "Création d'une commission pour la mémoire des anciens mineurs transplantés, chargée de veiller aux recommandations du rapport historique, à une politique de réconciliation, à l'intégration dans les programmes scolaires et à la création d'un lieu de mémoire dans la Creuse.",
+   "articleRef": "art. 1er",
+   "citation": "Est créée une commission pour la mémoire des anciens mineurs de La Réunion transplantés en France hexagonale de 1962 à 1984"
+  },
+  {
+   "resume": "Institution d'une journée nationale d'hommage fixée au 18 février.",
+   "articleRef": "art. 2",
+   "citation": "La République française institue une journée nationale d'hommage aux mineurs de La Réunion transplantés en France hexagonale de 1962 à 1984."
+  },
+  {
+   "resume": "Exonération fiscale de l'allocation forfaitaire : insertion au 4° g de l'article 81 du CGI (exonération d'impôt sur le revenu).",
+   "articleRef": "art. 4-I",
+   "citation": "L'allocation forfaitaire valant réparation prévue à l'article 4 de la loi n° du [...]"
+  },
+  {
+   "resume": "Exonération de cotisations sociales (CSG/CRDS) de l'allocation forfaitaire via l'article L. 136-1-3 du CSS.",
+   "articleRef": "art. 4-II",
+   "citation": "Le II de l'article L. 136‑1‑3 du code de la sécurité sociale est complété par un 8°"
+  },
+  {
+   "resume": "Création d'une allocation forfaitaire de réparation versée par un fonds de l'État, couvrant l'ensemble des préjudices de toute nature, destinée aux personnes transplantées (ou leurs descendants si décédées) figurant sur la liste nominative de la commission historique.",
+   "articleRef": "art. 4-III",
+   "citation": "La réparation prend la forme d'une allocation forfaitaire, versée par un fonds mis en place par l'État. Son montant est réputé couvrir l'ensemble des préjudices de toute nature subis en raison de la transplantation."
+  },
+  {
+   "resume": "Entrée en vigueur différée au plus tard le 1er janvier 2029 ; durée d'application du dispositif social limitée à trois ans ; délai de dépôt des demandes fixé par décret (minimum 3 ans).",
+   "articleRef": "art. 4-IV",
+   "citation": "entre en vigueur à une date fixée par le décret prévu au III bis du présent article, et au plus tard le 1er janvier 2029"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'ensemble des mécanismes créés va dans le sens de l'objectif affiché de réparation mémorielle et indemnitaire. L'article 1er crée une commission dédiée à la mémoire, à la réconciliation et à la transmission scolaire, et prévoit un lieu de mémoire dans la Creuse, ce qui répond directement à la dimension mémorielle. L'article 2 institue une journée nationale d'hommage, renforçant la reconnaissance symbolique. L'article 4 met en place l'instrument indemnitaire concret : une allocation forfaitaire versée par un fonds de l'État, exonérée d'impôt sur le revenu (art. 4-I) et de cotisations sociales (art. 4-II), couvrant 'l'ensemble des préjudices de toute nature'. Les mécanismes sont donc cohérents avec l'objectif de réparation, même si le montant, les modalités et le calendrier restent renvoyés à un décret (art. 4-III bis).",
  "pointsDeVigilance": [
-  "Le texte officiel transmis est illisible : il s'agit d'un PDF dont les flux de contenu ne sont pas décodés en texte exploitable",
-  "Aucun article ni mécanisme concret n'a pu être extrait du document",
-  "L'analyse de second ordre (alignement entre objectif affiché et incitations réelles) ne peut pas être conduite sans accès au contenu normatif"
+  "Le montant de l'allocation forfaitaire n'est pas fixé dans la loi mais renvoyé à un décret (art. 4-III bis), ce qui laisse une marge d'appréciation importante sur le caractère réellement réparateur de la somme.",
+  "L'entrée en vigueur est différée au plus tard au 1er janvier 2029 (art. 4-IV), soit un délai significatif par rapport à la promulgation.",
+  "La durée d'application du dispositif d'exonération sociale est limitée à trois ans (art. 4-IV), ce qui pourrait créer une inégalité de traitement selon la date de versement.",
+  "L'éligibilité est strictement conditionnée à l'inscription sur la liste nominative de la commission historique, ce qui exclut potentiellement des personnes transplantées non recensées.",
+  "L'article 3 (supprimé) et l'article 5 (supprimé) ainsi que le II de l'article 1er (supprimé) signalent des arbitrages politiques ayant réduit la portée initiale du texte."
  ],
  "themes": [
+  "mémoire",
   "réparation",
-  "transplantation de mineurs",
+  "transplantation",
   "la réunion",
-  "indemnisation",
-  "mémoire postcoloniale"
+  "enfants"
  ],
  "scrutinsCles": [
   "5244"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:e9414aa0cecf0a1db6061cff92c48a62fe35b516232fe2b199f71060da46ab94"
+ "sourceTextHash": "sha256:085ef317d9d39cbd9a5c83cacff2281380195f3e407225ff16e89915dbc12147"
 }

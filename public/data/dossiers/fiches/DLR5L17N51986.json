@@ -1,0 +1,61 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51986",
+ "generatedAt": "2026-07-12T17:07:35Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi relatif au transfert à l’Etat des personnels enseignants de l’enseignement du premier degré dans les îles Wallis et Futuna",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N51986",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0119_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le projet de loi vise à organiser le transfert à l'État des personnels enseignants du premier degré à Wallis et Futuna, à l'issue de la convention de 2020 avec la mission catholique, en habilitant le Gouvernement à légiférer par ordonnance sur les conditions et modalités de leur intégration dans la fonction publique d'État.",
+ "mecanismesCles": [
+  {
+   "resume": "Habilitation du Gouvernement à prendre par ordonnance, dans un délai de trois mois après promulgation, toute mesure législative relative aux conditions et modalités de transfert des personnels enseignants du premier degré relevant de la mission catholique.",
+   "articleRef": "art. 1er",
+   "citation": "le Gouvernement est autorisé à prendre par voie d'ordonnance, dans un délai de trois mois à compter de la promulgation de la présente loi, toute mesure relevant du du domaine de la loi"
+  },
+  {
+   "resume": "Possibilité pour les enseignants, quel que soit leur niveau de diplôme, d'être intégrés dans les corps de la fonction publique de l'État.",
+   "articleRef": "art. 1er (1°)",
+   "citation": "Être intégrés dans les corps de la fonction publique de l'État"
+  },
+  {
+   "resume": "Option ouverte aux enseignants entre le maintien de leur affiliation pour la retraite à la Caisse des prestations sociales des îles Wallis et Futuna, ou l'affiliation au régime spécial de leur corps d'intégration.",
+   "articleRef": "art. 1er (2°)",
+   "citation": "Opter en faveur du maintien de leur affiliation, pour leur retraite, au régime géré par la Caisse des prestations sociales des îles Wallis et Futuna ou être affiliés au régime spécial dont relève leur corps d'intégration"
+  },
+  {
+   "resume": "Dépôt obligatoire d'un projet de loi de ratification devant le Parlement dans un délai de six mois à compter de la publication de l'ordonnance.",
+   "articleRef": "art. 2",
+   "citation": "Un projet de loi de ratification est déposé devant le Parlement dans un délai de six mois à compter de la publication de l'ordonnance"
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte est une loi d'habilitation qui se limite à autoriser le Gouvernement à légiférer par ordonnance (art. 1er) et à prévoir une ratification parlementaire (art. 2). Les mécanismes concrets d'intégration, de statut ou de droits des enseignants ne sont pas définis dans le texte lui-même mais renvoyés à l'ordonnance future. Il est donc impossible de déterminer si les incitations effectivement créées iront dans le sens de l'objectif affiché de transfert à l'État, le contenu normatif substantiel étant absent du texte adopté.",
+ "pointsDeVigilance": [
+  "Le texte est une simple loi d'habilitation : les véritables dispositions (statut, rémunération, conditions d'intégration, droits acquis) seront fixées par ordonnance, non débattues par le Parlement.",
+  "Le délai de trois mois pour l'ordonnance et de six mois pour la ratification est très court, ce qui peut limiter l'examen parlementaire des mesures concrètes.",
+  "L'absence de critères précis dans la loi (niveaux de diplôme, conditions de reprise d'ancienneté, etc.) laisse une marge importante au Gouvernement.",
+  "Le choix entre deux régimes de retraite (art. 1er-2°) peut créer des inégalités entre enseignants intégrés selon leur option."
+ ],
+ "themes": [
+  "fonction publique",
+  "enseignement",
+  "wallis-et-futuna",
+  "ordonnance",
+  "transfert de personnel"
+ ],
+ "scrutinsCles": [
+  "2104"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:87db8e03da667e642146390e456db22c5ec7cd99e55954cb0fd0d9e568a500ed"
+}

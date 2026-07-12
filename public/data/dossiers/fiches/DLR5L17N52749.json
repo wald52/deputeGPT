@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52749",
- "generatedAt": "2026-07-05T06:33:02Z",
+ "generatedAt": "2026-07-12T16:51:28Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,20 +15,49 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0197_texte-adopte-provisoire",
   "legifrance": null
  },
- "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à garantir le renouvellement automatique des titres de séjour de longue durée. L'objectif affiché est d'assurer la continuité du droit au séjour des ressortissants étrangers titulaires de titres de longue durée, sans qu'ils aient à accomplir de démarches répétitives.",
- "mecanismesCles": [],
- "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte officiel fourni est illisible : il s'agit d'un fichier PDF dont le contenu textuel a été corrompu ou n'a pas été extrait (flux binaires 'x��...' sans texte décodable). Aucun article, aucune disposition concrète, aucune obligation, taxe, seuil ou sanction ne peut être identifié dans le contenu fourni. L'exposé des motifs et les articles du texte de loi ne sont pas accessibles. Il est donc impossible de déterminer si les mécanismes créés par les articles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "objectifAffiche": "Garantir le renouvellement automatique des titres de séjour de longue durée (carte de séjour pluriannuelle et cartes de résident) afin d'éviter les ruptures de droits liées aux délais de traitement administratif.",
+ "mecanismesCles": [
+  {
+   "resume": "Création d'un article L. 411-3-1 dans le CESEDA instaurant le renouvellement automatique des titres de séjour de longue durée par l'autorité administrative.",
+   "articleRef": "art. 1er",
+   "citation": "« La carte de séjour pluriannuelle mentionnée au 4° de l'article L. 411-1 et les cartes de résident mentionnées aux 5° et 6° du même article L. 411-1 sont renouvelées automatiquement par l'autorité administrative. »"
+  },
+  {
+   "resume": "Institution d'une décision implicite d'acceptation en cas de silence de l'administration pendant plus de quatre mois suivant une demande de renouvellement.",
+   "articleRef": "art. 1er",
+   "citation": "« Le silence gardé par l'autorité administrative dans un délai de quatre mois à compter d'une demande de renouvellement d'un titre de séjour de longue durée vaut décision implicite d'acceptation. »"
+  },
+  {
+   "resume": "Modification de l'article L. 811-5 du CESEDA : l'autorité administrative doit informer l'étranger lorsqu'elle s'apprête à s'opposer au renouvellement de sa carte pluriannuelle ou de résident.",
+   "articleRef": "art. 2",
+   "citation": "« ou lorsqu'elle s'apprête à s'opposer au renouvellement de sa carte de séjour pluriannuelle ou de sa carte de résident »"
+  },
+  {
+   "resume": "Demande de rapport au Gouvernement sous six mois sur l'opportunité de supprimer les taxes et droit de timbre applicables aux renouvellements de titres de séjour.",
+   "articleRef": "art. 3",
+   "citation": "« le Gouvernement remet au Parlement un rapport évaluant l'opportunité de supprimer les taxes et le droit de timbre applicables aux renouvellements des titres de séjour »"
+  },
+  {
+   "resume": "Demande de rapport sur les conséquences de la perte du droit au séjour pour les demandes non traitées sous trois mois, et sur le reversement rétroactif des aides sociales non perçues.",
+   "articleRef": "art. 4",
+   "citation": "« Ce rapport évalue l'opportunité de reverser de manière rétroactive aux personnes étrangères qui y sont éligibles l'ensemble des aides et prestations sociales non perçues »"
+  }
+ ],
+ "verdictIncitations": "incitations_mitigees",
+ "justificationVerdict": "L'article 1er crée bien le mécanisme d'automaticité et une décision implicite d'acceptation à quatre mois, ce qui va dans le sens de l'objectif affiché. Toutefois, l'article 2 introduit une exception importante : l'administration peut s'opposer au renouvellement, ce qui fragilise le caractère pleinement automatique du dispositif. Surtout, les articles 3 et 4 ne prévoient que des rapports gouvernementaux sans mesure contraignante : la suppression des taxes (qui constituent un obstacle financier au renouvellement) et la réparation des préjudices subis ne sont qu'évaluées, jamais imposées. L'automaticité reste donc conditionnée au paiement de taxes non supprimées et à la diligence de l'administration.",
  "pointsDeVigilance": [
-  "Le texte officiel fourni est un PDF dont le contenu textuel n'a pas été correctement extrait (flux binaires illisibles)",
-  "Aucun article ni mécanisme concret n'a pu être identifié dans le document fourni",
-  "L'analyse des incitations réelles ne peut être menée sans accès au contenu normatif du texte"
+  "L'article 2 permet à l'administration de s'opposer au renouvellement, ce qui limite la portée de l'automaticité.",
+  "Les taxes et droit de timbre sur les renouvellements ne sont pas supprimés mais seulement soumis à un rapport (art. 3), maintenant un obstacle financier à l'automaticité effective.",
+  "Le délai de quatre mois pour la décision implicite d'acceptation est long et peut entraîner une période d'insécurité juridique.",
+  "Les articles 3 et 4 sont des demandes de rapports sans force normative contraignante.",
+  "Le texte ne définit pas les conditions ni les motifs d'opposition au renouvellement visés à l'article 2."
  ],
  "themes": [
   "droit des étrangers",
-  "titres de séjour",
-  "renouvellement automatique",
-  "immigration"
+  "titre de séjour",
+  "automatisation administrative",
+  "silence vaut acceptation",
+  "fiscalité administrative"
  ],
  "scrutinsCles": [
   "4751",
@@ -37,5 +66,5 @@
   "4754"
  ],
  "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
- "sourceTextHash": "sha256:b3b5c87807669ecac5c7338ba4bd9992f0ebc7a5a3e03c69fc9eb5ccb554b902"
+ "sourceTextHash": "sha256:cc0c6e5986afaf0d59aa0a9423ca9ad3655dcc551dbb1b46190db0e43c545519"
 }

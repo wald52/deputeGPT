@@ -1,0 +1,38 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N52087",
+ "generatedAt": "2026-07-12T17:00:51Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "protéger l’effectivité du droit fondamental d’éligibilité",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/proteger_effectivite_droit_fondamental_eligibilite_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b1415_proposition-loi",
+  "legifrance": null
+ },
+ "objectifAffiche": "Proposition de loi ordinaire visant à protéger l'effectivité du droit fondamental d'éligibilité, déposée le 13 mai 2025 et renvoyée à la commission des Lois de l'Assemblée nationale.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs, ni articles, ni dispositif législatif. Seul le titre de la proposition de loi et des informations de procédure (numéro, date de dépôt, commission saisie) sont disponibles. Sans contenu normatif, il est impossible d'identifier les mécanismes concrets créés par le texte ni de déterminer si les incitations qu'il produit s'alignent avec l'objectif affiché de protection du droit d'éligibilité.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué et ne contient que les métadonnées de la proposition de loi (titre, numéro, date, commission), sans aucun article ni exposé des motifs.",
+  "L'objectif affiché reste très général ('effectivité du droit fondamental d'éligibilité') et pourrait recouvrir des mesures très diverses (conditions d'inéligibilité, incompatibilités, financement de campagnes, accès au mandat, etc.).",
+  "Une analyse de second ordre est impossible sans accès au dispositif normatif."
+ ],
+ "themes": [
+  "droit électoral",
+  "éligibilité",
+  "droit fondamental"
+ ],
+ "scrutinsCles": [
+  "2707",
+  "2708"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:667b9c0da2ad207370bffa39f59e071dadde4eda28dab58914d69347d053c26b"
+}

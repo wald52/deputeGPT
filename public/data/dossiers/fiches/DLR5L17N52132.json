@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N52132",
- "generatedAt": "2026-07-05T06:28:07Z",
+ "generatedAt": "2026-07-12T16:48:40Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -18,24 +18,24 @@
  "objectifAffiche": "Inscrire la mouvance des Frères musulmans sur la liste européenne des organisations terroristes, via une proposition de résolution européenne demandant une telle inscription.",
  "mecanismesCles": [
   {
-   "resume": "Le texte est une proposition de résolution européenne (n°2318) examinée par la commission des affaires étrangères, dont le seul objet est d'inviter le Gouvernement français à soutenir l'inscription de la mouvance des Frères musulmans sur la liste européenne des organisations terroristes.",
+   "resume": "Proposition de résolution européenne invitant les autorités françaises à demander l'inscription de la mouvance des Frères musulmans sur la liste européenne des organisations terroristes.",
    "articleRef": null,
    "citation": "proposition de résolution européenne de M. Éric Pauget et plusieurs de ses collègues visant à inscrire la mouvance des frères musulmans sur la liste européenne des organisations terroristes"
   }
  ],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le document fourni ne contient que les métadonnées du dossier législatif (titre, numéro, commission saisie, date de dépôt) et l'intitulé de la proposition de résolution. Aucun article, aucun dispositif concret (obligation, sanction, mécanisme de financement, dérogation) et aucun exposé des motifs n'est reproduit dans le texte transmis. Il est donc impossible d'identifier les incitations effectives créées par le texte et de les comparer à l'objectif affiché.",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles substantiels : seul l'intitulé et la mention de dépôt sont disponibles. Aucun mécanisme concret (obligation, sanction, seuil, procédure d'inscription) n'est exposé dans les éléments fournis, ce qui empêche de déterminer si les incitations créées par le texte vont dans le sens de l'objectif affiché.",
  "pointsDeVigilance": [
-  "Le texte officiel est tronqué et ne contient ni les articles ni l'exposé des motifs de la résolution.",
-  "Une résolution européenne n'a pas en elle-même d'effet normatif direct : elle se limite à une invitation adressée au Gouvernement ou aux institutions européennes.",
-  "La notion de « mouvance » est juridiquement floue et soulève des questions de définition et de proportionnalité qui ne peuvent être évaluées sans le contenu du texte."
+  "Le texte officiel est tronqué et ne contient pas l'exposé des motifs ni le dispositif détaillé de la résolution.",
+  "Une résolution européenne n'a pas en elle-même de force normative directe : elle exprime une position politique du Parlement français à l'égard d'institutions européennes.",
+  "L'inscription sur la liste européenne des organisations terroristes relève d'une décision du Conseil de l'UE, et non d'une résolution parlementaire nationale."
  ],
  "themes": [
-  "terrorisme",
-  "listes européennes",
-  "frères musulmans",
-  "résolution européenne",
-  "affaires étrangères"
+  "sécurité intérieure",
+  "lutte antiterroriste",
+  "affaires européennes",
+  "islamisme",
+  "résolution"
  ],
  "scrutinsCles": [
   "5103",

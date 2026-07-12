@@ -1,8 +1,8 @@
 {
  "schemaVersion": 1,
- "analysisVersion": 1,
+ "analysisVersion": 2,
  "dossierId": "DLR5L17N51580",
- "generatedAt": "2026-07-04T06:21:35Z",
+ "generatedAt": "2026-07-12T16:45:55Z",
  "model": {
   "provider": "nvidia-nim",
   "id": "minimaxai/minimax-m3",
@@ -15,21 +15,26 @@
   "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b1015_proposition-resolution",
   "legifrance": null
  },
- "objectifAffiche": "La proposition de résolution n°1015, déposée le 27 février 2025, vise à demander la libération des prisonniers arméniens détenus par l'Azerbaïdjan. Il s'agit d'un texte de nature diplomatique et symbolique, soumis à la procédure de résolution Article 34-1.",
- "mecanismesCles": [],
+ "objectifAffiche": "Résolution déposée à l'Assemblée nationale demandant la libération des prisonniers arméniens détenus par l'Azerbaïdjan. Le texte vise à interpeller les autorités azerbaïdjanaises sur la détention de ressortissants arméniens, dans un contexte post-conflit au Haut-Karabakh.",
+ "mecanismesCles": [
+  {
+   "resume": "Aucun mécanisme normatif identifiable : le texte fourni ne contient ni exposé des motifs, ni articles, ni dispositif. Seule la mention d'une proposition de résolution n° 1015, déposée le 27 février 2025, suivant la procédure de résolution Article 34-1, est disponible.",
+   "articleRef": null,
+   "citation": null
+  }
+ ],
  "verdictIncitations": "indetermine",
- "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles. Seul le titre et l'identifiant de la proposition de résolution sont disponibles, ce qui ne permet pas d'identifier les mécanismes concrets (obligations, sanctions, demandes formelles) créés par le texte. Sans accès au contenu des articles ou à l'exposé des motifs, il est impossible de déterminer si les incitations réelles du texte vont dans le sens de l'objectif affiché.",
+ "justificationVerdict": "Le texte officiel fourni est tronqué et ne contient ni l'exposé des motifs ni le dispositif de la résolution. Sans contenu substantiel des articles, il est impossible d'identifier les mécanismes concrets (demande formelle au gouvernement, saisine d'une instance, condamnation, etc.) ni de déterminer si les incitations produites s'alignent avec l'objectif affiché de libération des prisonniers arméniens.",
  "pointsDeVigilance": [
-  "Le texte officiel est tronqué et ne contient que les métadonnées (titre, numéro, date de dépôt, procédure)",
-  "Aucun article ni exposé des motifs n'est disponible pour analyse",
-  "Une résolution Article 34-1 est un acte non contraignant par nature, ce qui limite la portée normative du texte"
+  "Le texte fourni est manifestement tronqué (sommaire et métadonnées uniquement, sans exposé des motifs ni articles)",
+  "Une résolution Article 34-1 est un acte non contraignant : elle exprime une position de l'Assemblée mais ne crée pas d'obligation juridique directe",
+  "L'efficacité réelle dépendra de la pression diplomatique exercée et de la coopération azerbaïdjanaise, éléments non mesurables dans le texte"
  ],
  "themes": [
-  "affaires étrangères",
-  "droits humains",
-  "prisonniers",
-  "arménie",
-  "azerbaïdjan"
+  "droits de l'homme",
+  "relations internationales",
+  "conflit du haut-karabakh",
+  "diplomatie parlementaire"
  ],
  "scrutinsCles": [
   "5297"
