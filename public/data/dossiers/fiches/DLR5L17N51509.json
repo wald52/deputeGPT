@@ -1,0 +1,38 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51509",
+ "generatedAt": "2026-07-13T06:10:23Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Restaurer l’autorité de l'État",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/restaurer_autorite_etat_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b0959_proposition-loi",
+  "legifrance": null
+ },
+ "objectifAffiche": "Proposition de loi ordinaire visant à « restaurer l'autorité de l'État », déposée le 13 février 2025 (n° 959, 17e législature). L'exposé des motifs et les articles ne sont pas fournis dans le texte transmis.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le dossier législatif fourni ne contient ni exposé des motifs, ni articles : seules la fiche d'identification (titre, numéro, date de dépôt, commission saisie) et des mentions de navigation sont présentes. Aucun mécanisme concret (obligation, sanction, seuil, dérogation, taxe, subvention) ne peut être extrait du texte, ce qui rend impossible toute évaluation des incitations produites par le texte au regard de son objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte officiel a été tronqué à 15000 caractères, mais ici le contenu utile (exposé des motifs et articles) est entièrement absent, et non simplement tronqué.",
+  "Le titre seul (« Restaurer l'autorité de l'État ») est trop générique pour permettre d'inférer un contenu normatif sans le texte des articles.",
+  "Le statut « en cours » indique que le texte est susceptible d'évolutions (amendements, rapport de commission) non reflétées dans la version fournie."
+ ],
+ "themes": [
+  "autorité de l'état",
+  "proposition de loi",
+  "texte non disponible"
+ ],
+ "scrutinsCles": [
+  "1263",
+  "1264"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:5cc9053e17bc13fb473bbccc314544d318cfdcfccdaad4429c04e4df053e094c"
+}

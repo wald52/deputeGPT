@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-07-12T17:09:25Z",
- "totalFiches": 150,
+ "generatedAt": "2026-07-13T06:21:08Z",
+ "totalFiches": 171,
  "fiches": {
   "DLR5L16N46127": {
    "titre": "Proposition de loi portant réparation des personnes condamnées pour homosexualité entre 1945 et 1982",
@@ -76,6 +76,19 @@
     "urbanisme",
     "transformation de bureaux",
     "immobilier"
+   ]
+  },
+  "DLR5L16N49176": {
+   "titre": "Proposition de loi relative au renforcement de la sûreté dans les transports",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-13T06:21:08Z",
+   "themes": [
+    "sécurité",
+    "transports",
+    "police",
+    "vidéoprotection",
+    "ordre public"
    ]
   },
   "DLR5L16N49263": {
@@ -156,6 +169,31 @@
     "normes oit"
    ]
   },
+  "DLR5L17N50169": {
+   "titre": "Proposition de loi visant à sortir la France du piège du narcotrafic",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-13T06:00:31Z",
+   "themes": [
+    "narcotrafic",
+    "criminalité organisée",
+    "organisation judiciaire",
+    "sécurité intérieure",
+    "techniques de renseignement"
+   ]
+  },
+  "DLR5L17N50387": {
+   "titre": "Lutter contre les déserts médicaux",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-13T05:55:56Z",
+   "themes": [
+    "santé",
+    "déserts médicaux",
+    "accès aux soins",
+    "démographie médicale"
+   ]
+  },
   "DLR5L17N50413": {
    "titre": "Créer une croix de la valeur des sapeurs-pompiers volontaires et professionnels",
    "verdictIncitations": "incitations_alignees",
@@ -182,6 +220,44 @@
     "report électoral"
    ]
   },
+  "DLR5L17N50578": {
+   "titre": "Proposition de loi visant à harmoniser le mode de scrutin aux élections municipales afin de garantir la vitalité démocratique, la cohésion municipale et la parité",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-13T06:07:36Z",
+   "themes": [
+    "élections municipales",
+    "mode de scrutin",
+    "parité",
+    "vie démocratique locale"
+   ]
+  },
+  "DLR5L17N50579": {
+   "titre": "Proposition de loi organique visant à harmoniser le mode de scrutin aux élections municipales afin de garantir la vitalité démocratique, la cohésion municipale et la parité",
+   "verdictIncitations": "indetermine",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-13T06:06:33Z",
+   "themes": [
+    "élections municipales",
+    "mode de scrutin",
+    "parité",
+    "démocratie locale",
+    "communes"
+   ]
+  },
+  "DLR5L17N50589": {
+   "titre": "Pour une stratégie nationale de prévention sur le chemsex",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-13T06:19:42Z",
+   "themes": [
+    "santé publique",
+    "prévention",
+    "addictions",
+    "chemsex",
+    "résolution"
+   ]
+  },
   "DLR5L17N50627": {
    "titre": "Lutter contre la pédocriminalité",
    "verdictIncitations": "incitations_alignees",
@@ -193,6 +269,30 @@
     "cybercriminalité",
     "intelligence artificielle",
     "outre-mer"
+   ]
+  },
+  "DLR5L17N50631": {
+   "titre": "Faire exécuter les peines d'emprisonnement ferme",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-13T06:10:33Z",
+   "themes": [
+    "justice pénale",
+    "exécution des peines",
+    "emprisonnement"
+   ]
+  },
+  "DLR5L17N50689": {
+   "titre": "Protéger les personnes engagées dans un projet parental des discriminations au travail",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-13T05:58:05Z",
+   "themes": [
+    "discrimination",
+    "travail",
+    "parentalité",
+    "adoption",
+    "pma"
    ]
   },
   "DLR5L17N50690": {
@@ -234,6 +334,19 @@
     "formation"
    ]
   },
+  "DLR5L17N50796": {
+   "titre": "Diverses dispositions d’adaptation au droit de l’Union européenne en matière économique, financière, environnementale, énergétique, de transport, de santé et de circulation des personnes",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-13T06:17:37Z",
+   "themes": [
+    "transposition droit européen",
+    "droit financier",
+    "marchés financiers",
+    "obligations vertes",
+    "esap"
+   ]
+  },
   "DLR5L17N50819": {
    "titre": "Proposition de loi visant à lever les contraintes à l’exercice du métier d’agriculteur",
    "verdictIncitations": "incitations_mitigees",
@@ -273,6 +386,19 @@
     "éducation nationale"
    ]
   },
+  "DLR5L17N51014": {
+   "titre": "Renforcer la démographie professionnelle des orthophonistes",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-13T06:09:17Z",
+   "themes": [
+    "démographie des professionnels de santé",
+    "orthophonie",
+    "formation",
+    "offre de soins",
+    "zones sous-dotées"
+   ]
+  },
   "DLR5L17N51037": {
    "titre": "Reconnaître une présomption de légitime défense pour les forces de l'ordre, dans l'exercice de leurs fonctions",
    "verdictIncitations": "incitations_alignees",
@@ -284,6 +410,19 @@
     "légitime défense",
     "usage de l'arme",
     "police"
+   ]
+  },
+  "DLR5L17N51039": {
+   "titre": "Renforcer les conditions d'accès à la nationalité française à Mayotte",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-13T06:04:00Z",
+   "themes": [
+    "nationalité",
+    "droit civil",
+    "mayotte",
+    "filiation",
+    "droit des étrangers"
    ]
   },
   "DLR5L17N51051": {
@@ -310,6 +449,19 @@
     "code électoral",
     "vote par correspondance",
     "compensation financière"
+   ]
+  },
+  "DLR5L17N51078": {
+   "titre": "Proposition de loi organique fixant le statut du procureur national anti-stupéfiants",
+   "verdictIncitations": "indetermine",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-13T05:58:41Z",
+   "themes": [
+    "justice",
+    "criminalité organisée",
+    "stupéfiants",
+    "statut de la magistrature",
+    "procureur"
    ]
   },
   "DLR5L17N51079": {
@@ -428,6 +580,31 @@
     "ratification"
    ]
   },
+  "DLR5L17N51375": {
+   "titre": "Libération immédiate de Boualem Sansal",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-13T05:56:42Z",
+   "themes": [
+    "droits humains",
+    "liberté d'expression",
+    "relations franco-algériennes",
+    "politique européenne de voisinage",
+    "prisonniers d'opinion"
+   ]
+  },
+  "DLR5L17N51376": {
+   "titre": "Créer un Institut Océan de l'université des Nations unies en France",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-13T06:16:40Z",
+   "themes": [
+    "recherche",
+    "océan",
+    "enseignement supérieur",
+    "organisations internationales"
+   ]
+  },
   "DLR5L17N51429": {
    "titre": "Proposition de loi visant à faciliter le maintien en rétention des personnes condamnées pour des faits d’une particulière gravité et présentant de forts risques de récidive",
    "verdictIncitations": "incitations_alignees",
@@ -439,6 +616,19 @@
     "expulsion",
     "sécurité publique",
     "lutte contre la récidive"
+   ]
+  },
+  "DLR5L17N51434": {
+   "titre": "Contre les fraudes aux moyens de paiement scripturaux",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-13T06:18:25Z",
+   "themes": [
+    "fraude bancaire",
+    "moyens de paiement",
+    "fichier national",
+    "lutte contre la fraude",
+    "chèque"
    ]
   },
   "DLR5L17N51457": {
@@ -454,6 +644,31 @@
     "collectivités territoriales"
    ]
   },
+  "DLR5L17N51480": {
+   "titre": "Mettre fin à la culpabilisation des victimes de violences physiques et sexuelles",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-13T06:17:48Z",
+   "themes": [
+    "violences physiques et sexuelles",
+    "victimes",
+    "résolution parlementaire",
+    "culpabilisation"
+   ]
+  },
+  "DLR5L17N51485": {
+   "titre": "Proposition de loi visant à convertir des centrales à charbon vers des combustibles moins émetteurs en dioxyde de carbone pour permettre une transition écologique plus juste socialement",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-13T06:05:50Z",
+   "themes": [
+    "énergie",
+    "transition écologique",
+    "charbon",
+    "centrales électriques",
+    "code de l'énergie"
+   ]
+  },
   "DLR5L17N51499": {
    "titre": "Reconnaissance de la Nation envers les rapatriés d’Indochine et réparation des préjudices subis par ceux-ci et leurs familles du fait de l'indignité de leurs conditions d'accueil et de vie dans certaines structures sur le territoire français",
    "verdictIncitations": "incitations_alignees",
@@ -465,6 +680,56 @@
     "réparation",
     "mémoire",
     "victimes de guerre"
+   ]
+  },
+  "DLR5L17N51504": {
+   "titre": "Renforcer la stabilité économique et la compétitivité du secteur agroalimentaire",
+   "verdictIncitations": "incitations_mitigees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-13T06:01:57Z",
+   "themes": [
+    "agroalimentaire",
+    "relations commerciales",
+    "grande distribution",
+    "promotions",
+    "sanctions administratives"
+   ]
+  },
+  "DLR5L17N51509": {
+   "titre": "Restaurer l’autorité de l'État",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-13T06:10:23Z",
+   "themes": [
+    "autorité de l'état",
+    "proposition de loi",
+    "texte non disponible"
+   ]
+  },
+  "DLR5L17N51510": {
+   "titre": "Renforcer le contrôle du Parlement en période d’expédition des affaires courantes",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-13T06:16:25Z",
+   "themes": [
+    "parlement",
+    "contrôle parlementaire",
+    "affaires courantes",
+    "recours pour excès de pouvoir",
+    "transparence gouvernementale"
+   ]
+  },
+  "DLR5L17N51518": {
+   "titre": "Valoriser la réserve communale de sécurité civile",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-13T06:11:47Z",
+   "themes": [
+    "sécurité civile",
+    "réserve communale",
+    "engagement citoyen",
+    "valorisation des compétences",
+    "formation"
    ]
   },
   "DLR5L17N51580": {

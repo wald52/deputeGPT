@@ -1,0 +1,72 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51014",
+ "generatedAt": "2026-07-13T06:09:17Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Renforcer la démographie professionnelle des orthophonistes",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/renforcer_demographie_professionnelle_orthophonistes",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0092_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Renforcer la démographie professionnelle des orthophonistes en augmentant le nombre d'étudiants formés et en ciblant les zones sous-dotées, via une programmation pluriannuelle des effectifs et des incitations à l'installation.",
+ "mecanismesCles": [
+  {
+   "resume": "Programmation pluriannuelle du numerus clausus des étudiants en orthophonie, fixé à 1 463 pour 2030, avec progression de 1 073 en 2025 à 1 463 en 2030.",
+   "articleRef": "art. 1er",
+   "citation": "le nombre des étudiants admis à entreprendre des études [...] est fixé à 1 463"
+  },
+  {
+   "resume": "Orientation prioritaire des effectifs supplémentaires vers les centres de formation situés dans ou à proximité des zones sous-dotées (offre de soins insuffisante).",
+   "articleRef": "art. 1er",
+   "citation": "Les effectifs supplémentaires d'étudiants admis [...] sont orientés prioritairement vers les centres de formation universitaire en orthophonie situés dans une zone [...] caractérisée par une offre de soins insuffisante"
+  },
+  {
+   "resume": "Création d'un statut de maître de stage universitaire pour les orthophonistes, avec formation obligatoire, pour accueillir davantage de stagiaires.",
+   "articleRef": "art. 2",
+   "citation": "Les étudiants en orthophonie peuvent être autorisés à effectuer une partie de leurs stages pratiques auprès d'orthophonistes agréés maîtres de stage des universités"
+  },
+  {
+   "resume": "Création d'un contrat d'engagement de service public (CESP) : allocation mensuelle pendant les études en contrepartie d'un exercice d'au moins deux ans dans une zone sous-dotée listée par les ARS.",
+   "articleRef": "art. 3",
+   "citation": "Ce contrat ouvre droit [...] à une allocation mensuelle [...] En contrepartie [...] les signataires s'engagent à exercer leurs fonctions [...] dans les lieux d'exercice figurant sur une liste nationale"
+  },
+  {
+   "resume": "Actualisation des diplômes requis pour l'exercice (certificat de capacité, diplôme d'État à compter de 2026).",
+   "articleRef": "art. 3 bis",
+   "citation": "Le diplôme d'État d'orthophoniste, à compter de l'année universitaire 2026"
+  },
+  {
+   "resume": "Rapport d'évaluation gouvernemental remis au Parlement entre juillet et décembre 2030 sur la nécessité de reconduire la programmation.",
+   "articleRef": "art. 4",
+   "citation": "le Gouvernement remet au Parlement un rapport évaluant la mise en œuvre de la programmation prévue à l'article 1er"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'article 1er augmente directement le nombre d'étudiants formés (de 1 073 à 1 463 entre 2025 et 2030) et cible les zones sous-dotées. L'article 3 crée un contrat d'engagement de service public assorti d'une allocation mensuelle, qui lie le financement des études à une obligation d'exercice dans les territoires déficitaires, renforçant ainsi l'incitation à l'installation là où les besoins sont identifiés. L'article 2 élargit les terrains de stage via les maîtres de stage universitaires, facilitant l'accueil des effectifs supplémentaires. L'ensemble des mécanismes converge vers l'objectif affiché de renforcer la démographie et l'accès aux soins en orthophonie.",
+ "pointsDeVigilance": [
+  "Le financement repose intégralement sur une majoration de l'accise sur les tabacs (art. 5), ce qui lie la pérennité du dispositif à la consommation de tabac, sans garantie de financement pérenne si celle-ci baisse.",
+  "L'efficacité du CESP dépend du montant de l'allocation et de l'attractivité des zones proposées, non précisés dans le texte.",
+  "Le rapport d'évaluation n'est prévu qu'entre juillet et décembre 2030 (art. 4), soit après l'échéance de la programmation : aucun mécanisme correctif intermédiaire n'est prévu.",
+  "L'orientation 'prioritaire' vers les zones sous-dotées (art. 1er) n'est pas une obligation stricte et laisse une marge d'appréciation.",
+  "Le texte ne crée pas de numerus clausus régionalisé contraignant : la répartition territoriale effective dépendra des décrets d'application."
+ ],
+ "themes": [
+  "démographie des professionnels de santé",
+  "orthophonie",
+  "formation",
+  "offre de soins",
+  "zones sous-dotées"
+ ],
+ "scrutinsCles": [
+  "1265"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:8686e2a4782105d677a84a0a433bb91c992c7069290ce42f25abc5672cd4a1a6"
+}

@@ -1,0 +1,73 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50796",
+ "generatedAt": "2026-07-13T06:17:37Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Diverses dispositions d’adaptation au droit de l’Union européenne en matière économique, financière, environnementale, énergétique, de transport, de santé et de circulation des personnes",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/diverses_dispositions_adaptation_due_2024_eco_finances_environnement",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0087_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est un projet de loi dit « DDADUE » (diverses dispositions d'adaptation au droit de l'Union européenne) visant à transposer ou adapter le droit français dans plusieurs domaines (économique, financier, environnemental, énergétique, transport, santé, circulation des personnes) pour assurer la conformité avec les règlements et directives européens.",
+ "mecanismesCles": [
+  {
+   "resume": "Interdiction pour les prestataires de services d'investissement de percevoir des paiements pour flux d'ordres (inducements) conformément au règlement MiFIR",
+   "articleRef": "art. 1er (I, 1° et 2°)",
+   "citation": "il est interdit aux prestataires de services d'investissement [...] de percevoir un paiement pour flux d'ordres"
+  },
+  {
+   "resume": "Coopération renforcée entre l'AMF et les autorités compétentes européennes via la transmission d'informations selon le règlement MiFIR",
+   "articleRef": "art. 1er (I, 4°)",
+   "citation": "elle les transmet : 1° À l'autorité compétente du marché le plus pertinent en termes de liquidité"
+  },
+  {
+   "resume": "Habilitation du Gouvernement à transposer par ordonnance la directive (UE) 2023/2864 sur le point d'accès unique européen (ESAP)",
+   "articleRef": "art. 1er (II, 1°)",
+   "citation": "assurer la transposition de la directive (UE) 2023/2864 [...] point d'accès unique européen"
+  },
+  {
+   "resume": "Extension aux outre-mer (Nouvelle-Calédonie, Polynésie, Wallis-et-Futuna) des dispositions relatives au point d'accès unique européen",
+   "articleRef": "art. 1er (II, 3°)",
+   "citation": "Étendre à la Nouvelle-Calédonie, à la Polynésie française et aux îles Wallis et Futuna"
+  },
+  {
+   "resume": "Désignation de l'AMF comme autorité compétente pour le règlement (UE) 2023/2631 sur les obligations vertes européennes, avec pouvoirs de surveillance et d'enquête",
+   "articleRef": "art. 1er (III, A, 1° et 5°)",
+   "citation": "l'Autorité des marchés financiers est l'autorité compétente au sens de l'article 44 du règlement (UE) 2023/2631"
+  },
+  {
+   "resume": "Sanction pouvant aller jusqu'à l'interdiction d'émettre des obligations vertes européennes pour un an en cas d'infraction grave et répétée",
+   "articleRef": "art. 1er (III, A, 3° et 4°)",
+   "citation": "lui interdire d'émettre des obligations vertes européennes pour une période n'excédant pas un an"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés par les articles vont dans le sens de l'objectif affiché d'adaptation au droit de l'Union européenne. L'article 1er interdit explicitement les paiements pour flux d'ordres conformément au règlement MiFIR (art. 1er I, 1° et 2°), organise la coopération entre autorités de supervision (art. 1er I, 4°), habilite le Gouvernement à transposer la directive ESAP (art. 1er II, 1°) et désigne l'AMF comme autorité compétente pour le règlement sur les obligations vertes européennes avec des sanctions appropriées (art. 1er III, A). L'ensemble de ces dispositions transpose ou adapte fidèlement le droit européen sans créer d'incitations contraires.",
+ "pointsDeVigilance": [
+  "Le texte est tronqué à 15000 caractères : seuls les articles du Titre I (matière économique et financière) ont pu être analysés ; les dispositions environnementales, énergétiques, de transport, de santé et de circulation des personnes ne sont pas visibles dans l'extrait fourni.",
+  "L'habilitation par ordonnance (art. 1er II) reporte à neuf mois la transposition effective de la directive ESAP, ce qui retarde la mise en conformité.",
+  "Plusieurs sanctions sont créées (interdiction d'émettre des obligations vertes) mais leur effectivité dépendra de la mise en œuvre par l'AMF."
+ ],
+ "themes": [
+  "transposition droit européen",
+  "droit financier",
+  "marchés financiers",
+  "obligations vertes",
+  "esap"
+ ],
+ "scrutinsCles": [
+  "835",
+  "836",
+  "837",
+  "1203"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:815ce4f872e85c18904c01a34f80a82311da7bd925a52fbdd39850d097fb1ce6"
+}

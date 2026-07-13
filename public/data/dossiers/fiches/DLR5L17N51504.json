@@ -1,0 +1,74 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51504",
+ "generatedAt": "2026-07-13T06:01:57Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Renforcer la stabilité économique et la compétitivité du secteur agroalimentaire",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/renforcer_stabilite_economique_agroalimentaire_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0097_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Renforcer la stabilité économique et la compétitivité du secteur agroalimentaire français, via une proposition de loi ordinaire issue d'une navette parlementaire (Assemblée et Sénat) et adoptée le 9 avril 2025.",
+ "mecanismesCles": [
+  {
+   "resume": "Relèvement du plafond des avantages promotionnels (rabais, quantités) à 40 % du prix de vente au consommateur pour les produits de grande consommation hors denrées alimentaires et alimentation animale.",
+   "articleRef": "art. 1er (I, 1° a bis)",
+   "citation": "« Pour les produits de grande consommation qui ne sont pas des denrées alimentaires ou des produits destinés à l’alimentation des animaux de compagnie, les avantages promotionnels [...] peuvent atteindre 40 % du prix de vente au consommateur »"
+  },
+  {
+   "resume": "Possibilité de rendre publics les rapports de négociation entre fournisseurs et distributeurs, sur la base des documents transmis aux ministres.",
+   "articleRef": "art. 1er (I, 2° bis)",
+   "citation": "« Les rapports mentionnés au présent IV peuvent être rendus publics. »"
+  },
+  {
+   "resume": "Obligation pour le distributeur de répondre sous 15 jours aux demandes de précisions des ministres de l'économie et de l'agriculture.",
+   "articleRef": "art. 1er (I, 2° ter a)",
+   "citation": "« Il répond à toute demande de précisions des ministres précités dans un délai de quinze jours. »"
+  },
+  {
+   "resume": "Création d'une amende administrative pouvant atteindre 0,4 % du chiffre d'affaires annuel HT France en cas de non-transmission du document ou de non-réponse aux ministres, doublée en cas de réitération sous deux ans.",
+   "articleRef": "art. 1er (I, 2° ter c)",
+   "citation": "« d’une amende administrative dont le montant ne peut excéder 0,4 % de son chiffre d’affaires annuel hors taxes réalisé en France [...] Le montant de l’amende encourue est doublé en cas de réitération »"
+  },
+  {
+   "resume": "Habilitation des agents du II de l'article L. 450-1 du code de commerce à rechercher et constater les manquements, avec application possible de l'article L. 470-1.",
+   "articleRef": "art. 1er (I, 2° ter c)",
+   "citation": "« Les agents mentionnés au II de l’article L. 450-1 du code de commerce sont habilités à rechercher et à constater les manquements »"
+  },
+  {
+   "resume": "Prorogation de l'application des I, II et IV de l'article 125 de la loi ASAP jusqu'au 15 avril 2028.",
+   "articleRef": "art. 1er (I, 3°)",
+   "citation": "« VIII. – Les I, II et IV sont applicables jusqu’au 15 avril 2028. »"
+  }
+ ],
+ "verdictIncitations": "incitations_mitigees",
+ "justificationVerdict": "Le texte crée des incitations contradictoires au regard de l'objectif affiché de stabilité et compétitivité du secteur agroalimentaire. D'un côté, il renforce la régulation des relations commerciales (sanctions proportionnelles au CA, publicité possible des rapports, extension aux marques de distributeur) ce qui peut stabiliser les relations fournisseurs-distributeurs. De l'autre, il relève à 40 % le plafond des avantages promotionnels pour les produits non alimentaires, ce qui favorise la guerre des prix dans la grande distribution au détriment des producteurs. La prorogation jusqu'en 2028 d'un dispositif (loi ASAP) dont plusieurs dispositions clés ont été supprimées (1° a, 1° b, 2°, 2° quater, II) affaiblit la portée normative réelle du texte.",
+ "pointsDeVigilance": [
+  "Plusieurs dispositions initialement prévues ont été supprimées en cours de navette (art. 1er I 1° a et b, 2°, 2° quater, II ; art. 1er bis), signalant un texte fortement amendé dont la cohérence d'origine est incertaine.",
+  "Le relèvement à 40 % des promotions ne concerne que les produits hors denrées alimentaires, excluant le cœur de cible 'agroalimentaire' du titre.",
+  "Le passage d'une amende fixe (75 000 €) à une amende proportionnelle (0,4 % du CA) peut être plus dissuasif pour les grands distributeurs mais plus clément pour les PME.",
+  "Le texte est qualifié de 'petite loi' provisoire ; seule la version publiée ultérieurement fait foi."
+ ],
+ "themes": [
+  "agroalimentaire",
+  "relations commerciales",
+  "grande distribution",
+  "promotions",
+  "sanctions administratives"
+ ],
+ "scrutinsCles": [
+  "1036",
+  "1037",
+  "1038",
+  "1319"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:5c6685c0feab44c6aea57258138cc6eed505d0c074f4ad580a1c433aeb9ee486"
+}

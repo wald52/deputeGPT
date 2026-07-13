@@ -1,0 +1,44 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51376",
+ "generatedAt": "2026-07-13T06:16:40Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Créer un Institut Océan de l'université des Nations unies en France",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/creer_institut_ocean_universite_onu_france",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0088_texte-adopte-seance",
+  "legifrance": null
+ },
+ "objectifAffiche": "La résolution vise à créer un institut « Océan » de l'université des Nations unies en France, comme l'indique son titre. Il s'agit d'un texte de nature déclarative adopté par l'Assemblée nationale dans le cadre de la procédure de l'article 34-1 de la Constitution.",
+ "mecanismesCles": [
+  {
+   "resume": "Aucun mécanisme concret identifiable : le texte fourni ne contient ni exposé des motifs, ni articles substantiels, seulement des métadonnées de navigation.",
+   "articleRef": null,
+   "citation": null
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est tronqué et ne contient que les éléments de présentation du dossier législatif (titre, identifiant, procédure, statut) ainsi que des liens de navigation vers les différentes versions du document. Aucun article, aucune disposition normative, aucun exposé des motifs n'est présent dans l'extrait transmis. Il est donc impossible d'identifier des mécanismes concrets (obligations, taxes, subventions, sanctions) et, a fortiori, de déterminer si les incitations créées vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le texte officiel est manifestement tronqué : seuls les éléments d'en-tête et de navigation sont accessibles, le contenu normatif (exposé des motifs, articles) est absent.",
+  "Une résolution au sens de l'article 34-1 de la Constitution est par nature un acte non législatif : elle peut exprimer une position de l'Assemblée mais ne crée pas en principe d'obligations juridiques contraignantes.",
+  "Sans accès au contenu réel de la résolution, toute analyse de cohérence entre objectifs et mécanismes est impossible."
+ ],
+ "themes": [
+  "recherche",
+  "océan",
+  "enseignement supérieur",
+  "organisations internationales"
+ ],
+ "scrutinsCles": [
+  "1204"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:ddd09d0bb5c1ffaababdb377e4ffa80151152ba6d7be7e835007b7b1481ef53d"
+}

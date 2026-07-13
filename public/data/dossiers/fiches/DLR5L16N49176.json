@@ -1,0 +1,75 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L16N49176",
+ "generatedAt": "2026-07-13T06:21:08Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi relative au renforcement de la sûreté dans les transports",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/16/dossiers/DLR5L16N49176",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0075_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Renforcer la sûreté dans les transports en élargissant les pouvoirs des agents de sécurité internes des opérateurs (SNCF, RATP), en améliorant le continuum de sécurité avec les forces de l'ordre et les polices municipales, et en mobilisant des technologies de vidéoprotection.",
+ "mecanismesCles": [
+  {
+   "resume": "Élargissement des missions des services internes de sécurité à la prévention des atteintes à l'ordre public et à la lutte contre le terrorisme, au-delà de la seule mission de prévention.",
+   "articleRef": "art. 1er (art. L. 2251-1 du code des transports)",
+   "citation": "« ces services ont pour mission de prévenir les atteintes à l'ordre public dans les lieux relevant de leur compétence. Ils contribuent à la lutte contre le terrorisme. »"
+  },
+  {
+   "resume": "Autorisation pour les agents SNCF/RATP de procéder à l'inspection visuelle des bagages, à leur fouille (avec consentement) et à des palpations de sécurité dans certaines conditions (périmètre de protection, arrêté préfectoral ou éléments objectifs).",
+   "articleRef": "art. 1er (art. L. 2251-9)",
+   "citation": "« Les agents des services internes de sécurité de la SNCF et de la Régie autonome des transports parisiens peuvent procéder à l'inspection visuelle des bagages et, avec le consentement de leur propriétaire, à leur fouille. »"
+  },
+  {
+   "resume": "Possibilité de conserver un objet dangereux découvert lors d'un contrôle, avec un délai maximal de conservation de 48 heures et une durée minimale de 6 mois avant destruction éventuelle.",
+   "articleRef": "art. 1er (art. L. 2251-10)",
+   "citation": "« le délai, qui ne peut excéder quarante-huit heures à compter de la délivrance du document [...] la durée minimale de conservation de cet objet, qui ne peut être inférieure à six mois »"
+  },
+  {
+   "resume": "Extension du périmètre d'intervention des agents sur la voie publique aux abords immédiats des emprises immobilières, y compris pour des missions itinérantes autorisées par le préfet.",
+   "articleRef": "art. 2 (art. L. 2251-1 et L. 2251-1-4)",
+   "citation": "« À titre exceptionnel, ils peuvent être autorisés par le représentant de l'État dans le département à exercer sur la voie publique, aux abords immédiats des emprises immobilières [...] des missions, même itinérantes, de prévention »"
+  },
+  {
+   "resume": "Possibilité d'interdire l'accès aux gares/stations ou de contraindre à quitter les lieux les personnes troublant l'ordre public ou refusant les contrôles, avec possibilité de requérir la force publique.",
+   "articleRef": "art. 4 (art. L. 2241-6)",
+   "citation": "« peut se voir interdire, par les agents mentionnés au I de l'article L. 2241-1, l'accès aux espaces, gares ou stations [...] En tant que de besoin, ils peuvent requérir l'assistance de la force publique. »"
+  },
+  {
+   "resume": "Autorisation pour les agents du service interne de sécurité de la SNCF de porter un pistolet à impulsion électrique, sous réserve d'une autorisation nominative et de modalités fixées par décret.",
+   "articleRef": "art. 5 (art. L. 2251-4)",
+   "citation": "« Les agents du service interne de sécurité de la SNCF peuvent également être nominativement autorisés par l'autorité administrative compétente de l'État à porter un pistolet à impulsion électrique. »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés vont dans le sens de l'objectif affiché de renforcement de la sûreté. L'article 1er élargit explicitement les missions des services internes à la lutte contre le terrorisme et à la prévention des atteintes à l'ordre public. L'article 5 autorise le port du pistolet à impulsion électrique par les agents SNCF, renforçant leurs moyens opérationnels. L'article 4 permet d'écarter les personnes troublant l'ordre public des gares et stations. L'article 7 organise le continuum de sécurité via des conventions avec les polices municipales. L'article 9 mobilise la vidéoprotection en temps réel. L'ensemble de ces dispositifs convergent vers plus de capacités de contrôle, de filtrage et d'intervention, ce qui correspond directement à l'objectif de sûreté renforcée.",
+ "pointsDeVigilance": [
+  "L'extension des palpations de sécurité et fouilles de bagages par des agents privés (SNCF/RATP) pose la question de la proportionnalité et du respect des libertés individuelles, bien que le consentement soit requis.",
+  "L'autorisation du pistolet à impulsion électrique pour les agents SNCF constitue une armement supplémentaire significatif dont les conditions d'usage dépendent d'un décret en Conseil d'État non encore connu.",
+  "La conservation d'objets pendant 6 mois minimum avant destruction éventuelle, même avec consentement, soulève des questions sur la privation de biens.",
+  "L'extension des compétences des agents sur la voie publique (art. 2) brouille la frontière entre sécurité privée et ordre public, traditionnellement réservé aux forces de l'État.",
+  "Le texte est tronqué à 15000 caractères : les articles au-delà de l'article 10 (chapitre III sur la technologie) ne sont pas visibles, ce qui limite l'analyse complète."
+ ],
+ "themes": [
+  "sécurité",
+  "transports",
+  "police",
+  "vidéoprotection",
+  "ordre public"
+ ],
+ "scrutinsCles": [
+  "787",
+  "788",
+  "1040",
+  "1041"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:a6ce188da99366bb878c78e56799244e96e75c99297693baa2baa37be9f3c953"
+}

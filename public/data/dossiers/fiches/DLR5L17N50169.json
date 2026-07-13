@@ -1,0 +1,75 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50169",
+ "generatedAt": "2026-07-13T06:00:31Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi visant à sortir la France du piège du narcotrafic",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N50169",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0102_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "La proposition de loi vise à 'sortir la France du piège du narcotrafic' en réorganisant l'architecture institutionnelle et judiciaire de la lutte contre la criminalité organisée et le trafic de stupéfiants, à travers la création d'un service chef de file, d'un parquet national anti-criminalité organisée et d'outils de coordination renforcée.",
+ "mecanismesCles": [
+  {
+   "resume": "Création d'un service chef de file en matière de lutte contre la criminalité organisée, chargé d'impulser, animer, piloter et coordonner l'action interministérielle, d'organiser les échanges d'informations et d'informer annuellement la représentation nationale sur l'adéquation des moyens.",
+   "articleRef": "art. 1er (II bis)",
+   "citation": "« Il est institué par acte réglementaire un service chef de file en matière de lutte contre la criminalité organisée. »"
+  },
+  {
+   "resume": "Renforcement du contrôle sur les techniques de renseignement : les techniques relevant de l'article L. 822-3 du CSI sont désormais subordonnées à une autorisation préalable du Premier ministre après avis de la CNCTR.",
+   "articleRef": "art. 1er (III)",
+   "citation": "« sont subordonnées à une autorisation préalable du Premier ministre, délivrée dans les conditions prévues aux articles L. 821-1 à L. 821-4 après avis de la Commission nationale de contrôle des techniques de renseignement »"
+  },
+  {
+   "resume": "Demande au Gouvernement d'un rapport sous six mois sur les dysfonctionnements des logiciels utilisés par les services de police et leurs effets sur la lutte contre le trafic de stupéfiants.",
+   "articleRef": "art. 2",
+   "citation": "« Dans un délai de six mois à compter de la promulgation de la présente loi, le Gouvernement remet au Parlement un rapport décrivant les dysfonctionnements des logiciels utilisés par les services de police ainsi que leurs effets sur la lutte contre le trafic de stupéfiants. »"
+  },
+  {
+   "resume": "Création d'un procureur de la République anti-criminalité organisée (PACO), compétent concurremment aux juridictions de Paris pour les infractions de criminalité organisée d'une 'très grande complexité', avec compétence nationale et mécanisme de dessaisissement prioritaire.",
+   "articleRef": "art. 3 (art. 706-74-1 et 706-74-2 du CPP)",
+   "citation": "« Le procureur de la République anti-criminalité organisée, le pôle de l'instruction, le tribunal correctionnel et la cour d'assises de Paris exercent une compétence concurrente »"
+  },
+  {
+   "resume": "Mécanisme de délégation judiciaire permettant au PACO de requérir tout procureur de la République territorialement compétent pour procéder aux actes d'enquête nécessaires.",
+   "articleRef": "art. 3 (art. 706-74-1 II du CPP)",
+   "citation": "« le procureur de la République anti-criminalité organisée peut requérir, par délégation judiciaire, tout procureur de la République de procéder ou de faire procéder aux actes nécessaires »"
+  },
+  {
+   "resume": "Compétence prioritaire du PACO : il se dessaisit au profit des juridictions spécialisées tant que l'action publique n'a pas été mise en mouvement, avec possibilité de déférer les contestations à la chambre criminelle de la Cour de cassation.",
+   "articleRef": "art. 3 (art. 706-74-2 du CPP)",
+   "citation": "« la compétence du procureur de la République anti-criminalité organisée s'exerce de façon prioritaire sur celle des autres juridictions tant que l'action publique n'a pas été mise en mouvement »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés convergent vers l'objectif affiché de lutte renforcée contre le narcotrafic. L'article 1er institue un service chef de file chargé de 'piloter et coordonner l'action interministérielle', ce qui structure la réponse étatique. L'article 3 crée un parquet national anti-criminalité organisée (PACO) avec une 'compétence concurrente' sur les affaires de 'très grande complexité' et une 'compétence prioritaire' (art. 706-74-2), permettant de traiter les dossiers d'envergure nationale. Le mécanisme de délégation judiciaire (art. 706-74-1 II) et de cosaisine (art. 706-74-2-1) renforce la coordination opérationnelle. L'encadrement plus strict des techniques de renseignement (art. 1er III) vise à sécuriser juridiquement leur usage. Toutefois, le texte fourni est tronqué et ne permet pas d'évaluer l'ensemble des dispositions (notamment les volets répressifs, sanctions, ou mesures de prévention).",
+ "pointsDeVigilance": [
+  "Le texte fourni est tronqué à 15000 caractères et ne couvre pas l'intégralité des titres suivants (notamment les volets sanctions, procédures spéciales, et dispositions pénales).",
+  "Plusieurs alinéas ont été supprimés en commission mixte paritaire (I et II de l'art. 1er, IV de l'art. 1er, 1° bis de l'art. 3, 3° de l'art. 706-74-1, IV de l'art. 706-74-2, art. 706-74-3), ce qui réduit la portée initiale du texte.",
+  "L'efficacité réelle dépendra de l'acte réglementaire créant le service chef de file (art. 1er) et des moyens humains/matériels effectivement alloués.",
+  "Le rapport demandé à l'art. 2 n'est qu'une demande d'étude, sans mesure contraignante immédiate.",
+  "La centralisation au parquet de Paris peut soulever des questions d'éloignement des juridictions locales et de charge."
+ ],
+ "themes": [
+  "narcotrafic",
+  "criminalité organisée",
+  "organisation judiciaire",
+  "sécurité intérieure",
+  "techniques de renseignement"
+ ],
+ "scrutinsCles": [
+  "1191",
+  "1194",
+  "1471",
+  "1473"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:4983345372f59716cdc2f27477e8e4577e7943b9c9070dbe9195b2c245872b53"
+}

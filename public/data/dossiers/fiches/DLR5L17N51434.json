@@ -1,0 +1,72 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51434",
+ "generatedAt": "2026-07-13T06:18:25Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Contre les fraudes aux moyens de paiement scripturaux",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/contre_fraudes_moyens_paiement_scripturaux_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0082_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Renforcer la lutte contre la fraude bancaire, en particulier la fraude aux moyens de paiement scripturaux (chèques, comptes de paiement). Le texte vise à améliorer la prévention, la détection et le traitement des comptes et chèques frauduleux.",
+ "mecanismesCles": [
+  {
+   "resume": "Création d'un fichier national recensant les comptes de paiement et de dépôt jugés susceptibles d'être frauduleux, géré par la Banque de France, alimenté par les prestataires de services de paiement.",
+   "articleRef": "art. 1er (L. 521-6-1 du CMF)",
+   "citation": "un fichier national recense les informations permettant d'identifier les comptes de paiement et les comptes de dépôt que les prestataires de services de paiement [...] estiment susceptibles d'être frauduleux"
+  },
+  {
+   "resume": "Possibilité pour les URSSAF de signaler au gestionnaire du fichier les comptes qu'elles estiment frauduleux.",
+   "articleRef": "art. 1er (II bis A)",
+   "citation": "Les unions de recouvrement des cotisations de sécurité sociale et d'allocations familiales peuvent signaler au gestionnaire du fichier les comptes qu'elles estiment susceptibles d'être frauduleux"
+  },
+  {
+   "resume": "Garantie que l'inscription au fichier n'entraîne pas d'interdiction systématique d'opérations ni de résiliation automatique du contrat.",
+   "articleRef": "art. 1er (II bis)",
+   "citation": "L'inscription des informations relatives à un compte dans le fichier n'emporte pas d'interdiction systématique de réaliser des opérations de paiement impliquant ce compte"
+  },
+  {
+   "resume": "Interdiction de remettre copie des informations du fichier à des tiers, avec levée du secret professionnel pour la Banque de France dans le cadre du dispositif.",
+   "articleRef": "art. 1er (III)",
+   "citation": "Il est interdit à la Banque de France et aux prestataires de services de paiement de remettre à quiconque copie des informations contenues dans le fichier"
+  },
+  {
+   "resume": "Extension de l'obligation d'information de la Banque de France aux cas de falsification ou contrefaçon de chèques, avec obligation d'agir 'dans les meilleurs délais'.",
+   "articleRef": "art. 2 (L. 131-84 du CMF)",
+   "citation": "qui a rejeté un chèque pour falsification ou contrefaçon ou qui a pris connaissance de la falsification ou de la contrefaçon de chèques"
+  },
+  {
+   "resume": "Le fichier central des chèques (FCC) assure l'information du banquier souhaitant vérifier la régularité d'une émission de chèque, avec enregistrement de l'origine des demandes.",
+   "articleRef": "art. 3 (L. 131-86 du CMF)",
+   "citation": "Elle assure également l'information du banquier qui, lors de la présentation du chèque au paiement, souhaite vérifier la régularité, au regard du présent chapitre, de l'émission de ce chèque"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés vont directement dans le sens de l'objectif affiché de lutte contre la fraude bancaire. L'article 1er instaure un fichier national mutualisant les signalements de comptes suspects entre prestataires, ce qui améliore la détection collective. L'article 2 étend l'obligation d'information aux cas de falsification de chèques, comblant un angle mort. L'article 3 renforce le rôle du FCC dans la vérification des chèques. Les garde-fous prévus (interdiction de remise de copies, absence d'interdiction automatique d'opérations, impossibilité de facturer les frais aux clients) évitent les dérives disproportionnées. L'extension outre-mer assure une couverture territoriale cohérente.",
+ "pointsDeVigilance": [
+  "Le dispositif repose sur les déclarations des prestataires sous leur 'seule responsabilité' (art. 1er II), ce qui peut créer des risques de sur-déclaration ou de sous-déclaration selon les incitations économiques.",
+  "Les URSSAF peuvent signaler des comptes 'susceptibles d'être frauduleux' (art. 1er II bis A), ce qui élargit le fichier à des suspicions non bancaires et peut accroître le risque de faux positifs.",
+  "Le financement intégral par les prestataires via tarifs (art. 1er V) crée une incitation économique à la qualité des déclarations mais aussi potentiellement à la minimisation des signalements coûteux.",
+  "L'absence d'interdiction automatique d'opérations (art. 1er II bis) limite l'effet immédiat du fichier sur la fraude en cours, l'efficacité dépendant des 'diligences' du prestataire teneur du compte.",
+  "Le texte ne prévoit pas explicitement de sanctions en cas de manquement aux obligations de déclaration par les prestataires."
+ ],
+ "themes": [
+  "fraude bancaire",
+  "moyens de paiement",
+  "fichier national",
+  "lutte contre la fraude",
+  "chèque"
+ ],
+ "scrutinsCles": [
+  "1193"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:08643e21cb02b83360fcf4d670d7acceb1b2efee03a66e13a69ddb78e9afbbba"
+}

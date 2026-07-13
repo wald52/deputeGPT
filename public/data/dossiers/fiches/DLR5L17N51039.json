@@ -1,0 +1,69 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51039",
+ "generatedAt": "2026-07-13T06:04:00Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Renforcer les conditions d'accès à la nationalité française à Mayotte",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/renforcer_conditions_acces_nationalite_francaise_mayotte",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0096_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Renforcer les conditions d'accès à la nationalité française à Mayotte, en modifiant les règles du droit civil local applicables à l'acquisition de la nationalité par filiation (articles 2493 et 2495 du code civil).",
+ "mecanismesCles": [
+  {
+   "resume": "Pour la transmission automatique de la nationalité par filiation (art. 2493), l'exigence de résidence passe d'un seul parent à Mayotte pendant 3 mois à la résidence des DEUX parents pendant 1 an.",
+   "articleRef": "art. unique, 1° (modifiant art. 2493 du code civil)",
+   "citation": "« l’un de ses parents au moins résidait » sont remplacés par les mots : « ses deux parents résidaient » ; « de trois mois » sont remplacés par les mots : « d’un an »"
+  },
+  {
+   "resume": "En cas de filiation établie à l'égard d'un seul parent, les conditions de résidence (1 an à Mayotte) s'appliquent à ce parent unique.",
+   "articleRef": "art. unique, 1° c) (nouveau)",
+   "citation": "« Lorsque la filiation de l’enfant n’est établie qu’à l’égard d’un seul parent, les conditions mentionnées au premier alinéa sont applicables à ce seul parent. »"
+  },
+  {
+   "resume": "Pour l'acquisition de la nationalité par déclaration (art. 2495), les justificatifs demandés sont remplacés par l'exigence d'un titre de séjour spécifique (titre III du livre II ou titre II du livre IV du CESEDA), d'un passeport biométrique valide et d'une photo d'identification.",
+   "articleRef": "art. unique, 2° a) (modifiant art. 2495 du code civil)",
+   "citation": "« d’un titre de séjour mentionné au titre III du livre II ou au titre II du livre IV du code de l’entrée et du séjour des étrangers et du droit d’asile, accompagné d’un passeport biométrique en cours de validité et comportant une photographie permettant l’identification du titulaire »"
+  },
+  {
+   "resume": "Pour la déclaration (art. 2495), la condition de résidence passe de 3 mois de résidence personnelle à 1 an de résidence des PARENTS à Mayotte.",
+   "articleRef": "art. unique, 2° b) et c) (modifiant art. 2495)",
+   "citation": "« il réside » sont remplacés par les mots : « ses parents résident » ; « de trois mois » sont remplacés par les mots : « d’un an »"
+  },
+  {
+   "resume": "En cas de filiation à l'égard d'un seul parent, l'apposition de la mention par l'officier d'état civil concerne ce seul parent.",
+   "articleRef": "art. unique, 2° d) (nouveau)",
+   "citation": "« Lorsque la filiation n’est établie qu’à l’égard d’un seul parent, l’apposition par l’officier de l’état civil de la mention prévue au premier alinéa concerne ce seul parent. »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte modifie exclusivement les conditions d'accès à la nationalité française à Mayotte en les rendant plus restrictives. L'article unique durcit le régime de l'article 2493 (transmission par filiation) en exigeant désormais la résidence des deux parents pendant un an au lieu d'un seul parent pendant trois mois. Il renforce également l'article 2495 (déclaration) en substituant à de simples justificatifs l'exigence cumulative d'un titre de séjour spécifique, d'un passeport biométrique et d'une photo d'identification, tout en portant la durée de résidence parentale de trois mois à un an. L'ensemble de ces mécanismes convergent directement avec l'objectif affiché de « renforcer les conditions d'accès à la nationalité française à Mayotte ».",
+ "pointsDeVigilance": [
+  "Le texte ne contient pas d'exposé des motifs dans l'extrait fourni : l'analyse repose uniquement sur le dispositif de l'article unique.",
+  "Les mécanismes ne visent que les enfants (transmission par filiation et déclaration), sans toucher aux procédures de naturalisation ou de réintégration.",
+  "L'exigence d'un titre de séjour spécifique (titre III livre II ou titre II livre IV du CESEDA) crée un lien de dépendance entre l'acquisition de la nationalité et le droit au séjour, ce qui peut soulever des questions constitutionnelles (notamment au regard du droit à la nationalité par filiation).",
+  "Le durcissement de la condition de résidence parentale (de 3 mois à 1 an, et d'un parent à deux parents) peut avoir des effets significatifs sur les enfants de parents en situation irrégulière ou de parents séparés."
+ ],
+ "themes": [
+  "nationalité",
+  "droit civil",
+  "mayotte",
+  "filiation",
+  "droit des étrangers"
+ ],
+ "scrutinsCles": [
+  "737",
+  "738",
+  "1307",
+  "1308"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:34c102e8edbd184124cb974a117c25bff97bcfc6637c6586521341591b157d99"
+}

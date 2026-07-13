@@ -1,0 +1,74 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51375",
+ "generatedAt": "2026-07-13T05:56:42Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Libération immédiate de Boualem Sansal",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/liberation_boualem_sansal",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0107_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Résolution européenne de l'Assemblée nationale appelant à la libération immédiate et inconditionnelle de l'écrivain franco-algérien Boualem Sansal, détenu en Algérie depuis le 16 novembre 2024, et plus largement à la défense de la liberté d'expression et des droits humains en Algérie.",
+ "mecanismesCles": [
+  {
+   "resume": "Condamnation de l'arrestation et de la détention de Boualem Sansal et exigence de sa libération immédiate et inconditionnelle.",
+   "articleRef": "point 2",
+   "citation": "Condamne fortement l'arrestation et la détention de M. Boualem Sansal et réclame sa libération immédiate et inconditionnelle"
+  },
+  {
+   "resume": "Appel à un geste humanitaire des autorités algériennes au vu de l'état sanitaire dégradé de Sansal.",
+   "articleRef": "point 3",
+   "citation": "Appelle les autorités algériennes à un geste humanitaire, compte tenu de la situation humaine et sanitaire dégradée de M. Boualem Sansal, en le libérant"
+  },
+  {
+   "resume": "Condamnation de la détention des 'prisonniers d'opinion' et demande d'envoi d'une mission internationale indépendante (ONU ou Conseil de l'Europe) pour évaluer les conditions de détention.",
+   "articleRef": "point 4",
+   "citation": "Condamne la détention en Algérie des personnes considérées comme « prisonniers d'opinion » [...] et réclame leur libération et demande l'envoi d'une mission internationale indépendante"
+  },
+  {
+   "resume": "Appel à une mission médicale internationale pour évaluer l'état de santé de Sansal.",
+   "articleRef": "point 7",
+   "citation": "Appelle à la mise en place d'une mission médicale internationale afin d'évaluer l'état de santé de M. Boualem Sansal"
+  },
+  {
+   "resume": "Proposition symbolique de nommer Boualem Sansal ambassadeur de la francophonie.",
+   "articleRef": "point 8",
+   "citation": "Appelle le Gouvernement à nommer M. Boualem Sansal ambassadeur de la francophonie"
+  },
+  {
+   "resume": "Conditionnalité de la coopération UE-Algérie à des avancées en matière d'État de droit, avec exigence préalable de la libération de Sansal dans la modernisation de l'accord d'association.",
+   "articleRef": "point 10",
+   "citation": "à veiller à ce que toute coopération renforcée avec l'Algérie soit subordonnée à des avancées concrètes et mesurables en matière d'État de droit [...] et à faire de la libération de M. Boualem Sansal une exigence préalable"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte est une résolution (et non un texte normatif contraignant), dont l'objectif affiché — obtenir la libération immédiate de Boualem Sansal et défendre la liberté d'expression en Algérie — est directement servi par les mécanismes adoptés. Le point 2 'condamne fortement l'arrestation et la détention de M. Boualem Sansal et réclame sa libération immédiate et inconditionnelle', reprenant mot pour mot l'intitulé de la résolution. Le point 10 conditionne explicitement la coopération UE-Algérie à des avancées en matière d'État de droit et fait de la libération de Sansal 'une exigence préalable' dans la modernisation de l'accord d'association, ce qui crée une incitation diplomatique cohérente avec l'objectif. Les points 3, 4 et 7 (mission humanitaire, mission internationale indépendante, mission médicale) renforcent la pression en ce sens. Aucun mécanisme du texte ne va à l'encontre de l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Une résolution de l'article 88-4 n'a pas de force normative contraignante : elle exprime une position politique mais ne crée ni obligation juridique, ni sanction, ni levier budgétaire direct.",
+  "L'efficacité réelle dépend de l'action gouvernementale et européenne subséquente, non du texte lui-même.",
+  "La nomination de Sansal comme 'ambassadeur de la francophonie' (point 8) est une mesure symbolique qui pourrait être perçue comme provocatrice par l'Algérie et compliquer la diplomatie plutôt que faciliter la libération.",
+  "Le texte mentionne 213 millions d'euros versés à l'Algérie entre 2021 et 2024 sans proposer de mécanisme concret de suspension ou de conditionnalité automatique de ces fonds."
+ ],
+ "themes": [
+  "droits humains",
+  "liberté d'expression",
+  "relations franco-algériennes",
+  "politique européenne de voisinage",
+  "prisonniers d'opinion"
+ ],
+ "scrutinsCles": [
+  "1567",
+  "1568",
+  "1569",
+  "1570"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:bcc03644c1efbe9c71eb91e7e2f0846c76d5e4cff163ed7d171cc7eb45c39764"
+}

@@ -1,0 +1,62 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50689",
+ "generatedAt": "2026-07-13T05:58:05Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Protéger les personnes engagées dans un projet parental des discriminations au travail",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/proteger_personnes_engagees_projet_parental_discriminations_travail",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0106_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Proposition de loi visant à protéger les personnes engagées dans un projet parental (AMP ou adoption) contre les discriminations au travail, en étendant les protections existantes liées à la maternité/parenté aux salariés en parcours de PMA ou d'adoption.",
+ "mecanismesCles": [
+  {
+   "resume": "Extension de l'application des articles L. 1225-1 à L. 1225-3 et L. 1142-1 du code du travail aux salariés engagés dans un projet parental via AMP ou adoption.",
+   "articleRef": "art. 1er (II, 2°)",
+   "citation": "« Les articles L. 1225-1 à L. 1225-3 et L. 1142-1 sont applicables aux salariés engagés dans un projet parental dans le cadre d'une assistance médicale à la procréation [...] ou d'une adoption »"
+  },
+  {
+   "resume": "Extension aux fonctionnaires des autorisations d'absence prévues à l'article L. 1225-16 du code du travail, notamment celles liées à la parentalité.",
+   "articleRef": "art. 2 (I)",
+   "citation": "« parentalité, notamment les autorisations d'absence prévues à l'article L. 1225-16 du code du travail »"
+  },
+  {
+   "resume": "Généralisation du bénéfice des autorisations d'absence aux 'salariés' (et non plus 'la salariée'), incluant la personne liée par un PACS ou vivant en concubinage.",
+   "articleRef": "art. 2 (II, 1° et 2°)",
+   "citation": "« Les salariés [...] bénéficient » ; « ou de la personne »"
+  },
+  {
+   "resume": "Création d'autorisations d'absence pour les salariés en procédure d'adoption afin de se rendre aux entretiens obligatoires pour l'obtention de l'agrément, nombre maximal défini par décret.",
+   "articleRef": "art. 2 (II, 3°)",
+   "citation": "« Les salariés engagés dans une procédure d'adoption [...] bénéficient d'autorisations d'absence pour se présenter aux entretiens obligatoires nécessaires à l'obtention de l'agrément »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés par les articles 1er et 2 étendent directement le champ des protections existantes (interdiction des discriminations de l'article L. 1142-1, autorisations d'absence de l'article L. 1225-16) aux personnes engagées dans un projet parental par AMP ou adoption. L'article 1er rend ces protections applicables aux salariés concernés, et l'article 2 crée concrètement de nouvelles autorisations d'absence pour les entretiens d'agrément en adoption. Ces incitations vont dans le sens de l'objectif affiché de protection contre les discriminations, en sécurisant juridiquement la situation professionnelle des salariés concernés.",
+ "pointsDeVigilance": [
+  "L'article 1er (I et 1°) a été supprimé, ce qui réduit la portée initiale du texte (les mécanismes de protection contre les discriminations restent ceux du droit commun étendu, sans création de nouveaux critères spécifiques).",
+  "Le nombre maximal d'autorisations d'absence pour les entretiens d'agrément est renvoyé à un décret, donc non défini dans la loi.",
+  "Le texte ne crée pas de sanctions spécifiques ni de nouveaux motifs de discrimination名单és, se limitant à une extension par renvoi."
+ ],
+ "themes": [
+  "discrimination",
+  "travail",
+  "parentalité",
+  "adoption",
+  "pma"
+ ],
+ "scrutinsCles": [
+  "1551",
+  "1552",
+  "1553"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:83328ed4f1fa45b90707d88db4981a814f00785ce5bf720c063df53ea6ff5e81"
+}

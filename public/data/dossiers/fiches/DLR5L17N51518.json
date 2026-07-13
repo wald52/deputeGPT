@@ -1,0 +1,74 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51518",
+ "generatedAt": "2026-07-13T06:11:47Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Valoriser la réserve communale de sécurité civile",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/valoriser_reserve_communale_securite_civile2",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0090_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Valoriser la réserve communale de sécurité civile en facilitant l'engagement des réservistes, en élargissant les missions de la réserve aux menaces de toute nature, en permettant l'engagement dès 16 ans, et en reconnaissant les compétences acquises dans le parcours éducatif et citoyen.",
+ "mecanismesCles": [
+  {
+   "resume": "Élargissement du champ d'action de la réserve communale aux 'menaces de toute nature'",
+   "articleRef": "art. 1er A",
+   "citation": "« et aux menaces de toute nature »"
+  },
+  {
+   "resume": "Possibilité de conclure une convention d'engagement soit avec une association agréée de sécurité civile (agréments B et C), soit avec l'autorité de gestion, avec possibilité de prévoir la durée annuelle des activités",
+   "articleRef": "art. 1er",
+   "citation": "« conclu soit entre l'autorité de gestion et une association de sécurité civile agréée [...] soit [...] qui peut prévoir, par année civile, la durée des activités à accomplir »"
+  },
+  {
+   "resume": "Autorisation d'engagement des mineurs dès 16 ans avec accord écrit des représentants légaux",
+   "articleRef": "art. 1er bis",
+   "citation": "« Tout mineur âgé d'au moins seize ans peut s'engager dans la réserve de sécurité civile [...] sous réserve de l'accord écrit de ses représentants légaux »"
+  },
+  {
+   "resume": "Réduction du délai de mobilisation à 48 heures en cas de danger grave et imminent",
+   "articleRef": "art. 2",
+   "citation": "« Ce délai est ramené à quarante-huit heures lorsque surviennent des événements de nature à entraîner un danger grave et imminent »"
+  },
+  {
+   "resume": "Création d'un régime de récompenses et distinctions pour les réservistes",
+   "articleRef": "art. 2 bis",
+   "citation": "« La reconnaissance par la Nation de l'engagement citoyen en qualité de réserviste de sécurité civile se traduit notamment sous forme de récompenses et de distinctions »"
+  },
+  {
+   "resume": "Délivrance d'une attestation valorisant les compétences acquises dans la formation de l'élève",
+   "articleRef": "art. 3",
+   "citation": "« reçoit une attestation délivrée par l'autorité de gestion [...] permettant la valorisation de ces compétences, connaissances et aptitudes au titre de sa formation »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'ensemble des mécanismes créés va dans le sens de l'objectif affiché de valorisation de la réserve communale. L'élargissement aux 'menaces de toute nature' (art. 1er A) étend le champ d'utilité de la réserve. La diversification des conventions d'engagement (art. 1er) et l'abaissement de l'âge à 16 ans (art. 1er bis) élargissent le vivier de réservistes. La réduction du délai de mobilisation à 48 heures (art. 2) renforce l'efficacité opérationnelle. La valorisation des compétences acquises dans le parcours éducatif (art. 3, 3 bis, 4) et la campagne de communication (art. 4 bis) constituent des incitations positives à l'engagement. Le régime de récompenses (art. 2 bis) renforce l'attractivité symbolique de l'engagement.",
+ "pointsDeVigilance": [
+  "L'article 4 bis fixe un simple 'objectif' de campagne de communication, sans obligation contraignante ni sanction en cas de non-réalisation",
+  "Les modalités concrètes de l'attestation de compétences (art. 3) sont renvoyées à un décret, ce qui laisse une marge d'appréciation sur sa portée réelle",
+  "L'élargissement aux 'menaces de toute nature' (art. 1er A) manque de définition précise et pourrait soulever des questions de périmètre opérationnel",
+  "L'article 1er B et l'article 5 ont été supprimés, ce qui peut signaler des arbitrages politiques sur certains mécanismes initialement envisagés"
+ ],
+ "themes": [
+  "sécurité civile",
+  "réserve communale",
+  "engagement citoyen",
+  "valorisation des compétences",
+  "formation"
+ ],
+ "scrutinsCles": [
+  "1231",
+  "1232",
+  "1233",
+  "1234"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:3aae37b11d392aeb4dda587ba1e861034eac113368e944ef50f90b8ce1d3dc65"
+}

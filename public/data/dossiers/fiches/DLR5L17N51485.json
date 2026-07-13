@@ -1,0 +1,63 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51485",
+ "generatedAt": "2026-07-13T06:05:50Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi visant à convertir des centrales à charbon vers des combustibles moins émetteurs en dioxyde de carbone pour permettre une transition écologique plus juste socialement",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N51485",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0095_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Permettre la conversion des centrales électriques au charbon (et combustibles fossiles solides similaires) existantes vers des combustibles moins émetteurs de CO2, afin d'assurer une transition écologique plus juste socialement en évitant la fermeture brutale de ces installations.",
+ "mecanismesCles": [
+  {
+   "resume": "Les installations au charbon/tourbe/schiste bitumineux existantes au 1er janvier 2025 émettant plus de 550 g CO2/kWh et converties sous ce seuil sont assimilées à de nouvelles installations de production, avec une date de début de production réputée être la date d'autorisation.",
+   "articleRef": "art. 1er (art. L. 311-1-1 du code de l'énergie)",
+   "citation": "Les installations de production d'électricité utilisant du charbon, de la tourbe ou du schiste bitumineux, existantes au 1er janvier 2025, émettant plus de 550 grammes de dioxyde de carbone par kilowattheure et converties pour atteindre un niveau inférieur à ce seuil sont considérées comme de nouvelles installations de production."
+  },
+  {
+   "resume": "Pour ces installations converties, la désignation comme lauréates des procédures concurrentielles de l'article L. 316-6 vaut autorisation au titre de l'article L. 311-5 (procédure simplifiée d'autorisation).",
+   "articleRef": "art. 2 (art. L. 311-6-1 du code de l'énergie)",
+   "citation": "la désignation en tant que lauréates des procédures concurrentielles prévues à l'article L. 316-6 emporte l'attribution de l'autorisation prévue à l'article L. 311-5."
+  },
+  {
+   "resume": "Entrée en vigueur différée, conditionnée au décret d'application de l'article 19 de la loi de finances pour 2025.",
+   "articleRef": "art. 3",
+   "citation": "Les articles 1er et 2 de la présente loi entrent en vigueur à la date fixée par le décret prévu au IV de l'article 19 de la loi n° 2025-127 du 14 février 2025 de finances pour 2025."
+  },
+  {
+   "resume": "Obligation pour les entreprises dont l'État est actionnaire à plus de 50% et exploitant des centrales au charbon de présenter, au plus tard le 31 décembre 2026, un plan de conversion vers des combustibles moins émetteurs (<550 g CO2/kWh).",
+   "articleRef": "art. 4 (art. L. 311-1-2 du code de l'énergie)",
+   "citation": "Au plus tard le 31 décembre 2026, les entreprises dont l'État est actionnaire à plus de 50 % et qui exploitent des installations de production d'électricité à partir du charbon présentent un plan de conversion de ces installations vers des combustibles moins émetteurs en dioxyde de carbone."
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte crée un cadre juridique favorable à la conversion des centrales à charbon existantes vers des combustibles émettant moins de 550 g CO2/kWh (art. 1er). En assimilant ces installations converties à de 'nouvelles installations', il leur permet de bénéficier des procédures concurrentielles de soutien (art. 2), ce qui constitue une incitation économique à la conversion plutôt qu'à la fermeture. L'obligation faite aux entreprises à capitaux majoritairement publics de présenter un plan de conversion avant fin 2026 (art. 4) renforce cette orientation. L'ensemble des mécanismes pousse donc vers une réduction des émissions de CO2 du parc électrique existant, conformément à l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte ne définit pas les 'combustibles moins émetteurs' visés (biomasse, gaz, déchets, etc.) ni n'exclut explicitement certains combustibles fossiles comme le gaz naturel, dont l'empreinte CO2 reste significative.",
+  "Le seuil de 550 g CO2/kWh est relativement élevé : il n'impose pas la neutralité carbone mais seulement une réduction partielle.",
+  "L'entrée en vigueur est subordonnée à un décret non encore pris (art. 3), ce qui retarde l'effet concret de la loi.",
+  "L'obligation de plan de conversion (art. 4) ne vise que les entreprises dont l'État est actionnaire à plus de 50%, laissant de côté les opérateurs privés.",
+  "Aucune sanction n'est prévue en cas de non-présentation du plan de conversion dans le délai imparti."
+ ],
+ "themes": [
+  "énergie",
+  "transition écologique",
+  "charbon",
+  "centrales électriques",
+  "code de l'énergie"
+ ],
+ "scrutinsCles": [
+  "1305",
+  "1306"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:a1f7908112bb2d012b0855b222efaddbc0d4da0a2c4eb2bedcadcff14843e661"
+}

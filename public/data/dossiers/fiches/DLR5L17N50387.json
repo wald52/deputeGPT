@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50387",
+ "generatedAt": "2026-07-13T05:55:56Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Lutter contre les déserts médicaux",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/Lutte_desertification_medicale2",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b0225_proposition-loi",
+  "legifrance": null
+ },
+ "objectifAffiche": "L'objectif affiché est de lutter contre les déserts médicaux, c'est-à-dire les zones du territoire français où l'accès aux soins est insuffisant en raison d'une faible densité de professionnels de santé. Il s'agit d'une proposition de loi ordinaire déposée le 17 septembre 2024.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs, ni articles, ni aucun dispositif législatif concret. Seul le titre de la proposition de loi et des métadonnées procédurales (numéro, date de dépôt, commission saisie) sont disponibles. Sans le contenu normatif du texte, il est impossible d'identifier les mécanismes créés (obligations, incitations, sanctions, dérogations, etc.) et donc de déterminer si les incitations réelles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué et ne contient que les métadonnées de la proposition de loi, sans aucun article ni exposé des motifs.",
+  "Impossibilité d'analyser les mécanismes concrets sans le contenu normatif.",
+  "Le statut 'en cours' indique que le texte pourrait encore évoluer substantiellement."
+ ],
+ "themes": [
+  "santé",
+  "déserts médicaux",
+  "accès aux soins",
+  "démographie médicale"
+ ],
+ "scrutinsCles": [
+  "1214",
+  "1605",
+  "1606",
+  "1607"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:938a44e67fd1e04b532c1360eb1f453f7b1000eb6e26d5c26ddff0c7c760ea41"
+}

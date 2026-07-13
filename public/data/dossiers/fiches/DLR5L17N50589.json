@@ -1,0 +1,45 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50589",
+ "generatedAt": "2026-07-13T06:19:42Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Pour une stratégie nationale de prévention sur le chemsex",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/strat_nat_chemsex",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0081_texte-adopte-seance",
+  "legifrance": null
+ },
+ "objectifAffiche": "Adopter une résolution invitant le Gouvernement à mettre en place une stratégie nationale de prévention sur le chemsex (résolution Article 34-1, adoptée le 31 mars 2025).",
+ "mecanismesCles": [
+  {
+   "resume": "Le texte fourni ne contient ni exposé des motifs ni articles : seule la page de garde (titre, identifiant, procédure, statut) est disponible.",
+   "articleRef": null,
+   "citation": null
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le document transmis est tronqué à l'en-tête administratif (titre, identifiant DLR5L17N50589, procédure « Résolution Article 34-1 », statut « en_cours ») et ne comporte ni exposé des motifs ni le corps des articles. Sans contenu normatif, il est impossible d'identifier des obligations, sanctions, moyens budgétaires ou dérogations, et donc de déterminer si les incitations créées par le texte vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Texte tronqué : absence totale de l'exposé des motifs et des articles de la résolution.",
+  "Une résolution au sens de l'article 34-1 de la Constitution est un acte non législatif invitant le Gouvernement : elle ne crée pas en principe d'obligations directes, mais son contenu (recommandations, demandes de rapports ou de plans) n'est pas connu ici.",
+  "Le statut « en_cours » indique que le processus législatif n'est pas achevé, ce qui peut modifier la portée du texte."
+ ],
+ "themes": [
+  "santé publique",
+  "prévention",
+  "addictions",
+  "chemsex",
+  "résolution"
+ ],
+ "scrutinsCles": [
+  "1192"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:aba9e9c4811e91b1271426a8b4fb497f11c1050b1827c460c4ac71d98ce2fba8"
+}

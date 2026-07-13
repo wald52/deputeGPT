@@ -1,0 +1,40 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50631",
+ "generatedAt": "2026-07-13T06:10:33Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Faire exécuter les peines d'emprisonnement ferme",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/execution_peines_emprisonnement_ferme",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b1655_proposition-loi",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à 'faire exécuter les peines d'emprisonnement ferme', déposée le 1er juillet 2025 et modifiée par le Sénat. Aucun exposé des motifs ni contenu substantiel des articles n'est fourni dans le dossier.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs, ni articles, ni aucune disposition législative. Seul le titre, l'identifiant, la procédure et la date de dépôt sont disponibles. Sans le contenu normatif du texte, il est impossible d'identifier les mécanismes concrets créés par la proposition de loi et donc de déterminer si les incitations qu'elle produit sont alignées avec son objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué à 15000 caractères mais ne contient en réalité que des métadonnées (titre, numéro, date, commission saisie) sans aucune substance normative.",
+  "L'absence totale d'articles et d'exposé des motifs empêche toute analyse de second ordre.",
+  "La mention 'modifiée par le Sénat' indique qu'il existe au moins deux versions du texte, mais aucune n'est fournie."
+ ],
+ "themes": [
+  "justice pénale",
+  "exécution des peines",
+  "emprisonnement"
+ ],
+ "scrutinsCles": [
+  "1259",
+  "1260",
+  "1261",
+  "1262"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:1e0e2198016634000380bac5e15589b37302b07d6d6ba9b743aad7213382f0a3"
+}

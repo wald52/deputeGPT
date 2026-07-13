@@ -1,0 +1,38 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51480",
+ "generatedAt": "2026-07-13T06:17:48Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Mettre fin à la culpabilisation des victimes de violences physiques et sexuelles",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/fin_culpa_victime_sexe",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0085_texte-adopte-seance",
+  "legifrance": null
+ },
+ "objectifAffiche": "Résolution visant à mettre fin à la culpabilisation des victimes de violences physiques et sexuelles, adoptée par l'Assemblée nationale le 1er avril 2025 (T.A. n° 85).",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles : seule la page de garde et le sommaire du dossier législatif sont accessibles. Aucun mécanisme concret (obligation, sanction, dispositif, recommandation) ne peut être identifié dans le contenu transmis, ce qui empêche toute analyse des incitations réellement créées par la résolution.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué et ne livre que les métadonnées (titre, identifiant, procédure, statut) sans le contenu opérationnel de la résolution.",
+  "Une résolution au sens de l'article 34-1 de la Constitution n'a pas de force normative contraignante : elle exprime une position de l'Assemblée mais ne crée pas en principe d'obligations juridiques directes.",
+  "Sans accès aux articles ou à l'exposé des motifs, il est impossible de vérifier si les moyens proposés (sensibilisation, formation, recommandations aux parquets, etc.) sont effectivement de nature à réduire la culpabilisation des victimes."
+ ],
+ "themes": [
+  "violences physiques et sexuelles",
+  "victimes",
+  "résolution parlementaire",
+  "culpabilisation"
+ ],
+ "scrutinsCles": [
+  "1196"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:4961972a06fb1929c25abd17ceaa846a4b6b7218c558a16b7a1ae35719cfbb7b"
+}

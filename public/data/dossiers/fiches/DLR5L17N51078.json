@@ -1,0 +1,59 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51078",
+ "generatedAt": "2026-07-13T05:58:41Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi organique fixant le statut du procureur national anti-stupéfiants",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N51078",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0103_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le titre et le texte indiquent qu'il s'agit d'une proposition de loi organique fixant le statut du procureur de la République anti-criminalité organisée. L'objectif affiché est de créer un statut spécifique pour ce nouveau magistrat, en l'insérant dans l'ordonnance de 1958 relative au statut de la magistrature.",
+ "mecanismesCles": [
+  {
+   "resume": "Modification de l'article 3-1 de l'ordonnance du 22 décembre 1958 pour ajouter le 'premier vice-procureur de la République anti-criminalité organisée' à la liste des magistrats pouvant être concernés.",
+   "articleRef": "Article 1er",
+   "citation": "« premier vice-procureur de la République financier ou premier vice-procureur de la République anti-criminalité organisée »"
+  },
+  {
+   "resume": "Modification de l'article 38-2 de l'ordonnance de 1958 pour intégrer le procureur de la République anti-criminalité organisée dans le dispositif existant, aux côtés du procureur de la République financier.",
+   "articleRef": "Article 2",
+   "citation": "« et au procureur de la République anti-criminalité organisée, »"
+  },
+  {
+   "resume": "Entrée en vigueur différée de la loi organique au 5 janvier 2026.",
+   "articleRef": "Article 3",
+   "citation": "« La présente loi organique entre en vigueur le 5 janvier 2026. »"
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est extrêmement court (3 articles seulement) et ne contient ni exposé des motifs, ni description des prérogatives, compétences ou moyens du procureur de la République anti-criminalité organisée. Les articles 1 et 2 se limitent à des modifications rédactionnelles de l'ordonnance de 1958 pour insérer cette nouvelle fonction dans des listes préexistantes. L'article 3 fixe uniquement la date d'entrée en vigueur. Sans exposé des motifs ni contenu substantiel sur les attributions de ce magistrat, il est impossible de déterminer si les incitations créées vont dans le sens de l'objectif affiché de lutte contre la criminalité organisée.",
+ "pointsDeVigilance": [
+  "Absence totale d'exposé des motifs dans le texte fourni",
+  "Le texte ne définit pas les compétences, pouvoirs ou moyens du procureur anti-criminalité organisée",
+  "Le texte ne crée pas de juridictions, ne fixe pas de seuils, n'établit pas de sanctions",
+  "Il s'agit d'un texte purement statutaire d'intégration dans une ordonnance existante",
+  "Le titre initial mentionne 'procureur national anti-stupéfiants' mais le texte adopté vise 'procureur de la République anti-criminalité organisée' — changement de périmètre notable"
+ ],
+ "themes": [
+  "justice",
+  "criminalité organisée",
+  "stupéfiants",
+  "statut de la magistrature",
+  "procureur"
+ ],
+ "scrutinsCles": [
+  "1039",
+  "1472",
+  "1474"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:228b9ac7184801a41f8914fa73e94ed61bc412ea5f2819d7f562f1afde60b165"
+}

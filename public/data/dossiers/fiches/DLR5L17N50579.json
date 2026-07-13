@@ -1,0 +1,64 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50579",
+ "generatedAt": "2026-07-13T06:06:33Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi organique visant à harmoniser le mode de scrutin aux élections municipales afin de garantir la vitalité démocratique, la cohésion municipale et la parité",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N50579",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0094_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "La proposition de loi organique vise à harmoniser le mode de scrutin aux élections municipales pour garantir la vitalité démocratique, la cohésion municipale et la parité.",
+ "mecanismesCles": [
+  {
+   "resume": "Modification de l'article L.O. 141 du code électoral : la référence au 'mode de scrutin prévu au chapitre III du titre IV' est remplacée par le seuil 'de 1 000 habitants et plus'.",
+   "articleRef": "Article 1er (1° A)",
+   "citation": "« soumise au mode de scrutin prévu au chapitre III du titre IV du présent livre » sont remplacés par les mots : « de 1 000 habitants et plus »"
+  },
+  {
+   "resume": "Modification de l'article L.O. 247-1 : suppression de la mention 'Dans les communes soumises au mode de scrutin prévu au chapitre III du présent titre,' au début du premier alinéa, et suppression du second alinéa.",
+   "articleRef": "Article 1er (1°)",
+   "citation": "« Dans les communes soumises au mode de scrutin prévu au chapitre III du présent titre, » sont supprimés ; Le second alinéa est supprimé"
+  },
+  {
+   "resume": "Abrogation de l'article L.O. 255-5.",
+   "articleRef": "Article 1er (2°)",
+   "citation": "L'article L.O. 255-5 est abrogé."
+  },
+  {
+   "resume": "Entrée en vigueur différée : application à compter du premier renouvellement général des conseils municipaux suivant la promulgation.",
+   "articleRef": "Article 2",
+   "citation": "La présente loi organique s'applique à compter du premier renouvellement général des conseils municipaux suivant sa promulgation."
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est extrêmement court et ne contient ni exposé des motifs, ni le contenu des articles abrogés ou modifiés (L.O. 141, L.O. 247-1, L.O. 255-5). Les modifications consistent uniquement en des ajustements rédactionnels (substitution de références au mode de scrutin par un seuil démographique, suppression d'alinéas, abrogation d'un article) sans qu'il soit possible, à partir du seul texte fourni, de déterminer les effets concrets sur la vitalité démocratique, la cohésion municipale ou la parité. L'absence d'exposé des motifs et du contenu des dispositions modifiées/abrogées empêche toute analyse des incitations réelles.",
+ "pointsDeVigilance": [
+  "Aucun exposé des motifs n'est fourni dans le texte tronqué, ce qui empêche de connaître la justification politique détaillée.",
+  "Le contenu des articles L.O. 141, L.O. 247-1 et L.O. 255-5 (dans leur version antérieure) n'est pas reproduit, rendant impossible l'évaluation des effets de la réforme.",
+  "Le texte ne contient que des modifications de coordination rédactionnelle ; les mécanismes concrets (seuils, sanctions, obligations parité) ne sont pas visibles dans le texte fourni.",
+  "L'entrée en vigueur est différée au prochain renouvellement général des conseils municipains, ce qui repousse toute application concrète."
+ ],
+ "themes": [
+  "élections municipales",
+  "mode de scrutin",
+  "parité",
+  "démocratie locale",
+  "communes"
+ ],
+ "scrutinsCles": [
+  "1300",
+  "1301",
+  "1302",
+  "1304"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:aa869402ebb53f0cf451b56208be2f049440d7d4b13a63a169fa3dc4c4f4c7b9"
+}

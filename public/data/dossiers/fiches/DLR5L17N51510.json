@@ -1,0 +1,69 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51510",
+ "generatedAt": "2026-07-13T06:16:25Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Renforcer le contrôle du Parlement en période d’expédition des affaires courantes",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/controle_parlement_affaires_courantes_17",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0089_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Renforcer le contrôle du Parlement sur l'action du Gouvernement durant la période d'expédition des affaires courantes (après démission du Président, motion de censure ou désapprobation d'une déclaration de politique générale), en garantissant l'information des assemblées et la capacité de contestation des actes.",
+ "mecanismesCles": [
+  {
+   "resume": "Droit d'agir en recours pour excès de pouvoir contre les actes du Gouvernement expédiant les affaires courantes, accordé aux présidents des assemblées, des commissions permanentes et des groupes parlementaires.",
+   "articleRef": "art. 1er",
+   "citation": "« Les présidents des assemblées parlementaires, les présidents des commissions permanentes et les présidents des groupes parlementaires ont chacun intérêt pour agir en cette seule qualité, par la voie du recours pour excès de pouvoir, contre les actes mentionnés aux 1° à 3° du II de l'article 5 quater »"
+  },
+  {
+   "resume": "Transmission sans délai aux deux assemblées des ordonnances, décrets, actes réglementaires et non réglementaires des ministres, circulaires, instructions de portée générale et décrets de nomination de l'article 13.",
+   "articleRef": "art. 2 (art. 5 quater II)",
+   "citation": "« Le Gouvernement transmet sans délai à l'Assemblée nationale et au Sénat copie des actes suivants pris pendant cette période : 1° Les ordonnances et les décrets ; 2° Les actes réglementaires et non réglementaires pris par les ministres ainsi que leurs circulaires et leurs instructions de portée générale »"
+  },
+  {
+   "resume": "Possibilité pour les assemblées de requérir toute information complémentaire dans le cadre du contrôle et de l'évaluation des mesures.",
+   "articleRef": "art. 2 (art. 5 quater II)",
+   "citation": "« L'Assemblée nationale et le Sénat peuvent requérir toute information complémentaire dans le cadre du contrôle et de l'évaluation des mesures mentionnées au I du présent article. »"
+  },
+  {
+   "resume": "Obligation pour le nouveau Gouvernement de remettre, dans un délai de deux mois suivant sa nomination, un rapport bilan de la période d'affaires courantes incluant la liste des mesures, recours contentieux, déplacements, conférences de presse et communiqués.",
+   "articleRef": "art. 2 (art. 5 quater III)",
+   "citation": "« Dans un délai de deux mois à compter de la nomination des membres d'un nouveau Gouvernement, ce dernier remet au Parlement un rapport établissant le bilan de la période d'expédition des affaires courantes qui a précédé. »"
+  },
+  {
+   "resume": "Garantie pour les députés et sénateurs de pouvoir poser des questions écrites et orales au Gouvernement durant la période d'affaires courantes.",
+   "articleRef": "art. 2 (art. 5 quinquies)",
+   "citation": "« La possibilité pour les députés et les sénateurs de poser des questions écrites et questions orales au Gouvernement est garantie par les assemblées parlementaires durant la période d'expédition des affaires courantes »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'ensemble des mécanismes créés va directement dans le sens de l'objectif affiché de renforcement du contrôle parlementaire. L'article 1er ouvre un recours pour excès de pouvoir aux présidents d'assemblées, de commissions et de groupes, ce qui crée une voie contentieuse nouvelle contre les actes du Gouvernement. L'article 2 impose une transmission sans délai des principaux actes (ordonnances, décrets, circulaires, nominations de l'article 13) et garantit le droit de question. Le rapport bilan à deux mois prévu au III de l'article 5 quater instaure un contrôle a posteriori. Tous ces dispositifs accroissent l'information et la capacité de contestation du Parlement pendant l'expédition des affaires courantes.",
+ "pointsDeVigilance": [
+  "Les 4° et 5° du II de l'article 5 quater ont été supprimés, ce qui réduit le périmètre des actes transmis (la portée initiale n'est pas connue du texte fourni).",
+  "Le texte ne précise pas les conséquences juridiques en cas de non-transmission 'sans délai' par le Gouvernement, ni de sanction en cas de manquement au rapport bilan.",
+  "L'efficacité réelle du contrôle dépend de la capacité des présidents et groupes à exercer effectivement le recours pour excès de pouvoir, ce qui n'est pas détaillé.",
+  "Le texte est qualifié de 'provisoire' et seule la 'petite loi' ultérieure fait foi."
+ ],
+ "themes": [
+  "parlement",
+  "contrôle parlementaire",
+  "affaires courantes",
+  "recours pour excès de pouvoir",
+  "transparence gouvernementale"
+ ],
+ "scrutinsCles": [
+  "1209",
+  "1210",
+  "1211",
+  "1212"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:632f9514b5e423342e1b742a8729b181e3f5300346c0a50ca4cf5c501714e1b7"
+}

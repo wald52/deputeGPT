@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50578",
+ "generatedAt": "2026-07-13T06:07:36Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi visant à harmoniser le mode de scrutin aux élections municipales afin de garantir la vitalité démocratique, la cohésion municipale et la parité",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N50578",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N50578",
+  "legifrance": null
+ },
+ "objectifAffiche": "La proposition de loi vise à harmoniser le mode de scrutin aux élections municipales afin de garantir la vitalité démocratique, la cohésion municipale et la parité. Il s'agit d'une proposition de loi ordinaire déposée au Sénat le 7 octobre 2024.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles de la proposition de loi. Seules les métadonnées procédurales (dépôt, commission saisie au fond, étapes de lecture) sont accessibles. Aucun mécanisme concret (obligation, seuil, sanction, dérogation) ne peut être identifié, ce qui rend impossible toute évaluation des incitations effectivement créées par le texte.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué et ne contient pas le dispositif législatif (articles)",
+  "Aucun exposé des motifs n'est reproduit dans l'extrait fourni",
+  "L'analyse des incitations réelles nécessiterait la lecture intégrale du texte"
+ ],
+ "themes": [
+  "élections municipales",
+  "mode de scrutin",
+  "parité",
+  "vie démocratique locale"
+ ],
+ "scrutinsCles": [
+  "1295",
+  "1296",
+  "1297",
+  "1303"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:abd5c845e7f4f7bfe201fd425015855811a2a3612451b667be2d08a1361f3742"
+}
