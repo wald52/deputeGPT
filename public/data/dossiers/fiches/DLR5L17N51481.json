@@ -1,0 +1,53 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51481",
+ "generatedAt": "2026-07-14T20:06:36Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Supprimer le vote par assis et levé",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/supprimer_vote_assis_leve",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0069_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Modifier le Règlement de l'Assemblée nationale afin de supprimer le vote par assis et levé, en remplaçant ce mode de scrutin par le scrutin public ordinaire ou le vote à main levée selon les cas.",
+ "mecanismesCles": [
+  {
+   "resume": "Suppression du vote par assis et levé dans plusieurs articles du Règlement et remplacement par le scrutin public ordinaire.",
+   "articleRef": "Article unique (1°, 2°, 3°)",
+   "citation": "« les mots : 'assis et levé' sont remplacés par les mots : 'scrutin public ordinaire' »"
+  },
+  {
+   "resume": "Suppression de la dernière phrase de l'article 57 et du troisième alinéa de l'article 64.",
+   "articleRef": "Article unique (1° b, 3° b)",
+   "citation": "« La dernière phrase est supprimée » ; « Le troisième alinéa est supprimé »"
+  },
+  {
+   "resume": "Maintien de la possibilité d'un vote à main levée dans certains cas (article 72).",
+   "articleRef": "Article unique (4°)",
+   "citation": "« les mots : 'par assis et levé' sont remplacés par les mots : 'à main levée' »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'objectif affiché est purement procédural : supprimer le vote par assis et levé du Règlement de l'Assemblée nationale. Les mécanismes créés par l'article unique consistent exclusivement en des modifications rédactionnelles du Règlement, remplaçant 'assis et levé' par 'scrutin public ordinaire' (articles 57, 63, 64) ou par 'à main levée' (article 72), et supprimant certains alinéas devenus obsolètes. Ces modifications vont directement dans le sens de l'objectif affiché : elles suppriment bien le vote par assis et levé là où le texte le prévoyait. Aucun mécanisme de fond (obligation, taxe, subvention, dérogation) n'est créé.",
+ "pointsDeVigilance": [
+  "Le texte fourni ne contient pas d'exposé des motifs, ce qui limite l'analyse des motivations profondes de la réforme.",
+  "La résolution est de nature purement réglementaire interne à l'Assemblée nationale et n'a pas d'effet direct sur les citoyens.",
+  "Le remplacement par le scrutin public ordinaire pourrait allonger la durée des votes en séance, mais cela n'est pas explicitement traité dans le texte."
+ ],
+ "themes": [
+  "procédure parlementaire",
+  "règlement de l'assemblée nationale",
+  "modalités de vote"
+ ],
+ "scrutinsCles": [
+  "960"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:626198a4b0ba2a6ab8c2a8d18f760a78637dbe1d77d315478a332c768ae058ad"
+}

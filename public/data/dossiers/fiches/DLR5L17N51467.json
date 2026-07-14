@@ -1,0 +1,74 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51467",
+ "generatedAt": "2026-07-14T20:05:47Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Renforcement du soutien à l'Ukraine",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/renforcement_soutien_ukraine",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0070_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Résolution européenne appelant au renforcement du soutien à l'Ukraine face à la guerre d'agression russe débutée le 24 février 2022. Le texte vise à condamner l'agression, à appeler à une paix juste et durable, et à renforcer le soutien politique, économique et militaire européen à l'Ukraine.",
+ "mecanismesCles": [
+  {
+   "resume": "Résolution parlementaire (article 88-4 de la Constitution) qui n'a pas de valeur normative contraignante : elle condamne, appelle, encourage et invite, sans créer d'obligations juridiques directes.",
+   "articleRef": null,
+   "citation": "L'Assemblée nationale a adopté la résolution dont la teneur suit"
+  },
+  {
+   "resume": "Condamnation de la guerre d'agression russe, des annexions (Crimée, Donetsk, Louhansk, Zaporijjia, Kherson), des crimes de guerre, des déportations d'enfants et des ingérences hybrides.",
+   "articleRef": "articles 1 à 7",
+   "citation": "Condamne la guerre d'agression illégale, non provoquée et injustifiée menée par la Russie contre l'Ukraine depuis le 24 février 2022"
+  },
+  {
+   "resume": "Appel à la cessation immédiate des hostilités et au retrait des forces russes du territoire internationalement reconnu de l'Ukraine.",
+   "articleRef": "article 11",
+   "citation": "Demande à la Russie la cessation immédiate des hostilités et le retrait de ses forces armées du territoire internationalement reconnu de l'Ukraine"
+  },
+  {
+   "resume": "Encouragement à accroître le soutien politique, économique et militaire à l'Ukraine, afin qu'elle soit en position de négocier une paix solide et durable, et qu'aucun accord ne lui soit imposé sans son consentement.",
+   "articleRef": "article 15",
+   "citation": "Encourage l'Union européenne et ses États membres [...] à poursuivre et à accroître leur soutien politique, économique et militaire à l'Ukraine"
+  },
+  {
+   "resume": "Appel à la participation pleine et entière de l'UE à toute négociation sur l'avenir de l'Ukraine, sans quoi aucune décision sur la sécurité du continent ne saurait être prise.",
+   "articleRef": "article 16",
+   "citation": "aucune décision relative à la sécurité du continent ne saurait être prise sans l'implication directe de l'Union européenne"
+  },
+  {
+   "resume": "Invitation à accompagner le processus d'adhésion de l'Ukraine à l'Union européenne pour qu'il aboutisse dans les meilleurs délais.",
+   "articleRef": "article 17",
+   "citation": "Invite l'Union européenne et ses États membres à accompagner le processus d'adhésion de l'Ukraine à l'Union européenne"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte est une résolution européenne au sens de l'article 88-4 de la Constitution, instrument non contraignant par nature. L'ensemble des mécanismes créés (condamnations, appels, encouragements, invitations) vont dans le sens de l'objectif affiché : renforcer le soutien à l'Ukraine. L'article 15 encourage explicitement à 'poursuivre et à accroître leur soutien politique, économique et militaire à l'Ukraine', l'article 11 exige le retrait russe, et l'article 17 soutient l'adhésion à l'UE. Aucune disposition ne crée d'incitation contraire à l'objectif affiché. Le texte est cohérent avec son intitulé.",
+ "pointsDeVigilance": [
+  "Le texte est tronqué à 15000 caractères : les articles au-delà de l'article 17 ne sont pas visibles, ce qui pourrait contenir des éléments modulant le dispositif.",
+  "Une résolution européenne n'a pas de force normative contraignante : elle exprime une position politique de l'Assemblée nationale, sans créer d'obligations juridiques ni de mécanismes budgétaires ou fiscaux.",
+  "Le texte ne contient aucune disposition sur les moyens concrets (financiers, militaires, livraisons d'armements) du soutien français à l'Ukraine.",
+  "Le considérant sur le 'rapprochement du Gouvernement des États-Unis d'Amérique avec la Fédération de Russie' traduit une orientation politique mais ne produit aucun mécanisme contraignant à l'égard des États-Unis."
+ ],
+ "themes": [
+  "ukraine",
+  "guerre d'agression",
+  "soutien militaire",
+  "politique étrangère",
+  "union européenne"
+ ],
+ "scrutinsCles": [
+  "985",
+  "986",
+  "987",
+  "988"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:5752703973475e3cc11dff18112b25051be15cf85b88c714c5cce4c012fd3959"
+}

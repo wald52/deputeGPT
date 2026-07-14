@@ -1,0 +1,75 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L16N49455",
+ "generatedAt": "2026-07-14T20:19:55Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Protéger la population des risques liés aux substances per- et polyfluoroalkylées (PFAS)",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/16/dossiers/proteger_population_risques_pfas",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0057_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Protéger la population des risques liés aux substances per- et polyfluoroalkylées (PFAS) en encadrant leur usage, en limitant l'exposition de la population via l'eau potable et les produits de consommation, et en réduisant les rejets industriels.",
+ "mecanismesCles": [
+  {
+   "resume": "Interdiction à compter du 1er janvier 2026 de la fabrication, importation, exportation et mise sur le marché des produits cosmétiques, produits de fart, textiles d'habillement, chaussures et agents imperméabilisants contenant des PFAS, avec exceptions pour les usages de défense/sécurité civile.",
+   "articleRef": "art. 1er (L. 524-1 I)",
+   "citation": "Sont interdites, à compter du 1er janvier 2026, la fabrication, l'importation, l'exportation et la mise sur le marché à titre onéreux ou gratuit de : [...] Tout produit cosmétique contenant des substances perfluoroalkylées et polyfluoroalkylées"
+  },
+  {
+   "resume": "Interdiction à compter du 1er janvier 2030 de tout produit textile contenant des PFAS, sauf exceptions pour utilisations essentielles, souveraineté nationale et textiles techniques industriels.",
+   "articleRef": "art. 1er (L. 524-1 II)",
+   "citation": "Sont interdites, à compter du 1er janvier 2030, la fabrication, l'importation, l'exportation et la mise sur le marché [...] de tout produit textile contenant des substances perfluoroalkylées et polyfluoroalkylées"
+  },
+  {
+   "resume": "Seuil de concentration résiduelle en dessous duquel les interdictions ne s'appliquent pas, fixé par décret.",
+   "articleRef": "art. 1er (L. 524-1 III)",
+   "citation": "Les interdictions prévues aux I et II ne s'appliquent pas aux produits contenant des substances perfluoroalkylées et polyfluoroalkylées présentes en concentration inférieure ou égale à une valeur résiduelle définie par décret."
+  },
+  {
+   "resume": "Contrôle sanitaire des eaux potables incluant la recherche de PFAS, publication d'une carte des sites émetteurs et fixation par arrêté des seuils maximaux d'émissions et actions de dépollution.",
+   "articleRef": "art. 1er (L. 1321-9-1 code santé publique)",
+   "citation": "Le contrôle sanitaire de la qualité des eaux potables inclut le contrôle [...] de la présence de substances perfluoroalkylées et polyfluoroalkylées"
+  },
+  {
+   "resume": "Trajectoire nationale de réduction progressive des rejets aqueux de PFAS des installations industrielles, visant la fin de ces rejets sous cinq ans.",
+   "articleRef": "art. 2 (L. 523-6-1)",
+   "citation": "La France se dote d'une trajectoire nationale de réduction progressive des rejets aqueux de substances perfluoroalkylées et polyfluoroalkylées des installations industrielles, de manière à tendre vers la fin de ces rejets dans un délai de cinq ans"
+  },
+  {
+   "resume": "Plan d'action interministériel pour le financement de la dépollution des eaux destinées à la consommation humaine, à remettre sous un an.",
+   "articleRef": "art. 3",
+   "citation": "le Gouvernement se dote d'un plan d'action interministériel pour le financement de la dépollution des eaux destinées à la consommation humaine"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'ensemble des mécanismes créés va dans le sens de l'objectif affiché de protection contre les PFAS. Les articles 1er interdisent la mise sur le marché de produits contenant des PFAS (cosmétiques, fart, textiles) avec une montée en puissance entre 2026 et 2030. L'article 2 instaure une trajectoire de réduction des rejets industriels visant leur fin sous cinq ans. L'article 4 crée une redevance dissuasive (100 euros par 100 grammes rejetés) sur les rejets aqueux industriels, incitant financièrement les exploitants à réduire leurs émissions. L'article 1er (L. 1321-9-1) renforce le contrôle sanitaire des eaux potables et impose la publication d'une carte des sites émetteurs. Ces dispositifs convergent pour réduire l'exposition de la population aux PFAS.",
+ "pointsDeVigilance": [
+  "De nombreuses exceptions aux interdictions sont prévues par décret (usages essentiels, souveraineté nationale, textiles techniques industriels, valeurs résiduelles), ce qui pourrait en réduire significativement la portée effective.",
+  "La trajectoire de 'fin des rejets sous cinq ans' est seulement 'précisée par décret' : son caractère contraignant dépendra des textes d'application.",
+  "Le seuil de la redevance fixé à 100 grammes peut être élevé : les petits rejets en dessous de ce seuil échappent à toute taxation.",
+  "La compensation de la charge pour l'État par une taxe sur les tabacs crée un lien budgétaire indirect entre la lutte contre les PFAS et le tabac, sans lien écologique direct.",
+  "L'article 1er bis A a été supprimé en deuxième lecture, privant le texte d'une disposition dont le contenu initial n'est pas connu du dossier fourni."
+ ],
+ "themes": [
+  "santé environnementale",
+  "pollution industrielle",
+  "eau potable",
+  "produits chimiques",
+  "interdiction"
+ ],
+ "scrutinsCles": [
+  "849",
+  "850",
+  "851",
+  "852"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:796e4a45968f74e7310c306a7748d83c058bb271d10774f440cb472b34c2a9a1"
+}

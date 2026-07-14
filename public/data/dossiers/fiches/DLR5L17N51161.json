@@ -1,0 +1,67 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51161",
+ "generatedAt": "2026-07-14T20:22:55Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proroger le dispositif d’expérimentation favorisant l’égalité des chances pour l’accès à certaines écoles de service public",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/proroger_dispositif_experimentation_favorisant_egalite_chances",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0054_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Proroger le dispositif d'expérimentation favorisant l'égalité des chances pour l'accès à certaines écoles de service public, initialement prévu par l'ordonnance n° 2021-238 du 3 mars 2021.",
+ "mecanismesCles": [
+  {
+   "resume": "Report de la date de fin de l'expérimentation du 31 décembre 2024 au 31 août 2028.",
+   "articleRef": "art. 1er (I, 1°)",
+   "citation": "La date : « 31 décembre 2024 » est remplacée par la date : « 31 août 2028 »"
+  },
+  {
+   "resume": "Élargissement du dispositif : remplacement du mot « organisé » par « ouvert » et ajout de la mention « ou de militaires ».",
+   "articleRef": "art. 1er (I, 2° et 3°)",
+   "citation": "Le mot : « organisé » est remplacé par le mot : « ouvert » ; Sont ajoutés les mots : « ou de militaires »"
+  },
+  {
+   "resume": "Application rétroactive des nouvelles dispositions aux concours ouverts à compter du 1er août 2024.",
+   "articleRef": "art. 1er (II)",
+   "citation": "applicable aux concours ouverts à compter du 1er août 2024"
+  },
+  {
+   "resume": "Report de la date butoir d'évaluation/rapport du 30 juin 2024 au 31 mars 2028.",
+   "articleRef": "art. 2",
+   "citation": "la date : « 30 juin 2024 » est remplacée par la date : « 31 mars 2028 »"
+  },
+  {
+   "resume": "Ratification de l'ordonnance n° 2021-238 du 3 mars 2021.",
+   "articleRef": "art. 2 bis",
+   "citation": "L'ordonnance n° 2021-238 du 3 mars 2021 précitée est ratifiée."
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte proroge de quatre ans (jusqu'au 31 août 2028) l'expérimentation prévue par l'ordonnance de 2021, ce qui prolonge le dispositif favorisant l'égalité des chances dans l'accès aux écoles de service public (art. 1er). L'élargissement aux militaires et la substitution de « organisé » par « ouvert » (art. 1er, 2° et 3°) étendent le champ du dispositif, allant dans le sens de l'objectif affiché. La ratification (art. 2 bis) consolide juridiquement l'ordonnance. L'ensemble des mécanismes concourt donc à maintenir et élargir l'expérimentation en faveur de l'égalité des chances.",
+ "pointsDeVigilance": [
+  "Le texte ne contient pas d'exposé des motifs dans l'extrait fourni, ce qui limite la compréhension fine de l'objectif initial.",
+  "L'application rétroactive aux concours ouverts à compter du 1er août 2024 (art. 1er II) peut soulever des questions de sécurité juridique.",
+  "Les articles 2 ter et 3 ont été supprimés en séance, sans que le contenu initial soit connu dans le texte fourni."
+ ],
+ "themes": [
+  "égalité des chances",
+  "écoles de service public",
+  "expérimentation",
+  "prorogation",
+  "ordonnance"
+ ],
+ "scrutinsCles": [
+  "838",
+  "839",
+  "840"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:4bc108c2b9de84aa1a060c158a26dc744fe6f1a47cc9bebb86f9757bab573ad4"
+}

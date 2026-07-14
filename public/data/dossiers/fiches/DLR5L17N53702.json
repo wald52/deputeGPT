@@ -1,0 +1,40 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N53702",
+ "generatedAt": "2026-07-14T20:20:41Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "La souveraineté alimentaire et agricole",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/souverainete_alimentaire_et_agricole_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2421_proposition-loi",
+  "legifrance": null
+ },
+ "objectifAffiche": "Proposition de loi constitutionnelle relative à la souveraineté alimentaire et agricole, déposée le 3 février 2026. L'objectif affiché est d'inscrire la souveraineté alimentaire et agricole au niveau constitutionnel, mais le texte fourni ne contient ni exposé des motifs ni articles.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni le contenu des articles de la proposition de loi constitutionnelle n° 2421. Seules les métadonnées (titre, numéro, date de dépôt, commission saisie) sont disponibles. Sans accès au dispositif normatif, il est impossible d'identifier les mécanismes concrets créés par le texte et donc de déterminer si les incitations réelles s'alignent avec l'objectif affiché de souveraineté alimentaire et agricole.",
+ "pointsDeVigilance": [
+  "Texte tronqué à 15000 caractères mais ne contenant en réalité que les métadonnées du dossier législatif, sans exposé des motifs ni articles",
+  "Procédure 'Projet ou proposition de loi constitutionnelle' : une révision constitutionnelle exige un vote conforme des deux assemblées ou un référendum, ce qui en fait un véhicule lourd aux effets juridiques incertains",
+  "La notion de 'souveraineté alimentaire' n'est définie ni dans le titre ni dans le texte disponible, ce qui rend son périmètre interprétatif très large",
+  "L'absence de dispositif normatif empêche toute analyse de second ordre sur les incitations réelles"
+ ],
+ "themes": [
+  "souveraineté alimentaire",
+  "agriculture",
+  "droit constitutionnel",
+  "sécurité alimentaire"
+ ],
+ "scrutinsCles": [
+  "843",
+  "844"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:30620fc4c7a8d264a738d76b71f6f92a11ed5114884b9d160a78d2d3eff6c637"
+}

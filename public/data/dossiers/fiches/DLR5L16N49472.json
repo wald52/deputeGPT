@@ -1,0 +1,62 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L16N49472",
+ "generatedAt": "2026-07-14T20:15:50Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi visant à endiguer la prolifération du frelon asiatique et à préserver la filière apicole",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/16/dossiers/DLR5L16N49472",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0061_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "La proposition de loi vise à endiguer la prolifération du frelon asiatique à pattes jaunes et à préserver la filière apicole, en organisant une lutte coordonnée à l'échelle nationale et départementale.",
+ "mecanismesCles": [
+  {
+   "resume": "Création d'un plan national de lutte contre le frelon asiatique à pattes jaunes, définissant orientations, indicateurs de suivi, classification des départements selon la pression de prédation, et financements de l'État, des collectivités et acteurs socio-économiques.",
+   "articleRef": "Art. L. 411-9-1 (I)",
+   "citation": "il est institué un plan national de lutte contre le frelon asiatique à pattes jaunes"
+  },
+  {
+   "resume": "Possibilité de classer le frelon asiatique parmi les dangers sanitaires de deuxième catégorie pour l'abeille domestique, afin d'assurer une protection plus efficace des ruchers.",
+   "articleRef": "Art. L. 411-9-1 (I, 4°)",
+   "citation": "L'opportunité de classer le frelon asiatique à pattes jaunes parmi les dangers sanitaires de deuxième catégorie pour l'abeille domestique"
+  },
+  {
+   "resume": "Élaboration d'un plan départemental de lutte par le préfet, en concertation avec les collectivités, les organismes à vocation sanitaire, l'OFB et les acteurs concernés, organisant le signalement et la destruction des nids.",
+   "articleRef": "Art. L. 411-9-1 (II)",
+   "citation": "Le plan départemental organise l'évaluation du niveau de danger pour la santé publique et des dégâts sur les ruchers des nids de frelons asiatiques déclarés ainsi que la procédure de signalement et de destruction."
+  },
+  {
+   "resume": "Indemnisation des pertes économiques subies par les exploitants apicoles du fait du frelon asiatique, dans les conditions prévues à l'article L. 361-3 du code rural.",
+   "articleRef": "Art. L. 411-9-2",
+   "citation": "Les pertes économiques causées par le frelon asiatique à pattes jaunes subies par un exploitant apicole sont indemnisées dans les conditions prévues à l'article L. 361-3 du code rural et de la pêche maritime."
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés vont directement dans le sens de l'objectif affiché. Le plan national (art. L. 411-9-1 I) structure la lutte avec des indicateurs de suivi et des financements dédiés. Le plan départemental (art. L. 411-9-1 II) organise concrètement le signalement et la destruction des nids, leviers opérationnels contre la prolifération. L'indemnisation des apiculteurs (art. L. 411-9-2) préserve la filière apicole en compensant les pertes économiques. L'éventuel classement en danger sanitaire de deuxième catégorie renforce les outils de protection des ruchers.",
+ "pointsDeVigilance": [
+  "Plusieurs dispositions ont été supprimées au cours de la navette parlementaire (notamment l'ancien 4° et les II et III de l'article unique), ce qui réduit la portée initiale du texte.",
+  "Le texte renvoie largement à un décret (art. L. 411-9-1 III) pour les conditions d'application, laissant une part d'incertitude sur la mise en œuvre effective.",
+  "L'indemnisation est renvoyée aux conditions de l'article L. 361-3 du code rural, dont les modalités précises ne sont pas détaillées dans le texte.",
+  "Aucun mécanisme coercitif direct (obligation de destruction, sanctions) n'est explicitement créé par le texte ; tout repose sur la coordination via les plans."
+ ],
+ "themes": [
+  "biodiversité",
+  "apiculture",
+  "espèces invasives",
+  "santé animale",
+  "pollinisateurs"
+ ],
+ "scrutinsCles": [
+  "913",
+  "914"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:4d7128e2e45ed9668a5eefd29f7214190f9c4a26e5f8fcdd88d54b6a9606bfdf"
+}

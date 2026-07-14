@@ -1,0 +1,44 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50452",
+ "generatedAt": "2026-07-14T20:11:52Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "La publicisation des doléances du grand débat national",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/pub_grand_debnat",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0067_texte-adopte-seance",
+  "legifrance": null
+ },
+ "objectifAffiche": "Résolution adoptée par l'Assemblée nationale le 11 mars 2025 relative à la publicisation des doléances du grand débat national. L'objectif affiché est de rendre publiques les contributions citoyennes issues du grand débat national.",
+ "mecanismesCles": [
+  {
+   "resume": "Le texte est une résolution (procédure article 34-1 de la Constitution) qui ne dispose pas de valeur normative contraignante. Aucun article opérationnel n'est fourni dans le texte tronqué.",
+   "articleRef": null,
+   "citation": "Résolution, adoptée par l'Assemblée nationale, relative à la publicisation des doléances du grand débat national le 11 mars 2025, T.A. n° 67"
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est tronqué à 15000 caractères et ne contient que les éléments de titrage et de sommaire de la résolution (T.A. n° 67). Aucun article ni dispositif concret n'est accessible dans l'extrait transmis. Sans la lecture des articles opérationnels de la résolution, il est impossible d'identifier les mécanismes précis créés (modalités de publicisation, obligations de transmission, délais, supports de publication, etc.) et donc de déterminer si les incitations vont dans le sens de l'objectif affiché de transparence des doléances.",
+ "pointsDeVigilance": [
+  "Le texte fourni est manifestement tronqué : seuls les métadonnées et le sommaire sont visibles, sans le contenu des articles.",
+  "Une résolution au sens de l'article 34-1 de la Constitution est un acte non contraignant : elle exprime une position de l'Assemblée mais ne crée pas d'obligations juridiques directes.",
+  "La notion de 'publicisation' recouvre des modalités très variables (mise en ligne intégrale, synthèse, anonymisation, etc.) dont l'impact sur la transparence effective dépend des choix retenus, non visibles dans l'extrait."
+ ],
+ "themes": [
+  "démocratie participative",
+  "transparence",
+  "grand débat national",
+  "résolution parlementaire"
+ ],
+ "scrutinsCles": [
+  "947"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:7eb2e946518d353684e4c4d7bd64db0c043049efef45927eba5b81e0cb19ef16"
+}

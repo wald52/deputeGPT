@@ -1,0 +1,75 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51312",
+ "generatedAt": "2026-07-14T20:11:04Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Lutter contre la disparition des terres agricoles et renforcer la régulation des prix du foncier agricole",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/disparition_terres_agricoles_renforcer_regulation_prix_foncier_agricole",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0068_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Lutter contre la disparition des terres agricoles et renforcer la régulation des prix du foncier agricole, via une proposition de loi ordinaire modifiant le code rural et de la pêche maritime.",
+ "mecanismesCles": [
+  {
+   "resume": "Obligation d'information renforcée lors des démembrements de propriété : doivent être précisés la consistance, la valeur, la durée de l'usufruit, le bail, l'autorisation d'exploiter, ainsi que la méthode de valorisation et la ventilation du prix pour chaque droit démembré.",
+   "articleRef": "art. 1er",
+   "citation": "doivent être précisés la consistance et la valeur des biens concernés, la durée et le sort de l'usufruit, notamment sa destination et son mode d'exploitation"
+  },
+  {
+   "resume": "Distinction obligatoire de la valeur des biens soumis au droit de préemption SAFER et des autres biens (notamment habitations avec terrains non bâtis), avec exceptions pour monuments historiques, sites patrimoniaux remarquables et jardins remarquables.",
+   "articleRef": "art. 1er (2° et 3°)",
+   "citation": "l'information distingue la valeur de ces autres biens dont des biens d'habitation, auxquels sont associés des terrains non bâtis"
+  },
+  {
+   "resume": "Extension du champ géographique du droit de préemption SAFER : aux communes limitrophes et aux communes où s'applique la taxe sur les logements vacants, avec possibilité pour le conseil municipal d'activer le dispositif par délibération.",
+   "articleRef": "art. 2",
+   "citation": "dans les communes limitrophes de celles-ci et dans celles où est appliquée la taxe sur les logements vacants"
+  },
+  {
+   "resume": "Introduction de la préemption partielle par la SAFER : possibilité d'accepter une préemption partielle avec indemnisation de la perte de valeur des biens non acquis, ou de proposer une préemption partielle conservant les dépendances indispensables.",
+   "articleRef": "art. 2 bis",
+   "citation": "Accepter la préemption partielle proposée. Dans ce cas, il peut exiger que la société d'aménagement foncier et d'établissement rural l'indemnise de la perte de valeur des biens non acquis"
+  },
+  {
+   "resume": "Possibilité pour la SAFER de demander à visiter le bien, avec accord du propriétaire lors de la notification de la cession.",
+   "articleRef": "art. 3",
+   "citation": "La société d'aménagement foncier et d'établissement rural peut demander à visiter le bien"
+  },
+  {
+   "resume": "Demande de rapports au Gouvernement : évaluation de l'élargissement du droit de préemption aux cessions partielles de parts/actions de sociétés agricoles, et articulation des droits de préemption des collectivités avec ceux de la SAFER.",
+   "articleRef": "art. 3 ter et 3 quater",
+   "citation": "le Gouvernement remet au Parlement un rapport évaluant l'opportunité d'élargir le droit de préemption des sociétés d'aménagement foncier et d'établissement rural"
+  }
+ ],
+ "verdictIncitations": "incitations_mitigees",
+ "justificationVerdict": "Le texte renforce la transparence sur les ventes (art. 1er) et élargit géographiquement le droit de préemption SAFER (art. 2), ce qui va dans le sens de l'objectif affiché. Toutefois, l'introduction de la préemption partielle avec indemnisation (art. 2 bis) et la possibilité pour le propriétaire de refuser la visite (art. 3) atténuent la portée coercitive du dispositif. Surtout, plusieurs dispositions créent des exceptions significatives au droit de préemption (monuments historiques, sites patrimoniaux, jardins remarquables à l'art. 1er 3°), ce qui peut faciliter des contournements. Enfin, les articles 3 ter et 3 quater ne sont que des demandes de rapports sans effet normatif immédiat, ce qui limite l'ambition opérationnelle du texte.",
+ "pointsDeVigilance": [
+  "L'article 1er (3°) crée plusieurs exceptions au droit de préemption (monuments historiques, sites patrimoniaux remarquables, jardins remarquables) qui pourraient servir de vecteurs de contournement.",
+  "La préemption partielle (art. 2 bis) avec indemnisation de la perte de valeur pourrait alourdir les finances des SAFER et réduire leur capacité d'action.",
+  "Les articles 3 ter et 3 quater sont de simples demandes de rapports sans portée normative, différant des mesures potentiellement structurantes.",
+  "Le financement par taxe additionnelle sur les tabacs (art. 4) est inhabituel et son rendement effectif pour couvrir les charges n'est pas garanti.",
+  "L'activation par délibération municipale (art. 2 3°) rend le dispositif dépendant de la volonté politique locale, créant une application hétérogène."
+ ],
+ "themes": [
+  "foncier agricole",
+  "sécurisation foncière",
+  "sécurité alimentaire",
+  "politique agricole",
+  "collectivités territoriales"
+ ],
+ "scrutinsCles": [
+  "956",
+  "957",
+  "958",
+  "959"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:0c995ed09c1b2bd72b58b2f44ef41772551e2416d9e4c54cdc492ba94d69befb"
+}

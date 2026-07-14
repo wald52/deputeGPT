@@ -1,0 +1,63 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51328",
+ "generatedAt": "2026-07-14T20:14:29Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Instaurer un dispositif de sanction contraventionnelle pour prévenir le développement des vignes non cultivées qui représentent une menace sanitaire pour l’ensemble du vignoble français",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/dispositif_sanction_contraventionnelle_prevenir_developpement_vignes_non_cultivees_17e",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0062_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Instaurer un dispositif de sanction contraventionnelle pour prévenir le développement des vignes non cultivées, qui représentent une menace sanitaire pour l'ensemble du vignoble français.",
+ "mecanismesCles": [
+  {
+   "resume": "Création d'un pouvoir d'injonction administrative : les agents habilités peuvent enjoindre l'intéressé de se conformer à ses obligations dans un délai fixé.",
+   "articleRef": "art. 1er (1°)",
+   "citation": "« Lorsque les agents habilités constatent un manquement ou une infraction au présent titre, ils peuvent enjoindre à l'intéressé de se conformer à ses obligations dans un délai qu'ils fixent. »"
+  },
+  {
+   "resume": "Sanction contraventionnelle (5e classe) du fait de ne pas déférer à l'injonction dans le délai imparti.",
+   "articleRef": "art. 1er (2°)",
+   "citation": "« 3° Le fait de ne pas déférer dans le délai imparti à une injonction prise en application de l'article L. 250-10 du présent code. »"
+  },
+  {
+   "resume": "Sanction contraventionnelle de 5e classe pour non-respect des mesures d'arrachage édictées par l'autorité administrative, à condition qu'une possibilité de financement de l'arrachage ait été préalablement portée à la connaissance du détenteur.",
+   "articleRef": "art. 1er (4°)",
+   "citation": "« Est puni de l'amende prévue pour les contraventions de la cinquième classe le fait de ne pas respecter les mesures édictées par l'autorité administrative en application du II de l'article L. 201-4 si une possibilité de financement de l'arrachage a été préalablement portée à la connaissance du détenteur de la parcelle. »"
+  },
+  {
+   "resume": "Suppression des articles 2 à 6 (nouveaux), dont l'objet n'est pas détaillé dans le texte fourni.",
+   "articleRef": "art. 2 à 6",
+   "citation": "(Supprimés)"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte crée une chaîne répressive cohérente avec l'objectif affiché : un pouvoir d'injonction administrative (art. 1er, 1°) permet de mettre en demeure les détenteurs de parcelles, le non-respect de cette injonction est sanctionné par une contravention de 5e classe (art. 1er, 2°), et le non-respect des mesures d'arrachage elles-mêmes est également puni d'une amende de 5e classe, sous réserve que le détenteur ait été informé d'une possibilité de financement (art. 1er, 4°). L'incitation est donc bien orientée vers la mise en culture ou l'arrachage des vignes non cultivées, c'est-à-dire vers la prévention du risque sanitaire. La condition préalable d'information sur le financement limite toutefois la portée coercitive du dispositif.",
+ "pointsDeVigilance": [
+  "Les articles 2 à 6 ont été supprimés sans que leur contenu initial soit précisé dans le texte fourni, ce qui limite la vision complète du dispositif.",
+  "La sanction n'est déclenchée pour l'arrachage qu'à condition que le détenteur ait été informé d'un financement possible : sans cette information préalable, aucune contravention ne peut être prononcée.",
+  "Le texte ne précise pas le montant de l'amende de 5e classe ni les délais applicables, renvoyant au droit contraventionnel général.",
+  "Aucun mécanisme positif (subvention, aide à l'arrachage) n'est créé par le texte lui-même ; il se contente de conditionner la sanction à l'existence d'une information sur un financement."
+ ],
+ "themes": [
+  "viticulture",
+  "santé végétale",
+  "sanctions contraventionnelles",
+  "arrachage",
+  "vignes non cultivées"
+ ],
+ "scrutinsCles": [
+  "915",
+  "916",
+  "917"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:59564a86f3f9e6b93535b19b8efa402c733c6384c83a2ed174db84ece037e93a"
+}

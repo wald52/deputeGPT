@@ -1,0 +1,52 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L16N48701",
+ "generatedAt": "2026-07-14T20:12:24Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi créant une dérogation à la participation minimale pour la maîtrise d'ouvrage pour les communes rurales",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/16/dossiers/DLR5L16N48701",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0066_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Créer une dérogation à la participation minimale du maître d'ouvrage pour les communes rurales, en réduisant cette participation pour certains projets d'investissement (rénovation du patrimoine, rénovation énergétique, eau potable, assainissement, protection contre les incendies, voirie communale, ponts et ouvrages d'art).",
+ "mecanismesCles": [
+  {
+   "resume": "Réduction de la participation minimale du maître d'ouvrage à 5 % du montant total des financements publics pour les communes rurales (article D. 3334-8-1) sur des projets d'investissement spécifiques.",
+   "articleRef": "Article unique, I",
+   "citation": "Pour les projets d'investissement en matière de rénovation du patrimoine protégé ou non protégé, de rénovation énergétique des bâtiments, d'eau potable et d'assainissement, de protection contre les incendies ou de voirie communale ainsi que pour ceux concernant les ponts et les ouvrages d'art, réalisés par les communes mentionnées à l'article D. 3334-8-1, cette participation minimale du maître d'ouvrage est de 5 % du montant total des financements apportés par des personnes publiques."
+  },
+  {
+   "resume": "Suppression d'un dispositif initialement prévu (II supprimé), sans précision sur son contenu dans le texte fourni.",
+   "articleRef": "Article unique, II",
+   "citation": "(Supprimé)"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte crée une dérogation abaissant la participation minimale du maître d'ouvrage à 5 % pour les communes rurales sur des projets ciblés (rénovation énergétique, eau potable, assainissement, voirie, ponts). Cette réduction du reste à charge pour les petites communes rurales va directement dans le sens de l'objectif affiché : faciliter la maîtrise d'ouvrage communale rurale en allégeant l'autofinancement requis. Les projets listés (notamment rénovation énergétique, eau et assainissement) correspondent à des besoins structurels des communes rurales. L'alignement entre l'incitation créée (charge financière moindre) et l'objectif (soutenir l'investissement des communes rurales) est direct.",
+ "pointsDeVigilance": [
+  "Le contenu du II supprimé n'est pas connu, ce qui empêche d'évaluer l'économie globale du texte.",
+  "La dérogation est limitée aux communes mentionnées à l'article D. 3334-8-1 (communes rurales au sens de la DGF), excluant de fait les autres petites communes.",
+  "Le texte ne précise pas si la réduction à 5 % s'accompagne de contreparties ou de garanties sur la qualité des projets.",
+  "Aucun mécanisme de contrôle, de sanction ou de suivi n'est prévu dans le texte fourni."
+ ],
+ "themes": [
+  "collectivités territoriales",
+  "communes rurales",
+  "investissement public",
+  "maîtrise d'ouvrage",
+  "finances locales"
+ ],
+ "scrutinsCles": [
+  "945",
+  "946"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:8f39238ea1b5559a0e945bdedc53a33f36ffc12f0d9a17e4561708a29231f325"
+}

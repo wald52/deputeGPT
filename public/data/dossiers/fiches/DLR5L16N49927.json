@@ -1,0 +1,74 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L16N49927",
+ "generatedAt": "2026-07-14T20:05:11Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi visant à assouplir la gestion des compétences « eau » et « assainissement »",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/16/dossiers/DLR5L16N49927",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0071_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Assouplir la gestion des compétences « eau » et « assainissement » en permettant aux communes et communautés de communes de déléguer plus facilement ces compétences, et en organisant des mécanismes de solidarité intercommunale en cas de rupture quantitative ou qualitative de la ressource.",
+ "mecanismesCles": [
+  {
+   "resume": "Possibilité pour une communauté de communes de déléguer par convention tout ou partie des compétences « eau », « assainissement » et « eaux pluviales urbaines » à une commune membre ou à un syndicat inclus dans son périmètre.",
+   "articleRef": "art. 1er",
+   "citation": "« La communauté de communes peut déléguer, par convention, tout ou partie des compétences mentionnées aux 6° et 7° du présent I ainsi que la compétence relative à la gestion des eaux pluviales urbaines »"
+  },
+  {
+   "resume": "Délai de deux mois imposé à l'organe délibérant de la communauté de communes pour statuer sur une demande de délégation émanant d'une commune.",
+   "articleRef": "art. 1er",
+   "citation": "« Lorsqu'une commune demande à bénéficier d'une délégation, l'organe délibérant de la communauté de communes statue sur cette demande dans un délai de deux mois. »"
+  },
+  {
+   "resume": "La convention de délégation doit préciser les conditions tarifaires des services d'eau et d'assainissement sur le territoire de la communauté de communes.",
+   "articleRef": "art. 1er",
+   "citation": "« Elle détermine notamment les conditions tarifaires des services d'eau et d'assainissement des eaux usées sur le territoire de la communauté de communes. »"
+  },
+  {
+   "resume": "Création d'obligations de débats au sein des conseils municipaux, des organes délibérants des communautés de communes et de la commission départementale de coopération intercommunale sur les enjeux de qualité/quantité de la ressource en eau après chaque renouvellement municipal.",
+   "articleRef": "art. 3 bis",
+   "citation": "« le conseil municipal se réunit pour évoquer les enjeux relatifs à la qualité et à la quantité de la ressource en eau à l'échelle de la commune et à l'échelle du département, la performance des services et l'efficacité des interconnexions ainsi que les perspectives d'évolution à dix ans »"
+  },
+  {
+   "resume": "La commission départementale de coopération intercommunale peut formuler des propositions non contraignantes sur l'organisation territoriale des compétences eau et assainissement.",
+   "articleRef": "art. 3 bis",
+   "citation": "« La commission peut formuler des propositions non contraignantes sur l'organisation territoriale des compétences “eau” et “assainissement” à l'échelle du département. »"
+  },
+  {
+   "resume": "Mécanisme de solidarité : en cas de rupture qualitative ou quantitative du réseau d'eau potable, le maire peut demander à une commune voisine de mettre à disposition de l'eau potable gratuitement ; la commune donatrice est exemptée de toute contribution sur l'eau transférée.",
+   "articleRef": "art. 5",
+   "citation": "« le maire peut demander à une commune voisine dont les réserves d'eau sont supérieures aux besoins estimés la mise à disposition d'eau potable au bénéfice de sa commune. Lorsqu'elle accepte cette demande, la commune fournit gratuitement la ressource en eau »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte crée des mécanismes qui vont dans le sens de l'objectif affiché d'assouplissement : l'article 1er ouvre explicitement la possibilité de déléguer les compétences eau et assainissement à une commune ou un syndicat, avec un délai contraint de deux mois pour répondre aux demandes. L'article 5 instaure un mécanisme de solidarité intercommunale en cas de rupture de la ressource, avec gratuité du transfert d'eau. L'article 3 bis organise des débats obligatoires sur les enjeux de la ressource à différentes échelles. Les incitations créées (délégation facilitée, solidarité tarifaire, débats prospectifs) sont cohérentes avec un assouplissement de la gestion et une meilleure coordination territoriale.",
+ "pointsDeVigilance": [
+  "Les propositions de la commission départementale de coopération intercommunale sont explicitement « non contraignantes », ce qui limite la portée opérationnelle de l'article 3 bis.",
+  "La gratuité de l'eau fournie par la commune donatrice (art. 5) crée un transfert de charge entre communes qui pourrait décourager la solidarité dans certaines configurations.",
+  "Le financement de la compensation par une taxe sur les tabacs (art. 5 II) crée un lien fiscal indirect entre solidarité hydrique et consommation de tabac, sans lien fonctionnel évident.",
+  "L'article 1er permet la délégation mais ne garantit pas que les conditions tarifaires définies dans la convention soient harmonisées à l'échelle intercommunale, ce qui pourrait maintenir une fragmentation tarifaire."
+ ],
+ "themes": [
+  "eau",
+  "assainissement",
+  "intercommunalité",
+  "collectivités territoriales",
+  "solidarité communale"
+ ],
+ "scrutinsCles": [
+  "994",
+  "995",
+  "996",
+  "997"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:13e1207f7ef0694acee236354f67d8f2ab94cf0e82c2e1c150e0fc99c1042d5c"
+}

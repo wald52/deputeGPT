@@ -1,0 +1,74 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51222",
+ "generatedAt": "2026-07-14T20:24:48Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi d'urgence pour Mayotte",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/urgenceMayotte",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0048_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le projet de loi d'urgence pour Mayotte vise à répondre aux conséquences du cyclone Chido et des événements climatiques survenus entre le 13 décembre 2024 et le 13 mai 2025, en coordonnant la reconstruction de l'île, en adaptant les règles d'urbanisme, de construction et de lutte contre l'habitat informel, et en facilitant la reconstruction des écoles.",
+ "mecanismesCles": [
+  {
+   "resume": "Transformation de l'établissement public foncier et d'aménagement de Mayotte en établissement public chargé de coordonner les travaux de reconstruction, avec maîtrise d'ouvrage possible et possibilité de se substituer à un maître d'ouvrage défaillant.",
+   "articleRef": "art. 1er",
+   "citation": "transformer l'établissement public foncier et d'aménagement de Mayotte en un établissement public chargé de coordonner les travaux de reconstruction de Mayotte"
+  },
+  {
+   "resume": "Publication annuelle d'un rapport d'activité sur la nature, le coût et le financement des opérations de reconstruction, à compter du 1er janvier 2026.",
+   "articleRef": "art. 1er",
+   "citation": "l'établissement public chargé de coordonner les travaux de reconstruction de Mayotte rend public, chaque année et de manière accessible, un rapport d'activité"
+  },
+  {
+   "resume": "Remise annuelle au Parlement d'un rapport sur la planification, le budget, les soutiens financiers, les plans de prévention des risques et la mise à jour cadastrale.",
+   "articleRef": "art. 1er bis",
+   "citation": "De la planification et du budget prévisionnel des opérations prévues dans le cadre des travaux de reconstruction à Mayotte"
+  },
+  {
+   "resume": "Par dérogation, l'État ou un établissement public peut assurer jusqu'au 31 décembre 2027 la construction, reconstruction et rénovation des écoles publiques à la demande des communes, avec accès à l'eau potable, espace de restauration et possibilité d'intégrer des énergies renouvelables.",
+   "articleRef": "art. 2",
+   "citation": "l'État ou un de ses établissements publics désigné par le ministre chargé de l'éducation nationale peut assurer la construction, la reconstruction, la rénovation, la réhabilitation"
+  },
+  {
+   "resume": "Dispense de formalités d'urbanisme pour les constructions démontables et temporaires (bureaux, classes, habitations de personnel) implantées entre le 14 décembre 2024 et deux ans après la promulgation, avec accord préalable du maire.",
+   "articleRef": "art. 3",
+   "citation": "sont dispensées de toute formalité au titre du code de l'urbanisme"
+  },
+  {
+   "resume": "Autorisation donnée au Gouvernement de prendre par ordonnance des mesures pour adapter les règles de construction et renforcer la lutte contre l'habitat informel, avec exclusion des règles sur les énergies renouvelables pour les locaux d'habitation.",
+   "articleRef": "art. 4",
+   "citation": "modifier et à adapter les règles de construction et de lutte contre les locaux ou installations constituant un habitat informel"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés vont dans le sens de l'objectif affiché de reconstruction d'urgence. L'article 1er crée un établissement public dédié à la coordination des travaux de reconstruction, avec pouvoir de maîtrise d'ouvrage et de substitution en cas de défaillance. L'article 2 permet à l'État de se substituer aux communes pour reconstruire les écoles détruites, tout en prévoyant l'accès à l'eau potable et l'intégration d'énergies renouvelables. L'article 3 dispense de formalités les constructions temporaires nécessaires à la continuité des services publics. L'article 4 habilite le Gouvernement à adapter les règles de construction pour accélérer la reconstruction. L'article 4 bis encadre la vente de tôles pour éviter la reconstruction de l'habitat informel. L'ensemble de ces dispositifs concourt directement à l'objectif de reconstruction rapide et adaptée.",
+ "pointsDeVigilance": [
+  "L'article 4 exclut explicitement les obligations de recours aux énergies renouvelables pour les locaux à usage d'habitation des adaptations possibles, ce qui pourrait freiner la reconstruction durable.",
+  "Le texte est largement basé sur des ordonnances (art. 1er et 4), ce qui reporte la définition précise des mécanismes sur le Gouvernement et limite le contrôle parlementaire immédiat.",
+  "L'article 3 interdit l'implantation de constructions temporaires dans les secteurs d'habitat informel, ce qui pourrait compliquer l'hébergement des populations sinistrées vivant dans ces zones.",
+  "Le délai de remise des biens aux collectivités au 31 décembre 2027 (art. 2) pourrait s'avérer insuffisant selon l'ampleur réelle des destructions."
+ ],
+ "themes": [
+  "reconstruction",
+  "mayotte",
+  "cyclone",
+  "urbanisme",
+  "habitat informel"
+ ],
+ "scrutinsCles": [
+  "578",
+  "579",
+  "580",
+  "790"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:8a0b84212e871d70ecd50ccf0a2922a78c74461cedcc0b413a2094d36d6ec984"
+}

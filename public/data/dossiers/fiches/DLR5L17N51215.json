@@ -1,0 +1,43 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51215",
+ "generatedAt": "2026-07-14T20:18:16Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Impôt plancher de 2 % sur le patrimoine des ultra riches",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/impot_plancher_2_pour_cent_patrimoine_ultra_riches",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b1579_proposition-loi",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le titre indique l'instauration d'un impôt plancher de 2 % sur le patrimoine des ultra-riches. L'exposé des motifs et le contenu des articles ne sont pas fournis dans le texte transmis.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni ne contient ni l'exposé des motifs ni le contenu des articles de la proposition de loi n° 1579. Seules les métadonnées (titre, numéro, date de dépôt, commission saisie) sont disponibles, ce qui est insuffisant pour identifier les mécanismes concrets (assiette, seuils, taux, exemptions, sanctions) créés par le texte et pour évaluer si les incitations produites s'alignent avec l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte fourni est tronqué et ne contient pas l'exposé des motifs ni les articles",
+  "Impossibilité de vérifier l'assiette effective (patrimoine net, brut, actifs financiers, immobiliers, exonérations)",
+  "Impossibilité de connaître le seuil de déclenchement et la définition d'« ultra-riche »",
+  "Impossibilité d'identifier les interactions avec l'IFI, l'impôt sur le revenu et les droits de succession",
+  "Risque d'exil fiscal ou de délocalisation patrimoniale non évaluable sans le texte"
+ ],
+ "themes": [
+  "fiscalité",
+  "patrimoine",
+  "impôt sur la fortune",
+  "redistribution"
+ ],
+ "scrutinsCles": [
+  "878",
+  "879",
+  "880",
+  "881"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:b3a36d705e4f045933739175cac42246ecfa973c64096d88a5ab140a5d1fa9d2"
+}

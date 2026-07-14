@@ -1,0 +1,45 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50946",
+ "generatedAt": "2026-07-14T20:21:38Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Ratification du traité sur la coopération dans le domaine de la défense entre la République française et le Royaume d’Espagne",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/ratification_traite_cooperation_domaine_defense_france_espagne",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0055_texte-adopte-seance",
+  "legifrance": null
+ },
+ "objectifAffiche": "Autoriser la ratification du traité bilatéral de coopération dans le domaine de la défense signé entre la République française et le Royaume d'Espagne le 18 février 2025.",
+ "mecanismesCles": [
+  {
+   "resume": "Le projet de loi comporte un article unique autorisant la ratification du traité de coopération en matière de défense entre la France et l'Espagne signé le 18 février 2025.",
+   "articleRef": "article unique",
+   "citation": "Projet de loi autorisant la ratification du traité sur la coopération dans le domaine de la défense entre la République française et le Royaume d'Espagne le 18 février 2025"
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est uniquement une page de sommaire du dossier législatif (T.A. n° 55) et ne contient ni l'exposé des motifs ni le contenu des articles du traité ni du projet de loi de ratification. Sans accès au texte substantiel du traité (obligations concrètes, engagements opérationnels, transferts de compétences, clauses financières ou industrielles), il est impossible de déterminer si les mécanismes créés vont dans le sens d'une coopération renforcée ou présentent des effets contraires à l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte officiel fourni est tronqué et ne contient que des métadonnées (sommaire, commission, formats), sans le contenu normatif du traité ni du projet de loi.",
+  "Aucun article substantiel n'est disponible pour analyser les obligations réciproques, les domaines de coopération (industrie, opérations, renseignement) ou les éventuelles dérogations.",
+  "L'absence d'exposé des motifs empêche de connaître la portée politique et stratégique revendiquée par le Gouvernement."
+ ],
+ "themes": [
+  "défense",
+  "relations bilatérales",
+  "espagne",
+  "traité international",
+  "ratification"
+ ],
+ "scrutinsCles": [
+  "841"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:7ee29ec987015c15e48d724c3e5a86e618214fc287b0ab98943410f59f4c287c"
+}

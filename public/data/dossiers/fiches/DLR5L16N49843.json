@@ -1,0 +1,51 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L16N49843",
+ "generatedAt": "2026-07-14T20:26:13Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi visant à permettre l'élection du maire d'une commune nouvelle en cas de conseil municipal incomplet",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/16/dossiers/DLR5L16N49843",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0045_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Permettre l'élection du maire d'une commune nouvelle lorsque son conseil municipal est incomplet, en décalant le moment de référence pour la complétude du conseil municipal de la première réunion au premier renouvellement général des conseils municipaux suivant la création.",
+ "mecanismesCles": [
+  {
+   "resume": "Modification de l'article L. 2113-8-1 A du CGCT : le critère de complétude du conseil municipal s'apprécie désormais au premier renouvellement général suivant la création de la commune nouvelle, et non plus lors de la première réunion du conseil municipal.",
+   "articleRef": "Article unique, I",
+   "citation": "« la première réunion du conseil municipal, celui-ci » sont remplacés par les mots : « le premier renouvellement général des conseils municipaux intervenant après ladite création, le conseil municipal »"
+  },
+  {
+   "resume": "Application rétroactive (sous réserve des décisions de justice passées en force de chose jugée) aux communes nouvelles dont le conseil municipal n'a pas encore été renouvelé à la date de publication de la loi.",
+   "articleRef": "Article unique, II",
+   "citation": "« Sous réserve des décisions de justice ayant force de chose jugée, le I est applicable aux communes nouvelles dont le conseil municipal n'a pas fait l'objet d'un renouvellement à la date de publication de la présente loi. »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte ne contient qu'un mécanisme unique : le déplacement du moment d'appréciation de la complétude du conseil municipal de la première réunion vers le premier renouvellement général (art. unique, I). Cette modification permet effectivement, dans les communes nouvelles dont le conseil est incomplet, de procéder à l'élection du maire au lieu de rester bloqué, ce qui correspond directement à l'objectif affiché du texte. La rétroactivité prévue au II, encadrée par les décisions de justice définitives, vise à régler la situation des communes nouvelles déjà confrontées à ce blocage, renforçant encore l'alignement entre la lettre du texte et son but.",
+ "pointsDeVigilance": [
+  "Le texte est très court (article unique) et l'exposé des motifs n'est pas fourni dans le document, ce qui limite la compréhension fine de l'intention du législateur.",
+  "La rétroactivité (II) est susceptible de remettre en cause des situations juridiques établies, d'où la réserve des décisions de justice passées en force de chose jugée.",
+  "Le texte ne traite pas des conséquences en cas de nouvelle incomplétude après le premier renouvellement général."
+ ],
+ "themes": [
+  "communes nouvelles",
+  "élection du maire",
+  "conseil municipal",
+  "droit électoral local",
+  "collectivités territoriales"
+ ],
+ "scrutinsCles": [
+  "741",
+  "742"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:25bc22d9593429083c43b17c7c7bc873bf93dda2d45cdf20407bba8517bb99be"
+}

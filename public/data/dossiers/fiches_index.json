@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-07-13T06:21:08Z",
- "totalFiches": 171,
+ "generatedAt": "2026-07-14T20:28:26Z",
+ "totalFiches": 191,
  "fiches": {
   "DLR5L16N46127": {
    "titre": "Proposition de loi portant réparation des personnes condamnées pour homosexualité entre 1945 et 1982",
@@ -38,6 +38,19 @@
     "audiovisuel public",
     "souveraineté audiovisuelle",
     "réforme des médias"
+   ]
+  },
+  "DLR5L16N48701": {
+   "titre": "Proposition de loi créant une dérogation à la participation minimale pour la maîtrise d'ouvrage pour les communes rurales",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-14T20:12:24Z",
+   "themes": [
+    "collectivités territoriales",
+    "communes rurales",
+    "investissement public",
+    "maîtrise d'ouvrage",
+    "finances locales"
    ]
   },
   "DLR5L16N48739": {
@@ -143,6 +156,71 @@
     "publicité"
    ]
   },
+  "DLR5L16N49455": {
+   "titre": "Protéger la population des risques liés aux substances per- et polyfluoroalkylées (PFAS)",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-14T20:19:55Z",
+   "themes": [
+    "santé environnementale",
+    "pollution industrielle",
+    "eau potable",
+    "produits chimiques",
+    "interdiction"
+   ]
+  },
+  "DLR5L16N49472": {
+   "titre": "Proposition de loi visant à endiguer la prolifération du frelon asiatique et à préserver la filière apicole",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-14T20:15:50Z",
+   "themes": [
+    "biodiversité",
+    "apiculture",
+    "espèces invasives",
+    "santé animale",
+    "pollinisateurs"
+   ]
+  },
+  "DLR5L16N49796": {
+   "titre": "Proposition de loi pour améliorer la prise en charge de la sclérose latérale amyotrophique et d’autres maladies évolutives graves",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-14T20:28:26Z",
+   "themes": [
+    "handicap",
+    "santé",
+    "maladies rares",
+    "sclérose latérale amyotrophique",
+    "maison départementale des personnes handicapées"
+   ]
+  },
+  "DLR5L16N49843": {
+   "titre": "Proposition de loi visant à permettre l'élection du maire d'une commune nouvelle en cas de conseil municipal incomplet",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-14T20:26:13Z",
+   "themes": [
+    "communes nouvelles",
+    "élection du maire",
+    "conseil municipal",
+    "droit électoral local",
+    "collectivités territoriales"
+   ]
+  },
+  "DLR5L16N49852": {
+   "titre": "Proposition de loi visant à lutter contre les fermetures abusives de comptes bancaires",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-14T20:03:47Z",
+   "themes": [
+    "banque",
+    "droit des consommateurs",
+    "lutte contre l'exclusion",
+    "transparence",
+    "protection des élus"
+   ]
+  },
   "DLR5L16N49868": {
    "titre": "Projet de loi de simplification de la vie économique",
    "verdictIncitations": "incitations_alignees",
@@ -154,6 +232,19 @@
     "organisation de l'état",
     "commissions consultatives",
     "allègement des normes"
+   ]
+  },
+  "DLR5L16N49927": {
+   "titre": "Proposition de loi visant à assouplir la gestion des compétences « eau » et « assainissement »",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-14T20:05:11Z",
+   "themes": [
+    "eau",
+    "assainissement",
+    "intercommunalité",
+    "collectivités territoriales",
+    "solidarité communale"
    ]
   },
   "DLR5L16N50115": {
@@ -218,6 +309,18 @@
     "élections",
     "droit organique",
     "report électoral"
+   ]
+  },
+  "DLR5L17N50452": {
+   "titre": "La publicisation des doléances du grand débat national",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-14T20:11:52Z",
+   "themes": [
+    "démocratie participative",
+    "transparence",
+    "grand débat national",
+    "résolution parlementaire"
    ]
   },
   "DLR5L17N50578": {
@@ -373,6 +476,19 @@
     "colonialisme"
    ]
   },
+  "DLR5L17N50946": {
+   "titre": "Ratification du traité sur la coopération dans le domaine de la défense entre la République française et le Royaume d’Espagne",
+   "verdictIncitations": "indetermine",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-14T20:21:38Z",
+   "themes": [
+    "défense",
+    "relations bilatérales",
+    "espagne",
+    "traité international",
+    "ratification"
+   ]
+  },
   "DLR5L17N51002": {
    "titre": "Profession d'infirmier",
    "verdictIncitations": "indetermine",
@@ -503,6 +619,19 @@
     "agents publics"
    ]
   },
+  "DLR5L17N51161": {
+   "titre": "Proroger le dispositif d’expérimentation favorisant l’égalité des chances pour l’accès à certaines écoles de service public",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-14T20:22:55Z",
+   "themes": [
+    "égalité des chances",
+    "écoles de service public",
+    "expérimentation",
+    "prorogation",
+    "ordonnance"
+   ]
+  },
   "DLR5L17N51173": {
    "titre": "Proposition de loi organique tendant à modifier le II de l’article 43 de la loi organique n° 2004-192 du 27 février 2004 portant statut d’autonomie de la Polynésie française",
    "verdictIncitations": "indetermine",
@@ -529,6 +658,44 @@
     "environnement"
    ]
   },
+  "DLR5L17N51215": {
+   "titre": "Impôt plancher de 2 % sur le patrimoine des ultra riches",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-14T20:18:16Z",
+   "themes": [
+    "fiscalité",
+    "patrimoine",
+    "impôt sur la fortune",
+    "redistribution"
+   ]
+  },
+  "DLR5L17N51222": {
+   "titre": "Projet de loi d'urgence pour Mayotte",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-14T20:24:48Z",
+   "themes": [
+    "reconstruction",
+    "mayotte",
+    "cyclone",
+    "urbanisme",
+    "habitat informel"
+   ]
+  },
+  "DLR5L17N51279": {
+   "titre": "Les effets psychologiques de TikTok sur les mineurs",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-14T20:02:43Z",
+   "themes": [
+    "protection des mineurs",
+    "réseaux sociaux",
+    "santé mentale",
+    "addiction numérique",
+    "algorithmes"
+   ]
+  },
   "DLR5L17N51298": {
    "titre": "La définition pénale du viol",
    "verdictIncitations": "indetermine",
@@ -540,6 +707,45 @@
     "viol",
     "qualification juridique",
     "rapport parlementaire"
+   ]
+  },
+  "DLR5L17N51312": {
+   "titre": "Lutter contre la disparition des terres agricoles et renforcer la régulation des prix du foncier agricole",
+   "verdictIncitations": "incitations_mitigees",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-14T20:11:04Z",
+   "themes": [
+    "foncier agricole",
+    "sécurisation foncière",
+    "sécurité alimentaire",
+    "politique agricole",
+    "collectivités territoriales"
+   ]
+  },
+  "DLR5L17N51328": {
+   "titre": "Instaurer un dispositif de sanction contraventionnelle pour prévenir le développement des vignes non cultivées qui représentent une menace sanitaire pour l’ensemble du vignoble français",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-14T20:14:29Z",
+   "themes": [
+    "viticulture",
+    "santé végétale",
+    "sanctions contraventionnelles",
+    "arrachage",
+    "vignes non cultivées"
+   ]
+  },
+  "DLR5L17N51329": {
+   "titre": "Simplifier la sortie de l’indivision successorale",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-14T20:13:30Z",
+   "themes": [
+    "successions",
+    "indivision",
+    "partage",
+    "biens sans maître",
+    "simplification administrative"
    ]
   },
   "DLR5L17N51330": {
@@ -644,6 +850,19 @@
     "collectivités territoriales"
    ]
   },
+  "DLR5L17N51467": {
+   "titre": "Renforcement du soutien à l'Ukraine",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-14T20:05:47Z",
+   "themes": [
+    "ukraine",
+    "guerre d'agression",
+    "soutien militaire",
+    "politique étrangère",
+    "union européenne"
+   ]
+  },
   "DLR5L17N51480": {
    "titre": "Mettre fin à la culpabilisation des victimes de violences physiques et sexuelles",
    "verdictIncitations": "indetermine",
@@ -654,6 +873,17 @@
     "victimes",
     "résolution parlementaire",
     "culpabilisation"
+   ]
+  },
+  "DLR5L17N51481": {
+   "titre": "Supprimer le vote par assis et levé",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-14T20:06:36Z",
+   "themes": [
+    "procédure parlementaire",
+    "règlement de l'assemblée nationale",
+    "modalités de vote"
    ]
   },
   "DLR5L17N51485": {
@@ -730,6 +960,19 @@
     "engagement citoyen",
     "valorisation des compétences",
     "formation"
+   ]
+  },
+  "DLR5L17N51563": {
+   "titre": "Proposition de loi pour un démarchage téléphonique consenti et une protection renforcée des consommateurs contre les abus",
+   "verdictIncitations": "incitations_mitigees",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-14T20:18:07Z",
+   "themes": [
+    "démarchage téléphonique",
+    "consentement",
+    "protection des consommateurs",
+    "opt-in",
+    "rgpd"
    ]
   },
   "DLR5L17N51580": {
@@ -1949,6 +2192,18 @@
     "citoyenneté",
     "parcours scolaire",
     "financement"
+   ]
+  },
+  "DLR5L17N53702": {
+   "titre": "La souveraineté alimentaire et agricole",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-14T20:20:41Z",
+   "themes": [
+    "souveraineté alimentaire",
+    "agriculture",
+    "droit constitutionnel",
+    "sécurité alimentaire"
    ]
   },
   "DLR5L17N53715": {

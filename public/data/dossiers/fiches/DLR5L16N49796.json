@@ -1,0 +1,61 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L16N49796",
+ "generatedAt": "2026-07-14T20:28:26Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi pour améliorer la prise en charge de la sclérose latérale amyotrophique et d’autres maladies évolutives graves",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/16/dossiers/DLR5L16N49796",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0044_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Améliorer la prise en charge de la sclérose latérale amyotrophique (SLA) et d'autres maladies évolutives graves, en facilitant l'accès aux droits et prestations pour les personnes handicapées atteintes de pathologies à évolution rapide causant des handicaps sévères et irréversibles.",
+ "mecanismesCles": [
+  {
+   "resume": "Identification prioritaire par la MDPH des demandes de compensation déposées par les personnes atteintes de pathologies d'évolution rapide (liste fixée par arrêté ministériel), avec traitement en partenariat avec les centres de référence maladies rares.",
+   "articleRef": "art. 1er (art. L. 146-7-1 CASF)",
+   "citation": "« La maison départementale des personnes handicapées identifie, à leur dépôt, les demandes de compensation des personnes atteintes de pathologies d'évolution rapide et causant des handicaps sévères et irréversibles »"
+  },
+  {
+   "resume": "Procédure accélérée : un membre de l'équipe pluridisciplinaire propose directement à la CDAPH l'attribution des droits et prestations, sur la base de l'évaluation d'un centre de référence maladies rares, et la commission statue lors de sa première réunion suivant la réception de la demande.",
+   "articleRef": "art. 1er (art. L. 146-8 CASF)",
+   "citation": "« La commission statue sur ces attributions et ces adaptations lors de sa première réunion suivant la réception de la demande. »"
+  },
+  {
+   "resume": "Extension de la prestation de compensation du handicap (PCH) aux personnes dépassant la limite d'âge, dès lors que leurs besoins résultent d'une pathologie d'évolution rapide mentionnée à l'article L. 146-7-1.",
+   "articleRef": "art. 2 (art. L. 245-1 II 3° CASF)",
+   "citation": "« Les personnes d'un âge supérieur à la limite mentionnée au même I mais dont les besoins de compensation résultent des conséquences d'une pathologie d'évolution rapide et causant des handicaps sévères et irréversibles »"
+  },
+  {
+   "resume": "Prise en charge par la sécurité sociale du surcoût de la PCH lié à l'extension aux personnes dépassant la limite d'âge pour ces pathologies.",
+   "articleRef": "art. 3 (art. L. 223-8 3° g CSS)",
+   "citation": "« Du surcroît du coût mentionné au b du présent 3° résultant de l'application du 3° du II de l'article L. 245-1 du code de l'action sociale et des familles »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés convergent directement vers l'objectif affiché d'amélioration de la prise en charge : l'identification prioritaire des demandes à leur dépôt (art. 1er, L. 146-7-1) accélère le traitement administratif ; la saisine de la CDAPH dès sa première réunion (art. 1er, L. 146-8) réduit les délais d'attribution des droits ; l'extension de la PCH au-delà de la limite d'âge (art. 2) lève un frein financier pour les malades évolutifs ; enfin, la prise en charge du surcoût par la sécurité sociale (art. 3) garantit la neutralité budgétaire pour les départements. L'ensemble forme une chaîne cohérente d'incitations à une prise en charge plus rapide et plus complète.",
+ "pointsDeVigilance": [
+  "L'efficacité dépend de la publication effective de l'arrêté ministériel fixant la liste des pathologies éligibles (non contenu dans le texte).",
+  "Le texte ne crée pas de ressources humaines supplémentaires dans les MDPH ni de sanctions en cas de non-respect des délais, ce qui limite la portée contraignante.",
+  "L'article 4 a été supprimé : son contenu (non visible dans le texte tronqué) n'a donc pas été adopté.",
+  "Le texte ne précise pas de calendrier ni de garantie opposable de délai pour le patient."
+ ],
+ "themes": [
+  "handicap",
+  "santé",
+  "maladies rares",
+  "sclérose latérale amyotrophique",
+  "maison départementale des personnes handicapées"
+ ],
+ "scrutinsCles": [
+  "740"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:f329f4c3bbd77bfd474134b6c369205fbf1210e37432352a08b43b5b8ae8acc8"
+}

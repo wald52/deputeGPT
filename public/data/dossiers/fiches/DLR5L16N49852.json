@@ -1,0 +1,74 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L16N49852",
+ "generatedAt": "2026-07-14T20:03:47Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi visant à lutter contre les fermetures abusives de comptes bancaires",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/16/dossiers/DLR5L16N49852",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0072_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Lutter contre les fermetures abusives de comptes bancaires en encadrant la résiliation unilatérale par les établissements de crédit, en renforçant la motivation des décisions et en protégeant certaines catégories de clients.",
+ "mecanismesCles": [
+  {
+   "resume": "Doublement du délai minimum de préavis de résiliation, de deux à quatre mois, avec possibilité d'augmentation par arrêté ministériel.",
+   "articleRef": "art. 1er",
+   "citation": "le mot : « deux » est remplacé par le mot : « quatre » ; « Ces délais peuvent être augmentés par arrêté du ministre chargé de l'économie. »"
+  },
+  {
+   "resume": "Obligation pour la banque de motiver gratuitement et par écrit sa décision de résiliation dans un délai de vingt jours ouvrés, par lettre recommandée, sauf exception de sécurité nationale.",
+   "articleRef": "art. 2 (I, 1°, a)",
+   "citation": "« L'établissement de crédit motive sa décision gratuitement et par écrit, dans un délai de vingt jours ouvrés à compter de la date de la décision de résiliation »"
+  },
+  {
+   "resume": "Interdiction de résilier un compte pour certains motifs jugés abusifs : absence de rentabilité, refus d'une modification contractuelle, montants de retraits jugés trop importants, qualité de personne politiquement exposée ou d'élu, changement d'adresse vers l'outre-mer, opinions politiques/syndicales/associatives.",
+   "articleRef": "art. 2 (I, 1°, b) – nouveau V bis",
+   "citation": "« l'établissement de crédit ne peut résilier une convention de compte de dépôt [...] si le motif de résiliation comporte l'un des critères suivants »"
+  },
+  {
+   "resume": "Pour les parlementaires, obligation de justification détaillée démontrant l'indépendance de la décision vis-à-vis du statut, sous peine d'amende pouvant atteindre 0,1 % du chiffre d'affaires et publication de la sanction.",
+   "articleRef": "art. 2 (I, 1°, c) – nouveau VII",
+   "citation": "« l'Autorité de contrôle prudentiel et de résolution impose à la banque fautive une amende dont le montant ne peut excéder 0,1 % de son chiffre d'affaires »"
+  },
+  {
+   "resume": "Prise en charge obligatoire par la banque des frais de transfert des fonds vers le compte désigné par le client, avec exécution sans délai.",
+   "articleRef": "art. 2 (I, 1°, c) – nouveau VIII",
+   "citation": "« Les frais associés aux transferts des fonds du compte que la banque a décidé de fermer vers le compte désigné par le client ne peuvent être mis à la charge de ce dernier. »"
+  },
+  {
+   "resume": "Élargissement du droit au compte aux partis politiques, associations et fondations.",
+   "articleRef": "art. 2 bis",
+   "citation": "« y compris les partis politiques, les associations et les fondations »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'ensemble des mécanismes créés convergent vers l'objectif affiché de lutte contre les fermetures abusives. L'allongement du délai de préavis (art. 1er) et l'obligation de motivation écrite sous vingt jours (art. 2, I, 1°, a) renforcent la protection procédurale du client. L'interdiction de résilier pour des motifs tels que la rentabilité, les opinions politiques ou la qualité d'élu (art. 2, V bis) cible précisément les pratiques jugées abusives. La sanction financière plafonnée à 0,1 % du chiffre d'affaires pour les fermetures discriminatoires de comptes de parlementaires (art. 2, VII) et la gratuité du transfert de fonds (art. 2, VIII) renforcent le caractère dissuasif du dispositif. Le rapport annuel au Parlement (art. 3) permet un suivi statistique des pratiques.",
+ "pointsDeVigilance": [
+  "L'exception de sécurité nationale ('sauf lorsque cette motivation contrevient aux objectifs de sécurité nationale') reste floue et pourrait servir de porte de sortie pour des fermetures non motivées.",
+  "L'interdiction du motif 'absence de rentabilité' pourrait, en pratique, inciter les banques à invoquer d'autres motifs ou à refuser l'ouverture de nouveaux comptes en amont.",
+  "Le dispositif est centré sur les comptes existants ; il ne traite pas explicitement le refus d'ouverture de compte, qui est souvent la première étape de l'exclusion bancaire.",
+  "Le renvoi à un décret (art. 2, II) et à un arrêté ministériel (art. 1er) laisse une marge d'appréciation importante à l'exécutif sur la portée réelle du texte."
+ ],
+ "themes": [
+  "banque",
+  "droit des consommateurs",
+  "lutte contre l'exclusion",
+  "transparence",
+  "protection des élus"
+ ],
+ "scrutinsCles": [
+  "1010",
+  "1011",
+  "1012",
+  "1013"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:87ab4f37a2975168bcd67abfc9ebda7d738206942369e3f3bb6e7db888c36f60"
+}

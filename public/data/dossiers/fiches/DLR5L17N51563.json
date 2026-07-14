@@ -1,0 +1,75 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N51563",
+ "generatedAt": "2026-07-14T20:18:07Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi pour un démarchage téléphonique consenti et une protection renforcée des consommateurs contre les abus",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N51563",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0059_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "La proposition de loi vise à instaurer un démarchage téléphonique fondé sur le consentement préalable du consommateur (opt-in) et à renforcer la protection des consommateurs contre les abus liés à ces pratiques.",
+ "mecanismesCles": [
+  {
+   "resume": "Inversion de la logique : interdiction du démarchage téléphonique sans consentement préalable exprès du consommateur (opt-in), au lieu du système d'opposition (opt-out).",
+   "articleRef": "art. 1er (L. 223-1)",
+   "citation": "« Il est interdit de démarcher téléphoniquement, directement ou par l’intermédiaire d’un tiers agissant pour son compte, un consommateur qui n’a pas exprimé préalablement son consentement à faire l’objet de prospections commerciales par ce moyen. »"
+  },
+  {
+   "resume": "Définition exigeante du consentement (libre, spécifique, éclairé, univoque, révocable, par acte positif clair) avec référence au RGPD et charge de la preuve sur le professionnel.",
+   "articleRef": "art. 1er (L. 223-1, al. 2 et 3)",
+   "citation": "« Il appartient au professionnel d’apporter la preuve que le consentement du consommateur a été recueilli dans les conditions fixées au deuxième alinéa du présent article. »"
+  },
+  {
+   "resume": "Exception au consentement pour les sollicitations en lien direct avec l’exécution d’un contrat en cours, y compris pour des produits ou services complémentaires ou améliorant performances/qualité.",
+   "articleRef": "art. 1er (L. 223-1, dernier alinéa)",
+   "citation": "« L’interdiction prévue au premier alinéa du présent article n’est pas applicable lorsque la sollicitation intervient dans le cadre de l’exécution d’un contrat en cours et a un rapport direct avec l’objet de ce contrat, y compris lorsqu’il s’agit de proposer au consommateur des produits ou des services afférents ou complémentaires… »"
+  },
+  {
+   "resume": "Possibilité pour le professionnel de déroger aux jours, horaires et fréquence encadrés par décret si le consommateur consent explicitement à un appel à une date et un horaire précisément spécifiés.",
+   "articleRef": "art. 1er (L. 223-1, 7e alinéa modifié)",
+   "citation": "« Toutefois, le professionnel peut solliciter le consommateur en dehors des jours, horaires et fréquence prévus par le décret si le consommateur consent explicitement à être appelé à une date et un horaire précisément spécifiés et qu’il peut l’établir. »"
+  },
+  {
+   "resume": "Information obligatoire du consommateur lors du recueil de ses données téléphoniques : en l’absence de contrat, toute sollicitation suppose son consentement préalable ; en présence d’un contrat, mention claire et compréhensible de l’interdiction.",
+   "articleRef": "art. 1er bis (L. 223-2 nouveau)",
+   "citation": "« Lorsqu’un professionnel est amené à recueillir les données téléphoniques d’un consommateur, il informe celui-ci que, en l’absence d’un contrat en cours d’exécution, toute sollicitation téléphonique effectuée à des fins commerciales suppose son consentement préalable. »"
+  },
+  {
+   "resume": "Obligation pour le professionnel de mettre fin immédiatement à l’appel si le consommateur s’oppose à la poursuite de la communication, et interdiction de le recontacter.",
+   "articleRef": "art. 4 (L. 221-16)",
+   "citation": "« Si le consommateur s’oppose à la poursuite de la communication, le professionnel met fin à l’appel sans délai et s’abstient de le contacter à nouveau. »"
+  }
+ ],
+ "verdictIncitations": "incitations_mitigees",
+ "justificationVerdict": "Le cœur du dispositif (art. 1er, L. 223-1) aligne clairement les incitations sur l’objectif affiché en instaurant un opt-in exigeant, conforme au RGPD, avec charge de la preuve sur le professionnel. Toutefois, plusieurs mécanismes atténuent fortement la portée protectrice : l’exception liée au contrat en cours (incluant produits « complémentaires » ou « de nature à améliorer ses performances ou sa qualité ») ouvre une brèche très large permettant de démarcher sans consentement ; la possibilité de déroger aux jours, horaires et fréquence par simple consentement spécifique à un horaire donné affaiblit l’encadrement temporel ; et l’article 1er bis étend le régime à la vente/livraison à domicile de denrées alimentaires. L’absence de sanctions explicites dans le texte fourni et la suppression de plusieurs articles (art. 5 et 9 supprimés, art. 4-2° supprimé) réduisent également l’appareil répressif. L’ensemble crée donc des incitations partiellement alignées mais notablement mitigées par rapport à l’objectif de protection renforcée.",
+ "pointsDeVigilance": [
+  "L'exception 'contrat en cours' est très large (produits afférents, complémentaires, améliorant performances/qualité) et risque de vider l'opt-in de sa substance.",
+  "La dérogation aux horaires encadrés par décret via consentement spécifique peut faciliter des appels en dehors des plages protégées.",
+  "Aucun dispositif de sanctions ou d'amendes administratives n'est visible dans le texte fourni (articles 5 et 9 supprimés).",
+  "L'entrée en vigueur est différée au 1er janvier 2026, laissant une longue période de transition.",
+  "L'article 1er bis étend la protection aux denrées alimentaires et aliments pour animaux de compagnie dans le cadre de la vente/livraison à domicile, ce qui sort du périmètre strict du démarchage téléphonique."
+ ],
+ "themes": [
+  "démarchage téléphonique",
+  "consentement",
+  "protection des consommateurs",
+  "opt-in",
+  "rgpd"
+ ],
+ "scrutinsCles": [
+  "895",
+  "896",
+  "897",
+  "898"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:7ed176c5da7e74b651a026c1a3b7efe8e61fb199b5081ca34792d8b6eebe24b7"
+}
