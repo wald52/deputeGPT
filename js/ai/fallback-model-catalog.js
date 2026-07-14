@@ -9,9 +9,9 @@ export const FALLBACK_MODEL_CATALOG = {
       default: true,
       requires_api_key: false,
       live_catalog: false,
-      api_base_url: '',
+      api_base_url: 'https://deputegpt-online.wald52.workers.dev',
       turnstile_site_key: '',
-      notes: 'Service distant multi-fournisseurs via Cloudflare Worker et AI Gateway. Configurez api_base_url avant usage.',
+      notes: 'Service distant multi-fournisseurs via Cloudflare Worker et AI Gateway.',
       models: [
         {
           id: 'online/default',
