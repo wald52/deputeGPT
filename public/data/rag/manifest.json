@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-07-13T07:52:45Z",
+  "generatedAt": "2026-07-14T06:43:30Z",
   "documentType": "scrutin",
   "stats": {
     "totalDocuments": 8277,
@@ -47,7 +47,7 @@
       "artifact": {
         "path": "semantic_index.json",
         "bytes": 37321224,
-        "sha256": "b15681ab373a656551b66bcc7198b1c382e88433f7bdf92d409cdd65fdd921e6",
+        "sha256": "c6a080e5ea8d2a3d7b540efe465f52420c0ba72266ff9f560ca1e19b62d741f2",
         "quantization": "int8",
         "vectorDimension": 384,
         "valueScale": 127
@@ -78,25 +78,60 @@
       "artifact": {
         "path": "semantic_multivector_index.json",
         "bytes": 101154676,
-        "sha256": "2e32eae58187774f8631f052cbac6eb9f93b12a001f4df67279dc64b8c45bde7",
+        "sha256": "fd286cc37cec8edb99af3e5430e2a28f2f35aacae84b3fe3cb2fdaebff63ea8b",
         "quantization": "int8",
         "vectorDimension": 384,
         "valueScale": 127,
         "vectorsPerDocument": 2
       }
     },
-    "single_vector_remote": null
+    "single_vector_remote": {
+      "id": "single_vector_remote",
+      "label": "Single-vector (service en ligne)",
+      "strategy": "single_vector",
+      "default": false,
+      "experimental": true,
+      "queryMode": "remote",
+      "notes": "Mode avance experimental. Embeddings Nemotron calcules cote serveur ; la requete est encodee par le service en ligne, avec repli automatique vers le mode local si le service est indisponible.",
+      "model": {
+        "id": "llama-nemotron-embed-vl-1b-v2",
+        "family": "nemotron",
+        "usage": "retrieval",
+        "pythonModelId": "nvidia/llama-nemotron-embed-vl-1b-v2:free",
+        "browserModelId": null,
+        "task": "feature-extraction",
+        "queryPrefix": "",
+        "documentPrefix": "",
+        "pooling": "remote",
+        "normalize": true,
+        "dimension": 512,
+        "estimatedDownloadMb": 0,
+        "notes": "Mode experimental a requete distante : aucun telechargement navigateur, la question est encodee par le Worker en ligne.",
+        "queryMode": "remote",
+        "remoteModelId": "nvidia/llama-nemotron-embed-vl-1b-v2:free",
+        "matryoshkaSourceDimension": 2048
+      },
+      "artifact": {
+        "path": "semantic_index_remote.json",
+        "bytes": 11238377,
+        "sha256": "7ed9efb4ac643cd0d286f0097859e2738d0ad5638b5b9843ffa32883b32a0226",
+        "quantization": "int8",
+        "vectorDimension": 512,
+        "valueScale": 127,
+        "coverage": 1.0
+      }
+    }
   },
   "artifacts": {
     "lexicalIndex": {
       "path": "lexical_index.json",
       "bytes": 9244316,
-      "sha256": "81b6c5b229c7d522be40924d9f1624998121d01ecb9f107e402f38a68bcb6680"
+      "sha256": "31b91cd10d337849e6b4e034640b389d9e9e06a47612a52a81991dd7d025958e"
     },
     "semanticIndex": {
       "path": "semantic_index.json",
       "bytes": 37321224,
-      "sha256": "b15681ab373a656551b66bcc7198b1c382e88433f7bdf92d409cdd65fdd921e6",
+      "sha256": "c6a080e5ea8d2a3d7b540efe465f52420c0ba72266ff9f560ca1e19b62d741f2",
       "quantization": "int8",
       "vectorDimension": 384,
       "valueScale": 127
@@ -104,7 +139,7 @@
     "semanticMultivectorIndex": {
       "path": "semantic_multivector_index.json",
       "bytes": 101154676,
-      "sha256": "2e32eae58187774f8631f052cbac6eb9f93b12a001f4df67279dc64b8c45bde7",
+      "sha256": "fd286cc37cec8edb99af3e5430e2a28f2f35aacae84b3fe3cb2fdaebff63ea8b",
       "quantization": "int8",
       "vectorDimension": 384,
       "valueScale": 127,
@@ -112,12 +147,12 @@
     },
     "semanticRemoteIndex": {
       "path": "semantic_index_remote.json",
-      "bytes": 10429591,
-      "sha256": "47fc52b551c48af773f6f9754bd5c25bcd376697e619cad6f68b62686bcb8c9e",
+      "bytes": 11238377,
+      "sha256": "7ed9efb4ac643cd0d286f0097859e2738d0ad5638b5b9843ffa32883b32a0226",
       "quantization": "int8",
       "vectorDimension": 512,
       "valueScale": 127,
-      "coverage": 0.9279
+      "coverage": 1.0
     }
   }
 }
