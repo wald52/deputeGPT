@@ -112,9 +112,17 @@ async function syncServiceWorkerVersion(version) {
     throw new Error('Impossible de synchroniser la version du service worker.');
   }
 
+  // Un mauvais merge peut laisser plusieurs declarations : on n'en garde qu'une.
+  let replaced = false;
   const nextSource = source.replace(
-    pattern,
-    `const SW_BUILD_VERSION = '${version}';`
+    new RegExp(`${pattern.source}\\n?`, 'g'),
+    () => {
+      if (replaced) {
+        return '';
+      }
+      replaced = true;
+      return `const SW_BUILD_VERSION = '${version}';\n`;
+    }
   );
 
   await fs.writeFile(SERVICE_WORKER_PATH, nextSource, 'utf8');
