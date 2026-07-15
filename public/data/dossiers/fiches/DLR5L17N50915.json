@@ -1,0 +1,64 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50915",
+ "generatedAt": "2026-07-15T05:23:35Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Exercice de la démocratie agricole",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/exercice_democratie_agricole",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0047_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "La proposition de loi vise à adapter le fonctionnement des instances de gouvernance des chambres d'agriculture et de la mutualité sociale agricole, en ajustant les modalités électorales et les conditions d'éligibilité/électorales.",
+ "mecanismesCles": [
+  {
+   "resume": "Création de circonscriptions électorales spécifiques pour la métropole de Lyon (hors commune de Lyon), chacune devenant une circonscription électorale avec un nombre de délégués cantonaux élus selon le droit commun.",
+   "articleRef": "art. 2 (1° a et b)",
+   "citation": "Les circonscriptions de la métropole de Lyon, hors commune de Lyon, constituent chacune une circonscription électorale ; le nombre de délégués cantonaux élus directement y est égal au nombre de droit commun de délégués éligibles dans un canton"
+  },
+  {
+   "resume": "Suppression de la condition d'acquittement des cotisations personnellement dues pour être électeur (article L. 723-19).",
+   "articleRef": "art. 2 (2°)",
+   "citation": "les mots : « et dont toutes les cotisations personnellement dues par elles et réclamées depuis six mois au moins ont été acquittées » sont supprimés"
+  },
+  {
+   "resume": "Maintien d'une condition d'éligibilité (art. L. 723-20) liée à l'acquittement des cotisations supérieures au seuil mentionné à l'article L. 133-3 du code de la sécurité sociale, dues depuis six mois au moins.",
+   "articleRef": "art. 2 (3°)",
+   "citation": "s'ils ont acquitté toutes les cotisations dont le montant est supérieur à celui mentionné à l'article L. 133-3 du code de la sécurité sociale personnellement dues par eux et réclamées depuis six mois au moins"
+  },
+  {
+   "resume": "Suppression de la référence à l'article L. 7 au premier alinéa de l'article L. 723-24 (modification de renvoi).",
+   "articleRef": "art. 2 (4°)",
+   "citation": "Au premier alinéa de l'article L. 723-24, la référence : « L. 7, » est supprimée"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'objectif affiché est d'adapter la gouvernance des chambres d'agriculture et de la MSA. Les mécanismes créés vont dans ce sens : l'article 2 (1°) adapte le découpage électoral à la métropole de Lyon en créant des circonscriptions spécifiques, ce qui ajuste concrètement la gouvernance territoriale. L'article 2 (2°) élargit le corps électoral en supprimant la condition d'acquittement des cotisations pour voter, facilitant ainsi la participation. L'article 2 (3°) maintient une condition d'éligibilité recentrée sur les cotisations significatives (supérieures au seuil de l'article L. 133-3), ce qui est cohérent avec une adaptation des règles. L'ensemble des dispositifs modifie les règles de fonctionnement électoral et d'éligibilité, conformément à l'objectif affiché d'adaptation de la gouvernance.",
+ "pointsDeVigilance": [
+  "L'article 1er ter a été supprimé, ce qui limite la portée du texte à l'article 2 uniquement.",
+  "Le texte ne contient pas d'exposé des motifs dans l'extrait fourni, ce qui rend l'analyse de l'intention précise partiellement dépendante du titre.",
+  "La suppression de la condition de cotisation pour être électeur (art. 2, 2°) peut avoir des effets indirects sur la représentativité et le lien entre cotisants et gouvernance, non discutés dans le texte.",
+  "Le seuil de l'article L. 133-3 du code de la sécurité sociale n'est pas explicité dans le texte fourni."
+ ],
+ "themes": [
+  "gouvernance agricole",
+  "chambres d'agriculture",
+  "mutualité sociale agricole",
+  "élections professionnelles",
+  "métropole de lyon"
+ ],
+ "scrutinsCles": [
+  "586",
+  "587",
+  "588",
+  "589"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:c47cb306fc6284d3606392e790a8fa06e475b5d42ce62f0e10e97621d2c6aef4"
+}

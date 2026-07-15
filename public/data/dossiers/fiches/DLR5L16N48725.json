@@ -1,0 +1,65 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L16N48725",
+ "generatedAt": "2026-07-15T05:19:37Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proroger la loi du 6 mars 2017 relative à l’assainissement cadastral et à la résorption du désordre de la propriété",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/16/dossiers/DLR5L16N48725",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0033_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Proroger la loi n° 2017-285 du 6 mars 2017 relative à l'assainissement cadastral et à la résorption du désordre de la propriété, en repoussant l'échéance initialement fixée à 2027 (et 2028) jusqu'en 2037 (et 2038).",
+ "mecanismesCles": [
+  {
+   "resume": "Report de l'échéance de la loi du 6 mars 2017 de 2027 à 2037 (article 1er de la loi de 2017).",
+   "articleRef": "I",
+   "citation": "À la fin de la première phrase du deuxième alinéa de l'article 1er de la loi n° 2017-285 du 6 mars 2017 [...] l'année : « 2027 » est remplacée par l'année : « 2037 »."
+  },
+  {
+   "resume": "Report de l'échéance de l'article 750 bis B du CGI (droits de mutation à titre gratuit) de 2027 à 2037.",
+   "articleRef": "II-1°",
+   "citation": "À l'article 750 bis B, l'année : « 2027 » est remplacée par l'année : « 2037 »."
+  },
+  {
+   "resume": "Report de l'échéance du 8° du 2 de l'article 793 du CGI (exonération de droits de mutation) de 2027 à 2037.",
+   "articleRef": "II-2°",
+   "citation": "À la fin du premier alinéa du 8° du 2 de l'article 793, l'année : « 2027 » est remplacée par l'année : « 2037 »."
+  },
+  {
+   "resume": "Report des échéances du I de l'article 1135 bis du CGI : de 2027 à 2037 et de 2028 à 2038.",
+   "articleRef": "II-3°",
+   "citation": "a) Au deuxième alinéa, l'année : « 2027 » est remplacée par l'année : « 2037 » ; b) Au dernier alinéa, l'année : « 2028 » est remplacée par l'année : « 2038 »."
+  },
+  {
+   "resume": "Compensation de la perte de recettes pour l'État par une taxe additionnelle à l'accise sur les tabacs.",
+   "articleRef": "III",
+   "citation": "La perte de recettes résultant pour l'État de la présente loi est compensée, à due concurrence, par la création d'une taxe additionnelle à l'accise sur les tabacs prévue au chapitre IV du titre Ier du livre III du code des impositions sur les biens et services."
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte est une prorogation pure : il remplace systématiquement les années « 2027 » et « 2028 » par « 2037 » et « 2038 » dans la loi de 2017 et dans les articles fiscaux associés (750 bis B, 793, 1135 bis du CGI). Les mécanismes créés prolongent donc à l'identique les dispositifs existants d'assainissement cadastral et de résorption du désordre de propriété, ce qui est cohérent avec l'objectif affiché de proroger la loi. Le mécanisme de compensation par l'accise sur les tabacs (article III) est neutre vis-à-vis de l'objectif principal et ne crée pas d'incitation contradictoire.",
+ "pointsDeVigilance": [
+  "Le texte est une simple prorogation : il ne modifie ni le contenu ni la portée des dispositifs de la loi de 2017, mais en étend la durée d'application de dix ans.",
+  "Le mécanisme de compensation par une taxe additionnelle sur les tabacs (art. III) crée un lien fiscal entre l'assainissement cadastral et le secteur du tabac, ce qui peut soulever des questions d'opportunité sectorielle.",
+  "Le texte tronqué ne permet pas de vérifier le contenu exact des articles 750 bis B, 793 et 1135 bis du CGI ni de l'article 1er de la loi de 2017 ; l'analyse repose uniquement sur les modifications de dates."
+ ],
+ "themes": [
+  "assainissement cadastral",
+  "propriété",
+  "prorogation",
+  "droits de mutation",
+  "fiscalité"
+ ],
+ "scrutinsCles": [
+  "654"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:07f1efa535fd76d007dbd5446ee83f67f3e88a60e418af71c875b1872022ba8e"
+}

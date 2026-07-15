@@ -1,0 +1,39 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50434",
+ "generatedAt": "2026-07-15T05:28:27Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Réduire les contraintes énergétiques pesant sur l’offre locative et juguler leurs effets sur la crise du logement",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/contraintes_energetiques_crise_logement",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b0278_proposition-loi",
+  "legifrance": null
+ },
+ "objectifAffiche": "Réduire les contraintes énergétiques pesant sur l'offre locative et juguler leurs effets sur la crise du logement. Il s'agit d'une proposition de loi ordinaire déposée le 17 septembre 2024, visant à alléger les normes énergétiques qui pèsent sur les propriétaires bailleurs.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles : seul le titre, l'identifiant, la procédure et des liens de navigation vers le sommaire, la commission et les amendements sont présents. Aucun mécanisme concret (obligation, dérogation, seuil, sanction, subvention, taxe) ne peut être extrait du contenu transmis, ce qui rend impossible toute analyse des incitations réellement créées par le texte.",
+ "pointsDeVigilance": [
+  "Le contenu officiel est tronqué et ne livre pas le corps de la proposition (exposé des motifs et articles)",
+  "Seuls les métadonnées du dossier législatif (titre, n°, commission saisie) sont exploitables",
+  "Impossible de vérifier si les mécanismes envisagés (allégement du DPE, gel ou report des interdictions de location, modification des seuils de performance énergétique) sont cohérents avec l'objectif affiché"
+ ],
+ "themes": [
+  "logement",
+  "energie",
+  "performance energetique",
+  "location",
+  "contraintes reglementaires"
+ ],
+ "scrutinsCles": [
+  "219"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:e233cd2f65b3b8cefff5db94991bf899d43f8c886ae50f303eb6efa6bbaff44f"
+}

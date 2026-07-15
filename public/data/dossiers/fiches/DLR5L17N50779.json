@@ -1,0 +1,73 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50779",
+ "generatedAt": "2026-07-15T05:23:08Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Prendre des mesures d’urgence contre la vie chère et réguler la concentration des acteurs économiques dans les territoires d’outre-mer",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/mesures_urgence_vie_chere_outre_mer",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0026_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Prendre des mesures d'urgence contre la vie chère et réguler la concentration des acteurs économiques dans les collectivités d'outre-mer relevant des articles 73 et 74 de la Constitution, en agissant sur les prix des produits de grande consommation et la transparence des marges.",
+ "mecanismesCles": [
+  {
+   "resume": "Modification de l'accord de modération des prix (devenu 'accord de réduction') : élargissement de la liste des produits concernés (téléphonie, électroménager, pièces détachées, etc.), objectif d'alignement sur les prix moyens de France hexagonale, association des consommateurs et de la collectivité aux négociations.",
+   "articleRef": "art. 1er (I modifiant L. 410-5 du code de commerce)",
+   "citation": "« Cet accord garantit, pour chaque famille de produits, des prix équivalents aux prix moyens annuels de vente en France hexagonale »"
+  },
+  {
+   "resume": "Affichage obligatoire du prix global du panier de produits sur un support d'au moins 1 m² à l'entrée du magasin, balisage individuel des produits et regroupement visible en rayon.",
+   "articleRef": "art. 1er (I, 3° modifiant le III de L. 410-5)",
+   "citation": "« est affiché en application de l'article L. 112-1 du code de la consommation, de manière lisible et visible, à l'entrée de la surface de vente sur un support d'une superficie au moins égale à un mètre carré »"
+  },
+  {
+   "resume": "Sanction de publicité (presse, électronique, affichage pendant 6 mois aux frais de l'entreprise) en cas de retrait d'une entreprise de l'accord de réduction des prix.",
+   "articleRef": "art. 1er (I, 5° insérant un IV bis)",
+   "citation": "« Le fait pour une entreprise de se retirer de l'accord mentionné au I fait l'objet d'une mesure de publicité par voie de presse, par voie électronique et par voie d'affichage aux frais de l'entreprise concernée pour une durée de six mois »"
+  },
+  {
+   "resume": "Dérogation outre-mer : le prix d'achat effectif n'inclut pas le prix du transport, ce qui doit mécaniquement réduire le prix de revente.",
+   "articleRef": "art. 1er bis",
+   "citation": "« le prix d'achat effectif n'inclut pas le prix du transport, par dérogation au deuxième alinéa du présent I »"
+  },
+  {
+   "resume": "Renforcement des observatoires des prix : dotation de la personnalité morale, accès direct aux documents comptables des entreprises, amende administrative jusqu'à 50 000 € en cas de non-transmission ou de transmission de fausses informations.",
+   "articleRef": "art. 1er ter",
+   "citation": "« Le fait de ne pas répondre à une demande d'information formulée par l'observatoire ou de lui transmettre des informations fausses ou incomplètes est passible d'une amende administrative [...] Le montant de l'amende ne peut dépasser 50 000euros »"
+  },
+  {
+   "resume": "Injonction sous astreinte (≥ 1 % du CA journalier HT) de déposer les comptes annuels, avec possibilité de remboursement des aides publiques perçues et publicité de la condamnation.",
+   "articleRef": "art. 2 (1° modifiant L. 123-5-2)",
+   "citation": "« Le montant de cette astreinte ne peut être inférieur à 1 % du chiffre d'affaires journalier moyen hors taxes réalisé par la société »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'ensemble des mécanismes créés pousse clairement dans le sens de l'objectif affiché. L'article 1er transforme l'accord de 'modération' en accord de 'réduction' avec un objectif d'alignement sur les prix hexagonaux (« prix équivalents aux prix moyens annuels de vente en France hexagonale »). L'article 1er bis neutralise l'effet du transport sur le prix d'achat effectif, ce qui réduit mécaniquement le prix de revente. L'article 1er ter dote les observatoires d'un pouvoir d'investigation directe sur les documents comptables, avec amende dissuasive. L'article 2 impose la transparence des marges arrière sur les tickets de caisse et sanctionne le défaut de dépôt des comptes par une astreinte proportionnelle au chiffre d'affaires. Ces incitations convergent vers plus de transparence, de baisse des prix et de régulation des acteurs économiques outre-mer.",
+ "pointsDeVigilance": [
+  "L'efficacité réelle dépend de la publication des décrets d'application (notamment pour la personnalité morale des observatoires, art. 1er ter III) et des moyens humains/financiers promis (art. 1er III).",
+  "L'objectif d'alignement sur les prix hexagonaux est juridiquement contraignant ('garantit') mais son effectivité dépend de la volonté des distributeurs à signer l'accord, la sanction en cas de retrait étant seulement de la publicité.",
+  "Le texte ne crée pas de mécanisme de plafonnement direct des marges ; il mise sur la transparence et la pression réputationnelle.",
+  "Le périmètre des produits visés (téléphonie, électroménager, pièces détachées) est large mais l'intégration reste à la main du représentant de l'État.",
+  "Le texte ne traite pas explicitement la 'concentration des acteurs économiques' mentionnée dans le titre : aucun seuil de concentration, aucune interdiction de fusion ou part de marché maximale n'est instauré dans les articles fournis."
+ ],
+ "themes": [
+  "vie chère",
+  "outre-mer",
+  "prix de grande consommation",
+  "transparence des marges",
+  "observatoires des prix"
+ ],
+ "scrutinsCles": [
+  "595",
+  "596"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:b0dd720cb568a40e8e281bb138a80c33a65996876a2483ee8f27ee348a5d697e"
+}

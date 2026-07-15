@@ -1,0 +1,44 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50172",
+ "generatedAt": "2026-07-15T05:29:03Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Résultats de la gestion et approbation des comptes de l'année 2023",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/plr_pour_2023",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0003_texte-adopte-seance",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est un projet de loi relatif aux résultats de la gestion et portant approbation des comptes de l'année 2023, soumis dans le cadre d'une loi de finances rectificative. Il vise à constater les résultats budgétaires de l'exercice 2023 et à les soumettre à l'approbation du Parlement.",
+ "mecanismesCles": [
+  {
+   "resume": "Le texte est un projet de loi de finances rectificative portant approbation des comptes de l'année 2023, rejeté par l'Assemblée nationale le 14 octobre 2024.",
+   "articleRef": null,
+   "citation": "Projet de loi relative aux résultats de la gestion et portant approbation des comptes, rejeté par l'Assemblée nationale après engagement de la procédure accélérée, de l'année 2023 le 14 octobre 2024, T.A. n° 3"
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles substantiels : seul le titre et des métadonnées de navigation sont disponibles. Aucun mécanisme concret (obligation, taxe, subvention, sanction, seuil) ne peut être identifié dans le contenu transmis. Il est donc impossible de déterminer si les incitations créées par les articles vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le texte officiel fourni est tronqué et ne contient pas le contenu normatif (exposé des motifs, articles), seulement les métadonnées du dossier législatif.",
+  "Le projet de loi a été rejeté par l'Assemblée nationale le 14 octobre 2024, ce qui interroge sur sa portée effective.",
+  "Sans accès aux articles, aucune analyse de second ordre sur l'alignement entre objectifs et mécanismes n'est possible."
+ ],
+ "themes": [
+  "finances publiques",
+  "approbation des comptes",
+  "loi de finances rectificative",
+  "gestion budgétaire"
+ ],
+ "scrutinsCles": [
+  "4"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:678fee55827d53c91ea972543858185b4ba4cf1830dc92aadb9f0601afb0f604"
+}

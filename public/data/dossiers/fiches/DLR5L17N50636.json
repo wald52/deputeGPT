@@ -1,0 +1,74 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50636",
+ "generatedAt": "2026-07-15T05:20:44Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Améliorer le traitement des maladies affectant les cultures végétales à l’aide d’aéronefs télépilotés",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/ameliorer_traitement_maladies_affectant_cultures_vegetales_aeronefs",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0031_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "La proposition de loi vise à améliorer le traitement des maladies affectant les cultures végétales en autorisant, sous conditions strictes, l'utilisation d'aéronefs télépilotés (drones) pour la pulvérisation de produits phytopharmaceutiques, notamment de biocontrôle, en agriculture biologique ou à faible risque.",
+ "mecanismesCles": [
+  {
+   "resume": "Maintien de l'interdiction de principe de la pulvérisation aérienne de produits phytopharmaceutiques (I).",
+   "articleRef": "art. 1er (I)",
+   "citation": "« Sous réserve des I bis et I ter, la pulvérisation aérienne des produits phytopharmaceutiques est interdite. »"
+  },
+  {
+   "resume": "Autorisation temporaire par arrêté conjoint en cas de danger sanitaire grave ne pouvant être maîtrisé par d'autres moyens.",
+   "articleRef": "art. 1er (I bis A)",
+   "citation": "« Pour lutter contre un danger sanitaire grave qui ne peut être maîtrisé par d'autres moyens, la pulvérisation aérienne de produits phytopharmaceutiques peut être autorisée temporairement par arrêté conjoint »"
+  },
+  {
+   "resume": "Autorisation de programmes de pulvérisation par drone pour les produits de biocontrôle, bio et à faible risque, uniquement sur parcelles à pente ≥ 20 %, bananeraies et vignes mères de porte-greffes, avec interdiction à moins de 250 m des bâtiments habités.",
+   "articleRef": "art. 1er (I bis B)",
+   "citation": "« sur les parcelles agricoles comportant une pente supérieure ou égale à 20 %, sur les bananeraies et sur les vignes mères de porte-greffes conduites au sol. Le présent article ne s'applique pas à moins de 250 mètres des zones attenantes aux bâtiments habités »"
+  },
+  {
+   "resume": "Condition d'avantages manifestes pour la santé humaine et l'environnement par rapport aux applications terrestres, fixée par arrêté après avis de l'ANSES.",
+   "articleRef": "art. 1er (I bis B)",
+   "citation": "« lorsqu'ils présentent des avantages manifestes pour la santé humaine et pour l'environnement par rapport aux applications par voie terrestre »"
+  },
+  {
+   "resume": "Extension possible à d'autres cultures via des essais d'une durée maximale de trois ans, évalués par l'ANSES et présentés à l'OPECST.",
+   "articleRef": "art. 1er (I ter B)",
+   "citation": "« Les programmes mentionnés au A du présent I ter sont autorisés à titre d'essai pour une durée maximale de trois ans. »"
+  },
+  {
+   "resume": "Exclusion explicite des périmètres d'espaces naturels protégés (titres II à IV du livre III du code de l'environnement) pour les essais.",
+   "articleRef": "art. 1er (I ter A)",
+   "citation": "« Le présent A ne s'applique pas aux périmètres des espaces naturels définis aux titres II à IV du livre III du code de l'environnement. »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte maintient l'interdiction de principe de la pulvérisation aérienne (art. 1er I) et n'autorise le recours aux drones que sous des conditions restrictives : produits de biocontrôle, biologiques ou à faible risque uniquement (I bis B), sur des parcelles précisément listées (pente ≥ 20 %, bananeraies, vignes mères), avec une zone d'exclusion de 250 m autour des habitations et l'exclusion des espaces naturels protégés pour les essais (I ter A). L'élargissement à d'autres cultures n'est possible qu'à titre expérimental pour trois ans (I ter B) et subordonné à la démonstration d'« avantages manifestes pour la santé humaine et pour l'environnement » par rapport à la voie terrestre, évaluée par l'ANSES. Ces mécanismes orientent clairement les incitations vers l'objectif affiché d'un traitement phytosanitaire plus ciblé et moins impactant.",
+ "pointsDeVigilance": [
+  "L'efficacité réelle dépend des arrêtés ministériels et décrets d'application non fournis dans le texte.",
+  "La démonstration d'« avantages manifestes » reste une notion conditionnelle dont l'appréciation concrète n'est pas définie dans le texte.",
+  "L'article 2 a été supprimé, ce qui limite la portée initiale du texte.",
+  "Le texte ne précise pas les sanctions en cas de non-respect des conditions d'autorisation."
+ ],
+ "themes": [
+  "agriculture",
+  "phytosanitaire",
+  "drones",
+  "biocontrôle",
+  "santé environnementale"
+ ],
+ "scrutinsCles": [
+  "614",
+  "615",
+  "616",
+  "617"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:622daa7d2933bacf338793819c175783175fa22c1101150301e9d86d5c6b6be1"
+}

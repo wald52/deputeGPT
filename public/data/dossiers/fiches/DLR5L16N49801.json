@@ -1,0 +1,71 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L16N49801",
+ "generatedAt": "2026-07-15T05:19:07Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Prise en charge intégrale des soins liés au traitement du cancer du sein par l'assurance maladie",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/16/dossiers/prise_en_charge_integrale_cancer_du_sein",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0035_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Améliorer la prise en charge par l'assurance maladie des soins et dispositifs spécifiques au traitement du cancer du sein, en instaurant notamment une prise en charge intégrale de certains soins et dispositifs liés à cette pathologie.",
+ "mecanismesCles": [
+  {
+   "resume": "Prise en charge intégrale par l'assurance maladie des soins et dispositifs spécifiques au traitement du cancer du sein ou à ses suites, dans la limite des tarifs de base.",
+   "articleRef": "art. 1er (art. L. 16-11-1 du CSS)",
+   "citation": "les soins et les dispositifs prescrits et remboursables sont pris en charge intégralement par les organismes d'assurance maladie"
+  },
+  {
+   "resume": "Liste non exhaustive de soins et dispositifs concernés : dermopigmentation de la plaque aréolo-mamelonnaire, sous-vêtements adaptés, renouvellement des prothèses mammaires, définis par arrêté.",
+   "articleRef": "art. 1er (art. L. 16-11-1 du CSS)",
+   "citation": "les actes de dermopigmentation de la plaque aréolo-mamelonnaire [...] les sous-vêtements adaptés au port de prothèses mammaires amovibles et le renouvellement des prothèses mammaires"
+  },
+  {
+   "resume": "Obligation pour le médecin oncologue de fournir au patient des informations détaillées sur les soins de support disponibles dans sa région lors de la consultation précédant le traitement.",
+   "articleRef": "art. 1er (art. L. 16-11-2 du CSS)",
+   "citation": "Le médecin oncologue fournit au patient des informations détaillées sur les soins de support disponibles dans la région du patient"
+  },
+  {
+   "resume": "Création d'un forfait finançant des soins et dispositifs non remboursables spécifiques au cancer du sein (pour les bénéficiaires de l'ALD), avec critères d'éligibilité et base forfaitaire maximale fixés par arrêté.",
+   "articleRef": "art. 1er (art. L. 16-11-3 du CSS)",
+   "citation": "il est institué [...] un forfait finançant des soins et des dispositifs non remboursables présentant un caractère spécifique au traitement du cancer du sein et à ses suites"
+  },
+  {
+   "resume": "Possibilité de plafonner les dépassements d'honoraires relatifs aux actes chirurgicaux de reconstruction mammaire consécutifs à un cancer du sein.",
+   "articleRef": "art. 3 (art. L. 162-5 du CSS, 10° bis)",
+   "citation": "Les conditions dans lesquelles peuvent être plafonnés les dépassements d'honoraires relatifs à des actes chirurgicaux de reconstruction mammaire consécutifs à la prise en charge d'un cancer du sein"
+  },
+  {
+   "resume": "Rapport gouvernemental sous 6 mois sur l'encadrement du tatouage tridimensionnel définitif de la plaque aréolo-mamelonnaire et sa prise en charge.",
+   "articleRef": "art. 2",
+   "citation": "le Gouvernement remet au Parlement un rapport visant à encadrer la pratique du tatouage tridimensionnel définitif de la plaque aréolo-mamelonnaire"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes créés vont directement dans le sens de l'objectif affiché. L'article L. 16-11-1 instaure une prise en charge intégrale des soins et dispositifs spécifiques au cancer du sein ('pris en charge intégralement par les organismes d'assurance maladie'). L'article L. 16-11-3 complète ce dispositif par un forfait pour les soins non remboursables. L'article 3 permet de plafonner les dépassements d'honoraires en reconstruction mammaire, ce qui réduit le reste à charge. L'obligation d'information sur les soins de support (L. 16-11-2) renforce l'accès effectif aux soins. Le financement par majoration de l'accise sur les tabacs (art. 5) assure la neutralité financière pour la sécurité sociale. L'ensemble de ces dispositifs concourt à l'amélioration de la prise en charge affichée.",
+ "pointsDeVigilance": [
+  "La prise en charge intégrale est limitée aux tarifs servant de base au calcul des prestations (art. L. 16-11-1), ce qui n'élimine pas le dépassement d'honoraires hors reconstruction mammaire.",
+  "Les soins et dispositifs éligibles, ainsi que le montant du forfait, sont renvoyés à des arrêtés ministériels : l'effectivité dépendra de ces textes d'application.",
+  "Les rapports demandés (tatouage 3D, indemnité de garde d'enfant) ne sont pas des dispositifs contraignants mais de simples demandes d'étude.",
+  "Le dispositif de plafonnement des dépassements d'honoraires (art. 3) est renvoyé à des conditions définies par la convention médicale, sans plafond chiffré dans la loi."
+ ],
+ "themes": [
+  "santé",
+  "cancer du sein",
+  "assurance maladie",
+  "prise en charge",
+  "sécurité sociale"
+ ],
+ "scrutinsCles": [
+  "658"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:f27425279db158096653085c60f78473ac1434cce159567068fd816145a71c2a"
+}

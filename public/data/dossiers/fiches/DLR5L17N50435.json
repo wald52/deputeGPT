@@ -1,0 +1,42 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50435",
+ "generatedAt": "2026-07-15T05:22:43Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Instauration d’un nombre minimum de soignants par patient hospitalisé",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/instauration_nombre_minimum_soignants_par_patient_hospitalise",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b0194_proposition-loi",
+  "legifrance": null
+ },
+ "objectifAffiche": "Instaurer un nombre minimum de soignants par patient hospitalisé, afin de garantir des conditions de prise en charge suffisantes dans les établissements de santé.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles. Seul le titre de la proposition de loi est accessible, ce qui ne permet pas d'identifier les mécanismes concrets (seuils, obligations, sanctions, dérogations) créés par le texte. En l'absence du contenu normatif, il est impossible de déterminer si les incitations réellement créées vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le dossier législatif est tronqué à 15000 caractères mais ne contient en réalité que des métadonnées (titre, numéro, commission saisie, liens de navigation).",
+  "Aucun article ni exposé des motifs n'est présent dans le texte fourni.",
+  "L'analyse des mécanismes concrets et de leur alignement avec l'objectif est donc impossible sans le contenu normatif."
+ ],
+ "themes": [
+  "santé",
+  "hôpital",
+  "soignants",
+  "effectifs",
+  "qualité des soins"
+ ],
+ "scrutinsCles": [
+  "597",
+  "598",
+  "599",
+  "600"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:518546d1b97515921f9edd7ee4278ec6a3b686a048fd7629cd4d4671a56414c6"
+}

@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50684",
+ "generatedAt": "2026-07-15T05:26:11Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Abrogation de la retraite à 64 ans",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/abrogation_retraite_64",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b0613_texte-adopte-commission",
+  "legifrance": null
+ },
+ "objectifAffiche": "La proposition de loi, déposée par Ugo Bernalicis et plusieurs collègues, vise à abroger la retraite à 64 ans. Il s'agit d'une proposition de loi ordinaire (n°438) examinée par la commission des affaires sociales, dont le texte de commission (n°613-A0) a été déposé le 20 novembre 2024.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel fourni ne contient ni exposé des motifs ni articles : seul l'en-tête administratif du dossier législatif (titre, identifiant, procédure, statut, numéro de texte, date de dépôt, commission saisie) est accessible. Aucun mécanisme concret (obligation, seuil, dérogation, sanction, abrogation effective) ne peut être identifié ni cité, ce qui empêche toute analyse des incitations produites par le texte.",
+ "pointsDeVigilance": [
+  "Le texte fourni est tronqué à 15 000 caractères mais, en réalité, seul l'en-tête du dossier législatif a été transmis ; les articles et l'exposé des motifs sont absents.",
+  "Le titre mentionne une 'abrogation de la retraite à 64 ans' mais le contenu normatif (articles abrogeant quoi, à quelle date, avec quelles dispositions transitoires) n'est pas disponible.",
+  "Sans lecture des articles, il est impossible de vérifier si la proposition abroge réellement l'âge légal de 64 ans fixé par la loi du 14 avril 2023, ou si elle se limite à un effet symbolique."
+ ],
+ "themes": [
+  "retraites",
+  "âge légal de départ",
+  "réforme des pensions",
+  "droit du travail"
+ ],
+ "scrutinsCles": [
+  "485",
+  "486",
+  "487",
+  "488"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:760f65ecb1376e87c5a8d65ec4d3b99eddc8bbeb7876ea35ed7350c4ea88a015"
+}

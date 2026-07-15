@@ -1,0 +1,74 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50838",
+ "generatedAt": "2026-07-15T05:24:06Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi de finances de fin de gestion pour 2024",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/plffg2024",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0017_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le projet de loi de finances de fin de gestion pour 2024 est un collectif budgétaire de fin d'année visant à ajuster les recettes et les dépenses de l'État pour 2024, conformément à l'article 45 alinéa 3 de la Constitution. Il révise les prévisions macroéconomiques (solde structurel, solde effectif, dette, prélèvements obligatoires) et procède à des ouvertures et annulations de crédits pour assurer l'équilibre financier en fin d'exercice.",
+ "mecanismesCles": [
+  {
+   "resume": "Révision à la baisse de la prévision de recettes fiscales nettes de l'État (impôt sur le revenu, impôt sur les sociétés) et ajustement de la contribution sociale sur les bénéfices",
+   "articleRef": "art. 1er et État A",
+   "citation": "Impôt net sur le revenu -5 196 509 310 ; Impôt net sur les sociétés -14 346 898 081"
+  },
+  {
+   "resume": "Modification du plafond d'un compte d'affectation spéciale (article 46 de la LFI 2006), réduit de 4 026 728 396 € à 3 976 056 557 €",
+   "articleRef": "art. 2",
+   "citation": "le montant : « 4 026 728 396 euros » est remplacé par le montant : « 3 976 056 557 euros »"
+  },
+  {
+   "resume": "Fixation du solde général budgétaire à -21 900 M€ pour 2024, avec déficit à financer de 162,4 Md€ et émission de dette MLT de 285 Md€",
+   "articleRef": "art. 3",
+   "citation": "Solde général .......................................... -21 900 ; Déficit à financer ............................................................................................ 162,4"
+  },
+  {
+   "resume": "Ouvertures de crédits supplémentaires sur le budget général : +10 620 M€ en AE et +11 504 M€ en CP",
+   "articleRef": "art. 4",
+   "citation": "autorisations d'engagement et des crédits de paiement supplémentaires s'élevant respectivement aux montants de 10 620 540 612 € et de 11 504 356 813 €"
+  },
+  {
+   "resume": "Annulations de crédits sur le budget général : -6 975 M€ en AE et -6 475 M€ en CP",
+   "articleRef": "art. 4",
+   "citation": "Il est annulé pour 2024, au titre du budget général, des autorisations d'engagement et des crédits de paiement s'élevant respectivement aux montants de 6 975 663 290 € et de 6 475 838 483 €"
+  },
+  {
+   "resume": "Annulations sur les budgets annexes (25 M€ en AE, 37 M€ en CP) et ajustements nets sur les comptes spéciaux (ouvertures et annulations)",
+   "articleRef": "art. 5 et 6",
+   "citation": "Il est annulé pour 2024, au titre des budgets annexes, des autorisations d'engagement et des crédits de paiement s'élevant respectivement aux montants de 25 369 750 € et de 37 701 937 €"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte est un collectif budgétaire de fin de gestion dont l'objectif affiché est l'ajustement technique des prévisions et crédits pour 2024. Les mécanismes créés (révision des recettes fiscales à la baisse de l'ordre de 19 Md€ sur l'IS et l'IR, ouverture de 10,6 Md€ d'AE et annulation de 6,9 Md€ d'AE sur le budget général, solde budgétaire négatif de 21,9 Md€) vont dans le sens de cet objectif : ils traduisent une dégradation des recettes par rapport à la LFI initiale et procèdent aux redéploiements de crédits nécessaires pour boucler l'exercice. L'article liminaire confirme la cohérence en affichant un solde effectif à -6,1 points de PIB et une dette à 112,8 % du PIB, supérieurs à la trajectoire de la LPFP 2023-2027. Aucun mécanisme ne contredit l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le déficit effectif prévu (-6,1 pts de PIB) est nettement supérieur à la trajectoire LPFP (-4,4 pts), traduisant un dérapage significatif par rapport à la programmation pluriannuelle.",
+  "La révision à la baisse de l'IS (-14,3 Md€) et de l'IR (-5,2 Md€) signale une conjoncture fiscale moins favorable qu'anticipé en LFI initiale.",
+  "Le texte est tronqué à 15 000 caractères : les états annexés B, C, D et d'éventuels articles après l'article 6 ne sont pas visibles, ce qui limite l'analyse des redéploiements par mission.",
+  "Le déficit à financer de 162,4 Md€ et l'émission de dette MLT de 285 Md€ impliquent un recours accru à l'endettement pour boucler 2024."
+ ],
+ "themes": [
+  "finances publiques",
+  "budget de l'état",
+  "recettes fiscales",
+  "déficit budgétaire",
+  "loi de finances rectificative"
+ ],
+ "scrutinsCles": [
+  "444",
+  "445",
+  "517",
+  "518"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:9edeebd7439529ec40fbda65f95f4778f76f273c6d165fc09346a1ece77654b7"
+}

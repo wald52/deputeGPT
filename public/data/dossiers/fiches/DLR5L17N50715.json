@@ -1,0 +1,74 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50715",
+ "generatedAt": "2026-07-15T05:20:09Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Contre toutes les fraudes aux aides publiques",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/contre_fraudes_aides_publiques",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0112_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Lutter contre toutes les fraudes aux aides publiques en renforçant les moyens de détection, de suspension, de contrôle et de sanction des fraudes, ainsi qu'en améliorant les échanges d'informations entre administrations et services compétents.",
+ "mecanismesCles": [
+  {
+   "resume": "Création d'un article L. 115-3 dans le code des relations entre le public et l'administration permettant aux agents habilités de suspendre l'octroi ou le versement d'une aide publique (max. 3 mois, renouvelable) en présence d'indices sérieux de fraude, et de rejeter la demande ou le versement en cas de manquement délibéré ou de manœuvres frauduleuses.",
+   "articleRef": "art. 1er",
+   "citation": "« les agents désignés et habilités […] peuvent procéder à la suspension de l'octroi ou du versement d'une aide publique. La durée de la mesure de suspension ne peut excéder trois mois »"
+  },
+  {
+   "resume": "Création d'un article L. 115-2 autorisant l'échange de renseignements et documents entre agents administratifs, officiers de police judiciaire et agents habilités pour la recherche et la constatation des fraudes aux aides publiques.",
+   "articleRef": "art. 2 (II)",
+   "citation": "« peuvent échanger tous les renseignements et les documents utiles à la recherche et à la constatation des fraudes ainsi qu'au recouvrement des sommes indûment versées »"
+  },
+  {
+   "resume": "Insertion d'un article L. 561-30-1-1 dans le code monétaire et financier prévoyant la saisine du procureur européen délégué par le service TRACFIN en cas d'infractions relevant du Parquet européen, et l'échange d'informations avec celui-ci.",
+   "articleRef": "art. 2 (I, 1°)",
+   "citation": "« ce service saisit le procureur européen délégué par une note d'information »"
+  },
+  {
+   "resume": "Élargissement des transmissions d'informations de TRACFIN à l'administration fiscale et à d'autres administrations, autorités ou organismes chargés d'une mission de service public, selon une liste fixée par arrêté.",
+   "articleRef": "art. 2 (I, 2°)",
+   "citation": "« Le service peut également transmettre des informations à des administrations, à des autorités, à des organismes, à des établissements publics ou à des personnes chargées d'une mission de service public »"
+  },
+  {
+   "resume": "Obligation pour les organismes de qualification des professionnels de la rénovation énergétique, audits énergétiques, bornes de recharge et solaire photovoltaïque de transmettre des informations à l'ANAH et au service de coordination interministérielle pour la lutte contre la fraude.",
+   "articleRef": "art. 2 (IV)",
+   "citation": "« les organismes de qualification des professionnels réalisant des travaux de rénovation énergétique […] transmettent les informations utiles qu'ils détiennent à l'Agence nationale de l'habitat »"
+  },
+  {
+   "resume": "Opposabilité des constatations et résultats de contrôles réalisés par les agents de la sécurité sociale à l'occasion de contrôles diligentés pour le compte d'un autre organisme.",
+   "articleRef": "art. 2 ter A (II)",
+   "citation": "« Les constatations et les résultats des contrôles réalisés par les agents […] peuvent être rendus opposables à l'occasion des contrôles diligentés pour le compte d'un autre organisme »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'ensemble des mécanismes créés va dans le sens de l'objectif affiché de lutte contre la fraude aux aides publiques. L'article 1er permet la suspension et le rejet des aides en cas d'indices de fraude (« peuvent procéder à la suspension de l'octroi ou du versement d'une aide publique »). L'article 2 organise un vaste réseau d'échanges d'informations entre administrations (TRACFIN, administration fiscale, DGCCRF, ANAH, services de sécurité sociale, agents consulaires, officiers de police judiciaire) pour détecter et constater les fraudes. L'article 2 quater renforce les pouvoirs de l'IGF en levant l'opposabilité des secrets protégés par la loi. L'article 2 quater B confie de nouvelles compétences d'inspection et d'injonction à la DGCCRF. Tous ces dispositifs convergent vers une détection, une prévention et une répression accrues des fraudes aux aides publiques.",
+ "pointsDeVigilance": [
+  "L'article 2 quater permet à l'IGF d'accéder à des informations couvertes par des secrets légalement protégés « sans que puisse être opposé un secret protégé par la loi », ce qui constitue une atteinte significative au secret professionnel et aux libertés fondamentales.",
+  "L'article 1er autorise la suspension d'une aide publique sur la base de simples « indices sérieux » de manquement, sans intervention préalable d'un juge, ce qui peut affecter le droit au recours et la présomption d'innocence.",
+  "L'élargissement considérable des échanges de données entre administrations (TRACFIN, fisc, DGCCRF, sécurité sociale, agents consulaires) soulève des questions de protection des données personnelles.",
+  "Le transfert de compétences d'inspection à la DGCCRF (art. 2 quater B) modifie l'architecture institutionnelle de lutte contre la fraude sans garantie procédurale nouvelle explicite."
+ ],
+ "themes": [
+  "fraude aux aides publiques",
+  "lutte contre la fraude",
+  "échange d'informations administratives",
+  "suspension des aides publiques",
+  "tracfin"
+ ],
+ "scrutinsCles": [
+  "650",
+  "651",
+  "652",
+  "653"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:66cc9629bc4bff10cb4ac2fc462e80478cd9adabc2de9187124a9dc9ba982103"
+}

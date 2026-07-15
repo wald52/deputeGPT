@@ -1,0 +1,71 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L16N50082",
+ "generatedAt": "2026-07-15T05:26:49Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi visant à sécuriser le mécanisme de purge des nullités",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/16/dossiers/DLR5L16N50082",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0011_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "La proposition de loi vise à sécuriser le mécanisme de purge des nullités en procédure pénale, en restreignant les cas dans lesquels les nullités sont purgées définitivement par les décisions de renvoi ou de mise en accusation.",
+ "mecanismesCles": [
+  {
+   "resume": "Ajout d'une exception à la purge des nullités prévue à l'article 178 du CPP : les parties pourront soulever des nullités qu'elles n'auraient pu connaître.",
+   "articleRef": "art. 1 (modifiant art. 178 CPP)",
+   "citation": "« , hors le cas où les parties n'auraient pu les connaître »"
+  },
+  {
+   "resume": "Même exception ajoutée à l'article 179 du CPP concernant les nullités soulevées devant la chambre de l'instruction.",
+   "articleRef": "art. 1 (modifiant art. 179 CPP)",
+   "citation": "« , hors le cas où les parties n'auraient pu les connaître »"
+  },
+  {
+   "resume": "Exception ajoutée à l'article 181 CPP : les nullités non connues des parties ne sont pas purgées par l'arrêt de mise en accusation.",
+   "articleRef": "art. 1 (modifiant art. 181 CPP)",
+   "citation": "« et hors le cas où les parties n'auraient pu les connaître »"
+  },
+  {
+   "resume": "Modification de l'article 269-1 CPP : les nullités que les parties n'ont pu connaître ne sont pas purgées par la décision de renvoi.",
+   "articleRef": "art. 1 (modifiant art. 269-1 CPP)",
+   "citation": "« et hors le cas où les parties n'auraient pu les connaître, »"
+  },
+  {
+   "resume": "Réécriture de l'article 305-1 CPP : les exceptions de nullité soulevées devant la cour d'assises sont limitées aux nullités non purgées ou que la partie n'a pu connaître avant la mise en accusation définitive.",
+   "articleRef": "art. 1 (modifiant art. 305-1 CPP)",
+   "citation": "« d'une nullité qui n'a pu être connue avant la date à laquelle la décision de mise en accusation est devenue définitive »"
+  },
+  {
+   "resume": "Modification de l'article 385 CPP : le tribunal correctionnel saisi par renvoi ne peut connaître que des moyens de nullité que la partie n'a pu connaître avant la clôture de l'instruction ou l'expiration des délais des articles 175.",
+   "articleRef": "art. 1 (modifiant art. 385 CPP)",
+   "citation": "« il ne peut connaître que de moyens de nullité qui n'ont pu être connus par la partie qui les soulève avant la clôture de l'instruction ou avant l'expiration des délais d'un mois ou de trois mois prévus à l'article 175 »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'objectif affiché est de sécuriser le mécanisme de purge des nullités. Les mécanismes créés vont dans ce sens : ils restreignent systématiquement la portée de la purge en y ajoutant une exception commune — « hors le cas où les parties n'auraient pu les connaître » — applicable aux articles 178, 179, 181 et 269-1 CPP. L'article 305-1 limite les exceptions de nullité devant la cour d'assises aux nullités non purgées ou que la partie n'a pu connaître. L'article 385 encadre la saisine du tribunal correctionnel par renvoi aux seuls moyens de nullité non connaissables antérieurement, et subordonne le renvoi après cassation à l'absence de manœuvre ou de négligence. Ces dispositions convergent vers une protection accrue des droits des parties face à des nullités qu'elles n'ont pas pu détecter, ce qui correspond à l'objectif de sécurisation.",
+ "pointsDeVigilance": [
+  "Plusieurs alinéas ont été supprimés lors de la navette parlementaire (1°, 4° a, 6° a, 7° a), ce qui réduit la portée initiale du texte sans qu'on dispose de l'exposé des motifs pour comprendre l'intention d'origine.",
+  "L'absence d'exposé des motifs dans le texte fourni limite l'analyse de l'intention du législateur.",
+  "Le texte ne précise pas la définition de « n'auraient pu les connaître », ce qui pourrait engendrer une insécurité juridique inverse à l'objectif affiché.",
+  "La restriction de la purge pourrait rallonger les procédures et complexifier le traitement des nullités."
+ ],
+ "themes": [
+  "procédure pénale",
+  "nullités",
+  "purge",
+  "droits de la défense",
+  "sécurisation juridique"
+ ],
+ "scrutinsCles": [
+  "452"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:759b3a5b1da2f18f8e04580916883d751e970563f89f97ca843536d3dc3e8978"
+}

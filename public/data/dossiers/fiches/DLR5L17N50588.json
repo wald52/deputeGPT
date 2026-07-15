@@ -1,0 +1,75 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50588",
+ "generatedAt": "2026-07-15T05:28:16Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi de financement de la sécurité sociale pour 2025",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/plfss_pour_2025",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0049_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est un projet de loi de financement de la sécurité sociale pour 2025 (PLFSS 2025), adopté en nouvelle lecture via l'article 49 alinéa 3 de la Constitution. Il vise à fixer les prévisions de recettes et de dépenses des régimes obligatoires de base de sécurité sociale pour 2024 (rectification) et 2025, ainsi qu'à modifier diverses dispositions relatives au recouvrement des cotisations sociales (travailleurs agricoles, médecins, meublés de tourisme, plus-values).",
+ "mecanismesCles": [
+  {
+   "resume": "Rectification des prévisions de recettes, dépenses et soldes par branche pour 2024, avec un déficit toutes branches de -18,2 Md€ (hors transferts) et un objectif d'amortissement de la dette sociale fixé à 15,99 Md€.",
+   "articleRef": "art. 1er",
+   "citation": "Toutes branches (hors transferts entre branches) y compris Fonds de solidarité vieillesse ................. 624,7 642,9 -18,2"
+  },
+  {
+   "resume": "Rectification de l'ONDAM 2024 à 256,9 Md€, répartis entre soins de ville (110,1), établissements de santé (105,6), personnes âgées (16,1), personnes handicapées (15,2), FIR (6,7) et autres (3,2).",
+   "articleRef": "art. 2",
+   "citation": "Total...................................................................................... 256,9"
+  },
+  {
+   "resume": "Réforme des cotisations d'assurance vieillesse des chefs d'exploitation agricole : remplacement de l'assiette forfaitaire par un montant minimal fixé par décret, avec application à compter du 1er janvier 2026 et lissage progressif des écarts de taux jusqu'en 2028.",
+   "articleRef": "art. 3",
+   "citation": "un décret fixe les taux des cotisations mentionnées au 1° du même article L. 731-42 [...] de manière à résorber progressivement, chaque année, les écarts"
+  },
+  {
+   "resume": "Exonération de cotisations d'assurance vieillesse pour les médecins retraités cumulant emploi-retraite exerçant en zone d'intervention prioritaire, sous condition de revenu, uniquement pour les pensions liquidées avant la promulgation.",
+   "articleRef": "art. 3 quater A",
+   "citation": "les médecins exerçant leur activité dans une zone caractérisée par une offre de soins insuffisante [...] sont exonérés [...] des cotisations d'assurance vieillesse [...] dues sur les revenus perçus en 2025"
+  },
+  {
+   "resume": "Demande d'un rapport au Gouvernement avant le 1er octobre 2025 sur l'exonération de cotisations sociales pour les travailleurs agricoles (art. L. 741-16), avec propositions de resserrement du périmètre.",
+   "articleRef": "art. 4",
+   "citation": "le Gouvernement remet au Parlement un rapport évaluant l'exonération de cotisations sociales mentionnée à l'article L. 741-16 du code rural et de la pêche maritime"
+  },
+  {
+   "resume": "Extension du périmètre de l'exonération de cotisations sociales (art. L. 741-16) aux activités mentionnées à l'article 1451 du CGI, y compris les activités de transformation, conditionnement et commercialisation par les coopératives agricoles.",
+   "articleRef": "art. 4 bis et 4 ter",
+   "citation": "les mots : « ne bénéficient pas » sont remplacés par le mot : « bénéficient »"
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est tronqué à 15000 caractères et ne contient ni l'exposé des motifs ni la majorité des articles substantiels du PLFSS (notamment les dispositions sur les dépenses, la branche maladie, la branche famille, la branche autonomie, les retraites). Les mécanismes visibles portent principalement sur des ajustements techniques de cotisations (agricoles, meublés de tourisme, plus-values) et des exonérations ciblées (médecins en zone sous-dense, travailleurs agricoles). Sans accès à l'exposé des motifs ni à l'ensemble des articles, il est impossible de déterminer si l'ensemble des incitations créées s'aligne avec un objectif affiché qui n'est pas explicité dans le tronçon. Le verdict est donc indéterminé par insuffisance de texte.",
+ "pointsDeVigilance": [
+  "Le texte est tronqué à 15000 caractères : l'exposé des motifs est absent et seule une partie des articles est visible.",
+  "L'objectif affiché du texte n'est pas formulé explicitement dans le tronçon fourni (seul le titre et la structure comptable apparaissent).",
+  "Plusieurs articles mentionnés (3 bis, 3 ter, 3 quater, 4, 5) sont conformes ou supprimés, ce qui limite la portée analysable.",
+  "Les mécanismes d'exonération (médecins, travailleurs agricoles) et d'élargissement d'assiette (meublés, plus-values) ont des effets budgétaires opposés qu'il faudrait intégrer dans une analyse globale.",
+  "L'article liminaire prévoit un solde 2025 de -0,1 point de PIB, indiquant un léger creusement du déficit, mais les mesures de redressement sous-jacentes ne sont pas visibles dans le tronçon."
+ ],
+ "themes": [
+  "sécurité sociale",
+  "cotisations sociales",
+  "plfss 2025",
+  "agriculture",
+  "médecine"
+ ],
+ "scrutinsCles": [
+  "260",
+  "261",
+  "262",
+  "263"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:de23e334b599e6700f3593475d54d5b8a622212e390b2a617c26532c8ff01f6c"
+}

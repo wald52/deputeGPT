@@ -1,0 +1,73 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50476",
+ "generatedAt": "2026-07-15T05:17:43Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Adoption et mise en œuvre d’exigences à l’importation pour le respect de normes de production équivalentes aux normes de production essentielles, en matière de santé, d’environnement, de biodiversité et de bien-être animal applicables dans l’Union européenne",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/respect_noprmes_prod_eu",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0039_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Résolution européenne exprimant l'opposition de l'Assemblée nationale à l'accord UE-Mercosur et demandant l'adoption de « mesures miroirs » imposant aux produits importés le respect de normes de production équivalentes aux normes européennes en matière de santé, environnement, biodiversité et bien-être animal, afin de garantir un « juste échange » et la souveraineté agricole et alimentaire.",
+ "mecanismesCles": [
+  {
+   "resume": "Demande d'adopter un principe d'inversion de la charge de la preuve : les exportateurs vers l'UE doivent faire certifier leurs conditions de production par un organisme tiers agréé par l'UE, avec suspension des échanges en cas de non-respect.",
+   "articleRef": "art. 1-a",
+   "citation": "Adopter un principe général d'inversion de la charge de la preuve pour le respect des mesures miroirs, obligeant les opérateurs économiques qui exportent vers l'Union européenne à faire certifier les conditions de production et de transformation par un organisme tiers lui-même agréé par l'Union européenne"
+  },
+  {
+   "resume": "Suppression des tolérances à l'importation sur les limites maximales de résidus (LMR) pour toutes les substances actives interdites dans l'UE, avec abaissement des LMR au seuil de détection.",
+   "articleRef": "art. 1-b",
+   "citation": "Supprimer sans délai les tolérances à l'importation sur les limites maximales de résidus pour toutes les substances actives interdites dans l'Union européenne et abaisser les limites maximales de résidus au seuil de détection"
+  },
+  {
+   "resume": "Processus visant à interdire l'exportation vers les pays tiers de substances actives interdites dans l'UE en raison de leur impact sanitaire, environnemental ou sur la biodiversité.",
+   "articleRef": "art. 1-c",
+   "citation": "Engager un processus visant à l'interdiction de l'exportation vers les pays tiers de substances actives interdites au sein de l'Union européenne"
+  },
+  {
+   "resume": "Interdiction de l'importation de viandes issues d'animaux traités avec des antibiotiques utilisés comme activateurs de croissance.",
+   "articleRef": "art. 2-a",
+   "citation": "L'interdiction de l'importation de viandes issues d'animaux traités avec des antibiotiques utilisés comme activateurs de croissance, qui enregistre un retard de plus de deux ans déjà"
+  },
+  {
+   "resume": "Mise en œuvre effective du règlement UE 2023/1115 (déforestation) à compter du 30 décembre 2024 et élargissement de son champ à tous les produits et zones forestières à risque.",
+   "articleRef": "art. 2-c",
+   "citation": "La mise en œuvre du règlement (UE) 2023/1115 susvisé à compter du 30 décembre 2024 comme initialement prévu et l'élargissement progressif de son champ d'application"
+  },
+  {
+   "resume": "Renforcement des moyens des autorités douanières, vétérinaires et phytosanitaires pour contrôler les nouvelles exigences imposées aux opérateurs des pays tiers.",
+   "articleRef": "art. 2-d",
+   "citation": "Le renforcement des moyens et des capacités des autorités douanières, vétérinaires et phytosanitaires pour leur permettre d'assurer un contrôle efficace"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte est une résolution européenne (non une loi normative interne) qui « invite le Gouvernement » à demander à la Commission européenne d'adopter des mesures miroirs. Les mécanismes concrets listés (inversion de la charge de la preuve via certification par tiers agréé, suppression des tolérances à l'importation sur les LMR, interdiction d'importation de viandes aux antibiotiques activateurs de croissance, mise en œuvre du règlement déforestation, activation de clauses de sauvegarde) vont tous dans le sens de l'objectif affiché : soumettre les produits importés aux mêmes normes que les productions européennes. L'article 1-a prévoit explicitement la « suspension systématique des échanges » en cas de non-respect, et l'article 2-f autorise le retrait temporaire de préférences commerciales, ce qui renforce l'alignement entre les incitations créées et l'objectif de protection de la souveraineté agricole et de réciprocité normative.",
+ "pointsDeVigilance": [
+  "Le texte est une résolution au sens de l'article 88-4 de la Constitution : il n'a pas de portée normative directe et dépend de l'action de la Commission européenne et du Gouvernement.",
+  "Le texte est tronqué à 15000 caractères : l'article 3 et les suivants sont incomplets, ce qui limite l'analyse exhaustive des mécanismes.",
+  "L'efficacité réelle des « mesures miroirs » dépend de leur adoption au niveau européen et de la capacité de contrôle douanier (point reconnu à l'article 2-d).",
+  "Le texte vise explicitement l'accord UE-Mercosur mais ses demandes s'appliquent à l'ensemble des importations agricoles et agroalimentaires.",
+  "Aucune évaluation d'impact économique sur les consommateurs ou les pays tiers n'est prévue dans le texte."
+ ],
+ "themes": [
+  "commerce international",
+  "mesures miroirs",
+  "normes sanitaires",
+  "environnement",
+  "bien-être animal"
+ ],
+ "scrutinsCles": [
+  "684",
+  "685"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:5349dd1b76acaa2beafa8105f38de28129ccffa141984089ce76c1b6e71baa0e"
+}

@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-07-14T20:28:26Z",
- "totalFiches": 191,
+ "generatedAt": "2026-07-15T05:29:41Z",
+ "totalFiches": 224,
  "fiches": {
   "DLR5L16N46127": {
    "titre": "Proposition de loi portant réparation des personnes condamnées pour homosexualité entre 1945 et 1982",
@@ -14,6 +14,19 @@
     "droits lgbt+",
     "condamnations pénales",
     "reconnaissance"
+   ]
+  },
+  "DLR5L16N46655": {
+   "titre": "Interdire les dispositifs électroniques de vapotage à usage unique",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-15T05:16:53Z",
+   "themes": [
+    "santé publique",
+    "tabagisme",
+    "vapotage",
+    "interdiction",
+    "protection des mineurs"
    ]
   },
   "DLR5L16N47676": {
@@ -51,6 +64,19 @@
     "investissement public",
     "maîtrise d'ouvrage",
     "finances locales"
+   ]
+  },
+  "DLR5L16N48725": {
+   "titre": "Proroger la loi du 6 mars 2017 relative à l’assainissement cadastral et à la résorption du désordre de la propriété",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-15T05:19:37Z",
+   "themes": [
+    "assainissement cadastral",
+    "propriété",
+    "prorogation",
+    "droits de mutation",
+    "fiscalité"
    ]
   },
   "DLR5L16N48739": {
@@ -102,6 +128,19 @@
     "police",
     "vidéoprotection",
     "ordre public"
+   ]
+  },
+  "DLR5L16N49258": {
+   "titre": "Réduire et encadrer les frais bancaires sur succession",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-15T05:25:49Z",
+   "themes": [
+    "frais bancaires",
+    "succession",
+    "protection des consommateurs",
+    "banque",
+    "encadrement des tarifs"
    ]
   },
   "DLR5L16N49263": {
@@ -195,6 +234,19 @@
     "maison départementale des personnes handicapées"
    ]
   },
+  "DLR5L16N49801": {
+   "titre": "Prise en charge intégrale des soins liés au traitement du cancer du sein par l'assurance maladie",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-15T05:19:07Z",
+   "themes": [
+    "santé",
+    "cancer du sein",
+    "assurance maladie",
+    "prise en charge",
+    "sécurité sociale"
+   ]
+  },
   "DLR5L16N49843": {
    "titre": "Proposition de loi visant à permettre l'élection du maire d'une commune nouvelle en cas de conseil municipal incomplet",
    "verdictIncitations": "incitations_alignees",
@@ -247,6 +299,19 @@
     "solidarité communale"
    ]
   },
+  "DLR5L16N50082": {
+   "titre": "Proposition de loi visant à sécuriser le mécanisme de purge des nullités",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-15T05:26:49Z",
+   "themes": [
+    "procédure pénale",
+    "nullités",
+    "purge",
+    "droits de la défense",
+    "sécurisation juridique"
+   ]
+  },
   "DLR5L16N50115": {
    "titre": "Projet de loi autorisant la ratification de la convention n°155 sur la sécurité et la santé des travailleurs, 1981",
    "verdictIncitations": "indetermine",
@@ -260,6 +325,19 @@
     "normes oit"
    ]
   },
+  "DLR5L17N50168": {
+   "titre": "Proposition de loi organique portant réforme du financement de l'audiovisuel public",
+   "verdictIncitations": "indetermine",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-15T05:27:14Z",
+   "themes": [
+    "audiovisuel public",
+    "financement",
+    "loi organique",
+    "lois de finances",
+    "imposition affectée"
+   ]
+  },
   "DLR5L17N50169": {
    "titre": "Proposition de loi visant à sortir la France du piège du narcotrafic",
    "verdictIncitations": "incitations_alignees",
@@ -271,6 +349,81 @@
     "organisation judiciaire",
     "sécurité intérieure",
     "techniques de renseignement"
+   ]
+  },
+  "DLR5L17N50172": {
+   "titre": "Résultats de la gestion et approbation des comptes de l'année 2023",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-15T05:29:03Z",
+   "themes": [
+    "finances publiques",
+    "approbation des comptes",
+    "loi de finances rectificative",
+    "gestion budgétaire"
+   ]
+  },
+  "DLR5L17N50173": {
+   "titre": "Approbation des comptes de la sécurité sociale pour l'année 2023",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-15T05:28:52Z",
+   "themes": [
+    "sécurité sociale",
+    "comptes sociaux",
+    "approbation des comptes"
+   ]
+  },
+  "DLR5L17N50198": {
+   "titre": "Projet de loi de finances pour 2025",
+   "verdictIncitations": "indetermine",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-15T05:27:36Z",
+   "themes": [
+    "budget de l'état",
+    "loi de finances",
+    "recettes fiscales",
+    "dépenses publiques",
+    "finances publiques"
+   ]
+  },
+  "DLR5L17N50275": {
+   "titre": "Violences commises dans les secteurs du cinéma, de l’audiovisuel, du spectacle vivant, de la mode et de la publicité",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-15T05:29:41Z",
+   "themes": [
+    "violences",
+    "cinéma",
+    "audiovisuel",
+    "spectacle vivant",
+    "mode"
+   ]
+  },
+  "DLR5L17N50356": {
+   "titre": "Les manquements des politiques publiques de protection de l'enfance",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-15T05:29:29Z",
+   "themes": [
+    "protection de l'enfance",
+    "aide sociale à l'enfance",
+    "commission d'enquête",
+    "politiques publiques",
+    "gouvernance"
+   ]
+  },
+  "DLR5L17N50370": {
+   "titre": "Remboursement intégral des fauteuils roulants par l’Assurance maladie",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-15T05:24:42Z",
+   "themes": [
+    "handicap",
+    "sécurité sociale",
+    "remboursement",
+    "fauteuil roulant",
+    "aides techniques"
    ]
   },
   "DLR5L17N50387": {
@@ -298,6 +451,57 @@
     "financement"
    ]
   },
+  "DLR5L17N50434": {
+   "titre": "Réduire les contraintes énergétiques pesant sur l’offre locative et juguler leurs effets sur la crise du logement",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-15T05:28:27Z",
+   "themes": [
+    "logement",
+    "energie",
+    "performance energetique",
+    "location",
+    "contraintes reglementaires"
+   ]
+  },
+  "DLR5L17N50435": {
+   "titre": "Instauration d’un nombre minimum de soignants par patient hospitalisé",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-15T05:22:43Z",
+   "themes": [
+    "santé",
+    "hôpital",
+    "soignants",
+    "effectifs",
+    "qualité des soins"
+   ]
+  },
+  "DLR5L17N50436": {
+   "titre": "Assouplir les conditions d'expulsion des étrangers constituant une menace grave pour l'ordre public",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-15T05:28:36Z",
+   "themes": [
+    "immigration",
+    "ordre public",
+    "expulsion",
+    "droit des étrangers"
+   ]
+  },
+  "DLR5L17N50444": {
+   "titre": "Optimiser la protection et l'accompagnement des parents d'enfants atteints de cancers, de maladies graves et de handicaps",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-15T05:25:22Z",
+   "themes": [
+    "protection sociale",
+    "handicap",
+    "cancer pédiatrique",
+    "maladie grave",
+    "droit au travail"
+   ]
+  },
   "DLR5L17N50450": {
    "titre": "Proposition de loi organique visant à reporter le renouvellement général des membres du congrès et des assemblées de province de la Nouvelle-Calédonie",
    "verdictIncitations": "incitations_alignees",
@@ -321,6 +525,32 @@
     "transparence",
     "grand débat national",
     "résolution parlementaire"
+   ]
+  },
+  "DLR5L17N50453": {
+   "titre": "Restaurer un système de retraite plus juste en annulant les dernières réformes portant sur l'âge de départ et le nombre d'annuités",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-15T05:28:44Z",
+   "themes": [
+    "retraites",
+    "réforme des retraites",
+    "âge légal",
+    "annuités",
+    "droit social"
+   ]
+  },
+  "DLR5L17N50476": {
+   "titre": "Adoption et mise en œuvre d’exigences à l’importation pour le respect de normes de production équivalentes aux normes de production essentielles, en matière de santé, d’environnement, de biodiversité et de bien-être animal applicables dans l’Union européenne",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-15T05:17:43Z",
+   "themes": [
+    "commerce international",
+    "mesures miroirs",
+    "normes sanitaires",
+    "environnement",
+    "bien-être animal"
    ]
   },
   "DLR5L17N50578": {
@@ -348,6 +578,31 @@
     "communes"
    ]
   },
+  "DLR5L17N50581": {
+   "titre": "Refuser la ratification de l'accord commercial entre l'Union européenne et le Mercosur",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-15T05:17:18Z",
+   "themes": [
+    "commerce international",
+    "accord ue-mercosur",
+    "politique commerciale",
+    "résolution parlementaire"
+   ]
+  },
+  "DLR5L17N50588": {
+   "titre": "Projet de loi de financement de la sécurité sociale pour 2025",
+   "verdictIncitations": "indetermine",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-15T05:28:16Z",
+   "themes": [
+    "sécurité sociale",
+    "cotisations sociales",
+    "plfss 2025",
+    "agriculture",
+    "médecine"
+   ]
+  },
   "DLR5L17N50589": {
    "titre": "Pour une stratégie nationale de prévention sur le chemsex",
    "verdictIncitations": "indetermine",
@@ -359,6 +614,31 @@
     "addictions",
     "chemsex",
     "résolution"
+   ]
+  },
+  "DLR5L17N50590": {
+   "titre": "Condamner l'oppression et la terreur imposées aux femmes iraniennes, et à réaffirmer leur liberté absolue",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-15T05:17:57Z",
+   "themes": [
+    "droits des femmes",
+    "iran",
+    "résolution parlementaire",
+    "libertés fondamentales",
+    "politique étrangère"
+   ]
+  },
+  "DLR5L17N50604": {
+   "titre": "Création d’un centre hospitalier universitaire en Corse",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-15T05:25:59Z",
+   "themes": [
+    "sante",
+    "enseignement_superieur",
+    "amenagement_du_territoire",
+    "corse"
    ]
   },
   "DLR5L17N50627": {
@@ -383,6 +663,31 @@
     "justice pénale",
     "exécution des peines",
     "emprisonnement"
+   ]
+  },
+  "DLR5L17N50636": {
+   "titre": "Améliorer le traitement des maladies affectant les cultures végétales à l’aide d’aéronefs télépilotés",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-15T05:20:44Z",
+   "themes": [
+    "agriculture",
+    "phytosanitaire",
+    "drones",
+    "biocontrôle",
+    "santé environnementale"
+   ]
+  },
+  "DLR5L17N50684": {
+   "titre": "Abrogation de la retraite à 64 ans",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-15T05:26:11Z",
+   "themes": [
+    "retraites",
+    "âge légal de départ",
+    "réforme des pensions",
+    "droit du travail"
    ]
   },
   "DLR5L17N50689": {
@@ -424,6 +729,19 @@
     "marseille"
    ]
   },
+  "DLR5L17N50715": {
+   "titre": "Contre toutes les fraudes aux aides publiques",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-15T05:20:09Z",
+   "themes": [
+    "fraude aux aides publiques",
+    "lutte contre la fraude",
+    "échange d'informations administratives",
+    "suspension des aides publiques",
+    "tracfin"
+   ]
+  },
   "DLR5L17N50724": {
    "titre": "Proposition de loi relative à la lutte contre l'antisémitisme dans l'enseignement supérieur",
    "verdictIncitations": "incitations_alignees",
@@ -435,6 +753,45 @@
     "lutte contre les discriminations",
     "procédure disciplinaire",
     "formation"
+   ]
+  },
+  "DLR5L17N50777": {
+   "titre": "Lutter contre les pannes d'ascenseurs non prises en charge",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-15T05:22:22Z",
+   "themes": [
+    "logement",
+    "copropriété",
+    "sécurité",
+    "maintenance",
+    "responsabilité civile"
+   ]
+  },
+  "DLR5L17N50778": {
+   "titre": "Rendre accessible à tous les étudiants le repas à 1 euro",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-15T05:22:37Z",
+   "themes": [
+    "enseignement supérieur",
+    "restauration étudiante",
+    "accessibilité sociale",
+    "crous",
+    "pouvoir d'achat étudiant"
+   ]
+  },
+  "DLR5L17N50779": {
+   "titre": "Prendre des mesures d’urgence contre la vie chère et réguler la concentration des acteurs économiques dans les territoires d’outre-mer",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-15T05:23:08Z",
+   "themes": [
+    "vie chère",
+    "outre-mer",
+    "prix de grande consommation",
+    "transparence des marges",
+    "observatoires des prix"
    ]
   },
   "DLR5L17N50796": {
@@ -463,6 +820,43 @@
     "sanctions administratives"
    ]
   },
+  "DLR5L17N50820": {
+   "titre": "Prolonger la dérogation d’usage des titres restaurant pour tout produit alimentaire",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-15T05:26:24Z",
+   "themes": [
+    "titres-restaurant",
+    "pouvoir d'achat",
+    "alimentation",
+    "dérogation"
+   ]
+  },
+  "DLR5L17N50838": {
+   "titre": "Projet de loi de finances de fin de gestion pour 2024",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-15T05:24:06Z",
+   "themes": [
+    "finances publiques",
+    "budget de l'état",
+    "recettes fiscales",
+    "déficit budgétaire",
+    "loi de finances rectificative"
+   ]
+  },
+  "DLR5L17N50854": {
+   "titre": "Prévenir les litiges relatifs aux obligations de décence énergétique et sécuriser leur application en copropriété",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-15T05:18:38Z",
+   "themes": [
+    "logement",
+    "copropriété",
+    "décence énergétique",
+    "performance énergétique"
+   ]
+  },
   "DLR5L17N50882": {
    "titre": "Proposition de loi relative à la restitution d'un bien culturel à la République de Côte d'Ivoire",
    "verdictIncitations": "incitations_alignees",
@@ -474,6 +868,32 @@
     "relations internationales",
     "musées",
     "colonialisme"
+   ]
+  },
+  "DLR5L17N50911": {
+   "titre": "Restreindre la vente de protoxyde d’azote aux seuls professionnels et renforcer les actions de prévention sur les consommations détournées",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-15T05:18:29Z",
+   "themes": [
+    "santé publique",
+    "addictologie",
+    "prévention jeunesse",
+    "régulation commerciale",
+    "environnement"
+   ]
+  },
+  "DLR5L17N50915": {
+   "titre": "Exercice de la démocratie agricole",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-15T05:23:35Z",
+   "themes": [
+    "gouvernance agricole",
+    "chambres d'agriculture",
+    "mutualité sociale agricole",
+    "élections professionnelles",
+    "métropole de lyon"
    ]
   },
   "DLR5L17N50946": {

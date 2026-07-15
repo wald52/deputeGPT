@@ -1,0 +1,74 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50444",
+ "generatedAt": "2026-07-15T05:25:22Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Optimiser la protection et l'accompagnement des parents d'enfants atteints de cancers, de maladies graves et de handicaps",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/accompagnement_parents_enfants_cancers_maladies_handicaps2",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0298_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Améliorer la protection et l'accompagnement des parents d'enfants atteints d'un cancer, d'une maladie grave ou d'un handicap, en facilitant leur accès au logement, en sécurisant leur situation professionnelle, en améliorant la prise en charge médicale et en simplifiant les démarches administratives liées au handicap.",
+ "mecanismesCles": [
+  {
+   "resume": "Élargissement du droit au logement (DALO) pour inclure les parents dont l'état de santé d'un enfant à charge (maladie, handicap, accident grave) dégrade les conditions d'existence.",
+   "articleRef": "art. 1er",
+   "citation": "« ou de l’état de santé d’un enfant à charge atteint d’une maladie ou d’un handicap ou victime d’un accident d’une particulière gravité »"
+  },
+  {
+   "resume": "Protection contre la résiliation ou la suspension d'un crédit immobilier en cas d'obtention de l'allocation journalière de présence parentale (AJPP).",
+   "articleRef": "art. 2",
+   "citation": "« ou d’obtention du droit à l’allocation journalière de présence parentale prévue à l’article L. 544-1 du code de la sécurité sociale »"
+  },
+  {
+   "resume": "Extension aux parents d'enfants malades/handicapés des motifs légitimes de résiliation ou de non-renouvellement de contrats d'assurance et de complémentaire santé.",
+   "articleRef": "art. 3",
+   "citation": "« affection grave, handicap ou survenue d’un accident d’une particulière gravité chez l’enfant à la charge de l’assuré »"
+  },
+  {
+   "resume": "Création d'un dispositif d'hébergement des parents dans les établissements de santé lorsque l'éloignement le justifie, avec prise en charge par la sécurité sociale.",
+   "articleRef": "art. 7",
+   "citation": "« Les établissements de santé […] peuvent mettre en place un dispositif d’hébergement des parents ou des responsables légaux d’un enfant atteint d’une affection relevant des 3° et 4° de l’article L. 160-14 »"
+  },
+  {
+   "resume": "Expérimentation dans 10 départements d'un délai de 2 mois pour les décisions MDPH sur l'AEEH, avec avance automatique du montant de base en cas de silence, et traitement prioritaire des dossiers urgents.",
+   "articleRef": "art. 8",
+   "citation": "« En l’absence de décision rendue dans ce délai, le demandeur bénéficie automatiquement d’une avance du montant de base de ladite allocation. »"
+  },
+  {
+   "resume": "Protection contre le licenciement pendant les 10 semaines suivant l'expiration du congé de présence parentale, et droit au temps de travail de nuit pour les parents d'enfants nécessitant une présence soutenue.",
+   "articleRef": "art. 5",
+   "citation": "« ni pendant les dix semaines suivant l’expiration de ce congé »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'ensemble des mécanismes créés convergent directement vers l'objectif affiché d'amélioration de la protection et de l'accompagnement des parents. L'article 1er élargit le DALO en intégrant la situation de santé de l'enfant, créant une incitation à reconnaître ces familles comme prioritaires au logement. Les articles 2, 3 et 4 sécurisent l'accès aux crédits, assurances et mutuelles en cas d'obtention de l'AJPP, levant des obstacles financiers concrets. L'article 7 crée un droit nouveau à l'hébergement parental pendant l'hospitalisation, pris en charge par la sécurité sociale. L'article 8 instaure une expérimentation avec avance automatique en cas de silence de la MDPH, accélérant l'accès à l'AEEH. L'article 13 étend la prise en charge de soins paramédicaux essentiels pour les mineurs en ALD. Tous ces dispositifs vont dans le sens d'une meilleure protection sociale, économique et sanitaire des parents concernés.",
+ "pointsDeVigilance": [
+  "Plusieurs articles initialement prévus ont été supprimés au cours de la navette parlementaire (articles 1er bis, 2-2°, 5-1° et 2°, 7 ancien, 8 ancien), ce qui réduit la portée initiale du texte.",
+  "Les expérimentations (articles 8 et 9) sont limitées à 10 départements et à un an, avec une généralisation conditionnée à un rapport gouvernemental — leur effectivité concrète dépendra des décrets d'application.",
+  "L'article 12 sur le crédit d'impôt pour la suppléance en vacances est gagé par une taxe additionnelle sur les tabacs, ce qui crée un lien fiscal inhabituel.",
+  "L'entrée en vigueur différée (6 à 18 mois selon les articles) retarde les effets concrets pour les familles."
+ ],
+ "themes": [
+  "protection sociale",
+  "handicap",
+  "cancer pédiatrique",
+  "maladie grave",
+  "droit au travail"
+ ],
+ "scrutinsCles": [
+  "512",
+  "513",
+  "514",
+  "515"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:0b025968cb74bfb80f8f21d38ab73e2fb25a7806f06f56853a796aeac5670e77"
+}

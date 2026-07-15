@@ -1,0 +1,71 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50356",
+ "generatedAt": "2026-07-15T05:29:29Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Les manquements des politiques publiques de protection de l'enfance",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/manquements_politiques_publiques_enfance",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0002_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Créer une commission d'enquête parlementaire de trente membres chargée d'identifier les manquements des politiques publiques de protection de l'enfance (aide sociale à l'enfance), d'évaluer la gouvernance et le financement de cette politique, et de formuler des recommandations législatives, réglementaires et budgétaires.",
+ "mecanismesCles": [
+  {
+   "resume": "Création d'une commission d'enquête de 30 membres (article unique) avec un mandat d'investigation défini par 4 axes principaux.",
+   "articleRef": "Article unique",
+   "citation": "est créée une commission d'enquête de trente membres chargée"
+  },
+  {
+   "resume": "Mission d'évaluation des conditions d'accueil, d'équipement, d'engorgement des structures et de chiffrage des besoins en structures supplémentaires.",
+   "articleRef": "Article unique, 1° (a, b, c)",
+   "citation": "D'évaluer les conditions d'accueil des moins de trois ans et les mises à jour nécessaires du décret n° 74-58"
+  },
+  {
+   "resume": "Mission d'identification des dysfonctionnements dans les procédures de signalement, de placement et d'évaluation des suites données aux signalements.",
+   "articleRef": "Article unique, 1° (d, e)",
+   "citation": "D'identifier les dysfonctionnements dans les procédures de signalement et de placement"
+  },
+  {
+   "resume": "Mission d'évaluation des délais d'exécution des mesures de justice, des délais de consultation en pédopsychiatrie et de l'hébergement à l'hôtel (interdit).",
+   "articleRef": "Article unique, 1° (g, h, i)",
+   "citation": "D'identifier les causes du non-respect de l'hébergement à l'hôtel et ses conséquences"
+  },
+  {
+   "resume": "Mission d'évaluation des manques de recrutement, formation, conditions de travail et recours à l'intérim des professionnels de l'ASE.",
+   "articleRef": "Article unique, 1° (k, l)",
+   "citation": "D'évaluer les manques de recrutement, de formation et de reconnaissance des professionnels de l'aide sociale à l'enfance"
+  },
+  {
+   "resume": "Mission d'évaluation de la gouvernance nationale (GIP France Enfance Protégée), de l'application des lois de 2016 et 2022, et des décrets non parus.",
+   "articleRef": "Article unique, 2° (a, b, c, d)",
+   "citation": "D'identifier les raisons ainsi que les responsables de la non-parution des décrets sur les taux d'encadrement et les normes des structures d'accueil"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte est une résolution créant une commission d'enquête parlementaire, dont la nature même est investigative et non normative : il ne crée ni taxes, ni obligations, ni sanctions directes. L'article unique définit un mandat d'« identifier les manquements » (1°), de « cibler les défaillances de la gouvernance » (2°) et de « faire des recommandations » (3°). Les mécanismes consistent exclusivement en missions d'évaluation, de chiffrage et d'état des lieux (ex. : « D'évaluer les conditions d'accueil », « D'identifier les dysfonctionnements », « De chiffrer les besoins »). Ces incitations vont dans le sens de l'objectif affiché : dresser un diagnostic de la protection de l'enfance pour éclairer l'action publique. Il n'y a pas de mécanisme contradictoire avec l'objectif puisque le texte ne produit pas d'effet juridique direct autre que la création de la commission.",
+ "pointsDeVigilance": [
+  "Le texte est une résolution parlementaire sans portée normative directe : il ne crée pas de droits ou d'obligations nouvelles, mais mandate une commission d'enquête pour 6 mois (durée réglementaire).",
+  "L'efficacité dépendra des suites données aux recommandations (art. unique, 3°) : sans transposition législative ou réglementaire, le diagnostic reste sans effet contraignant.",
+  "Le mandat est très large (plus de 20 sous-missions), ce qui pourrait diluer les travaux de la commission.",
+  "Le texte mentionne explicitement la crise traversée par la protection de l'enfance, signalant une situation jugée urgente par le législateur."
+ ],
+ "themes": [
+  "protection de l'enfance",
+  "aide sociale à l'enfance",
+  "commission d'enquête",
+  "politiques publiques",
+  "gouvernance"
+ ],
+ "scrutinsCles": [
+  "3"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:d58eaa82a11f9b0d91f7caaa282f30f9f09edf87b40fa6ceda1098a10486f82d"
+}

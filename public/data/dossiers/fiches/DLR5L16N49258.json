@@ -1,0 +1,73 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L16N49258",
+ "generatedAt": "2026-07-15T05:25:49Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Réduire et encadrer les frais bancaires sur succession",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/16/dossiers/reduction_frais_bancaires_succession",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0014_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Réduire et encadrer les frais bancaires prélevés par les établissements teneurs de comptes lors d'une succession, en instaurant la gratuité dans certains cas et en plafonnant les frais dans les autres.",
+ "mecanismesCles": [
+  {
+   "resume": "Création d'un article L. 312-1-4-1 dans le code monétaire et financier instaurant la gratuité totale des frais bancaires de succession sur les comptes de dépôt, comptes sur livret et produits d'épargne générale à régime fiscal spécifique (hors PEA, assurance-vie, etc.) dans trois cas : succession simple (héritier justifiant de sa qualité sans complexité manifeste), succession dont les avoirs sont inférieurs au seuil fixé par arrêté, et détenteur mineur au jour du décès.",
+   "articleRef": "art. 1er (I, 1°)",
+   "citation": "« les opérations portant sur des comptes de dépôt, des comptes sur livret et [...] des produits d'épargne générale à régime fiscal spécifique du défunt ne font l'objet d'aucuns frais d'aucune nature »"
+  },
+  {
+   "resume": "Pour les successions ne remplissant pas les trois critères de gratuité, les frais restent possibles mais sont plafonnés par décret à 1 % maximum du montant total des soldes des comptes et de la valorisation des produits d'épargne du défunt, avec un montant plafond également fixé par décret.",
+   "articleRef": "art. 1er (I, 1°, dernier alinéa)",
+   "citation": "« dans la limite de 1 % du montant total des soldes des comptes et de la valorisation des produits d'épargne du défunt [...] et dans la limite d'un montant fixé par le même décret »"
+  },
+  {
+   "resume": "Exclusion explicite du bénéfice de la gratuité en cas de complexité manifeste : absence d'héritiers mentionnés au 1° de l'article 734 du code civil, présence d'un contrat de crédit immobilier en cours, nature professionnelle du compte, sûretés constituées ou éléments d'extranéité.",
+   "articleRef": "art. 1er (I, 1°, 1°)",
+   "citation": "« lorsque les opérations liées à la succession ne présentent pas de complexité manifeste tenant à l'absence d'héritiers mentionnés au 1° de l'article 734 du code civil, à la présence d'un contrat de crédit immobilier en cours [...] à la nature professionnelle du compte [...] à la constitution de sûretés [...] ou à l'existence d'éléments d'extranéité »"
+  },
+  {
+   "resume": "Exclusion du champ de la gratuité de plusieurs produits d'épargne spécifiques : sections 6, 6 bis, 6 ter et 7 ter du chapitre Ier du titre II du livre II (notamment PEA, PEA-PME, assurance-vie).",
+   "articleRef": "art. 1er (I, 1°)",
+   "citation": "« à l'exception des produits mentionnés aux sections 6, 6 bis, 6 ter et 7 ter du chapitre Ier du titre II du livre II »"
+  },
+  {
+   "resume": "Entrée en vigueur différée de six mois après la promulgation, laissant le temps aux établissements de se conformer aux nouvelles obligations.",
+   "articleRef": "art. 1er (II)",
+   "citation": "« Le I entre en vigueur six mois après la promulgation de la présente loi. »"
+  },
+  {
+   "resume": "Demande au Gouvernement d'un rapport d'évaluation dans un délai d'un an à compter de la publication du décret, mesurant l'évolution des frais et le nombre de bénéficiaires de la gratuité.",
+   "articleRef": "art. 2",
+   "citation": "« le Gouvernement remet au Parlement un rapport évaluant les effets de la présente loi sur l'évolution des frais appliqués [...] ainsi que le nombre de personnes bénéficiant de la gratuité de ces frais »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte crée directement la gratuité des frais bancaires de succession dans trois cas définis (succession simple, petits patrimoines, détenteur mineur), ce qui constitue l'incitation centrale attendue par l'objectif affiché. Pour les successions complexes ou patrimoniales, un plafonnement à 1 % des avoirs est instauré, complétant le dispositif d'encadrement. L'exclusion des produits d'épargne spécifiques (PEA, assurance-vie) et des situations complexes (extranéité, crédit immobilier, compte professionnel) limite certes la portée du texte, mais les mécanismes principaux — gratuité sous conditions et plafonnement — vont clairement dans le sens de l'objectif de réduction et d'encadrement des frais.",
+ "pointsDeVigilance": [
+  "L'efficacité du dispositif dépend du décret d'application qui doit fixer le seuil de patrimoine en deçà duquel la gratuité s'applique et le montant plafond des frais.",
+  "De nombreuses situations courantes (présence d'un crédit immobilier, élément d'extranéité, compte professionnel) restent exclues de la gratuité et soumises au seul plafonnement.",
+  "Les produits d'épargne les plus fréquemment utilisés en succession (assurance-vie notamment) sont exclus du champ de la loi.",
+  "Le rapport d'évaluation prévu à l'article 2 est non contraignant et ne conditionne aucune révision ultérieure.",
+  "Le texte ne crée pas de sanction spécifique en cas de non-respect par les établissements."
+ ],
+ "themes": [
+  "frais bancaires",
+  "succession",
+  "protection des consommateurs",
+  "banque",
+  "encadrement des tarifs"
+ ],
+ "scrutinsCles": [
+  "503",
+  "504"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:9e957e731494e60fa7774bdd0fcbf15ea25c81fc1330167d3ab60e893a4878e2"
+}

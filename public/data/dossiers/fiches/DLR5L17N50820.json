@@ -1,0 +1,51 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50820",
+ "generatedAt": "2026-07-15T05:26:24Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Prolonger la dérogation d’usage des titres restaurant pour tout produit alimentaire",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/prolongation_derogation_usage_titres_restaurant",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0012_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Prolonger la dérogation d'usage des titres-restaurant pour tout produit alimentaire, au-delà de l'échéance initialement prévue par la loi du 16 août 2022 portant mesures d'urgence pour la protection du pouvoir d'achat.",
+ "mecanismesCles": [
+  {
+   "resume": "Modification de l'article 6 de la loi n° 2022-1158 du 16 août 2022 : remplacement de l'année « 2024 » par « 2026 », prolongeant ainsi la dérogation d'utilisation des titres-restaurant pour tout produit alimentaire (et non plus seulement pour les repas consommés sur place ou par un restaurateur).",
+   "articleRef": "art. 1er (I)",
+   "citation": "À l'article 6 de la loi n° 2022-1158 du 16 août 2022 portant mesures d'urgence pour la protection du pouvoir d'achat, l'année : « 2024 » est remplacée par l'année : « 2026 »."
+  },
+  {
+   "resume": "Article 2 (nouveau) supprimé en séance, ainsi que le II (nouveau) de l'article 1er, ce qui limite la portée du texte à la seule prolongation de la dérogation.",
+   "articleRef": "art. 1er (II) et art. 2",
+   "citation": "II (nouveau). – (Supprimé) ; Article 2 (nouveau) (Supprimé)"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte ne contient qu'un dispositif unique et ciblé : la substitution de l'année « 2024 » par « 2026 » à l'article 6 de la loi du 16 août 2022 (art. 1er, I). Ce mécanisme prolonge mécaniquement la dérogation existant, sans la modifier sur le fond. L'objectif affiché étant précisément cette prolongation, l'incitation créée par l'article va directement dans le sens de l'objectif affiché. Les autres dispositions ayant été supprimées en séance (art. 1er II et art. 2), le texte final est strictement cohérent avec son intitulé.",
+ "pointsDeVigilance": [
+  "Le texte étant très court (un seul article actif), l'analyse de cohérence est limitée mais sans ambiguïté.",
+  "Le contenu effectif de la dérogation prolongée (produits alimentaires éligibles, conditions d'usage) dépend de l'article 6 de la loi n° 2022-1158, dont le détail n'est pas reproduit dans le document fourni.",
+  "L'absence d'évaluation d'impact ou de justification de la durée de prolongation (jusqu'à 2026) dans le texte fourni."
+ ],
+ "themes": [
+  "titres-restaurant",
+  "pouvoir d'achat",
+  "alimentation",
+  "dérogation"
+ ],
+ "scrutinsCles": [
+  "453",
+  "454",
+  "455"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:ac3dbdaa05d58f6648e8e8156298f05c89a8eb83c0244ed02a9eb77f1e32f5a4"
+}

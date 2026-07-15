@@ -1,0 +1,48 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50453",
+ "generatedAt": "2026-07-15T05:28:44Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Restaurer un système de retraite plus juste en annulant les dernières réformes portant sur l'âge de départ et le nombre d'annuités",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/restaurer_systeme_retraite_juste_annulation_dernieres_reformes",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b0475_texte-adopte-commission",
+  "legifrance": null
+ },
+ "objectifAffiche": "Restaurer un système de retraite plus juste en annulant les dernières réformes portant sur l'âge de départ et le nombre d'annuités.",
+ "mecanismesCles": [
+  {
+   "resume": "Le texte fourni ne contient ni exposé des motifs ni articles : seule la page de garde du dossier législatif est disponible.",
+   "articleRef": null,
+   "citation": null
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte officiel transmis est tronqué et ne comporte que les éléments de présentation du dossier (titre, identifiant, procédure, statut, sommaire et liens de navigation). Aucun article, aucune disposition concrète et aucun exposé des motifs ne sont accessibles dans les 15 000 caractères fournis. Il est donc impossible d'identifier les mécanismes effectivement créés par la proposition de loi et, a fortiori, de déterminer si les incitations qui en découlent s'alignent ou non avec l'objectif affiché de restauration d'un système de retraite plus juste.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué à 15 000 caractères et ne contient que la page de garde, sans aucun article ni exposé des motifs.",
+  "L'analyse des incitations réelles (âge légal, nombre d'annuités, durée de cotisation, financement) ne peut être conduite sans le contenu normatif du texte.",
+  "Le statut 'en_cours' indique que le texte a pu évoluer depuis le dépôt du 23 octobre 2024 (amendements, modifications en commission)."
+ ],
+ "themes": [
+  "retraites",
+  "réforme des retraites",
+  "âge légal",
+  "annuités",
+  "droit social"
+ ],
+ "scrutinsCles": [
+  "214",
+  "215",
+  "216",
+  "217"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:148c630279145bf1291ad30b5e63b0783b8932bde874af3e0b0e17b3e1410199"
+}

@@ -1,0 +1,64 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50198",
+ "generatedAt": "2026-07-15T05:27:36Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi de finances pour 2025",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/PLF2025",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/PLF2025",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est un projet de loi de finances pour 2025 (n°324), c'est-à-dire le texte budgétaire annuel fixant les recettes et les dépenses de l'État pour l'exercice 2025. L'objectif affiché est l'adoption du budget de l'État pour l'année 2025, conformément à la LOLF.",
+ "mecanismesCles": [
+  {
+   "resume": "Le texte procède à l'ouverture des crédits de l'État pour 2025, répartis par missions (Défense, Écologie, Santé, Éducation, Justice, etc.), budgets annexes, comptes spéciaux et concours financiers aux collectivités.",
+   "articleRef": null,
+   "citation": "Projets annuels de performances des missions : Action extérieure de l'État, Administration générale et territoriale de l'État, Agriculture, alimentation, forêt et affaires rurales, Défense, Écologie, développement et mobilité durables, Enseignement scolaire, Justice, Santé, Sécurités, Travail, emploi et administration des ministères sociaux..."
+  },
+  {
+   "resume": "Le texte fixe les voies et moyens de l'État (recettes fiscales et non fiscales) pour 2025.",
+   "articleRef": null,
+   "citation": "Voies et Moyens, tomes 1 ; Voies et Moyens, tomes 2"
+  },
+  {
+   "resume": "Le texte intègre des évaluations préalables des articles et des rapports annexes (Budget vert, égalité femmes-hommes, effort de rénovation énergétique, lutte contre la fraude fiscale, etc.) qui éclairent les choix budgétaires.",
+   "articleRef": null,
+   "citation": "Évaluations préalables des articles du projet de loi de finances pour 2025 - 8° de l'article 51 ; Rapport sur l'impact environnemental du budget, dit « Budget vert » ; Rapport sur l'impact du budget sur l'égalité entre les femmes et les hommes ; Rapport rendant compte de l'effort financier de l'État en faveur de la rénovation énergétique des bâtiments ; Lutte contre l'évasion fiscale et la fraude en matière d'impositions de toutes natures et de cotisations sociales"
+  },
+  {
+   "resume": "Le texte a été rejeté en première lecture à l'Assemblée nationale le 12 novembre 2024, puis adopté par le Sénat le 23 janvier 2025, avant d'être soumis à une CMP et finalement adopté via l'article 49 alinéa 3 de la Constitution le 5 février 2025.",
+   "articleRef": null,
+   "citation": "Projet de loi de finances rejeté par l'Assemblée nationale, pour 2025 le 12 novembre 2024, T.A. n° 8 ; Projet de loi de finances pour 2025, considéré comme adopté par l'Assemblée nationale en application de l'article 49, alinéa 3 de la Constitution le 5 février 2025"
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le document fourni est uniquement la fiche de procédure législative du dossier (étapes de lecture, commissions saisies, annexes listées, calendrier). Il ne contient ni l'exposé des motifs du projet de loi, ni le texte des articles, ni les montants de crédits ou de recettes. Sans accès au contenu normatif du texte (articles de la première et de la seconde partie), il est impossible d'identifier les mécanismes concrets (création de taxes, modification de barèmes, dépenses nouvelles, suppressions de niches fiscales, etc.) et donc de déterminer si les incitations réellement créées vont dans le sens de l'objectif affiché. Le verdict est par conséquent indéterminé.",
+ "pointsDeVigilance": [
+  "Le texte fourni est tronqué à 15000 caractères et ne contient que la fiche de navigation du dossier législatif, pas le contenu normatif.",
+  "Aucun article budgétaire (première partie « recettes », seconde partie « dépenses ») n'est reproduit dans l'extrait.",
+  "L'absence d'exposé des motifs empêche de connaître les justifications politiques du gouvernement.",
+  "Le rejet en première lecture à l'Assemblée nationale puis l'adoption via l'article 49 alinéa 3 de la Constitution signalent un contexte politique particulier qui peut avoir modifié substantiellement le contenu du texte par rapport à la version initiale."
+ ],
+ "themes": [
+  "budget de l'état",
+  "loi de finances",
+  "recettes fiscales",
+  "dépenses publiques",
+  "finances publiques"
+ ],
+ "scrutinsCles": [
+  "435",
+  "436",
+  "437",
+  "438"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:7b0643d81f7e6a6fc4712742673cb7ae0d0ea8500f27ce9d0b478da803e01555"
+}

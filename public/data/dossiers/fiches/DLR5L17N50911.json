@@ -1,0 +1,75 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50911",
+ "generatedAt": "2026-07-15T05:18:29Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Restreindre la vente de protoxyde d’azote aux seuls professionnels et renforcer les actions de prévention sur les consommations détournées",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/restreindre_vente_protoxyde_azote_professionnels_renforcer_prevention",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0037_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "La proposition de loi vise à restreindre la vente de protoxyde d'azote (N2O) aux seuls professionnels autorisés et à renforcer les actions de prévention contre les consommations détournées de ce gaz, notamment chez les jeunes.",
+ "mecanismesCles": [
+  {
+   "resume": "Interdiction générale de vendre ou d'importer du protoxyde d'azote, valable dans tous lieux publics, commerces et en ligne, avec dérogation possible pour certaines catégories de professionnels définies par décret.",
+   "articleRef": "art. 1er",
+   "citation": "« Cette interdiction est valable dans l'ensemble des lieux publics et des commerces et en ligne. »"
+  },
+  {
+   "resume": "Le décret doit prévoir des modalités obligatoires de surveillance et de suivi garantissant la traçabilité des volumes de protoxyde d'azote commercialisés.",
+   "articleRef": "art. 1er (3°)",
+   "citation": "« Il prévoit des modalités obligatoires de surveillance et de suivi obligatoires garantissant la traçabilité des volumes de protoxyde d'azote commercialisés dans ce cadre. »"
+  },
+  {
+   "resume": "Entrée en vigueur différée au 1er janvier 2026.",
+   "articleRef": "art. 1er (II)",
+   "citation": "« Le I entre en vigueur le 1er janvier 2026. »"
+  },
+  {
+   "resume": "Coordination juridique : suppression de références croisées dans le code de la santé publique.",
+   "articleRef": "art. 1er bis",
+   "citation": "« Le second alinéa de l'article L. 3631-2 est supprimé »"
+  },
+  {
+   "resume": "Veille sanitaire sur l'évolution de la consommation de N2O assurée par la MILDECA avec les agences sanitaires, donnant lieu à des rapports et propositions d'actions de prévention territorialisées.",
+   "articleRef": "art. 2",
+   "citation": "« Cette veille sanitaire donne lieu à la diffusion régulière de rapports d'information ainsi que de propositions d'actions de prévention adaptées aux populations de chaque territoire. »"
+  },
+  {
+   "resume": "Élargissement de l'information obligatoire en milieu scolaire (art. L. 312-18 du code de l'éducation) aux usages détournés de produits de consommation courante à effets psychoactifs, dont le protoxyde d'azote.",
+   "articleRef": "art. 3",
+   "citation": "« après le mot : « cannabis », sont insérés les mots : « et les usages détournés de produits de consommation courante ayant des effets psychoactifs » »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'article 1er instaure une interdiction générale de vente et d'importation de protoxyde d'azote au public, dans tous les commerces, lieux publics et en ligne, ce qui cible directement l'accès détourné par les particuliers. La dérogation professionnelle est encadrée par un décret exigeant traçabilité et surveillance des volumes, limitant les fuites vers le marché parallèle. L'article 2 organise une veille sanitaire et des actions de prévention territorialisées, et l'article 3 intègre explicitement les « usages détournés de produits de consommation courante ayant des effets psychoactifs » dans l'éducation scolaire. L'article 5 ajoute les cartouches à la REP, facilitant leur collecte et réduisant la disponibilité de résidus usagés. L'ensemble des mécanismes converge vers la restriction de l'offre non professionnelle et la prévention, en cohérence avec l'objectif affiché.",
+ "pointsDeVigilance": [
+  "L'efficacité dépend entièrement du décret prévu à l'article 1er (catégories de professionnels, circuits autorisés, modalités de traçabilité) qui n'est pas dans le texte.",
+  "L'entrée en vigueur est différée au 1er janvier 2026, laissant une fenêtre de ventes non restreintes.",
+  "Aucun mécanisme de sanction explicite n'est défini dans le texte pour les vendeurs contrevenant à l'interdiction.",
+  "Le texte ne traite pas du trafic ou de la vente en ligne via des plateformes étrangères, qui pourraient contourner l'interdiction.",
+  "L'article 5 (REP) ne crée pas d'obligation de reprise en magasin et son effet sur la prévention est indirect."
+ ],
+ "themes": [
+  "santé publique",
+  "addictologie",
+  "prévention jeunesse",
+  "régulation commerciale",
+  "environnement"
+ ],
+ "scrutinsCles": [
+  "679",
+  "680",
+  "681",
+  "682"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:7e02a2f076861d5047ec170d78a7296f14574ad3583918cd2e4cae388dcb53d8"
+}

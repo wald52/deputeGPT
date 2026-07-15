@@ -1,0 +1,45 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50590",
+ "generatedAt": "2026-07-15T05:17:57Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Condamner l'oppression et la terreur imposées aux femmes iraniennes, et à réaffirmer leur liberté absolue",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/oppression_terreur_Iran",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0038_texte-adopte-seance",
+  "legifrance": null
+ },
+ "objectifAffiche": "Résolution de l'Assemblée nationale visant à condamner l'oppression et la terreur imposées aux femmes iraniennes et à réaffirmer leur liberté absolue. Le texte est une prise de position politique de l'institution parlementaire française.",
+ "mecanismesCles": [
+  {
+   "resume": "Aucun mécanisme normatif identifiable : le texte fourni ne contient ni exposé des motifs, ni articles, ni dispositif. Seuls le titre et les métadonnées de la résolution sont accessibles.",
+   "articleRef": null,
+   "citation": null
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est tronqué et ne contient que les éléments de titrage et de métadonnées de la résolution (T.A. n° 38, 17e législature, adopté le 29 janvier 2025). L'exposé des motifs et le contenu des articles ne sont pas accessibles dans les 15 000 caractères fournis. Sans dispositif lisible, il est impossible d'identifier des obligations, sanctions, dérogations ou incitations concrètes, et donc de déterminer si elles s'alignent avec l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué à 15 000 caractères et ne contient que les métadonnées (titre, sommaire, liens vers PDF/HTML/XML), sans le contenu normatif de la résolution.",
+  "Une résolution au sens de l'article 34-1 de la Constitution française est un acte non contraignant : elle n'a pas de force normative directe, ce qui limite la portée des 'mécanismes' qu'elle pourrait créer.",
+  "Pour une analyse complète, il faudrait consulter le contenu effectif de la résolution (PDF ou HTML) afin d'identifier d'éventuelles demandes au Gouvernement, rappels de principes ou condamnations nominatives."
+ ],
+ "themes": [
+  "droits des femmes",
+  "iran",
+  "résolution parlementaire",
+  "libertés fondamentales",
+  "politique étrangère"
+ ],
+ "scrutinsCles": [
+  "683"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:337fc98e75720c08dfbaefd8122e58d96208c978288c969ba9a8dd9c1ded9b8d"
+}

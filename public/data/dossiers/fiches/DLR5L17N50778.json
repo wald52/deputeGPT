@@ -1,0 +1,74 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50778",
+ "generatedAt": "2026-07-15T05:22:37Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Rendre accessible à tous les étudiants le repas à 1 euro",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/accessibilite_repas_un_euro_etudiants",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0028_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Rendre accessible à tous les étudiants le repas à 1 euro dans les restaurants universitaires gérés par les CROUS et les organismes conventionnés, en plafonnant le tarif de l'offre de restauration à tarif modéré.",
+ "mecanismesCles": [
+  {
+   "resume": "Plafonnement obligatoire du tarif de l'offre de restauration à tarif modéré des CROUS et organismes conventionnés à 1 euro maximum, servie sur place ou à emporter.",
+   "articleRef": "art. 1er",
+   "citation": "« Le montant de l'offre de restauration à tarif modéré [...] ne peut être supérieur à 1 euro. »"
+  },
+  {
+   "resume": "Demande de rapport au Parlement sur l'opportunité de généraliser la gratuité des repas servis par les CROUS (en France métropolitaine).",
+   "articleRef": "art. 1er bis",
+   "citation": "« rapport relatif à l'opportunité de généraliser la gratuité des repas servis par les centres régionaux des œuvres universitaires et scolaires »"
+  },
+  {
+   "resume": "Demande de rapport spécifique sur la gratuité des repas dans les CROUS situés dans les DROM.",
+   "articleRef": "art. 1er ter A",
+   "citation": "« rapport relatif à l'opportunité de la mise en place de la généralisation de la gratuité des repas [...] dans les départements et régions d'outre-mer »"
+  },
+  {
+   "resume": "Rapport sur le soutien de l'État au réseau des œuvres universitaires, incluant recrutement et revalorisation des personnels.",
+   "articleRef": "art. 1er ter",
+   "citation": "« rapport sur le soutien de l'État au réseau des œuvres universitaires et scolaires dans son activité de restauration étudiante »"
+  },
+  {
+   "resume": "Rapport d'évaluation (sous un an) sur la fréquentation, les profils socioéconomiques des usagers, les caractéristiques qualitatives/quantitatives des repas et l'impact sur les finances publiques.",
+   "articleRef": "art. 1er quater",
+   "citation": "« rapport sur les conséquences de celle-ci sur la fréquentation des sites de restauration [...] Il analyse les caractéristiques qualitatives et quantitatives, par assiette servie »"
+  },
+  {
+   "resume": "Compensation de la charge pour l'État par la création d'une taxe additionnelle à l'accise sur les tabacs.",
+   "articleRef": "art. 2",
+   "citation": "« La charge pour l'État est compensée à due concurrence par la création d'une taxe additionnelle à l'accise sur les tabacs »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'article 1er crée le mécanisme central en plafonnant à 1 euro le tarif de l'offre de restauration à tarif modéré des CROUS et organismes conventionnés, ce qui va directement dans le sens de l'objectif affiché d'accessibilité. Les articles 1er bis, 1er ter A, 1er ter et 1er quater préparent des rapports explorant la gratuité, le soutien au réseau et l'évaluation des effets, cohérents avec l'objectif social. L'article 2 assure la compensation financière par une taxe sur les tabacs, mécanisme neutre vis-à-vis de l'objectif étudiant mais garantissant la neutralité budgétaire. Aucun mécanisme du texte ne contredit l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte ne précise ni les modalités de financement pérenne du réseau des CROUS au-delà de la compensation fiscale, ni le niveau de qualité nutritionnelle garanti pour un repas à 1 euro.",
+  "La compensation par une taxe additionnelle sur les tabacs crée un lien budgétaire indirect entre la restauration étudiante et la consommation de tabac, dont l'efficacité réelle dépend du rendement effectif de cette taxe.",
+  "Quatre rapports sont demandés en six mois à un an, mais aucun mécanisme contraignant n'en découle directement : la gratuité reste hypothétique.",
+  "Le texte ne définit pas explicitement le contenu de l'« offre de restauration à tarif modéré » ni les contrôles qualité/quantité par assiette."
+ ],
+ "themes": [
+  "enseignement supérieur",
+  "restauration étudiante",
+  "accessibilité sociale",
+  "crous",
+  "pouvoir d'achat étudiant"
+ ],
+ "scrutinsCles": [
+  "603",
+  "604",
+  "605",
+  "606"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:3666303dc07618ccba567f4cd83b2ab72913174d985bf46c07879e05d9b8b62d"
+}

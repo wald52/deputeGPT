@@ -1,0 +1,37 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50173",
+ "generatedAt": "2026-07-15T05:28:52Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Approbation des comptes de la sécurité sociale pour l'année 2023",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/approbation_secu_sociale_2023",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0004_texte-adopte-seance",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est un projet de loi d'approbation des comptes de la sécurité sociale pour l'année 2023. Il vise à approuver les comptes des différentes branches de la sécurité sociale au titre de l'exercice 2023.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles. Seul le titre et les métadonnées du dossier législatif sont disponibles, ce qui ne permet pas d'identifier les mécanismes concrets créés par le texte ni d'évaluer si les incitations vont dans le sens de l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué et ne contient que les métadonnées du dossier législatif (titre, identifiant, procédure, statut)",
+  "Aucun article ni exposé des motifs n'est disponible pour analyse",
+  "Le projet de loi a été rejeté par l'Assemblée nationale après engagement de la procédure accélérée le 15 octobre 2024"
+ ],
+ "themes": [
+  "sécurité sociale",
+  "comptes sociaux",
+  "approbation des comptes"
+ ],
+ "scrutinsCles": [
+  "5"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:fed570aea36402ee90cac4af4cd3b9edf366f1774638512e1b303779646149cc"
+}

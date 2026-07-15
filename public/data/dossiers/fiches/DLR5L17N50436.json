@@ -1,0 +1,38 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50436",
+ "generatedAt": "2026-07-15T05:28:36Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Assouplir les conditions d'expulsion des étrangers constituant une menace grave pour l'ordre public",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/assouplir_conditions_expulsion_etrangers_menace_grave_ordre_public",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b0265_proposition-loi",
+  "legifrance": null
+ },
+ "objectifAffiche": "Proposition de loi ordinaire visant à assouplir les conditions d'expulsion des étrangers constituant une menace grave pour l'ordre public, déposée le 17 septembre 2024 à l'Assemblée nationale (n° 265, 17e législature).",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles : seule la page de sommaire du dossier législatif est accessible. Aucun mécanisme concret (obligation, seuil, dérogation, sanction) ne peut être identifié ni cité, ce qui empêche toute analyse de second ordre sur l'alignement entre les incitations créées et l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le contenu substantiel du texte (exposé des motifs et articles) n'est pas disponible dans la source fournie",
+  "Le titre évoque un assouplissement des conditions d'expulsion, mais sans lecture des articles, on ne peut savoir si des garanties procédurales sont maintenues, modifiées ou supprimées",
+  "Le statut 'en_cours' indique que le texte peut encore évoluer via amendements"
+ ],
+ "themes": [
+  "immigration",
+  "ordre public",
+  "expulsion",
+  "droit des étrangers"
+ ],
+ "scrutinsCles": [
+  "218"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:a4dc7a903229dc1c99202ed933c3955d40fdf16a79d4291a49877c120613bfb8"
+}

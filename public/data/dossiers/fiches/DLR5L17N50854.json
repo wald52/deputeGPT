@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50854",
+ "generatedAt": "2026-07-15T05:18:38Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Prévenir les litiges relatifs aux obligations de décence énergétique et sécuriser leur application en copropriété",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/obligations_decence_energetique",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b0629_texte-adopte-commission",
+  "legifrance": null
+ },
+ "objectifAffiche": "La proposition de loi vise à prévenir les litiges relatifs aux obligations de décence énergétique et à sécuriser leur application en copropriété, selon l'exposé des motifs de M. Bastien Marchive et plusieurs collègues.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs détaillé ni le contenu des articles de la proposition de loi. Seul le titre, l'identifiant, la procédure et des métadonnées administratives (numéro de texte, commission saisie, date de dépôt) sont disponibles. Sans accès aux articles ni à l'exposé des motifs substantiel, il est impossible d'identifier les mécanismes concrets créés par le texte et donc de déterminer si les incitations qu'ils produisent sont alignées avec l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué et ne contient que les métadonnées du dossier législatif",
+  "Aucun article ni exposé des motifs n'est accessible dans le contenu fourni",
+  "L'analyse des mécanismes concrets est impossible sans le corps du texte"
+ ],
+ "themes": [
+  "logement",
+  "copropriété",
+  "décence énergétique",
+  "performance énergétique"
+ ],
+ "scrutinsCles": [
+  "670",
+  "671",
+  "672",
+  "673"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:ba405976bbd61dffcb52076f2583a321fe84289ec30844148b4ba9100ddffff8"
+}

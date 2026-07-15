@@ -1,0 +1,75 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50777",
+ "generatedAt": "2026-07-15T05:22:22Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Lutter contre les pannes d'ascenseurs non prises en charge",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/lutte_panne_ascenseurs",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0029_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Lutter contre les pannes d'ascenseurs non prises en charge en imposant des obligations d'information, des délais d'intervention contraignants pour les sociétés de maintenance, des pénalités financières et des mécanismes de protection des occupants.",
+ "mecanismesCles": [
+  {
+   "resume": "Obligation pour le propriétaire (ou syndic, ou bailleur social) d'informer la société de maintenance dans un délai de deux jours ouvrables après connaissance d'une panne, sous peine d'amende de 250 € par jour de retard.",
+   "articleRef": "art. 1er (1° modifiant L. 134-3)",
+   "citation": "« Le non-respect par le propriétaire de l'ascenseur de cette obligation d'information dans un délai de deux jours ouvrables est puni d'une amende fixée à 250 euros par jour de retard. »"
+  },
+  {
+   "resume": "Obligation pour la société de maintenance d'intervenir dans un délai de six heures et de résorber la panne sous huit jours ouvrés, sauf force majeure (hors défaut de stock).",
+   "articleRef": "art. 1er (1° modifiant L. 134-3)",
+   "citation": "« La société précitée est tenue d'intervenir dans un délai de six heures à compter de l'information par le propriétaire [...] Si la panne ou le danger ne peut être résorbé lors de la première intervention [...] cette dernière est tenue d'y remédier dans un délai de huit jours ouvrés, sauf cas de force majeure. »"
+  },
+  {
+   "resume": "Pénalités contractuelles progressives à la charge de la société de maintenance : 100 €/jour, 300 €/jour à partir du 8e jour, 700 €/jour à partir du 15e jour de retard.",
+   "articleRef": "art. 1er (1° modifiant L. 134-3)",
+   "citation": "« des pénalités à la charge de la société chargée de la prestation d'un montant au moins égal à 100 € par jour de retard, puis à 300 € par jour à compter au huitième jour de retard et à 700 € par jour à compter du quinzième jour de retard. »"
+  },
+  {
+   "resume": "Pénalité de 10 €/jour de retard à la charge du propriétaire, se traduisant par une baisse de loyer pour le locataire en cas de panne non résolue.",
+   "articleRef": "art. 1er (1° modifiant L. 134-3)",
+   "citation": "« le propriétaire de l'ascenseur est sanctionné d'une pénalité contractuelle fixée à 10 euros par jour de retard se traduisant par une indemnisation du locataire partie au contrat de location sous la forme d'une baisse du loyer »"
+  },
+  {
+   "resume": "Obligation pour les sociétés de maintenance de constituer un stock de pièces couvrant entre deux et six mois des besoins d'usure, mutualisable entre sociétés solidairement responsables.",
+   "articleRef": "art. 1er (2° créant L. 134-3-1)",
+   "citation": "« tenue de constituer et de conserver un stock de pièces permettant de faire face à l'usure naturelle des différents composants [...] ne peut être inférieure à deux mois ni excéder six mois »"
+  },
+  {
+   "resume": "En cas de panne liée à l'indisponibilité d'une pièce du stock obligatoire, la société de maintenance doit remettre l'ascenseur en état sans frais pour le client.",
+   "articleRef": "art. 1er (2° créant L. 134-3-1)",
+   "citation": "« la société chargée de l'entretien et de la maintenance de l'ascenseur doit remettre le matériel concerné en état de fonctionnement normal sans aucuns frais pour le client. »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "L'ensemble des mécanismes créés convergent vers l'objectif affiché de lutte contre les pannes non prises en charge. Les délais contraignants (six heures d'intervention, huit jours pour résorber la panne, art. 1er) imposent une réactivité forte aux sociétés de maintenance. Les pénalités progressives (100 €, 300 €, 700 € par jour de retard, art. 1er) créent une incitation financière puissante à respecter ces délais. L'obligation de stock de pièces (art. L. 134-3-1) supprime l'excuse classique de l'indisponibilité de pièces, renforcée par l'obligation de remise en état sans frais en cas de défaut de stock. La baisse de loyer de 10 €/jour (art. 1er) incite le propriétaire à activer rapidement la chaîne. Le contrôle technique bisannuel ou quinquennal avec état de vétusté (art. 1er, 2° bis) et le répertoire national (art. L. 134-5-1) permettent une prévention en amont. Le service de portage pour les occupants fragiles (art. L. 134-3-2) traite la dimension sociale des pannes prolongées.",
+ "pointsDeVigilance": [
+  "L'exclusion des pannes liées à l'arrêt des réseaux 2G/3G (art. 1er, 1° et 2°) pourrait créer une zone d'impunité importante à mesure de l'extinction de ces réseaux.",
+  "L'entrée en vigueur différée de l'obligation de stock au 1er juillet 2026 (art. 2) laisse une fenêtre longue sans cette incitation clé.",
+  "Le dispositif de portage (art. L. 134-3-2) crée une nouvelle obligation à la charge du propriétaire sans financement dédié identifié, au-delà de la compensation générale par la taxe sur les tabacs (art. 3) dont l'affectation précise n'est pas détaillée.",
+  "L'obligation d'assurance spécifique (art. L. 211-1-2) pourrait alourdir les coûts pour les propriétaires et se répercuter sur les loyers.",
+  "Le rapport prévu à l'article 1er quater est limité aux ascenseurs en HLM, ce qui exclut le parc privé de l'observation statistique."
+ ],
+ "themes": [
+  "logement",
+  "copropriété",
+  "sécurité",
+  "maintenance",
+  "responsabilité civile"
+ ],
+ "scrutinsCles": [
+  "608",
+  "609",
+  "610",
+  "611"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:93cf46fc4f7647f15643682eb64b843170df6ea5e04fdf300dffdf24c2dd6dce"
+}

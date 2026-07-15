@@ -1,0 +1,47 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50581",
+ "generatedAt": "2026-07-15T05:17:18Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Refuser la ratification de l'accord commercial entre l'Union européenne et le Mercosur",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/refuser_ratification_mercosur_ue",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b0318_proposition-resolution",
+  "legifrance": null
+ },
+ "objectifAffiche": "La proposition de résolution invite le Gouvernement français à refuser la ratification de l'accord commercial entre l'Union européenne et le Mercosur. Il s'agit d'un acte de politique commerciale extérieure, sans exposé des motifs détaillé disponible dans le texte fourni.",
+ "mecanismesCles": [
+  {
+   "resume": "Résolution invitant le Gouvernement à refuser la ratification de l'accord UE-Mercosur, déposée le 9 octobre 2024 (procédure Article 34-1 de la Constitution).",
+   "articleRef": null,
+   "citation": "Proposition de résolution invitant le Gouvernement de la République française à refuser la ratification de l'accord commercial entre l'Union européenne et le Mercosur, n° 318, déposée le mercredi 9 octobre 2024"
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles substantiels : seul le titre et la mention de dépôt sont disponibles. Aucun mécanisme concret (obligation, taxe, dérogation, seuil) ne peut être identifié dans le tronçon fourni. Il est donc impossible de déterminer si les incitations réelles du texte vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué à 15 000 caractères et ne contient que les métadonnées et le titre ; l'exposé des motifs et les articles de la résolution ne sont pas accessibles.",
+  "Une résolution Article 34-1 n'a pas de force normative contraignante : elle invite le Gouvernement mais ne le lie pas.",
+  "Sans contenu substantiel, toute analyse des mécanismes serait purement spéculative."
+ ],
+ "themes": [
+  "commerce international",
+  "accord ue-mercosur",
+  "politique commerciale",
+  "résolution parlementaire"
+ ],
+ "scrutinsCles": [
+  "688",
+  "689",
+  "690",
+  "691"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:f23d1ed90bff1b5eedb9dbe26d3d7f3cbae6fbcc8b47a122e33f3aa081adcbdf"
+}

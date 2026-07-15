@@ -1,0 +1,45 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50275",
+ "generatedAt": "2026-07-15T05:29:41Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Violences commises dans les secteurs du cinéma, de l’audiovisuel, du spectacle vivant, de la mode et de la publicité",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/enquete_violences_cinema",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b0308_texte-adopte-commission",
+  "legifrance": null
+ },
+ "objectifAffiche": "Créer une commission d'enquête parlementaire relative aux violences commises dans les secteurs du cinéma, de l'audiovisuel, du spectacle vivant, de la mode et de la publicité.",
+ "mecanismesCles": [
+  {
+   "resume": "Proposition de résolution tendant à la création d'une commission d'enquête sur les violences dans plusieurs secteurs culturels et créatifs.",
+   "articleRef": null,
+   "citation": "proposition de résolution de M. Erwan Balanant et plusieurs de ses collègues tendant à la création d'une commission d'enquête relative aux violences commises dans les secteurs du cinéma, de l'audiovisuel, du spectacle vivant, de la mode et de la publicité"
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni est uniquement un en-tête administratif (titre, identifiant, procédure, statut, sommaire) sans exposé des motifs ni articles substantiels. Aucun mécanisme concret (obligations, sanctions, périmètre d'enquête, durée, composition) n'est décrit dans le contenu accessible, ce qui empêche d'évaluer si les incitations du texte vont dans le sens de l'objectif affiché.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué à 15000 caractères mais le contenu réellement fourni ne contient ni exposé des motifs ni articles.",
+  "Une proposition de résolution créant une commission d'enquête n'a pas d'effet normatif direct ; son efficacité dépend de la composition, de la durée et du périmètre qui ne sont pas visibles ici.",
+  "Impossibilité de vérifier l'alignement entre les mécanismes et l'objectif sans le contenu substantiel du texte."
+ ],
+ "themes": [
+  "violences",
+  "cinéma",
+  "audiovisuel",
+  "spectacle vivant",
+  "mode"
+ ],
+ "scrutinsCles": [
+  "2"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:818ac17fac596d2c2972fe53dbc193cb7adb0d925cacf4cb08d7828382dc1de7"
+}

@@ -1,0 +1,54 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50168",
+ "generatedAt": "2026-07-15T05:27:14Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Proposition de loi organique portant réforme du financement de l'audiovisuel public",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/DLR5L17N50168",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0010_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Réformer le financement de l'audiovisuel public en modifiant la loi organique relative aux lois de finances, afin de permettre l'affectation directe d'une imposition de toute nature aux organismes du secteur public de la communication audiovisuelle.",
+ "mecanismesCles": [
+  {
+   "resume": "Modification de l'article 2 de la loi organique du 1er août 2001 relative aux lois de finances : ajout d'une phrase permettant qu'un montant déterminé d'une imposition de toute nature soit directement affecté aux organismes du secteur public de la communication audiovisuelle, sous les mêmes réserves que celles existantes.",
+   "articleRef": "Article unique (1er)",
+   "citation": "« Un montant déterminé d'une imposition de toute nature peut, sous les mêmes réserves, être directement affecté aux organismes du secteur public de la communication audiovisuelle. »"
+  },
+  {
+   "resume": "Suppression des articles 2 et 3 du texte initial.",
+   "articleRef": "Articles 2 et 3",
+   "citation": "(Supprimés)"
+  }
+ ],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte adopté ne contient qu'un article unique modifiant la loi organique de 2001 pour permettre l'affectation directe d'une imposition aux organismes de l'audiovisuel public. Le texte étant tronqué et l'exposé des motifs absent, il est impossible de déterminer avec certitude l'objectif politique précis poursuivi (par exemple : remplacer la contribution à l'audiovisuel public, diversifier les ressources, ou simplement ouvrir une faculté constitutionnelle). De même, les articles 2 et 3 ayant été supprimés, on ne dispose pas des mécanismes concrets qui auraient pu préciser la portée de la réforme. L'alignement entre l'objectif affiché et les incitations réellement créées ne peut donc pas être évalué.",
+ "pointsDeVigilance": [
+  "L'exposé des motifs n'est pas fourni dans le texte tronqué, ce qui empêche de connaître l'intention réelle du législateur.",
+  "Les articles 2 et 3 ont été supprimés en séance, ce qui réduit considérablement la portée du texte par rapport à la proposition initiale.",
+  "Le texte ne crée pas de ressource nouvelle ni ne supprime la contribution à l'audiovisuel public : il ouvre seulement une faculté constitutionnelle d'affectation.",
+  "Le texte est qualifié de 'provisoire' et la 'petite loi' fait foi, ce qui invite à la prudence sur la version définitive."
+ ],
+ "themes": [
+  "audiovisuel public",
+  "financement",
+  "loi organique",
+  "lois de finances",
+  "imposition affectée"
+ ],
+ "scrutinsCles": [
+  "448",
+  "449",
+  "450",
+  "451"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:72baa610b335134872c5bb67f44954db490e5791af2b901256927e8ce9a0da75"
+}

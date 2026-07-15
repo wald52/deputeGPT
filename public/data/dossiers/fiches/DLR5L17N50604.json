@@ -1,0 +1,38 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50604",
+ "generatedAt": "2026-07-15T05:25:59Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Création d’un centre hospitalier universitaire en Corse",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/creation_chu_corse",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b2478_proposition-loi",
+  "legifrance": null
+ },
+ "objectifAffiche": "Créer un centre hospitalier universitaire (CHU) en Corse, par une proposition de loi ordinaire déposée le 12 février 2026 et modifiée par le Sénat.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs ni articles : seules les métadonnées du dossier législatif (titre, numéro, date de dépôt, commission saisie) sont accessibles. Aucun mécanisme concret (obligation, création de structure, financement, dérogation) ne peut être identifié dans le contenu transmis, ce qui empêche toute analyse des incitations.",
+ "pointsDeVigilance": [
+  "Le texte officiel est tronqué à 15000 caractères mais, en pratique, seul l'en-tête du dossier est présent : ni l'exposé des motifs ni les articles ne figurent dans l'extrait.",
+  "La mention 'modifiée par le Sénat' indique une navette parlementaire, mais le contenu des modifications est absent.",
+  "La création d'un CHU implique habituellement des mécanismes de coopération hospitalo-universitaire, de transfert de missions de service public et de financement : aucun de ces éléments n'est visible dans le texte fourni."
+ ],
+ "themes": [
+  "sante",
+  "enseignement_superieur",
+  "amenagement_du_territoire",
+  "corse"
+ ],
+ "scrutinsCles": [
+  "502"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:33df0e24c19c3d75f603ccb7a38faad9b0aeee7a973c96100a2aa47edd8e61b2"
+}

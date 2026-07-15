@@ -1,0 +1,66 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L16N46655",
+ "generatedAt": "2026-07-15T05:16:53Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Interdire les dispositifs électroniques de vapotage à usage unique",
+ "statut": "promulgue",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/16/dossiers/interdire_vapotage_unique",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0041_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est une proposition de loi ordinaire visant à interdire les dispositifs électroniques de vapotage à usage unique (puffs), comme l'indique son titre. L'objectif affiché est de prohiber la détention en vue de la vente, la distribution, la mise en vente, la vente et l'offre à titre gratuit de ces produits préremplis non rechargeables.",
+ "mecanismesCles": [
+  {
+   "resume": "Interdiction de la détention en vue de la vente, distribution, mise en vente, vente et offre à titre gratuit des dispositifs de vapotage préremplis et non rechargeables (à l'exception des cartouches).",
+   "articleRef": "art. 1er (I, 1°) - nouvel art. L. 3513-5-1 du CSP",
+   "citation": "« Sont interdites la détention en vue de la vente, de la distribution ou de l'offre à titre gratuit, la mise en vente, la vente, la distribution ou l'offre à titre gratuit des dispositifs électroniques de vapotage mentionnés au 1° de l'article L. 3513-1 qui sont préremplis avec un liquide et ne peuvent être remplis à nouveau »"
+  },
+  {
+   "resume": "Extension des pouvoirs de contrôle : les agents du code de la consommation (art. L. 511-3) sont habilités à rechercher et constater les infractions à cette nouvelle interdiction, avec les pouvoirs prévus à l'article L. 511-22.",
+   "articleRef": "art. 1er (I, 5° bis) - nouvel art. L. 3515-2-1 A du CSP",
+   "citation": "« Les agents mentionnés à l'article L. 511-3 du code de la consommation sont habilités à rechercher et à constater les infractions aux articles [...] L. 3513-5-1 [...] »"
+  },
+  {
+   "resume": "Création d'un régime de sanctions pénales : le 15° de l'article L. 3515-3 est complété pour sanctionner le fait de fabriquer, détenir en vue de la vente, distribuer ou offrir à titre gratuit des dispositifs en méconnaissance de l'article L. 3513-5-1.",
+   "articleRef": "art. 1er (I, 6° b) - art. L. 3515-3 du CSP",
+   "citation": "« fabriquer, détenir en vue de la vente, de la distribution ou de l'offre à titre gratuit, mettre en vente [...] en méconnaissance de l'article L. 3513-5-1 »"
+  },
+  {
+   "resume": "Extension de l'application territoriale : les nouvelles dispositions sont rendues applicables dans les îles Wallis et Futuna.",
+   "articleRef": "art. 1er (I, 7°) - art. L. 3822-4 du CSP",
+   "citation": "« Les articles L. 3513-5-1, L. 3513-7, L. 3513-15, L. 3515-1 et L. 3515-3 sont applicables dans le territoire des îles Wallis et Futuna »"
+  },
+  {
+   "resume": "Suppression de la mention spécifique aux 'dispositifs jetables' dans plusieurs articles du CSP, vraisemblablement pour harmoniser le régime juridique autour de la nouvelle interdiction générale.",
+   "articleRef": "art. 1er (I, 2°, 3°, 6° a bis)",
+   "citation": "« Les dispositifs électroniques de vapotage jetables, » sont supprimés et, après le mot : « recharge », sont insérés les mots : « des dispositifs électroniques de vapotage »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Le texte crée directement l'interdiction ciblée par son titre : l'article L. 3513-5-1 nouveau prohibe explicitement la vente, la distribution et l'offre à titre gratuit des dispositifs préremplis non rechargeables. Cette interdiction est doublée d'un mécanisme de contrôle (habilitation des agents de la consommation, art. L. 3515-2-1 A) et d'un régime de sanctions pénales (art. L. 3515-3, 15°), ce qui renforce l'effectivité de la mesure. L'extension à Wallis-et-Futuna (art. L. 3822-4) assure une portée uniforme. L'ensemble des mécanismes va donc dans le sens de l'objectif affiché d'interdiction des puffs à usage unique.",
+ "pointsDeVigilance": [
+  "L'interdiction vise uniquement la chaîne de commercialisation (vente, distribution, offre gratuite) et non la détention ou l'usage par les consommateurs, ce qui peut limiter l'impact sur le stock existant.",
+  "Les cartouches sont explicitement exclues du champ de l'interdiction, ce qui pourrait créer un contournement via des dispositifs rechargeables vendus avec cartouches préremplies.",
+  "Le texte ne prévoit pas de date d'entrée en vigueur spécifique dans l'extrait fourni, ni de mesures d'accompagnement (aide à la reconversion des professionnels, sensibilisation des consommateurs).",
+  "L'absence d'exposé des motifs dans le texte fourni limite l'analyse des intentions sous-jacentes (santé publique, environnement, lutte contre le tabagisme des mineurs)."
+ ],
+ "themes": [
+  "santé publique",
+  "tabagisme",
+  "vapotage",
+  "interdiction",
+  "protection des mineurs"
+ ],
+ "scrutinsCles": [
+  "692"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:20571a2f4b3a564614cb41c7e1835ab6e9cbe85664bc6756a9a358671dd7d5b6"
+}
