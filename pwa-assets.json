@@ -1,6 +1,6 @@
 {
-  "version": "dbd2ce1c72a3",
-  "generatedAt": "2026-07-16T06:46:12.518Z",
+  "version": "bf3418e1b5e9",
+  "generatedAt": "2026-07-17T06:47:57.967Z",
   "precache": [
     "./",
     "index.html",
@@ -33,7 +33,7 @@
   "runtimeWarmup": [
     "public/data/model-catalog.json",
     "public/data/deputes_actifs/latest.json",
-    "boot-v2026-07-16.json",
+    "boot-v2026-07-17.json",
     "public/data/deputes_actifs/groupes.json"
   ]
 }
