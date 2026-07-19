@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-07-15T05:29:41Z",
- "totalFiches": 224,
+ "generatedAt": "2026-07-19T05:42:37Z",
+ "totalFiches": 225,
  "fiches": {
   "DLR5L16N46127": {
    "titre": "Proposition de loi portant réparation des personnes condamnées pour homosexualité entre 1945 et 1982",
@@ -2127,13 +2127,13 @@
   "DLR5L17N52781": {
    "titre": "Assurer le droit de chaque enfant à disposer d’un avocat dans le cadre d’une mesure d’assistance éducative et de protection de l’enfance",
    "verdictIncitations": "incitations_alignees",
-   "statut": "en_cours",
-   "generatedAt": "2026-07-05T23:12:21Z",
+   "statut": "promulgue",
+   "generatedAt": "2026-07-19T05:38:33Z",
    "themes": [
-    "protection de l'enfance",
-    "assistance éducative",
     "droits de l'enfant",
+    "assistance éducative",
     "aide juridictionnelle",
+    "protection de l'enfance",
     "accès à l'avocat"
    ]
   },
@@ -2835,6 +2835,17 @@
     "contrôle d'honorabilité",
     "formation des personnels",
     "droits des élèves"
+   ]
+  },
+  "DLR5L17N54372": {
+   "titre": "Projet de loi relatif à la protection des enfants",
+   "verdictIncitations": "indetermine",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-19T05:38:02Z",
+   "themes": [
+    "protection de l'enfance",
+    "droit de la famille",
+    "politique sociale"
    ]
   },
   "DLR5L17N54373": {

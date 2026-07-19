@@ -1,0 +1,41 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N54372",
+ "generatedAt": "2026-07-19T05:38:02Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Projet de loi relatif à la protection des enfants",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/projet_de_loi_relatif_a_la_protection_des_enfants",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17b3018_texte-adopte-commission",
+  "legifrance": null
+ },
+ "objectifAffiche": "Le texte est un projet de loi ordinaire relatif à la protection des enfants, examiné en procédure accélérée par une commission spéciale de l'Assemblée nationale (texte n°3018-A0 issu du projet n°2841 rectifié). L'objectif affiché ne peut être précisé davantage car ni l'exposé des motifs ni le contenu des articles ne sont fournis dans le texte tronqué.",
+ "mecanismesCles": [],
+ "verdictIncitations": "indetermine",
+ "justificationVerdict": "Le texte fourni ne contient ni exposé des motifs, ni articles, ni aucune disposition substantielle : seuls figurent des métadonnées (titre, identifiants, procédure, statut, sommaire, liens de navigation). En l'absence de tout mécanisme législatif identifiable, il est impossible de déterminer si les incitations créées par le texte vont dans le sens de l'objectif affiché ou s'y opposent.",
+ "pointsDeVigilance": [
+  "Le texte officiel a été tronqué à 15000 caractères et ne contient que les en-têtes et liens de navigation, sans aucun article ni exposé des motifs.",
+  "La date de dépôt (7 juillet 2026) est postérieure à la date courante et au cutoff de connaissance du modèle, ce qui suggère un texte fictif ou prospectif.",
+  "L'identifiant DLR5L17N54372 et la référence 3018-A0 ne permettent pas de retrouver le contenu réel du texte.",
+  "Impossibilité d'évaluer la cohérence entre objectifs et mécanismes sans accès au dispositif."
+ ],
+ "themes": [
+  "protection de l'enfance",
+  "droit de la famille",
+  "politique sociale"
+ ],
+ "scrutinsCles": [
+  "8414",
+  "8415",
+  "8416",
+  "8417"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:76bf58d4ed589b2c135a9a7058ff37698a1ec656743563d8931cdd29253c5b35"
+}
