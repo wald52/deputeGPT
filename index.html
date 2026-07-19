@@ -70,6 +70,13 @@
       display: none !important;
     }
 
+    /* Les overlays n'ont aucun style tant que app.css (différé) n'est pas chargé :
+       sans cette règle ils s'affichent en flux et provoquent un fort décalage de
+       mise en page (CLS) au premier rendu. app.css les réaffiche via .visible. */
+    .consent-overlay {
+      display: none;
+    }
+
     .sr-only {
       position: absolute;
       width: 1px;
@@ -108,6 +115,23 @@
     footer {
       position: relative;
       z-index: 1;
+    }
+
+    /* Reproduit la géométrie finale du footer d'app.css (différé) : sans elle,
+       le footer se rend d'abord aux tailles par défaut du navigateur puis
+       rétrécit à l'arrivée d'app.css, en décalant tout le layout (CLS). */
+    footer {
+      flex-shrink: 0;
+      text-align: center;
+      padding: 4px 6px;
+      font-size: 0.75rem;
+      color: #4e6078;
+      background: #eef3f9;
+      border-top: 1px solid #d8e2ef;
+    }
+
+    footer p {
+      margin: 0;
     }
 
     header {
@@ -1073,6 +1097,10 @@
               </div>
             </div>
           </div>
+
+          <div id="chat-quick-actions" class="chat-quick-actions" role="group" aria-label="Questions rapides"></div>
+          <div id="chat-scope-summary" class="chat-scope-summary hidden" aria-live="polite"></div>
+          <div id="chat-scope-actions" class="chat-scope-actions hidden" role="group" aria-label="Actions sur le périmètre courant"></div>
 
           <div id="messages" role="log" aria-live="polite" aria-relevant="additions text">
             <div id="chat-empty-state" class="chat-empty-state">

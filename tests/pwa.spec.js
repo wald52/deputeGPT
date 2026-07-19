@@ -124,7 +124,7 @@ test('le controleur PWA masque le bouton d installation par defaut et gere la mi
   });
 
   await expect(page.locator('#pwa-update-btn')).toBeVisible();
-  await expect(page.locator('#pwa-status-text')).toContainText('Mise a jour disponible');
+  await expect(page.locator('#pwa-status-text')).toContainText('Mise à jour disponible');
 
   await page.locator('#pwa-update-btn').click();
   await expect.poll(() => page.evaluate(() => window.__waitingMessages.slice())).toEqual([

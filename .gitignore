@@ -29,6 +29,8 @@ logs/
 ~*
 playwright-*.png
 tmp-codex-window*.png
+tmp-lighthouse-*.json
+tmp-lighthouse-index.html
 __pycache__/
 *.pyc
 test-results/

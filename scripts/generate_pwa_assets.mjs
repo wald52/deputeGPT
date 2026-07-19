@@ -40,8 +40,14 @@ function normalizeAssetPath(rawPath) {
 async function readLatestMetadata() {
   try {
     const payload = JSON.parse(await fs.readFile(LATEST_PATH, 'utf8'));
+    // latest.json expose boot_path relativement au dossier deputes_actifs
+    // (voir buildDeputesAssetPathInternal dans js/data/deputes-repository.js) :
+    // il faut le préfixer, sinon le service worker préchauffe une URL 404.
+    const rawBootPath = payload.boot_path || `boot-${payload.version}.json`;
     const bootPath = normalizeAssetPath(
-      payload.boot_path || `public/data/deputes_actifs/boot-${payload.version}.json`
+      /^https?:\/\//i.test(rawBootPath) || rawBootPath.startsWith('/')
+        ? rawBootPath
+        : `public/data/deputes_actifs/${rawBootPath}`
     );
 
     return {
