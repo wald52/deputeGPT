@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
- "generatedAt": "2026-07-20T06:02:21Z",
- "totalFiches": 225,
+ "generatedAt": "2026-07-21T05:40:11Z",
+ "totalFiches": 226,
  "fiches": {
   "DLR5L16N46127": {
    "titre": "Proposition de loi portant réparation des personnes condamnées pour homosexualité entre 1945 et 1982",
@@ -753,6 +753,19 @@
     "lutte contre les discriminations",
     "procédure disciplinaire",
     "formation"
+   ]
+  },
+  "DLR5L17N50775": {
+   "titre": "Mesures d’urgence pour protéger nos enfants accueillis en crèches privées à but lucratif",
+   "verdictIncitations": "incitations_alignees",
+   "statut": "en_cours",
+   "generatedAt": "2026-07-21T05:40:10Z",
+   "themes": [
+    "petite enfance",
+    "crèches privées",
+    "fonds d'investissement",
+    "sécurité des enfants",
+    "encadrement professionnel"
    ]
   },
   "DLR5L17N50777": {

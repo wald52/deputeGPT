@@ -1,0 +1,72 @@
+{
+ "schemaVersion": 1,
+ "analysisVersion": 2,
+ "dossierId": "DLR5L17N50775",
+ "generatedAt": "2026-07-21T05:40:10Z",
+ "model": {
+  "provider": "nvidia-nim",
+  "id": "minimaxai/minimax-m3",
+  "baseUrl": "https://integrate.api.nvidia.com/v1"
+ },
+ "titre": "Mesures d’urgence pour protéger nos enfants accueillis en crèches privées à but lucratif",
+ "statut": "en_cours",
+ "sources": {
+  "dossierAn": "https://www.assemblee-nationale.fr/dyn/17/dossiers/mesures_urgence_creches_privees_lucratif",
+  "texteAn": "https://www.assemblee-nationale.fr/dyn/17/textes/l17t0030_texte-adopte-provisoire",
+  "legifrance": null
+ },
+ "objectifAffiche": "Protéger en urgence les enfants accueillis en crèches privées à but lucratif, en encadrant les rachats par des fonds d'investissement, en renforçant les sanctions contre les gestionnaires fautifs et en améliorant la qualité de l'encadrement professionnel.",
+ "mecanismesCles": [
+  {
+   "resume": "Autorisation préalable obligatoire par les ministres (affaires sociales et économie) pour toute acquisition par un fonds d'investissement ou OPC de parts/actions d'une entreprise gérant des crèches (art. L. 2324-1 CSP).",
+   "articleRef": "art. 1er (I, 1°)",
+   "citation": "« L'acquisition [...] de parts, d'actions, de titres de créance ou de contrats financiers d'une entreprise gérant un ou plusieurs établissements d'accueil des enfants de moins de six ans [...] est soumise à l'autorisation préalable des ministres chargés des affaires sociales et de l'économie. »"
+  },
+  {
+   "resume": "Critères d'autorisation fixés par décret en Conseil d'État, visant à garantir sécurité et qualité de l'accueil, avec avis de l'AMF, de la CNAF et des services de l'État.",
+   "articleRef": "art. 1er (I, 1°, II)",
+   "citation": "« critères [...] visant à contrôler l'adéquation entre la stratégie d'investissement proposée et la spécificité de l'activité [...] afin de garantir [...] la sécurité et la qualité de l'accueil des enfants »"
+  },
+  {
+   "resume": "Contrôle tous les deux ans du respect des critères d'autorisation.",
+   "articleRef": "art. 1er (I, 1°, III)",
+   "citation": "« Le respect des critères de délivrance de l'autorisation [...] est contrôlé, tous les deux ans »"
+  },
+  {
+   "resume": "Sanction par l'AMF (avertissement, blâme, interdiction, radiation) et sanction pécuniaire de 1 % à 5 % du chiffre d'affaires annuel en cas d'absence d'autorisation ou de non-respect d'un refus.",
+   "articleRef": "art. 1er (I, 2°, b)",
+   "citation": "« sanction pécuniaire dont le montant est compris entre 1 % et 5 % du chiffre d'affaires annuel desdits fonds »"
+  },
+  {
+   "resume": "Renforcement des sanctions pénales contre les gestionnaires d'établissements : taux de 5 % porté à 15 % et amende maximale de 100 000 € portée à 1 000 000 €.",
+   "articleRef": "art. 2",
+   "citation": "« le taux : « 5 % » est remplacé par le taux : « 15 % » [...] « 100 000 euros » est remplacé par le montant : « 1 000 000 euros »"
+  },
+  {
+   "resume": "Contrôles IGAS/IGF déclenchés sans délai en cas de signalements, alertes ou avertissements répétés (plusieurs sur deux ans) pour un même gestionnaire.",
+   "articleRef": "art. 2 bis",
+   "citation": "« Lorsque qu'un même gestionnaire [...] a fait l'objet de plusieurs signalements, alertes ou avertissements au cours d'une période de deux ans [...] les contrôles [...] sont engagés sans délai. »"
+  }
+ ],
+ "verdictIncitations": "incitations_alignees",
+ "justificationVerdict": "Les mécanismes convergent vers l'objectif affiché de protection des enfants en crèches privées lucratives. L'article 1er instaure un filtre ex ante sur les rachats par les fonds (« autorisation préalable [...] afin de garantir [...] la sécurité et la qualité de l'accueil »), couplé à un contrôle bisannuel et à des sanctions pécuniaires proportionnelles au chiffre d'affaires (art. 1er, 2°). L'article 2 triple le plafond de l'amende administrative (de 100 000 € à 1 000 000 €) et triple le taux de 5 % à 15 %, renforçant la dissuasion. L'article 2 bis accélère les contrôles IGAS/IGF en cas de signalements répétés. L'article 3 agit sur la qualité de l'encadrement (taux garanti et interdiction des formations 100 % à distance sans stage). L'ensemble crée donc des incitations directes à la qualité et à la sécurité, cohérentes avec l'objectif affiché.",
+ "pointsDeVigilance": [
+  "L'efficacité dépend de décrets en Conseil d'État (critères d'autorisation, taux d'encadrement) non fournis dans le texte.",
+  "Le texte ne crée pas d'obligation de cession ni de retrait d'agrément : un refus d'autorisation bloque l'acquisition mais ne contraint pas les structures déjà détenues par des fonds.",
+  "L'article 4 n'est qu'un rapport sans effet normatif immédiat sur le financement.",
+  "Le champ est limité aux établissements mentionnés à l'art. L. 2324-1 CSP (accueil de moins de 6 ans), excluant d'autres formes de garde.",
+  "Les sanctions pécuniaires (1 % à 5 % du CA) visent les fonds, pas directement les gestionnaires de crèches."
+ ],
+ "themes": [
+  "petite enfance",
+  "crèches privées",
+  "fonds d'investissement",
+  "sécurité des enfants",
+  "encadrement professionnel"
+ ],
+ "scrutinsCles": [
+  "612"
+ ],
+ "disclaimer": "Analyse générée automatiquement par IA à partir du texte officiel. À vérifier sur les sources citées.",
+ "sourceTextHash": "sha256:4cce9e54aceaed4d5b4e9de43c99156d4c383f95608834620a32e7bd34eb7faa"
+}
