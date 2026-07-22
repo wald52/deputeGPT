@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "legislature": "17",
- "generatedAt": "2026-07-21T05:37:11Z",
+ "generatedAt": "2026-07-22T05:35:40Z",
  "scrutins": {
   "1": {
    "dossierId": null,
@@ -41218,10 +41218,60 @@
    "method": "title_containment",
    "confidence": 0.95
   },
+  "8418": {
+   "dossierId": "DLR5L17N51732",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8419": {
+   "dossierId": null,
+   "method": "unmatched",
+   "confidence": 0.0
+  },
   "842": {
    "dossierId": null,
    "method": "none",
    "confidence": 1.0
+  },
+  "8420": {
+   "dossierId": "DLR5L17N54006",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8421": {
+   "dossierId": "DLR5L17N54006",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8422": {
+   "dossierId": "DLR5L17N54085",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8423": {
+   "dossierId": "DLR5L17N54085",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8424": {
+   "dossierId": "DLR5L17N54085",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8425": {
+   "dossierId": "DLR5L17N54085",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8426": {
+   "dossierId": "DLR5L17N54085",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8427": {
+   "dossierId": "DLR5L17N54085",
+   "method": "title_containment",
+   "confidence": 0.95
   },
   "843": {
    "dossierId": "DLR5L17N53702",
@@ -48923,11 +48973,14 @@
     "PIONANR5L17B2107",
     "PIONANR5L17B2610",
     "PIONANR5L17BTA0217",
+    "PIONANR5L17BTA0339",
     "PIONANR5L17BTC2341",
     "PIONANR5L17BTC3069",
     "PIONANR5L17TAP0217",
+    "PIONANR5L17TAP0339",
     "PIONSNR5S479B0304",
     "PIONSNR5S479BTA0079",
+    "PIONSNR5S479BTA0163",
     "PIONSNR5S479BTC0469",
     "PIONSNR5S479BTC0903",
     "RAPPANR5L17B2341",
@@ -49079,9 +49132,11 @@
     "PIONANR5L17B1796",
     "PIONANR5L17B2917",
     "PIONANR5L17BTA0221",
+    "PIONANR5L17BTA0341",
     "PIONANR5L17BTC2345",
     "PIONANR5L17BTC3004",
     "PIONANR5L17TAP0221",
+    "PIONANR5L17TAP0341",
     "PIONSNR5S479B0319",
     "PIONSNR5S479BTA0133",
     "PIONSNR5S479BTA0154",
@@ -51543,6 +51598,7 @@
     "PIONANR5L17TAP0336",
     "PIONSNR5S479B0629",
     "PIONSNR5S479BTA0155",
+    "PIONSNR5S479BTA0165",
     "PIONSNR5S479BTC0833",
     "PIONSNR5S479BTC0896",
     "RAPPANR5L17B2755",
@@ -51625,7 +51681,9 @@
     "6642",
     "6643",
     "6644",
-    "6645"
+    "6645",
+    "8420",
+    "8421"
    ]
   },
   "DLR5L16N49801": {
@@ -51703,8 +51761,10 @@
     "PRJLANR5L17BTC2765",
     "PRJLANR5L17BTC3067",
     "PRJLANR5L17TAP0295",
+    "PRJLANR5L17TAP0337",
     "PRJLSNR5S479B0689",
     "PRJLSNR5S479BTA0152",
+    "PRJLSNR5S479BTA0166",
     "PRJLSNR5S479BTC0763",
     "PRJLSNR5S479BTC0894",
     "RAPPANR5L17B2765",
@@ -52131,7 +52191,13 @@
     "7206",
     "7207",
     "7208",
-    "7259"
+    "7259",
+    "8422",
+    "8423",
+    "8424",
+    "8425",
+    "8426",
+    "8427"
    ]
   },
   "DLR5L17N50911": {
@@ -52988,6 +53054,7 @@
     "PIONSNR5S459BTA0137",
     "PIONSNR5S459BTC0670",
     "PIONSNR5S479B0807",
+    "PIONSNR5S479BTA0162",
     "PIONSNR5S479BTC0886",
     "RAPPANR5L17B2797",
     "RAPPANR5L17B3057",
@@ -53071,7 +53138,8 @@
     "7890",
     "7891",
     "7892",
-    "7893"
+    "7893",
+    "8418"
    ]
   },
   "DLR5L17N53942": {
@@ -53226,12 +53294,14 @@
    "texteRefs": [
     "PRJLANR5L17B2850",
     "PRJLANR5L17BTA0331",
+    "PRJLANR5L17BTA0340",
     "PRJLANR5L17BTC2984",
     "PRJLANR5L17BTC3070",
     "PRJLANR5L17TAP0331",
     "PRJLSNR5S479B0472",
     "PRJLSNR5S479B0897",
     "PRJLSNR5S479BTA0118",
+    "PRJLSNR5S479BTA0164",
     "PRJLSNR5S479BTC0602",
     "PRJLSNR5S479BTC0905",
     "RAPPANR5L17B2984",
@@ -53543,7 +53613,9 @@
     "ETDIANR5L17B2841",
     "LETTANR5L17B3000",
     "PRJLANR5L17B2841",
+    "PRJLANR5L17BTA0338",
     "PRJLANR5L17BTC3018",
+    "PRJLANR5L17TAP0338",
     "RAPPANR5L17B3018"
    ],
    "refJo": null,
@@ -55496,19 +55568,20 @@
   "7817",
   "7818",
   "7894",
-  "8280"
+  "8280",
+  "8419"
  ],
  "stats": {
-  "totalScrutins": 8417,
+  "totalScrutins": 8427,
   "totalDossiersLies": 226,
-  "matchRate": 0.8379,
+  "matchRate": 0.838,
   "methods": {
    "override": 0,
    "field": 0,
-   "title_containment": 6511,
+   "title_containment": 6520,
    "title_match": 519,
    "none": 27,
-   "unmatched": 1360
+   "unmatched": 1361
   }
  }
 }
