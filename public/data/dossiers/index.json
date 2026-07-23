@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "legislature": "17",
- "generatedAt": "2026-07-22T05:35:40Z",
+ "generatedAt": "2026-07-23T05:40:40Z",
  "scrutins": {
   "1": {
    "dossierId": null,
@@ -41273,8 +41273,43 @@
    "method": "title_containment",
    "confidence": 0.95
   },
+  "8428": {
+   "dossierId": "DLR5L17N54372",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8429": {
+   "dossierId": "DLR5L17N54372",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
   "843": {
    "dossierId": "DLR5L17N53702",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8430": {
+   "dossierId": "DLR5L17N54372",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8431": {
+   "dossierId": "DLR5L17N53187",
+   "method": "title_containment",
+   "confidence": 0.95
+  },
+  "8432": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_match",
+   "confidence": 0.818
+  },
+  "8433": {
+   "dossierId": "DLR5L17N53980",
+   "method": "title_match",
+   "confidence": 0.818
+  },
+  "8434": {
+   "dossierId": "DLR5L17N52746",
    "method": "title_containment",
    "confidence": 0.95
   },
@@ -49027,7 +49062,8 @@
     "5189",
     "5190",
     "5191",
-    "5192"
+    "5192",
+    "8431"
    ]
   },
   "DLR5L17N50370": {
@@ -49163,7 +49199,8 @@
     "5237",
     "5238",
     "5239",
-    "5240"
+    "5240",
+    "8434"
    ]
   },
   "DLR5L17N53279": {
@@ -53298,6 +53335,7 @@
     "PRJLANR5L17BTC2984",
     "PRJLANR5L17BTC3070",
     "PRJLANR5L17TAP0331",
+    "PRJLANR5L17TAP0340",
     "PRJLSNR5S479B0472",
     "PRJLSNR5S479B0897",
     "PRJLSNR5S479BTA0118",
@@ -53599,7 +53637,9 @@
     "8276",
     "8277",
     "8278",
-    "8279"
+    "8279",
+    "8432",
+    "8433"
    ]
   },
   "DLR5L17N54372": {
@@ -53757,7 +53797,10 @@
     "8414",
     "8415",
     "8416",
-    "8417"
+    "8417",
+    "8428",
+    "8429",
+    "8430"
    ]
   },
   "DLR5L17N51161": {
@@ -55572,14 +55615,14 @@
   "8419"
  ],
  "stats": {
-  "totalScrutins": 8427,
+  "totalScrutins": 8434,
   "totalDossiersLies": 226,
-  "matchRate": 0.838,
+  "matchRate": 0.8381,
   "methods": {
    "override": 0,
    "field": 0,
-   "title_containment": 6520,
-   "title_match": 519,
+   "title_containment": 6525,
+   "title_match": 521,
    "none": 27,
    "unmatched": 1361
   }
