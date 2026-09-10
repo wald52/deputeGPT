@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-09-09T09:07:09Z",
+  "generatedAt": "2026-09-10T09:15:34Z",
   "documentType": "scrutin",
   "stats": {
     "totalDocuments": 8434,
@@ -47,7 +47,7 @@
       "artifact": {
         "path": "semantic_index.json",
         "bytes": 38028970,
-        "sha256": "5b11630b637f00ff97fd9601a4c12e0f24ffe561c30f2776cdefb950965a9eec",
+        "sha256": "a667e5437197d9644104ce6e1de7e015699e33d5b31ab9dac3a76d8bce010d61",
         "quantization": "int8",
         "vectorDimension": 384,
         "valueScale": 127
@@ -78,7 +78,7 @@
       "artifact": {
         "path": "semantic_multivector_index.json",
         "bytes": 103072836,
-        "sha256": "9198f6696c25e3a43855e850b3f5b2287a5a9b32a0c37e0b7c6307f69ca50e95",
+        "sha256": "00a0c3942069f4932251faff0c07a67331b03ab21797d14410ecf3e070fe55e2",
         "quantization": "int8",
         "vectorDimension": 384,
         "valueScale": 127,
@@ -126,12 +126,12 @@
     "lexicalIndex": {
       "path": "lexical_index.json",
       "bytes": 9403968,
-      "sha256": "d26162105a160dadcd2c30a7d59e1f70f577ba45ca0968aaf74f0af4857fe0c0"
+      "sha256": "e848e6607cccc9b91b3148e20c8b6903ea7fd7b8be3cea1d1cc9129ccf6eb7ae"
     },
     "semanticIndex": {
       "path": "semantic_index.json",
       "bytes": 38028970,
-      "sha256": "5b11630b637f00ff97fd9601a4c12e0f24ffe561c30f2776cdefb950965a9eec",
+      "sha256": "a667e5437197d9644104ce6e1de7e015699e33d5b31ab9dac3a76d8bce010d61",
       "quantization": "int8",
       "vectorDimension": 384,
       "valueScale": 127
@@ -139,7 +139,7 @@
     "semanticMultivectorIndex": {
       "path": "semantic_multivector_index.json",
       "bytes": 103072836,
-      "sha256": "9198f6696c25e3a43855e850b3f5b2287a5a9b32a0c37e0b7c6307f69ca50e95",
+      "sha256": "00a0c3942069f4932251faff0c07a67331b03ab21797d14410ecf3e070fe55e2",
       "quantization": "int8",
       "vectorDimension": 384,
       "valueScale": 127,

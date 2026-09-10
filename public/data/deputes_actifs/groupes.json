@@ -50,7 +50,7 @@
   {
     "code": "LIOT",
     "nom": "Libertés, Indépendants, Outre-mer et Territoires",
-    "seats": 23,
+    "seats": 22,
     "couleur": "#FFD96F"
   },
   {
@@ -68,7 +68,7 @@
   {
     "code": "NI",
     "nom": "Non inscrit",
-    "seats": 10,
+    "seats": 11,
     "couleur": "#8D949A"
   }
 ]
