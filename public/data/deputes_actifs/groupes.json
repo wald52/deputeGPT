@@ -20,7 +20,7 @@
   {
     "code": "SOC",
     "nom": "Socialistes et apparentés",
-    "seats": 68,
+    "seats": 67,
     "couleur": "#F5B4CE"
   },
   {
@@ -68,7 +68,7 @@
   {
     "code": "NI",
     "nom": "Non inscrit",
-    "seats": 11,
+    "seats": 12,
     "couleur": "#8D949A"
   }
 ]
