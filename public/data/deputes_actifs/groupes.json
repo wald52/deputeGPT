@@ -2,7 +2,7 @@
   {
     "code": "RN",
     "nom": "Rassemblement National",
-    "seats": 122,
+    "seats": 118,
     "couleur": "#313567"
   },
   {
@@ -14,7 +14,7 @@
   {
     "code": "LFI-NFP",
     "nom": "La France insoumise - Nouveau Front Populaire",
-    "seats": 71,
+    "seats": 70,
     "couleur": "#C00D0D"
   },
   {
@@ -26,7 +26,7 @@
   {
     "code": "DR",
     "nom": "Droite Républicaine",
-    "seats": 48,
+    "seats": 47,
     "couleur": "#8CB0DC"
   },
   {
@@ -44,7 +44,7 @@
   {
     "code": "HOR",
     "nom": "Horizons & Indépendants",
-    "seats": 36,
+    "seats": 34,
     "couleur": "#B5E2F9"
   },
   {
